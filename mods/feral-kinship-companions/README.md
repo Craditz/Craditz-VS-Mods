@@ -14,7 +14,8 @@ established. These files won't reproduce a complete release ZIP.
 See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.
 
 A successful compile doesn't verify an exact match with the release package or
-how it behaves in game. No license has been applied, and the original manifest
+how it behaves in game. See the [project license](../../LICENSE) and
+[third-party notices](../../THIRD_PARTY_NOTICES.md). The original manifest
 credits are preserved.
 
 [Feral Kinship](../feral-kinship/README.md) lives next door. Companions' manifest
