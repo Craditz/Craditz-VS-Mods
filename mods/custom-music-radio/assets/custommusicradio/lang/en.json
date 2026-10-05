@@ -1,0 +1,18 @@
+{
+  "block-radio-*": "Vintage radio",
+  "control-previous": "Previous track (pauses)",
+  "control-playpause": "Start / pause",
+  "control-next": "Next track (pauses)",
+  "control-quieter": "Volume down (10%, minimum 0%)",
+  "control-louder": "Volume up (10%, maximum 100%)",
+  "control-range": "Listening range",
+  "control-mode": "Playback mode: Repeat current / Loop playlist / Shuffle playlist / No loop",
+  "control-playlist": "Next playlist (pauses)",
+  "heldhelp-place": "Place radio (requires two blocks of height)",
+  "item-radiochassis": "Radio Chassis",
+  "itemdesc-radiochassis": "A wooden cabinet and mounting frame for a radio.",
+  "item-radioreceiver": "Radio Receiver",
+  "itemdesc-radioreceiver": "A tuning cylinder and copper receiver powered by a temporal gear.",
+  "item-radiospeaker": "Radio Speaker",
+  "itemdesc-radiospeaker": "A linen-covered speaker in a wooden frame."
+}

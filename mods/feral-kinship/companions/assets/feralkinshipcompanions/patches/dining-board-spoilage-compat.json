@@ -1,0 +1,15 @@
+[
+  {
+    "op": "replace",
+    "path": "/attributes/spoilSpeedMulByFoodCat",
+    "file": "feralkinshipcompanions:blocktypes/packdining.json",
+    "value": {
+      "fruit": 1.0,
+      "vegetable": 1.0,
+      "protein": 1.0,
+      "grain": 1.0,
+      "dairy": 1.0,
+      "unknown": 1.0
+    }
+  }
+]

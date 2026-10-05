@@ -1,0 +1,956 @@
+[
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/clawtips-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-flint.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fittedclaws.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/fittedfangs.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-flint.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-bismuthbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-blackbronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-bronze.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-copper.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-iron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-meteoriciron.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-steel.json",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "Buffable"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-flint-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fittedclaws-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/fittedfangs-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-flint-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-bismuthbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-blackbronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-bronze-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-copper-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-iron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-meteoriciron-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-steel-wearable.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "Buffable"
+    }
+  }
+]

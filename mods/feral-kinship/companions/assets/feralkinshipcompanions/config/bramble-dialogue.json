@@ -1,0 +1,860 @@
+{
+  "source": "FERAL_KINSHIP_BRAMBLE_DIALOGUE_AND_BEHAVIOR_SPEC.md",
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "bramble.onboarding.first_offer.01",
+      "layer": "Popup",
+      "line": "Something watches from the edge of the firelight. A small animal steps forward with the expression of someone who has already decided you need help.",
+      "comment": "First-load onboarding. Show once per player/world when Companions is enabled and Bramble onboarding has not been resolved. This should be a proper choice popup, not a speech bubble.",
+      "priority": "High",
+      "action": "Offer: Accept help / Not right now / Ask later ---"
+    },
+    {
+      "id": "bramble.onboarding.first_offer.02",
+      "layer": "Popup",
+      "line": "Would you like Bramble's help learning the Companions system?",
+      "comment": "Second line/body of the first-load onboarding popup. Only show with the first onboarding offer.",
+      "priority": "High ---"
+    },
+    {
+      "id": "bramble.onboarding.accept.01",
+      "layer": "Popup",
+      "line": "Good. First question: what kind of animal are we learning about?",
+      "comment": "After player accepts Bramble's help. Immediately open species selection using the actual supported Companion species catalog.",
+      "priority": "High",
+      "action": "Open species selection ---"
+    },
+    {
+      "id": "bramble.onboarding.not_now.01",
+      "layer": "Popup",
+      "line": "All right. I will be nearby if you change your mind.",
+      "comment": "Player chooses Not right now. Persist that onboarding was offered, but keep Bramble available for manual interaction.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.onboarding.ask_later.01",
+      "layer": "Popup",
+      "line": "Fine. You can ask when you are ready.",
+      "comment": "Player chooses I'll ask later. Functionally similar to Not right now, but preserve the distinct choice if the onboarding state model supports it.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.what_are_you.01",
+      "layer": "Right-click",
+      "line": "I am Bramble.",
+      "comment": "When player explicitly asks who/what Bramble is through the right-click help menu.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.what_are_you.02",
+      "layer": "Right-click",
+      "line": "I am here to help you understand the others. I am not one of the others.",
+      "comment": "Follow-up explanation when player asks why Bramble is different from normal Companions.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.why_no_work.01",
+      "layer": "Right-click",
+      "line": "I have a job.",
+      "comment": "When player asks why Bramble does not perform duties or work.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.why_no_work.02",
+      "layer": "Right-click",
+      "line": "This is the job.",
+      "comment": "Follow-up after 'I have a job.' Can be used as a two-line exchange or alternate answer.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.why_no_fight.01",
+      "layer": "Right-click",
+      "line": "I am here to explain why your animals are fighting. I am not volunteering to join them.",
+      "comment": "When player asks why Bramble does not fight.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.why_no_pack.01",
+      "layer": "Right-click",
+      "line": "I am Bramble.",
+      "comment": "When player asks why Bramble does not appear in Pack systems. Intentionally unhelpful first answer.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.why_no_pack.02",
+      "layer": "Right-click",
+      "line": "That was the explanation.",
+      "comment": "Optional follow-up if player asks again or the UI presents a second clarification line.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.self.rename.01",
+      "layer": "Right-click",
+      "line": "No.",
+      "comment": "If any code path attempts to offer rename behavior for Bramble. Prefer blocking the rename UI entirely; this line is only a fallback/test response.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.bear.01",
+      "layer": "Popup",
+      "line": "Bear, then. That is considerably more Bramble than I am used to.",
+      "comment": "Immediately after player selects Bear as tutorial species and Bramble's visible form is switched successfully.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.chicken.01",
+      "layer": "Popup",
+      "line": "Chicken. I am going to ask that you treat this with the dignity it deserves.",
+      "comment": "After player selects Chicken and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.deer.01",
+      "layer": "Popup",
+      "line": "Deer, then. Give me a moment. I feel alarmingly tall.",
+      "comment": "After player selects Deer and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.fox.01",
+      "layer": "Popup",
+      "line": "Excellent choice. No bias involved.",
+      "comment": "After player selects Fox and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.gazelle.01",
+      "layer": "Popup",
+      "line": "Gazelle. Fast legs, wide eyes, very little patience for bad approaches. Useful lesson.",
+      "comment": "After player selects Gazelle and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.goat.01",
+      "layer": "Popup",
+      "line": "Goat. Good. You will learn quickly that confidence and cooperation are not the same thing.",
+      "comment": "After player selects Goat and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.hare.01",
+      "layer": "Popup",
+      "line": "Hare. Try not to blink while I adjust to this.",
+      "comment": "After player selects Hare and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.hyena.01",
+      "layer": "Popup",
+      "line": "Hyena. Strong opinions, strong jaws. Let us avoid learning both at once.",
+      "comment": "After player selects Hyena and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.pig.01",
+      "layer": "Popup",
+      "line": "Pig. Sensible choice. More perceptive than people tend to assume.",
+      "comment": "After player selects Pig and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.raccoon.01",
+      "layer": "Popup",
+      "line": "Raccoon. I suddenly understand the appeal of having hands.",
+      "comment": "After player selects Raccoon and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.sheep.01",
+      "layer": "Popup",
+      "line": "Sheep. Do not mistake calm for simple. That mistake belongs to beginners.",
+      "comment": "After player selects Sheep and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.species_selected.wolf.01",
+      "layer": "Popup",
+      "line": "Wolf. Familiar does not mean friendly, so pay attention.",
+      "comment": "After player selects Wolf and Bramble transforms.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.common.start.01",
+      "layer": "Right-click",
+      "line": "Before you tame anything, watch it first. Identify whether it is an adult or juvenile, and whether it is male or female, before you plan around it.",
+      "comment": "Right-click first-taming chapter. Use before species-specific details when player owns no Companion.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.common.food.01",
+      "layer": "Right-click",
+      "line": "Check the accepted food listed in the next page. Hold it in your active hand before you close the distance.",
+      "comment": "Use in every first-taming chapter. Codex should resolve accepted foods from the existing species/taming data rather than hardcoding food names in this line.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.common.patience.01",
+      "layer": "Right-click",
+      "line": "If it runs, threatens you, or refuses the approach, stop and give it room. Chasing or forcing the issue usually makes things worse.",
+      "comment": "General first-taming advice. Show where the selected species can flee, threaten, or otherwise reject approach.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.common.after.01",
+      "layer": "Right-click",
+      "line": "Once it is domesticated, right-click it with an empty hand to open its Companion window. Check its life stage, sex, home, and bed before assigning work or expecting breeding.",
+      "comment": "After explaining successful first domestication. Once the player's first Companion is actually registered, retire the species-specific chapter.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.wolf.01",
+      "layer": "Right-click",
+      "line": "A wolf may recognize something familiar in your scent. That is not the same as trust.",
+      "comment": "Use if selected species is Wolf. This line is especially appropriate when the player's recognized species is Wolf.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.wolf.02",
+      "layer": "Right-click",
+      "line": "If you are not one of them, keep your distance. Wolves have opinions about strangers, and they are rarely polite about them.",
+      "comment": "Use when selected species is Wolf and player's recognized species is not Wolf. If player species is unknown, use neutral wolf advice instead.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.wolf.03",
+      "layer": "Right-click",
+      "line": "Do not corner one. Give it room, keep accepted food ready, and let patience do more work than your legs.",
+      "comment": "Wolf taming practical advice. Resolve accepted food from existing wolf taming data.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.deer.01",
+      "layer": "Right-click",
+      "line": "Deer are nervous little ghosts. If they can see an escape route, they will probably use it.",
+      "comment": "Use in Deer first-taming chapter. Emphasize flee behavior.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.deer.02",
+      "layer": "Right-click",
+      "line": "A contained approach can help if the game state and terrain make it safe. Yes, I know how that sounds.",
+      "comment": "Use only if trapping/contained approaches are valid with the existing taming implementation. Codex should not show this line if the strategy would make feeding impossible or unsafe.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.deer.03",
+      "layer": "Right-click",
+      "line": "Give the deer enough visibility to understand where you are, but not so much open ground that it vanishes before you can feed it.",
+      "comment": "Deer practical approach advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.fox.01",
+      "layer": "Right-click",
+      "line": "Foxes are clever, suspicious, and difficult to impress. I say this as an unbiased professional.",
+      "comment": "Fox first-taming flavor.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.fox.02",
+      "layer": "Right-click",
+      "line": "Do not chase the fox around like you are trying to prove something. Have the right food, stay patient, and let the distance close without panic.",
+      "comment": "Fox taming practical advice. Accepted food comes from existing taming data.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.fox.03",
+      "layer": "Right-click",
+      "line": "If the fox keeps watching instead of fleeing, that is progress. Do not ruin progress by suddenly becoming exciting.",
+      "comment": "Fox approach behavior advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.bear.01",
+      "layer": "Right-click",
+      "line": "A bear is not a lesson you should learn by standing too close and improvising.",
+      "comment": "Bear first-taming warning.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.bear.02",
+      "layer": "Right-click",
+      "line": "Prepare the accepted food first, keep an escape route for yourself, and do not mistake tolerance for permission.",
+      "comment": "Bear practical advice. Resolve food from actual data.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.bear.03",
+      "layer": "Right-click",
+      "line": "If the bear becomes hostile, back off. You are teaching trust, not winning an argument.",
+      "comment": "Bear failure-state advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.chicken.01",
+      "layer": "Right-click",
+      "line": "Chickens are easier to underestimate than they are to understand.",
+      "comment": "Chicken first-taming flavor.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.chicken.02",
+      "layer": "Right-click",
+      "line": "Move calmly, use the food they actually accept, and pay attention to whether they are trying to stay with you or simply get away.",
+      "comment": "Chicken practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.chicken.03",
+      "layer": "Right-click",
+      "line": "Once one is domesticated, do not assume small means disposable. It is still a Companion.",
+      "comment": "Chicken post-taming guidance.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.gazelle.01",
+      "layer": "Right-click",
+      "line": "Gazelles are built around noticing danger early and being somewhere else shortly afterward.",
+      "comment": "Gazelle first-taming behavior.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.gazelle.02",
+      "layer": "Right-click",
+      "line": "Prepare before approaching. Chasing one after it bolts is mostly a lesson in how fast a gazelle is.",
+      "comment": "Gazelle practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.gazelle.03",
+      "layer": "Right-click",
+      "line": "Use patience and a controlled approach. Make sure you can still reach it safely with accepted food.",
+      "comment": "Gazelle taming advice; data-driven food.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.goat.01",
+      "layer": "Right-click",
+      "line": "Goats are often much more willing to stand their ground than deer are. That does not mean they agreed with you.",
+      "comment": "Goat behavior advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.goat.02",
+      "layer": "Right-click",
+      "line": "Bring accepted food and approach without trying to force the animal into a corner.",
+      "comment": "Goat practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.goat.03",
+      "layer": "Right-click",
+      "line": "If it decides to object, give it room to finish objecting somewhere that is not directly on top of you.",
+      "comment": "Goat warning/failure advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.hare.01",
+      "layer": "Right-click",
+      "line": "Hares solve a remarkable number of problems by becoming very far away.",
+      "comment": "Hare behavior advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.hare.02",
+      "layer": "Right-click",
+      "line": "Do not rely on chasing. Prepare the food and the approach before you close the distance.",
+      "comment": "Hare practical taming advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.hare.03",
+      "layer": "Right-click",
+      "line": "A contained area may help if it still leaves you a safe way to feed the animal.",
+      "comment": "Only surface if containment is valid for the actual taming system.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.hyena.01",
+      "layer": "Right-click",
+      "line": "A hyena is not going to become friendly because you walked confidently toward its teeth.",
+      "comment": "Hyena warning.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.hyena.02",
+      "layer": "Right-click",
+      "line": "Watch its behavior, keep accepted food ready, and do not crowd it.",
+      "comment": "Hyena practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.hyena.03",
+      "layer": "Right-click",
+      "line": "If it treats you as a threat, create distance first. Taming can wait until nobody is actively trying to bite anybody.",
+      "comment": "Hyena failure-state advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.pig.01",
+      "layer": "Right-click",
+      "line": "Pigs notice more than people give them credit for.",
+      "comment": "Pig first-taming flavor.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.pig.02",
+      "layer": "Right-click",
+      "line": "Use accepted food, move calmly, and give it enough space to decide you are worth tolerating.",
+      "comment": "Pig practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.pig.03",
+      "layer": "Right-click",
+      "line": "Once domesticated, check its needs before treating it like a walking work assignment.",
+      "comment": "Pig post-taming advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.raccoon.01",
+      "layer": "Right-click",
+      "line": "Raccoons investigate. That is useful right up until the thing being investigated is you.",
+      "comment": "Raccoon first-taming flavor.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.raccoon.02",
+      "layer": "Right-click",
+      "line": "Let curiosity work for you. Have accepted food ready and avoid turning the approach into a chase.",
+      "comment": "Raccoon practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.raccoon.03",
+      "layer": "Right-click",
+      "line": "If it backs off, let it. Curiosity usually works better when it still has somewhere to go.",
+      "comment": "Raccoon failure-state advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.sheep.01",
+      "layer": "Right-click",
+      "line": "Sheep may look calm right up until the whole situation decides to move somewhere else.",
+      "comment": "Sheep behavior advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.sheep.02",
+      "layer": "Right-click",
+      "line": "Use accepted food and approach in a way that does not scatter the animal away from you.",
+      "comment": "Sheep practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.sheep.03",
+      "layer": "Right-click",
+      "line": "Keep the feeding path simple. A complicated chase helps nobody.",
+      "comment": "Sheep practical advice.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.same_species.01",
+      "layer": "Right-click",
+      "line": "You may smell familiar to it. Familiar can help. Familiar is not trust.",
+      "comment": "Use during first-taming chapter when the existing race/model resolver positively identifies the player as the same recognized species as the selected tutorial species.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.different_species.01",
+      "layer": "Right-click",
+      "line": "You are not one of them. Assume you are a stranger until the animal proves otherwise.",
+      "comment": "Use when player is a different recognized species from the selected tutorial species.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.taming.unknown_species.01",
+      "layer": "Right-click",
+      "line": "I cannot tell what they will make of you. Use the cautious approach.",
+      "comment": "Use when the player's species/model cannot be resolved reliably. Never guess.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.interaction.01",
+      "layer": "Right-click",
+      "line": "Right-click the Companion with an empty hand to open its window. That is where you check its state and choose what to do next.",
+      "comment": "Right-click guide topic: normal Companion interaction.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.follow.01",
+      "layer": "Right-click",
+      "line": "Hold Ctrl and right-click the Companion, then choose Follow. It stays with you until you give it another order.",
+      "comment": "Guide topic: Follow command.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.at_ease.01",
+      "layer": "Right-click",
+      "line": "Right-click an ordinary Companion, choose Commands, then choose At Ease. This lets it use its normal routines instead of following an assignment.",
+      "comment": "Guide topic: At Ease.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.rest.01",
+      "layer": "Right-click",
+      "line": "Hold Ctrl and right-click the Companion, then choose Rest. It stops and settles instead of following your movement.",
+      "comment": "Guide topic: Rest.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.return_home.01",
+      "layer": "Right-click",
+      "line": "Hold Ctrl and right-click the Companion, then choose Return Home. It goes back to its established home instead of traveling with you.",
+      "comment": "Guide topic: Return Home.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.combat_style.01",
+      "layer": "Right-click",
+      "line": "Right-click with an empty hand to open the Companion window, then adjust Combat style and Risk tolerance. These decide when it engages and when it backs out.",
+      "comment": "Guide topic: combat style/risk tolerance. Use actual UI terminology if current labels differ.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.requests.01",
+      "layer": "Right-click",
+      "line": "Right-click with an empty hand, open the Social tab, and read the request. Requests are things a Companion wants you to do, not commands from the animal.",
+      "comment": "Guide topic: Requests.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.hunger.01",
+      "layer": "Right-click",
+      "line": "Hold an accepted food and right-click the Companion to feed it. Hunger affects what a Companion can reasonably be asked to do, so feed it before an emergency.",
+      "comment": "Guide topic: Hunger.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.juveniles.01",
+      "layer": "Right-click",
+      "line": "Right-click with an empty hand to check the Companion's life stage, sex, home, and bed. Juveniles need time, food, and safety before the full adult systems become available.",
+      "comment": "Guide topic: Juveniles.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.talents.01",
+      "layer": "Right-click",
+      "line": "Right-click with an empty hand, open Talents, and spend the points the Companion has earned. Choose the animal you actually have, not the one you imagined having.",
+      "comment": "Guide topic: Talents.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.camps_dens.01",
+      "layer": "Right-click",
+      "line": "Give the Companion a home and a bed, then use its empty-hand Companion window to check that they were recorded. Homes and dens give it a place to return to and anchor several systems.",
+      "comment": "Guide topic: camps/dens. Use exact current system names.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.pack.01",
+      "layer": "Right-click",
+      "line": "Right-click a Companion with an empty hand and open Pack status, or open it from the Pack Cart. This is where the larger group starts to matter.",
+      "comment": "Guide topic: Pack status.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.duties.01",
+      "layer": "Right-click",
+      "line": "Open the Companion window with an empty-hand right-click, choose a supported duty, and give it a valid place to work. Duties let a Companion perform work instead of following you around.",
+      "comment": "Guide topic: Duties.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.work_carts.01",
+      "layer": "Right-click",
+      "line": "Build and open a Work Cart, then assign a Companion to a supported duty there. Work Carts extend certain jobs by carrying or processing more of the work loop.",
+      "comment": "Guide topic: Work Carts. Keep wording broad so current cart implementations remain authoritative.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.expeditions.01",
+      "layer": "Right-click",
+      "line": "Open Pack status or the Pack Cart, choose an eligible Companion, and start an Expedition. It leaves to handle a longer job and returns later.",
+      "comment": "Guide topic: Expeditions.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.wounded.01",
+      "layer": "Right-click",
+      "line": "Wounded means hurt but not necessarily in the critical state. Hold the appropriate healing item and Ctrl + right-click the Companion; work can wait.",
+      "comment": "Guide topic: wounded state.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.mortal.01",
+      "layer": "Right-click",
+      "line": "Mortally wounded means the Companion is in a critical state and may die without treatment. Hold the appropriate healing item and Ctrl + right-click it immediately.",
+      "comment": "Guide topic: mortal state. This should be direct and short.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.guide.bramble_difference.01",
+      "layer": "Right-click",
+      "line": "I do not fight, work, breed, earn talents, join the pack, or make requests. I follow, I stay, and I explain things.",
+      "comment": "Guide topic: how Bramble differs from normal Companions.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.next.wounded.01",
+      "layer": "Right-click",
+      "line": "{name} is hurt. Treat that before asking for anything else.",
+      "comment": "Highest non-mortal recommendation. Trigger if owned Companion is wounded/incapacitated and treatment is possible. Use actual Companion name.",
+      "priority": "Critical",
+      "action": "Open Companion ---"
+    },
+    {
+      "id": "bramble.next.mortal.01",
+      "layer": "Right-click",
+      "line": "{name} is mortally wounded. Stop what you are doing and treat them now.",
+      "comment": "Highest overall recommendation. Trigger if any owned Companion is in mortal state. Use actual name.",
+      "priority": "Critical",
+      "action": "Open Companion ---"
+    },
+    {
+      "id": "bramble.next.request.01",
+      "layer": "Right-click",
+      "line": "{name} has something they want from you. Deal with the request before it sits there forgotten.",
+      "comment": "Trigger when an owned Companion has an active request. Prefer oldest/highest-priority request if several exist.",
+      "priority": "High",
+      "action": "Open Companion ---"
+    },
+    {
+      "id": "bramble.next.hungry.01",
+      "layer": "Right-click",
+      "line": "{name} is very hungry. Feed them before asking for more work.",
+      "comment": "Trigger when an owned Companion crosses the very-hungry threshold but is not in a more critical injury state.",
+      "priority": "High",
+      "action": "Open Companion ---"
+    },
+    {
+      "id": "bramble.next.juveniles_only.01",
+      "layer": "Right-click",
+      "line": "The basic setup comes first: inspect the Companion's life stage, sex, home, and bed. Once those foundations are handled, juveniles mostly need time, food, and safety.",
+      "comment": "Trigger only after Pack status and Pack Cart have been explored, when all current owned Companions are juveniles.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.next.never_requested.01",
+      "layer": "Right-click",
+      "line": "You have not seen a request yet. Right-click an adult Companion with an empty hand, open Social, and start there.",
+      "comment": "Trigger when at least one eligible adult Companion exists but no Companion has ever generated/completed the first request tutorial milestone.",
+      "priority": "Normal",
+      "action": "Open Social ---"
+    },
+    {
+      "id": "bramble.next.talents.01",
+      "layer": "Right-click",
+      "line": "{name} has talent points waiting. You may as well decide what they are good at before the points start judging you.",
+      "comment": "Trigger when any owned Companion has unspent talent points and no higher-priority need is active.",
+      "priority": "Normal",
+      "action": "Open Talents ---"
+    },
+    {
+      "id": "bramble.next.pack_unseen.01",
+      "layer": "Right-click",
+      "line": "You have Companions now. Right-click one with an empty hand, open Pack status, and look over the roster before the group gets larger.",
+      "comment": "Trigger when player owns at least one eligible Companion and has never opened/explored Pack status.",
+      "priority": "Normal",
+      "action": "Open Pack ---"
+    },
+    {
+      "id": "bramble.next.pack_cart.01",
+      "layer": "Right-click",
+      "line": "The first Companion steps are covered. Now build and right-click a Pack Cart; it is where the larger systems start to gather.",
+      "comment": "Final onboarding recommendation after first request, talents, and Pack status; remains until the player opens a Pack Cart.",
+      "priority": "Normal",
+      "action": "Build and open a Pack Cart ---"
+    },
+    {
+      "id": "bramble.next.no_companion.01",
+      "layer": "Right-click",
+      "line": "You still need your first Companion. We are looking for {species}. Start with the approach we discussed.",
+      "comment": "Trigger when player owns no Companion. Use selected tutorial species. This routes into the species-specific first-taming chapter.",
+      "priority": "Normal",
+      "action": "Open Taming Guide ---"
+    },
+    {
+      "id": "bramble.next.nearby_target.01",
+      "layer": "Right-click",
+      "line": "There is a {species} nearby. If you were waiting for a candidate, that is one.",
+      "comment": "Use only when player owns no Companion, the selected tutorial species is set, and a loaded nearby wild animal of that species can be reliably identified. Do not point at unloaded/distant entities.",
+      "priority": "Normal",
+      "action": "Optionally highlight/track nearby candidate if existing systems support it safely ---"
+    },
+    {
+      "id": "bramble.unprompted.taming_started.01",
+      "layer": "Unprompted",
+      "line": "That one has accepted your first offering. Keep the approach calm and keep going.",
+      "comment": "Fire once when the selected first-taming animal enters PetAI's TAMING state.",
+      "priority": "Normal",
+      "cooldown": "Once per player/world ---"
+    },
+    {
+      "id": "bramble.unprompted.mortal_first.01",
+      "layer": "Unprompted",
+      "line": "{name} is in very bad shape. Treat them now.",
+      "comment": "First time Bramble witnesses an owned Companion enter mortal state while Bramble is present/following and not suppressed by higher-priority UI. This may ignore normal hint preference except Quiet if the design chooses Quiet to suppress even critical guidance.",
+      "priority": "Critical",
+      "cooldown": "Very long per-companion/state-transition cooldown ---"
+    },
+    {
+      "id": "bramble.unprompted.wounded_first.01",
+      "layer": "Unprompted",
+      "line": "{name} is hurt badly enough that I would stop and deal with it.",
+      "comment": "First meaningful wounded-state tutorial reminder. Do not repeat every time health changes.",
+      "priority": "High",
+      "cooldown": "Once per tutorial milestone or very long cooldown ---"
+    },
+    {
+      "id": "bramble.unprompted.first_request.01",
+      "layer": "Unprompted",
+      "line": "{name} has something on their mind.",
+      "comment": "First time any Companion generates a request. Use once as onboarding to the request system, then retire or move to contextual rare hints.",
+      "priority": "Normal",
+      "cooldown": "Once per player/world ---"
+    },
+    {
+      "id": "bramble.unprompted.very_hungry.01",
+      "layer": "Unprompted",
+      "line": "{name} has been thinking about food for a while. Feed them before this becomes the only thing they are thinking about.",
+      "comment": "Occasional/Frequent hint only. Trigger on crossing very-hungry threshold, not every tick while hungry.",
+      "priority": "High",
+      "cooldown": "Long per-companion cooldown ---"
+    },
+    {
+      "id": "bramble.unprompted.first_talent.01",
+      "layer": "Unprompted",
+      "line": "{name} has a talent point waiting.",
+      "comment": "First time player has an unspent talent point. One-time system-introduction hint.",
+      "priority": "Normal",
+      "cooldown": "Once per player/world ---"
+    },
+    {
+      "id": "bramble.unprompted.juvenile_adult.01",
+      "layer": "Unprompted",
+      "line": "Looks like {name} is grown now. More of the Companion systems apply to them from here.",
+      "comment": "First adulthood transition witnessed for a player-owned juvenile. Use actual name. One line at transition only.",
+      "priority": "Normal",
+      "cooldown": "Once per Companion adulthood ---"
+    },
+    {
+      "id": "bramble.unprompted.first_pack_ready.01",
+      "layer": "Unprompted",
+      "line": "You have enough going on now that Pack status is worth a look.",
+      "comment": "Use once when player reaches whatever actual state makes Pack status meaningfully relevant and has never opened it.",
+      "priority": "Low",
+      "cooldown": "Once per player/world ---"
+    },
+    {
+      "id": "bramble.unprompted.first_expedition_available.01",
+      "layer": "Unprompted",
+      "line": "You can send Companions on expeditions now. I recommend learning what 'away' means before you send everybody at once.",
+      "comment": "Use once when expeditions first become available/unlocked and player has not used them.",
+      "priority": "Low",
+      "cooldown": "Once per player/world ---"
+    },
+    {
+      "id": "bramble.ambient.follow.01",
+      "layer": "Unprompted",
+      "line": "Still with you.",
+      "comment": "Very rare ambient line while Bramble has been following quietly for a long time and no tutorial state is urgent.",
+      "priority": "Low",
+      "cooldown": "Very long ---"
+    },
+    {
+      "id": "bramble.ambient.follow.02",
+      "layer": "Unprompted",
+      "line": "You have not needed me for a while. That is probably a good sign.",
+      "comment": "Rare ambient line after a long quiet period where player has no urgent Companion needs.",
+      "priority": "Low",
+      "cooldown": "Very long ---"
+    },
+    {
+      "id": "bramble.ambient.stay.01",
+      "layer": "Unprompted",
+      "line": "I will be here.",
+      "comment": "Optional one-shot acknowledgement when player switches Bramble to Stay. Prefer command acknowledgement rather than random ambient playback.",
+      "priority": "Low",
+      "cooldown": "Very long ---"
+    },
+    {
+      "id": "bramble.ambient.resume.01",
+      "layer": "Unprompted",
+      "line": "All right. Moving again.",
+      "comment": "Optional one-shot acknowledgement when player switches Bramble from Stay to Follow.",
+      "priority": "Low",
+      "cooldown": "Very long ---"
+    },
+    {
+      "id": "bramble.ambient.observation.01",
+      "layer": "Unprompted",
+      "line": "Everyone seems unusually competent today.",
+      "comment": "Extremely rare harmless ambient line when owned Companions have no hunger, injury, request, or work problem requiring attention.",
+      "priority": "Low",
+      "cooldown": "Very long ---"
+    },
+    {
+      "id": "bramble.ambient.observation.02",
+      "layer": "Unprompted",
+      "line": "Nothing needs explaining right now. I am enjoying the novelty.",
+      "comment": "Extremely rare harmless ambient line when all tracked tutorial/recommendation priorities are clear.",
+      "priority": "Low",
+      "cooldown": "Very long ---"
+    },
+    {
+      "id": "bramble.easteregg.taxes.01",
+      "layer": "Unprompted",
+      "line": "The taxes are too high.",
+      "comment": "Legacy test line retained only as an optional extremely rare Easter egg. It is not part of Bramble's core personality, onboarding, tutorial logic, or required acceptance criteria. Safe to remove entirely.",
+      "priority": "Debug/Low",
+      "cooldown": "Extremely long ---"
+    },
+    {
+      "id": "bramble.mode.follow.01",
+      "layer": "Bubble",
+      "line": "All right. I am with you.",
+      "comment": "Play once when sneak-interaction changes Bramble from Stay to Follow.",
+      "priority": "Low ---"
+    },
+    {
+      "id": "bramble.mode.stay.01",
+      "layer": "Bubble",
+      "line": "I will stay here.",
+      "comment": "Play once when sneak-interaction changes Bramble from Follow to Stay.",
+      "priority": "Low ---"
+    },
+    {
+      "id": "bramble.hints.quiet.01",
+      "layer": "Right-click",
+      "line": "Quiet means I only speak when you ask. If something catches fire, I reserve the right to look disappointed.",
+      "comment": "When player selects Quiet hint preference. If design requires truly zero unsolicited hints, drop the second sentence's implication and suppress all unprompted lines.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.hints.occasional.01",
+      "layer": "Right-click",
+      "line": "Occasional means I will point out things that are actually worth interrupting you for.",
+      "comment": "When player selects Occasional. This should be the recommended/default post-onboarding hint level.",
+      "priority": "Normal ---"
+    },
+    {
+      "id": "bramble.hints.frequent.01",
+      "layer": "Right-click",
+      "line": "Frequent means I will be more active. You asked for this.",
+      "comment": "When player selects Frequent. Increase contextual hint frequency, never remove cooldown/overlap safeguards.",
+      "priority": "Normal ---"
+    }
+  ]
+}

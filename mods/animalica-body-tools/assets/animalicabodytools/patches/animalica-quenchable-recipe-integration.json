@@ -1,0 +1,1094 @@
+[
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/copper.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/copper.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/copper-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/copper-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bismuthbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bismuthbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bismuthbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bismuthbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blackbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blackbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blackbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blackbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/iron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/iron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/iron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/iron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoriciron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoriciron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoriciron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoriciron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/steel.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/steel.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/steel-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/steel-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/copper.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/copper.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/copper-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/copper-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bismuthbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bismuthbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bismuthbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bismuthbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blackbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blackbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blackbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blackbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/iron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/iron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/iron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/iron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoriciron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoriciron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoriciron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoriciron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/steel.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/steel.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/steel-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/steel-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/copper.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/copper-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/bronze.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/bronze-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/bismuthbronze.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/bismuthbronze-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/blackbronze.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/blackbronze-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/iron.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/iron-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/meteoriciron.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/meteoriciron-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/steel.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/steel-hide.json",
+    "path": "/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/copper.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/copper.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/copper-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/copper-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bismuthbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bismuthbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bismuthbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bismuthbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blackbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blackbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blackbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blackbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/iron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/iron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/iron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/iron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoriciron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoriciron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoriciron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoriciron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/steel.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/steel.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/steel-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/steel-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/copper.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/copper.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/copper-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/copper-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bismuthbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bismuthbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bismuthbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bismuthbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blackbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blackbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blackbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blackbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/iron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/iron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/iron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/iron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoriciron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoriciron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoriciron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoriciron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/steel.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/steel.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/steel-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/steel-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/copper.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/copper.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/copper-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/copper-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bismuthbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bismuthbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bismuthbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bismuthbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blackbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blackbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blackbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blackbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/iron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/iron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/iron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/iron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoriciron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoriciron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoriciron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoriciron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/steel.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/steel.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/steel-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/steel-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/copper.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/copper.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/copper-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/copper-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bismuthbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bismuthbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bismuthbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bismuthbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blackbronze.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blackbronze.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blackbronze-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blackbronze-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/iron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/iron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/iron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/iron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoriciron.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoriciron.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoriciron-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoriciron-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/steel.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/steel.json",
+    "path": "/1/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/steel-hide.json",
+    "path": "/0/enabled",
+    "value": false
+  },
+  {
+    "op": "add",
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/steel-hide.json",
+    "path": "/1/enabled",
+    "value": false
+  }
+]

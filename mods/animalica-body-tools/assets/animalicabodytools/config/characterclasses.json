@@ -1,0 +1,110 @@
+[
+  {
+    "enabled": true,
+    "code": "animalica-animal-wanderer",
+    "traits": [],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-hunter",
+    "traits": [ "animalica-class-hunter-gifts", "animalica-class-hunter-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-stalker",
+    "traits": [ "animalica-class-stalker-gifts", "animalica-class-stalker-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-brute",
+    "traits": [ "animalica-class-brute-gifts", "animalica-class-brute-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-guardian",
+    "traits": [ "animalica-class-guardian-gifts", "animalica-class-guardian-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-runner",
+    "traits": [ "animalica-class-runner-gifts", "animalica-class-runner-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-mountaineer",
+    "traits": [ "animalica-class-mountaineer-gifts", "animalica-class-mountaineer-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-miner",
+    "traits": [ "animalica-class-miner-gifts", "animalica-class-miner-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-digger",
+    "traits": [ "animalica-class-digger-gifts", "animalica-class-digger-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-forager",
+    "traits": [ "animalica-class-forager-gifts", "animalica-class-forager-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-fieldhand",
+    "traits": [ "animalica-class-fieldhand-gifts", "animalica-class-fieldhand-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  },
+  {
+    "enabled": true,
+    "code": "animalica-animal-scavenger",
+    "traits": [ "animalica-class-scavenger-gifts", "animalica-class-scavenger-drawbacks" ],
+    "gear": [
+      { "type": "item", "code": "animalicabodytools:fittedfangs-wearable" },
+      { "type": "item", "code": "animalicabodytools:fittedclaws-wearable" }
+    ]
+  }
+]

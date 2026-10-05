@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "name": "Feral Kinship Companions",
+  "modid": "feralkinshipcompanions",
+  "version": "0.5.73",
+  "description": "Animal bonding, companion commands, social life, pack work, expeditions, and the per-player Bramble helper.",
+  "authors": [
+    "Craditz"
+  ],
+  "dependencies": {
+    "game": "1.22.0",
+    "feralkinship": "0.4.3"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

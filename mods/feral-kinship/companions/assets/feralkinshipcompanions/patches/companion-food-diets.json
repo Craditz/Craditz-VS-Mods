@@ -1,0 +1,185 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamebear.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "meat" },
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamechicken.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamedeer.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamefox.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "meat" },
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamegazelle.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamegoat.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamehare.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamehyena.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "meat" },
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamepig.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "meat" },
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tameraccoon.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "meat" },
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamesheep.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "vegetable" },
+        { "weight": 1, "code": "fruit" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "feralkinship:entities/tamewolf.json",
+    "value": {
+      "weightedFoodTags": [
+        { "weight": 1, "code": "meat" },
+        { "weight": 1, "code": "grain" },
+        { "weight": 1, "code": "fruit" },
+        { "weight": 1, "code": "egg" }
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "cats:entities/land/cat-male.json",
+    "value": {
+      "foodCategories": ["Protein"]
+    },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/attributes/creatureDiet",
+    "file": "cats:entities/land/cat-female.json",
+    "value": {
+      "foodCategories": ["Protein"]
+    },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/attributes",
+    "file": "cats:entities/land/cat-kitten.json",
+    "value": {
+      "creatureDiet": {
+        "foodCategories": ["Protein"]
+      }
+    },
+    "dependsOn": [{ "modid": "cats" }]
+  }
+]

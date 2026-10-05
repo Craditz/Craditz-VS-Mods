@@ -1,0 +1,23 @@
+{
+  "type": "code",
+  "name": "Animalica Body Tools",
+  "modid": "animalicabodytools",
+  "version": "1.6.17",
+  "description": "Adds wearable body tools and animal-friendly class support for Animalica players, including direct-from-vanilla quenchable metal heads for fitted claws, fangs, digging claws, rending claws, harvesting claws, prospecting claws, and cultivating claws.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "ChatGPT",
+    "xthatguyx"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.20.4",
+    "animalicacore": "1.1.4",
+    "traitrestrictions": "1.0.0"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

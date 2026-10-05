@@ -1,0 +1,2511 @@
+{
+  "schemaVersion": 3,
+  "requiredPersonalities": [
+    "Timid",
+    "Bold",
+    "Curious",
+    "Affectionate",
+    "Independent",
+    "Playful",
+    "Restless",
+    "Homebody",
+    "Social",
+    "Solitary",
+    "Protective",
+    "Territorial",
+    "Greedy",
+    "Demanding",
+    "Stubborn",
+    "Skittish"
+  ],
+  "priorityDefaults": {
+    "debug": 0,
+    "low": 10,
+    "medium": 40,
+    "high": 70,
+    "critical": 90
+  },
+  "supportedSpecies": [
+    {
+      "id": "bear",
+      "name": "Bear"
+    },
+    {
+      "id": "chicken",
+      "name": "Chicken"
+    },
+    {
+      "id": "deer",
+      "name": "Deer"
+    },
+    {
+      "id": "fox",
+      "name": "Fox"
+    },
+    {
+      "id": "gazelle",
+      "name": "Gazelle"
+    },
+    {
+      "id": "goat",
+      "name": "Goat"
+    },
+    {
+      "id": "hare",
+      "name": "Hare"
+    },
+    {
+      "id": "hyena",
+      "name": "Hyena"
+    },
+    {
+      "id": "pig",
+      "name": "Pig"
+    },
+    {
+      "id": "raccoon",
+      "name": "Raccoon"
+    },
+    {
+      "id": "sheep",
+      "name": "Sheep"
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf"
+    }
+  ],
+  "events": [
+    {
+      "id": "combat.archive"
+    },
+    {
+      "id": "combat.attack",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "combat.badly_wounded",
+      "priority": "high"
+    },
+    {
+      "id": "combat.death",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "priority": "critical",
+      "notes": "Dead companions must not speak."
+    },
+    {
+      "id": "combat.end",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "combat.enter",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "combat.healing_required",
+      "priority": "critical"
+    },
+    {
+      "id": "combat.hit",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "combat.mortal_warning",
+      "priority": "critical",
+      "targetVariants": 2
+    },
+    {
+      "id": "combat.mortally_wounded",
+      "priority": "critical"
+    },
+    {
+      "id": "combat.one_more_breath",
+      "priority": "critical"
+    },
+    {
+      "id": "combat.predator_notice"
+    },
+    {
+      "id": "combat.rallying_scent",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "combat.recovery.begin",
+      "priority": "critical",
+      "targetVariants": 2
+    },
+    {
+      "id": "combat.recovery.complete",
+      "priority": "high",
+      "targetVariants": 2
+    },
+    {
+      "id": "combat.refuses_to_die",
+      "priority": "critical"
+    },
+    {
+      "id": "combat.request_help",
+      "priority": "high"
+    },
+    {
+      "id": "combat.retreat.cautious",
+      "priority": "high"
+    },
+    {
+      "id": "combat.retreat.fearless",
+      "priority": "high"
+    },
+    {
+      "id": "combat.retreat.full",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "combat.retreat.steady",
+      "priority": "high"
+    },
+    {
+      "id": "combat.unarchive"
+    },
+    {
+      "id": "combat.warning_cry",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.at_ease",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.attack_target",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.clear_duties",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.clear_target",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": false,
+      "notes": "No distinct player command/state transition exists for this acknowledgement."
+    },
+    {
+      "id": "command.combat.aggressive",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.combat.assist",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.combat.defensive",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.combat.flee",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.combat.passive",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.combat.protect",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.drop_held_items",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.berries.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.boulders.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.cattails.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.crops.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.dropped_items.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.flint.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.flower_removal.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.general_storage_sorting.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.ground_cleanup.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.mowing.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.mushrooms.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.rocks.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.snow_shoveling.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.snowball_collection.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.duty.sticks.enabled",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.follow",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.follow_distance.back",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.follow_distance.close",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.follow_distance.normal",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.follow.back",
+      "priority": "medium"
+    },
+    {
+      "id": "command.follow.close",
+      "priority": "medium"
+    },
+    {
+      "id": "command.follow.normal",
+      "priority": "medium"
+    },
+    {
+      "id": "command.rest",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.return_home",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.risk.cautious",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.risk.fearless",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.risk.steady",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "command.stand_still",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "conversation.tier1",
+      "speechExpected": true,
+      "targetVariants": 122,
+      "frequency": "scheduled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Runtime conversation scheduler; 122 complete authored exchanges."
+    },
+    {
+      "id": "conversation.tier2",
+      "speechExpected": true,
+      "targetVariants": 192,
+      "frequency": "scheduled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Runtime conversation scheduler; 192 complete authored exchanges."
+    },
+    {
+      "id": "conversation.tier3",
+      "speechExpected": true,
+      "targetVariants": 89,
+      "frequency": "scheduled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Runtime conversation scheduler; 89 complete authored exchanges."
+    },
+    {
+      "id": "conversation.tier4",
+      "speechExpected": true,
+      "targetVariants": 128,
+      "frequency": "scheduled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Runtime conversation scheduler; 128 complete authored exchanges."
+    },
+    {
+      "id": "debug.fox_joke",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "frequency": "debug",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Developer renderer test only; excluded from normal personality coverage."
+    },
+    {
+      "id": "den.arrive"
+    },
+    {
+      "id": "den.move"
+    },
+    {
+      "id": "den.select"
+    },
+    {
+      "id": "den.settle"
+    },
+    {
+      "id": "den.wake.earlier_morning"
+    },
+    {
+      "id": "den.wake.later_bedtime"
+    },
+    {
+      "id": "duty.berries.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.berries.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.berry_harvest.begin"
+    },
+    {
+      "id": "duty.breeding.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.breeding.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.cattails.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.cattails.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.crop_harvest.begin"
+    },
+    {
+      "id": "duty.crops.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.crops.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.dropped_items.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.dropped_items.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.flint.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.flint.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.flower_removal.begin"
+    },
+    {
+      "id": "duty.flower_removal.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.flower_removal.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.general_sort"
+    },
+    {
+      "id": "duty.general_sorting.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.general_sorting.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.ground_cleanup.begin"
+    },
+    {
+      "id": "duty.ground_cleanup.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.ground_cleanup.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.item.pickup"
+    },
+    {
+      "id": "duty.item.unreachable"
+    },
+    {
+      "id": "duty.logging.abandon.changed"
+    },
+    {
+      "id": "duty.logging.abandon.unloaded"
+    },
+    {
+      "id": "duty.logging.claim"
+    },
+    {
+      "id": "duty.logging.fell_complete"
+    },
+    {
+      "id": "duty.logging.multifox_join"
+    },
+    {
+      "id": "duty.logging.no_storage"
+    },
+    {
+      "id": "duty.logging.no_tree"
+    },
+    {
+      "id": "duty.logging.restart_recovered"
+    },
+    {
+      "id": "duty.logging.resume"
+    },
+    {
+      "id": "duty.logging.scan_begin"
+    },
+    {
+      "id": "duty.logging.wait_debris"
+    },
+    {
+      "id": "duty.mowing.begin"
+    },
+    {
+      "id": "duty.mowing.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.mowing.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.mushroom_harvest.begin"
+    },
+    {
+      "id": "duty.mushrooms.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.mushrooms.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.rocks.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.rocks.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.snow_shoveling.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.snow_shoveling.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.snow.begin"
+    },
+    {
+      "id": "duty.snowball_collection.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.snowball_collection.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.sticks.disable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.sticks.enable",
+      "priority": "medium"
+    },
+    {
+      "id": "duty.storage.full"
+    },
+    {
+      "id": "duty.storage.incompatible"
+    },
+    {
+      "id": "duty.work_cart.assign.failure.away"
+    },
+    {
+      "id": "duty.work_cart.assign.failure.dead"
+    },
+    {
+      "id": "duty.work_cart.assign.failure.juvenile"
+    },
+    {
+      "id": "duty.work_cart.assign.success"
+    },
+    {
+      "id": "duty.work_cart.chore_complete"
+    },
+    {
+      "id": "duty.work_cart.no_jobs"
+    },
+    {
+      "id": "exp.adulthood",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Reward is folded into family.child_adult."
+    },
+    {
+      "id": "exp.duty",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Ordinary EXP remains silent."
+    },
+    {
+      "id": "exp.expedition",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Ordinary EXP remains silent."
+    },
+    {
+      "id": "exp.kill",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Ordinary EXP remains silent."
+    },
+    {
+      "id": "exp.level_gain",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "exp.milestone",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "No second EXP bubble; milestone speech owns the announcement."
+    },
+    {
+      "id": "exp.proximity",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Ordinary EXP remains silent."
+    },
+    {
+      "id": "exp.work_cart",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Ordinary EXP remains silent."
+    },
+    {
+      "id": "expedition.away_no_duties",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "Away companions perform no duties and cannot speak."
+    },
+    {
+      "id": "expedition.cache.full",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "UI/system state only."
+    },
+    {
+      "id": "expedition.cargo_abandoned",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.depart",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.drop_held",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.mia_return",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.mia_return_reaction",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.patrol.prepare",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.recruitment.cache_ready",
+      "priority": "medium"
+    },
+    {
+      "id": "expedition.recruitment.failure",
+      "priority": "medium"
+    },
+    {
+      "id": "expedition.recruitment.success",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.recruitment.wild_claimed",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.return_injured",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.return_late",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.return_missing",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "priority": "critical",
+      "notes": "Absent companions must not speak."
+    },
+    {
+      "id": "expedition.return_mortally_wounded",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.return_normal",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "expedition.return_on_time",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.search.failure",
+      "priority": "medium"
+    },
+    {
+      "id": "expedition.search.recoverable",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.search.success",
+      "priority": "high"
+    },
+    {
+      "id": "expedition.search.unrecoverable",
+      "priority": "high"
+    },
+    {
+      "id": "family.birth",
+      "priority": "high"
+    },
+    {
+      "id": "family.breeding.disable"
+    },
+    {
+      "id": "family.breeding.enable"
+    },
+    {
+      "id": "family.breeding.unsupported",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "notes": "System/UI rejection only."
+    },
+    {
+      "id": "family.child_adult",
+      "priority": "high"
+    },
+    {
+      "id": "family.juvenile.panic",
+      "priority": "high"
+    },
+    {
+      "id": "family.juvenile.parent_missing",
+      "priority": "high"
+    },
+    {
+      "id": "family.juvenile.seek_parent"
+    },
+    {
+      "id": "family.newborn_named",
+      "priority": "high"
+    },
+    {
+      "id": "family.pregnancy.penalty"
+    },
+    {
+      "id": "family.pregnancy.start",
+      "priority": "high"
+    },
+    {
+      "id": "family.proximity_exp"
+    },
+    {
+      "id": "food.eat.dining_board",
+      "priority": "medium"
+    },
+    {
+      "id": "food.find",
+      "priority": "medium"
+    },
+    {
+      "id": "food.hungry",
+      "priority": "medium"
+    },
+    {
+      "id": "food.hungry_getting_food",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "food.hungry_low_food",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "food.hungry_no_food",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "food.leave_after_eating",
+      "priority": "medium"
+    },
+    {
+      "id": "food.owner_above_cutoff",
+      "priority": "medium"
+    },
+    {
+      "id": "food.owner_fed",
+      "priority": "medium"
+    },
+    {
+      "id": "food.owner_fed_hungry",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "food.owner_fed_not_hungry",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "food.owner_invalid",
+      "priority": "medium"
+    },
+    {
+      "id": "food.rejected_full",
+      "priority": "medium"
+    },
+    {
+      "id": "food.starving_no_food",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "food.unreachable_source",
+      "priority": "medium"
+    },
+    {
+      "id": "idle.follow.attention",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "sampled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "idle.follow.close_rest",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "sampled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "idle.follow.easteregg",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "idle.follow.pacing",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "sampled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "idle.follow.restless",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "sampled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "idle.follow.waiting",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "sampled",
+      "priority": "low",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "injury.badly_wounded",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "injury.mortal_warning",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "injury.needs_healing_item",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.anvil",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.bell",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.bellhead_shiver",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.bountiful_ore",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.copper_ore",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.corrupt_sawblade_locust",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.double_headed_drifter",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.first_temporal_storm",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.gearfoot_bowtorn",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.gem",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.gold_ore",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.hidden_boss_01",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.hidden_boss_02",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.iron_ore",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.mature_crop",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.mechanical_piece",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.natural_beehive",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.snow",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.tin_ore",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.trader",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "milestone.zero_temporal_stability",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "once",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "night.no_bed",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "night.outdoor_bed",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "night.woken",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "medium",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "pack.join",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "pack.member.archived"
+    },
+    {
+      "id": "pack.member.located",
+      "priority": "high"
+    },
+    {
+      "id": "perk.one_more_breath",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "perk.refuses_to_die",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recovery.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recovery.complete",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recovery.deathless",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recovery.poultice_received",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recovery.restless",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recruitment.converted_arrival",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recruitment.failure",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "recruitment.success",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request_lifecycle.accepted",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.cancelled",
+      "priority": "medium"
+    },
+    {
+      "id": "request_lifecycle.completed",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request_lifecycle.cooldown",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "priority": "low",
+      "notes": "UI/system state only."
+    },
+    {
+      "id": "request_lifecycle.expired",
+      "priority": "medium"
+    },
+    {
+      "id": "request_lifecycle.failed",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.generated",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.interrupted.command",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.interrupted.danger",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.interrupted.duty",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.interrupted.expedition",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.interrupted.food",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.invalid_target",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "priority": "low",
+      "notes": "UI/system rejection only."
+    },
+    {
+      "id": "request_lifecycle.nearly_complete",
+      "priority": "high"
+    },
+    {
+      "id": "request_lifecycle.pack_point_awarded",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "priority": "low",
+      "notes": "Counter/UI feedback."
+    },
+    {
+      "id": "request_lifecycle.point_awarded",
+      "speechExpected": false,
+      "targetVariants": 0,
+      "priority": "low",
+      "notes": "Counter/UI feedback."
+    },
+    {
+      "id": "request_lifecycle.repeated_after_failure",
+      "priority": "medium"
+    },
+    {
+      "id": "request.anotheranimal",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.cropfield",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.healingitem",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.higherground",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.inside",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.insideuntilmorning",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.largetree",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.luxuryfood",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.mechanicaldevice",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.nearheat",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.nearlight",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.nearownerstill",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.neartamedanimal",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.nearwater",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.nonfoodconsumed",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.nonfoodnearby",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.outsideclear",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.outsideuntilmorning",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.placeablenearby",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.predator",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.regularfood",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.shelter",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.stayaway",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.stayclose",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.trader",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.traveldistance",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "request.walkdistance",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "search_lost.failure",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "search_lost.located",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": false,
+      "notes": "Search resolution exposes success/failure and MIA return, but no separate player-visible located phase."
+    },
+    {
+      "id": "search_lost.success",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "critical",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alarmed_anxious.rightclick",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alarmed_anxious.rightclick.alarmed",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alarmed_anxious.rightclick.anxious",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alarmed_anxious.spontaneous",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alert_rallied.rightclick",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alert_rallied.rightclick.alert",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alert_rallied.rightclick.rallied",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.alert_rallied.spontaneous",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.curious_restless.rightclick",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.curious_restless.rightclick.curious",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.curious_restless.rightclick.restless",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.curious_restless.spontaneous",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.easter_egg",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.mood",
+      "priority": "low",
+      "hooked": true
+    },
+    {
+      "id": "thought.neutral.rightclick",
+      "speechExpected": true,
+      "targetVariants": 8,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.personality",
+      "priority": "low"
+    },
+    {
+      "id": "thought.playful.rightclick",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.playful.rightclick.playful",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.playful.spontaneous",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.resting_content.rightclick",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.resting_content.rightclick.content",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.resting_content.rightclick.resting",
+      "speechExpected": true,
+      "targetVariants": 1,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.resting_content.spontaneous",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.sleepy.rightclick",
+      "speechExpected": true,
+      "targetVariants": 5,
+      "frequency": "event",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "thought.sleepy.spontaneous",
+      "speechExpected": true,
+      "targetVariants": 3,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "weather.clear",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "weather.cold",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "weather.heat",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "weather.rain",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "weather.snow",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "weather.storm_wind",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "No single reliable, non-duplicative transition currently distinguishes this authored work phase."
+    },
+    {
+      "id": "work.chore_finished",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.flower_removal.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.future.digging_cart.assignment",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.digging_cart.finish",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.digging_cart.no_work",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.digging_cart.progress",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.mining_cart.assignment",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.mining_cart.finish",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.mining_cart.no_work",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.mining_cart.progress",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.quarrying_cart.assignment",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.quarrying_cart.finish",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.quarrying_cart.no_work",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.future.quarrying_cart.progress",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "Authored and loadable; the named specialty cart mechanic does not exist yet."
+    },
+    {
+      "id": "work.harvest.berry.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.harvest.crop.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.harvest.mushroom.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.item.pickup",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.item.unreachable",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.abandon_changed_tree",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.abandon_unloaded",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.claim_tree",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.no_storage",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.no_tree",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.recover_restart",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.resume_claim",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.logging.wait_debris",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.mowing.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.no_valid_work",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.snow_clearing.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.snowball_collection.begin",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.storage.full",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.storage.general_to_specific",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.storage.incompatible",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.work_cart.assignment_success",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.work_cart.chore_finished",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.work_cart.loaded",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": true,
+      "notes": "Canonical authored pool loaded and routed by runtime."
+    },
+    {
+      "id": "work.work_cart.no_jobs",
+      "speechExpected": true,
+      "targetVariants": 2,
+      "frequency": "sampled",
+      "priority": "debug",
+      "hooked": false,
+      "notes": "No single reliable, non-duplicative transition currently distinguishes this authored work phase."
+    }
+  ]
+}

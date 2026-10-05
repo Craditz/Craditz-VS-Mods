@@ -1,0 +1,16 @@
+{
+  "type": "code",
+  "name": "Custom Music Radio",
+  "modid": "custommusicradio",
+  "version": "1.2.2",
+  "description": "Experimental physical vintage radio with automatic server-provided positional audio.",
+  "authors": [
+    "Codex"
+  ],
+  "dependencies": {
+    "game": "1.22.7"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

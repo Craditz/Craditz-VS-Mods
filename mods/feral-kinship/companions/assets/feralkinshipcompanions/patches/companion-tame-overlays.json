@@ -1,0 +1,482 @@
+[
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamebear.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamebear.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamebear.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamebear.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamebear.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamebear.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamechicken.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamechicken.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamechicken.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamechicken.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamechicken.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamechicken.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamedeer.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamedeer.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamedeer.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamedeer.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamedeer.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamedeer.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamefox.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamefox.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamefox.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamefox.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamefox.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamefox.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamegazelle.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamegazelle.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamegazelle.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamegazelle.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamegazelle.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamegazelle.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamegoat.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamegoat.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamegoat.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamegoat.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamegoat.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamegoat.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamehare.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamehare.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamehare.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamehare.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamehare.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamehare.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamehyena.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamehyena.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamehyena.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamehyena.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamehyena.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamehyena.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamepig.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamepig.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamepig.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamepig.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamepig.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamepig.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tameraccoon.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tameraccoon.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tameraccoon.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tameraccoon.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tameraccoon.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tameraccoon.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamesheep.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamesheep.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamesheep.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamesheep.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamesheep.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamesheep.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "feralkinship:entities/tamewolf.json"
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/1",
+    "file": "feralkinship:entities/tamewolf.json"
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "feralkinship:entities/tamewolf.json",
+    "value": "FeralKinshipCompanion"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "feralkinship:entities/tamewolf.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/4",
+    "file": "feralkinship:entities/tamewolf.json",
+    "value": {
+      "code": "feralkinshipdamageguard"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "feralkinship:entities/tamewolf.json",
+    "value": {
+      "code": "feralkinshipfoxsocial"
+    }
+  }
+]

@@ -1,0 +1,104 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>FeralKinshipCompanions</AssemblyName>
+    <RootNamespace>FeralKinshipCompanions</RootNamespace>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <VintageStoryPath Condition="'$(VintageStoryPath)' == ''">$(VINTAGE_STORY)</VintageStoryPath>
+  </PropertyGroup>
+
+  <!-- Review candidates are compiled as separate DLLs.  This is deliberately
+       build-time only: the shipped mod has no theme selector or extra runtime
+       setting, and every package remains a single coherent visual direction. -->
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'field-journal'">
+    <DefineConstants>$(DefineConstants);UI_FIELD_JOURNAL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'tactile-pack'">
+    <DefineConstants>$(DefineConstants);UI_TACTILE_PACK</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'vanilla-adjacent'">
+    <DefineConstants>$(DefineConstants);UI_VANILLA_ADJACENT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'warm-journal'">
+    <DefineConstants>$(DefineConstants);UI_WARM_JOURNAL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'editorial'">
+    <DefineConstants>$(DefineConstants);UI_EDITORIAL</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'wildcard-premium'">
+    <DefineConstants>$(DefineConstants);UI_WILDCARD_PREMIUM</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'moonlit-den'">
+    <DefineConstants>$(DefineConstants);UI_MOONLIT_DEN</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'surveyors-blueprint'">
+    <DefineConstants>$(DefineConstants);UI_SURVEYORS_BLUEPRINT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'bone-and-berry'">
+    <DefineConstants>$(DefineConstants);UI_BONE_AND_BERRY</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(FeralKinshipUiVariant)' == 'foxfire-almanac'">
+    <DefineConstants>$(DefineConstants);UI_FOXFIRE_ALMANAC</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SkiaSharp">
+      <HintPath>$(VintageStoryPath)\Lib\SkiaSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VintageStoryPath)\VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>$(VintageStoryPath)\VintagestoryLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(VintageStoryPath)\Mods\VSEssentials.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(VintageStoryPath)\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VintageStoryPath)\Lib\protobuf-net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="cairo-sharp">
+      <HintPath>$(VintageStoryPath)\Lib\cairo-sharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(VintageStoryPath)\Lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VintageStoryPath)\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Development snapshots are preserved under archive but must never be
+         compiled into or copied by the active release project. -->
+    <Compile Remove="archive\**" />
+    <Compile Remove="tests\**" />
+    <None Remove="archive\**" />
+    <Content Remove="archive\**" />
+    <Compile Include="../../../shared/VintageStoryConfigMigration.cs" Link="src\Shared\VintageStoryConfigMigration.cs" />
+    <!-- Shared source keeps the client/server Companion assembly independent
+         of the server-only core assembly while using the exact same resolver. -->
+    <Compile Include="..\src\FeralRaceResolver.cs" Link="src\Shared\FeralRaceResolver.cs" />
+    <Content Include="assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="modinfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>AnimalicaBodyTools</AssemblyName>
+    <RootNamespace>AnimalicaBodyTools</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../../../shared/VintageStoryConfigMigration.cs" Link="Shared\VintageStoryConfigMigration.cs" />
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VintageStoryPath)\VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(VintageStoryPath)\Mods\VSEssentials.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(VintageStoryPath)\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VintageStoryPath)\Lib\protobuf-net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VintageStoryPath)\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="0Harmony" Condition="Exists('$(VintageStoryPath)\Lib\0Harmony.dll')">
+      <HintPath>$(VintageStoryPath)\Lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony" Condition="Exists('$(VintageStoryPath)\0Harmony.dll')">
+      <HintPath>$(VintageStoryPath)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

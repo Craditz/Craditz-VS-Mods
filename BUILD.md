@@ -23,12 +23,16 @@ selected commit; project path changes only accommodate this portable layout.
 
 - `mods/animalica-abilities/ScentTrails.csproj`
 - `mods/animalica/core/src/AnimalicaCore/AnimalicaCore.csproj`
-- `mods/animalica-requests/src/AnimalicaRequests.csproj`
+- `mods/animalica/requests/src/AnimalicaRequests.csproj`
 - `mods/feral-kinship/FeralKinship.csproj`
 - `mods/player-model-access/src/PlayerModelAccess/PlayerModelAccess.csproj`
 - `mods/tamables-critters/TamablesCritters.csproj`
 - `mods/tamables-fotsa/TamablesFotsa.csproj`
 - `mods/hide-name-addon/src/HideNameAddon/HideNameAddon.csproj`
+
+- `mods/animalica-body-tools/src/AnimalicaBodyTools/AnimalicaBodyTools.csproj`
+- `mods/custom-music-radio/CustomMusicRadio.csproj`
+- `mods/feral-kinship/companions/FeralKinshipCompanions.csproj`
 
 ## Limits
 
@@ -47,3 +51,16 @@ Ignore rules are preventive only; review the actual Git index before any upload.
 Current selected assets are text. If approved large binary source is added later,
 use Git LFS for specific asset paths and verify real payloads, never pointer text.
 Keep downloadable release ZIPs as separate release assets.
+
+Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 retain their released embedded
+developer/diagnostic code. Their separate test/checker projects are excluded.
+The approved Companions 0.5.74 local candidate is not this selected release baseline.
+Companions links the retained parent Kinship race resolver and the shared config
+migration source. Its UI constants remain unchanged; no alternate UI build was
+selected. Body Tools uses external game/Harmony references. Radio uses external
+game/protobuf references; its former local experiment-installation fallback was
+replaced only in project configuration with `VINTAGE_STORY`.
+
+All eleven selected code projects compiled against local external references.
+Requests was compiled again after moving under `mods/animalica/requests`.
+The three added folders have withheld content and are not complete mod packages.

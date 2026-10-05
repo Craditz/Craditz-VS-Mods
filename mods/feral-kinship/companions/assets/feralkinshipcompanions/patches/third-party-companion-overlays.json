@@ -1,0 +1,367 @@
+[
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/3",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": "FeralKinshipCompanion",
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "walk", "animation": "Walk", "blendMode": "average" },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "run", "animation": "Run", "blendMode": "average" },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "lie", "animation": "Lie", "blendMode": "average" },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "attack", "animation": "Attack-WithWindUp", "blendMode": "average", "weight": 100 },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "feralkinshipfoxsocial" },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "feralkinshipdamageguard" },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "wolftaming:entities/land/dog-adult.json",
+    "value": { "code": "feralkinshipfoxsocial" },
+    "dependsOn": [{ "modid": "wolftaming" }]
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "cats:entities/land/cat-male.json",
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/3",
+    "file": "cats:entities/land/cat-male.json",
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "cats:entities/land/cat-male.json",
+    "value": "FeralKinshipCompanion",
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "walk", "animation": "Walk", "blendMode": "average" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "run", "animation": "Run", "blendMode": "average" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "lie", "animation": "Lie", "blendMode": "average" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "attack", "animation": "Attack", "blendMode": "average", "weight": 100 },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "feralkinshipfoxsocial" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "feralkinshipdamageguard" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "cats:entities/land/cat-male.json",
+    "value": { "code": "feralkinshipfoxsocial" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "remove",
+    "path": "/client/behaviors/1",
+    "file": "cats:entities/land/cat-female.json",
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "remove",
+    "path": "/server/behaviors/3",
+    "file": "cats:entities/land/cat-female.json",
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "replace",
+    "path": "/client/renderer",
+    "file": "cats:entities/land/cat-female.json",
+    "value": "FeralKinshipCompanion",
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "walk", "animation": "Walk", "blendMode": "average" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "run", "animation": "Run", "blendMode": "average" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "lie", "animation": "Lie", "blendMode": "average" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "attack", "animation": "Attack", "blendMode": "average", "weight": 100 },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "feralkinshipfoxsocial" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "feralkinshipdamageguard" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "cats:entities/land/cat-female.json",
+    "value": { "code": "feralkinshipfoxsocial" },
+    "dependsOn": [{ "modid": "cats" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/rendererByType",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "*-adult-*": "FeralKinshipCompanion", "*": "Shape" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/1/enabledByType",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "*-adult-*": false, "*": true },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/2/enabledByType",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "*-adult-*": false, "*": true },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/attributes/minGenerationToAllowHealing",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": 1000,
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "walk", "animation": "Walk", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "run", "animation": "Run", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "lie", "animation": "Lie", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "attack", "animation": "Attack", "animationSpeed": 2.5, "blendMode": "average", "weight": 100 },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "sniff", "animation": "Sniff", "blendMode": "addaverage" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "dead", "animation": "death", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "wounded-idle", "animation": "sleep", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "wounded-resthead", "animation": "sleep", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "wounded-look", "animation": "sit", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "wounded-spasm", "animation": "hurt", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "wounded-trystand", "animation": "sit", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/animations/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "wounded-stand", "animation": "sit", "blendMode": "average" },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/1",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "feralkinshipfoxsocial", "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "feralkinshiptameguard", "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "mortallywoundable", "remainAliveHours": 24, "healingRequiredForRescue": 0, "whenBelowHealth": 1, "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "mortallywoundable", "remainAliveHours": 24, "healingRequiredForRescue": 0, "whenBelowHealth": 1, "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "feralkinshipdamageguard", "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "feralkinshiptameguard", "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "foxtaming:entities/tamefox.json",
+    "value": { "code": "feralkinshipfoxsocial", "enabledByType": { "*-adult-*": true, "*": false } },
+    "dependsOn": [{ "modid": "foxtaming" }]
+  }
+]

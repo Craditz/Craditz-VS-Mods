@@ -1,0 +1,35 @@
+[
+  {
+    "op": "add",
+    "file": "feralfox:config/customplayermodels/feralfox.json",
+    "path": "/feralfox/ExtraTraits/-",
+    "value": "animalica-animal-bodytools",
+    "dependsOn": [
+      {
+        "modid": "animalicafoxwolfhyena"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "feralhyena:config/customplayermodels/feralhyena.json",
+    "path": "/spottedhyena/ExtraTraits/-",
+    "value": "animalica-animal-bodytools",
+    "dependsOn": [
+      {
+        "modid": "animalicafoxwolfhyena"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "file": "feralwolf:config/customplayermodels/feralwolf.json",
+    "path": "/feralwolf/ExtraTraits/-",
+    "value": "animalica-animal-bodytools",
+    "dependsOn": [
+      {
+        "modid": "animalicafoxwolfhyena"
+      }
+    ]
+  }
+]

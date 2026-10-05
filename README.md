@@ -10,6 +10,13 @@ The Animalica suite stays together under `mods/animalica/`. Other mods have thei
 own folders under `mods/`. Shared runtime compile inputs are under `shared/`.
 Several content assets are withheld while their GitHub redistribution terms are checked;
 those mod folders are incomplete. No license has been applied to this draft.
-Public release and licensing decisions remain pending. Eight selected projects
+Public release and licensing decisions remain pending. Eleven selected projects
 compiled with local external references; complete package reproduction and runtime
 acceptance are not established by that check.
+
+Animalica Requests is grouped under `mods/animalica/requests` beside the Animalica
+packs. Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 are included as source
+subsets with their released embedded developer features preserved. Emotes and
+Druidry are intentionally excluded. Separate tests/checkers and private audits
+are outside this repository. Nineteen baselines are represented by reviewed source
+subsets; complete asset/package reproduction and public licensing remain pending.

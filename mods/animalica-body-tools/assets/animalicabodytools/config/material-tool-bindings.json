@@ -1,0 +1,1969 @@
+[
+  {
+    "family": "clawtips",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "clawtips-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "cultivatingclaws-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "fangcaps-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "harvestingclaws-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "prospectingclaws-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "rendingclaws-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "titanium",
+    "domain": "titaniumtools",
+    "code": "tunnelingclaws-titanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "titanium",
+    "domain": "game",
+    "code": "clawtips-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "titanium",
+    "domain": "game",
+    "code": "cultivatingclaws-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "titanium",
+    "domain": "game",
+    "code": "fangcaps-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "titanium",
+    "domain": "game",
+    "code": "harvestingclaws-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "titanium",
+    "domain": "game",
+    "code": "prospectingclaws-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "titanium",
+    "domain": "game",
+    "code": "rendingclaws-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "titanium",
+    "domain": "game",
+    "code": "tunnelingclaws-obdoltoolstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "clawtips-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "cultivatingclaws-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "fangcaps-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "harvestingclaws-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "prospectingclaws-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "rendingclaws-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "wootsteel",
+    "domain": "game",
+    "code": "tunnelingclaws-wootsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "clawtips-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "cultivatingclaws-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "fangcaps-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "harvestingclaws-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "prospectingclaws-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "rendingclaws-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "uraniumsteel",
+    "domain": "game",
+    "code": "tunnelingclaws-uraniumsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "ferrousuranium",
+    "domain": "game",
+    "code": "clawtips-ferrousuranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "ferrousuranium",
+    "domain": "game",
+    "code": "cultivatingclaws-ferrousuranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "ferrousuranium",
+    "domain": "game",
+    "code": "fangcaps-ferrousuranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "ferrousuranium",
+    "domain": "game",
+    "code": "prospectingclaws-ferrousuranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "clawtips-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "cultivatingclaws-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "fangcaps-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "harvestingclaws-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "prospectingclaws-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "rendingclaws-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "meteoricsteel",
+    "domain": "game",
+    "code": "tunnelingclaws-meteoricsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "blacksteel",
+    "domain": "game",
+    "code": "clawtips-blacksteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "blacksteel",
+    "domain": "game",
+    "code": "cultivatingclaws-blacksteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "blacksteel",
+    "domain": "game",
+    "code": "harvestingclaws-blacksteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "blacksteel",
+    "domain": "game",
+    "code": "prospectingclaws-blacksteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "blacksteel",
+    "domain": "game",
+    "code": "rendingclaws-blacksteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "blacksteel",
+    "domain": "game",
+    "code": "tunnelingclaws-blacksteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "redsteel",
+    "domain": "game",
+    "code": "clawtips-redsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "redsteel",
+    "domain": "game",
+    "code": "cultivatingclaws-redsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "redsteel",
+    "domain": "game",
+    "code": "harvestingclaws-redsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "redsteel",
+    "domain": "game",
+    "code": "prospectingclaws-redsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "redsteel",
+    "domain": "game",
+    "code": "rendingclaws-redsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "redsteel",
+    "domain": "game",
+    "code": "tunnelingclaws-redsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "bluesteel",
+    "domain": "game",
+    "code": "clawtips-bluesteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "bluesteel",
+    "domain": "game",
+    "code": "cultivatingclaws-bluesteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "bluesteel",
+    "domain": "game",
+    "code": "harvestingclaws-bluesteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "bluesteel",
+    "domain": "game",
+    "code": "prospectingclaws-bluesteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "bluesteel",
+    "domain": "game",
+    "code": "rendingclaws-bluesteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "bluesteel",
+    "domain": "game",
+    "code": "tunnelingclaws-bluesteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "clawtips-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "cultivatingclaws-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "fangcaps-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "harvestingclaws-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "prospectingclaws-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "rendingclaws-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "aluminum",
+    "domain": "game",
+    "code": "tunnelingclaws-aluminum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "clawtips-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "cultivatingclaws-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "fangcaps-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "harvestingclaws-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "prospectingclaws-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "rendingclaws-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "tunnelingclaws-aluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "clawtips-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "cultivatingclaws-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "fangcaps-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "harvestingclaws-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "prospectingclaws-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "rendingclaws-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "aluminumbronze",
+    "domain": "game",
+    "code": "tunnelingclaws-realloyaluminumbronze",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "clawtips-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "cultivatingclaws-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "fangcaps-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "harvestingclaws-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "prospectingclaws-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "rendingclaws-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "mythril",
+    "domain": "fm",
+    "code": "tunnelingclaws-mythril",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "clawtips-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "cultivatingclaws-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "fangcaps-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "harvestingclaws-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "prospectingclaws-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "rendingclaws-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "adamantite",
+    "domain": "fm",
+    "code": "tunnelingclaws-adamantite",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "clawtips-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "cultivatingclaws-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "fangcaps-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "harvestingclaws-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "prospectingclaws-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "rendingclaws-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "toolsteel",
+    "domain": "improved_metallurgy",
+    "code": "tunnelingclaws-toolsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "clawtips-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "cultivatingclaws-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "fangcaps-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "harvestingclaws-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "prospectingclaws-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "rendingclaws-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "hadfieldsteel",
+    "domain": "improved_metallurgy",
+    "code": "tunnelingclaws-hadfieldsteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "clawtips-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "cultivatingclaws-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "fangcaps-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "harvestingclaws-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "prospectingclaws-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "rendingclaws-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "inconel",
+    "domain": "improved_metallurgy",
+    "code": "tunnelingclaws-inconel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "clawtips-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "cultivatingclaws-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "fangcaps",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "fangcaps-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "harvestingclaws-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "prospectingclaws-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "rendingclaws-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "highpalladium",
+    "domain": "metalsofmyths",
+    "code": "tunnelingclaws-highpalladium",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "clawtips",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "clawtips-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "cultivatingclaws-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "fangcaps-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "harvestingclaws-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "prospectingclaws-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "rendingclaws-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "titanium",
+    "domain": "metalsofmyths",
+    "code": "tunnelingclaws-metalsofmythstitanium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "clawtips-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "cultivatingclaws-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "fangcaps",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "fangcaps-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "harvestingclaws-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "prospectingclaws-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "rendingclaws-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "mithril",
+    "domain": "metalsofmyths",
+    "code": "tunnelingclaws-metalsofmythsmithril",
+    "weaponFamily": "sword"
+  },
+  {
+    "family": "clawtips",
+    "material": "tin",
+    "domain": "game",
+    "code": "clawtips-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "tin",
+    "domain": "game",
+    "code": "cultivatingclaws-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "tin",
+    "domain": "game",
+    "code": "fangcaps-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "tin",
+    "domain": "game",
+    "code": "harvestingclaws-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "tin",
+    "domain": "game",
+    "code": "prospectingclaws-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "tin",
+    "domain": "game",
+    "code": "rendingclaws-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "tin",
+    "domain": "game",
+    "code": "tunnelingclaws-tin",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "clawtips-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "cultivatingclaws-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "fangcaps-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "harvestingclaws-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "prospectingclaws-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "rendingclaws-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "bismuth",
+    "domain": "game",
+    "code": "tunnelingclaws-bismuth",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "lead",
+    "domain": "game",
+    "code": "clawtips-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "lead",
+    "domain": "game",
+    "code": "cultivatingclaws-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "lead",
+    "domain": "game",
+    "code": "fangcaps-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "lead",
+    "domain": "game",
+    "code": "harvestingclaws-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "lead",
+    "domain": "game",
+    "code": "prospectingclaws-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "lead",
+    "domain": "game",
+    "code": "rendingclaws-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "lead",
+    "domain": "game",
+    "code": "tunnelingclaws-lead",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "zinc",
+    "domain": "game",
+    "code": "clawtips-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "zinc",
+    "domain": "game",
+    "code": "cultivatingclaws-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "zinc",
+    "domain": "game",
+    "code": "fangcaps-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "zinc",
+    "domain": "game",
+    "code": "harvestingclaws-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "zinc",
+    "domain": "game",
+    "code": "prospectingclaws-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "zinc",
+    "domain": "game",
+    "code": "rendingclaws-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "zinc",
+    "domain": "game",
+    "code": "tunnelingclaws-zinc",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "nickel",
+    "domain": "game",
+    "code": "clawtips-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "nickel",
+    "domain": "game",
+    "code": "cultivatingclaws-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "nickel",
+    "domain": "game",
+    "code": "fangcaps-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "nickel",
+    "domain": "game",
+    "code": "harvestingclaws-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "nickel",
+    "domain": "game",
+    "code": "prospectingclaws-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "nickel",
+    "domain": "game",
+    "code": "rendingclaws-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "nickel",
+    "domain": "game",
+    "code": "tunnelingclaws-nickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "clawtips-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "cultivatingclaws-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "fangcaps-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "harvestingclaws-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "prospectingclaws-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "rendingclaws-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "molybdochalkos",
+    "domain": "game",
+    "code": "tunnelingclaws-molybdochalkos",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "brass",
+    "domain": "game",
+    "code": "clawtips-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "brass",
+    "domain": "game",
+    "code": "cultivatingclaws-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "brass",
+    "domain": "game",
+    "code": "fangcaps-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "brass",
+    "domain": "game",
+    "code": "harvestingclaws-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "brass",
+    "domain": "game",
+    "code": "prospectingclaws-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "brass",
+    "domain": "game",
+    "code": "rendingclaws-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "brass",
+    "domain": "game",
+    "code": "tunnelingclaws-brass",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "electrum",
+    "domain": "game",
+    "code": "clawtips-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "electrum",
+    "domain": "game",
+    "code": "cultivatingclaws-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "electrum",
+    "domain": "game",
+    "code": "fangcaps-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "electrum",
+    "domain": "game",
+    "code": "harvestingclaws-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "electrum",
+    "domain": "game",
+    "code": "prospectingclaws-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "electrum",
+    "domain": "game",
+    "code": "rendingclaws-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "electrum",
+    "domain": "game",
+    "code": "tunnelingclaws-electrum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "clawtips-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "cultivatingclaws-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "fangcaps-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "harvestingclaws-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "prospectingclaws-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "rendingclaws-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "cupronickel",
+    "domain": "game",
+    "code": "tunnelingclaws-cupronickel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "clawtips-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "cultivatingclaws-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "fangcaps-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "harvestingclaws-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "prospectingclaws-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "rendingclaws-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "leadsolder",
+    "domain": "game",
+    "code": "tunnelingclaws-leadsolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "clawtips-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "cultivatingclaws-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "fangcaps-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "harvestingclaws-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "prospectingclaws-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "rendingclaws-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "silversolder",
+    "domain": "game",
+    "code": "tunnelingclaws-silversolder",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "chromium",
+    "domain": "game",
+    "code": "clawtips-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "chromium",
+    "domain": "game",
+    "code": "cultivatingclaws-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "chromium",
+    "domain": "game",
+    "code": "fangcaps-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "chromium",
+    "domain": "game",
+    "code": "harvestingclaws-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "chromium",
+    "domain": "game",
+    "code": "prospectingclaws-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "chromium",
+    "domain": "game",
+    "code": "rendingclaws-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "chromium",
+    "domain": "game",
+    "code": "tunnelingclaws-chromium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "clawtips-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "cultivatingclaws-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "fangcaps-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "harvestingclaws-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "prospectingclaws-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "rendingclaws-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "stainlesssteel",
+    "domain": "game",
+    "code": "tunnelingclaws-stainlesssteel",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "platinum",
+    "domain": "game",
+    "code": "clawtips-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "platinum",
+    "domain": "game",
+    "code": "cultivatingclaws-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "platinum",
+    "domain": "game",
+    "code": "fangcaps-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "platinum",
+    "domain": "game",
+    "code": "harvestingclaws-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "platinum",
+    "domain": "game",
+    "code": "prospectingclaws-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "platinum",
+    "domain": "game",
+    "code": "rendingclaws-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "platinum",
+    "domain": "game",
+    "code": "tunnelingclaws-platinum",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "uranium",
+    "domain": "game",
+    "code": "clawtips-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "uranium",
+    "domain": "game",
+    "code": "cultivatingclaws-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "uranium",
+    "domain": "game",
+    "code": "fangcaps-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "uranium",
+    "domain": "game",
+    "code": "harvestingclaws-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "uranium",
+    "domain": "game",
+    "code": "prospectingclaws-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "uranium",
+    "domain": "game",
+    "code": "rendingclaws-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "uranium",
+    "domain": "game",
+    "code": "tunnelingclaws-uranium",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "clawtips-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "cultivatingclaws-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "fangcaps-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "harvestingclaws-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "prospectingclaws-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "rendingclaws-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "lockalloy",
+    "domain": "game",
+    "code": "tunnelingclaws-lockalloy",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "clawtips-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "cultivatingclaws-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "fangcaps-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "harvestingclaws-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "prospectingclaws-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "rendingclaws-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "purplegold",
+    "domain": "game",
+    "code": "tunnelingclaws-purplegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "clawtips-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "cultivatingclaws-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "fangcaps-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "harvestingclaws-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "prospectingclaws-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "rendingclaws-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "bluegold",
+    "domain": "game",
+    "code": "tunnelingclaws-bluegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "clawtips-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "cultivatingclaws-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "fangcaps-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "harvestingclaws-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "prospectingclaws-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "rendingclaws-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "rosegold",
+    "domain": "game",
+    "code": "tunnelingclaws-rosegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "clawtips-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "cultivatingclaws-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "fangcaps-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "harvestingclaws-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "prospectingclaws-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "rendingclaws-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "whitegold",
+    "domain": "game",
+    "code": "tunnelingclaws-whitegold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "clawtips",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "clawtips-blackgold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "cultivatingclaws",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "cultivatingclaws-blackgold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "fangcaps",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "fangcaps-blackgold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "harvestingclaws",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "harvestingclaws-blackgold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "prospectingclaws",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "prospectingclaws-blackgold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "rendingclaws",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "rendingclaws-blackgold",
+    "weaponFamily": "falx"
+  },
+  {
+    "family": "tunnelingclaws",
+    "material": "blackgold",
+    "domain": "game",
+    "code": "tunnelingclaws-blackgold",
+    "weaponFamily": "falx"
+  }
+]
