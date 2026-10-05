@@ -1,0 +1,3242 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-shangtungosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-shangtungosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-colossal-build",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.1,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-shangtungosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-shangtungosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-magnapaulia",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-magnapaulia-selector",
+      "ExtraTraits": [
+        "animalica-physiology-colossal-build",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.9,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-magnapaulia-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-magnapaulia-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-edmontosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-edmontosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.9,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-edmontosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-edmontosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-hadrosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-hadrosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.9,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-hadrosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-hadrosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-saurolophus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-saurolophus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.35,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.187,
+      "MinEyeHeight": 2.512,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.825,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-saurolophus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-saurolophus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-hypacrosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-hypacrosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-hypacrosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-hypacrosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-parasaurolophus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-parasaurolophus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-parasaurolophus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-parasaurolophus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-charonosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-charonosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-charonosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-charonosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-olorotitan",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-olorotitan-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.825,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-olorotitan-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-olorotitan-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-hypsibema",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-hypsibema-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-hypsibema-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-hypsibema-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-gryposaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-gryposaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-gryposaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-gryposaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-lambeosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-lambeosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-lambeosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-lambeosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-brachylophosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-brachylophosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.675,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-brachylophosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-brachylophosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-corythosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-corythosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-corythosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-corythosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-maiasaura",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-maiasaura-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-maiasaura-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-maiasaura-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-barsboldia",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-barsboldia-selector",
+      "ExtraTraits": [
+        "animalica-physiology-colossal-build",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.6,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-barsboldia-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-barsboldia-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-amurosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-amurosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.625,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-amurosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-amurosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-arenysaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-arenysaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.625,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-arenysaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-arenysaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-bonapartesaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-bonapartesaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.625,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-bonapartesaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-bonapartesaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-pararhabdodon",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-pararhabdodon-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.439,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.299,
+      "MinEyeHeight": 2.579,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.625,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-pararhabdodon-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-pararhabdodon-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-telmatosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-telmatosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-telmatosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-telmatosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-secernosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-secernosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-secernosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-secernosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-probactrosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-probactrosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.6,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-probactrosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-probactrosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-acristavus",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-acristavus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.625,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-acristavus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-acristavus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-kazaklambia",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-kazaklambia-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-kazaklambia-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-kazaklambia-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-tanius",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-tanius-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.515
+      ],
+      "EyeHeight": 3.35,
+      "MaxCollisionBox": [
+        1.518,
+        4.394
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.636
+      ],
+      "MaxEyeHeight": 4.187,
+      "MinEyeHeight": 2.512,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.625,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-tanius-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-tanius-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hadrosauroidea-compat.json",
+    "op": "add",
+    "path": "/dinosaur-hadrosauroidea-canardia",
+    "dependsOn": [
+      {
+        "modid": "lopuhadrosauroidea"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-canardia-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.214,
+        3.61
+      ],
+      "EyeHeight": 3.381,
+      "MaxCollisionBox": [
+        1.518,
+        4.513
+      ],
+      "MinCollisionBox": [
+        0.911,
+        2.708
+      ],
+      "MaxEyeHeight": 4.226,
+      "MinEyeHeight": 2.536,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.55,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-hadrosauroidea-canardia-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hadrosauroidea/dinosaur-hadrosauroidea-canardia-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

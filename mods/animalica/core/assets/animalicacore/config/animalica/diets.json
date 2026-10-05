@@ -1,0 +1,121 @@
+{
+  "affinityMultipliers": {
+    "full": 1.0,
+    "good": 0.7,
+    "poor": 0.35
+  },
+  "primaryTraits": [
+    "animalica-diet-normal",
+    "animalica-diet-carnivore",
+    "animalica-diet-obligate-carnivore",
+    "animalica-diet-herbivore",
+    "animalica-diet-frugivore",
+    "animalica-diet-granivore"
+  ],
+  "foods": [
+    {
+      "code": "game:redmeat-raw*",
+      "baseSatiety": 280,
+      "tag": "raw-redmeat",
+      "foodCategory": "Protein"
+    },
+    {
+      "code": "game:poultry-raw*",
+      "baseSatiety": 180,
+      "tag": "raw-poultry",
+      "foodCategory": "Protein"
+    },
+    {
+      "code": "game:bushmeat-raw*",
+      "baseSatiety": 120,
+      "tag": "raw-bushmeat",
+      "foodCategory": "Protein"
+    },
+    {
+      "code": "game:bone*",
+      "baseSatiety": 60,
+      "tag": "bone",
+      "foodCategory": "Dairy"
+    },
+    {
+      "code": "game:drygrass",
+      "baseSatiety": 35,
+      "tag": "graze",
+      "foodCategory": "Vegetable"
+    },
+    {
+      "code": "game:cattailtops",
+      "baseSatiety": 45,
+      "tag": "browse-cattail",
+      "foodCategory": "Vegetable"
+    },
+    {
+      "code": "game:papyrustops",
+      "baseSatiety": 45,
+      "tag": "browse-papyrus",
+      "foodCategory": "Vegetable"
+    },
+    {
+      "code": "game:cattailroot",
+      "baseSatiety": 50,
+      "tag": "root-cattail",
+      "foodCategory": "Vegetable"
+    },
+    {
+      "code": "game:papyrusroot",
+      "baseSatiety": 50,
+      "tag": "root-papyrus",
+      "foodCategory": "Vegetable"
+    },
+    {
+      "code": "game:pressedmash-*",
+      "baseSatiety": 60,
+      "tag": "dry-fruit-mash",
+      "foodCategory": "Fruit",
+      "stackAttributeAtMost": {
+        "attribute": "juiceableLitresLeft",
+        "value": 0
+      }
+    }
+  ],
+  "traitAffinities": {
+    "animalica-diet-frugivore": {
+      "dry-fruit-mash": "full"
+    },
+    "animalica-food-flesh-eater": {
+      "raw-redmeat": "full",
+      "raw-poultry": "full",
+      "raw-bushmeat": "full"
+    },
+    "animalica-food-bone-eater": {
+      "bone": "full"
+    },
+    "animalica-food-bonecrusher": {
+      "bone": "full"
+    },
+    "animalica-food-grazer": {
+      "graze": "full",
+      "browse-cattail": "good",
+      "browse-papyrus": "good",
+      "root-cattail": "poor",
+      "root-papyrus": "poor",
+      "dry-fruit-mash": "good"
+    },
+    "animalica-food-browser": {
+      "graze": "good",
+      "browse-cattail": "full",
+      "browse-papyrus": "full",
+      "root-cattail": "good",
+      "root-papyrus": "good",
+      "dry-fruit-mash": "good"
+    },
+    "animalica-food-rooter": {
+      "graze": "poor",
+      "browse-cattail": "good",
+      "browse-papyrus": "good",
+      "root-cattail": "full",
+      "root-papyrus": "full",
+      "dry-fruit-mash": "good"
+    }
+  }
+}

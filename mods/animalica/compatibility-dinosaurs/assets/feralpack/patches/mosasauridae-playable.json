@@ -1,0 +1,295 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/mosasauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-mosasauridae-mosasaurus",
+    "dependsOn": [
+      {
+        "modid": "lopumosasauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/mosasauridae/dinosaur-mosasauridae-mosasaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-drawback-stranded",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        2.085,
+        2.508
+      ],
+      "EyeHeight": 1.902,
+      "MaxCollisionBox": [
+        2.606,
+        3.135
+      ],
+      "MinCollisionBox": [
+        1.564,
+        1.881
+      ],
+      "MaxEyeHeight": 2.377,
+      "MinEyeHeight": 1.426,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-mosasauridae-mosasaurus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "mosasaurus-adult",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "mosasaurus",
+              "texture": "mosasauridae:entity/mosasaurus-adult"
+            },
+            {
+              "code": "tylosaurus",
+              "texture": "mosasauridae:entity/tylosaurus-adult"
+            },
+            {
+              "code": "plotosaurus",
+              "texture": "mosasauridae:entity/plotosaurus-adult"
+            },
+            {
+              "code": "thalassotitan",
+              "texture": "mosasauridae:entity/thalassotitan-adult"
+            },
+            {
+              "code": "prognathodon",
+              "texture": "mosasauridae:entity/prognathodon-adult"
+            },
+            {
+              "code": "moanasaurus",
+              "texture": "mosasauridae:entity/moanasaurus-adult"
+            },
+            {
+              "code": "kaikaifilu",
+              "texture": "mosasauridae:entity/kaikaifilu-adult"
+            },
+            {
+              "code": "taniwhasaurus",
+              "texture": "mosasauridae:entity/taniwhasaurus-adult"
+            },
+            {
+              "code": "platecarpus",
+              "texture": "mosasauridae:entity/platecarpus-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinosaur-mosasauridae-mosasaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/mosasauridae/dinosaur-mosasauridae-mosasaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "mosasaurus-adult",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/mosasauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-mosasauridae-globidens",
+    "dependsOn": [
+      {
+        "modid": "lopumosasauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/mosasauridae/dinosaur-mosasauridae-globidens-selector",
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-drawback-stranded",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        2.085,
+        2.508
+      ],
+      "EyeHeight": 1.902,
+      "MaxCollisionBox": [
+        2.606,
+        3.135
+      ],
+      "MinCollisionBox": [
+        1.564,
+        1.881
+      ],
+      "MaxEyeHeight": 2.377,
+      "MinEyeHeight": 1.426,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-mosasauridae-globidens-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/mosasauridae/dinosaur-mosasauridae-globidens-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

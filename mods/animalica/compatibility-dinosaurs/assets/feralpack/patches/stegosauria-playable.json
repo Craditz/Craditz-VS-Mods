@@ -1,0 +1,1442 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-stegosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-stegosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.192,
+        2.85
+      ],
+      "EyeHeight": 2.302,
+      "MaxCollisionBox": [
+        1.491,
+        3.562
+      ],
+      "MinCollisionBox": [
+        0.894,
+        2.138
+      ],
+      "MaxEyeHeight": 2.877,
+      "MinEyeHeight": 1.726,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-stegosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-stegosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-miragaia",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-miragaia-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.091,
+        2.764
+      ],
+      "EyeHeight": 2.444,
+      "MaxCollisionBox": [
+        1.364,
+        3.456
+      ],
+      "MinCollisionBox": [
+        0.819,
+        2.073
+      ],
+      "MaxEyeHeight": 3.054,
+      "MinEyeHeight": 1.833,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.7,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-miragaia-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-miragaia-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-dacentrurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-dacentrurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.373,
+        2.897
+      ],
+      "EyeHeight": 2.285,
+      "MaxCollisionBox": [
+        1.716,
+        3.622
+      ],
+      "MinCollisionBox": [
+        1.03,
+        2.173
+      ],
+      "MaxEyeHeight": 2.857,
+      "MinEyeHeight": 1.714,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-dacentrurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-dacentrurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-wuerhosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-wuerhosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.192,
+        2.85
+      ],
+      "EyeHeight": 2.302,
+      "MaxCollisionBox": [
+        1.491,
+        3.562
+      ],
+      "MinCollisionBox": [
+        0.894,
+        2.138
+      ],
+      "MaxEyeHeight": 2.877,
+      "MinEyeHeight": 1.726,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.78,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-wuerhosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-wuerhosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-hesperosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-hesperosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.192,
+        2.85
+      ],
+      "EyeHeight": 2.302,
+      "MaxCollisionBox": [
+        1.491,
+        3.562
+      ],
+      "MinCollisionBox": [
+        0.894,
+        2.138
+      ],
+      "MaxEyeHeight": 2.877,
+      "MinEyeHeight": 1.726,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.72,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-hesperosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-hesperosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-tuojiangosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-tuojiangosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.382,
+        2.85
+      ],
+      "EyeHeight": 2.285,
+      "MaxCollisionBox": [
+        1.727,
+        3.562
+      ],
+      "MinCollisionBox": [
+        1.036,
+        2.138
+      ],
+      "MaxEyeHeight": 2.857,
+      "MinEyeHeight": 1.714,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.72,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-tuojiangosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-tuojiangosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-alcovasaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-alcovasaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.091,
+        2.764
+      ],
+      "EyeHeight": 2.444,
+      "MaxCollisionBox": [
+        1.364,
+        3.456
+      ],
+      "MinCollisionBox": [
+        0.819,
+        2.073
+      ],
+      "MaxEyeHeight": 3.054,
+      "MinEyeHeight": 1.833,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.72,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-alcovasaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-alcovasaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-isaberrysaura",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-isaberrysaura-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.18,
+        2.85
+      ],
+      "EyeHeight": 2.285,
+      "MaxCollisionBox": [
+        1.474,
+        3.562
+      ],
+      "MinCollisionBox": [
+        0.885,
+        2.138
+      ],
+      "MaxEyeHeight": 2.857,
+      "MinEyeHeight": 1.714,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.67,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-isaberrysaura-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-isaberrysaura-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-chungkingosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-chungkingosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.382,
+        2.85
+      ],
+      "EyeHeight": 2.285,
+      "MaxCollisionBox": [
+        1.727,
+        3.562
+      ],
+      "MinCollisionBox": [
+        1.036,
+        2.138
+      ],
+      "MaxEyeHeight": 2.857,
+      "MinEyeHeight": 1.714,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-chungkingosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-chungkingosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-kentrosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-kentrosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.382,
+        2.85
+      ],
+      "EyeHeight": 2.285,
+      "MaxCollisionBox": [
+        1.727,
+        3.562
+      ],
+      "MinCollisionBox": [
+        1.036,
+        2.138
+      ],
+      "MaxEyeHeight": 2.857,
+      "MinEyeHeight": 1.714,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-kentrosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-kentrosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-huayangosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-huayangosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.382,
+        2.85
+      ],
+      "EyeHeight": 2.285,
+      "MaxCollisionBox": [
+        1.727,
+        3.562
+      ],
+      "MinCollisionBox": [
+        1.036,
+        2.138
+      ],
+      "MaxEyeHeight": 2.857,
+      "MinEyeHeight": 1.714,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-huayangosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-huayangosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/stegosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-stegosauria-gigantspinosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopustegosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-gigantspinosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.18,
+        2.85
+      ],
+      "EyeHeight": 2.177,
+      "MaxCollisionBox": [
+        1.474,
+        3.562
+      ],
+      "MinCollisionBox": [
+        0.885,
+        2.138
+      ],
+      "MaxEyeHeight": 2.721,
+      "MinEyeHeight": 1.632,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-stegosauria-gigantspinosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/stegosauria/dinosaur-stegosauria-gigantspinosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.66,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

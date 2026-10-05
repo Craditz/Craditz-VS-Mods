@@ -1,0 +1,1486 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-nandiniabinotata",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-nandiniabinotata-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.298
+      ],
+      "EyeHeight": 0.32,
+      "MaxCollisionBox": [
+        0.575,
+        0.372
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.223
+      ],
+      "MaxEyeHeight": 0.4,
+      "MinEyeHeight": 0.24,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-nandiniabinotata-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-nandiniabinotata-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-arctictisbinturong",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-arctictisbinturong-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.525,
+        0.456
+      ],
+      "EyeHeight": 0.526,
+      "MaxCollisionBox": [
+        0.657,
+        0.57
+      ],
+      "MinCollisionBox": [
+        0.394,
+        0.342
+      ],
+      "MaxEyeHeight": 0.658,
+      "MinEyeHeight": 0.395,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-arctictisbinturong-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-arctictisbinturong-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-arctogalidiatrivirgata",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-arctogalidiatrivirgata-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.291
+      ],
+      "EyeHeight": 0.331,
+      "MaxCollisionBox": [
+        0.575,
+        0.363
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.218
+      ],
+      "MaxEyeHeight": 0.414,
+      "MinEyeHeight": 0.249,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-arctogalidiatrivirgata-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-arctogalidiatrivirgata-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-chrotogaleowstoni",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-chrotogaleowstoni-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.288
+      ],
+      "EyeHeight": 0.325,
+      "MaxCollisionBox": [
+        0.575,
+        0.361
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.216
+      ],
+      "MaxEyeHeight": 0.407,
+      "MinEyeHeight": 0.244,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-chrotogaleowstoni-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-chrotogaleowstoni-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-civettictiscivetta",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-civettictiscivetta-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.496,
+        0.479
+      ],
+      "EyeHeight": 0.553,
+      "MaxCollisionBox": [
+        0.62,
+        0.599
+      ],
+      "MinCollisionBox": [
+        0.372,
+        0.359
+      ],
+      "MaxEyeHeight": 0.691,
+      "MinEyeHeight": 0.414,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-civettictiscivetta-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-civettictiscivetta-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-cynogalebennettii",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-cynogalebennettii-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.291
+      ],
+      "EyeHeight": 0.347,
+      "MaxCollisionBox": [
+        0.574,
+        0.363
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.218
+      ],
+      "MaxEyeHeight": 0.434,
+      "MinEyeHeight": 0.26,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-cynogalebennettii-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-cynogalebennettii-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-diplogalehosei",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-diplogalehosei-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.288
+      ],
+      "EyeHeight": 0.325,
+      "MaxCollisionBox": [
+        0.575,
+        0.361
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.216
+      ],
+      "MaxEyeHeight": 0.407,
+      "MinEyeHeight": 0.244,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-diplogalehosei-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-diplogalehosei-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-genettagenetta",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-genettagenetta-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.288
+      ],
+      "EyeHeight": 0.329,
+      "MaxCollisionBox": [
+        0.575,
+        0.361
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.216
+      ],
+      "MaxEyeHeight": 0.411,
+      "MinEyeHeight": 0.246,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-genettagenetta-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "ethiopian-genet",
+              "texture": "viverridae:entity/viverridae/genettaabyssinica-adult"
+            },
+            {
+              "code": "miombo-genet",
+              "texture": "viverridae:entity/viverridae/genettaangolensis-adult"
+            },
+            {
+              "code": "bourlon-s-genet",
+              "texture": "viverridae:entity/viverridae/genettabourloni-adult"
+            },
+            {
+              "code": "crested-servaline-genet",
+              "texture": "viverridae:entity/viverridae/genettacristata-adult"
+            },
+            {
+              "code": "common-genet",
+              "texture": "viverridae:entity/viverridae/genettagenetta-adult"
+            },
+            {
+              "code": "johnston-s-genet",
+              "texture": "viverridae:entity/viverridae/genettajohnstoni-adult"
+            },
+            {
+              "code": "rusty-spotted-genet",
+              "texture": "viverridae:entity/viverridae/genettamaculata-adult"
+            },
+            {
+              "code": "pardine-genet",
+              "texture": "viverridae:entity/viverridae/genettapardina-adult"
+            },
+            {
+              "code": "aquatic-genet",
+              "texture": "viverridae:entity/viverridae/genettapiscivora-adult"
+            },
+            {
+              "code": "cypriot-genet",
+              "texture": "viverridae:entity/viverridae/genettaplesictoides-adult"
+            },
+            {
+              "code": "king-genet",
+              "texture": "viverridae:entity/viverridae/genettapoensis-adult"
+            },
+            {
+              "code": "servaline-genet",
+              "texture": "viverridae:entity/viverridae/genettaservalina-adult"
+            },
+            {
+              "code": "hausa-genet",
+              "texture": "viverridae:entity/viverridae/genettathierryi-adult"
+            },
+            {
+              "code": "cape-genet",
+              "texture": "viverridae:entity/viverridae/genettatigrina-adult"
+            },
+            {
+              "code": "giant-forest-genet",
+              "texture": "viverridae:entity/viverridae/genettavictoriae-adult"
+            }
+          ]
+        },
+        {
+          "code": "viverridae-genettagenetta-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-genettagenetta-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-paradoxurushermaphroditus",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-paradoxurushermaphroditus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.291
+      ],
+      "EyeHeight": 0.337,
+      "MaxCollisionBox": [
+        0.575,
+        0.363
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.218
+      ],
+      "MaxEyeHeight": 0.421,
+      "MinEyeHeight": 0.253,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-paradoxurushermaphroditus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "banded-palm-civet",
+              "texture": "viverridae:entity/viverridae/hemigalusderbyanus-adult"
+            },
+            {
+              "code": "sulawesi-palm-civet",
+              "texture": "viverridae:entity/viverridae/macrogalidiamusschenbroekii-adult"
+            },
+            {
+              "code": "masked-palm-civet",
+              "texture": "viverridae:entity/viverridae/pagumalarvata-adult"
+            },
+            {
+              "code": "asian-palm-civet",
+              "texture": "viverridae:entity/viverridae/paradoxurushermaphroditus-adult"
+            },
+            {
+              "code": "brown-palm-civet",
+              "texture": "viverridae:entity/viverridae/paradoxurusjerdoni-adult"
+            },
+            {
+              "code": "golden-palm-civet",
+              "texture": "viverridae:entity/viverridae/paradoxuruszeylonensis-adult"
+            }
+          ]
+        },
+        {
+          "code": "viverridae-paradoxurushermaphroditus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-paradoxurushermaphroditus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-poianaleightoni",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-poianaleightoni-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.435,
+        0.168
+      ],
+      "EyeHeight": 0.2,
+      "MaxCollisionBox": [
+        0.544,
+        0.21
+      ],
+      "MinCollisionBox": [
+        0.327,
+        0.126
+      ],
+      "MaxEyeHeight": 0.249,
+      "MinEyeHeight": 0.15,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.96,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-poianaleightoni-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "west-african-oyan",
+              "texture": "viverridae:entity/viverridae/poianaleightoni-adult"
+            },
+            {
+              "code": "central-african-oyan",
+              "texture": "viverridae:entity/viverridae/poianarichardsonii-adult"
+            }
+          ]
+        },
+        {
+          "code": "viverridae-poianaleightoni-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-poianaleightoni-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/viverridae-compat.json",
+    "op": "add",
+    "path": "/viverridae-viverratangalunga",
+    "dependsOn": [
+      {
+        "modid": "viverridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/viverridae/viverridae-viverratangalunga-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.46,
+        0.311
+      ],
+      "EyeHeight": 0.321,
+      "MaxCollisionBox": [
+        0.575,
+        0.389
+      ],
+      "MinCollisionBox": [
+        0.345,
+        0.234
+      ],
+      "MaxEyeHeight": 0.401,
+      "MinEyeHeight": 0.241,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "viverridae-viverratangalunga-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "malabar-large-spotted-civet",
+              "texture": "viverridae:entity/viverridae/viverracivettina-adult"
+            },
+            {
+              "code": "large-spotted-civet",
+              "texture": "viverridae:entity/viverridae/viverramegaspila-adult"
+            },
+            {
+              "code": "malayan-civet",
+              "texture": "viverridae:entity/viverridae/viverratangalunga-adult"
+            },
+            {
+              "code": "large-indian-civet",
+              "texture": "viverridae:entity/viverridae/viverrazibetha-adult"
+            },
+            {
+              "code": "small-indian-civet",
+              "texture": "viverridae:entity/viverridae/viverriculaindica-adult"
+            }
+          ]
+        },
+        {
+          "code": "viverridae-viverratangalunga-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/viverridae/viverridae-viverratangalunga-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.44,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

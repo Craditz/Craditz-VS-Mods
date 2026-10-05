@@ -1,0 +1,4710 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-aenocyon-dirus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-aenocyon-dirus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-predator-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.561,
+        1.014
+      ],
+      "EyeHeight": 0.913,
+      "MaxCollisionBox": [
+        0.701,
+        1.268
+      ],
+      "MinCollisionBox": [
+        0.421,
+        0.761
+      ],
+      "MaxEyeHeight": 1.141,
+      "MinEyeHeight": 0.685,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.94,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-aenocyon-dirus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-aenocyon-dirus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-aureus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-aureus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.467,
+        0.482
+      ],
+      "EyeHeight": 0.434,
+      "MaxCollisionBox": [
+        0.584,
+        0.602
+      ],
+      "MinCollisionBox": [
+        0.35,
+        0.361
+      ],
+      "MaxEyeHeight": 0.542,
+      "MinEyeHeight": 0.325,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-aureus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-aureus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-latrans",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-latrans-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.503,
+        0.615
+      ],
+      "EyeHeight": 0.553,
+      "MaxCollisionBox": [
+        0.629,
+        0.768
+      ],
+      "MinCollisionBox": [
+        0.377,
+        0.461
+      ],
+      "MaxEyeHeight": 0.691,
+      "MinEyeHeight": 0.415,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.06,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-latrans-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-latrans-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-lupastor",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-lupastor-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.467,
+        0.482
+      ],
+      "EyeHeight": 0.434,
+      "MaxCollisionBox": [
+        0.584,
+        0.602
+      ],
+      "MinCollisionBox": [
+        0.35,
+        0.361
+      ],
+      "MaxEyeHeight": 0.542,
+      "MinEyeHeight": 0.325,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.8,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-lupastor-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-lupastor-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-lupus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-lupus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.561,
+        0.967
+      ],
+      "EyeHeight": 0.87,
+      "MaxCollisionBox": [
+        0.701,
+        1.208
+      ],
+      "MinCollisionBox": [
+        0.421,
+        0.725
+      ],
+      "MaxEyeHeight": 1.087,
+      "MinEyeHeight": 0.652,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.02,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-lupus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "domestic-dog",
+              "texture": "caninae:entity/animal/mammal/canis/familiaris-adult"
+            },
+            {
+              "code": "gray-wolf",
+              "texture": "caninae:entity/animal/mammal/canis/lupus-adult"
+            },
+            {
+              "code": "arctic-wolf",
+              "texture": "caninae:entity/animal/mammal/canis/lupusarctos-adult"
+            },
+            {
+              "code": "timber-wolf",
+              "texture": "caninae:entity/animal/mammal/canis/lycaon-adult"
+            }
+          ]
+        },
+        {
+          "code": "caninae-canis-lupus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-lupus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-lupusdingo",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-lupusdingo-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.503,
+        0.615
+      ],
+      "EyeHeight": 0.553,
+      "MaxCollisionBox": [
+        0.629,
+        0.768
+      ],
+      "MinCollisionBox": [
+        0.377,
+        0.461
+      ],
+      "MaxEyeHeight": 0.691,
+      "MinEyeHeight": 0.415,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.04,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-lupusdingo-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-lupusdingo-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-rufus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-rufus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.503,
+        0.638
+      ],
+      "EyeHeight": 0.575,
+      "MaxCollisionBox": [
+        0.629,
+        0.798
+      ],
+      "MinCollisionBox": [
+        0.377,
+        0.479
+      ],
+      "MaxEyeHeight": 0.718,
+      "MinEyeHeight": 0.431,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.03,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-rufus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-rufus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-canis-simensis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-canis-simensis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.503,
+        0.638
+      ],
+      "EyeHeight": 0.575,
+      "MaxCollisionBox": [
+        0.629,
+        0.798
+      ],
+      "MinCollisionBox": [
+        0.377,
+        0.479
+      ],
+      "MaxEyeHeight": 0.718,
+      "MinEyeHeight": 0.431,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.97,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-canis-simensis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-canis-simensis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-cuon-alpinus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-cuon-alpinus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.467,
+        0.516
+      ],
+      "EyeHeight": 0.465,
+      "MaxCollisionBox": [
+        0.584,
+        0.645
+      ],
+      "MinCollisionBox": [
+        0.35,
+        0.387
+      ],
+      "MaxEyeHeight": 0.581,
+      "MinEyeHeight": 0.348,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.07,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-cuon-alpinus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "dhole",
+              "texture": "caninae:entity/animal/mammal/cuon/alpinus-adult"
+            },
+            {
+              "code": "sardinian-dhole",
+              "texture": "caninae:entity/animal/mammal/cynotherium/sardous-adult"
+            }
+          ]
+        },
+        {
+          "code": "caninae-cuon-alpinus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-cuon-alpinus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-lupulella-mesomelas",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-lupulella-mesomelas-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.462,
+        0.54
+      ],
+      "EyeHeight": 0.486,
+      "MaxCollisionBox": [
+        0.577,
+        0.675
+      ],
+      "MinCollisionBox": [
+        0.346,
+        0.405
+      ],
+      "MaxEyeHeight": 0.607,
+      "MinEyeHeight": 0.364,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.88,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-lupulella-mesomelas-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "side-striped-jackal",
+              "texture": "caninae:entity/animal/mammal/lupulella/adusta-adult"
+            },
+            {
+              "code": "black-backed-jackal",
+              "texture": "caninae:entity/animal/mammal/lupulella/mesomelas-adult"
+            }
+          ]
+        },
+        {
+          "code": "caninae-lupulella-mesomelas-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-lupulella-mesomelas-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-lycaon-pictus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-lycaon-pictus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.551,
+        0.943
+      ],
+      "EyeHeight": 0.849,
+      "MaxCollisionBox": [
+        0.689,
+        1.179
+      ],
+      "MinCollisionBox": [
+        0.414,
+        0.707
+      ],
+      "MaxEyeHeight": 1.061,
+      "MinEyeHeight": 0.636,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.8,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-lycaon-pictus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-lycaon-pictus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-atelocynus-microtis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-atelocynus-microtis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.476,
+        0.443
+      ],
+      "EyeHeight": 0.399,
+      "MaxCollisionBox": [
+        0.596,
+        0.554
+      ],
+      "MinCollisionBox": [
+        0.357,
+        0.333
+      ],
+      "MaxEyeHeight": 0.499,
+      "MinEyeHeight": 0.299,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.64,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-atelocynus-microtis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-atelocynus-microtis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-cerdocyon-thous",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-cerdocyon-thous-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.476,
+        0.443
+      ],
+      "EyeHeight": 0.399,
+      "MaxCollisionBox": [
+        0.596,
+        0.554
+      ],
+      "MinCollisionBox": [
+        0.357,
+        0.333
+      ],
+      "MaxEyeHeight": 0.499,
+      "MinEyeHeight": 0.299,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.89,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-cerdocyon-thous-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-cerdocyon-thous-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-chrysocyon-brachyurus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-chrysocyon-brachyurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.52,
+        1.019
+      ],
+      "EyeHeight": 0.917,
+      "MaxCollisionBox": [
+        0.65,
+        1.274
+      ],
+      "MinCollisionBox": [
+        0.39,
+        0.764
+      ],
+      "MaxEyeHeight": 1.146,
+      "MinEyeHeight": 0.688,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.87,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-chrysocyon-brachyurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-chrysocyon-brachyurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-dusicyon-australis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-dusicyon-australis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.489,
+        0.569
+      ],
+      "EyeHeight": 0.512,
+      "MaxCollisionBox": [
+        0.611,
+        0.711
+      ],
+      "MinCollisionBox": [
+        0.366,
+        0.427
+      ],
+      "MaxEyeHeight": 0.64,
+      "MinEyeHeight": 0.384,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.64,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-dusicyon-australis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-dusicyon-australis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-dusicyon-avus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-dusicyon-avus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.503,
+        0.678
+      ],
+      "EyeHeight": 0.61,
+      "MaxCollisionBox": [
+        0.629,
+        0.847
+      ],
+      "MinCollisionBox": [
+        0.377,
+        0.508
+      ],
+      "MaxEyeHeight": 0.762,
+      "MinEyeHeight": 0.457,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.88,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-dusicyon-avus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-dusicyon-avus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-lycalopex-culpaeus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-lycalopex-culpaeus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.481,
+        0.538
+      ],
+      "EyeHeight": 0.484,
+      "MaxCollisionBox": [
+        0.602,
+        0.673
+      ],
+      "MinCollisionBox": [
+        0.361,
+        0.404
+      ],
+      "MaxEyeHeight": 0.605,
+      "MinEyeHeight": 0.363,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.82,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-lycalopex-culpaeus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "culpeo",
+              "texture": "caninae:entity/animal/mammal/lycalopex/culpaeus-adult"
+            },
+            {
+              "code": "patagonian-fox",
+              "texture": "caninae:entity/animal/mammal/lycalopex/griseus-adult"
+            }
+          ]
+        },
+        {
+          "code": "caninae-lycalopex-culpaeus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-lycalopex-culpaeus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-lycalopex-fulvipes",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-lycalopex-fulvipes-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.467,
+        0.416
+      ],
+      "EyeHeight": 0.375,
+      "MaxCollisionBox": [
+        0.584,
+        0.52
+      ],
+      "MinCollisionBox": [
+        0.35,
+        0.312
+      ],
+      "MaxEyeHeight": 0.468,
+      "MinEyeHeight": 0.281,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.68,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-lycalopex-fulvipes-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-lycalopex-fulvipes-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-lycalopex-gymnocercus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-lycalopex-gymnocercus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.481,
+        0.538
+      ],
+      "EyeHeight": 0.484,
+      "MaxCollisionBox": [
+        0.602,
+        0.673
+      ],
+      "MinCollisionBox": [
+        0.361,
+        0.404
+      ],
+      "MaxEyeHeight": 0.605,
+      "MinEyeHeight": 0.363,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.82,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-lycalopex-gymnocercus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-lycalopex-gymnocercus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-lycalopex-sechurae",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-lycalopex-sechurae-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.481,
+        0.538
+      ],
+      "EyeHeight": 0.484,
+      "MaxCollisionBox": [
+        0.602,
+        0.673
+      ],
+      "MinCollisionBox": [
+        0.361,
+        0.404
+      ],
+      "MaxEyeHeight": 0.605,
+      "MinEyeHeight": 0.363,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.66,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-lycalopex-sechurae-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "sechuran-fox",
+              "texture": "caninae:entity/animal/mammal/lycalopex/sechurae-adult"
+            },
+            {
+              "code": "hoary-fox",
+              "texture": "caninae:entity/animal/mammal/lycalopex/vetulus-adult"
+            }
+          ]
+        },
+        {
+          "code": "caninae-lycalopex-sechurae-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-lycalopex-sechurae-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-speothos-pacivorus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-speothos-pacivorus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.521,
+        0.591
+      ],
+      "EyeHeight": 0.532,
+      "MaxCollisionBox": [
+        0.652,
+        0.739
+      ],
+      "MinCollisionBox": [
+        0.391,
+        0.444
+      ],
+      "MaxEyeHeight": 0.665,
+      "MinEyeHeight": 0.399,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-speothos-pacivorus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-speothos-pacivorus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-speothos-venaticus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-speothos-venaticus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.478,
+        0.394
+      ],
+      "EyeHeight": 0.355,
+      "MaxCollisionBox": [
+        0.597,
+        0.493
+      ],
+      "MinCollisionBox": [
+        0.358,
+        0.296
+      ],
+      "MaxEyeHeight": 0.444,
+      "MinEyeHeight": 0.266,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-speothos-venaticus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-speothos-venaticus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-urocyon-cinereoargenteus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-urocyon-cinereoargenteus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.476,
+        0.443
+      ],
+      "EyeHeight": 0.399,
+      "MaxCollisionBox": [
+        0.596,
+        0.554
+      ],
+      "MinCollisionBox": [
+        0.357,
+        0.333
+      ],
+      "MaxEyeHeight": 0.499,
+      "MinEyeHeight": 0.299,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.92,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-urocyon-cinereoargenteus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-urocyon-cinereoargenteus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-urocyon-littoralis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-urocyon-littoralis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.476,
+        0.443
+      ],
+      "EyeHeight": 0.399,
+      "MaxCollisionBox": [
+        0.596,
+        0.554
+      ],
+      "MinCollisionBox": [
+        0.357,
+        0.333
+      ],
+      "MaxEyeHeight": 0.499,
+      "MinEyeHeight": 0.299,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.7,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-urocyon-littoralis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-urocyon-littoralis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-nyctereutes-procyonoides",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-nyctereutes-procyonoides-selector",
+      "ExtraTraits": [
+        "animalica-physiology-nimble-scavenger",
+        "animalica-drawback-small-build",
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.446,
+        0.494
+      ],
+      "EyeHeight": 0.444,
+      "MaxCollisionBox": [
+        0.557,
+        0.617
+      ],
+      "MinCollisionBox": [
+        0.334,
+        0.37
+      ],
+      "MaxEyeHeight": 0.555,
+      "MinEyeHeight": 0.333,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.72,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-nyctereutes-procyonoides-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-nyctereutes-procyonoides-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-nyctereutes-viverrinus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-nyctereutes-viverrinus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-nimble-scavenger",
+        "animalica-drawback-small-build",
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.446,
+        0.494
+      ],
+      "EyeHeight": 0.444,
+      "MaxCollisionBox": [
+        0.557,
+        0.617
+      ],
+      "MinCollisionBox": [
+        0.334,
+        0.37
+      ],
+      "MaxEyeHeight": 0.555,
+      "MinEyeHeight": 0.333,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.57,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-nyctereutes-viverrinus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-nyctereutes-viverrinus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-otocyon-megalotis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-otocyon-megalotis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.457,
+        0.447
+      ],
+      "EyeHeight": 0.402,
+      "MaxCollisionBox": [
+        0.571,
+        0.559
+      ],
+      "MinCollisionBox": [
+        0.343,
+        0.335
+      ],
+      "MaxEyeHeight": 0.503,
+      "MinEyeHeight": 0.302,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.87,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-otocyon-megalotis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-otocyon-megalotis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-bengalensis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-bengalensis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.457,
+        0.435
+      ],
+      "EyeHeight": 0.392,
+      "MaxCollisionBox": [
+        0.571,
+        0.544
+      ],
+      "MinCollisionBox": [
+        0.343,
+        0.326
+      ],
+      "MaxEyeHeight": 0.49,
+      "MinEyeHeight": 0.294,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-bengalensis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-bengalensis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-cana",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-cana-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.429,
+        0.434
+      ],
+      "EyeHeight": 0.39,
+      "MaxCollisionBox": [
+        0.536,
+        0.542
+      ],
+      "MinCollisionBox": [
+        0.322,
+        0.325
+      ],
+      "MaxEyeHeight": 0.488,
+      "MinEyeHeight": 0.293,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-cana-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-cana-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-chama",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-chama-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.435,
+        0.434
+      ],
+      "EyeHeight": 0.39,
+      "MaxCollisionBox": [
+        0.544,
+        0.542
+      ],
+      "MinCollisionBox": [
+        0.326,
+        0.325
+      ],
+      "MaxEyeHeight": 0.488,
+      "MinEyeHeight": 0.293,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.76,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-chama-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-chama-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-corsac",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-corsac-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.467,
+        0.435
+      ],
+      "EyeHeight": 0.392,
+      "MaxCollisionBox": [
+        0.584,
+        0.544
+      ],
+      "MinCollisionBox": [
+        0.35,
+        0.326
+      ],
+      "MaxEyeHeight": 0.49,
+      "MinEyeHeight": 0.294,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.76,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-corsac-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-corsac-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-ferrilata",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-ferrilata-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.472,
+        0.444
+      ],
+      "EyeHeight": 0.4,
+      "MaxCollisionBox": [
+        0.59,
+        0.555
+      ],
+      "MinCollisionBox": [
+        0.354,
+        0.333
+      ],
+      "MaxEyeHeight": 0.5,
+      "MinEyeHeight": 0.3,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.76,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-ferrilata-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-ferrilata-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-lagopus",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-lagopus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.474,
+        0.435
+      ],
+      "EyeHeight": 0.392,
+      "MaxCollisionBox": [
+        0.593,
+        0.544
+      ],
+      "MinCollisionBox": [
+        0.356,
+        0.326
+      ],
+      "MaxEyeHeight": 0.49,
+      "MinEyeHeight": 0.294,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-lagopus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-lagopus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-macrotis",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-macrotis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.457,
+        0.435
+      ],
+      "EyeHeight": 0.392,
+      "MaxCollisionBox": [
+        0.571,
+        0.544
+      ],
+      "MinCollisionBox": [
+        0.343,
+        0.326
+      ],
+      "MaxEyeHeight": 0.49,
+      "MinEyeHeight": 0.294,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-macrotis-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "kit-fox",
+              "texture": "caninae:entity/animal/mammal/vulpes/macrotis-adult"
+            },
+            {
+              "code": "pale-fox",
+              "texture": "caninae:entity/animal/mammal/vulpes/pallida-adult"
+            }
+          ]
+        },
+        {
+          "code": "caninae-vulpes-macrotis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-macrotis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-rueppellii",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-rueppellii-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.429,
+        0.434
+      ],
+      "EyeHeight": 0.39,
+      "MaxCollisionBox": [
+        0.536,
+        0.542
+      ],
+      "MinCollisionBox": [
+        0.322,
+        0.325
+      ],
+      "MaxEyeHeight": 0.488,
+      "MinEyeHeight": 0.293,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-rueppellii-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-rueppellii-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-velox",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-velox-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.457,
+        0.435
+      ],
+      "EyeHeight": 0.392,
+      "MaxCollisionBox": [
+        0.571,
+        0.544
+      ],
+      "MinCollisionBox": [
+        0.343,
+        0.326
+      ],
+      "MaxEyeHeight": 0.49,
+      "MinEyeHeight": 0.294,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.69,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-velox-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-velox-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-vulpes",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-vulpes-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.467,
+        0.482
+      ],
+      "EyeHeight": 0.434,
+      "MaxCollisionBox": [
+        0.584,
+        0.602
+      ],
+      "MinCollisionBox": [
+        0.35,
+        0.361
+      ],
+      "MaxEyeHeight": 0.542,
+      "MinEyeHeight": 0.325,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-vulpes-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-vulpes-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/caninae-compat.json",
+    "op": "add",
+    "path": "/caninae-vulpes-zerda",
+    "dependsOn": [
+      {
+        "modid": "caninae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/caninae/caninae-vulpes-zerda-selector",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.457,
+        0.463
+      ],
+      "EyeHeight": 0.417,
+      "MaxCollisionBox": [
+        0.571,
+        0.579
+      ],
+      "MinCollisionBox": [
+        0.343,
+        0.347
+      ],
+      "MaxEyeHeight": 0.521,
+      "MinEyeHeight": 0.313,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "caninae-vulpes-zerda-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/caninae/caninae-vulpes-zerda-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

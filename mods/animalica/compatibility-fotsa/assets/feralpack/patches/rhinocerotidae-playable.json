@@ -1,0 +1,623 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/rhinocerotidae-compat.json",
+    "op": "add",
+    "path": "/rhinocerotidae-ceratotheriumsimum",
+    "dependsOn": [
+      {
+        "modid": "rhinocerotidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-ceratotheriumsimum-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.839,
+        1.655
+      ],
+      "EyeHeight": 1.95,
+      "MaxCollisionBox": [
+        1.049,
+        2.069
+      ],
+      "MinCollisionBox": [
+        0.629,
+        1.241
+      ],
+      "MaxEyeHeight": 2.437,
+      "MinEyeHeight": 1.462,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "rhinocerotidae-ceratotheriumsimum-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-ceratotheriumsimum-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/rhinocerotidae-compat.json",
+    "op": "add",
+    "path": "/rhinocerotidae-coelodontaantiquitatis",
+    "dependsOn": [
+      {
+        "modid": "rhinocerotidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-coelodontaantiquitatis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.839,
+        1.515
+      ],
+      "EyeHeight": 1.658,
+      "MaxCollisionBox": [
+        1.049,
+        1.894
+      ],
+      "MinCollisionBox": [
+        0.629,
+        1.136
+      ],
+      "MaxEyeHeight": 2.073,
+      "MinEyeHeight": 1.244,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "rhinocerotidae-coelodontaantiquitatis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-coelodontaantiquitatis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/rhinocerotidae-compat.json",
+    "op": "add",
+    "path": "/rhinocerotidae-dicerorhinussumatrensis",
+    "dependsOn": [
+      {
+        "modid": "rhinocerotidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-dicerorhinussumatrensis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.701,
+        1.328
+      ],
+      "EyeHeight": 1.613,
+      "MaxCollisionBox": [
+        0.877,
+        1.661
+      ],
+      "MinCollisionBox": [
+        0.526,
+        0.996
+      ],
+      "MaxEyeHeight": 2.016,
+      "MinEyeHeight": 1.21,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "rhinocerotidae-dicerorhinussumatrensis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-dicerorhinussumatrensis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/rhinocerotidae-compat.json",
+    "op": "add",
+    "path": "/rhinocerotidae-dicerosbicornis",
+    "dependsOn": [
+      {
+        "modid": "rhinocerotidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-dicerosbicornis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.791,
+        1.55
+      ],
+      "EyeHeight": 1.835,
+      "MaxCollisionBox": [
+        0.989,
+        1.938
+      ],
+      "MinCollisionBox": [
+        0.593,
+        1.163
+      ],
+      "MaxEyeHeight": 2.294,
+      "MinEyeHeight": 1.377,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "rhinocerotidae-dicerosbicornis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-dicerosbicornis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/rhinocerotidae-compat.json",
+    "op": "add",
+    "path": "/rhinocerotidae-rhinocerosunicornis",
+    "dependsOn": [
+      {
+        "modid": "rhinocerotidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-rhinocerosunicornis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.793,
+        1.441
+      ],
+      "EyeHeight": 1.776,
+      "MaxCollisionBox": [
+        0.992,
+        1.801
+      ],
+      "MinCollisionBox": [
+        0.595,
+        1.081
+      ],
+      "MaxEyeHeight": 2.22,
+      "MinEyeHeight": 1.332,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.1,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "rhinocerotidae-rhinocerosunicornis-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "javan-rhinoceros",
+              "texture": "rhinocerotidae:entity/rhinocerotidae/rhinocerossondaicus-adult"
+            },
+            {
+              "code": "indian-rhinoceros",
+              "texture": "rhinocerotidae:entity/rhinocerotidae/rhinocerosunicornis-adult"
+            }
+          ]
+        },
+        {
+          "code": "rhinocerotidae-rhinocerosunicornis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/rhinocerotidae/rhinocerotidae-rhinocerosunicornis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

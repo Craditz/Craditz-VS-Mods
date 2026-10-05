@@ -1,0 +1,1002 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-deinocheirus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-deinocheirus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-large-grazer",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.524,
+        3.004
+      ],
+      "EyeHeight": 0.567,
+      "MaxCollisionBox": [
+        1.905,
+        3.755
+      ],
+      "MinCollisionBox": [
+        1.143,
+        2.253
+      ],
+      "MaxEyeHeight": 0.708,
+      "MinEyeHeight": 0.425,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-deinocheirus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-deinocheirus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-gallimimus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-gallimimus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.475,
+        2.873
+      ],
+      "EyeHeight": 0.815,
+      "MaxCollisionBox": [
+        1.844,
+        3.591
+      ],
+      "MinCollisionBox": [
+        1.107,
+        2.154
+      ],
+      "MaxEyeHeight": 1.019,
+      "MinEyeHeight": 0.612,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.6,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-gallimimus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-gallimimus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-garudimimus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-garudimimus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.379,
+        2.676
+      ],
+      "EyeHeight": 0.931,
+      "MaxCollisionBox": [
+        1.723,
+        3.345
+      ],
+      "MinCollisionBox": [
+        1.034,
+        2.007
+      ],
+      "MaxEyeHeight": 1.164,
+      "MinEyeHeight": 0.698,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-garudimimus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-garudimimus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-paraxenisaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-paraxenisaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.524,
+        3.004
+      ],
+      "EyeHeight": 0.567,
+      "MaxCollisionBox": [
+        1.905,
+        3.755
+      ],
+      "MinCollisionBox": [
+        1.143,
+        2.253
+      ],
+      "MaxEyeHeight": 0.708,
+      "MinEyeHeight": 0.425,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.7,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-paraxenisaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-paraxenisaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-ornithomimus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-ornithomimus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.475,
+        2.873
+      ],
+      "EyeHeight": 1.238,
+      "MaxCollisionBox": [
+        1.844,
+        3.591
+      ],
+      "MinCollisionBox": [
+        1.107,
+        2.154
+      ],
+      "MaxEyeHeight": 1.548,
+      "MinEyeHeight": 0.929,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-ornithomimus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "gallimimus-adult",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "sinornithomimus",
+              "texture": "ornithomimosauria:entity/sinornithomimus-adult"
+            },
+            {
+              "code": "struthiomimus",
+              "texture": "ornithomimosauria:entity/struthiomimus-adult"
+            },
+            {
+              "code": "ornithomimus",
+              "texture": "ornithomimosauria:entity/ornithomimus-adult"
+            },
+            {
+              "code": "dromiceiomimus",
+              "texture": "ornithomimosauria:entity/dromiceiomimus-adult"
+            },
+            {
+              "code": "kinnareemimus",
+              "texture": "ornithomimosauria:entity/kinnareemimus-adult"
+            },
+            {
+              "code": "nqwebasaurus",
+              "texture": "ornithomimosauria:entity/nqwebasaurus-adult"
+            },
+            {
+              "code": "tyrannomimus",
+              "texture": "ornithomimosauria:entity/tyrannomimus-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinosaur-ornithomimosauria-ornithomimus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-ornithomimus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "gallimimus-adult",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-harpymimus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-harpymimus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.475,
+        2.873
+      ],
+      "EyeHeight": 0.815,
+      "MaxCollisionBox": [
+        1.844,
+        3.591
+      ],
+      "MinCollisionBox": [
+        1.107,
+        2.154
+      ],
+      "MaxEyeHeight": 1.019,
+      "MinEyeHeight": 0.612,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-harpymimus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-harpymimus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-pelecanimimus",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-pelecanimimus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.475,
+        2.873
+      ],
+      "EyeHeight": 0.815,
+      "MaxCollisionBox": [
+        1.844,
+        3.591
+      ],
+      "MinCollisionBox": [
+        1.107,
+        2.154
+      ],
+      "MaxEyeHeight": 1.019,
+      "MinEyeHeight": 0.612,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-pelecanimimus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-pelecanimimus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/ornithomimosauria-compat.json",
+    "op": "add",
+    "path": "/dinosaur-ornithomimosauria-dzharacursor",
+    "dependsOn": [
+      {
+        "modid": "lopuornithomimosauria"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-dzharacursor-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.475,
+        2.873
+      ],
+      "EyeHeight": 1.238,
+      "MaxCollisionBox": [
+        1.844,
+        3.591
+      ],
+      "MinCollisionBox": [
+        1.107,
+        2.154
+      ],
+      "MaxEyeHeight": 1.548,
+      "MinEyeHeight": 0.929,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-ornithomimosauria-dzharacursor-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/ornithomimosauria/dinosaur-ornithomimosauria-dzharacursor-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,2080 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-pycnonemosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-pycnonemosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.765,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.206,
+      "MinEyeHeight": 1.323,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-pycnonemosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-pycnonemosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-ekrixinatosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-ekrixinatosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.94,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-ekrixinatosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-ekrixinatosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-carnotaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-carnotaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.765,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.206,
+      "MinEyeHeight": 1.323,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-carnotaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-carnotaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-chenanisaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-chenanisaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.765,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.206,
+      "MinEyeHeight": 1.323,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.89,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-chenanisaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-chenanisaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-rajasaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-rajasaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.771,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.214,
+      "MinEyeHeight": 1.328,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.83,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-rajasaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-rajasaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-skorpiovenator",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-skorpiovenator-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.72,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-skorpiovenator-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-skorpiovenator-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-majungasaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-majungasaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.771,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.214,
+      "MinEyeHeight": 1.328,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.78,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-majungasaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-majungasaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-abelisaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-abelisaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.758,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.198,
+      "MinEyeHeight": 1.319,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.78,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-abelisaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-abelisaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-xenotarsosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-xenotarsosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.765,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.206,
+      "MinEyeHeight": 1.323,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.72,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-xenotarsosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-xenotarsosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-aucasaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-aucasaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-aucasaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-aucasaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-rahiolisaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-rahiolisaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.7,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-rahiolisaurus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "base-adult",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "rahiolisaurus",
+              "texture": "abelisauridae:entity/rahiolisaurus-adult"
+            },
+            {
+              "code": "arcovenator",
+              "texture": "abelisauridae:entity/arcovenator-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinosaur-abelisauridae-rahiolisaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-rahiolisaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "base-adult",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-rugops",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-rugops-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.67,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-rugops-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-rugops-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-dahalokely",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-dahalokely-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-dahalokely-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-dahalokely-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-ilokelesia",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-ilokelesia-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.765,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.206,
+      "MinEyeHeight": 1.323,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.6,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-ilokelesia-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-ilokelesia-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-viavenator",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-viavenator-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.59,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-viavenator-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-viavenator-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-tarascosaurus",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-tarascosaurus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.771,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.214,
+      "MinEyeHeight": 1.328,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-tarascosaurus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-tarascosaurus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/abelisauridae-compat.json",
+    "op": "add",
+    "path": "/dinosaur-abelisauridae-thanos",
+    "dependsOn": [
+      {
+        "modid": "lopuabelisauridae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-dinosaur-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-thanos-selector",
+      "ExtraTraits": [
+        "animalica-physiology-heavy-predator",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bonecrusher"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.958,
+        1.768
+      ],
+      "EyeHeight": 1.768,
+      "MaxCollisionBox": [
+        1.197,
+        2.21
+      ],
+      "MinCollisionBox": [
+        0.718,
+        1.326
+      ],
+      "MaxEyeHeight": 2.21,
+      "MinEyeHeight": 1.326,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "dinosaur-abelisauridae-thanos-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/abelisauridae/dinosaur-abelisauridae-thanos-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

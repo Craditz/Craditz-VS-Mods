@@ -1,0 +1,528 @@
+[
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/bird/chicken-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:chicken-baby",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/bird/chicken-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/fox-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:fox-{type}-baby-{gender}",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-blueberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cranberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-redcurrant", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-whitecurrant", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-blackcurrant", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-saguaro", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pineapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-redapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pinkapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-yellowapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cherry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-peach", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pear", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-orange", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-mango", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-breadfruit", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-lychee", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pomegranate", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-beautyberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-blackberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cactusfruit", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cloudberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-gooseberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-guava", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-kumquat", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-plumnatal", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-raspberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-strawberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/fox-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-blueberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cranberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-redcurrant", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-whitecurrant", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-blackcurrant", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-saguaro", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pineapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-redapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pinkapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-yellowapple", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cherry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-peach", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pear", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-orange", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-mango", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-breadfruit", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-lychee", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-pomegranate", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-beautyberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-blackberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cactusfruit", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-cloudberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-gooseberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-guava", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-kumquat", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-plumnatal", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-raspberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-strawberry", "progress": 0.08, "cooldown": 2 },
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hare-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:hare-{type}-baby-{gender}",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hare-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hyena-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:hyena-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hyena-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/raccoon-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:raccoon-{type}-baby-{gender}",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/raccoon-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/wolf-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:wolf-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/wolf-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/deer-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:deer-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/deer-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/moose-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:moose-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/moose-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/gazelle-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:gazelle-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/gazelle-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/goat-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:goat-{type}-baby-{gender}",
+      "size": "medium",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/goat-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "medium",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/pig-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:pig-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/pig-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+    "value": {
+      "code": "tameable",
+      "tameEntityCode": "game:sheep-{type}-baby-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+    "value": {
+      "code": "tameable",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  }
+]

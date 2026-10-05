@@ -1,0 +1,502 @@
+[
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/bear-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamebear-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/bear-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/bird/chicken-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-hen": true, "*-rooster": true, "*": false },
+      "tameEntityCode": "feralkinship:tamechicken-{age}",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/bird/chicken-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-hen": true, "*-rooster": true, "*": false },
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/deer-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamedeer-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/deer-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/moose-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamedeer-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/moose-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/gazelle-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamegazelle-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/gazelle-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/goat-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamegoat-{type}-{gender}",
+      "size": "medium",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/goat-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "medium",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hare-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamehare-{type}-{gender}",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hare-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hyena-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamehyena-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hyena-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/pig-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*-elder-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamepig-{type}-{age}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/pig-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*-elder-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/raccoon-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tameraccoon-{type}-{gender}",
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/raccoon-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "small",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamesheep-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "vegetable-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "grain-*", "progress": 0.12, "cooldown": 2 },
+        { "code": "seeds-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "drygrass", "progress": 0.08, "cooldown": 2 },
+        { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "file": "game:entities/animal/mammal/wolf-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "tameEntityCode": "feralkinship:tamewolf-{type}-{gender}",
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "file": "game:entities/animal/mammal/wolf-adult.json",
+    "value": {
+      "code": "tameable",
+      "enabledByType": { "*-adult-*": true, "*": false },
+      "size": "large",
+      "disobediencePerDay": 0,
+      "treat": [
+        { "code": "fruit-*", "progress": 0.08, "cooldown": 2 },
+        { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
+        { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
+      ]
+    },
+    "side": "Client"
+  }
+]

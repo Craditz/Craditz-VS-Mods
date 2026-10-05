@@ -1,0 +1,246 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/foxsocks-compat.json",
+    "op": "add",
+    "path": "/feralfox-foxsocks",
+    "dependsOn": [
+      {
+        "modid": "foxsocks"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralfox:icons/feralfox-socks",
+      "ShapePath": "feralpack:entity/compatibility/foxsocks/feralfox-foxsocks-selector-base",
+      "ExtraTraits": [
+        "animalica-physiology-forest-runner",
+        "animalica-drawback-small-build",
+        "animalica-diet-normal",
+        "animalica-physiology-warm-socks"
+      ],
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "feralfox",
+        "foxsocks",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.5,
+        3.0
+      ],
+      "MaxCollisionBox": [
+        1.495,
+        1.862
+      ],
+      "MinCollisionBox": [
+        0.249,
+        0.31
+      ],
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "MaxEyeHeight": 1.676,
+      "MinEyeHeight": 0.279,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.45,
+      "GuiModelScale": 1.1,
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "SkinnableParts": [
+        {
+          "code": "feralfox-fur",
+          "type": "texture",
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "feralfox:entity/animal/mammal/fox/{code}",
+          "variants": [
+            {
+              "code": "red-male",
+              "color": "175073025"
+            },
+            {
+              "code": "red-female",
+              "color": "175073025"
+            },
+            {
+              "code": "arctic-male",
+              "color": "220220210"
+            },
+            {
+              "code": "arctic-female",
+              "color": "220220210"
+            }
+          ]
+        },
+        {
+          "code": "feralfox-foxsocks-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/foxsocks/feralfox-foxsocks-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "disableElementsByVariantCode": {
+            "paw": [
+              "ItemAnchor",
+              "ItemAnchorL"
+            ],
+            "mouth": [
+              "ItemAnchor",
+              "ItemAnchorL"
+            ]
+          }
+        },
+        {
+          "code": "foxsocks-sock",
+          "type": "texture",
+          "textureTarget": "sock",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "foxsocks:longsock/{code}",
+          "variants": [
+            {
+              "code": "blue",
+              "color": "055076150"
+            },
+            {
+              "code": "gray",
+              "color": "120120120"
+            },
+            {
+              "code": "green",
+              "color": "070150070"
+            },
+            {
+              "code": "pink",
+              "color": "220110170"
+            },
+            {
+              "code": "purple",
+              "color": "120070170"
+            },
+            {
+              "code": "rainbow",
+              "color": "180090120"
+            }
+          ]
+        },
+        {
+          "code": "voicetype",
+          "type": "voice",
+          "useDropDown": true,
+          "variants": [
+            {
+              "code": "foxhurt",
+              "sound": "feralfox:sounds/voice/foxhurt"
+            },
+            {
+              "code": "foxgrowl",
+              "sound": "feralfox:sounds/voice/foxgrowl"
+            },
+            {
+              "code": "foxattack",
+              "sound": "feralfox:sounds/voice/foxattack"
+            },
+            {
+              "code": "foxdie",
+              "sound": "feralfox:sounds/voice/foxdie"
+            },
+            {
+              "code": "foxyip",
+              "sound": "feralfox:sounds/voice/foxyip"
+            },
+            {
+              "code": "altoflute",
+              "sound": "sounds/voice/altoflute"
+            }
+          ]
+        },
+        {
+          "code": "voicepitch",
+          "type": "voice",
+          "useDropDown": true,
+          "variants": [
+            {
+              "code": "verylow"
+            },
+            {
+              "code": "low"
+            },
+            {
+              "code": "medium"
+            },
+            {
+              "code": "high"
+            }
+          ]
+        }
+      ],
+      "CollisionBox": [
+        0.498,
+        0.621
+      ],
+      "EyeHeight": 0.559,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

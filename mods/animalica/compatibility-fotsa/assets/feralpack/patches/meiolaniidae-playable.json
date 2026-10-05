@@ -1,0 +1,122 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/meiolaniidae-compat.json",
+    "op": "add",
+    "path": "/meiolaniidae-ninjemysoweni",
+    "dependsOn": [
+      {
+        "modid": "meiolaniidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/meiolaniidae/meiolaniidae-ninjemysoweni-selector",
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.682,
+        0.495
+      ],
+      "EyeHeight": 0.36,
+      "MaxCollisionBox": [
+        0.852,
+        0.618
+      ],
+      "MinCollisionBox": [
+        0.511,
+        0.371
+      ],
+      "MaxEyeHeight": 0.45,
+      "MinEyeHeight": 0.27,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.05,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "meiolaniidae-ninjemysoweni-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/meiolaniidae/meiolaniidae-ninjemysoweni-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.42,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.42,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

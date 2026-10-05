@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [ { "name": "considerpetfood" } ],
+    "file": "butchering:itemtypes/resource/offal.json",
+    "side": "Server",
+    "dependsOn": [ { "modid": "butchering" } ]
+  }
+]

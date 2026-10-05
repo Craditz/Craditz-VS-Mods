@@ -1,0 +1,24 @@
+{
+  "type": "content",
+  "name": "Animalica - Compatibility Pack 1",
+  "modid": "animalicacompatibility",
+  "version": "0.6.8",
+  "description": "Animalica Compatibility Pack 1 adds playable models for general companion mods. Requires Animalica Core and PlayerModelLib; companion mods remain optional and only unlock their matching models when installed.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT",
+    "Special thanks to Shintharo12, creator of Equus and Draconis",
+    "Special thanks to Xel, creator of Fox Socks",
+    "Special thanks to Chiappo, Crumps, Razgriz, Coral, and SilverValkyrie, creators of The Critters Pack coral fork"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.22.4",
+    "animalicacore": "1.1.43"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

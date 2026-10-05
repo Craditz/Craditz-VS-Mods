@@ -1,0 +1,14 @@
+{
+  "OldCodeToNewCode": {
+    "feralbear:blackbear-mouthcarry": "feralbear:blackbear",
+    "feralbear:blackbear-pawcarry": "feralbear:blackbear",
+    "feralbear:brownbear-mouthcarry": "feralbear:brownbear",
+    "feralbear:brownbear-pawcarry": "feralbear:brownbear",
+    "feralbear:giantpanda-mouthcarry": "feralbear:giantpanda",
+    "feralbear:giantpanda-pawcarry": "feralbear:giantpanda",
+    "feralbear:polarbear-mouthcarry": "feralbear:polarbear",
+    "feralbear:polarbear-pawcarry": "feralbear:polarbear",
+    "feralbear:sunbear-mouthcarry": "feralbear:sunbear",
+    "feralbear:sunbear-pawcarry": "feralbear:sunbear"
+  }
+}

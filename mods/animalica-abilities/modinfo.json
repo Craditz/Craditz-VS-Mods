@@ -1,0 +1,20 @@
+{
+  "type": "code",
+  "name": "Animalica Abilities",
+  "modid": "animalicaabilities",
+  "version": "0.3.3",
+  "description": "Species-gated Scent, Night Sight, Pounce, and Adrenaline abilities for Animalica and compatible PlayerModelLib species.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT"
+  ],
+  "dependencies": {
+    "game": "1.22.0",
+    "survival": "1.22.0"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

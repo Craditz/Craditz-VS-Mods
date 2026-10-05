@@ -1,0 +1,494 @@
+[
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "animalica",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "atrox",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "bear",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "beast",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "blackbear",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "brownbear",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "caribou",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "cat",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "cats",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "chicken",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "chicken-hen",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "chicken-rooster",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "cloudedleopard",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "cuprocaudus",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-chital",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-elk",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-guemal",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-marsh",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-moose",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-pampas",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-pudu",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-redbrocket",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-taruca",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-water",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "deer-whitetail",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "draconis",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "equus",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "feraldeer",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "feralfish",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "feralfox",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "feralraccoon",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "feralwolf",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "ferus",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "fish",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "foxsocks",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "gazelle",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "gazelle-thomson",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "giantpanda",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-angora",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-ibexalp",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-ibexnub",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-markhor",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-mountain",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-muskox",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-nubian",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-sirohi",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-takingold",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "goat-valais",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "hare",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "hare-female",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "hare-male",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "horse",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "hyena",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "jaguar",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "kitten",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "leo",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "leopard",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "lion",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "neofelis",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "onca",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "panthera",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pantherinae",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pardus",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pawcarry",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pig",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pig-eurasian-adult",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pig-eurasian-elder",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pig-redriver-adult",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "pig-warthog",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "polarbear",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "sheep",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "sheep-bighorn",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "sheep-mouflon",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "snowleopard",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "spelaea",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "spottedhyena",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "sunbear",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "tiger",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "tigris",
+    "file": "game:config/preloaded-tags.json"
+  },
+  {
+    "op": "addmerge",
+    "path": "/entities/-",
+    "value": "uncia",
+    "file": "game:config/preloaded-tags.json"
+  }
+]

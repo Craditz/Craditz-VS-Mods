@@ -1,0 +1,2285 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-african-monitors",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-predator-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-african-monitors-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.522,
+        0.253
+      ],
+      "EyeHeight": 0.436,
+      "ModelSizeFactor": 0.951,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-african-monitors-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "varanus-albigularis",
+              "texture": "africanmonitorlizards:entity/monitorlizard/varanus-albigularis"
+            },
+            {
+              "code": "varanus-griseus",
+              "texture": "africanmonitorlizards:entity/monitorlizard/varanus-griseus"
+            },
+            {
+              "code": "varanus-niloticus",
+              "texture": "africanmonitorlizards:entity/monitorlizard/varanus-niloticus"
+            },
+            {
+              "code": "varanus-stellatus",
+              "texture": "africanmonitorlizards:entity/monitorlizard/varanus-stellatus"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-african-monitors-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-african-monitors-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.653,
+        0.316
+      ],
+      "MinCollisionBox": [
+        0.392,
+        0.19
+      ],
+      "MaxEyeHeight": 0.544,
+      "MinEyeHeight": 0.328,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-asian-monitors",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-predator-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-asian-monitors-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.522,
+        0.253
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-asian-monitors-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "varanus-bengalensis",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-bengalensis"
+            },
+            {
+              "code": "varanus-bitatawa",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-bitatawa"
+            },
+            {
+              "code": "varanus-caerulivirens",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-caerulivirens"
+            },
+            {
+              "code": "varanus-colei",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-colei"
+            },
+            {
+              "code": "varanus-cumingi",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-cumingi"
+            },
+            {
+              "code": "varanus-melinus",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-melinus"
+            },
+            {
+              "code": "varanus-olivaceus",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-olivaceus"
+            },
+            {
+              "code": "varanus-timorensis",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-timorensis"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-asian-monitors-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-asian-monitors-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.653,
+        0.316
+      ],
+      "MinCollisionBox": [
+        0.392,
+        0.19
+      ],
+      "MaxEyeHeight": 0.517,
+      "MinEyeHeight": 0.311,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-roughneck-dumerils-monitors",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-predator-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-roughneck-dumerils-monitors-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.522,
+        0.253
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-roughneck-dumerils-monitors-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "varanus-dumerilii",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-dumerilii"
+            },
+            {
+              "code": "varanus-rudicollis",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-rudicollis"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-roughneck-dumerils-monitors-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-roughneck-dumerils-monitors-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.653,
+        0.316
+      ],
+      "MinCollisionBox": [
+        0.392,
+        0.19
+      ],
+      "MaxEyeHeight": 0.517,
+      "MinEyeHeight": 0.311,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-komodo-dragon",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-robust-predator",
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-komodo-dragon-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.55,
+        0.391
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-komodo-dragon-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "varanus-komodoensis",
+              "texture": "asianmonitorlizards:entity/monitorlizard/varanus-komodoensis"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-komodo-dragon-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-komodo-dragon-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.688,
+        0.488
+      ],
+      "MinCollisionBox": [
+        0.413,
+        0.293
+      ],
+      "MaxEyeHeight": 0.518,
+      "MinEyeHeight": 0.31,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-banded-geckos",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-banded-geckos-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.511,
+        0.202
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-banded-geckos-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "coleonyx-brevis",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-brevis"
+            },
+            {
+              "code": "coleonyx-elegans",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-elegans"
+            },
+            {
+              "code": "coleonyx-fasciatus",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-fasciatus"
+            },
+            {
+              "code": "coleonyx-gypsicolus",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-gypsicolus"
+            },
+            {
+              "code": "coleonyx-mitratus",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-mitratus"
+            },
+            {
+              "code": "coleonyx-nemoralis",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-nemoralis"
+            },
+            {
+              "code": "coleonyx-reticulatus",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-reticulatus"
+            },
+            {
+              "code": "coleonyx-switaki",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-switaki"
+            },
+            {
+              "code": "coleonyx-variegatus",
+              "texture": "bandedgeckos:entity/bandedgecko/coleonyx-variegatus"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-banded-geckos-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-banded-geckos-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.639,
+        0.252
+      ],
+      "MinCollisionBox": [
+        0.383,
+        0.151
+      ],
+      "MaxEyeHeight": 1.041,
+      "MinEyeHeight": 0.621,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-bearded-dragons",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-nimble-bruiser",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-bearded-dragons-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.563,
+        0.264
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-bearded-dragons-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "pogona-barbata",
+              "texture": "beardeddragons:entity/beardeddragon/pogona-barbata"
+            },
+            {
+              "code": "pogona-henrylawsoni",
+              "texture": "beardeddragons:entity/beardeddragon/pogona-henrylawsoni"
+            },
+            {
+              "code": "pogona-microlepidota",
+              "texture": "beardeddragons:entity/beardeddragon/pogona-microlepidota"
+            },
+            {
+              "code": "pogona-minor",
+              "texture": "beardeddragons:entity/beardeddragon/pogona-minor"
+            },
+            {
+              "code": "pogona-nullarbor",
+              "texture": "beardeddragons:entity/beardeddragon/pogona-nullarbor"
+            },
+            {
+              "code": "pogona-vitticeps",
+              "texture": "beardeddragons:entity/beardeddragon/pogona-vitticeps"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-bearded-dragons-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-bearded-dragons-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.703,
+        0.33
+      ],
+      "MinCollisionBox": [
+        0.422,
+        0.198
+      ],
+      "MaxEyeHeight": 1.035,
+      "MinEyeHeight": 0.621,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-ensatinas",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-marsh-hunter",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-ensatinas-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.559,
+        0.214
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-ensatinas-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "ensatina-croceater",
+              "texture": "ensatinas:entity/ensatina/ensatina-croceater"
+            },
+            {
+              "code": "ensatina-eschscholtzii",
+              "texture": "ensatinas:entity/ensatina/ensatina-eschscholtzii"
+            },
+            {
+              "code": "ensatina-klauberi",
+              "texture": "ensatinas:entity/ensatina/ensatina-klauberi"
+            },
+            {
+              "code": "ensatina-oregonensis",
+              "texture": "ensatinas:entity/ensatina/ensatina-oregonensis"
+            },
+            {
+              "code": "ensatina-picta",
+              "texture": "ensatinas:entity/ensatina/ensatina-picta"
+            },
+            {
+              "code": "ensatina-platensis",
+              "texture": "ensatinas:entity/ensatina/ensatina-platensis"
+            },
+            {
+              "code": "ensatina-xanthoptica",
+              "texture": "ensatinas:entity/ensatina/ensatina-xanthoptica"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-ensatinas-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-ensatinas-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.699,
+        0.267
+      ],
+      "MinCollisionBox": [
+        0.419,
+        0.16
+      ],
+      "MaxEyeHeight": 1.035,
+      "MinEyeHeight": 0.621,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-knob-tailed-geckos",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-knob-tailed-geckos-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.535,
+        0.202
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-knob-tailed-geckos-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "nephrurus-amyae",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-amyae"
+            },
+            {
+              "code": "nephrurus-asper",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-asper"
+            },
+            {
+              "code": "nephrurus-cinctus",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-cinctus"
+            },
+            {
+              "code": "nephrurus-deleani",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-deleani"
+            },
+            {
+              "code": "nephrurus-eromanga",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-eromanga"
+            },
+            {
+              "code": "nephrurus-laevissimus",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-laevissimus"
+            },
+            {
+              "code": "nephrurus-levis",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-levis"
+            },
+            {
+              "code": "nephrurus-sheai",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-sheai"
+            },
+            {
+              "code": "nephrurus-stellatus",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-stellatus"
+            },
+            {
+              "code": "nephrurus-vertebralis",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-vertebralis"
+            },
+            {
+              "code": "nephrurus-wheeleri",
+              "texture": "knobtailedgeckos:entity/knobtailedgecko/nephrurus-wheeleri"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-knob-tailed-geckos-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-knob-tailed-geckos-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.669,
+        0.252
+      ],
+      "MinCollisionBox": [
+        0.401,
+        0.151
+      ],
+      "MaxEyeHeight": 1.031,
+      "MinEyeHeight": 0.62,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-leopard-geckos",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-leopard-geckos-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.535,
+        0.202
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-leopard-geckos-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "eublepharis-angramainyu",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-angramainyu"
+            },
+            {
+              "code": "eublepharis-fuscus",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-fuscus"
+            },
+            {
+              "code": "eublepharis-hardwickii",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-hardwickii"
+            },
+            {
+              "code": "eublepharis-macularius",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-macularius"
+            },
+            {
+              "code": "eublepharis-pictus",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-pictus"
+            },
+            {
+              "code": "eublepharis-satpuraensis",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-satpuraensis"
+            },
+            {
+              "code": "eublepharis-turcmenicus",
+              "texture": "leopardgeckos:entity/leopardgecko/eublepharis-turcmenicus"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-leopard-geckos-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-leopard-geckos-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.669,
+        0.252
+      ],
+      "MinCollisionBox": [
+        0.401,
+        0.151
+      ],
+      "MaxEyeHeight": 1.036,
+      "MinEyeHeight": 0.62,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-new-world-giant-tortoises",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-armored-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-new-world-giant-tortoises-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.786,
+        0.489
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-new-world-giant-tortoises-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "chelonoidis-alburyorum",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-alburyorum"
+            },
+            {
+              "code": "chelonoidis-carbonarius",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-carbonarius"
+            },
+            {
+              "code": "chelonoidis-chilensis",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-chilensis"
+            },
+            {
+              "code": "chelonoidis-cubensis",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-cubensis"
+            },
+            {
+              "code": "chelonoidis-denticulatus",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-denticulatus"
+            },
+            {
+              "code": "chelonoidis-gersoni",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-gersoni"
+            },
+            {
+              "code": "chelonoidis-marcanoi",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-marcanoi"
+            },
+            {
+              "code": "chelonoidis-monensis",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-monensis"
+            },
+            {
+              "code": "chelonoidis-niger",
+              "texture": "newworldgianttortoises:entity/newworldgianttortoises/chelonoidis-niger"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-new-world-giant-tortoises-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-new-world-giant-tortoises-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.983,
+        0.612
+      ],
+      "MinCollisionBox": [
+        0.59,
+        0.367
+      ],
+      "MaxEyeHeight": 1.033,
+      "MinEyeHeight": 0.619,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-new-zealand-frogs",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-marsh-hunter",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-new-zealand-frogs-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.516,
+        0.475
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-new-zealand-frogs-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "leiopelma-archeyi",
+              "texture": "newzealandfrogs:entity/newzealandfrogs/leiopelma-archeyi"
+            },
+            {
+              "code": "leiopelma-auroraensis",
+              "texture": "newzealandfrogs:entity/newzealandfrogs/leiopelma-auroraensis"
+            },
+            {
+              "code": "leiopelma-hamiltoni",
+              "texture": "newzealandfrogs:entity/newzealandfrogs/leiopelma-hamiltoni"
+            },
+            {
+              "code": "leiopelma-hochstetteri",
+              "texture": "newzealandfrogs:entity/newzealandfrogs/leiopelma-hochstetteri"
+            },
+            {
+              "code": "leiopelma-markhami",
+              "texture": "newzealandfrogs:entity/newzealandfrogs/leiopelma-markhami"
+            },
+            {
+              "code": "leiopelma-waitomoensis",
+              "texture": "newzealandfrogs:entity/newzealandfrogs/leiopelma-waitomoensis"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-new-zealand-frogs-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-new-zealand-frogs-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.645,
+        0.594
+      ],
+      "MinCollisionBox": [
+        0.387,
+        0.356
+      ],
+      "MaxEyeHeight": 1.034,
+      "MinEyeHeight": 0.621,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-pacific-newts",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-normal",
+        "animalica-drawback-fragile"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-pacific-newts-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.559,
+        0.19
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-pacific-newts-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "taricha-granulosa",
+              "texture": "pacificnewts:entity/pacificnewt/taricha-granulosa"
+            },
+            {
+              "code": "taricha-rivularis",
+              "texture": "pacificnewts:entity/pacificnewt/taricha-rivularis"
+            },
+            {
+              "code": "taricha-sierrae",
+              "texture": "pacificnewts:entity/pacificnewt/taricha-sierrae"
+            },
+            {
+              "code": "taricha-torosa",
+              "texture": "pacificnewts:entity/pacificnewt/taricha-torosa"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-pacific-newts-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-pacific-newts-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.699,
+        0.237
+      ],
+      "MinCollisionBox": [
+        0.419,
+        0.143
+      ],
+      "MaxEyeHeight": 1.038,
+      "MinEyeHeight": 0.624,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.22,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-pond-frogs",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-marsh-hunter",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-pond-frogs-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.54,
+        0.57
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-pond-frogs-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "rana-arvalis-male",
+              "texture": "pondfrogsi:entity/pondfrog/rana-arvalis-male"
+            },
+            {
+              "code": "rana-aurora-male",
+              "texture": "pondfrogsiii:entity/pondfrog/rana-aurora-male"
+            },
+            {
+              "code": "rana-boylii",
+              "texture": "pondfrogsiii:entity/pondfrog/rana-boylii"
+            },
+            {
+              "code": "rana-chaochiaoensis",
+              "texture": "pondfrogsi:entity/pondfrog/rana-chaochiaoensis"
+            },
+            {
+              "code": "rana-coreana",
+              "texture": "pondfrogsi:entity/pondfrog/rana-coreana"
+            },
+            {
+              "code": "rana-dalmatina-male",
+              "texture": "pondfrogsi:entity/pondfrog/rana-dalmatina-male"
+            },
+            {
+              "code": "rana-dybowskii-male",
+              "texture": "pondfrogsi:entity/pondfrog/rana-dybowskii-male"
+            },
+            {
+              "code": "rana-huanrensis-male",
+              "texture": "pondfrogsi:entity/pondfrog/rana-huanrensis-male"
+            },
+            {
+              "code": "rana-italica-female",
+              "texture": "pondfrogsi:entity/pondfrog/rana-italica-female"
+            },
+            {
+              "code": "rana-luteiventris-male",
+              "texture": "pondfrogsiii:entity/pondfrog/rana-luteiventris-male"
+            },
+            {
+              "code": "rana-ornativentris-female",
+              "texture": "pondfrogsi:entity/pondfrog/rana-ornativentris-female"
+            },
+            {
+              "code": "rana-pseudodalmatina",
+              "texture": "pondfrogsi:entity/pondfrog/rana-pseudodalmatina"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-pond-frogs-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-pond-frogs-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.675,
+        0.713
+      ],
+      "MinCollisionBox": [
+        0.405,
+        0.428
+      ],
+      "MaxEyeHeight": 1.034,
+      "MinEyeHeight": 0.621,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/hieronymusreptiles-compat.json",
+    "op": "add",
+    "path": "/hieronymus-rain-frogs",
+    "dependsOn": [
+      {
+        "modid": "hieronymusreptiles"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-marsh-hunter",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-rain-frogs-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.581,
+        0.361
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "MainTextureCode": "skin",
+      "SkinnableParts": [
+        {
+          "code": "hieronymus-rain-frogs-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "breviceps-acutirostris",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-acutirostris"
+            },
+            {
+              "code": "breviceps-adspersus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-adspersus"
+            },
+            {
+              "code": "breviceps-bagginsi",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-bagginsi"
+            },
+            {
+              "code": "breviceps-carruthersi",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-carruthersi"
+            },
+            {
+              "code": "breviceps-fichus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-fichus"
+            },
+            {
+              "code": "breviceps-fuscus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-fuscus"
+            },
+            {
+              "code": "breviceps-gibbosus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-gibbosus"
+            },
+            {
+              "code": "breviceps-macrops",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-macrops"
+            },
+            {
+              "code": "breviceps-montanus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-montanus"
+            },
+            {
+              "code": "breviceps-mossambicus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-mossambicus"
+            },
+            {
+              "code": "breviceps-namaquensis",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-namaquensis"
+            },
+            {
+              "code": "breviceps-ombelanonga",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-ombelanonga"
+            },
+            {
+              "code": "breviceps-passmorei",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-passmorei"
+            },
+            {
+              "code": "breviceps-pentheri",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-pentheri"
+            },
+            {
+              "code": "breviceps-poweri",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-poweri"
+            },
+            {
+              "code": "breviceps-rosei",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-rosei"
+            },
+            {
+              "code": "breviceps-sopranus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-sopranus"
+            },
+            {
+              "code": "breviceps-sylvestris",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-sylvestris"
+            },
+            {
+              "code": "breviceps-verrucosus",
+              "texture": "rainfrogs:entity/rainfrog/breviceps-verrucosus"
+            }
+          ]
+        },
+        {
+          "code": "hieronymus-rain-frogs-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/hieronymusreptiles/hieronymus-rain-frogs-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.726,
+        0.451
+      ],
+      "MinCollisionBox": [
+        0.435,
+        0.271
+      ],
+      "MaxEyeHeight": 1.036,
+      "MinEyeHeight": 0.62,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "modid": "animalicarequests",
+  "name": "Animalica Requests",
+  "version": "0.3.13",
+  "description": "Optional requested player models and cosmetics for Animalica. Requires PlayerModelLib; Animalica Hooved Animals is optional compatibility.",
+  "authors": [
+    "Craditz"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.23.8"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

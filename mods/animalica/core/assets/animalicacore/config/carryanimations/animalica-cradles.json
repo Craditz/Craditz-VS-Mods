@@ -1,0 +1,118 @@
+[
+  {
+    "name": "animalicacore:animalica-cradle-carried-walk",
+    "code": "animalicacore:animalica-cradle-carried-walk",
+    "quantityframes": 30,
+    "onActivityStopped": "EaseOut",
+    "onAnimationEnd": "Repeat",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 0
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "animalicacore:animalica-cradle-carried-idle",
+    "code": "animalicacore:animalica-cradle-carried-idle",
+    "quantityframes": 30,
+    "onActivityStopped": "EaseOut",
+    "onAnimationEnd": "Repeat",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 0
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "animalicacore:animalica-babycradle-carried-walk",
+    "code": "animalicacore:animalica-babycradle-carried-walk",
+    "quantityframes": 30,
+    "onActivityStopped": "EaseOut",
+    "onAnimationEnd": "Repeat",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 180
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 180
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "animalicacore:animalica-babycradle-carried-idle",
+    "code": "animalicacore:animalica-babycradle-carried-idle",
+    "quantityframes": 30,
+    "onActivityStopped": "EaseOut",
+    "onAnimationEnd": "Repeat",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 180
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "elements": {
+          "LowerTorso": {
+            "rotationX": 0,
+            "rotationY": -90,
+            "rotationZ": 180
+          }
+        }
+      }
+    ]
+  }
+]

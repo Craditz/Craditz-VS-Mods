@@ -1,0 +1,15 @@
+[
+  {
+    "code": "animalicarequests-lynx-physiology",
+    "type": "mixed",
+    "attributes": {
+      "maxhealthExtraPoints": -1,
+      "sprintSpeed": 0.15,
+      "sneakSpeed": 0.2,
+      "jumpHeightMul": 0.2,
+      "fallDamageThreshold": 0.25,
+      "warmthBonus": 15,
+      "hungerrate": 0.1
+    }
+  }
+]

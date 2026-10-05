@@ -1,0 +1,1698 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-acanthisittachloris",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-acanthisittachloris-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.387,
+        0.629
+      ],
+      "EyeHeight": 0.496,
+      "MaxCollisionBox": [
+        0.484,
+        0.787
+      ],
+      "MinCollisionBox": [
+        0.29,
+        0.472
+      ],
+      "MaxEyeHeight": 0.62,
+      "MinEyeHeight": 0.372,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-acanthisittachloris-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "rifleman",
+              "texture": "dinornithidae:entity/acanthisittidae/acanthisittachloris-male"
+            },
+            {
+              "code": "north-island-stout-legged-wren",
+              "texture": "dinornithidae:entity/acanthisittidae/pachyplichasjagmi-male"
+            },
+            {
+              "code": "south-island-stout-legged-wren",
+              "texture": "dinornithidae:entity/acanthisittidae/pachyplichasyaldwyni-male"
+            },
+            {
+              "code": "lyall-s-wren",
+              "texture": "dinornithidae:entity/acanthisittidae/traversialyalli-male"
+            },
+            {
+              "code": "new-zealand-rockwren",
+              "texture": "dinornithidae:entity/acanthisittidae/xenicusgilviventris-male"
+            },
+            {
+              "code": "bushwren",
+              "texture": "dinornithidae:entity/acanthisittidae/xenicuslongipes-male"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-acanthisittachloris-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-acanthisittachloris-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-dendroscansordecurvirostris",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-dendroscansordecurvirostris-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.387,
+        0.629
+      ],
+      "EyeHeight": 0.496,
+      "MaxCollisionBox": [
+        0.484,
+        0.787
+      ],
+      "MinCollisionBox": [
+        0.29,
+        0.472
+      ],
+      "MaxEyeHeight": 0.62,
+      "MinEyeHeight": 0.372,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-dendroscansordecurvirostris-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-dendroscansordecurvirostris-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-anasaucklandica",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-anasaucklandica-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.339,
+        0.373
+      ],
+      "EyeHeight": 0.336,
+      "MaxCollisionBox": [
+        0.423,
+        0.466
+      ],
+      "MinCollisionBox": [
+        0.254,
+        0.28
+      ],
+      "MaxEyeHeight": 0.42,
+      "MinEyeHeight": 0.252,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-anasaucklandica-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "auckland-teal",
+              "texture": "dinornithidae:entity/anatidae/anasaucklandica-adult"
+            },
+            {
+              "code": "brown-teal",
+              "texture": "dinornithidae:entity/anatidae/anaschlorotis-adult"
+            },
+            {
+              "code": "campbell-teal",
+              "texture": "dinornithidae:entity/anatidae/anasnesiotis-adult"
+            },
+            {
+              "code": "finsch-s-duck",
+              "texture": "dinornithidae:entity/anatidae/chenonettafinschi-male"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-anasaucklandica-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-anasaucklandica-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-cnemiorniscalcitrans",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-cnemiorniscalcitrans-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.339,
+        0.433
+      ],
+      "EyeHeight": 0.389,
+      "MaxCollisionBox": [
+        0.423,
+        0.541
+      ],
+      "MinCollisionBox": [
+        0.254,
+        0.324
+      ],
+      "MaxEyeHeight": 0.487,
+      "MinEyeHeight": 0.292,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-cnemiorniscalcitrans-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "south-island-goose",
+              "texture": "dinornithidae:entity/anatidae/cnemiorniscalcitrans-adult"
+            },
+            {
+              "code": "north-island-goose",
+              "texture": "dinornithidae:entity/anatidae/cnemiornisgracilis-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-cnemiorniscalcitrans-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-cnemiorniscalcitrans-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-aegothelesnovaezealandiae",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-aegothelesnovaezealandiae-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.435,
+        0.715
+      ],
+      "EyeHeight": 0.644,
+      "MaxCollisionBox": [
+        0.544,
+        0.894
+      ],
+      "MinCollisionBox": [
+        0.327,
+        0.537
+      ],
+      "MaxEyeHeight": 0.805,
+      "MinEyeHeight": 0.483,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-aegothelesnovaezealandiae-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-aegothelesnovaezealandiae-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-apteryxaustralis",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-apteryxaustralis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.484,
+        0.592
+      ],
+      "EyeHeight": 0.541,
+      "MaxCollisionBox": [
+        0.605,
+        0.74
+      ],
+      "MinCollisionBox": [
+        0.363,
+        0.444
+      ],
+      "MaxEyeHeight": 0.676,
+      "MinEyeHeight": 0.406,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.55,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-apteryxaustralis-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "southern-brown-kiwi",
+              "texture": "dinornithidae:entity/apterygidae/apteryxaustralis-adult"
+            },
+            {
+              "code": "great-spotted-kiwi",
+              "texture": "dinornithidae:entity/apterygidae/apteryxhaastii-adult"
+            },
+            {
+              "code": "north-island-brown-kiwi",
+              "texture": "dinornithidae:entity/apterygidae/apteryxmantelli-adult"
+            },
+            {
+              "code": "little-spotted-kiwi",
+              "texture": "dinornithidae:entity/apterygidae/apteryxowenii-adult"
+            },
+            {
+              "code": "okarito-kiwi",
+              "texture": "dinornithidae:entity/apterygidae/apteryxrowi-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-apteryxaustralis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-apteryxaustralis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-aptornisdefossor",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-aptornisdefossor-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.339,
+        0.434
+      ],
+      "EyeHeight": 0.391,
+      "MaxCollisionBox": [
+        0.423,
+        0.542
+      ],
+      "MinCollisionBox": [
+        0.254,
+        0.325
+      ],
+      "MaxEyeHeight": 0.488,
+      "MinEyeHeight": 0.293,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-aptornisdefossor-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "south-island-adzebill",
+              "texture": "dinornithidae:entity/aptornithidae/aptornisdefossor-adult"
+            },
+            {
+              "code": "north-island-adzebill",
+              "texture": "dinornithidae:entity/aptornithidae/aptornisotidiformis-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-aptornisdefossor-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-aptornisdefossor-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-dinornisnovaezealandiae",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-dinornisnovaezealandiae-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.968,
+        1.19
+      ],
+      "EyeHeight": 1.8,
+      "MaxCollisionBox": [
+        1.209,
+        1.487
+      ],
+      "MinCollisionBox": [
+        0.726,
+        0.892
+      ],
+      "MaxEyeHeight": 2.25,
+      "MinEyeHeight": 1.35,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-dinornisnovaezealandiae-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "north-island-giant-moa",
+              "texture": "dinornithidae:entity/dinornithidae/dinornisnovaezealandiae-adult"
+            },
+            {
+              "code": "south-island-giant-moa",
+              "texture": "dinornithidae:entity/dinornithidae/dinornisrobustus-adult"
+            },
+            {
+              "code": "bush-moa",
+              "texture": "dinornithidae:entity/emeidae/anomalopteryxdidiformis-adult"
+            },
+            {
+              "code": "eastern-moa",
+              "texture": "dinornithidae:entity/emeidae/emeuscrassus-adult"
+            },
+            {
+              "code": "coastal-moa",
+              "texture": "dinornithidae:entity/emeidae/euryapteryxcurtus-adult"
+            },
+            {
+              "code": "heavy-footed-moa",
+              "texture": "dinornithidae:entity/emeidae/pachyorniselephantopus-adult"
+            },
+            {
+              "code": "mantell-s-moa",
+              "texture": "dinornithidae:entity/emeidae/pachyornisgeranoides-adult"
+            },
+            {
+              "code": "upland-moa",
+              "texture": "dinornithidae:entity/megalapterygidae/megalapteryxdidinus-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-dinornisnovaezealandiae-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-dinornisnovaezealandiae-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-pachyornisaustralis",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-pachyornisaustralis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.484,
+        0.642
+      ],
+      "EyeHeight": 0.829,
+      "MaxCollisionBox": [
+        0.605,
+        0.803
+      ],
+      "MinCollisionBox": [
+        0.363,
+        0.482
+      ],
+      "MaxEyeHeight": 1.036,
+      "MinEyeHeight": 0.622,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.7,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-pachyornisaustralis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-pachyornisaustralis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-gallirallusaustralis",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-gallirallusaustralis-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.266,
+        0.414
+      ],
+      "EyeHeight": 0.373,
+      "MaxCollisionBox": [
+        0.333,
+        0.518
+      ],
+      "MinCollisionBox": [
+        0.2,
+        0.311
+      ],
+      "MaxEyeHeight": 0.466,
+      "MinEyeHeight": 0.28,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-gallirallusaustralis-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "chatham-rail",
+              "texture": "dinornithidae:entity/rallidae/cabalusmodestus-adult"
+            },
+            {
+              "code": "hawkin-s-rail",
+              "texture": "dinornithidae:entity/rallidae/diaphorapteryxhawkinsi-adult"
+            },
+            {
+              "code": "weka",
+              "texture": "dinornithidae:entity/rallidae/gallirallusaustralis-adult"
+            },
+            {
+              "code": "dieffenbach-s-rail",
+              "texture": "dinornithidae:entity/rallidae/hypotaenidiadieffenbachii-adult"
+            },
+            {
+              "code": "banded-rail",
+              "texture": "dinornithidae:entity/rallidae/hypotaenidiaphilippensis-adult"
+            },
+            {
+              "code": "lord-howe-woodhen",
+              "texture": "dinornithidae:entity/rallidae/hypotaenidiasylvestris-adult"
+            },
+            {
+              "code": "auckland-rail",
+              "texture": "dinornithidae:entity/rallidae/lewiniamuelleri-adult"
+            },
+            {
+              "code": "hodgens-waterhen",
+              "texture": "dinornithidae:entity/rallidae/tribonyxhodgenorum-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-gallirallusaustralis-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-gallirallusaustralis-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-porphyrioalbus",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-porphyrioalbus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.329,
+        0.437
+      ],
+      "EyeHeight": 0.394,
+      "MaxCollisionBox": [
+        0.412,
+        0.547
+      ],
+      "MinCollisionBox": [
+        0.247,
+        0.328
+      ],
+      "MaxEyeHeight": 0.492,
+      "MinEyeHeight": 0.295,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.62,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-porphyrioalbus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "lord-howe-swamphen",
+              "texture": "dinornithidae:entity/rallidae/porphyrioalbus-adult"
+            },
+            {
+              "code": "south-island-takahe",
+              "texture": "dinornithidae:entity/rallidae/porphyriohochstetteri-adult"
+            },
+            {
+              "code": "north-island-takahe",
+              "texture": "dinornithidae:entity/rallidae/porphyriohochstetteri-adult"
+            }
+          ]
+        },
+        {
+          "code": "dinornithidae-porphyrioalbus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-porphyrioalbus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/dinornithidae-compat.json",
+    "op": "add",
+    "path": "/dinornithidae-strigopshabroptila",
+    "dependsOn": [
+      {
+        "modid": "dinornithidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/dinornithidae/dinornithidae-strigopshabroptila-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.373,
+        0.682
+      ],
+      "EyeHeight": 0.614,
+      "MaxCollisionBox": [
+        0.466,
+        0.853
+      ],
+      "MinCollisionBox": [
+        0.28,
+        0.512
+      ],
+      "MaxEyeHeight": 0.768,
+      "MinEyeHeight": 0.461,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.6,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "dinornithidae-strigopshabroptila-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/dinornithidae/dinornithidae-strigopshabroptila-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

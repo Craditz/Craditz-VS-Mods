@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "name": "Feral Kinship",
+  "modid": "feralkinship",
+  "version": "0.5.4",
+  "description": "Makes matching animals recognize you as kin and lets you tame supported animals, with bonuses for matching kin.",
+  "authors": [
+    "Craditz"
+  ],
+  "dependencies": {
+    "game": "1.22.0",
+    "petai": "5.1.1"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

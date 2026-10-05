@@ -1,0 +1,536 @@
+[
+  {
+    "code": "animalica-diet-normal",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-diet-carnivore",
+    "type": "positive",
+    "attributes": {
+      "fruitNutritionFactor": -0.35,
+      "vegetableNutritionFactor": -0.45,
+      "proteinNutritionFactor": 0.5,
+      "grainNutritionFactor": -0.45,
+      "dairyNutritionFactor": -0.3
+    }
+  },
+  {
+    "code": "animalica-diet-obligate-carnivore",
+    "type": "positive",
+    "attributes": {
+      "fruitNutritionFactor": -0.65,
+      "vegetableNutritionFactor": -0.7,
+      "proteinNutritionFactor": 0.7,
+      "grainNutritionFactor": -0.7,
+      "dairyNutritionFactor": -0.5
+    }
+  },
+  {
+    "code": "animalica-diet-herbivore",
+    "type": "positive",
+    "attributes": {
+      "fruitNutritionFactor": 0.1,
+      "vegetableNutritionFactor": 0.5,
+      "proteinNutritionFactor": -0.6,
+      "grainNutritionFactor": 0.15,
+      "dairyNutritionFactor": -0.45
+    }
+  },
+  {
+    "code": "animalica-diet-frugivore",
+    "type": "positive",
+    "attributes": {
+      "fruitNutritionFactor": 0.6,
+      "vegetableNutritionFactor": 0.15,
+      "proteinNutritionFactor": -0.25,
+      "grainNutritionFactor": -0.1,
+      "dairyNutritionFactor": -0.4
+    }
+  },
+  {
+    "code": "animalica-diet-granivore",
+    "type": "positive",
+    "attributes": {
+      "proteinNutritionFactor": -0.25,
+      "grainNutritionFactor": 0.55,
+      "dairyNutritionFactor": -0.4
+    }
+  },
+  {
+    "code": "animalica-food-flesh-eater",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-food-bone-eater",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-food-bonecrusher",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-food-grazer",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-food-browser",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-food-rooter",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-stomach-gorger",
+    "type": "positive",
+    "attributes": {
+      "maxSaturationFactor": 0.35
+    }
+  },
+  {
+    "code": "animalica-stomach-large-gut",
+    "type": "positive",
+    "attributes": {
+      "maxSaturationFactor": 0.2
+    }
+  },
+  {
+    "code": "animalica-stomach-small",
+    "type": "negative",
+    "attributes": {
+      "maxSaturationFactor": -0.2
+    }
+  },
+  {
+    "code": "animalica-metabolism-fast",
+    "type": "negative",
+    "attributes": {
+      "hungerrate": 0.2
+    }
+  },
+  {
+    "code": "animalica-metabolism-slow",
+    "type": "positive",
+    "attributes": {
+      "hungerrate": -0.15
+    }
+  },
+  {
+    "code": "animalica-digestion-efficient",
+    "type": "positive",
+    "attributes": {
+      "nutritionFactor": 0.1
+    }
+  },
+  {
+    "code": "animalica-digestion-inefficient",
+    "type": "negative",
+    "attributes": {
+      "nutritionFactor": -0.1
+    }
+  },
+  {
+    "code": "animalica-foraging-scavenger",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalica-physiology-aquatic",
+    "type": "positive",
+    "attributes": {
+      "swimSpeed": 0.5,
+      "maxhealthExtraPoints": 5
+    }
+  },
+  {
+    "code": "animalica-physiology-arctic-cat",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 8,
+      "warmthBonus": 25,
+      "frostDamageFactor": -0.6,
+      "sprintSpeed": 0.15,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.1,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-arctic-grazer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "walkspeed": 0.1,
+      "warmthBonus": 25,
+      "frostDamageFactor": -0.6,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-arctic-swimmer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "swimSpeed": 0.5,
+      "warmthBonus": 35,
+      "frostDamageFactor": -0.75,
+      "animalicaNaturalProtection": 1.5
+    }
+  },
+  {
+    "code": "animalica-physiology-big-cat",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 8,
+      "sprintSpeed": 0.15,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.1,
+      "warmthBonus": 3,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-cold-big-cat",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 8,
+      "warmthBonus": 16,
+      "frostDamageFactor": -0.25,
+      "sprintSpeed": 0.15,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.1,
+      "animalicaNaturalProtection": 0.75
+    }
+  },
+  {
+    "code": "animalica-physiology-boar-build",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "sprintSpeed": 0.1,
+      "warmthBonus": 1,
+      "animalicaNaturalProtection": 1.0
+    }
+  },
+  {
+    "code": "animalica-physiology-fleet-grazer",
+    "type": "positive",
+    "attributes": {
+      "animalSeekingRange": -0.05,
+      "walkspeed": 0.05,
+      "sprintSpeed": 0.15,
+      "maxhealthExtraPoints": 7,
+      "animalicaNaturalProtection": 0.25
+    }
+  },
+  {
+    "code": "animalica-physiology-forest-runner",
+    "type": "positive",
+    "attributes": {
+      "animalSeekingRange": -0.1,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.18,
+      "sprintSpeed": 0.2,
+      "warmthBonus": 8,
+      "maxhealthExtraPoints": 6,
+      "animalicaNaturalProtection": 0.25
+    }
+  },
+  {
+    "code": "animalica-physiology-hardy-runner",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "sprintSpeed": 0.2,
+      "warmthBonus": 3,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-large-grazer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "walkspeed": 0.05,
+      "warmthBonus": 2,
+      "animalicaNaturalProtection": 0.75
+    }
+  },
+  {
+    "code": "animalica-physiology-light-forager",
+    "type": "positive",
+    "attributes": {
+      "animalSeekingRange": -0.05,
+      "sprintSpeed": 0.05,
+      "maxhealthExtraPoints": 5
+    }
+  },
+  {
+    "code": "animalica-physiology-mountain-grazer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "walkspeed": 0.05,
+      "jumpHeightMul": 0.08,
+      "warmthBonus": 14,
+      "frostDamageFactor": -0.25,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-nimble-bruiser",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "sprintSpeed": 0.15,
+      "jumpHeightMul": 0.08,
+      "warmthBonus": 2,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-nimble-scavenger",
+    "type": "positive",
+    "attributes": {
+      "animalSeekingRange": -0.1,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.18,
+      "backwardSpeed": 0.05,
+      "maxhealthExtraPoints": 5,
+      "animalicaNaturalProtection": 0.25
+    }
+  },
+  {
+    "code": "animalica-physiology-predator-build",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "sprintSpeed": 0.15,
+      "warmthBonus": 14,
+      "frostDamageFactor": -0.25,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-small-agile",
+    "type": "positive",
+    "attributes": {
+      "animalSeekingRange": -0.05,
+      "jumpHeightMul": 0.08,
+      "sprintSpeed": 0.1,
+      "maxhealthExtraPoints": 5
+    }
+  },
+  {
+    "code": "animalica-physiology-small-feline",
+    "type": "positive",
+    "attributes": {
+      "animalSeekingRange": -0.1,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.18,
+      "maxhealthExtraPoints": 5
+    }
+  },
+  {
+    "code": "animalica-physiology-sturdy-coat",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "warmthBonus": 12,
+      "frostDamageFactor": -0.25,
+      "animalicaNaturalProtection": 0.75
+    }
+  },
+  {
+    "code": "animalica-physiology-sturdy-grazer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "walkspeed": 0.05,
+      "warmthBonus": 8,
+      "animalicaNaturalProtection": 0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-warm-socks",
+    "type": "positive",
+    "attributes": {
+      "warmthBonus": 10
+    }
+  },
+  {
+    "code": "animalica-drawback-fragile",
+    "type": "negative",
+    "attributes": {
+      "maxhealthExtraPoints": -2
+    }
+  },
+  {
+    "code": "animalica-drawback-small-build",
+    "type": "negative",
+    "attributes": {
+      "maxhealthExtraPoints": -2
+    }
+  },
+  {
+    "code": "animalica-drawback-stranded",
+    "type": "negative",
+    "attributes": {
+      "maxhealthExtraPoints": -6,
+      "hungerrate": 0.03,
+      "walkspeed": -0.35,
+      "sprintSpeed": -0.35,
+      "jumpHeightMul": -0.5
+    }
+  },
+  {
+    "code": "animalica-physiology-robust-predator",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "sprintSpeed": 0.15,
+      "warmthBonus": 14,
+      "frostDamageFactor": -0.25,
+      "animalicaNaturalProtection": 0.75
+    }
+  },
+  {
+    "code": "animalica-physiology-heavy-predator",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "sprintSpeed": 0.15,
+      "warmthBonus": 14,
+      "frostDamageFactor": -0.25,
+      "animalicaNaturalProtection": 1.0
+    }
+  },
+  {
+    "code": "animalica-physiology-large-big-cat",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 8,
+      "sprintSpeed": 0.15,
+      "jumpHeightMul": 0.08,
+      "sneakSpeed": 0.1,
+      "warmthBonus": 3,
+      "animalicaNaturalProtection": 0.75
+    }
+  },
+  {
+    "code": "animalica-physiology-heavy-grazer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 11,
+      "walkspeed": 0.05,
+      "jumpHeightMul": 0.08,
+      "warmthBonus": 14,
+      "frostDamageFactor": -0.25,
+      "animalicaNaturalProtection": 1.0
+    }
+  },
+  {
+    "code": "animalica-physiology-stone-bulwark",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 15,
+      "animalicaNaturalDamageReduction": 0.1,
+      "warmthBonus": 4.0,
+      "fallDamageFactor": -0.1
+    }
+  },
+  {
+    "code": "animalica-physiology-colossal-build",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 16,
+      "walkspeed": -0.08,
+      "sprintSpeed": -0.12,
+      "animalicaNaturalProtection": 1.25
+    }
+  },
+  {
+    "code": "animalica-physiology-armored-grazer",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 10,
+      "sprintSpeed": -0.02,
+      "fallDamageFactor": -0.15,
+      "animalicaNaturalProtection": 0.5,
+      "animalicaNaturalDamageReduction": 0.03
+    }
+  },
+  {
+    "code": "animalica-physiology-pursuit-hunter",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 6,
+      "walkspeed": 0.05,
+      "sprintSpeed": 0.18,
+      "animalSeekingRange": -0.15,
+      "meleeWeaponsDamage": 0.05,
+      "animalicaNaturalProtection": 0.25
+    }
+  },
+  {
+    "code": "animalica-physiology-marsh-hunter",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 7,
+      "swimSpeed": 0.25,
+      "sprintSpeed": 0.08,
+      "jumpHeightMul": 0.05,
+      "meleeWeaponsDamage": 0.05,
+      "animalicaNaturalProtection": 0.25
+    }
+  },
+  {
+    "code": "animalica-physiology-long-legged-runner",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 6,
+      "walkspeed": 0.08,
+      "sprintSpeed": 0.16,
+      "jumpHeightMul": 0.1,
+      "animalSeekingRange": -0.1
+    }
+  },
+  {
+    "code": "animalica-flight-wingworks-small-bird",
+    "type": "positive",
+    "attributes": {
+      "canGlide": 1,
+      "ww_can_fly": 1,
+      "ww_stall_speed": 1,
+      "ww_start_speed": 4.5,
+      "ww_flap_forward_acceleration": 0.45,
+      "ww_flap_vertical_acceleration": 5,
+      "ww_climb_coefficient": 0.16,
+      "ww_top_speed": 80
+    }
+  },
+  {
+    "code": "animalica-physiology-unnecessarily-menacing",
+    "type": "positive",
+    "attributes": {
+      "meleeWeaponsDamage": 0.15
+    }
+  },
+  {
+    "code": "animalica-drawback-glacially-slow",
+    "type": "negative",
+    "attributes": {
+      "walkspeed": -0.85,
+      "sprintSpeed": -0.3,
+      "animalSeekingRange": -0.4,
+      "jumpHeightMul": -0.5
+    }
+  }
+]

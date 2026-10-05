@@ -1,0 +1,10 @@
+* text=auto
+*.cs text eol=lf
+*.csproj text eol=lf
+*.props text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf
+# Current reviewed export is text-only. Add exact-path LFS rules only when
+# approved binary sources are introduced; release ZIPs stay outside Git.

@@ -1,0 +1,378 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/cats-compat.json",
+    "op": "add",
+    "path": "/cats-adult-cat",
+    "dependsOn": [
+      {
+        "modid": "cats"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/cats/cat-playable",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "ExtraTraits": [
+        "animalica-physiology-small-feline",
+        "animalica-drawback-small-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "cats",
+        "cat"
+      ],
+      "SizeRange": [
+        0.5,
+        3.0
+      ],
+      "MaxCollisionBox": [
+        1.4,
+        1.379
+      ],
+      "MinCollisionBox": [
+        0.233,
+        0.23
+      ],
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "MaxEyeHeight": 1.241,
+      "MinEyeHeight": 0.207,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.45,
+      "GuiModelScale": 1.2,
+      "SkinnableParts": [
+        {
+          "code": "cats-adult-fur",
+          "type": "texture",
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "cats:entity/cat/{code}",
+          "variants": [
+            {
+              "code": "cat-male01",
+              "color": "147115075"
+            },
+            {
+              "code": "cat-male02",
+              "color": "099097097"
+            },
+            {
+              "code": "cat-male03",
+              "color": "136090061"
+            },
+            {
+              "code": "cat-male04",
+              "color": "201134081"
+            },
+            {
+              "code": "cat-male05",
+              "color": "096095091"
+            },
+            {
+              "code": "cat-male06",
+              "color": "233228218"
+            },
+            {
+              "code": "cat-male07",
+              "color": "025018020"
+            },
+            {
+              "code": "cat-male08",
+              "color": "093090092"
+            },
+            {
+              "code": "cat-male09",
+              "color": "047037034"
+            },
+            {
+              "code": "cat-male10",
+              "color": "069063063"
+            },
+            {
+              "code": "cat-male11",
+              "color": "180140098"
+            }
+          ]
+        },
+        {
+          "code": "cats-adult-cat-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "tabCode": "features",
+          "disableElementsByVariantCode": {
+            "paw": [
+              "CatsPawFallbackR",
+              "CatsPawFallbackL"
+            ],
+            "mouth": [
+              "CatsPawFallbackR",
+              "CatsPawFallbackL"
+            ]
+          },
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/cats/cat-playable-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "CollisionBox": [
+        0.467,
+        0.46
+      ],
+      "EyeHeight": 0.414,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.88,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/cats-compat.json",
+    "op": "add",
+    "path": "/cats-kitten",
+    "dependsOn": [
+      {
+        "modid": "cats"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/cats/kitten-playable",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "ExtraTraits": [
+        "animalica-physiology-small-feline",
+        "animalica-drawback-small-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "cats",
+        "kitten"
+      ],
+      "SizeRange": [
+        0.5,
+        3.0
+      ],
+      "MaxCollisionBox": [
+        1.379,
+        0.771
+      ],
+      "MinCollisionBox": [
+        0.23,
+        0.128
+      ],
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "MaxEyeHeight": 1.244,
+      "MinEyeHeight": 0.208,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.45,
+      "GuiModelScale": 1.6,
+      "SkinnableParts": [
+        {
+          "code": "cats-kitten-fur",
+          "type": "texture",
+          "textureTarget": "kitten",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "cats:entity/kitten/{code}",
+          "variants": [
+            {
+              "code": "kitten01",
+              "color": "135129122"
+            },
+            {
+              "code": "kitten02",
+              "color": "127126126"
+            },
+            {
+              "code": "kitten03",
+              "color": "132127123"
+            },
+            {
+              "code": "kitten04",
+              "color": "141131125"
+            },
+            {
+              "code": "kitten05",
+              "color": "128127127"
+            },
+            {
+              "code": "kitten06",
+              "color": "145144142"
+            },
+            {
+              "code": "kitten07",
+              "color": "106102102"
+            },
+            {
+              "code": "kitten08",
+              "color": "123122122"
+            },
+            {
+              "code": "kitten09",
+              "color": "116113113"
+            },
+            {
+              "code": "kitten10",
+              "color": "123122121"
+            },
+            {
+              "code": "kitten11",
+              "color": "137133128"
+            }
+          ]
+        },
+        {
+          "code": "cats-kitten-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "tabCode": "features",
+          "disableElementsByVariantCode": {
+            "paw": [
+              "CatsPawFallbackR",
+              "CatsPawFallbackL"
+            ],
+            "mouth": [
+              "CatsPawFallbackR",
+              "CatsPawFallbackL"
+            ]
+          },
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/cats/kitten-playable-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "CollisionBox": [
+        0.46,
+        0.257
+      ],
+      "EyeHeight": 0.414,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 5.32,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 5.32,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

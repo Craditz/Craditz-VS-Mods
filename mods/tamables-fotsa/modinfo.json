@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "name": "Tamables: FOTSA",
+  "modid": "tamablesfotsa",
+  "version": "0.8.7",
+  "description": "PetAI taming and Feral-Kinship-style basic pet behavior for selected Fauna of the Stone Age animals.",
+  "authors": [
+    "Craditz"
+  ],
+  "dependencies": {
+    "game": "1.22.0",
+    "petai": "5.1.1"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

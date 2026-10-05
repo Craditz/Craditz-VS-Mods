@@ -1,0 +1,45 @@
+{
+  "selectors": {
+    "feralfish-coatpreset": {
+      "modelCodes": [
+        "feralfish"
+      ],
+      "defaultPreset": "coho",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {},
+      "presets": {
+        "coho": {
+          "feralfish-bodycolor": "#FF8A7770",
+          "feralfish-bellycolor": "#FFC9C1B8",
+          "feralfish-fincolor": "#FF66564F",
+          "feralfish-eyecolor": "#FF1E1714",
+          "feralfish-internal-bellymask": "belly-mask",
+          "feralfish-internal-finsmask": "fins-mask",
+          "feralfish-internal-eyesmask": "eyes-mask",
+          "feralfish-internal-fixeddetails": "fixed-details-mask"
+        },
+        "pink": {
+          "feralfish-bodycolor": "#FFB66E68",
+          "feralfish-bellycolor": "#FFE0C0B7",
+          "feralfish-fincolor": "#FF83514D",
+          "feralfish-eyecolor": "#FF211714",
+          "feralfish-internal-bellymask": "belly-mask",
+          "feralfish-internal-finsmask": "fins-mask",
+          "feralfish-internal-eyesmask": "eyes-mask",
+          "feralfish-internal-fixeddetails": "fixed-details-mask"
+        },
+        "silver": {
+          "feralfish-bodycolor": "#FFA6B0B0",
+          "feralfish-bellycolor": "#FFE2E4DE",
+          "feralfish-fincolor": "#FF637071",
+          "feralfish-eyecolor": "#FF1D1816",
+          "feralfish-internal-bellymask": "belly-mask",
+          "feralfish-internal-finsmask": "fins-mask",
+          "feralfish-internal-eyesmask": "eyes-mask",
+          "feralfish-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    }
+  }
+}

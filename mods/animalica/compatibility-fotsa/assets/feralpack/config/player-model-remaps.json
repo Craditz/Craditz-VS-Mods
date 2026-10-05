@@ -1,0 +1,24 @@
+{
+  "OldCodeToNewCode": {
+    "feralpack:pantherinae-american-lion-mouthcarry": "feralpack:pantherinae-american-lion",
+    "feralpack:pantherinae-american-lion-pawcarry": "feralpack:pantherinae-american-lion",
+    "feralpack:pantherinae-clouded-leopard-mouthcarry": "feralpack:pantherinae-clouded-leopard",
+    "feralpack:pantherinae-clouded-leopard-pawcarry": "feralpack:pantherinae-clouded-leopard",
+    "feralpack:pantherinae-jaguar-mouthcarry": "feralpack:pantherinae-jaguar",
+    "feralpack:pantherinae-jaguar-pawcarry": "feralpack:pantherinae-jaguar",
+    "feralpack:pantherinae-leopard-mouthcarry": "feralpack:pantherinae-leopard",
+    "feralpack:pantherinae-leopard-pawcarry": "feralpack:pantherinae-leopard",
+    "feralpack:pantherinae-lion-mane-mouthcarry": "feralpack:pantherinae-lion",
+    "feralpack:pantherinae-lion-mane-pawcarry": "feralpack:pantherinae-lion",
+    "feralpack:pantherinae-lioness-mouthcarry": "feralpack:pantherinae-lion",
+    "feralpack:pantherinae-lioness-pawcarry": "feralpack:pantherinae-lion",
+    "feralpack:pantherinae-snow-leopard-mouthcarry": "feralpack:pantherinae-snow-leopard",
+    "feralpack:pantherinae-snow-leopard-pawcarry": "feralpack:pantherinae-snow-leopard",
+    "feralpack:pantherinae-steppe-lion-mouthcarry": "feralpack:pantherinae-steppe-lion",
+    "feralpack:pantherinae-steppe-lion-pawcarry": "feralpack:pantherinae-steppe-lion",
+    "feralpack:pantherinae-tiger-mouthcarry": "feralpack:pantherinae-tiger",
+    "feralpack:pantherinae-tiger-pawcarry": "feralpack:pantherinae-tiger",
+    "feralpack:pantherinae-lioness": "feralpack:pantherinae-lion",
+    "feralpack:pantherinae-lion-mane": "feralpack:pantherinae-lion"
+  }
+}

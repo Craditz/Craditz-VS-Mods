@@ -1,0 +1,1905 @@
+[
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/0/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/1/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/2/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/3/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/4/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/5/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/6/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "felinae:entities/land/felinae",
+    "path": "/server/behaviors/11/aitasks/8/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "felinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/0/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/1/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/2/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/3/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/4/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/5/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/6/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/7/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/8/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/9/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/10/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/11/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/12/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/13/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/14/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/15/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/16/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/17/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/18/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/19/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/20/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/21/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/23/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/24/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/25/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/26/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/27/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/28/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/29/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/30/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/31/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-adult",
+    "path": "/server/behaviors/10/aitasks/32/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/0/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/1/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/2/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/3/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/4/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/5/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/6/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/7/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/8/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/9/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/10/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/11/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/12/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/13/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/14/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/15/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/16/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/17/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/19/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/20/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/21/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/22/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-neofelis-baby",
+    "path": "/server/behaviors/10/aitasks/23/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/0/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/1/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/2/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/3/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/4/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/5/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/6/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/7/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/8/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/9/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/10/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/11/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/12/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/13/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/14/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/15/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/16/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/17/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/18/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/19/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/20/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/21/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/23/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/24/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/25/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/26/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/27/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/28/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/29/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/30/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/31/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-adult",
+    "path": "/server/behaviors/10/aitasks/32/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/0/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/1/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/2/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/3/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/4/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/5/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/6/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/7/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/8/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/9/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/10/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/11/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/12/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/13/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/14/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/15/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/16/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/17/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/19/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/20/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/21/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/22/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "pantherinae:entities/animal/mammal/pantherinae-panthera-baby",
+    "path": "/server/behaviors/10/aitasks/23/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "pantherinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/3/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/4/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/5/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/6/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/7/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/8/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/9/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/10/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/11/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/12/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/13/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/14/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/15/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/16/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/17/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/18/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/19/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/20/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/21/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/22/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/23/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/24/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/26/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/27/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/28/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/29/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/30/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/31/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/32/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/33/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/34/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-adult",
+    "path": "/server/behaviors/10/aitasks/35/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/3/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/4/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/5/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/6/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/7/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/8/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/9/code",
+    "value": "feralkinshipmeleeattack",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/10/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/11/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/12/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/13/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/14/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/15/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/16/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/17/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/18/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/19/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/20/code",
+    "value": "feralkinshipfleeentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/22/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/23/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/24/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/25/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "file": "machairodontinae:entities/animal/mammal/machairodontinae-baby",
+    "path": "/server/behaviors/10/aitasks/26/code",
+    "value": "feralkinshipseekentity",
+    "dependsOn": [
+      {
+        "modid": "machairodontinae"
+      }
+    ]
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "selectors": {
+    "feralraccoon-coatpreset": {
+      "modelCodes": [
+        "feralraccoon"
+      ],
+      "defaultPreset": "common",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "feralraccoon-carrymode": "paw",
+        "voicetype": "raccoonidle",
+        "voicepitch": "medium"
+      },
+      "presets": {
+        "common": {
+          "feralraccoon-furcolor": "#FF8C8783",
+          "feralraccoon-patterncolor": "#FF292929",
+          "feralraccoon-undercoatcolor": "#FFC7C0B9",
+          "feralraccoon-legscolor": "#FF444241",
+          "feralraccoon-eyecolor": "#FF4A2918",
+          "feralraccoon-earcolor": "#FF9D7775",
+          "feralraccoon-tailcolor": "#FF333332",
+          "feralraccoon-internal-patternmask": "face-classic-mask",
+          "feralraccoon-internal-undercoatmask": "undercoat-soft-mask",
+          "feralraccoon-internal-legsmask": "legs-soft-mask",
+          "feralraccoon-internal-eyesmask": "eyes-mask",
+          "feralraccoon-internal-earsmask": "ears-soft-mask",
+          "feralraccoon-internal-tailmask": "tail-rings-mask",
+          "feralraccoon-internal-fixeddetails": "fixed-details-mask"
+        },
+        "dark": {
+          "feralraccoon-furcolor": "#FF4C4A49",
+          "feralraccoon-patterncolor": "#FF181818",
+          "feralraccoon-undercoatcolor": "#FF9B9691",
+          "feralraccoon-legscolor": "#FF242323",
+          "feralraccoon-eyecolor": "#FF74421F",
+          "feralraccoon-earcolor": "#FF785B5B",
+          "feralraccoon-tailcolor": "#FF191919",
+          "feralraccoon-internal-patternmask": "face-classic-mask",
+          "feralraccoon-internal-undercoatmask": "undercoat-soft-mask",
+          "feralraccoon-internal-legsmask": "legs-soft-mask",
+          "feralraccoon-internal-eyesmask": "eyes-mask",
+          "feralraccoon-internal-earsmask": "ears-soft-mask",
+          "feralraccoon-internal-tailmask": "tail-rings-mask",
+          "feralraccoon-internal-fixeddetails": "fixed-details-mask"
+        },
+        "cinnamon": {
+          "feralraccoon-furcolor": "#FF9B674A",
+          "feralraccoon-patterncolor": "#FF4B3026",
+          "feralraccoon-undercoatcolor": "#FFD6B18F",
+          "feralraccoon-legscolor": "#FF5D3B2E",
+          "feralraccoon-eyecolor": "#FF59301A",
+          "feralraccoon-earcolor": "#FFA86F68",
+          "feralraccoon-tailcolor": "#FF503126",
+          "feralraccoon-internal-patternmask": "face-classic-mask",
+          "feralraccoon-internal-undercoatmask": "undercoat-soft-mask",
+          "feralraccoon-internal-legsmask": "legs-soft-mask",
+          "feralraccoon-internal-eyesmask": "eyes-mask",
+          "feralraccoon-internal-earsmask": "ears-soft-mask",
+          "feralraccoon-internal-tailmask": "tail-rings-mask",
+          "feralraccoon-internal-fixeddetails": "fixed-details-mask"
+        },
+        "tanuki": {
+          "feralraccoon-furcolor": "#FF796A5A",
+          "feralraccoon-patterncolor": "#FF272421",
+          "feralraccoon-undercoatcolor": "#FFC8B99F",
+          "feralraccoon-legscolor": "#FF332F2A",
+          "feralraccoon-eyecolor": "#FF4D2818",
+          "feralraccoon-earcolor": "#FF956E68",
+          "feralraccoon-tailcolor": "#FF2C2925",
+          "feralraccoon-internal-patternmask": "face-broad-mask",
+          "feralraccoon-internal-undercoatmask": "undercoat-soft-mask",
+          "feralraccoon-internal-legsmask": "legs-soft-mask",
+          "feralraccoon-internal-eyesmask": "eyes-mask",
+          "feralraccoon-internal-earsmask": "ears-soft-mask",
+          "feralraccoon-internal-tailmask": "tail-tip-mask",
+          "feralraccoon-internal-fixeddetails": "fixed-details-mask"
+        },
+        "redpanda": {
+          "feralraccoon-furcolor": "#FFB4572F",
+          "feralraccoon-patterncolor": "#FF3A251E",
+          "feralraccoon-undercoatcolor": "#FFE8C19A",
+          "feralraccoon-legscolor": "#FF3D2720",
+          "feralraccoon-eyecolor": "#FF4A2517",
+          "feralraccoon-earcolor": "#FFB27167",
+          "feralraccoon-tailcolor": "#FF71402E",
+          "feralraccoon-internal-patternmask": "face-broad-mask",
+          "feralraccoon-internal-undercoatmask": "undercoat-soft-mask",
+          "feralraccoon-internal-legsmask": "legs-soft-mask",
+          "feralraccoon-internal-eyesmask": "eyes-mask",
+          "feralraccoon-internal-earsmask": "ears-soft-mask",
+          "feralraccoon-internal-tailmask": "tail-rings-mask",
+          "feralraccoon-internal-fixeddetails": "fixed-details-mask"
+        },
+        "albino": {
+          "feralraccoon-furcolor": "#FFF0E9DF",
+          "feralraccoon-patterncolor": "#FFD6B6B2",
+          "feralraccoon-undercoatcolor": "#FFF8F1E8",
+          "feralraccoon-legscolor": "#FFE1D4CC",
+          "feralraccoon-eyecolor": "#FFB94D4D",
+          "feralraccoon-earcolor": "#FFD5A6A6",
+          "feralraccoon-tailcolor": "#FFE3D1CA",
+          "feralraccoon-internal-patternmask": "face-classic-mask",
+          "feralraccoon-internal-undercoatmask": "undercoat-soft-mask",
+          "feralraccoon-internal-legsmask": "legs-soft-mask",
+          "feralraccoon-internal-eyesmask": "eyes-mask",
+          "feralraccoon-internal-earsmask": "ears-soft-mask",
+          "feralraccoon-internal-tailmask": "tail-rings-mask",
+          "feralraccoon-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    }
+  }
+}

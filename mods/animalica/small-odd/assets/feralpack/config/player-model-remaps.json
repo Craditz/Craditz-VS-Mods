@@ -1,0 +1,12 @@
+{
+  "OldCodeToNewCode": {
+    "feralpack:chicken-hen-mouthcarry": "feralpack:chicken-hen",
+    "feralpack:chicken-hen-pawcarry": "feralpack:chicken-hen",
+    "feralpack:chicken-rooster-mouthcarry": "feralpack:chicken-rooster",
+    "feralpack:chicken-rooster-pawcarry": "feralpack:chicken-rooster",
+    "feralpack:hare-female-mouthcarry": "feralpack:hare-female",
+    "feralpack:hare-female-pawcarry": "feralpack:hare-female",
+    "feralpack:hare-male-mouthcarry": "feralpack:hare-male",
+    "feralpack:hare-male-pawcarry": "feralpack:hare-male"
+  }
+}

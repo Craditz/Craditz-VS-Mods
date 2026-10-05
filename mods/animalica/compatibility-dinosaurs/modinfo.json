@@ -1,0 +1,22 @@
+{
+  "type": "content",
+  "name": "Animalica - Compatibility Pack 3 (Dinosaurs)",
+  "modid": "animalicacompatibility3",
+  "version": "0.4.2",
+  "description": "Animalica Compatibility Pack 3 contains playable models for Legacy of the Phanerozoic dinosaur-family mods. Requires Animalica Core and PlayerModelLib; supported dinosaur modules remain optional.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT",
+    "Special thanks to laughinggas and the Vintage Reborn compatibility project"
+  ],
+  "dependencies": {
+    "game": "1.22.3",
+    "playermodellib": "1.22.4",
+    "animalicacore": "1.1.43"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

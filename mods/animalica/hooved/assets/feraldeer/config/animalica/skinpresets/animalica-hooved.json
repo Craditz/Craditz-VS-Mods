@@ -1,0 +1,128 @@
+{
+  "selectors": {
+    "feraldeer-caribou-coatpreset": {
+      "modelCodes": [
+        "feraldeer-caribou"
+      ],
+      "defaultPreset": "natural",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "voicetype": "deercall1",
+        "voicepitch": "medium",
+        "antlers": "none",
+        "carrymode": "hoof"
+      },
+      "presets": {
+        "natural": {
+          "feraldeer-caribou-coatcolor": "#FF737171",
+          "feraldeer-caribou-markingcolor": "#FF5E5955",
+          "feraldeer-caribou-undercoatcolor": "#FF9C9EA2",
+          "feraldeer-caribou-legscolor": "#FF5E5955",
+          "feraldeer-caribou-hoofcolor": "#FF272422",
+          "feraldeer-caribou-eyecolor": "#FF171312",
+          "feraldeer-caribou-earcolor": "#FFA58789",
+          "feraldeer-caribou-tailcolor": "#FF9C9EA2",
+          "feraldeer-caribou-internal-patternmask": "clear-mask",
+          "feraldeer-caribou-internal-undercoatmask": "undercoat-soft-mask",
+          "feraldeer-caribou-internal-legsmask": "legs-soft-mask",
+          "feraldeer-caribou-internal-hoovesmask": "hooves-mask",
+          "feraldeer-caribou-internal-eyesmask": "eyes-mask",
+          "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
+          "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+        },
+        "marked": {
+          "feraldeer-caribou-coatcolor": "#FF737171",
+          "feraldeer-caribou-markingcolor": "#FF4D4641",
+          "feraldeer-caribou-undercoatcolor": "#FF9C9EA2",
+          "feraldeer-caribou-legscolor": "#FF5E5955",
+          "feraldeer-caribou-hoofcolor": "#FF24211F",
+          "feraldeer-caribou-eyecolor": "#FF171311",
+          "feraldeer-caribou-earcolor": "#FFA58386",
+          "feraldeer-caribou-tailcolor": "#FF9C9EA2",
+          "feraldeer-caribou-internal-patternmask": "spots-mask",
+          "feraldeer-caribou-internal-undercoatmask": "undercoat-soft-mask",
+          "feraldeer-caribou-internal-legsmask": "legs-soft-mask",
+          "feraldeer-caribou-internal-hoovesmask": "hooves-mask",
+          "feraldeer-caribou-internal-eyesmask": "eyes-mask",
+          "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
+          "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+        },
+        "pale": {
+          "feraldeer-caribou-coatcolor": "#FFBDB6AB",
+          "feraldeer-caribou-markingcolor": "#FF988F82",
+          "feraldeer-caribou-undercoatcolor": "#FFF1E9DA",
+          "feraldeer-caribou-legscolor": "#FF938A7E",
+          "feraldeer-caribou-hoofcolor": "#FF6B625A",
+          "feraldeer-caribou-eyecolor": "#FF201715",
+          "feraldeer-caribou-earcolor": "#FFD4A7A4",
+          "feraldeer-caribou-tailcolor": "#FFECE4D7",
+          "feraldeer-caribou-internal-patternmask": "dorsal-mask",
+          "feraldeer-caribou-internal-undercoatmask": "undercoat-soft-mask",
+          "feraldeer-caribou-internal-legsmask": "legs-soft-mask",
+          "feraldeer-caribou-internal-hoovesmask": "hooves-mask",
+          "feraldeer-caribou-internal-eyesmask": "eyes-mask",
+          "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
+          "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+        },
+        "dark": {
+          "feraldeer-caribou-coatcolor": "#FF3E3B3A",
+          "feraldeer-caribou-markingcolor": "#FF171615",
+          "feraldeer-caribou-undercoatcolor": "#FF7A7673",
+          "feraldeer-caribou-legscolor": "#FF242220",
+          "feraldeer-caribou-hoofcolor": "#FF111111",
+          "feraldeer-caribou-eyecolor": "#FF9A552B",
+          "feraldeer-caribou-earcolor": "#FF795A5A",
+          "feraldeer-caribou-tailcolor": "#FF34312E",
+          "feraldeer-caribou-internal-patternmask": "dorsal-mask",
+          "feraldeer-caribou-internal-undercoatmask": "undercoat-soft-mask",
+          "feraldeer-caribou-internal-legsmask": "legs-soft-mask",
+          "feraldeer-caribou-internal-hoovesmask": "hooves-mask",
+          "feraldeer-caribou-internal-eyesmask": "eyes-mask",
+          "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
+          "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+        },
+        "albino": {
+          "feraldeer-caribou-coatcolor": "#FFF0EBE2",
+          "feraldeer-caribou-markingcolor": "#FFDCCAC7",
+          "feraldeer-caribou-undercoatcolor": "#FFF8F0E8",
+          "feraldeer-caribou-legscolor": "#FFE5DAD1",
+          "feraldeer-caribou-hoofcolor": "#FFC4AAA3",
+          "feraldeer-caribou-eyecolor": "#FFB74343",
+          "feraldeer-caribou-earcolor": "#FFD99D9F",
+          "feraldeer-caribou-tailcolor": "#FFF7EEE5",
+          "feraldeer-caribou-internal-patternmask": "clear-mask",
+          "feraldeer-caribou-internal-undercoatmask": "undercoat-soft-mask",
+          "feraldeer-caribou-internal-legsmask": "legs-soft-mask",
+          "feraldeer-caribou-internal-hoovesmask": "hooves-mask",
+          "feraldeer-caribou-internal-eyesmask": "eyes-mask",
+          "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
+          "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+        },
+        "melanistic": {
+          "feraldeer-caribou-coatcolor": "#FF252524",
+          "feraldeer-caribou-markingcolor": "#FF101010",
+          "feraldeer-caribou-undercoatcolor": "#FF474643",
+          "feraldeer-caribou-legscolor": "#FF171717",
+          "feraldeer-caribou-hoofcolor": "#FF090909",
+          "feraldeer-caribou-eyecolor": "#FF8C291F",
+          "feraldeer-caribou-earcolor": "#FF5E4748",
+          "feraldeer-caribou-tailcolor": "#FF181818",
+          "feraldeer-caribou-internal-patternmask": "clear-mask",
+          "feraldeer-caribou-internal-undercoatmask": "undercoat-soft-mask",
+          "feraldeer-caribou-internal-legsmask": "legs-soft-mask",
+          "feraldeer-caribou-internal-hoovesmask": "hooves-mask",
+          "feraldeer-caribou-internal-eyesmask": "eyes-mask",
+          "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
+          "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    }
+  }
+}

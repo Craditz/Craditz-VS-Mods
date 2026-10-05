@@ -1,0 +1,27 @@
+[
+  {
+    "code": "animalicasenses-scent",
+    "type": "Positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalicasenses-nightsight",
+    "type": "Positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalicasenses-both",
+    "type": "Positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalicaabilities-pounce",
+    "type": "Positive",
+    "attributes": {}
+  },
+  {
+    "code": "animalicaabilities-adrenaline",
+    "type": "Positive",
+    "attributes": {}
+  }
+]

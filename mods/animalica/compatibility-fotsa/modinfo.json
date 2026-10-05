@@ -1,0 +1,22 @@
+{
+  "type": "content",
+  "name": "Animalica - Compatibility Pack 2 (FotSA)",
+  "modid": "animalicacompatibility2",
+  "version": "0.5.2",
+  "description": "Animalica - Compatibility Pack 2 adds 151 clothing-capable playable animal entries from the Fauna of the Stone Age collection. It supports 20 optional FotSA modules with native animal animations, wearable clothing, first-person handling, and Paw Carry or Mouth Carry modes. Each model appears only when its corresponding companion module is installed. Requires Animalica Core and PlayerModelLib. Manual testing was representative rather than exhaustive.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT",
+    "Special thanks to Tenth Architect, creator of Fauna of the Stone Age"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.22.4",
+    "animalicacore": "1.1.43"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

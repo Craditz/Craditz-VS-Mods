@@ -1,0 +1,61 @@
+[
+  {
+    "code": "animalicaenemies-feral",
+    "type": "positive",
+    "attributes": {
+      "meleeWeaponsDamage": 0.1
+    }
+  },
+  {
+    "code": "animalicaenemies-rusher",
+    "type": "positive",
+    "attributes": {
+      "sprintSpeed": 0.08
+    }
+  },
+  {
+    "code": "animalicaenemies-crawler",
+    "type": "positive",
+    "attributes": {
+      "sneakSpeed": 0.1
+    }
+  },
+  {
+    "code": "animalicaenemies-marksman",
+    "type": "positive",
+    "attributes": {
+      "rangedWeaponsDamage": 0.15,
+      "rangedWeaponsAcc": 0.2,
+      "bowDrawingStrength": 0.15
+    }
+  },
+  {
+    "code": "animalicaenemies-automaton",
+    "type": "positive",
+    "attributes": {
+      "fallDamageFactor": -1.0,
+      "mechanicalsDamage": 0.25
+    }
+  },
+  {
+    "code": "animalicaenemies-sawblade",
+    "type": "positive",
+    "attributes": {
+      "meleeWeaponsDamage": 0.2
+    }
+  },
+  {
+    "code": "animalicaenemies-fragile",
+    "type": "negative",
+    "attributes": {
+      "maxhealthExtraPoints": -2
+    }
+  },
+  {
+    "code": "animalicaenemies-reinforced",
+    "type": "positive",
+    "attributes": {
+      "maxhealthExtraPoints": 4
+    }
+  }
+]

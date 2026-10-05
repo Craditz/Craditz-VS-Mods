@@ -1,0 +1,2838 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-bison-male",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-bison-male-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.143,
+        1.502
+      ],
+      "EyeHeight": 1.352,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-bison-male-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "bisonskin1",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin1"
+            },
+            {
+              "code": "bisonskin2",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin2"
+            },
+            {
+              "code": "bisonskin3",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin3"
+            },
+            {
+              "code": "bisonskin4",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin4"
+            },
+            {
+              "code": "bisonskin5",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin5"
+            },
+            {
+              "code": "bisonskin6",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin6"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-bison-male-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-bison-male-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        1.429,
+        1.878
+      ],
+      "MinCollisionBox": [
+        0.857,
+        1.127
+      ],
+      "MaxEyeHeight": 1.69,
+      "MinEyeHeight": 1.014,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-bison-female",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-bison-female-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.113,
+        1.381
+      ],
+      "EyeHeight": 1.243,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-bison-female-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "bisonskin1",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin1"
+            },
+            {
+              "code": "bisonskin2",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin2"
+            },
+            {
+              "code": "bisonskin3",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin3"
+            },
+            {
+              "code": "bisonskin4",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin4"
+            },
+            {
+              "code": "bisonskin5",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin5"
+            },
+            {
+              "code": "bisonskin6",
+              "texture": "feverstonewilds:entity/land/bison/bisonskin6"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-bison-female-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-bison-female-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        1.392,
+        1.726
+      ],
+      "MinCollisionBox": [
+        0.835,
+        1.036
+      ],
+      "MaxEyeHeight": 1.554,
+      "MinEyeHeight": 0.932,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.6,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-cockatrice",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-cockatrice-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "ExtraTraits": [
+        "animalica-physiology-unnecessarily-menacing",
+        "animalica-physiology-predator-build",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.35,
+        0.546
+      ],
+      "EyeHeight": 0.697,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-cockatrice-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "cockatriceskin1",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin1"
+            },
+            {
+              "code": "cockatriceskin2",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin2"
+            },
+            {
+              "code": "cockatriceskin3",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin3"
+            },
+            {
+              "code": "cockatriceskin4",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin4"
+            },
+            {
+              "code": "cockatriceskin5",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin5"
+            },
+            {
+              "code": "cockatriceskin6",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin6"
+            },
+            {
+              "code": "cockatriceskin7",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin7"
+            },
+            {
+              "code": "cockatriceskin8",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin8"
+            },
+            {
+              "code": "cockatriceskin9",
+              "texture": "feverstonewilds:entity/land/cockatrice/cockatriceskin9"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-cockatrice-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-cockatrice-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.438,
+        0.682
+      ],
+      "MinCollisionBox": [
+        0.263,
+        0.409
+      ],
+      "MaxEyeHeight": 0.871,
+      "MinEyeHeight": 0.523,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.31,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.31,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-giraffe",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-giraffe-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.145,
+        2.494
+      ],
+      "EyeHeight": 2.245,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-giraffe-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "giraffeskin1",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin1"
+            },
+            {
+              "code": "giraffeskin2",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin2"
+            },
+            {
+              "code": "giraffeskin3",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin3"
+            },
+            {
+              "code": "giraffeskin4",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin4"
+            },
+            {
+              "code": "giraffeskin5",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin5"
+            },
+            {
+              "code": "giraffeskin6",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin6"
+            },
+            {
+              "code": "giraffeskin7",
+              "texture": "feverstonewilds:entity/land/giraffe/giraffeskin7"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-giraffe-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-giraffe-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        1.431,
+        3.117
+      ],
+      "MinCollisionBox": [
+        0.859,
+        1.87
+      ],
+      "MaxEyeHeight": 2.806,
+      "MinEyeHeight": 1.683,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.26,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.26,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-hellboar-male",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-boar-build",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-hellboar-male-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.943,
+        1.031
+      ],
+      "EyeHeight": 1.481,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-hellboar-male-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "hellboarskin1",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin1"
+            },
+            {
+              "code": "hellboarskin2",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin2"
+            },
+            {
+              "code": "hellboarskin3",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin3"
+            },
+            {
+              "code": "hellboarskin4",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin4"
+            },
+            {
+              "code": "hellboarskin5",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin5"
+            },
+            {
+              "code": "hellboarskin6",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin6"
+            },
+            {
+              "code": "hellboarskin7",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin7"
+            },
+            {
+              "code": "hellboarskin8",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin8"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-hellboar-male-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-hellboar-male-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        1.179,
+        1.288
+      ],
+      "MinCollisionBox": [
+        0.707,
+        0.773
+      ],
+      "MaxEyeHeight": 1.851,
+      "MinEyeHeight": 1.111,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-hellboar-female",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-boar-build",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-hellboar-female-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.849,
+        0.928
+      ],
+      "EyeHeight": 1.333,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-hellboar-female-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "hellboarskin1",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin1"
+            },
+            {
+              "code": "hellboarskin2",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin2"
+            },
+            {
+              "code": "hellboarskin3",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin3"
+            },
+            {
+              "code": "hellboarskin4",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin4"
+            },
+            {
+              "code": "hellboarskin5",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin5"
+            },
+            {
+              "code": "hellboarskin6",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin6"
+            },
+            {
+              "code": "hellboarskin7",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin7"
+            },
+            {
+              "code": "hellboarskin8",
+              "texture": "feverstonewilds:entity/land/hellboar/hellboarskin8"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-hellboar-female-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-hellboar-female-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        1.061,
+        1.16
+      ],
+      "MinCollisionBox": [
+        0.637,
+        0.696
+      ],
+      "MaxEyeHeight": 1.666,
+      "MinEyeHeight": 1.0,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-donkey",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-hardy-runner",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-donkey-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.605,
+        1.417
+      ],
+      "EyeHeight": 2.052,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-donkey-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "donkeyskin1",
+              "texture": "feverstonewilds:entity/land/donkey/donkeyskin1"
+            },
+            {
+              "code": "donkeyskin2",
+              "texture": "feverstonewilds:entity/land/donkey/donkeyskin2"
+            },
+            {
+              "code": "donkeyskin3",
+              "texture": "feverstonewilds:entity/land/donkey/donkeyskin3"
+            },
+            {
+              "code": "donkeyskin4",
+              "texture": "feverstonewilds:entity/land/donkey/donkeyskin4"
+            },
+            {
+              "code": "donkeyskin5",
+              "texture": "feverstonewilds:entity/land/donkey/donkeyskin5"
+            },
+            {
+              "code": "donkeyskin6",
+              "texture": "feverstonewilds:entity/land/donkey/donkeyskin6"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-donkey-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-donkey-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.756,
+        1.771
+      ],
+      "MinCollisionBox": [
+        0.454,
+        1.063
+      ],
+      "MaxEyeHeight": 2.565,
+      "MinEyeHeight": 1.539,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 4.03,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 4.03,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-quarter",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-hardy-runner",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-quarter-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.581,
+        1.43
+      ],
+      "EyeHeight": 2.01,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-quarter-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "horseskin1",
+              "texture": "feverstonewilds:entity/land/horse/horseskin1"
+            },
+            {
+              "code": "horseskin10",
+              "texture": "feverstonewilds:entity/land/horse/horseskin10"
+            },
+            {
+              "code": "horseskin11",
+              "texture": "feverstonewilds:entity/land/horse/horseskin11"
+            },
+            {
+              "code": "horseskin12",
+              "texture": "feverstonewilds:entity/land/horse/horseskin12"
+            },
+            {
+              "code": "horseskin13",
+              "texture": "feverstonewilds:entity/land/horse/horseskin13"
+            },
+            {
+              "code": "horseskin14",
+              "texture": "feverstonewilds:entity/land/horse/horseskin14"
+            },
+            {
+              "code": "horseskin15",
+              "texture": "feverstonewilds:entity/land/horse/horseskin15"
+            },
+            {
+              "code": "horseskin16",
+              "texture": "feverstonewilds:entity/land/horse/horseskin16"
+            },
+            {
+              "code": "horseskin17",
+              "texture": "feverstonewilds:entity/land/horse/horseskin17"
+            },
+            {
+              "code": "horseskin18",
+              "texture": "feverstonewilds:entity/land/horse/horseskin18"
+            },
+            {
+              "code": "horseskin19",
+              "texture": "feverstonewilds:entity/land/horse/horseskin19"
+            },
+            {
+              "code": "horseskin2",
+              "texture": "feverstonewilds:entity/land/horse/horseskin2"
+            },
+            {
+              "code": "horseskin20",
+              "texture": "feverstonewilds:entity/land/horse/horseskin20"
+            },
+            {
+              "code": "horseskin21",
+              "texture": "feverstonewilds:entity/land/horse/horseskin21"
+            },
+            {
+              "code": "horseskin22",
+              "texture": "feverstonewilds:entity/land/horse/horseskin22"
+            },
+            {
+              "code": "horseskin23",
+              "texture": "feverstonewilds:entity/land/horse/horseskin23"
+            },
+            {
+              "code": "horseskin24",
+              "texture": "feverstonewilds:entity/land/horse/horseskin24"
+            },
+            {
+              "code": "horseskin25",
+              "texture": "feverstonewilds:entity/land/horse/horseskin25"
+            },
+            {
+              "code": "horseskin26",
+              "texture": "feverstonewilds:entity/land/horse/horseskin26"
+            },
+            {
+              "code": "horseskin3",
+              "texture": "feverstonewilds:entity/land/horse/horseskin3"
+            },
+            {
+              "code": "horseskin4",
+              "texture": "feverstonewilds:entity/land/horse/horseskin4"
+            },
+            {
+              "code": "horseskin5",
+              "texture": "feverstonewilds:entity/land/horse/horseskin5"
+            },
+            {
+              "code": "horseskin6",
+              "texture": "feverstonewilds:entity/land/horse/horseskin6"
+            },
+            {
+              "code": "horseskin7",
+              "texture": "feverstonewilds:entity/land/horse/horseskin7"
+            },
+            {
+              "code": "horseskin8",
+              "texture": "feverstonewilds:entity/land/horse/horseskin8"
+            },
+            {
+              "code": "horseskin9",
+              "texture": "feverstonewilds:entity/land/horse/horseskin9"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-quarter-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-quarter-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.726,
+        1.787
+      ],
+      "MinCollisionBox": [
+        0.435,
+        1.072
+      ],
+      "MaxEyeHeight": 2.512,
+      "MinEyeHeight": 1.507,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 4.03,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 4.03,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-shire",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-hardy-runner",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-shire-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.789,
+        1.918
+      ],
+      "EyeHeight": 1.726,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-shire-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "horseskin1",
+              "texture": "feverstonewilds:entity/land/horse/horseskin1"
+            },
+            {
+              "code": "horseskin10",
+              "texture": "feverstonewilds:entity/land/horse/horseskin10"
+            },
+            {
+              "code": "horseskin11",
+              "texture": "feverstonewilds:entity/land/horse/horseskin11"
+            },
+            {
+              "code": "horseskin12",
+              "texture": "feverstonewilds:entity/land/horse/horseskin12"
+            },
+            {
+              "code": "horseskin13",
+              "texture": "feverstonewilds:entity/land/horse/horseskin13"
+            },
+            {
+              "code": "horseskin14",
+              "texture": "feverstonewilds:entity/land/horse/horseskin14"
+            },
+            {
+              "code": "horseskin15",
+              "texture": "feverstonewilds:entity/land/horse/horseskin15"
+            },
+            {
+              "code": "horseskin16",
+              "texture": "feverstonewilds:entity/land/horse/horseskin16"
+            },
+            {
+              "code": "horseskin17",
+              "texture": "feverstonewilds:entity/land/horse/horseskin17"
+            },
+            {
+              "code": "horseskin18",
+              "texture": "feverstonewilds:entity/land/horse/horseskin18"
+            },
+            {
+              "code": "horseskin19",
+              "texture": "feverstonewilds:entity/land/horse/horseskin19"
+            },
+            {
+              "code": "horseskin2",
+              "texture": "feverstonewilds:entity/land/horse/horseskin2"
+            },
+            {
+              "code": "horseskin20",
+              "texture": "feverstonewilds:entity/land/horse/horseskin20"
+            },
+            {
+              "code": "horseskin21",
+              "texture": "feverstonewilds:entity/land/horse/horseskin21"
+            },
+            {
+              "code": "horseskin22",
+              "texture": "feverstonewilds:entity/land/horse/horseskin22"
+            },
+            {
+              "code": "horseskin23",
+              "texture": "feverstonewilds:entity/land/horse/horseskin23"
+            },
+            {
+              "code": "horseskin24",
+              "texture": "feverstonewilds:entity/land/horse/horseskin24"
+            },
+            {
+              "code": "horseskin25",
+              "texture": "feverstonewilds:entity/land/horse/horseskin25"
+            },
+            {
+              "code": "horseskin26",
+              "texture": "feverstonewilds:entity/land/horse/horseskin26"
+            },
+            {
+              "code": "horseskin3",
+              "texture": "feverstonewilds:entity/land/horse/horseskin3"
+            },
+            {
+              "code": "horseskin4",
+              "texture": "feverstonewilds:entity/land/horse/horseskin4"
+            },
+            {
+              "code": "horseskin5",
+              "texture": "feverstonewilds:entity/land/horse/horseskin5"
+            },
+            {
+              "code": "horseskin6",
+              "texture": "feverstonewilds:entity/land/horse/horseskin6"
+            },
+            {
+              "code": "horseskin7",
+              "texture": "feverstonewilds:entity/land/horse/horseskin7"
+            },
+            {
+              "code": "horseskin8",
+              "texture": "feverstonewilds:entity/land/horse/horseskin8"
+            },
+            {
+              "code": "horseskin9",
+              "texture": "feverstonewilds:entity/land/horse/horseskin9"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-shire-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-shire-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.986,
+        2.397
+      ],
+      "MinCollisionBox": [
+        0.591,
+        1.438
+      ],
+      "MaxEyeHeight": 2.158,
+      "MinEyeHeight": 1.295,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-ostrich",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-ostrich-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.672,
+        1.018
+      ],
+      "EyeHeight": 0.916,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-ostrich-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "ostrichskin1",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin1"
+            },
+            {
+              "code": "ostrichskin10",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin10"
+            },
+            {
+              "code": "ostrichskin2",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin2"
+            },
+            {
+              "code": "ostrichskin3",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin3"
+            },
+            {
+              "code": "ostrichskin4",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin4"
+            },
+            {
+              "code": "ostrichskin5",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin5"
+            },
+            {
+              "code": "ostrichskin6",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin6"
+            },
+            {
+              "code": "ostrichskin7",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin7"
+            },
+            {
+              "code": "ostrichskin8",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin8"
+            },
+            {
+              "code": "ostrichskin9",
+              "texture": "feverstonewilds:entity/land/ostrich/ostrichskin9"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-ostrich-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-ostrich-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.841,
+        1.273
+      ],
+      "MinCollisionBox": [
+        0.504,
+        0.764
+      ],
+      "MaxEyeHeight": 1.146,
+      "MinEyeHeight": 0.687,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 2.13,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 2.13,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-toad",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-marsh-hunter",
+        "animalica-diet-normal"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-toad-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.192,
+        0.198
+      ],
+      "EyeHeight": 0.414,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-toad-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "toad1",
+              "texture": "feverstonewilds:entity/land/toad/toad1"
+            },
+            {
+              "code": "toad2",
+              "texture": "feverstonewilds:entity/land/toad/toad2"
+            },
+            {
+              "code": "toad3",
+              "texture": "feverstonewilds:entity/land/toad/toad3"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-toad-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-toad-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        0.24,
+        0.248
+      ],
+      "MinCollisionBox": [
+        0.144,
+        0.149
+      ],
+      "MaxEyeHeight": 0.515,
+      "MinEyeHeight": 0.31,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-bullshark",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-bullshark-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.809,
+        1.844
+      ],
+      "EyeHeight": 1.257,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-bullshark-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "bullshark1",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark1"
+            },
+            {
+              "code": "bullshark2",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark2"
+            },
+            {
+              "code": "bullshark3",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark3"
+            },
+            {
+              "code": "bullshark4",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark4"
+            },
+            {
+              "code": "bullshark5",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark5"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-bullshark-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-bullshark-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        2.261,
+        2.305
+      ],
+      "MinCollisionBox": [
+        1.357,
+        1.383
+      ],
+      "MaxEyeHeight": 1.571,
+      "MinEyeHeight": 0.943,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.99,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.99,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-hammerhead",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-hammerhead-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        3.597,
+        3.421
+      ],
+      "EyeHeight": 2.1,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-hammerhead-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "bullshark1",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark1"
+            },
+            {
+              "code": "bullshark2",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark2"
+            },
+            {
+              "code": "bullshark3",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark3"
+            },
+            {
+              "code": "bullshark4",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark4"
+            },
+            {
+              "code": "bullshark5",
+              "texture": "feverstonewilds:entity/water/bullshark/bullshark5"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-hammerhead-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-hammerhead-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        4.496,
+        4.277
+      ],
+      "MinCollisionBox": [
+        2.698,
+        2.566
+      ],
+      "MaxEyeHeight": 2.626,
+      "MinEyeHeight": 1.575,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.99,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.99,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-stingray",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-stingray-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.754,
+        0.166
+      ],
+      "EyeHeight": 0.414,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-stingray-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "stingrayskin1",
+              "texture": "feverstonewilds:entity/water/stingray/stingrayskin1"
+            },
+            {
+              "code": "stingrayskin2",
+              "texture": "feverstonewilds:entity/water/stingray/stingrayskin2"
+            },
+            {
+              "code": "stingrayskin3",
+              "texture": "feverstonewilds:entity/water/stingray/stingrayskin3"
+            },
+            {
+              "code": "stingrayskin4",
+              "texture": "feverstonewilds:entity/water/stingray/stingrayskin4"
+            },
+            {
+              "code": "stingrayskin5",
+              "texture": "feverstonewilds:entity/water/stingray/stingrayskin5"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-stingray-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-stingray-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MaxCollisionBox": [
+        2.192,
+        0.208
+      ],
+      "MinCollisionBox": [
+        1.315,
+        0.125
+      ],
+      "MaxEyeHeight": 0.516,
+      "MinEyeHeight": 0.309,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-direwolf",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-direwolf-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.8,
+        1.2
+      ],
+      "EyeHeight": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-direwolf-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "direwolf1",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf1"
+            },
+            {
+              "code": "direwolf10",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf10"
+            },
+            {
+              "code": "direwolf11",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf11"
+            },
+            {
+              "code": "direwolf12",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf12"
+            },
+            {
+              "code": "direwolf13",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf13"
+            },
+            {
+              "code": "direwolf14",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf14"
+            },
+            {
+              "code": "direwolf2",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf2"
+            },
+            {
+              "code": "direwolf3",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf3"
+            },
+            {
+              "code": "direwolf4",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf4"
+            },
+            {
+              "code": "direwolf5",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf5"
+            },
+            {
+              "code": "direwolf6",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf6"
+            },
+            {
+              "code": "direwolf7",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf7"
+            },
+            {
+              "code": "direwolf8",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf8"
+            },
+            {
+              "code": "direwolf9",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf9"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-direwolf-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-direwolf-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.82,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.82,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-direwolf-pup",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-direwolf-pup-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.8,
+        1.2
+      ],
+      "EyeHeight": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-direwolf-pup-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "direwolf-pup1",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf-pup1"
+            },
+            {
+              "code": "direwolf-pup2",
+              "texture": "feverstonewilds:entity/land/direwolf/direwolf-pup2"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-direwolf-pup-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-direwolf-pup-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/feverstonewilds-compat.json",
+    "op": "add",
+    "path": "/feverstone-griffon",
+    "dependsOn": [
+      {
+        "modid": "feverstonewilds"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/feverstonewilds/feverstone-griffon-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.8,
+        1.2
+      ],
+      "EyeHeight": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.25,
+      "SkinnableParts": [
+        {
+          "code": "feverstone-griffon-wings",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "griffonskin1Wing",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "1",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin1Wing"
+            },
+            {
+              "code": "2",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin2Wing"
+            },
+            {
+              "code": "3",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin3Wing"
+            },
+            {
+              "code": "4",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin4Wing"
+            },
+            {
+              "code": "5",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin5Wing"
+            },
+            {
+              "code": "6",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin6Wing"
+            },
+            {
+              "code": "7",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin7Wing"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-griffon-body",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "griffonskin1",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "1",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin1"
+            },
+            {
+              "code": "2",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin2"
+            },
+            {
+              "code": "3",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin3"
+            },
+            {
+              "code": "4",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin4"
+            },
+            {
+              "code": "5",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin5"
+            },
+            {
+              "code": "6",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin6"
+            },
+            {
+              "code": "7",
+              "texture": "feverstonewilds:entity/land/griffon/griffonskin7"
+            }
+          ]
+        },
+        {
+          "code": "feverstone-griffon-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/feverstonewilds/feverstone-griffon-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-pursuit-hunter",
+        "animalica-foraging-scavenger",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-flight-wingworks-small-bird"
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.11,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

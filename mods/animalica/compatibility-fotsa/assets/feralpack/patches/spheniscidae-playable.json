@@ -1,0 +1,481 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/spheniscidae-compat.json",
+    "op": "add",
+    "path": "/spheniscidae-aptenodytesforsteri",
+    "dependsOn": [
+      {
+        "modid": "spheniscidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/spheniscidae/spheniscidae-aptenodytesforsteri-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.352,
+        0.564
+      ],
+      "EyeHeight": 1.031,
+      "MaxCollisionBox": [
+        0.44,
+        0.705
+      ],
+      "MinCollisionBox": [
+        0.264,
+        0.423
+      ],
+      "MaxEyeHeight": 1.289,
+      "MinEyeHeight": 0.773,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 1.05,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "spheniscidae-aptenodytesforsteri-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "emperor-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/aptenodytesforsteri-adult"
+            },
+            {
+              "code": "king-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/aptenodytespatagonicus-adult"
+            }
+          ]
+        },
+        {
+          "code": "spheniscidae-aptenodytesforsteri-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/spheniscidae/spheniscidae-aptenodytesforsteri-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/spheniscidae-compat.json",
+    "op": "add",
+    "path": "/spheniscidae-eudypteschrysocome",
+    "dependsOn": [
+      {
+        "modid": "spheniscidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/spheniscidae/spheniscidae-eudypteschrysocome-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.352,
+        0.561
+      ],
+      "EyeHeight": 0.984,
+      "MaxCollisionBox": [
+        0.44,
+        0.701
+      ],
+      "MinCollisionBox": [
+        0.264,
+        0.42
+      ],
+      "MaxEyeHeight": 1.23,
+      "MinEyeHeight": 0.738,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.53,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "spheniscidae-eudypteschrysocome-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "southern-rockhopper-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudypteschrysocome-adult"
+            },
+            {
+              "code": "macaroni-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudypteschrysolophus-adult"
+            },
+            {
+              "code": "northern-rockhopper-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptesmoseleyi-adult"
+            },
+            {
+              "code": "fiordland-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptespachyrhynchus-adult"
+            },
+            {
+              "code": "snares-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptesrobustus-adult"
+            },
+            {
+              "code": "erect-crested-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptessclateri-adult"
+            },
+            {
+              "code": "royal-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptesschlegeli-adult"
+            },
+            {
+              "code": "chatham-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudypteswarhami-adult"
+            }
+          ]
+        },
+        {
+          "code": "spheniscidae-eudypteschrysocome-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/spheniscidae/spheniscidae-eudypteschrysocome-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/spheniscidae-compat.json",
+    "op": "add",
+    "path": "/spheniscidae-spheniscusdemersus",
+    "dependsOn": [
+      {
+        "modid": "spheniscidae"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-fotsa-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "animalicacore:icons/animalica-compatibility",
+      "ShapePath": "feralpack:entity/compatibility/spheniscidae/spheniscidae-spheniscusdemersus-selector",
+      "ExtraTraits": [
+        "animalica-physiology-long-legged-runner",
+        "animalica-drawback-fragile",
+        "animalica-diet-normal"
+      ],
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.294,
+        0.481
+      ],
+      "EyeHeight": 0.855,
+      "MaxCollisionBox": [
+        0.367,
+        0.601
+      ],
+      "MinCollisionBox": [
+        0.22,
+        0.36
+      ],
+      "MaxEyeHeight": 1.069,
+      "MinEyeHeight": 0.641,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "ModelSizeFactor": 0.73,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.5,
+      "SkinnableParts": [
+        {
+          "code": "spheniscidae-spheniscusdemersus-species",
+          "type": "texture",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayTexture": false,
+          "variants": [
+            {
+              "code": "little-blue-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptulaminor-adult"
+            },
+            {
+              "code": "australian-little-blue-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/eudyptulanovaehollandiae-adult"
+            },
+            {
+              "code": "yellow-eyed-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/megadyptesantipodes-adult"
+            },
+            {
+              "code": "adelie-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/pygoscelisadeliae-adult"
+            },
+            {
+              "code": "chinstrap-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/pygoscelisantarcticus-adult"
+            },
+            {
+              "code": "gentoo-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/pygoscelispapua-adult"
+            },
+            {
+              "code": "african-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/spheniscusdemersus-adult"
+            },
+            {
+              "code": "humboldt-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/spheniscushumboldti-adult"
+            },
+            {
+              "code": "magellanic-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/spheniscusmagellanicus-adult"
+            },
+            {
+              "code": "galapagos-penguin",
+              "texture": "spheniscidae:entity/spheniscidae/spheniscusmendiculus-adult"
+            }
+          ]
+        },
+        {
+          "code": "spheniscidae-spheniscusdemersus-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/spheniscidae/spheniscidae-spheniscusdemersus-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ],
+          "tabCode": "features"
+        }
+      ],
+      "MainTextureCode": "skin",
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

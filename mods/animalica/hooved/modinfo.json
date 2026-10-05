@@ -1,0 +1,23 @@
+{
+  "type": "content",
+  "name": "Animalica - Hooved Animals",
+  "modid": "animalicahooved",
+  "version": "0.5.2",
+  "description": "Modular Animalica pack adding playable hooved animal models for PlayerModelLib. Requires Animalica Core for shared race trait definitions, selector UI, and the global trait toggle. This pack contains many hooved models; not every variant has been individually tested.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT",
+    "Special thanks to Shintharo12, creator of Equus and Draconis",
+    "Special thanks to Xel, creator of Fox Socks"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.22.4",
+    "animalicacore": "1.1.43"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

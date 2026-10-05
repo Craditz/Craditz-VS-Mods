@@ -1,0 +1,339 @@
+{
+  "selectors": {
+    "sirenia-amazonian-manatee-coatpreset": {
+      "modelCodes": [
+        "sirenia-amazonian-manatee"
+      ],
+      "defaultPreset": "natural",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "sirenia-amazonian-manatee-carrymode": "paw"
+      },
+      "presets": {
+        "natural": {
+          "sirenia-amazonian-manatee-bodycolor": "#FF4F595C",
+          "sirenia-amazonian-manatee-markingcolor": "#FFE4DED0",
+          "sirenia-amazonian-manatee-bellycolor": "#FF788080",
+          "sirenia-amazonian-manatee-muzzlecolor": "#FF69716D",
+          "sirenia-amazonian-manatee-flippercolor": "#FF465154",
+          "sirenia-amazonian-manatee-eyecolor": "#FF141817",
+          "sirenia-amazonian-manatee-oddeyecolor": "#FF141817",
+          "sirenia-amazonian-manatee-tailcolor": "#FF525E61",
+          "sirenia-amazonian-manatee-internal-patternmask": "natural-markings-mask",
+          "sirenia-amazonian-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-amazonian-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-amazonian-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-amazonian-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-amazonian-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-amazonian-manatee-internal-tailmask": "clear-mask",
+          "sirenia-amazonian-manatee-internal-fixeddetails": "fixed-details-mask"
+        },
+        "river-silver": {
+          "sirenia-amazonian-manatee-bodycolor": "#FF7A8587",
+          "sirenia-amazonian-manatee-markingcolor": "#FFD1D7D4",
+          "sirenia-amazonian-manatee-bellycolor": "#FFA1A8A5",
+          "sirenia-amazonian-manatee-muzzlecolor": "#FF929995",
+          "sirenia-amazonian-manatee-flippercolor": "#FF687477",
+          "sirenia-amazonian-manatee-eyecolor": "#FF18201E",
+          "sirenia-amazonian-manatee-oddeyecolor": "#FF18201E",
+          "sirenia-amazonian-manatee-tailcolor": "#FF707D80",
+          "sirenia-amazonian-manatee-internal-patternmask": "speckled-mottle-mask",
+          "sirenia-amazonian-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-amazonian-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-amazonian-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-amazonian-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-amazonian-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-amazonian-manatee-internal-tailmask": "clear-mask",
+          "sirenia-amazonian-manatee-internal-fixeddetails": "fixed-details-mask"
+        },
+        "charcoal": {
+          "sirenia-amazonian-manatee-bodycolor": "#FF353E42",
+          "sirenia-amazonian-manatee-markingcolor": "#FF87908C",
+          "sirenia-amazonian-manatee-bellycolor": "#FF596264",
+          "sirenia-amazonian-manatee-muzzlecolor": "#FF4A5351",
+          "sirenia-amazonian-manatee-flippercolor": "#FF2C363A",
+          "sirenia-amazonian-manatee-eyecolor": "#FF0D1110",
+          "sirenia-amazonian-manatee-oddeyecolor": "#FF0D1110",
+          "sirenia-amazonian-manatee-tailcolor": "#FF303B40",
+          "sirenia-amazonian-manatee-internal-patternmask": "dorsal-wash-mask",
+          "sirenia-amazonian-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-amazonian-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-amazonian-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-amazonian-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-amazonian-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-amazonian-manatee-internal-tailmask": "clear-mask",
+          "sirenia-amazonian-manatee-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    },
+    "sirenia-dugong-coatpreset": {
+      "modelCodes": [
+        "sirenia-dugong"
+      ],
+      "defaultPreset": "natural",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "sirenia-dugong-carrymode": "paw"
+      },
+      "presets": {
+        "natural": {
+          "sirenia-dugong-bodycolor": "#FF96958F",
+          "sirenia-dugong-markingcolor": "#FFC9C6BC",
+          "sirenia-dugong-bellycolor": "#FFB9B4AA",
+          "sirenia-dugong-muzzlecolor": "#FFA8A49D",
+          "sirenia-dugong-flippercolor": "#FF83837F",
+          "sirenia-dugong-eyecolor": "#FF171A18",
+          "sirenia-dugong-oddeyecolor": "#FF171A18",
+          "sirenia-dugong-tailcolor": "#FF7E8181",
+          "sirenia-dugong-internal-patternmask": "clear-mask",
+          "sirenia-dugong-internal-bellymask": "belly-soft-mask",
+          "sirenia-dugong-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-dugong-internal-flippermask": "flippers-soft-mask",
+          "sirenia-dugong-internal-eyesbasemask": "eyes-mask",
+          "sirenia-dugong-internal-eyesmask": "clear-mask",
+          "sirenia-dugong-internal-tailmask": "clear-mask",
+          "sirenia-dugong-internal-fixeddetails": "fixed-details-mask"
+        },
+        "rose-gray": {
+          "sirenia-dugong-bodycolor": "#FFA58F8A",
+          "sirenia-dugong-markingcolor": "#FFD4BBB2",
+          "sirenia-dugong-bellycolor": "#FFCDB8B0",
+          "sirenia-dugong-muzzlecolor": "#FFBAA49E",
+          "sirenia-dugong-flippercolor": "#FF8E7875",
+          "sirenia-dugong-eyecolor": "#FF1D1717",
+          "sirenia-dugong-oddeyecolor": "#FF1D1717",
+          "sirenia-dugong-tailcolor": "#FF927E7B",
+          "sirenia-dugong-internal-patternmask": "speckled-mottle-mask",
+          "sirenia-dugong-internal-bellymask": "belly-soft-mask",
+          "sirenia-dugong-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-dugong-internal-flippermask": "flippers-soft-mask",
+          "sirenia-dugong-internal-eyesbasemask": "eyes-mask",
+          "sirenia-dugong-internal-eyesmask": "clear-mask",
+          "sirenia-dugong-internal-tailmask": "clear-mask",
+          "sirenia-dugong-internal-fixeddetails": "fixed-details-mask"
+        },
+        "deep-water": {
+          "sirenia-dugong-bodycolor": "#FF565F61",
+          "sirenia-dugong-markingcolor": "#FF889395",
+          "sirenia-dugong-bellycolor": "#FF7B8483",
+          "sirenia-dugong-muzzlecolor": "#FF697272",
+          "sirenia-dugong-flippercolor": "#FF454E51",
+          "sirenia-dugong-eyecolor": "#FF101514",
+          "sirenia-dugong-oddeyecolor": "#FF101514",
+          "sirenia-dugong-tailcolor": "#FF475256",
+          "sirenia-dugong-internal-patternmask": "dorsal-wash-mask",
+          "sirenia-dugong-internal-bellymask": "belly-soft-mask",
+          "sirenia-dugong-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-dugong-internal-flippermask": "flippers-soft-mask",
+          "sirenia-dugong-internal-eyesbasemask": "eyes-mask",
+          "sirenia-dugong-internal-eyesmask": "clear-mask",
+          "sirenia-dugong-internal-tailmask": "clear-mask",
+          "sirenia-dugong-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    },
+    "sirenia-stellers-sea-cow-coatpreset": {
+      "modelCodes": [
+        "sirenia-stellers-sea-cow"
+      ],
+      "defaultPreset": "natural",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "sirenia-stellers-sea-cow-carrymode": "paw"
+      },
+      "presets": {
+        "natural": {
+          "sirenia-stellers-sea-cow-bodycolor": "#FF594936",
+          "sirenia-stellers-sea-cow-markingcolor": "#FFD6D0BD",
+          "sirenia-stellers-sea-cow-bellycolor": "#FF786B57",
+          "sirenia-stellers-sea-cow-muzzlecolor": "#FF665846",
+          "sirenia-stellers-sea-cow-flippercolor": "#FF493C30",
+          "sirenia-stellers-sea-cow-eyecolor": "#FF141310",
+          "sirenia-stellers-sea-cow-oddeyecolor": "#FF141310",
+          "sirenia-stellers-sea-cow-tailcolor": "#FF44382D",
+          "sirenia-stellers-sea-cow-internal-patternmask": "natural-markings-mask",
+          "sirenia-stellers-sea-cow-internal-bellymask": "belly-soft-mask",
+          "sirenia-stellers-sea-cow-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-stellers-sea-cow-internal-flippermask": "flippers-soft-mask",
+          "sirenia-stellers-sea-cow-internal-eyesbasemask": "eyes-mask",
+          "sirenia-stellers-sea-cow-internal-eyesmask": "clear-mask",
+          "sirenia-stellers-sea-cow-internal-tailmask": "clear-mask",
+          "sirenia-stellers-sea-cow-internal-fixeddetails": "fixed-details-mask"
+        },
+        "kelp-dark": {
+          "sirenia-stellers-sea-cow-bodycolor": "#FF302F28",
+          "sirenia-stellers-sea-cow-markingcolor": "#FF87927B",
+          "sirenia-stellers-sea-cow-bellycolor": "#FF555146",
+          "sirenia-stellers-sea-cow-muzzlecolor": "#FF46443B",
+          "sirenia-stellers-sea-cow-flippercolor": "#FF292923",
+          "sirenia-stellers-sea-cow-eyecolor": "#FF0E100E",
+          "sirenia-stellers-sea-cow-oddeyecolor": "#FF0E100E",
+          "sirenia-stellers-sea-cow-tailcolor": "#FF26261F",
+          "sirenia-stellers-sea-cow-internal-patternmask": "speckled-mottle-mask",
+          "sirenia-stellers-sea-cow-internal-bellymask": "belly-soft-mask",
+          "sirenia-stellers-sea-cow-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-stellers-sea-cow-internal-flippermask": "flippers-soft-mask",
+          "sirenia-stellers-sea-cow-internal-eyesbasemask": "eyes-mask",
+          "sirenia-stellers-sea-cow-internal-eyesmask": "clear-mask",
+          "sirenia-stellers-sea-cow-internal-tailmask": "clear-mask",
+          "sirenia-stellers-sea-cow-internal-fixeddetails": "fixed-details-mask"
+        },
+        "driftwood": {
+          "sirenia-stellers-sea-cow-bodycolor": "#FF8B806E",
+          "sirenia-stellers-sea-cow-markingcolor": "#FFE1DDD1",
+          "sirenia-stellers-sea-cow-bellycolor": "#FFB3A997",
+          "sirenia-stellers-sea-cow-muzzlecolor": "#FFA09584",
+          "sirenia-stellers-sea-cow-flippercolor": "#FF776D5E",
+          "sirenia-stellers-sea-cow-eyecolor": "#FF1A1916",
+          "sirenia-stellers-sea-cow-oddeyecolor": "#FF1A1916",
+          "sirenia-stellers-sea-cow-tailcolor": "#FF756C5D",
+          "sirenia-stellers-sea-cow-internal-patternmask": "natural-markings-mask",
+          "sirenia-stellers-sea-cow-internal-bellymask": "belly-soft-mask",
+          "sirenia-stellers-sea-cow-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-stellers-sea-cow-internal-flippermask": "flippers-soft-mask",
+          "sirenia-stellers-sea-cow-internal-eyesbasemask": "eyes-mask",
+          "sirenia-stellers-sea-cow-internal-eyesmask": "clear-mask",
+          "sirenia-stellers-sea-cow-internal-tailmask": "clear-mask",
+          "sirenia-stellers-sea-cow-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    },
+    "sirenia-west-african-manatee-coatpreset": {
+      "modelCodes": [
+        "sirenia-west-african-manatee"
+      ],
+      "defaultPreset": "natural",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "sirenia-west-african-manatee-carrymode": "paw"
+      },
+      "presets": {
+        "natural": {
+          "sirenia-west-african-manatee-bodycolor": "#FF747B7C",
+          "sirenia-west-african-manatee-markingcolor": "#FFABB1AE",
+          "sirenia-west-african-manatee-bellycolor": "#FF989D9A",
+          "sirenia-west-african-manatee-muzzlecolor": "#FF898E8A",
+          "sirenia-west-african-manatee-flippercolor": "#FF626A6B",
+          "sirenia-west-african-manatee-eyecolor": "#FF141817",
+          "sirenia-west-african-manatee-oddeyecolor": "#FF141817",
+          "sirenia-west-african-manatee-tailcolor": "#FF687173",
+          "sirenia-west-african-manatee-internal-patternmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-west-african-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-west-african-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-west-african-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-west-african-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-tailmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-fixeddetails": "fixed-details-mask"
+        },
+        "muddy-river": {
+          "sirenia-west-african-manatee-bodycolor": "#FF71685B",
+          "sirenia-west-african-manatee-markingcolor": "#FFA79D88",
+          "sirenia-west-african-manatee-bellycolor": "#FF978E7D",
+          "sirenia-west-african-manatee-muzzlecolor": "#FF887F70",
+          "sirenia-west-african-manatee-flippercolor": "#FF60584D",
+          "sirenia-west-african-manatee-eyecolor": "#FF171511",
+          "sirenia-west-african-manatee-oddeyecolor": "#FF171511",
+          "sirenia-west-african-manatee-tailcolor": "#FF665E52",
+          "sirenia-west-african-manatee-internal-patternmask": "speckled-mottle-mask",
+          "sirenia-west-african-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-west-african-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-west-african-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-west-african-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-west-african-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-tailmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-fixeddetails": "fixed-details-mask"
+        },
+        "deep-gray": {
+          "sirenia-west-african-manatee-bodycolor": "#FF414A4D",
+          "sirenia-west-african-manatee-markingcolor": "#FF798385",
+          "sirenia-west-african-manatee-bellycolor": "#FF667073",
+          "sirenia-west-african-manatee-muzzlecolor": "#FF596164",
+          "sirenia-west-african-manatee-flippercolor": "#FF343D40",
+          "sirenia-west-african-manatee-eyecolor": "#FF101514",
+          "sirenia-west-african-manatee-oddeyecolor": "#FF101514",
+          "sirenia-west-african-manatee-tailcolor": "#FF394347",
+          "sirenia-west-african-manatee-internal-patternmask": "dorsal-wash-mask",
+          "sirenia-west-african-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-west-african-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-west-african-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-west-african-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-west-african-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-tailmask": "clear-mask",
+          "sirenia-west-african-manatee-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    },
+    "sirenia-west-indian-manatee-coatpreset": {
+      "modelCodes": [
+        "sirenia-west-indian-manatee"
+      ],
+      "defaultPreset": "algae-natural",
+      "resetVariant": "custom",
+      "preserveUnspecified": true,
+      "defaultParts": {
+        "sirenia-west-indian-manatee-carrymode": "paw"
+      },
+      "presets": {
+        "algae-natural": {
+          "sirenia-west-indian-manatee-bodycolor": "#FF747C78",
+          "sirenia-west-indian-manatee-markingcolor": "#FF5F7C4F",
+          "sirenia-west-indian-manatee-bellycolor": "#FF999C92",
+          "sirenia-west-indian-manatee-muzzlecolor": "#FF858B86",
+          "sirenia-west-indian-manatee-flippercolor": "#FF646D69",
+          "sirenia-west-indian-manatee-eyecolor": "#FF141817",
+          "sirenia-west-indian-manatee-oddeyecolor": "#FF141817",
+          "sirenia-west-indian-manatee-tailcolor": "#FF69736E",
+          "sirenia-west-indian-manatee-internal-patternmask": "natural-markings-mask",
+          "sirenia-west-indian-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-west-indian-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-west-indian-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-west-indian-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-west-indian-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-tailmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-fixeddetails": "fixed-details-mask"
+        },
+        "clean-gray": {
+          "sirenia-west-indian-manatee-bodycolor": "#FF858A87",
+          "sirenia-west-indian-manatee-markingcolor": "#FFB5BBB5",
+          "sirenia-west-indian-manatee-bellycolor": "#FFA8AAA3",
+          "sirenia-west-indian-manatee-muzzlecolor": "#FF969A95",
+          "sirenia-west-indian-manatee-flippercolor": "#FF737A77",
+          "sirenia-west-indian-manatee-eyecolor": "#FF151918",
+          "sirenia-west-indian-manatee-oddeyecolor": "#FF151918",
+          "sirenia-west-indian-manatee-tailcolor": "#FF78817D",
+          "sirenia-west-indian-manatee-internal-patternmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-west-indian-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-west-indian-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-west-indian-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-west-indian-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-tailmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-fixeddetails": "fixed-details-mask"
+        },
+        "lagoon-dark": {
+          "sirenia-west-indian-manatee-bodycolor": "#FF444E4B",
+          "sirenia-west-indian-manatee-markingcolor": "#FF507046",
+          "sirenia-west-indian-manatee-bellycolor": "#FF68716C",
+          "sirenia-west-indian-manatee-muzzlecolor": "#FF5B6560",
+          "sirenia-west-indian-manatee-flippercolor": "#FF37423F",
+          "sirenia-west-indian-manatee-eyecolor": "#FF0F1512",
+          "sirenia-west-indian-manatee-oddeyecolor": "#FF0F1512",
+          "sirenia-west-indian-manatee-tailcolor": "#FF3C4944",
+          "sirenia-west-indian-manatee-internal-patternmask": "dorsal-wash-mask",
+          "sirenia-west-indian-manatee-internal-bellymask": "belly-soft-mask",
+          "sirenia-west-indian-manatee-internal-muzzlemask": "muzzle-soft-mask",
+          "sirenia-west-indian-manatee-internal-flippermask": "flippers-soft-mask",
+          "sirenia-west-indian-manatee-internal-eyesbasemask": "eyes-mask",
+          "sirenia-west-indian-manatee-internal-eyesmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-tailmask": "clear-mask",
+          "sirenia-west-indian-manatee-internal-fixeddetails": "fixed-details-mask"
+        }
+      }
+    }
+  }
+}

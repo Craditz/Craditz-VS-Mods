@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "name": "Tamables: Critters",
+  "modid": "tamablescritters",
+  "version": "0.2.5",
+  "description": "PetAI taming and owned pet behavior for supported third-party animal packs.",
+  "authors": [
+    "Craditz"
+  ],
+  "dependencies": {
+    "game": "1.22.0",
+    "petai": "5.1.1"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <VintageStoryPath Condition="'$(VintageStoryPath)' == ''">$(VINTAGE_STORY)</VintageStoryPath>
+  </PropertyGroup>
+  <Target Name="RequireLocalGameReferences" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="'$(VintageStoryPath)' == '' Or !Exists('$(VintageStoryPath)/VintagestoryAPI.dll')" Text="Set VintageStoryPath to your own Vintage Story installation. Game DLLs are not bundled." />
+  </Target>
+</Project>

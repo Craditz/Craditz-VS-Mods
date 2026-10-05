@@ -1,0 +1,270 @@
+{
+  "animalica-foraging-scavenger": {
+    "forageDropRate": 0.15,
+    "vesselContentsDropRate": 0.15
+  },
+  "animalica-physiology-aquatic": {
+    "swimSpeed": 0.85,
+    "maxhealthExtraPoints": 9
+  },
+  "animalica-physiology-arctic-cat": {
+    "maxhealthExtraPoints": 12,
+    "warmthBonus": 35.0,
+    "frostDamageFactor": -0.75,
+    "sprintSpeed": 0.35,
+    "sneakSpeed": 0.2,
+    "jumpHeightMul": 0.5,
+    "fallDamageFactor": -0.5,
+    "animalSeekingRange": -0.25,
+    "meleeWeaponsDamage": 0.2,
+    "animalicaNaturalProtection": 1.5
+  },
+  "animalica-physiology-arctic-grazer": {
+    "maxhealthExtraPoints": 15,
+    "walkspeed": 0.15,
+    "warmthBonus": 35.0,
+    "frostDamageFactor": -0.75,
+    "animalicaNaturalProtection": 1.5
+  },
+  "animalica-physiology-arctic-swimmer": {
+    "maxhealthExtraPoints": 15,
+    "swimSpeed": 0.85,
+    "warmthBonus": 40.0,
+    "frostDamageFactor": -0.75,
+    "animalicaNaturalProtection": 3.5
+  },
+  "animalica-physiology-big-cat": {
+    "maxhealthExtraPoints": 12,
+    "warmthBonus": 3.0,
+    "sprintSpeed": 0.35,
+    "sneakSpeed": 0.2,
+    "jumpHeightMul": 0.5,
+    "fallDamageFactor": -0.5,
+    "animalSeekingRange": -0.25,
+    "meleeWeaponsDamage": 0.2,
+    "animalicaNaturalProtection": 1.5
+  },
+  "animalica-physiology-boar-build": {
+    "maxhealthExtraPoints": 15,
+    "warmthBonus": 1.0,
+    "sprintSpeed": 0.2,
+    "meleeWeaponsDamage": 0.18,
+    "animalicaNaturalProtection": 2.5
+  },
+  "animalica-physiology-cold-big-cat": {
+    "maxhealthExtraPoints": 12,
+    "warmthBonus": 20.0,
+    "frostDamageFactor": -0.5,
+    "sprintSpeed": 0.35,
+    "sneakSpeed": 0.2,
+    "jumpHeightMul": 0.5,
+    "fallDamageFactor": -0.5,
+    "animalSeekingRange": -0.25,
+    "meleeWeaponsDamage": 0.2,
+    "animalicaNaturalProtection": 2.0
+  },
+  "animalica-physiology-fleet-grazer": {
+    "animalSeekingRange": -0.15,
+    "walkspeed": 0.12,
+    "sprintSpeed": 0.35,
+    "jumpHeightMul": 0.15,
+    "maxhealthExtraPoints": 10,
+    "animalicaNaturalProtection": 0.75
+  },
+  "animalica-physiology-forest-runner": {
+    "maxhealthExtraPoints": 10,
+    "warmthBonus": 12.0,
+    "sprintSpeed": 0.35,
+    "sneakSpeed": 0.3,
+    "jumpHeightMul": 0.2,
+    "fallDamageFactor": -0.25,
+    "animalSeekingRange": -0.2,
+    "forageDropRate": 0.1,
+    "animalicaNaturalProtection": 0.75
+  },
+  "animalica-physiology-hardy-runner": {
+    "maxhealthExtraPoints": 10,
+    "warmthBonus": 4.0,
+    "walkspeed": 0.08,
+    "sprintSpeed": 0.3,
+    "meleeWeaponsDamage": 0.12,
+    "animalLootDropRate": 0.1,
+    "animalicaNaturalProtection": 1.0
+  },
+  "animalica-physiology-large-grazer": {
+    "maxhealthExtraPoints": 15,
+    "walkspeed": 0.1,
+    "sprintSpeed": 0.15,
+    "warmthBonus": 2.0,
+    "animalicaNaturalProtection": 2.0
+  },
+  "animalica-physiology-light-forager": {
+    "animalSeekingRange": -0.15,
+    "sprintSpeed": 0.12,
+    "jumpHeightMul": 0.08,
+    "forageDropRate": 0.15,
+    "maxhealthExtraPoints": 9
+  },
+  "animalica-physiology-mountain-grazer": {
+    "maxhealthExtraPoints": 10,
+    "warmthBonus": 18.0,
+    "frostDamageFactor": -0.5,
+    "walkspeed": 0.1,
+    "jumpHeightMul": 0.25,
+    "fallDamageFactor": -0.5,
+    "animalicaNaturalProtection": 1.0
+  },
+  "animalica-physiology-nimble-bruiser": {
+    "maxhealthExtraPoints": 10,
+    "warmthBonus": 2.0,
+    "sprintSpeed": 0.25,
+    "jumpHeightMul": 0.15,
+    "meleeWeaponsDamage": 0.15,
+    "animalicaNaturalProtection": 1.0
+  },
+  "animalica-physiology-nimble-scavenger": {
+    "animalSeekingRange": -0.2,
+    "jumpHeightMul": 0.15,
+    "sneakSpeed": 0.3,
+    "backwardSpeed": 0.1,
+    "forageDropRate": 0.2,
+    "vesselContentsDropRate": 0.2,
+    "maxhealthExtraPoints": 9,
+    "animalicaNaturalProtection": 0.75
+  },
+  "animalica-physiology-predator-build": {
+    "maxhealthExtraPoints": 10,
+    "warmthBonus": 18.0,
+    "frostDamageFactor": -0.5,
+    "sprintSpeed": 0.25,
+    "meleeWeaponsDamage": 0.15,
+    "animalLootDropRate": 0.15,
+    "animalicaNaturalProtection": 1.0
+  },
+  "animalica-physiology-small-agile": {
+    "animalSeekingRange": -0.2,
+    "jumpHeightMul": 0.25,
+    "fallDamageFactor": -0.25,
+    "sprintSpeed": 0.4,
+    "sneakSpeed": 0.15,
+    "maxhealthExtraPoints": 9
+  },
+  "animalica-physiology-small-feline": {
+    "animalSeekingRange": -0.25,
+    "jumpHeightMul": 0.3,
+    "fallDamageFactor": -0.5,
+    "sneakSpeed": 0.35,
+    "meleeWeaponsDamage": 0.1,
+    "maxhealthExtraPoints": 9
+  },
+  "animalica-physiology-sturdy-coat": {
+    "maxhealthExtraPoints": 15,
+    "warmthBonus": 16.0,
+    "frostDamageFactor": -0.5,
+    "animalicaNaturalProtection": 1.75
+  },
+  "animalica-physiology-sturdy-grazer": {
+    "maxhealthExtraPoints": 10,
+    "walkspeed": 0.1,
+    "warmthBonus": 12.0,
+    "animalicaNaturalProtection": 1.0
+  },
+  "animalica-physiology-warm-socks": {
+    "warmthBonus": 14.0
+  },
+  "animalica-drawback-fragile": {
+    "maxhealthExtraPoints": -4.0
+  },
+  "animalica-drawback-small-build": {
+    "maxhealthExtraPoints": -4.0
+  },
+  "animalica-drawback-stranded": {
+    "maxhealthExtraPoints": -6.0,
+    "hungerrate": 0.03,
+    "walkspeed": -0.45,
+    "sprintSpeed": -0.45,
+    "jumpHeightMul": -0.5
+  },
+  "animalica-physiology-robust-predator": {
+    "maxhealthExtraPoints": 10,
+    "warmthBonus": 18.0,
+    "frostDamageFactor": -0.5,
+    "sprintSpeed": 0.25,
+    "meleeWeaponsDamage": 0.15,
+    "animalLootDropRate": 0.15,
+    "animalicaNaturalProtection": 1.5
+  },
+  "animalica-physiology-heavy-predator": {
+    "maxhealthExtraPoints": 15,
+    "warmthBonus": 18.0,
+    "frostDamageFactor": -0.5,
+    "sprintSpeed": 0.25,
+    "meleeWeaponsDamage": 0.15,
+    "animalLootDropRate": 0.15,
+    "animalicaNaturalProtection": 2.5
+  },
+  "animalica-physiology-large-big-cat": {
+    "maxhealthExtraPoints": 12,
+    "warmthBonus": 3.0,
+    "sprintSpeed": 0.35,
+    "sneakSpeed": 0.2,
+    "jumpHeightMul": 0.5,
+    "fallDamageFactor": -0.5,
+    "animalSeekingRange": -0.25,
+    "meleeWeaponsDamage": 0.2,
+    "animalicaNaturalProtection": 2.0
+  },
+  "animalica-physiology-heavy-grazer": {
+    "maxhealthExtraPoints": 15,
+    "warmthBonus": 18.0,
+    "frostDamageFactor": -0.5,
+    "walkspeed": 0.1,
+    "jumpHeightMul": 0.25,
+    "fallDamageFactor": -0.5,
+    "animalicaNaturalProtection": 2.5
+  },
+  "animalica-physiology-stone-bulwark": {
+    "maxhealthExtraPoints": 20.0,
+    "animalicaNaturalDamageReduction": 0.3,
+    "warmthBonus": 4.0,
+    "fallDamageFactor": -0.5
+  },
+  "animalica-physiology-colossal-build": {
+    "maxhealthExtraPoints": 25,
+    "walkspeed": -0.15,
+    "sprintSpeed": -0.22,
+    "animalicaNaturalProtection": 2.5
+  },
+  "animalica-physiology-armored-grazer": {
+    "maxhealthExtraPoints": 16,
+    "sprintSpeed": -0.06,
+    "fallDamageFactor": -0.35,
+    "animalicaNaturalProtection": 1.5,
+    "animalicaNaturalDamageReduction": 0.12
+  },
+  "animalica-physiology-pursuit-hunter": {
+    "maxhealthExtraPoints": 10,
+    "walkspeed": 0.1,
+    "sprintSpeed": 0.35,
+    "animalSeekingRange": -0.25,
+    "meleeWeaponsDamage": 0.15,
+    "animalicaNaturalProtection": 0.75,
+    "fallDamageFactor": -0.2
+  },
+  "animalica-physiology-marsh-hunter": {
+    "maxhealthExtraPoints": 11,
+    "swimSpeed": 0.6,
+    "sprintSpeed": 0.15,
+    "jumpHeightMul": 0.15,
+    "meleeWeaponsDamage": 0.15,
+    "animalicaNaturalProtection": 0.75
+  },
+  "animalica-physiology-long-legged-runner": {
+    "maxhealthExtraPoints": 10,
+    "walkspeed": 0.15,
+    "sprintSpeed": 0.32,
+    "jumpHeightMul": 0.2,
+    "animalSeekingRange": -0.2,
+    "fallDamageFactor": -0.2
+  }
+}

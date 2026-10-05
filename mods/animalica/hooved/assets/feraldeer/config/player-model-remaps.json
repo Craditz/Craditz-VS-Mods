@@ -1,0 +1,8 @@
+{
+  "OldCodeToNewCode": {
+    "feraldeer:feraldeer-caribou-antlers-mouth-fixed": "feraldeer:feraldeer-caribou",
+    "feraldeer:feraldeer-caribou-antlers-paw-fixed": "feraldeer:feraldeer-caribou",
+    "feraldeer:feraldeer-caribou-noantlers-mouth-fixed": "feraldeer:feraldeer-caribou",
+    "feraldeer:feraldeer-caribou-noantlers-paw-fixed": "feraldeer:feraldeer-caribou"
+  }
+}

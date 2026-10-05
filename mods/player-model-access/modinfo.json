@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "name": "Player Model Access",
+  "modid": "playermodelaccess",
+  "version": "0.2.2",
+  "description": "Globally disables selected PlayerModelLib models in normal selection while preserving per-player model grants.",
+  "authors": [
+    "Made with ChatGPT"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.23.8"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

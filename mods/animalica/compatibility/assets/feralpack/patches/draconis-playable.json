@@ -1,0 +1,178 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/draconis-compat.json",
+    "op": "add",
+    "path": "/draconis-cuprocaudus-test",
+    "dependsOn": [
+      {
+        "modid": "draconis"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/dragon",
+      "ShapePath": "feralpack:entity/compatibility/draconis/draconis-cuprocaudus-test-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "draconis",
+        "pawcarry",
+        "cuprocaudus"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        1.2,
+        1.5
+      ],
+      "EyeHeight": 2.5,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.45,
+      "SkinnableParts": [
+        {
+          "code": "draconis-cuprocaudus-skin",
+          "type": "texture",
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "draconis:entity/cuprocaudus/{code}",
+          "variants": [
+            {
+              "code": "andesite",
+              "color": "111104096"
+            },
+            {
+              "code": "basalt",
+              "color": "058056054"
+            },
+            {
+              "code": "bauxite",
+              "color": "142086067"
+            },
+            {
+              "code": "chalk",
+              "color": "205199181"
+            },
+            {
+              "code": "chert",
+              "color": "139108083"
+            },
+            {
+              "code": "claystone",
+              "color": "145092071"
+            },
+            {
+              "code": "conglomerate",
+              "color": "132105086"
+            },
+            {
+              "code": "granite",
+              "color": "112106098"
+            },
+            {
+              "code": "limestone",
+              "color": "160151128"
+            },
+            {
+              "code": "peridotite",
+              "color": "108113075"
+            },
+            {
+              "code": "phyllite",
+              "color": "088082086"
+            },
+            {
+              "code": "sandstone",
+              "color": "181145099"
+            },
+            {
+              "code": "shale",
+              "color": "083081076"
+            },
+            {
+              "code": "slate",
+              "color": "091098103"
+            }
+          ]
+        },
+        {
+          "code": "draconis-cuprocaudus-test-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/draconis/draconis-cuprocaudus-test-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-stone-bulwark",
+        "animalica-diet-normal",
+        "animalica-food-grazer"
+      ],
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]

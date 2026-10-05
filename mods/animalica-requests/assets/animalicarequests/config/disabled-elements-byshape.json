@@ -1,0 +1,208 @@
+{
+  "animalicarequests:female-canadian-lynx": {
+    "game:entity/humanoid/seraph/armor/antique/forlorn-pristine/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/antique/blackguard-pristine/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/antique/forlorn-broken/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/antique/forlorn-damaged/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/antique/blackguard-broken/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/antique/blackguard-damaged/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/brigandine/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/leather/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/padded/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/scale/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/jerkin/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/lamellar/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/gambeson/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/chain/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/plate/legs": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/pants7": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/skirt": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/clockmaker-pants": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/shorts": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/fisher": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/king": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/clothing/lowerbody/hose": [
+      "lt",
+      "rt"
+    ],
+    "game:entity/humanoid/seraph/armor/hide/bear/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/brigandine/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/leather/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/padded/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/scale/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/jerkin/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/lamellar/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/improvised/body-full": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/improvised/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/gambeson/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/chain/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/armor/plate/body": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/collar-extended-full": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/collar-longsleeve-fancy": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/collar-longsleeve-full": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/collar-shortsleeve-fancy": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/longsleeve": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/longsleeve-extended": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbody/shortsleeve": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/collar-extended-full": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/collar-longsleeve-fancy": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/collar-longsleeve-full": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/collar-longsleeve-fur": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/collar-shortsleeve-fancy": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/longsleeve": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/longsleeve-extended": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/longsleeve-hood": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/shortsleeve": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ],
+    "game:entity/humanoid/seraph/clothing/upperbodyover/surgeon-apron": [
+      "uppertorsofluff",
+      "uppertorsoextra"
+    ]
+  }
+}

@@ -1,0 +1,2677 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-black-swan",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-black-swan-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.619,
+        0.466
+      ],
+      "EyeHeight": 0.419,
+      "ModelSizeFactor": 1.2,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-black-swan-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-black-swan-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "MaxCollisionBox": [
+        0.774,
+        0.582
+      ],
+      "MinCollisionBox": [
+        0.464,
+        0.349
+      ],
+      "MaxEyeHeight": 0.524,
+      "MinEyeHeight": 0.314,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-call-duck",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-call-duck-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.53,
+        0.237
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-call-duck-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-call-duck-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.662,
+        0.297
+      ],
+      "MinCollisionBox": [
+        0.397,
+        0.178
+      ],
+      "MaxEyeHeight": 0.517,
+      "MinEyeHeight": 0.31,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-chipmunk",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-chipmunk-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.186,
+        0.107
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-chipmunk-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-chipmunk-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.233,
+        0.133
+      ],
+      "MinCollisionBox": [
+        0.14,
+        0.08
+      ],
+      "MaxEyeHeight": 0.517,
+      "MinEyeHeight": 0.31,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-crab",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-crab-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.478,
+        0.122
+      ],
+      "EyeHeight": 0.345,
+      "ModelSizeFactor": 1.2,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-crab-crab_redx2-skin",
+          "type": "texture",
+          "textureTarget": "crab_redx2",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/crab/{code}",
+          "variants": [
+            {
+              "code": "crab_redx1",
+              "color": "255255255"
+            },
+            {
+              "code": "crab_redx2",
+              "color": "255255255"
+            },
+            {
+              "code": "crab_redx3",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-crab-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-crab-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-carnivore",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "MaxCollisionBox": [
+        0.597,
+        0.153
+      ],
+      "MinCollisionBox": [
+        0.358,
+        0.092
+      ],
+      "MaxEyeHeight": 0.433,
+      "MinEyeHeight": 0.26,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-crow",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-crow-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.443,
+        0.229
+      ],
+      "EyeHeight": 0.377,
+      "ModelSizeFactor": 1.1,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-crow-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-crow-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-nimble-scavenger",
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal",
+        "animalica-flight-wingworks-small-bird"
+      ],
+      "MaxCollisionBox": [
+        0.553,
+        0.286
+      ],
+      "MinCollisionBox": [
+        0.332,
+        0.172
+      ],
+      "MaxEyeHeight": 0.47,
+      "MinEyeHeight": 0.282,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-field-mouse",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-field-mouse-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.174,
+        0.123
+      ],
+      "EyeHeight": 0.466,
+      "ModelSizeFactor": 0.89,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-field-mouse-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-field-mouse-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.217,
+        0.154
+      ],
+      "MinCollisionBox": [
+        0.13,
+        0.092
+      ],
+      "MaxEyeHeight": 0.579,
+      "MinEyeHeight": 0.348,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-hedgehog",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-hedgehog-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.329,
+        0.363
+      ],
+      "EyeHeight": 0.552,
+      "ModelSizeFactor": 0.75,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-hedgehog-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-hedgehog-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-nimble-scavenger",
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.411,
+        0.454
+      ],
+      "MinCollisionBox": [
+        0.247,
+        0.272
+      ],
+      "MaxEyeHeight": 0.689,
+      "MinEyeHeight": 0.414,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-helix-snail",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-helix-snail-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.095,
+        0.116
+      ],
+      "EyeHeight": 0.345,
+      "ModelSizeFactor": 1.2,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-helix-snail-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-helix-snail-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-drawback-glacially-slow",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.119,
+        0.145
+      ],
+      "MinCollisionBox": [
+        0.071,
+        0.087
+      ],
+      "MaxEyeHeight": 0.435,
+      "MinEyeHeight": 0.26,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-house-sparrow",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-house-sparrow-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.472,
+        0.204
+      ],
+      "EyeHeight": 0.753,
+      "ModelSizeFactor": 0.55,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-house-sparrow-sparrow-house-skin",
+          "type": "texture",
+          "textureTarget": "sparrow-house",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/sparrow/{code}",
+          "variants": [
+            {
+              "code": "sparrow-house-f",
+              "color": "255255255"
+            },
+            {
+              "code": "sparrow-house-m",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-house-sparrow-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-house-sparrow-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-normal",
+        "animalica-flight-wingworks-small-bird"
+      ],
+      "MaxCollisionBox": [
+        0.59,
+        0.255
+      ],
+      "MinCollisionBox": [
+        0.354,
+        0.153
+      ],
+      "MaxEyeHeight": 0.941,
+      "MinEyeHeight": 0.565,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-mallard",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-mallard-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.53,
+        0.266
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-mallard-duck-male-3-skin",
+          "type": "texture",
+          "textureTarget": "duck-male-3",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/duck/{code}",
+          "variants": [
+            {
+              "code": "mallard-duck-female",
+              "color": "255255255"
+            },
+            {
+              "code": "mallard-duck-male",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-mallard-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-mallard-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.662,
+        0.332
+      ],
+      "MinCollisionBox": [
+        0.397,
+        0.199
+      ],
+      "MaxEyeHeight": 0.518,
+      "MinEyeHeight": 0.312,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-mute-swan",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-mute-swan-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.619,
+        0.466
+      ],
+      "EyeHeight": 0.419,
+      "ModelSizeFactor": 1.37,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-mute-swan-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-mute-swan-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "MaxCollisionBox": [
+        0.774,
+        0.582
+      ],
+      "MinCollisionBox": [
+        0.464,
+        0.349
+      ],
+      "MaxEyeHeight": 0.524,
+      "MinEyeHeight": 0.314,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-owl",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-owl-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.455,
+        0.258
+      ],
+      "EyeHeight": 0.286,
+      "ModelSizeFactor": 1.45,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-owl-brown_owl-2-skin",
+          "type": "texture",
+          "textureTarget": "brown_owl-2",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/owl/{code}",
+          "variants": [
+            {
+              "code": "brown_owl",
+              "color": "255255255"
+            },
+            {
+              "code": "brown_owl-1",
+              "color": "255255255"
+            },
+            {
+              "code": "brown_owl-2",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-owl-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-owl-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-carnivore",
+        "animalica-flight-wingworks-small-bird",
+        "animalica-food-flesh-eater",
+        "animalica-food-bone-eater"
+      ],
+      "MaxCollisionBox": [
+        0.568,
+        0.323
+      ],
+      "MinCollisionBox": [
+        0.341,
+        0.194
+      ],
+      "MaxEyeHeight": 0.357,
+      "MinEyeHeight": 0.214,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-pekin-duck",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-pekin-duck-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.53,
+        0.267
+      ],
+      "EyeHeight": 0.414,
+      "ModelSizeFactor": 1.0,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-pekin-duck-pekin-duck-male-skin",
+          "type": "texture",
+          "textureTarget": "pekin-duck-male",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/duck/{code}",
+          "variants": [
+            {
+              "code": "pekin-duck-female",
+              "color": "255255255"
+            },
+            {
+              "code": "pekin-duck-male",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-pekin-duck-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-pekin-duck-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.662,
+        0.334
+      ],
+      "MinCollisionBox": [
+        0.397,
+        0.2
+      ],
+      "MaxEyeHeight": 0.517,
+      "MinEyeHeight": 0.309,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-robin",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-robin-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.472,
+        0.223
+      ],
+      "EyeHeight": 0.637,
+      "ModelSizeFactor": 0.65,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-robin-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-robin-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-normal",
+        "animalica-flight-wingworks-small-bird"
+      ],
+      "MaxCollisionBox": [
+        0.59,
+        0.278
+      ],
+      "MinCollisionBox": [
+        0.354,
+        0.167
+      ],
+      "MaxEyeHeight": 0.799,
+      "MinEyeHeight": 0.478,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-rubber-ducky-isopod",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-rubber-ducky-isopod-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.428,
+        0.087
+      ],
+      "EyeHeight": 0.828,
+      "ModelSizeFactor": 0.5,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-rubber-ducky-isopod-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-rubber-ducky-isopod-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal",
+        "animalica-drawback-fragile"
+      ],
+      "MaxCollisionBox": [
+        0.535,
+        0.109
+      ],
+      "MinCollisionBox": [
+        0.321,
+        0.065
+      ],
+      "MaxEyeHeight": 1.04,
+      "MinEyeHeight": 0.626,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-snail",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-snail-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.095,
+        0.118
+      ],
+      "EyeHeight": 0.518,
+      "ModelSizeFactor": 0.8,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-snail-snail-dark-skin",
+          "type": "texture",
+          "textureTarget": "snail-dark",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/snail/{code}",
+          "variants": [
+            {
+              "code": "snail1",
+              "color": "255255255"
+            },
+            {
+              "code": "snail-rosa",
+              "color": "255255255"
+            },
+            {
+              "code": "snail-dark",
+              "color": "255255255"
+            },
+            {
+              "code": "snail_norm",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-snail-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-snail-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-drawback-glacially-slow",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.118,
+        0.147
+      ],
+      "MinCollisionBox": [
+        0.071,
+        0.088
+      ],
+      "MaxEyeHeight": 0.648,
+      "MinEyeHeight": 0.389,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-squirrel",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-squirrel-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.187,
+        0.134
+      ],
+      "EyeHeight": 0.343,
+      "ModelSizeFactor": 1.21,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-squirrel-female-darkbrown-skin",
+          "type": "texture",
+          "textureTarget": "female-darkbrown",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/squirrel/{code}",
+          "variants": [
+            {
+              "code": "darkbrown-normal",
+              "color": "255255255"
+            },
+            {
+              "code": "grey-normal",
+              "color": "255255255"
+            },
+            {
+              "code": "oldbrown-normal",
+              "color": "255255255"
+            },
+            {
+              "code": "redded-normal",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-squirrel-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-squirrel-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-normal"
+      ],
+      "MaxCollisionBox": [
+        0.234,
+        0.167
+      ],
+      "MinCollisionBox": [
+        0.14,
+        0.1
+      ],
+      "MaxEyeHeight": 0.428,
+      "MinEyeHeight": 0.255,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-trumpeter-swan",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-trumpeter-swan-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.619,
+        0.508
+      ],
+      "EyeHeight": 0.457,
+      "ModelSizeFactor": 1.4,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-trumpeter-swan-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-trumpeter-swan-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-aquatic",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "MaxCollisionBox": [
+        0.774,
+        0.635
+      ],
+      "MinCollisionBox": [
+        0.464,
+        0.381
+      ],
+      "MaxEyeHeight": 0.571,
+      "MinEyeHeight": 0.343,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 0.71,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-waxwing",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-waxwing-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.45,
+        0.206
+      ],
+      "EyeHeight": 0.345,
+      "ModelSizeFactor": 1.2,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-waxwing-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-waxwing-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-small-agile",
+        "animalica-diet-normal",
+        "animalica-flight-wingworks-small-bird"
+      ],
+      "MaxCollisionBox": [
+        0.562,
+        0.258
+      ],
+      "MinCollisionBox": [
+        0.337,
+        0.155
+      ],
+      "MaxEyeHeight": 0.43,
+      "MinEyeHeight": 0.258,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-woodlouse",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-woodlouse-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.45,
+        0.083
+      ],
+      "EyeHeight": 0.69,
+      "ModelSizeFactor": 0.6,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-woodlouse-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-woodlouse-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-foraging-scavenger",
+        "animalica-diet-normal",
+        "animalica-drawback-fragile"
+      ],
+      "MaxCollisionBox": [
+        0.562,
+        0.104
+      ],
+      "MinCollisionBox": [
+        0.337,
+        0.063
+      ],
+      "MaxEyeHeight": 0.865,
+      "MinEyeHeight": 0.515,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 1.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "file": "feralpack:config/customplayermodels/critterpack-compat.json",
+    "op": "add",
+    "path": "/critter-yak",
+    "dependsOn": [
+      {
+        "modid": "thecritterpackcontinued"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "animalica-compatibility",
+      "GroupIcon": "animalicacore:icons/animalica-compatibility",
+      "Icon": "feralpack:icons/cat",
+      "ShapePath": "feralpack:entity/compatibility/critterpack/critter-yak-selector",
+      "BaseShapeCode": "playermodellib:seraph",
+      "CreateCuboidsForAttachmentPoints": false,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "animalica",
+        "pawcarry"
+      ],
+      "SizeRange": [
+        0.75,
+        1.25
+      ],
+      "CollisionBox": [
+        0.859,
+        1.811
+      ],
+      "EyeHeight": 1.63,
+      "ModelSizeFactor": 0.9,
+      "HeadBobbingScale": 0.3,
+      "GuiModelScale": 0.7,
+      "SkinnableParts": [
+        {
+          "code": "critter-yak-yak-darkbrown-skin",
+          "type": "texture",
+          "textureTarget": "yak-darkbrown",
+          "targetSkinParts": [
+            "base"
+          ],
+          "textureTemplate": "thecritterpack:entity/yak/{code}",
+          "variants": [
+            {
+              "code": "yak-darkbrown",
+              "color": "255255255"
+            },
+            {
+              "code": "yak-brown",
+              "color": "255255255"
+            },
+            {
+              "code": "yak-dark",
+              "color": "255255255"
+            }
+          ]
+        },
+        {
+          "code": "critter-yak-carrymode",
+          "type": "shape",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "feralpack:entity/compatibility/critterpack/critter-yak-selector-carry-{code}"
+          },
+          "variants": [
+            {
+              "code": "paw"
+            },
+            {
+              "code": "mouth"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalica-physiology-heavy-grazer",
+        "animalica-diet-herbivore",
+        "animalica-food-grazer"
+      ],
+      "MaxCollisionBox": [
+        1.074,
+        2.264
+      ],
+      "MinCollisionBox": [
+        0.644,
+        1.358
+      ],
+      "MaxEyeHeight": 2.037,
+      "MinEyeHeight": 1.222,
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "AnimationsMetaData": [
+        {
+          "code": "smithingwide",
+          "animation": "smithingwide",
+          "animationSpeed": 3.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          },
+          "attributes": {
+            "soundAtFrame": 16,
+            "damageAtFrame": 20,
+            "authorative": true
+          }
+        },
+        {
+          "code": "smithingwide-fp",
+          "animation": "smithingwide-fp",
+          "animationSpeed": 3.33,
+          "holdEyePosAfterEasein": 0.0,
+          "blendMode": "Add",
+          "elementWeight": {
+            "UpperArmR": 20.0,
+            "LowerArmR": 20.0,
+            "UpperArmL": 0.2,
+            "LowerArmL": 0.2
+          },
+          "elementBlendMode": {
+            "UpperArmR": "AddAverage",
+            "LowerArmR": "AddAverage",
+            "UpperArmL": "AddAverage",
+            "LowerArmL": "AddAverage"
+          }
+        }
+      ]
+    }
+  }
+]
