@@ -1,0 +1,30 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/toolhead/bladehead-falx-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/smithing/blade-falx-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  }
+]

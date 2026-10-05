@@ -1,14 +1,9 @@
 # Animalica - Compatibility Pack 1
 
-Source for version **0.6.8**, which I selected for this repo. The public
-listing was still at **0.6.7** when checked on 2026-10-05.
+Selected source for version **0.6.8**, from commit `7bd8bfa2`.
 
-[Mod page](https://mods.vintagestory.at/animalicac).
+The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
 
-This folder has the manifest and selected configs, language files and patches. Model and texture source, plus inputs used by the generators, are
-left out while their redistribution rights are checked. Those missing pieces
-mean this folder can't produce a complete content pack.
+Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
 
-The full source hasn't been matched against a complete release package.
-
-See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.
+See [BUILD.md](../../../BUILD.md), the [project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.

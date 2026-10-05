@@ -1,0 +1,43 @@
+{
+  code: "workcart",
+  class: "FeralKinshipWorkCart",
+  behaviors: [
+    { name: "HorizontalOrientable" },
+    { name: "Multiblock", propertiesByType: {
+      "*-north": { sizex: 2, sizey: 1, sizez: 1, cposition: { x: 0, y: 0, z: 0 }, offsetHitboxes: true },
+      "*-east": { sizex: 1, sizey: 1, sizez: 2, cposition: { x: 0, y: 0, z: 0 }, offsetHitboxes: true },
+      "*-south": { sizex: 2, sizey: 1, sizez: 1, cposition: { x: 1, y: 0, z: 0 }, offsetHitboxes: true },
+      "*-west": { sizex: 1, sizey: 1, sizez: 2, cposition: { x: 0, y: 0, z: 1 }, offsetHitboxes: true }
+    } }
+  ],
+  variantgroups: [ { code: "side", loadFromProperties: "abstract/horizontalorientation" } ],
+  shapeByType: {
+    "*-north": { base: "block/workcart", rotateY: 0 },
+    "*-east": { base: "block/workcart", rotateY: 270 },
+    "*-south": { base: "block/workcart", rotateY: 180 },
+    "*-west": { base: "block/workcart", rotateY: 90 }
+  },
+  creativeinventory: { "general": ["*-north"], "decorative": ["*-north"] },
+  blockmaterial: "Wood",
+  replaceable: 500,
+  resistance: 3,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: {
+    x1: 0, y1: 0, z1: 0.03125, x2: 2, y2: 1, z2: 0.96875,
+    rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 }
+  },
+  collisionboxes: [
+    { x1: 0.125, y1: 0.125, z1: 0.15625, x2: 1.5, y2: 0.375, z2: 0.84375, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } },
+    { x1: 0.125, y1: 0.375, z1: 0.125, x2: 1.25, y2: 0.875, z2: 0.25, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } },
+    { x1: 0.125, y1: 0.375, z1: 0.75, x2: 1.25, y2: 0.875, z2: 0.875, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } },
+    { x1: 0.125, y1: 0.875, z1: 0.125, x2: 1.25, y2: 1, z2: 0.875, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } },
+    { x1: 1.1875, y1: 0.375, z1: 0.15625, x2: 1.5, y2: 0.8125, z2: 0.84375, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } },
+    { x1: 1.5, y1: 0.3125, z1: 0.21875, x2: 2, y2: 0.4375, z2: 0.3125, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } },
+    { x1: 1.5, y1: 0.3125, z1: 0.6875, x2: 2, y2: 0.4375, z2: 0.78125, rotateYByType: { "*-east": 270, "*-south": 180, "*-west": 90 } }
+  ],
+  combustibleProps: { burnTemperature: 600, burnDuration: 45 },
+  guiTransform: { rotation: { x: -18, y: 28, z: 0 }, scale: 0.72 },
+  tpHandTransform: { translation: { x: -1.0, y: -0.8, z: -1.4 }, rotation: { x: -15, y: 8, z: 60 }, scale: 0.48 }
+}

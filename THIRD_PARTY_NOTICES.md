@@ -2,9 +2,9 @@
 
 Project: Craditz-VS-Mods
 
-Status: source snapshot notices, reviewed 2026-10-05. Asset provenance and
-complete-package checks remain incomplete; this is not a rights-clearance
-certificate for release packages.
+Status: selected source and release-asset snapshot, 2026-10-05.
+Original notices and separate rights are retained; complete regeneration and
+release binary equivalence have not been established.
 
 The Craditz Community Mod License applies only to material expressly offered
 under it by someone with the necessary rights. Third-party material keeps its
@@ -12,63 +12,112 @@ own license. A listing here is a record, not a substitute for permission.
 
 ## Covered project material
 
-Craditz adopts version 1.0 of the Craditz Community Mod License for the original
-project code, documentation, build configuration, scripts, authored configs,
-language entries and patches included in this repository, to the extent Craditz
-holds or is authorized to license the relevant rights. Third-party protected
-parts and material under separate terms are excluded from that grant. Original
-manifest credits are preserved. No right in a dependency or an omitted release
-asset is granted merely because a project references it.
+The project license covers original code, documentation, authored configs,
+scripts and assets only to the extent the relevant licensor owns or may license
+those rights. Inclusion in this repository does not make third-party material
+project-owned or place it under the custom grant. Original manifest credits and
+embedded notices are preserved. Mixed or adapted files retain the rights and
+conditions applicable to their third-party portions.
 
-## Dependencies installed separately
+## Separately installed dependencies and game material
 
-- [Vintage Story](https://www.vintagestory.at/) supplies the game APIs and game
-  libraries used for builds. Its code, models, textures and other game material
-  retain their separate terms. No game or vendor DLLs are bundled here
-- [PlayerModelLib](https://mods.vintagestory.at/playermodellib), credited to
-  Maltiez/Caliber in the local dependency manifest, is an external API/runtime
-  dependency. No PlayerModelLib DLL or copied clothing-replacer tables are
-  included in this snapshot
-- [PetAI](https://mods.vintagestory.at/petai) is installed separately for the
-  projects that reference it. That dependency keeps its own license. No PetAI
-  DLL is bundled here
-- Other library references resolved from the user's game installation keep
-  their own terms. Follow [BUILD.md](BUILD.md) for the required external paths
-  and the selected mod manifests for dependency versions
+[Vintage Story](https://www.vintagestory.at/),
+[PlayerModelLib](https://mods.vintagestory.at/playermodellib) and
+[PetAI](https://mods.vintagestory.at/petai) are installed separately. No game,
+PlayerModelLib, PetAI or vendor DLLs are bundled in this source repository.
+Other referenced libraries keep their separate terms; see [BUILD.md](BUILD.md).
 
-## Existing contributions and compatibility material
+Game-derived models, animation data, textures, sounds and definitions in the
+selected release assets retain applicable game rights and terms. Referencing
+a game texture at runtime does not bundle that texture. PML remains an external
+API/runtime dependency; the historical clothing-table note alone does not
+establish copied origin for current data.
 
-- Animalica Body Tools credits **xthatguyx** in `mods/animalica-body-tools/modinfo.json`.
-  The owner reports the quenchable-head contribution was given unconditionally.
-  That existing permission is recorded without asserting a copyright assignment
-  or treating the new contribution agreement as retroactive assent. Credits
-  remain intact; any independently sourced game or provider assets retain their
-  separate rights
-- The owner reports Carried integration material was also given unconditionally.
-  Core's optional integration code is included; the carry-profile assets and
-  their full generation inputs have not been added to this snapshot. Recording
-  the grant does not claim ownership of Carried itself or its dependency files
-- Compatibility-model permissions reported by the owner are conditional on
-  the material remaining part of a compatibility mod. Those permissions are
-  preserved as separate grants, including the Lupines compatibility permission.
-  They are not a blanket grant to relicense donor models, textures or animation
-  data under this project's license or offer commercial exceptions for them.
-  The corresponding adapted model and art payloads remain outside this snapshot
-- Donor families referenced by the compatibility packs include the Pack 1
-  providers, Fauna of the Stone Age modules and dinosaur modules. Referencing
-  an independently installed donor mod is distinct from distributing its
-  protected source or assets. Any future included donor material needs its
-  exact paths, original source, permission text and required notices recorded
-- Radio's historical recording and artwork, Companions' omitted sound and art
-  payloads, and other models, textures, icons and generated data omitted from
-  this source snapshot are not relicensed here. Each must be reviewed before
-  inclusion. U.S. public-domain evidence for a recording is not represented as
-  worldwide clearance
+## Compatibility models
 
-For any new third-party component, record its name/version, exact paths,
-author, original URL and retrieval date, full license or permission, required
-notices, modifications, redistribution conditions, commercial authority and
-review date before inclusion.
+The owner reports permission from donor model authors while their material is
+used in compatibility mods. Keep that condition and the original credits and
+notices. These grants are separate from the project license and are not blanket
+authority to relicense donor material or grant commercial exceptions for it.
+Dependency gates and compatibility metadata are preserved.
+
+The following source records identify the donor chains. They do not substitute
+for the original licenses or grants. Equus is declared in the retained Pack 1
+metadata but has no active shape payload in that selected release.
+
+| Source | ID / source version | Used by | Original source |
+|---|---|---|---|
+| Cats | `cats` 5.0.1 | Compatibility 1 | [Source](https://mods.vintagestory.at/cats) |
+| The Critters Pack coral fork | `thecritterpackcontinued` 1.4.3 | Compatibility 1 | [Source](https://mods.vintagestory.at/show/mod/48465) |
+| Draconis | `draconis` 1.5.0 / 1.6.0 | Compatibility 1 | [Source](https://mods.vintagestory.at/draconis) |
+| Equus: Wild Horses | `equus` 1.4.0 | Compatibility 1 | [Source](https://mods.vintagestory.at/equus) |
+| Fox socks | `foxsocks` 1.0.0 | Compatibility 1 | [Source](https://mods.vintagestory.at/foxsocks) |
+| Hieronymus Reptiles Collection | `hieronymusreptiles` 1.2.1 | Compatibility 1 | [Source](https://mods.vintagestory.at/hieronymusreptiles) |
+| Feverstone Wilds | `feverstonewilds` 2.1.2 / 3.0.0-rc.7 | Compatibility 1 | [Source](https://mods.vintagestory.at/feverstonewilds) |
+| Jimothy | `jimothy` 1.0.1 | Compatibility 1 | [Source](https://mods.vintagestory.at/show/mod/61149) |
+| Wolf Taming | `wolftaming` 5.0.1 | Compatibility 1 | [Source](https://mods.vintagestory.at/wolftaming) |
+| Fauna of the Stone Age: Pantherinae | `pantherinae` 1.2.14 textures / 1.2.17 inspected geometry | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/pantherinae) |
+| Fauna of the Stone Age: Sirenia | `sirenia` 1.0.30 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/sirenia) |
+| Fauna of the Stone Age: Caninae | `caninae` 1.1.8 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/caninae) |
+| Fauna of the Stone Age: Capreolinae | `capreolinae` 2.0.16 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/capreolinae) |
+| Fauna of the Stone Age: Casuariidae Plus | `casuariidae` 1.1.11 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/casuariidae) |
+| Fauna of the Stone Age: Machairodontinae | `machairodontinae` 1.1.11 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/machairodontinae) |
+| Fauna of the Stone Age: Vombatidae Plus | `vombatidae` 0.4.6 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/vombatidae) |
+| Fauna of the Stone Age: Elephantidae | `elephantidae` 1.0.18 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/elephantidae) |
+| Fauna of the Stone Age: Felinae | `felinae` 0.2.14 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/felinae) |
+| Fauna of the Stone Age: Spheniscidae | `spheniscidae` 1.0.17 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/spheniscidae) |
+| Fauna of the Stone Age: Dinornithiformes Plus | `dinornithidae` 1.0.23 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/dinornithidae) |
+| Fauna of the Stone Age: Manidae | `manidae` 1.0.20 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/manidae) |
+| Fauna of the Stone Age: Rhinocerotidae | `rhinocerotidae` 1.0.24 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/rhinocerotidae) |
+| Fauna of the Stone Age: Viverridae Plus | `viverridae` 1.0.9 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/viverridae) |
+| Fauna of the Stone Age: Bovinae | `bovinae` 0.3.6 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/bovinae) |
+| Fauna of the Stone Age: Chelonioidea | `chelonioidea` 1.0.8 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/chelonioidea) |
+| Fauna of the Stone Age: Thylacinidae Plus | `thylacinidae` 0.1.7 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/thylacinidae) |
+| Fauna of the Stone Age: Iniidae Plus | `iniidae` 0.1.7 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/iniidae) |
+| Fauna of the Stone Age: Cervinae | `cervinae` 0.1.14 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/cervinae) |
+| Fauna of the Stone Age: Meiolaniidae | `meiolaniidae` 0.1.11 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/meiolaniidae) |
+| Legacy of the Phanerozoic: Birds of Prey â€” Unofficial 1.22.3 Port | `lopudromaeosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58965) |
+| Legacy of the Phanerozoic: Carnivorous Bull â€” Unofficial 1.22.3 Port | `lopuabelisauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58963) |
+| Legacy of the Phanerozoic: Horrible Hands â€” Unofficial 1.22.3 Port | `lopuornithomimosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58951) |
+| Legacy of the Phanerozoic: Sailed Spine â€” Unofficial 1.22.3 Port | `lopuspinosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58941) |
+| Legacy of the Phanerozoic: Scythe Claws â€” Unofficial 1.22.3 Port | `loputherizinosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58938) |
+| Legacy of the Phanerozoic: Sharp Tooth â€” Unofficial 1.22.3 Port | `lopucarcharodontosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58935) |
+| Legacy of the Phanerozoic: Tyrant King â€” Unofficial 1.22.3 Port | `loputyrannosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58929) |
+| Legacy of the Phanerozoic: Long Neck â€” Unofficial 1.22.3 Port | `lopumacronaria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58949) |
+| Legacy of the Phanerozoic: Domed Head â€” Unofficial 1.22.3 Port | `lopupachycephalosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58961) |
+| Legacy of the Phanerozoic: Fused Body â€” Unofficial 1.22.3 Port | `lopuankylosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58959) |
+| Legacy of the Phanerozoic: Horned Crown â€” Unofficial 1.22.3 Port | `lopuceratopsidae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58956) |
+| Legacy of the Phanerozoic: Plated Back â€” Unofficial 1.22.3 Port | `lopustegosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58945) |
+| Legacy of the Phanerozoic: Shovel Mouth â€” Unofficial 1.22.3 Port | `lopuhadrosauroidea` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58933) |
+| Legacy of the Phanerozoic: Ocean Tyrant â€” Unofficial 1.22.3 Port | `lopumosasauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58947) |
+
+Pack 1 retains its Wolf Taming MIT license and copyright notice at
+`mods/animalica/compatibility/assets/feralpack/THIRD_PARTY_LICENSES.txt`.
+
+Requests includes material derived from Lupines 0.2.18 (Dexapnow) and Female
+Lupines 1.0.1 (DUCATISLO). The owner reports permission for compatibility use.
+That condition continues to apply; no general donor relicensing grant is made.
+
+## Existing contributions and audio
+
+- The owner reports Carried integration material and the quenchable-head
+  contribution were given unconditionally. Existing credits, including
+  xthatguyx in Body Tools' manifest, are preserved. This records permission
+  without claiming copyright assignment or retroactive contributor assent
+- Original Radio geometry and generated textures have code-native sources;
+  game texture references keep their separate game rights
+- Radio retains `assets/custommusicradio/that-flying-rag-source.txt`, including
+  its Arthur Pryor's Band recording credit, original URLs and U.S. public-domain
+  statement. That statement is not represented as worldwide clearance
+- Companions retains its packaged sound-credit notice. Seven standard cues have
+  documented original sample-free synthesis. The notice predates the four
+  blueberry-crunch variants in the selected release; their separate origin is
+  not established by that notice. No third-party grant is invented for them
+
+Some release-asset provenance remains incompletely documented. The owner
+directed inclusion of the selected supporting assets; that direction does not
+assert ownership of third-party material or authorize the steward to grant
+rights on someone else's behalf. Original terms and notices continue to apply.
 
 ## Intake and release policy
 

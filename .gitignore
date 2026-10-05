@@ -1,4 +1,4 @@
-# Only reviewed source belongs in this future repository.
+# Source and matching release assets belong here; build outputs and private tools stay local.
 **/bin/
 **/obj/
 **/dist/

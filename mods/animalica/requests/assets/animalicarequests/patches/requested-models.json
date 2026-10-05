@@ -1,0 +1,280 @@
+[
+  {
+    "file": "animalicarequests:config/customplayermodels/requested-models.json",
+    "op": "add",
+    "path": "/female-canadian-lynx",
+    "dependsOn": [
+      {
+        "modid": "lupines"
+      }
+    ],
+    "value": {
+      "Enabled": true,
+      "Group": "beasts",
+      "Icon": "lupines:icons/wolp",
+      "GroupIcon": "playermodellib:icons/beasts",
+      "ShapePath": "animalicarequests:entity/requests/female-canadian-lynx",
+      "BaseShapeCode": "playermodellib:digitigrade",
+      "MainTextureCode": "fur-main",
+      "ModelSizeFactor": 1,
+      "CollisionBox": [
+        0.6,
+        1.85
+      ],
+      "SizeRange": [
+        0.9,
+        1.1
+      ],
+      "ScaleColliderWithSizeHorizontally": true,
+      "ScaleColliderWithSizeVertically": true,
+      "SneakEyeHeightMultiplier": 0.7,
+      "EyeHeight": 1.8,
+      "RemoveTags": [
+        "seraph"
+      ],
+      "AddTags": [
+        "beast",
+        "lynx"
+      ],
+      "CreateCuboidsForAttachmentPoints": false,
+      "SkinnableParts": [
+        {
+          "code": "voicetype",
+          "type": "voice",
+          "useDropDown": true,
+          "variants": [
+            {
+              "code": "niuch",
+              "sound": "lupines:sounds/voice/niuch"
+            },
+            {
+              "code": "uhm",
+              "sound": "lupines:sounds/voice/uhm"
+            },
+            {
+              "code": "niuhuh",
+              "sound": "lupines:sounds/voice/niuhuh"
+            },
+            {
+              "code": "uhmh",
+              "sound": "lupines:sounds/voice/uhmh"
+            },
+            {
+              "code": "uhoh",
+              "sound": "lupines:sounds/voice/uhoh"
+            }
+          ]
+        },
+        {
+          "code": "voicepitch",
+          "type": "voice",
+          "useDropDown": true,
+          "variants": [
+            {
+              "code": "verylow"
+            },
+            {
+              "code": "low"
+            },
+            {
+              "code": "medium"
+            },
+            {
+              "code": "high"
+            }
+          ]
+        },
+        {
+          "code": "female-canadian-lynx-hair",
+          "type": "shape",
+          "tabCode": "features",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "animalicarequests:entity/requests/female-canadian-lynx-hair-{code}"
+          },
+          "variants": [
+            {
+              "code": "reference"
+            },
+            {
+              "code": "none"
+            },
+            {
+              "code": "mane01"
+            },
+            {
+              "code": "mane02"
+            },
+            {
+              "code": "mane03"
+            },
+            {
+              "code": "mane04"
+            },
+            {
+              "code": "ponytail"
+            }
+          ],
+          "disableElementsByVariantCode": {
+            "none": [
+              "LynxHairTop0",
+              "LynxHairFringe0",
+              "LynxHairTop1",
+              "LynxHairFringe1",
+              "LynxHairTop2",
+              "LynxHairFringe2",
+              "LynxHairTop3",
+              "LynxHairFringe3",
+              "LynxHairTop4",
+              "LynxHairFringe4"
+            ],
+            "mane01": [
+              "LynxHairTop0",
+              "LynxHairFringe0",
+              "LynxHairTop1",
+              "LynxHairFringe1",
+              "LynxHairTop2",
+              "LynxHairFringe2",
+              "LynxHairTop3",
+              "LynxHairFringe3",
+              "LynxHairTop4",
+              "LynxHairFringe4"
+            ],
+            "mane02": [
+              "LynxHairTop0",
+              "LynxHairFringe0",
+              "LynxHairTop1",
+              "LynxHairFringe1",
+              "LynxHairTop2",
+              "LynxHairFringe2",
+              "LynxHairTop3",
+              "LynxHairFringe3",
+              "LynxHairTop4",
+              "LynxHairFringe4"
+            ],
+            "mane03": [
+              "LynxHairTop0",
+              "LynxHairFringe0",
+              "LynxHairTop1",
+              "LynxHairFringe1",
+              "LynxHairTop2",
+              "LynxHairFringe2",
+              "LynxHairTop3",
+              "LynxHairFringe3",
+              "LynxHairTop4",
+              "LynxHairFringe4"
+            ],
+            "mane04": [
+              "LynxHairTop0",
+              "LynxHairFringe0",
+              "LynxHairTop1",
+              "LynxHairFringe1",
+              "LynxHairTop2",
+              "LynxHairFringe2",
+              "LynxHairTop3",
+              "LynxHairFringe3",
+              "LynxHairTop4",
+              "LynxHairFringe4"
+            ],
+            "ponytail": [
+              "LynxHairTop0",
+              "LynxHairFringe0",
+              "LynxHairTop1",
+              "LynxHairFringe1",
+              "LynxHairTop2",
+              "LynxHairFringe2",
+              "LynxHairTop3",
+              "LynxHairFringe3",
+              "LynxHairTop4",
+              "LynxHairFringe4"
+            ]
+          }
+        },
+        {
+          "code": "female-canadian-lynx-hairextra",
+          "type": "shape",
+          "tabCode": "features",
+          "useDropDown": true,
+          "shapeTemplate": {
+            "base": "animalicarequests:entity/requests/female-canadian-lynx-hairextra-{code}"
+          },
+          "variants": [
+            {
+              "code": "none"
+            },
+            {
+              "code": "maneextra01"
+            },
+            {
+              "code": "maneextra02"
+            },
+            {
+              "code": "maneextra03"
+            },
+            {
+              "code": "maneextra04"
+            },
+            {
+              "code": "maneextra05"
+            }
+          ]
+        },
+        {
+          "code": "female-canadian-lynx-haircolor",
+          "type": "texture",
+          "tabCode": "features",
+          "useDropDown": true,
+          "textureTarget": "lynx-hair",
+          "targetSkinParts": [
+            "base",
+            "female-canadian-lynx-hair",
+            "female-canadian-lynx-hairextra"
+          ],
+          "overlayTexture": false,
+          "textureTemplate": "animalicarequests:entity/requests/lynx-hair-{code}",
+          "variants": [
+            {
+              "code": "brown"
+            },
+            {
+              "code": "black"
+            },
+            {
+              "code": "darkbrown"
+            },
+            {
+              "code": "chestnut"
+            },
+            {
+              "code": "blonde"
+            },
+            {
+              "code": "white"
+            },
+            {
+              "code": "ivory"
+            },
+            {
+              "code": "silver"
+            },
+            {
+              "code": "lightgray"
+            },
+            {
+              "code": "gray"
+            },
+            {
+              "code": "darkgray"
+            },
+            {
+              "code": "charcoal"
+            }
+          ]
+        }
+      ],
+      "ExtraTraits": [
+        "animalicarequests-lynx-physiology"
+      ]
+    }
+  }
+]

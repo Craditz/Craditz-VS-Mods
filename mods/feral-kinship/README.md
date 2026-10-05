@@ -1,15 +1,9 @@
 # Feral Kinship
 
-Source for version **0.5.4**, from commit `941adfb2`.
+Selected source for version **0.5.4**, from commit `941adfb2`.
 
-[Mod page](https://mods.vintagestory.at/animalkinship).
+The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
 
-Models, copied or derived game assets, and images whose sharing rights haven't
-been confirmed are left out. The selected configs here aren't enough to make a
-complete package.
+Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
 
-See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.
-
-[Feral Kinship Companions](../feral-kinship-companions/README.md) has its own
-folder next door. It still needs Feral Kinship at runtime and uses this project's
-unchanged race resolver when it builds.
+See [BUILD.md](../../BUILD.md), the [project license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.

@@ -4,6 +4,7 @@ If you're here to build something, this is the bit you need.
 
 ## What you'll need
 
+- Git LFS, installed before cloning; run `git lfs pull` if assets appear as pointer text
 - .NET SDK 10
 - Your own Vintage Story installation, at a version compatible with the chosen mod's manifest
 - Any third-party mod DLLs that project needs, downloaded from their official pages and extracted locally outside this source tree
@@ -42,20 +43,22 @@ repository's layout.
 - `mods/custom-music-radio/CustomMusicRadio.csproj`
 - `mods/feral-kinship-companions/FeralKinshipCompanions.csproj`
 
-## What's still missing
+## Assets and packages
 
-A successful compile won't give you the published ZIP or verify how it behaves
-in game. Model geometry, some generated assets, icons and copied or derived art
-are left out where their redistribution terms haven't been verified. Some configs
-were kept only where they match the selected local release files. Some content
-packs contain just metadata or part of their configs, so these folders can't
-produce complete packages.
+The supporting assets and package icons from the matching retained releases are
+included. Eight content packs need their manifest and assets; code mods also
+need their compiled mod DLL. Use the project assembly name and keep `modinfo.json`
+at the ZIP root, alongside `assets/` and the package icon where present. Archive
+entry paths must use forward slashes.
 
-Requests has runtime source here, but its generation tools and donor inputs are
-left out. Core has an optional body-center generator, but it needs model inputs
-that aren't included. The full generators and their authored inputs still need
-checks on where they came from and what can be shared before complete package
-builds can be called reproducible.
+Use the included selected assets for packaging. Complete regeneration from
+original model/art inputs is a separate workflow: this repository does not
+contain every historical generator or donor input. Dependency DLLs are installed
+separately and must not be bundled into these packages.
+
+An asset presence/hash check or successful compile does not establish an exact
+release binary match or in-game acceptance. Hide Name has no retained latest ZIP
+for comparison. Existing selected versions and dependency requirements are kept.
 
 ## Companions, Body Tools and Radio
 
@@ -70,7 +73,7 @@ isn't included.
   uses `VINTAGE_STORY` instead of the old fallback to a local experimental game
   installation. That change is limited to project configuration
 
-These three folders have content left out and aren't complete mod packages.
+Their supporting assets are included from the matching selected release packages.
 
 ### Companions and Feral Kinship
 

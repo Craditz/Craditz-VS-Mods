@@ -1,0 +1,140 @@
+{
+  "code": "clawtips-zinc-wearable",
+  "maxStackSize": 1,
+  "durability": 425,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-clawtips-zinc"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/equipped-clawtips-zinc"
+  },
+  "texture": {
+    "base": "item/tool/foxclawtips-zinc"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "clawtips-zinc-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:clawtips-zinc",
+    "animalicaVirtualToolPriority": 130,
+    "clothescategory": "hand",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedclaws",
+  "tags": [
+    "tool",
+    "tool-knife",
+    "tool-trimming"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 2.3,
+  "attackRange": 1.1,
+  "tool": "knife",
+  "toolTier": 2,
+  "miningSpeed": {
+    "Soil": 6.3,
+    "Sand": 6.3,
+    "Gravel": 3.96,
+    "Snow": 3.96,
+    "Plant": 2.16,
+    "Leaves": 0.9
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 5.5,
+      "y": 0.0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 2.05
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "enabled": false
+}

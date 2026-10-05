@@ -1,0 +1,398 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-bluesteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-bluesteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-bluesteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-bluesteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-bluesteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-bluesteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/bluesteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  }
+]

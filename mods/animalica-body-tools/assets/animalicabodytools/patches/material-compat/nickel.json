@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-nickel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/nickel.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  }
+]

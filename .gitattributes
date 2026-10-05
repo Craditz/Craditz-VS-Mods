@@ -6,5 +6,7 @@
 *.md text eol=lf
 *.py text eol=lf
 *.ps1 text eol=crlf
-# Current reviewed export is text-only. Add exact-path LFS rules only when
-# approved binary sources are introduced; release ZIPs stay outside Git.
+# Released model data and binary assets use Git LFS. Install Git LFS before cloning.
+mods/**/assets/**/shapes/**/*.json filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text

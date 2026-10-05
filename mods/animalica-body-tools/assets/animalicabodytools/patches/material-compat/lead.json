@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-lead-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/lead.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  }
+]

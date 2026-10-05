@@ -1,0 +1,68 @@
+{
+  code: "packstorage-trunk",
+  class: "FeralKinshipPackStorageTrunk",
+  entityclass: "FeralKinshipPackStorageTrunk",
+  attributes: {
+    reinforcable: true,
+    partialAttachable: true,
+    "humanoidTraversalCost": 100,
+    inventoryClassName: "packstorage-trunk",
+    defaultType: "storage",
+    types: ["storage", "normal-generic"],
+    quantitySlots: { "normal-generic": 36, storage: 36 },
+    quantityColumns: { "normal-generic": 9, storage: 9 },
+    dialogTitleLangCode: {
+      "normal-generic": "feralkinshipcompanions:packstoragetrunkcontents",
+      storage: "feralkinshipcompanions:packstoragetrunkcontents"
+    },
+    storageType: { "normal-generic": 189, storage: 189 },
+    retrieveOnly: { "normal-generic": false, storage: false },
+    drop: { "normal-generic": true, storage: true },
+    shape: {
+      "normal-generic": "block/packstorage",
+      storage: "block/packstorage"
+    },
+    typedOpenSound: {
+      "normal-generic": "game:sounds/block/largechestopen",
+      storage: "game:sounds/block/largechestopen"
+    },
+    typedCloseSound: {
+      "normal-generic": "game:sounds/block/largechestclose",
+      storage: "game:sounds/block/largechestclose"
+    },
+    variantByGroup: "side",
+    variantByGroupInventory: null,
+    handbook: { groupBy: ["packstorage-trunk-*"] }
+  },
+  behaviors: [
+    { name: "Lockable" },
+    { name: "Container" }
+  ],
+  variantgroups: [ { code: "side", loadFromProperties: "abstract/horizontalorientation" } ],
+  creativeinventory: { general: ["*-north"], decorative: ["*-north"] },
+  shapeInventory: { base: "block/packstorage", rotateY: 180 },
+  shapeByType: {
+    "*-north": { base: "block/packstorage", rotateY: 0 },
+    "*-east": { base: "block/packstorage", rotateY: 270 },
+    "*-south": { base: "block/packstorage", rotateY: 180 },
+    "*-west": { base: "block/packstorage", rotateY: 90 }
+  },
+  textures: {
+    "normal-generic-wood": { base: "game:block/wood/planks/oak1" },
+    "normal-generic-darkwood": { base: "game:block/wood/debarked/oak" },
+    "normal-generic-lining": { base: "game:block/cloth/linen/blue" },
+    "storage-wood": { base: "game:block/wood/planks/oak1" },
+    "storage-darkwood": { base: "game:block/wood/debarked/oak" },
+    "storage-lining": { base: "game:block/cloth/linen/blue" }
+  },
+  blockmaterial: "Wood",
+  replaceable: 900,
+  resistance: 3,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: { x1: 0.06, y1: 0, z1: 0.06, x2: 0.94, y2: 0.75, z2: 0.94 },
+  collisionbox: { x1: 0.06, y1: 0, z1: 0.06, x2: 0.94, y2: 0.75, z2: 0.94 },
+  combustibleProps: { burnTemperature: 600, burnDuration: 35 },
+  guiTransform: { origin: { x: 0.5, y: 0.5, z: 0.97 }, scale: 0.95 }
+}

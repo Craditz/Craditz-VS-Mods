@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-electrum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/electrum.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  }
+]

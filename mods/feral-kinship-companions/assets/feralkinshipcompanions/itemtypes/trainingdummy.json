@@ -1,0 +1,11 @@
+{
+  "code": "trainingdummy",
+  "class": "FeralKinshipTrainingDummy",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 16,
+  "texture": {
+    "base": "feralkinshipcompanions:item/trainingdummy"
+  }
+}

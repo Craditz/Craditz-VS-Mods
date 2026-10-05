@@ -1,0 +1,398 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-redsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-redsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-redsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-redsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-redsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-redsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/redsteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  }
+]

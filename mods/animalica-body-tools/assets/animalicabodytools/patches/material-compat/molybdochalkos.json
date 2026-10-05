@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-molybdochalkos-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/molybdochalkos.json",
+    "dependsOn": [
+      {
+        "modid": "obdoltools"
+      }
+    ]
+  }
+]

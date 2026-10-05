@@ -1,0 +1,138 @@
+{
+  "code": "prospectingclaws-blackbronze-wearable",
+  "maxStackSize": 1,
+  "durability": 438,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-prospectingclaws-blackbronze"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "class": "animalicabodytools.specieslockedprospectingpick",
+  "tags": [
+    "tool",
+    "tool-pickaxe",
+    "tool-prospectingpick"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "smithing",
+  "shape": {
+    "base": "item/tool/equipped-prospectingclaws-blackbronze"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "prospectingclaws-blackbronze-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:prospectingclaws-blackbronze",
+    "animalicaVirtualToolPriority": 205,
+    "clothescategory": "arm",
+    "wearableAttachment": true,
+    "warmth": 0.0,
+    "heldItemPitchFollow": 0.9,
+    "slotRefillIdentifier": "propick",
+    "rememberToolModeWhenBroken": true
+  },
+  "attackPower": 2.0,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 3,
+  "miningSpeed": {
+    "Stone": 3.15,
+    "Ore": 3.15
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-blackbronze"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 4.6,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.7
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  }
+}

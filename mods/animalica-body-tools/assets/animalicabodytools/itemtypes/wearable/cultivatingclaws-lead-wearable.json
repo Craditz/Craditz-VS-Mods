@@ -1,0 +1,136 @@
+{
+  "code": "cultivatingclaws-lead-wearable",
+  "maxStackSize": 1,
+  "durability": 260,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-cultivatingclaws-lead"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "class": "animalicabodytools.specieslockedcultivatingclaws",
+  "tags": [
+    "tool",
+    "tool-hoe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breaktool",
+  "heldTpUseAnimation": "hoe",
+  "shape": {
+    "base": "item/tool/equipped-cultivatingclaws-lead"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-lead"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "cultivatingclaws-lead-emptyhand-hoe",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:cultivatingclaws-lead",
+    "animalicaVirtualToolPriority": 157,
+    "clothescategory": "hand",
+    "wearableAttachment": true,
+    "warmth": 0.0,
+    "heldItemPitchFollow": 0.5
+  },
+  "attackPower": 1.4,
+  "attackRange": 1.1,
+  "tool": "Hoe",
+  "toolTier": 2,
+  "miningSpeed": {
+    "Soil": 5.0
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 5.5,
+      "y": 0.0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.65
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "enabled": false
+}

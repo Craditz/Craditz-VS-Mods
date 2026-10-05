@@ -1,0 +1,84 @@
+{
+  "code": "radiospeaker",
+  "maxStackSize": 16,
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "custommusicradio:item/radiospeaker"
+  },
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/debarked/walnut"
+    },
+    "dark": {
+      "base": "game:block/wood/debarked/ebony"
+    },
+    "copper": {
+      "base": "game:block/metal/plate/copper"
+    },
+    "brass": {
+      "base": "game:block/metal/plate/brass"
+    },
+    "linen": {
+      "base": "game:block/cloth/linen/normal1"
+    }
+  },
+  "guiTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "rotation": {
+      "x": -18,
+      "y": -35,
+      "z": 0
+    },
+    "scale": 1.35
+  },
+  "fpHandTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "rotation": {
+      "x": 0,
+      "y": -25,
+      "z": 0
+    },
+    "scale": 0.65
+  },
+  "tpHandTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "rotation": {
+      "x": 0,
+      "y": -90,
+      "z": 0
+    },
+    "scale": 0.55
+  },
+  "groundTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 1
+  }
+}

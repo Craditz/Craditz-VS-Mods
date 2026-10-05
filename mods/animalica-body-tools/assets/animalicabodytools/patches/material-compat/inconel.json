@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-inconel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/inconel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  }
+]

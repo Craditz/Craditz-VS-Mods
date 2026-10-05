@@ -1,0 +1,524 @@
+{
+  "code": "tamehare",
+  "class": "EntityAgent",
+  "attributes": {
+    "minGenerationToAllowHealing": 1000,
+    "handbook": {
+      "groupcode": "creaturegroup-hare"
+    }
+  },
+  "tags": [
+    "animal",
+    "adult",
+    "pet",
+    "habitat-land"
+  ],
+  "variantgroups": [
+    {
+      "code": "type",
+      "states": [
+        "arctic",
+        "cape",
+        "european",
+        "indian",
+        "jackblack",
+        "scrub"
+      ]
+    },
+    {
+      "code": "gender",
+      "states": [
+        "male",
+        "female"
+      ]
+    }
+  ],
+  "collisionBoxSize": {
+    "x": 0.75,
+    "y": 0.5
+  },
+  "selectionBoxSize": {
+    "x": 0.75,
+    "y": 0.5
+  },
+  "deadHitboxSize": {
+    "x": 0.75,
+    "y": 0.3
+  },
+  "eyeHeight": 0.6,
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "game:entity/animal/mammal/hare/european-{gender}"
+    },
+    "texture": {
+      "base": "game:entity/animal/mammal/hare/{type}-{gender}*"
+    },
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": true
+      },
+      {
+        "code": "receivecommand",
+        "availableCommands": [
+          {
+            "commandName": "sit",
+            "commandType": "SIMPLE",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "lay",
+            "commandType": "SIMPLE",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "stay",
+            "commandType": "COMPLEX",
+            "minObedience": 0.1
+          },
+          {
+            "commandName": "followmaster",
+            "commandType": "COMPLEX",
+            "minObedience": 0.6
+          },
+          {
+            "commandName": "NEUTRAL",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "PROTECTIVE",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "AGGRESSIVE",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "PASSIVE",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          }
+        ]
+      },
+      {
+        "code": "tameable",
+        "size": "small",
+        "disobediencePerDay": 0,
+        "treat": [
+          {
+            "code": "fruit-*",
+            "progress": 0.08,
+            "cooldown": 2
+          },
+          {
+            "code": "vegetable-*",
+            "progress": 0.12,
+            "cooldown": 2
+          },
+          {
+            "code": "grain-*",
+            "progress": 0.12,
+            "cooldown": 2
+          },
+          {
+            "code": "seeds-*",
+            "progress": 0.08,
+            "cooldown": 2
+          },
+          {
+            "code": "drygrass",
+            "progress": 0.08,
+            "cooldown": 2
+          },
+          {
+            "code": "petcookie-meat-perfect",
+            "domain": "petai",
+            "progress": 0.75,
+            "cooldown": 3
+          }
+        ]
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "interpolateposition"
+      },
+      {
+        "code": "feralkinshiptameguard"
+      },
+      {
+        "code": "mortallywoundable",
+        "remainAliveHours": 24,
+        "healingRequiredForRescue": 0,
+        "whenBelowHealth": 1
+      }
+    ],
+    "animations": [
+      {
+        "code": "hurt",
+        "animation": "hurt",
+        "animationSpeed": 2.2,
+        "weight": 10,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "die",
+        "animation": "death",
+        "animationSpeed": 1.25,
+        "weight": 10,
+        "blendMode": "Average",
+        "triggeredBy": {
+          "onControls": [
+            "dead"
+          ]
+        }
+      },
+      {
+        "code": "idle",
+        "animation": "idle",
+        "blendMode": "AddAverage",
+        "triggeredBy": {
+          "defaultAnim": true
+        }
+      },
+      {
+        "code": "sleep",
+        "animation": "sleep",
+        "blendMode": "Average"
+      },
+      {
+        "code": "sit",
+        "animation": "sit",
+        "blendMode": "Average"
+      },
+      {
+        "code": "attack",
+        "animation": "Attack",
+        "animationSpeed": 2.5,
+        "blendMode": "Average"
+      },
+      {
+        "code": "walk",
+        "animation": "Walk",
+        "blendMode": "Average"
+      },
+      {
+        "code": "run",
+        "animation": "Run",
+        "blendMode": "Average"
+      },
+      {
+        "code": "dead",
+        "animation": "death",
+        "blendMode": "Average"
+      },
+      {
+        "code": "wounded-idle",
+        "animation": "sleep",
+        "blendMode": "Average"
+      },
+      {
+        "code": "wounded-resthead",
+        "animation": "sleep",
+        "blendMode": "Average"
+      },
+      {
+        "code": "wounded-look",
+        "animation": "sit",
+        "blendMode": "Average"
+      },
+      {
+        "code": "wounded-spasm",
+        "animation": "hurt",
+        "blendMode": "Average"
+      },
+      {
+        "code": "wounded-trystand",
+        "animation": "sit",
+        "blendMode": "Average"
+      },
+      {
+        "code": "wounded-stand",
+        "animation": "sit",
+        "blendMode": "Average"
+      },
+      {
+        "code": "lie",
+        "animation": "Lie",
+        "blendMode": "Average"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": true
+      },
+      {
+        "code": "receivecommand",
+        "availableCommands": [
+          {
+            "commandName": "sit",
+            "commandType": "SIMPLE",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "lay",
+            "commandType": "SIMPLE",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "stay",
+            "commandType": "COMPLEX",
+            "minObedience": 0.1
+          },
+          {
+            "commandName": "followmaster",
+            "commandType": "COMPLEX",
+            "minObedience": 0.6
+          },
+          {
+            "commandName": "NEUTRAL",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "PROTECTIVE",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "AGGRESSIVE",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          },
+          {
+            "commandName": "PASSIVE",
+            "commandType": "AGGRESSIONLEVEL",
+            "minObedience": 0.2
+          }
+        ]
+      },
+      {
+        "code": "tameable",
+        "size": "small",
+        "disobediencePerDay": 0,
+        "treat": [
+          {
+            "code": "fruit-*",
+            "progress": 0.08,
+            "cooldown": 2
+          },
+          {
+            "code": "vegetable-*",
+            "progress": 0.12,
+            "cooldown": 2
+          },
+          {
+            "code": "grain-*",
+            "progress": 0.12,
+            "cooldown": 2
+          },
+          {
+            "code": "seeds-*",
+            "progress": 0.08,
+            "cooldown": 2
+          },
+          {
+            "code": "drygrass",
+            "progress": 0.08,
+            "cooldown": 2
+          },
+          {
+            "code": "petcookie-meat-perfect",
+            "domain": "petai",
+            "progress": 0.75,
+            "cooldown": 3
+          }
+        ]
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "feralkinshiptameguard"
+      },
+      {
+        "code": "mortallywoundable",
+        "remainAliveHours": 24,
+        "healingRequiredForRescue": 0,
+        "whenBelowHealth": 1
+      },
+      {
+        "code": "health",
+        "currenthealth": 10,
+        "maxhealth": 10
+      },
+      {
+        "code": "taskai",
+        "aiCreatureType": "LandCreature",
+        "aitasks": [
+          {
+            "code": "getoutofwater",
+            "priority": 1.4,
+            "movespeed": 0.015
+          },
+          {
+            "code": "feralkinshipbasicpetmelee",
+            "priority": 3.2,
+            "priorityForCancel": 3.3,
+            "slot": 1,
+            "isCommandable": true,
+            "tamingGenerations": 1000,
+            "entityCodes": [
+              "trainingdummy",
+              "drifter-*",
+              "shiver-*",
+              "bowtorn-*",
+              "locust-*",
+              "wolf-*",
+              "hyena-*",
+              "bear-*",
+              "cockatrice-*",
+              "direwolf-*",
+              "hellboar-*",
+              "scorpion-*",
+              "spider-*",
+              "golem-*",
+              "geodecrab-*",
+              "shark",
+              "bigshark"
+            ],
+            "skipEntityCodes": [
+              "tame*"
+            ],
+            "minDist": 1.0,
+            "minVerDist": 0.9,
+            "attackAngleRangeDeg": 35,
+            "retaliateAttacks": true,
+            "attackDurationMs": 1000,
+            "damagePlayerAtMs": 500,
+            "animation": "Attack",
+            "animationSpeed": 2.5,
+            "mincooldown": 900,
+            "maxcooldown": 1200,
+            "damage": 1.0,
+            "damageType": "SlashingAttack",
+            "damageTier": 1
+          },
+          {
+            "code": "feralkinshipbasicpetseek",
+            "priority": 2.9,
+            "priorityForCancel": 3.3,
+            "slot": 1,
+            "isCommandable": true,
+            "tamingGenerations": 1000,
+            "entityCodes": [
+              "trainingdummy",
+              "drifter-*",
+              "shiver-*",
+              "bowtorn-*",
+              "locust-*",
+              "wolf-*",
+              "hyena-*",
+              "bear-*",
+              "cockatrice-*",
+              "direwolf-*",
+              "hellboar-*",
+              "scorpion-*",
+              "spider-*",
+              "golem-*",
+              "geodecrab-*",
+              "shark",
+              "bigshark"
+            ],
+            "skipEntityCodes": [
+              "tame*"
+            ],
+            "retaliateAttacks": true,
+            "seekingRange": 20,
+            "belowTempSeekingRange": 20,
+            "movespeed": 0.045,
+            "animation": "Run",
+            "animationSpeed": 2.2
+          },
+          {
+            "code": "simplecommand",
+            "priority": 3,
+            "priorityForCancel": 2.8,
+            "minduration": 2000,
+            "maxduration": 10000,
+            "animation": "sit",
+            "command": "sit"
+          },
+          {
+            "code": "simplecommand",
+            "priority": 3,
+            "priorityForCancel": 2.8,
+            "minduration": 5000,
+            "maxduration": 15000,
+            "animation": "sleep",
+            "command": "lay"
+          },
+          {
+            "code": "stay",
+            "priority": 2,
+            "command": "stay",
+            "movespeed": 0.006,
+            "maxDistance": 10,
+            "searchRange": 40
+          },
+          {
+            "code": "feralkinshipbasicfollow",
+            "priority": 2,
+            "movespeed": 0.045,
+            "animation": "Run",
+            "animationSpeed": 2.2,
+            "maxDistance": 8,
+            "allowTeleport": true
+          },
+          {
+            "code": "idle",
+            "priority": 1.2,
+            "priorityForCancel": 1.35,
+            "minduration": 2500,
+            "maxduration": 7500,
+            "mincooldown": 10000,
+            "maxcooldown": 50000
+          },
+          {
+            "code": "wander",
+            "priority": 1,
+            "priorityForCancel": 1.35,
+            "movespeed": 0.004
+          },
+          {
+            "code": "lookaround",
+            "priority": 0.5
+          }
+        ]
+      }
+    ]
+  },
+  "sounds": {
+    "hurt": "game:creature/hare-hurt",
+    "death": "game:creature/hare-hurt",
+    "idle": {
+      "path": "game:creature/hare-idle",
+      "pitch": {
+        "avg": 1,
+        "var": 0.25
+      }
+    }
+  },
+  "idleSoundChance": 0.03
+}

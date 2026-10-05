@@ -1,0 +1,54 @@
+[
+  {
+    "ingredientPattern": "TNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:prospectingpickhead-copper"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:prospectingclaws-copper-wearable"
+    }
+  },
+  {
+    "ingredientPattern": "TNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:prospectingpickhead-copper"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:prospectingclaws-copper-wearable"
+    }
+  }
+]

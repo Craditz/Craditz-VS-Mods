@@ -1,0 +1,398 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-blacksteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-blacksteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-blacksteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-blacksteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-blacksteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-blacksteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/blacksteel.json",
+    "dependsOn": [
+      {
+        "modid": "canadditionalmetals"
+      }
+    ]
+  }
+]

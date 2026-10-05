@@ -1,0 +1,108 @@
+{
+  "code": "cultivatingclaws-molybdochalkos",
+  "class": "animalicabodytools.specieslockedcultivatingclaws",
+  "maxStackSize": 1,
+  "durability": 400,
+  "handbook": {
+    "exclude": true
+  },
+  "tags": [
+    "tool",
+    "tool-hoe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breaktool",
+  "heldTpUseAnimation": "hoe",
+  "shape": {
+    "base": "item/tool/bodytools-cultivatingclaws-molybdochalkos"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "heldItemPitchFollow": 0.5
+  },
+  "attackPower": 1.6,
+  "attackRange": 1.1,
+  "tool": "Hoe",
+  "toolTier": 3,
+  "miningSpeed": {
+    "Soil": 5.0
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -25,
+      "y": 45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.9
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "enabled": false
+}

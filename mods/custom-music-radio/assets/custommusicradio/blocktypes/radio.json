@@ -1,0 +1,174 @@
+{
+  "code": "radio",
+  "class": "VintageRadio",
+  "entityClass": "VintageRadio",
+  "variantgroups": [
+    {
+      "code": "part",
+      "states": [
+        "lower",
+        "upper"
+      ]
+    },
+    {
+      "code": "side",
+      "states": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ]
+    },
+    {
+      "code": "status",
+      "states": [
+        "off",
+        "on"
+      ]
+    }
+  ],
+  "creativeinventory": {
+    "general": [
+      "radio-lower-north-off"
+    ],
+    "decorative": [
+      "radio-lower-north-off"
+    ]
+  },
+  "shapeByType": {
+    "*-lower-north-off": {
+      "base": "custommusicradio:block/radio-lower-north-off"
+    },
+    "*-lower-north-on": {
+      "base": "custommusicradio:block/radio-lower-north-on"
+    },
+    "*-lower-east-off": {
+      "base": "custommusicradio:block/radio-lower-east-off"
+    },
+    "*-lower-east-on": {
+      "base": "custommusicradio:block/radio-lower-east-on"
+    },
+    "*-lower-south-off": {
+      "base": "custommusicradio:block/radio-lower-south-off"
+    },
+    "*-lower-south-on": {
+      "base": "custommusicradio:block/radio-lower-south-on"
+    },
+    "*-lower-west-off": {
+      "base": "custommusicradio:block/radio-lower-west-off"
+    },
+    "*-lower-west-on": {
+      "base": "custommusicradio:block/radio-lower-west-on"
+    },
+    "*-upper-north-off": {
+      "base": "custommusicradio:block/radio-upper-north-off"
+    },
+    "*-upper-north-on": {
+      "base": "custommusicradio:block/radio-upper-north-on"
+    },
+    "*-upper-east-off": {
+      "base": "custommusicradio:block/radio-upper-east-off"
+    },
+    "*-upper-east-on": {
+      "base": "custommusicradio:block/radio-upper-east-on"
+    },
+    "*-upper-south-off": {
+      "base": "custommusicradio:block/radio-upper-south-off"
+    },
+    "*-upper-south-on": {
+      "base": "custommusicradio:block/radio-upper-south-on"
+    },
+    "*-upper-west-off": {
+      "base": "custommusicradio:block/radio-upper-west-off"
+    },
+    "*-upper-west-on": {
+      "base": "custommusicradio:block/radio-upper-west-on"
+    }
+  },
+  "shapeInventory": {
+    "base": "custommusicradio:block/radio-inventory"
+  },
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/debarked/walnut"
+    },
+    "dark": {
+      "base": "game:block/wood/debarked/ebony"
+    },
+    "brass": {
+      "base": "game:block/metal/plate/brass"
+    },
+    "cloth": {
+      "base": "game:block/cloth/wool/brown1"
+    },
+    "buttons": {
+      "base": "custommusicradio:block/radio-buttons"
+    },
+    "dial": {
+      "base": "custommusicradio:block/radio-dial"
+    },
+    "range": {
+      "base": "custommusicradio:block/radio-range"
+    },
+    "mode": {
+      "base": "custommusicradio:block/radio-mode"
+    },
+    "playlist": {
+      "base": "custommusicradio:block/radio-playlist"
+    },
+    "off": {
+      "base": "custommusicradio:block/radio-lamp-off"
+    },
+    "on": {
+      "base": "custommusicradio:block/radio-lamp-on"
+    }
+  },
+  "blockmaterial": "Wood",
+  "drawtype": "json",
+  "renderpass": "opaque",
+  "replaceable": 0,
+  "resistance": 2.5,
+  "lightAbsorption": 0,
+  "sideSolid": {
+    "all": false
+  },
+  "sideOpaque": {
+    "all": false
+  },
+  "collisionbox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 1,
+    "z2": 1
+  },
+  "selectionbox": {
+    "x1": 0,
+    "y1": 0,
+    "z1": 0,
+    "x2": 1,
+    "y2": 1,
+    "z2": 1
+  },
+  "sounds": {
+    "place": "game:block/planks",
+    "hit": "game:block/planks",
+    "break": "game:block/planks"
+  },
+  "guiTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 1,
+      "z": 0.5
+    },
+    "scale": 0.6
+  },
+  "tpHandTransform": {
+    "scale": 0.3
+  },
+  "fpHandTransform": {
+    "scale": 0.3
+  },
+  "maxStackSize": 1
+}

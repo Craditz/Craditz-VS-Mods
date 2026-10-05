@@ -1,0 +1,74 @@
+{
+  "code": "trainingdummy",
+  "class": "FeralKinshipTrainingDummy",
+  "tags": ["creature", "humanoid", "hostile", "adult", "habitat-land"],
+  "hitboxSize": { "x": 0.8, "y": 1.8 },
+  "selectionBoxSize": { "x": 0.8, "y": 1.8 },
+  "deadHitboxSize": { "x": 0.8, "y": 1.8 },
+  "eyeHeight": 1.6,
+  "fallDamage": false,
+  "drops": [],
+  "spawnconditions": {
+    "runtime": {
+      "group": "hostile",
+      "chance": 0,
+      "maxQuantity": 0
+    }
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "game:entity/humanoid/seraph-faceless"
+    },
+    "texture": {
+      "base": "game:entity/humanoid/seraph-naked-hairless"
+    },
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": true
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": [
+      {
+        "code": "hurt",
+        "animation": "hurt",
+        "animationSpeed": 1.5,
+        "weight": 10,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "idle",
+        "animation": "idle",
+        "blendMode": "AddAverage",
+        "triggeredBy": { "defaultAnim": true }
+      },
+      {
+        "code": "death",
+        "animation": "death",
+        "triggeredBy": { "onControls": ["dead"] }
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "health",
+        "currenthealth": 1000000,
+        "maxhealth": 1000000
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.1251
+      }
+    ]
+  },
+  "idleSoundChance": 0
+}

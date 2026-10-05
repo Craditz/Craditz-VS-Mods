@@ -1,0 +1,562 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-metalsofmythsmithril-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythsmithril.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  }
+]

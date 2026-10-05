@@ -1,0 +1,562 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-highpalladium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/highpalladium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "PNP,P_P,PNP",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "P": {
+      "type": "item",
+      "code": "game:plank-*",
+      "name": "wood"
+    },
+    "N": {
+      "type": "item",
+      "code": "game:metalnailsandstrips-*",
+      "quantity": 1
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "radiochassis"
+  }
+}

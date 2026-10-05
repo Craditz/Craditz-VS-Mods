@@ -1,0 +1,68 @@
+{
+  "code": "tunnelingclaws-iron",
+  "class": "animalicabodytools.specieslockedbodytool",
+  "maxStackSize": 1,
+  "durability": 1250,
+  "handbook": {
+    "exclude": true
+  },
+  "heldTpHitAnimation": "breakhand",
+  "shape": {
+    "base": "item/tool/bodytools-tunnelingclaws-iron"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-iron"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0
+  },
+  "attackPower": 2.25,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 4,
+  "miningSpeed": {
+    "Ceramic": 2.48,
+    "Stone": 6.75,
+    "Ore": 6.75,
+    "Metal": 6.75,
+    "Ice": 3.15
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -25,
+      "y": 45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.9
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  }
+}

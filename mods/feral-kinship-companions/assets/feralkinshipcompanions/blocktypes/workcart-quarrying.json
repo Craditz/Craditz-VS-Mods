@@ -1,0 +1,4 @@
+{
+  inheritFrom: "blocktypes/workcart",
+  code: "workcart-quarrying"
+}

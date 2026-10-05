@@ -1,0 +1,139 @@
+{
+  "code": "clawtips-meteoriciron-wearable",
+  "maxStackSize": 1,
+  "durability": 1750,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-clawtips-meteoriciron"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/equipped-clawtips-meteoriciron"
+  },
+  "texture": {
+    "base": "item/tool/foxclawtips-meteoriciron"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "clawtips-meteoriciron-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:clawtips-meteoriciron",
+    "animalicaVirtualToolPriority": 125,
+    "clothescategory": "hand",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedclaws",
+  "tags": [
+    "tool",
+    "tool-knife",
+    "tool-trimming"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 2.0,
+  "attackRange": 1.1,
+  "tool": "knife",
+  "toolTier": 4,
+  "miningSpeed": {
+    "Soil": 5.85,
+    "Sand": 5.85,
+    "Gravel": 3.78,
+    "Snow": 3.78,
+    "Plant": 1.98,
+    "Leaves": 0.9
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 5.5,
+      "y": 0.0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 2.05
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  }
+}

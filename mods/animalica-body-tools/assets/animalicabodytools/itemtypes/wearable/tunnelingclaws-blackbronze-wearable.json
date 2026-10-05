@@ -1,0 +1,101 @@
+{
+  "code": "tunnelingclaws-blackbronze-wearable",
+  "maxStackSize": 1,
+  "durability": 688,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-tunnelingclaws-blackbronze"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/equipped-tunnelingclaws-blackbronze"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-blackbronze"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "tunnelingclaws-blackbronze-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:tunnelingclaws-blackbronze",
+    "animalicaVirtualToolPriority": 158,
+    "clothescategory": "arm",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedbodytool",
+  "tags": [
+    "tool",
+    "tool-pickaxe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 1.75,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 3,
+  "miningSpeed": {
+    "Ceramic": 2.25,
+    "Stone": 5.85,
+    "Ore": 5.85,
+    "Metal": 5.85,
+    "Ice": 2.52
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 4.6,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.7
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  }
+}

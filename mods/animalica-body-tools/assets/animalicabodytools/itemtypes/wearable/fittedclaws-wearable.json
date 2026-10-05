@@ -1,0 +1,77 @@
+{
+  "code": "fittedclaws-wearable",
+  "maxStackSize": 1,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/wolfclaws"
+  },
+  "texture": {
+    "base": "item/tool/wolfclaws"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "fittedclaws-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:fittedclaws",
+    "animalicaVirtualToolPriority": 50,
+    "clothescategory": "hand",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedclaws",
+  "tags": [
+    "tool",
+    "tool-knife",
+    "tool-trimming"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 1.5,
+  "attackRange": 1.1,
+  "tool": "knife",
+  "toolTier": 1,
+  "miningSpeed": {
+    "Soil": 2.25,
+    "Sand": 2.25,
+    "Gravel": 1.89,
+    "Snow": 1.89,
+    "Plant": 1.08,
+    "Leaves": 0.9
+  },
+  "durability": 1000000,
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.15
+  }
+}

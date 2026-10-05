@@ -1,0 +1,11 @@
+{
+  "code": "attackdummy",
+  "class": "FeralKinshipAttackDummy",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 16,
+  "texture": {
+    "base": "feralkinshipcompanions:item/attackdummy"
+  }
+}

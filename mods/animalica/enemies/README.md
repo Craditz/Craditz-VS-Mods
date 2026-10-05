@@ -1,14 +1,9 @@
 # Animalica - Enemies
 
-Source for version **0.2.1**, matching the public listing checked for this repo.
+Selected source for version **0.2.1**, from commit `9769f83f`.
 
-[Mod page](https://mods.vintagestory.at/animalicae).
+The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
 
-The source manifest's version was updated from 0.1.4 to 0.2.1 to match the released
-ZIP. Its other fields, including dependencies, were left unchanged.
+Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
 
-The released ZIP declares older PlayerModelLib/Core dependencies than this source.
-That difference is still there. A full source-to-package comparison, complete
-packaging, and permission to share the models and art still need checking.
-
-See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.
+See [BUILD.md](../../../BUILD.md), the [project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.

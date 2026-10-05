@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-toolsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/toolsteel.json",
+    "dependsOn": [
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  }
+]

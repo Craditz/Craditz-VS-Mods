@@ -1,0 +1,55 @@
+{
+  code: "packstorage",
+  class: "FeralKinshipPackStorage",
+  entityclass: "FeralKinshipPackStorage",
+  attributes: {
+    inventoryClassName: "packstorage",
+    defaultType: "storage",
+    types: ["storage", "normal-generic"],
+    quantitySlots: { "normal-generic": 12, storage: 12 },
+    quantityColumns: { "normal-generic": 4, storage: 4 },
+    dialogTitleLangCode: {
+      "normal-generic": "feralkinshipcompanions:packstoragecontents",
+      storage: "feralkinshipcompanions:packstoragecontents"
+    },
+    storageType: { "normal-generic": 189, storage: 189 },
+    retrieveOnly: { "normal-generic": false, storage: false },
+    drop: { "normal-generic": true, storage: true },
+    shape: { "normal-generic": "block/packstorage", storage: "block/packstorage" },
+    rotatatableInterval: {
+      "normal-generic": "22.5degnot45deg",
+      storage: "22.5degnot45deg"
+    },
+    handbook: { groupBy: ["packstorage-*"] }
+  },
+  behaviors: [
+    { name: "Container" },
+    { name: "HorizontalOrientable", properties: { dropBlockFace: "north" } }
+  ],
+  variantgroups: [ { code: "side", loadFromProperties: "abstract/horizontalorientation" } ],
+  creativeinventory: { general: ["*-north"] },
+  shapeInventory: { base: "block/packstorage", rotateY: 180 },
+  shapeByType: {
+    "*-north": { base: "block/packstorage", rotateY: 0 },
+    "*-east": { base: "block/packstorage", rotateY: 270 },
+    "*-south": { base: "block/packstorage", rotateY: 180 },
+    "*-west": { base: "block/packstorage", rotateY: 90 }
+  },
+  textures: {
+    "normal-generic-wood": { base: "game:block/wood/planks/oak1" },
+    "normal-generic-darkwood": { base: "game:block/wood/debarked/oak" },
+    "normal-generic-lining": { base: "game:block/cloth/linen/normal1" },
+    "storage-wood": { base: "game:block/wood/planks/oak1" },
+    "storage-darkwood": { base: "game:block/wood/debarked/oak" },
+    "storage-lining": { base: "game:block/cloth/linen/normal1" }
+  },
+  blockmaterial: "Wood",
+  resistance: 2.0,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: { x1: 0.06, y1: 0, z1: 0.06, x2: 0.94, y2: 0.75, z2: 0.94 },
+  collisionbox: { x1: 0.06, y1: 0, z1: 0.06, x2: 0.94, y2: 0.75, z2: 0.94 },
+  combustibleProps: { burnTemperature: 600, burnDuration: 35 },
+  guiTransform: { rotation: { x: -22, y: 35, z: 0 }, scale: 1.1 }
+}

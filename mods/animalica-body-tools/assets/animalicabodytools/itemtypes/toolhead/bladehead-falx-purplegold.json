@@ -1,0 +1,49 @@
+{
+  "code": "bladehead-falx-purplegold",
+  "enabled": false,
+  "maxStackSize": 4,
+  "shape": {
+    "base": "game:item/tool/blade/falx/steel"
+  },
+  "textures": {
+    "handguard": {
+      "base": "game:block/transparent"
+    },
+    "handle": {
+      "base": "game:block/transparent"
+    },
+    "rivet": {
+      "base": "game:block/transparent"
+    },
+    "cloth": {
+      "base": "game:block/transparent"
+    },
+    "string": {
+      "base": "game:block/transparent"
+    },
+    "longstiches": {
+      "base": "game:block/transparent"
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -89,
+      "y": 47,
+      "z": 34
+    },
+    "origin": {
+      "x": 0.82,
+      "y": 0,
+      "z": 0.33
+    },
+    "scale": 1.63
+  }
+}

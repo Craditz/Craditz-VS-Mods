@@ -1,0 +1,110 @@
+[
+  {
+    "ingredientPattern": "PNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "game:pickaxehead-uranium"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:tunnelingclaws-uranium-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "PNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "game:pickaxehead-uranium"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:tunnelingclaws-uranium-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "PNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "game:pickaxehead-uranium"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:tunnelingclaws-uranium-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "PNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "game:pickaxehead-uranium"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:tunnelingclaws-uranium-wearable"
+    },
+    "enabled": false
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "code": "foxbonusinspector",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 1,
+  "texture": {
+    "base": "feralkinshipcompanions:item/foxbonusinspector"
+  }
+}

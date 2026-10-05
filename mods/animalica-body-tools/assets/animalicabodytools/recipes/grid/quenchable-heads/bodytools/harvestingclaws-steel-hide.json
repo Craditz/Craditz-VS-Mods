@@ -1,0 +1,63 @@
+[
+  {
+    "ingredientPattern": "TNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythehead-steel"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:harvestingclaws-steel-wearable",
+      "recipeAttributes": {
+        "applyquenchablebuffs": true
+      }
+    },
+    "copyAttributesFrom": "T"
+  },
+  {
+    "ingredientPattern": "TNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythehead-steel"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:harvestingclaws-steel-wearable",
+      "recipeAttributes": {
+        "applyquenchablebuffs": true
+      }
+    },
+    "copyAttributesFrom": "T"
+  }
+]
+

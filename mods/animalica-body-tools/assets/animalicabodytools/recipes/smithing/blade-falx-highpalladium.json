@@ -1,0 +1,25 @@
+{
+  "ingredient": {
+    "code": "game:ingot-highpalladium",
+    "type": "item"
+  },
+  "pattern": [
+    [
+      "_______________",
+      "_______________",
+      "____#######____",
+      "__###########__",
+      "_############__",
+      "####_____#_#___",
+      "###____________",
+      "#______________"
+    ]
+  ],
+  "name": "Falx",
+  "code": "animalicafalx-highpalladium",
+  "output": {
+    "code": "animalicabodytools:bladehead-falx-highpalladium",
+    "type": "item"
+  },
+  "enabled": false
+}

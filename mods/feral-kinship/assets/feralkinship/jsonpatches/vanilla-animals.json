@@ -1,0 +1,499 @@
+[
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/bear-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/bear-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/bear-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/bear-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/bear-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/4/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/bear-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/5/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/bird/chicken-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/bird/chicken-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/bird/chicken-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/bird/chicken-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/4/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/bird/chicken-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/fox-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/fox-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/fox-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/fox-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hare-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hare-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hyena-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hyena-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hyena-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hyena-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/raccoon-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/raccoon-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/raccoon-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/raccoon-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/4/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/5/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/6/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/wolf-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/deer-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/deer-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/deer-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/deer-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/moose-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/moose-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/moose-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/moose-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/gazelle-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/gazelle-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/goat-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/goat-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/goat-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/goat-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/4/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/6/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/9/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/11/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/pig-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/2/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/4/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/6/code",
+    "value": "feralkinshipseekentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/9/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/11/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/0/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/mammal/hooved/sheep-baby",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/1/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/fish/freshwater-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/fish/freshwater-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/4/code",
+    "value": "feralkinshipmeleeattack"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/fish/freshwater-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/5/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/fish/reef-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipfleeentity"
+  },
+  {
+    "side": "Server",
+    "file": "game:entities/animal/fish/saltwater-adult",
+    "op": "replace",
+    "path": "/server/behaviors/code=taskai/aitasks/3/code",
+    "value": "feralkinshipfleeentity"
+  }
+]

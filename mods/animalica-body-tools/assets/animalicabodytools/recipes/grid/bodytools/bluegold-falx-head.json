@@ -1,0 +1,21 @@
+{
+  "enabled": false,
+  "ingredientPattern": "HP",
+  "shapeless": true,
+  "width": 2,
+  "height": 1,
+  "ingredients": {
+    "H": {
+      "type": "item",
+      "code": "game:bladehead-falx-steel"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:metalplate-bluegold"
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "animalicabodytools:bladehead-falx-bluegold"
+  }
+}

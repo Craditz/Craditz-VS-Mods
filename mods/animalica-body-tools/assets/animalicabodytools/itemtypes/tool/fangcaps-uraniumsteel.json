@@ -1,0 +1,97 @@
+{
+  "code": "fangcaps-uraniumsteel",
+  "class": "animalicabodytools.specieslockedbodytool",
+  "maxStackSize": 1,
+  "durability": 2525,
+  "handbook": {
+    "exclude": true
+  },
+  "heldTpHitAnimation": "breakhand",
+  "shape": {
+    "base": "item/tool/bodytools-fangcaps-uraniumsteel"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0
+  },
+  "texture": {
+    "base": "item/tool/foxfangcaps-uraniumsteel"
+  },
+  "attackPower": 5.8,
+  "attackRange": 1.15,
+  "toolTier": 5,
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -25,
+      "y": 45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.1
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "enabled": false
+}

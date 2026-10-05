@@ -1,0 +1,131 @@
+{
+  "code": "harvestingclaws-aluminumbronze",
+  "class": "animalicabodytools.specieslockedscythe",
+  "maxStackSize": 1,
+  "durability": 1100,
+  "handbook": {
+    "exclude": true
+  },
+  "tags": [
+    "tool",
+    "tool-scythe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "scythe",
+  "shape": {
+    "base": "item/tool/bodytools-harvestingclaws-aluminumbronze"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "heldItemPitchFollow": 0.5,
+    "codePrefixes": [
+      "crop",
+      "tallgrass",
+      "frostedtallgrass",
+      "tallplant-coopersreed-land-normal",
+      "tallplant-papyrus-land-normal",
+      "tallplant-tule-land-normal",
+      "tallplant-coopersreed-water-normal",
+      "tallplant-papyrus-water-normal",
+      "tallplant-coopersreed-ice-normal",
+      "flower-horsetail"
+    ],
+    "disallowedSuffixes": [
+      "snow2",
+      "snow3"
+    ],
+    "rememberToolModeWhenBroken": true
+  },
+  "attackPower": 1.125,
+  "attackRange": 1.1,
+  "tool": "Scythe",
+  "toolTier": 4,
+  "miningSpeed": {
+    "Plant": 2.0,
+    "Leaves": 5.5
+  },
+  "heldTpIdleAnimation": "scytheIdle",
+  "heldRightReadyAnimation": "scytheReady",
+  "heldTpUseAnimation": "interactStaticLong",
+  "texture": {
+    "base": "item/tool/foxrendingclaws-aluminumbronze"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -25,
+      "y": 45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "enabled": false
+}

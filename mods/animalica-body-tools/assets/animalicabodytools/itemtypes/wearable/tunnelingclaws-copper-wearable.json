@@ -1,0 +1,101 @@
+{
+  "code": "tunnelingclaws-copper-wearable",
+  "maxStackSize": 1,
+  "durability": 375,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-tunnelingclaws-copper"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/equipped-tunnelingclaws-copper"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-copper"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "tunnelingclaws-copper-emptyhand-pickaxe",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:tunnelingclaws-copper",
+    "animalicaVirtualToolPriority": 140,
+    "clothescategory": "arm",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedbodytool",
+  "tags": [
+    "tool",
+    "tool-pickaxe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 1.25,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 2,
+  "miningSpeed": {
+    "Ceramic": 1.35,
+    "Stone": 3.6,
+    "Ore": 3.6,
+    "Metal": 3.6,
+    "Ice": 1.58
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 4.6,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.7
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  }
+}

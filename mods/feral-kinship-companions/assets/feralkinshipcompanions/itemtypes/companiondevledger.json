@@ -1,0 +1,11 @@
+{
+  "code": "companiondevledger",
+  "class": "FeralKinshipDeveloperLedger",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 1,
+  "texture": {
+    "base": "feralkinshipcompanions:item/companiondevledger"
+  }
+}

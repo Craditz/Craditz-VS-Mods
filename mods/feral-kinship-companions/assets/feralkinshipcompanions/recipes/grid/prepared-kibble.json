@@ -1,0 +1,40 @@
+[
+  {
+    "ingredientPattern": "FMM",
+    "ingredients": {
+      "F": { "type": "item", "code": "game:flour-*" },
+      "M": {
+        "type": "item",
+        "code": "game:*-raw",
+        "allowedVariants": ["bushmeat", "redmeat", "poultry", "fish"]
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "shapeless": false,
+    "output": {
+      "type": "item",
+      "code": "feralkinshipcompanions:kibble-meat-raw",
+      "quantity": 3
+    }
+  },
+  {
+    "ingredientPattern": "FMM",
+    "ingredients": {
+      "F": { "type": "item", "code": "game:flour-*" },
+      "M": {
+        "type": "item",
+        "code": "game:vegetable-*",
+        "allowedVariants": ["carrot", "cabbage", "onion", "turnip", "parsnip", "pumpkin", "cassava", "bellpepper", "olive", "fennel"]
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "shapeless": false,
+    "output": {
+      "type": "item",
+      "code": "feralkinshipcompanions:kibble-plant-raw",
+      "quantity": 3
+    }
+  }
+]

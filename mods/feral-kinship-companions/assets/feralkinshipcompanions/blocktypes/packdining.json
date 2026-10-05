@@ -1,0 +1,35 @@
+{
+  code: "packamenity-dining",
+  class: "FeralKinshipDiningBoard",
+  entityclass: "FeralKinshipDiningBoard",
+  attributes: {
+    inventoryClassName: "packdining",
+    quantitySlots: 8,
+    dialogTitleLangCode: "feralkinshipcompanions:packdiningcontents",
+    retrieveOnly: false,
+    // Keep this as a flat food-category map. Some storage/spoilage patches
+    // add typed-container keys here, but this block is a generic container.
+    spoilSpeedMulByFoodCat: {
+      fruit: 1.0,
+      vegetable: 1.0,
+      protein: 1.0,
+      grain: 1.0,
+      dairy: 1.0,
+      unknown: 1.0
+    },
+    handbook: { groupBy: ["packamenity-*"] }
+  },
+  behaviors: [ { name: "Container" } ],
+  creativeinventory: { "general": ["*"] , "decorative": ["*"] },
+  shape: { base: "block/packamenity-dining" },
+  blockmaterial: "Wood",
+  replaceable: 500,
+  resistance: 1.5,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.75, z2: 1 },
+  collisionbox: { x1: 0.08, y1: 0, z1: 0.08, x2: 0.92, y2: 0.20, z2: 0.92 },
+  combustibleProps: { burnTemperature: 600, burnDuration: 30 },
+  guiTransform: { rotation: { x: -22, y: 35, z: 0 }, scale: 1.15 }
+}

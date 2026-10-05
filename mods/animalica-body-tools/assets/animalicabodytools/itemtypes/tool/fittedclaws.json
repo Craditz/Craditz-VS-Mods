@@ -1,0 +1,105 @@
+{
+  "code": "fittedclaws",
+  "class": "animalicabodytools.specieslockedclaws",
+  "maxStackSize": 1,
+  "handbook": {
+    "exclude": true
+  },
+  "heldTpHitAnimation": "breakhand",
+  "shape": {
+    "base": "item/tool/wolfclaws"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0
+  },
+  "texture": {
+    "base": "item/tool/wolfclaws"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 180,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 2.05
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "attackPower": 1.5,
+  "attackRange": 1.1,
+  "tool": "Knife",
+  "toolTier": 1,
+  "miningSpeed": {
+    "Soil": 2.25,
+    "Sand": 2.25,
+    "Gravel": 1.89,
+    "Snow": 1.89,
+    "Plant": 1.08,
+    "Leaves": 0.9
+  },
+  "durability": 1000000
+}

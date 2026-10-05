@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-meteoricsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/meteoricsteel.json",
+    "dependsOn": [
+      {
+        "modid": "meteoricsteel"
+      }
+    ]
+  }
+]

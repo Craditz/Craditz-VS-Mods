@@ -1,0 +1,20 @@
+{
+  "ingredientPattern": "F\nS",
+  "requiresTrait": "animalica-animal-bodytools",
+  "ingredients": {
+    "F": {
+      "type": "item",
+      "code": "game:flint"
+    },
+    "S": {
+      "type": "item",
+      "code": "game:stick"
+    }
+  },
+  "width": 1,
+  "height": 2,
+  "output": {
+    "type": "item",
+    "code": "animalicabodytools:fittedclaws-wearable"
+  }
+}

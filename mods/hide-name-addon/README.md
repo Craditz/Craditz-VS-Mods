@@ -1,10 +1,11 @@
 # Hide Name Addon
 
-Source for version **0.1.2**, from commit `9769f83f`.
+Selected source for version **0.1.2**, from commit `9769f83f`.
 
-[Mod page](https://mods.vintagestory.at/yahnm).
+The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
 
-This source hasn't been compared with the published ZIP's compiled files. That
-ZIP wasn't in the release files checked for this repo.
+Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
 
-See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.
+See [BUILD.md](../../BUILD.md), the [project license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.
+
+No retained latest release ZIP was found for this baseline; its source builds, but released-package correspondence is unverified.

@@ -1,0 +1,36 @@
+{
+  "code": "kibble-meat",
+  "maxstacksize": 64,
+  "variantgroups": [
+    { "code": "state", "states": ["raw", "dry"] }
+  ],
+  "texture": { "base": "feralkinshipcompanions:item/kibble-pile" },
+  "creativeinventory": { "general": ["*"], "items": ["*"] },
+  "attributes": {
+    "foodTags": ["meat"],
+    "handbook": { "groupBy": ["kibble-meat-*"] }
+  },
+  "nutritionPropsByType": {
+    "*": { "satiety": 50, "foodcategory": "Protein" }
+  },
+  "transitionablePropsByType": {
+    "*-raw": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 72 },
+        "transitionHours": { "avg": 24 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 1
+      }
+    ],
+    "*-dry": [
+      {
+        "type": "Perish",
+        "freshHours": { "avg": 8760 },
+        "transitionHours": { "avg": 4380 },
+        "transitionedStack": { "type": "item", "code": "game:rot" },
+        "transitionRatio": 1
+      }
+    ]
+  }
+}

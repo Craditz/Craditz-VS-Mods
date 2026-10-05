@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-aluminum-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/aluminum.json",
+    "dependsOn": [
+      {
+        "modid": "sillyaluminum"
+      }
+    ]
+  }
+]

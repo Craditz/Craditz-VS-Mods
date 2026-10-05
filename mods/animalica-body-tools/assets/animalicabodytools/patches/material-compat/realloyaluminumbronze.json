@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-realloyaluminumbronze-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/realloyaluminumbronze.json",
+    "dependsOn": [
+      {
+        "modid": "realloy"
+      }
+    ]
+  }
+]

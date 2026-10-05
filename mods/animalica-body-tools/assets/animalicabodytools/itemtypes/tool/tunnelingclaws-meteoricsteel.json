@@ -1,0 +1,69 @@
+{
+  "code": "tunnelingclaws-meteoricsteel",
+  "class": "animalicabodytools.specieslockedbodytool",
+  "maxStackSize": 1,
+  "durability": 3125,
+  "handbook": {
+    "exclude": true
+  },
+  "heldTpHitAnimation": "breakhand",
+  "shape": {
+    "base": "item/tool/bodytools-tunnelingclaws-meteoricsteel"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-meteoricsteel"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0
+  },
+  "attackPower": 2.5,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 5,
+  "miningSpeed": {
+    "Ceramic": 2.93,
+    "Stone": 8.1,
+    "Ore": 8.1,
+    "Metal": 8.1,
+    "Ice": 3.83
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -25,
+      "y": 45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.9
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  },
+  "enabled": false
+}

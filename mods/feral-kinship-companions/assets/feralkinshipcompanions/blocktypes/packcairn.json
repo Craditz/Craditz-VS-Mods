@@ -1,0 +1,21 @@
+{
+  code: "packcairn",
+  class: "FeralKinshipPackCairn",
+  entityclass: "FeralKinshipPackCart",
+  shape: { base: "block/packcairn" },
+  creativeinventory: { },
+  blockmaterial: "Stone",
+  replaceable: 500,
+  resistance: 3,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: { x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 0.625, z2: 0.875 },
+  collisionbox: { x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 0.625, z2: 0.875 },
+  guiTransform: { rotation: { x: -22, y: 35, z: 0 }, scale: 1.35 },
+  tpHandTransform: {
+    translation: { x: -0.9, y: -0.7, z: -1.1 },
+    rotation: { x: -20, y: 10, z: 60 },
+    scale: 0.7
+  }
+}

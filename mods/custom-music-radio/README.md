@@ -1,19 +1,9 @@
 # Custom Music Radio
 
-Source for version **1.2.2**, from commit `941adfb2`.
+Selected source for version **1.2.2**, from commit `941adfb2`.
 
-The manifest and runtime C# are kept as they were in that version, including the
-developer and diagnostic features that shipped with it. Separate tests, fixtures,
-checkers, private notes and alternate source versions stay out of this repo.
+The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
 
-This folder has runtime source and selected configs, language files and patches.
-Models, art, audio and other generated or externally sourced data are left out
-where their source-sharing terms or complete generation process haven't been
-established. These files won't reproduce a complete release ZIP.
+Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
 
-See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.
-
-A successful compile doesn't verify an exact match with the release package or
-how it behaves in game. See the [project license](../../LICENSE) and
-[third-party notices](../../THIRD_PARTY_NOTICES.md). The original manifest
-credits are preserved.
+See [BUILD.md](../../BUILD.md), the [project license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.

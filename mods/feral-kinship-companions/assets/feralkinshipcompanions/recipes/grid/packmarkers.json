@@ -1,0 +1,170 @@
+[
+  {
+    ingredientPattern: "BCT",
+    ingredients: {
+      "B": { type: "item", code: "game:book-*" },
+      "C": { type: "item", code: "game:charcoal" },
+      "T": { type: "item", code: "game:flaxtwine" }
+    },
+    width: 3,
+    height: 1,
+    output: { type: "item", code: "feralkinshipcompanions:packledger" }
+  },
+  {
+    ingredientPattern: "PCT",
+    ingredients: {
+      "P": { type: "item", code: "game:plank-*", name: "wood" },
+      "C": { type: "item", code: "game:charcoal" },
+      "T": { type: "item", code: "game:flaxtwine" }
+    },
+    width: 3,
+    height: 1,
+    output: { type: "item", code: "feralkinshipcompanions:packledger" }
+  },
+  {
+    ingredientPattern: "TLT\tP_P\tS_S",
+    ingredients: {
+      "L": { type: "block", code: "game:linen-*" },
+      "P": { type: "item", code: "game:plank-*", name: "wood" },
+      "T": { type: "item", code: "game:flaxtwine" },
+      "S": { type: "item", code: "game:stick" }
+    },
+    width: 3,
+    height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:packcart-north" }
+  },
+  {
+    ingredientPattern: "BPP\tS_S\t_S_",
+    ingredients: {
+      "B": { type: "block", code: "feralkinshipcompanions:packcart-*" },
+      "P": { type: "item", code: "game:plank-*", name: "wood" },
+      "S": { type: "item", code: "game:stick" }
+    },
+    width: 3,
+    height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:workcart-logging-north" }
+  },
+  {
+    ingredientPattern: "BII\tS_S\t_I_",
+    ingredients: {
+      "B": { type: "block", code: "feralkinshipcompanions:packcart-*" },
+      "I": {
+        type: "item", code: "game:ingot-*", name: "metal",
+        allowedVariants: ["copper", "brass", "tinbronze", "bismuthbronze", "blackbronze", "silver", "gold", "iron", "lead", "tin", "zinc", "bismuth", "chromium", "electrum", "platinum", "titanium", "meteoriciron", "steel"]
+      },
+      "S": { type: "item", code: "game:stick" }
+    },
+    width: 3,
+    height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:workcart-mining-north" }
+  },
+  {
+    ingredientPattern: "BSS\tR_R\t_S_",
+    ingredients: {
+      "B": { type: "block", code: "feralkinshipcompanions:packcart-*" },
+      "S": {
+        type: "item", code: "game:stone-*", name: "rock",
+        allowedVariants: ["chert", "granite", "andesite", "basalt", "peridotite"]
+      },
+      "R": { type: "item", code: "game:rope" }
+    },
+    width: 3,
+    height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:workcart-quarrying-north" }
+  },
+  {
+    ingredientPattern: "GGG\tG_G",
+    ingredients: {
+      "G": { type: "item", code: "game:drygrass" }
+    },
+    width: 3,
+    height: 2,
+    output: { type: "block", code: "feralkinshipcompanions:foxbed-basic" }
+  },
+  {
+    ingredientPattern: "LLL\t_B_\tPPP",
+    ingredients: {
+      "L": { type: "block", code: "game:linen-*" },
+      "B": { type: "block", code: "feralkinshipcompanions:foxbed-basic" },
+      "P": { type: "item", code: "game:plank-*", name: "wood" }
+    },
+    width: 3,
+    height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:foxbed-fancy" }
+  },
+  {
+    ingredientPattern: "PLP\tP_P\tP_P",
+    ingredients: {
+      "P": { type: "item", code: "game:plank-*", name: "wood" },
+      "L": { type: "item", code: "game:hide-pelt-*", tags: { anyOf: ["size-medium", "size-large", "size-huge"] } }
+    },
+    width: 3,
+    height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:foxflap-north" }
+  },
+  {
+    ingredientPattern: "G_G\tPPP",
+    ingredients: { "G": { type: "item", code: "game:drygrass" }, "P": { type: "item", code: "game:plank-*", name: "wood" } },
+    width: 3, height: 2,
+    output: { type: "block", code: "feralkinshipcompanions:packamenity-dining" }
+  },
+  {
+    ingredientPattern: "TTT\tLLL",
+    ingredients: { "T": { type: "item", code: "game:flaxtwine" }, "L": { type: "block", code: "game:linen-*" } },
+    width: 3, height: 2,
+    output: { type: "block", code: "feralkinshipcompanions:packamenity-lounge" }
+  },
+  {
+    ingredientPattern: "_R_\t_S_\tSSS",
+    ingredients: { "R": { type: "item", code: "game:rope" }, "S": { type: "item", code: "game:stick" } },
+    width: 3, height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:packamenity-play" }
+  },
+  {
+    ingredientPattern: "_P_\tPPP\tS_S",
+    ingredients: { "P": { type: "item", code: "game:plank-*", name: "wood" }, "S": { type: "item", code: "game:stick" } },
+    width: 3, height: 3,
+    output: { type: "block", code: "feralkinshipcompanions:packamenity-lookout" }
+  },
+  {
+    ingredientPattern: "P_P\tT_T\tPPP",
+    ingredients: {
+      "P": { type: "item", code: "game:plank-*", name: "wood" },
+      "T": { type: "item", code: "game:flaxtwine" }
+    },
+    width: 3, height: 3,
+    output: {
+      type: "block",
+      code: "feralkinshipcompanions:packstorage-north",
+      attributes: { type: "storage" }
+    }
+  },
+  {
+    ingredientPattern: "SBS",
+    ingredients: {
+      "S": { type: "item", code: "game:flaxtwine" },
+      "B": { type: "item", code: "game:basket-*" }
+    },
+    width: 3,
+    height: 1,
+    output: {
+      type: "block",
+      code: "feralkinshipcompanions:packstorage-wicker-north",
+      attributes: { type: "storage" }
+    }
+  },
+  {
+    ingredientPattern: "STS",
+    ingredients: {
+      "S": { type: "item", code: "game:flaxtwine" },
+      "T": { type: "block", code: "game:trunk-*", attributes: { type: "normal-generic" } }
+    },
+    width: 3,
+    height: 1,
+    output: {
+      type: "block",
+      code: "feralkinshipcompanions:packstorage-trunk-north",
+      attributes: { type: "storage" }
+    }
+  }
+]

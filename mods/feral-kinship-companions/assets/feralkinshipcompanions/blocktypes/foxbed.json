@@ -1,0 +1,25 @@
+{
+  code: "foxbed",
+  class: "FeralKinshipFoxBed",
+  variantgroups: [
+    { code: "style", states: ["basic", "fancy"] }
+  ],
+  shapeByType: {
+    "*-basic": { base: "block/foxbed-basic" },
+    "*-fancy": { base: "block/foxbed-fancy" }
+  },
+  creativeinventory: { "general": ["*"], "decorative": ["*"] },
+  attributes: {
+    handbook: { groupBy: ["foxbed-*"] }
+  },
+  blockmaterial: "Wood",
+  replaceable: 500,
+  resistance: 1.5,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.3125, z2: 1 },
+  collisionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.3125, z2: 1 },
+  combustibleProps: { burnTemperature: 600, burnDuration: 35 },
+  guiTransform: { rotation: { x: -22, y: 35, z: 0 }, scale: 1.15 }
+}

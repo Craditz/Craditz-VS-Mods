@@ -1,0 +1,25 @@
+{
+  "ingredient": {
+    "code": "game:ingot-mithril",
+    "type": "item"
+  },
+  "pattern": [
+    [
+      "_______________",
+      "_______________",
+      "____#######____",
+      "__###########__",
+      "_############__",
+      "####_____#_#___",
+      "###____________",
+      "#______________"
+    ]
+  ],
+  "name": "Falx",
+  "code": "animalicafalx-metalsofmythsmithril",
+  "output": {
+    "code": "animalicabodytools:bladehead-falx-metalsofmythsmithril",
+    "type": "item"
+  },
+  "enabled": false
+}

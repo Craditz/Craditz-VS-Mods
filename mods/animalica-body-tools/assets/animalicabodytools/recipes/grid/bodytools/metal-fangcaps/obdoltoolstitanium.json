@@ -1,0 +1,50 @@
+[
+  {
+    "ingredientPattern": "NH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "N": {
+        "type": "item",
+        "code": "game:bladehead-falx-titanium",
+        "quantity": 1
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:fangcaps-obdoltoolstitanium-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "NH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "N": {
+        "type": "item",
+        "code": "game:bladehead-falx-titanium",
+        "quantity": 1
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 2,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:fangcaps-obdoltoolstitanium-wearable"
+    },
+    "enabled": false
+  }
+]

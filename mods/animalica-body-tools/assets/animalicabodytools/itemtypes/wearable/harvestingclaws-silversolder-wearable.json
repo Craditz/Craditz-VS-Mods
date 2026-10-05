@@ -1,0 +1,156 @@
+{
+  "code": "harvestingclaws-silversolder-wearable",
+  "maxStackSize": 1,
+  "durability": 233,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-harvestingclaws-silversolder"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "class": "animalicabodytools.specieslockedscythe",
+  "tags": [
+    "tool",
+    "tool-scythe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "scythe",
+  "shape": {
+    "base": "item/tool/equipped-harvestingclaws-silversolder"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "harvestingclaws-silversolder-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:harvestingclaws-silversolder",
+    "animalicaVirtualToolPriority": 210,
+    "clothescategory": "hand",
+    "wearableAttachment": true,
+    "warmth": 0.0,
+    "heldItemPitchFollow": 0.5,
+    "codePrefixes": [
+      "crop",
+      "tallgrass",
+      "frostedtallgrass",
+      "tallplant-coopersreed-land-normal",
+      "tallplant-papyrus-land-normal",
+      "tallplant-tule-land-normal",
+      "tallplant-coopersreed-water-normal",
+      "tallplant-papyrus-water-normal",
+      "tallplant-coopersreed-ice-normal",
+      "flower-horsetail"
+    ],
+    "disallowedSuffixes": [
+      "snow2",
+      "snow3"
+    ],
+    "rememberToolModeWhenBroken": true
+  },
+  "attackPower": 1.125,
+  "attackRange": 1.1,
+  "tool": "Scythe",
+  "toolTier": 2,
+  "miningSpeed": {
+    "Plant": 2.0,
+    "Leaves": 5.5
+  },
+  "heldTpIdleAnimation": "scytheIdle",
+  "heldRightReadyAnimation": "scytheReady",
+  "heldTpUseAnimation": "interactStaticLong",
+  "texture": {
+    "base": "item/tool/foxrendingclaws-silversolder"
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 5.5,
+      "y": 0.0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.6
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.0
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.001
+  },
+  "enabled": false
+}

@@ -1,0 +1,11 @@
+{
+  "code": "weathereddummy",
+  "class": "FeralKinshipWeatheredHideDummy",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 16,
+  "texture": {
+    "base": "feralkinshipcompanions:item/weathereddummy"
+  }
+}

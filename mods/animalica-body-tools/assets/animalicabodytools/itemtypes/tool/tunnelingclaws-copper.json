@@ -1,0 +1,68 @@
+{
+  "code": "tunnelingclaws-copper",
+  "class": "animalicabodytools.specieslockedbodytool",
+  "maxStackSize": 1,
+  "durability": 375,
+  "handbook": {
+    "exclude": true
+  },
+  "heldTpHitAnimation": "breakhand",
+  "shape": {
+    "base": "item/tool/bodytools-tunnelingclaws-copper"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-copper"
+  },
+  "attributes": {
+    "animalicaBodyTool": true,
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0
+  },
+  "attackPower": 1.25,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 2,
+  "miningSpeed": {
+    "Ceramic": 1.35,
+    "Stone": 3.6,
+    "Ore": 3.6,
+    "Metal": 3.6,
+    "Ice": 1.58
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -25,
+      "y": 45,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.9
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  }
+}

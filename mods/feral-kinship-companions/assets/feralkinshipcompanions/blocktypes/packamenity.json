@@ -1,0 +1,22 @@
+{
+  code: "packamenity",
+  class: "FeralKinshipAmenity",
+  variantgroups: [ { code: "kind", states: ["lounge", "play", "lookout"] } ],
+  shapeByType: {
+    "*-lounge": { base: "block/packamenity-lounge" },
+    "*-play": { base: "block/packamenity-play" },
+    "*-lookout": { base: "block/packamenity-lookout" }
+  },
+  creativeinventory: { "general": ["*"], "decorative": ["*"] },
+  attributes: { handbook: { groupBy: ["packamenity-*"] } },
+  blockmaterial: "Wood",
+  replaceable: 500,
+  resistance: 1.5,
+  lightAbsorption: 0,
+  sidesolid: { all: false },
+  sideopaque: { all: false },
+  selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.75, z2: 1 },
+  collisionbox: { x1: 0.08, y1: 0, z1: 0.08, x2: 0.92, y2: 0.20, z2: 0.92 },
+  combustibleProps: { burnTemperature: 600, burnDuration: 30 },
+  guiTransform: { rotation: { x: -22, y: 35, z: 0 }, scale: 1.15 }
+}

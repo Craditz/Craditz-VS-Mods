@@ -1,0 +1,442 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-wootsteel-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/wootsteel.json",
+    "dependsOn": [
+      {
+        "modid": "wootsteel"
+      }
+    ]
+  }
+]

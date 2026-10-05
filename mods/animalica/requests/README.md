@@ -1,15 +1,9 @@
 # Animalica Requests
 
-Source for version **0.3.13**, from commit `9769f83f`.
+Selected source for version **0.3.13**, from commit `9769f83f`.
 
-[Mod page](https://mods.vintagestory.at/animalicare).
+The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
 
-Runtime source and selected configs are here. Models, copied or derived game
-assets, and images whose sharing rights haven't been confirmed are left out.
-This folder isn't a complete package.
+Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
 
-The generation tools depend on `audit_antlers.py`, private mappings and docs,
-and supplied Lupines/Female Lupines assets. That whole chain stays outside this
-repo, so the runtime source here won't reproduce it.
-
-See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.
+See [BUILD.md](../../../BUILD.md), the [project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.

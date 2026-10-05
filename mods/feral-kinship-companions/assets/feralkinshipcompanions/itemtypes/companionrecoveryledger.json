@@ -1,0 +1,11 @@
+{
+  "code": "companionrecoveryledger",
+  "class": "FeralKinshipCompanionRecoveryLedger",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 1,
+  "texture": {
+    "base": "feralkinshipcompanions:item/companionrecoveryledger"
+  }
+}

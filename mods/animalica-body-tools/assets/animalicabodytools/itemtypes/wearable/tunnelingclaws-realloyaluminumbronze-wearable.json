@@ -1,0 +1,102 @@
+{
+  "code": "tunnelingclaws-realloyaluminumbronze-wearable",
+  "maxStackSize": 1,
+  "durability": 750,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-tunnelingclaws-realloyaluminumbronze"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/equipped-tunnelingclaws-realloyaluminumbronze"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-realloyaluminumbronze"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "tunnelingclaws-realloyaluminumbronze-emptyhand-pickaxe",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:tunnelingclaws-realloyaluminumbronze",
+    "animalicaVirtualToolPriority": 170,
+    "clothescategory": "arm",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedbodytool",
+  "tags": [
+    "tool",
+    "tool-pickaxe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 2.1,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 3,
+  "miningSpeed": {
+    "Ceramic": 2.93,
+    "Stone": 8.1,
+    "Ore": 8.1,
+    "Metal": 8.1,
+    "Ice": 3.83
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 4.6,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.7
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  },
+  "enabled": false
+}

@@ -1,0 +1,101 @@
+{
+  "code": "tunnelingclaws-bismuthbronze-wearable",
+  "maxStackSize": 1,
+  "durability": 625,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "animalicabodytools.readablebodytoolicon",
+      "properties": {
+        "shape": {
+          "base": "item/tool/bodytools-tunnelingclaws-bismuthbronze"
+        }
+      }
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "item/tool/equipped-tunnelingclaws-bismuthbronze"
+  },
+  "texture": {
+    "base": "item/tool/foxrendingclaws-bismuthbronze"
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "animalicaWearableBodyToolId": "tunnelingclaws-bismuthbronze-emptyhand-tool",
+    "animalicaRequiredStat": "animalicaAnimalBodyToolUser",
+    "animalicaRequiredStatMin": 10.0,
+    "animalicaVirtualToolItemCode": "animalicabodytools:tunnelingclaws-bismuthbronze",
+    "animalicaVirtualToolPriority": 155,
+    "clothescategory": "arm",
+    "wearableAttachment": true,
+    "warmth": 0.0
+  },
+  "class": "animalicabodytools.specieslockedbodytool",
+  "tags": [
+    "tool",
+    "tool-pickaxe"
+  ],
+  "damagedby": [
+    "blockbreaking",
+    "attacking"
+  ],
+  "heldTpHitAnimation": "breakhand",
+  "attackPower": 1.75,
+  "attackRange": 1.1,
+  "tool": "Pickaxe",
+  "toolTier": 3,
+  "miningSpeed": {
+    "Ceramic": 1.8,
+    "Stone": 4.95,
+    "Ore": 4.95,
+    "Metal": 4.95,
+    "Ice": 1.98
+  },
+  "guiTransform": {
+    "translation": {
+      "x": 4.6,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 20,
+      "y": 35,
+      "z": 90
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.7
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.05,
+      "z": 0
+    },
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 0.8
+  }
+}

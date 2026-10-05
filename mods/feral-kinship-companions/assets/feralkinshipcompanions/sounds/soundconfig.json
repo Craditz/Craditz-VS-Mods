@@ -1,0 +1,11 @@
+{
+  "soundsets": {
+    "alerts/mortal-warning": ["alerts/mortal-warning"],
+    "commands/at-ease": ["commands/at-ease"],
+    "commands/follow": ["commands/follow"],
+    "commands/rest": ["commands/rest"],
+    "commands/return-home": ["commands/return-home"],
+    "perks/last-stand": ["perks/last-stand"],
+    "recovery/complete": ["recovery/complete"]
+  }
+}

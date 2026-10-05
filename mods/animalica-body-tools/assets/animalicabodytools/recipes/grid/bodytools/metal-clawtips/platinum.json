@@ -1,0 +1,110 @@
+[
+  {
+    "ingredientPattern": "KNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knifeblade-platinum"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:clawtips-platinum-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "KNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knifeblade-platinum"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:leather-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:clawtips-platinum-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "KNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knifeblade-platinum"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:clawtips-platinum-wearable"
+    },
+    "enabled": false
+  },
+  {
+    "ingredientPattern": "KNH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "K": {
+        "type": "item",
+        "code": "game:knifeblade-platinum"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:clawtips-platinum-wearable"
+    },
+    "enabled": false
+  }
+]

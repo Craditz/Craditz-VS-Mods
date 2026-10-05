@@ -1,0 +1,64 @@
+[
+  {
+    "ingredientPattern": "ANH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:axehead-iron"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:resin"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:rendingclaws-iron-wearable",
+      "recipeAttributes": {
+        "applyquenchablebuffs": true
+      }
+    },
+    "copyAttributesFrom": "A"
+  },
+  {
+    "ingredientPattern": "ANH",
+    "requiresTrait": "animalica-animal-bodytools",
+    "shapeless": true,
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:axehead-iron"
+      },
+      "N": {
+        "type": "item",
+        "code": "game:rope"
+      },
+      "H": {
+        "type": "item",
+        "code": "game:hide-*",
+        "name": "type"
+      }
+    },
+    "width": 3,
+    "height": 1,
+    "output": {
+      "type": "item",
+      "code": "animalicabodytools:rendingclaws-iron-wearable",
+      "recipeAttributes": {
+        "applyquenchablebuffs": true
+      }
+    },
+    "copyAttributesFrom": "A"
+  }
+]
+
+

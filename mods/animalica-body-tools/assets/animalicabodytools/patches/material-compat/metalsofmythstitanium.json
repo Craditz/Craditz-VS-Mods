@@ -1,0 +1,562 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/harvestingclaws-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/harvestingclaws-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-harvesting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/rendingclaws-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/rendingclaws-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-rending/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/tunnelingclaws-metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/tunnelingclaws-metalsofmythstitanium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-tunneling/metalsofmythstitanium.json",
+    "dependsOn": [
+      {
+        "modid": "metalsofmyths"
+      },
+      {
+        "modid": "improvedmetallurgy"
+      }
+    ]
+  }
+]

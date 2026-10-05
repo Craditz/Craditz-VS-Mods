@@ -1,0 +1,244 @@
+[
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/clawtips-ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/clawtips-ferrousuranium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-clawtips/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/cultivatingclaws-ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/cultivatingclaws-ferrousuranium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-cultivating/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/fangcaps-ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/fangcaps-ferrousuranium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-fangcaps/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/tool/prospectingclaws-ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/enabled",
+    "value": true,
+    "file": "animalicabodytools:itemtypes/wearable/prospectingclaws-ferrousuranium-wearable.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/3/enabled",
+    "value": true,
+    "file": "animalicabodytools:recipes/grid/bodytools/metal-prospecting/ferrousuranium.json",
+    "dependsOn": [
+      {
+        "modid": "uraniumexpanded"
+      }
+    ]
+  }
+]
