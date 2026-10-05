@@ -1,11 +1,14 @@
 # Animalica - Compatibility Pack 1
 
-Selected source version: 0.6.8. Observed public listing: 0.6.7.
+Source for version **0.6.8**, which I selected for this repo. The public
+listing was still at **0.6.7** when checked on 2026-10-05.
 
-[Official listing](https://mods.vintagestory.at/animalicac).
+[Mod page](https://mods.vintagestory.at/animalicac).
 
-Explicit owner forthcoming release instruction; observed public remains 0.6.7.
+This folder has the manifest and selected configs, language files and patches. Model and texture source, plus inputs used by the generators, are
+left out while their redistribution rights are checked. Those missing pieces
+mean this folder can't produce a complete content pack.
 
-Content pack: model/texture source and generator donor rights unverified; only manifest and eligible authored config/lang/patch subset staged. Not a complete source release.
+The full source hasn't been matched against a complete release package.
 
-See the root BUILD.md. Full source/package parity and complete packaging remain unverified.
+See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.

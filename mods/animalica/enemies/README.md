@@ -1,11 +1,14 @@
 # Animalica - Enemies
 
-Selected source version: 0.2.1. Observed public listing: 0.2.1.
+Source for version **0.2.1**, matching the public listing checked for this repo.
 
-[Official listing](https://mods.vintagestory.at/animalicae).
+[Mod page](https://mods.vintagestory.at/animalicae).
 
-Only version changed in live source from 0.1.4 to authoritative released ZIP 0.2.1. Main is uncommitted and remains 0.1.4; all other source fields preserved.
+The source manifest's version was updated from 0.1.4 to 0.2.1 to match the released
+ZIP. Its other fields, including dependencies, were left unchanged.
 
-Source version corrected only. ZIP declares older PML/Core dependencies than source; all dependencies preserved. Full source/package parity and model/art rights remain unverified.
+The released ZIP declares older PlayerModelLib/Core dependencies than this source.
+That difference is still there. A full source-to-package comparison, complete
+packaging, and permission to share the models and art still need checking.
 
-See the root BUILD.md. Full source/package parity and complete packaging remain unverified.
+See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.

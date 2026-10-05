@@ -1,11 +1,11 @@
 # Animalica - Compatibility Pack 2 (FotSA)
 
-Source baseline: public version 0.5.2, commit `7bff2df1`.
+Source for version **0.5.2**, from commit `7bff2df1`.
 
-[Official mod listing](https://mods.vintagestory.at/animalicafotsa).
+[Mod page](https://mods.vintagestory.at/animalicafotsa).
 
-Content pack: model/texture source and generator donor rights unverified; only manifest and eligible authored config/lang/patch subset staged. Not a complete source release.
+This folder has the manifest and selected configs, language files and patches. Model and texture source, plus inputs used by the generators, are
+left out while their redistribution rights are checked. Those missing pieces
+mean this folder can't produce a complete content pack.
 
-
-
-See the root BUILD.md. No full package or runtime verification is claimed.
+See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.

@@ -1,11 +1,11 @@
 # Animalica Abilities
 
-Source baseline: public version 0.3.3, commit `941adfb2`.
+Source for version **0.3.3**, from commit `941adfb2`.
 
-[Official mod listing](https://mods.vintagestory.at/animalicaa).
+[Mod page](https://mods.vintagestory.at/animalicaa).
 
-Models, copied/derived game assets and unproven images withheld; selected config subset is not a complete package.
+Models, copied or derived game assets, and images whose sharing rights haven't
+been confirmed are left out. The selected configs here aren't enough to make a
+complete package.
 
-
-
-See the root BUILD.md. No full package or runtime verification is claimed.
+See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.

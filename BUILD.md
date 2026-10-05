@@ -1,25 +1,34 @@
-# Building this source subset
+# Building the mods
 
-Use .NET SDK 10 and a separately installed Vintage Story version compatible with
-the manifest of the chosen mod. Supply your own game DLLs. Download required
-third-party mods from their official pages and extract their DLL locally outside
-this source tree. Do not add game DLLs, PlayerModelLib or PetAI DLLs to Git.
+If you're here to build something, this is the bit you need.
 
-External sources: [Vintage Story](https://www.vintagestory.at/),
+## What you'll need
+
+- .NET SDK 10
+- Your own Vintage Story installation, at a version compatible with the chosen mod's manifest
+- Any third-party mod DLLs that project needs, downloaded from their official pages and extracted locally outside this source tree
+
+Don't add game DLLs, PlayerModelLib or PetAI DLLs to Git.
+
+Official downloads: [Vintage Story](https://www.vintagestory.at/),
 [PlayerModelLib](https://mods.vintagestory.at/playermodellib),
 [PetAI](https://mods.vintagestory.at/petai).
 
-For a project listed below:
+## Build a code project
+
+Use one of the projects listed below:
 
 ```powershell
 dotnet build <project.csproj> -c Release -p:VintageStoryPath="<game-directory>" -p:PlayerModelLibPath="<external-PlayerModelLib.dll>" -p:PetAIPath="<external-PetAI.dll>"
 ```
 
-Only supply dependency properties required by that project. The manifests retain
-their selected release versions and credits. Dependency versions in these
-manifests are release requirements, not a list of the latest published versions.
-Runtime C# source is unchanged from the
-selected commit; project path changes only accommodate this portable layout.
+Only pass the dependency properties that project needs. Check its manifest for
+the required dependency versions. Those are the requirements for that release;
+they aren't a list of whichever versions are newest.
+
+The manifests keep their selected release versions and credits. The runtime C#
+is unchanged from the selected commits. Project paths were adjusted to fit this
+repository's layout.
 
 - `mods/animalica-abilities/ScentTrails.csproj`
 - `mods/animalica/core/src/AnimalicaCore/AnimalicaCore.csproj`
@@ -29,43 +38,65 @@ selected commit; project path changes only accommodate this portable layout.
 - `mods/tamables-critters/TamablesCritters.csproj`
 - `mods/tamables-fotsa/TamablesFotsa.csproj`
 - `mods/hide-name-addon/src/HideNameAddon/HideNameAddon.csproj`
-
 - `mods/animalica-body-tools/src/AnimalicaBodyTools/AnimalicaBodyTools.csproj`
 - `mods/custom-music-radio/CustomMusicRadio.csproj`
 - `mods/feral-kinship-companions/FeralKinshipCompanions.csproj`
 
-## Limits
+## What's still missing
 
-Compiling does not reproduce the published ZIP or establish in-game behavior.
-Model geometry, some generated assets, icons and copied/derived art are absent
-where redistribution terms have not been verified. Some configs are retained only
-when they match a selected local release payload. Content-pack folders may contain
-only metadata or a partial config subset and cannot produce complete packages.
+A successful compile won't give you the published ZIP or verify how it behaves
+in game. Model geometry, some generated assets, icons and copied or derived art
+are left out where their redistribution terms haven't been verified. Some configs
+were kept only where they match the selected local release files. Some content
+packs contain just metadata or part of their configs, so these folders can't
+produce complete packages.
 
-Requests includes runtime source, but its generation chain and donor inputs are
-withheld. Core includes an optional body-center generator; it cannot run fully
-without the withheld model inputs. Complete generators and their authored inputs
-will need provenance review before packaging can be described as reproducible.
+Requests has runtime source here, but its generation tools and donor inputs are
+left out. Core has an optional body-center generator, but it needs model inputs
+that aren't included. The full generators and their authored inputs still need
+checks on where they came from and what can be shared before complete package
+builds can be called reproducible.
 
-Ignore rules are preventive only; review the actual Git index before any upload.
-Current selected assets are text. If approved large binary source is added later,
-use Git LFS for specific asset paths and verify real payloads, never pointer text.
+## Companions, Body Tools and Radio
+
+Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
+diagnostic features that shipped with those versions. Their separate test and
+checker projects stay out of this repo. The Companions 0.5.74 local candidate
+isn't included.
+
+- Companions keeps its released UI constants; no alternate UI build was selected
+- Body Tools uses external game/Harmony references
+- Radio uses external game/protobuf references. Its project configuration now
+  uses `VINTAGE_STORY` instead of the old fallback to a local experimental game
+  installation. That change is limited to project configuration
+
+These three folders have content left out and aren't complete mod packages.
+
+### Companions and Feral Kinship
+
+Companions lives in `mods/feral-kinship-companions`. Its manifest still requires
+`feralkinship >= 0.4.3`; the Feral Kinship source here is 0.5.4.
+
+It links the unchanged Kinship race resolver and shared config migration source
+at build time:
+
+- `../feral-kinship/src/FeralRaceResolver.cs`
+- `../../shared/VintageStoryConfigMigration.cs`
+
+Companions and Feral Kinship compile as separate projects.
+
+## What has been checked
+
+All eleven code projects listed above compiled with local external references.
+Requests was compiled again after its move to `mods/animalica/requests`.
+Those checks cover compilation; complete package builds and in-game behaviour
+weren't established by them.
+
+## Adding files to the repo
+
+Ignore rules help catch mistakes, but check the actual Git index before each
+upload. The assets included so far are text. If approved large binary source
+files are added later, use Git LFS for their specific paths and check the real
+file contents, not just the pointer files.
+
 Keep downloadable release ZIPs as separate release assets.
-
-Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 retain their released embedded
-developer/diagnostic code. Their separate test/checker projects are excluded.
-The approved Companions 0.5.74 local candidate is not this selected release baseline.
-Companions links the retained sibling Kinship race resolver and the shared config
-migration source. Its UI constants remain unchanged; no alternate UI build was
-selected. Body Tools uses external game/Harmony references. Radio uses external
-game/protobuf references; its former local experiment-installation fallback was
-replaced only in project configuration with `VINTAGE_STORY`.
-
-All eleven selected code projects compiled against local external references.
-Requests was compiled again after moving under `mods/animalica/requests`.
-The three added folders have withheld content and are not complete mod packages.
-
-Companions has its own folder at `mods/feral-kinship-companions`. Its manifest still
-requires `feralkinship >= 0.4.3`; the selected Kinship source is 0.5.4. Build-time
-links point to `../feral-kinship/src/FeralRaceResolver.cs` and
-`../../shared/VintageStoryConfigMigration.cs`. Both projects compile separately.

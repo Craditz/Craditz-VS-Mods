@@ -1,11 +1,11 @@
 # Animalica Core
 
-Source baseline: public version 1.2.33, commit `941adfb2`.
+Source for version **1.2.33**, from commit `941adfb2`.
 
-[Official mod listing](https://mods.vintagestory.at/feralplayerpack).
+[Mod page](https://mods.vintagestory.at/feralplayerpack).
 
-Carried-derived carrytype JSON and unproven bitmap/model assets withheld; runtime source/config subset only.
+This folder has runtime source and selected configs. The carrytype JSON derived
+from Carried is left out, along with bitmap and model assets whose redistribution
+rights haven't been confirmed.
 
-
-
-See the root BUILD.md. No full package or runtime verification is claimed.
+See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.

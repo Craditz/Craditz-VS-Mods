@@ -1,26 +1,27 @@
-# Vintage Story mod source
+# Craditz’s Vintage Story Mods
 
-Source selected from verified release baselines and the owner-designated
-Compatibility Pack 1 version 0.6.8. At selection time on 2026-10-05, its observed
-public version was 0.6.7. This repository starts fresh source history for private
-review; the original workspace's historical commits have not been imported.
-See `BUILD.md` for dependencies and the limits of this source subset.
+Fine. The code has a home now.
 
-The Animalica suite stays together under `mods/animalica/`. Other mods have their
-own folders under `mods/`. Shared runtime compile inputs are under `shared/`.
-Several content assets are withheld while their GitHub redistribution terms are checked;
-those mod folders are incomplete. No license has been applied to this draft.
-Public release and licensing decisions remain pending. Eleven selected projects
-compiled with local external references; complete package reproduction and runtime
-acceptance are not established by that check.
+People kept asking for the source so they could help maintain these mods and add things. Fair enough. Welcome to the den. Please leave the wiring unchewed.
 
-Animalica Requests is grouped under `mods/animalica/requests` beside the Animalica
-packs. Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 are included as source
-subsets with their released embedded developer features preserved. Emotes and
-Druidry are intentionally excluded. Separate tests/checkers and private audits
-are outside this repository. Nineteen baselines are represented by reviewed source
-subsets; complete asset/package reproduction and public licensing remain pending.
+I make these mods because there are things I want in Vintage Story that weren’t there. If you want those things too, or want to help make them better, that’s why this exists.
 
-Companions has its own sibling folder at `mods/feral-kinship-companions`. It still
-requires Feral Kinship; this organization change preserves its released code,
-manifest and shared runtime build inputs.
+AI is part of how I work, including uploads, updates and releases. Bug reports, fixes and useful suggestions are welcome.
+
+## What’s here
+
+Animalica and its packs, Feral Kinship, Companions, Custom Music Radio, Player Model Access and the other included mods. Each has its own folder; they don’t all need to be installed together. Check the individual dependencies.
+
+## Still unpacking
+
+This repository is being put together. Some assets aren’t included yet while I sort out their redistribution terms, and the license is still being finalized. Don’t assume everything here is ready to build into a complete mod package, or that every file is free to reuse under the same terms.
+
+Separate testing tools and fixtures stay local. Developer tools already built into the mods remain in their source.
+
+## Want to help?
+
+Tell me which mod you’re working with and what you want to fix or add. For bugs, include what happened, what you expected and how to reproduce it. For a big feature, open a discussion in an issue before disappearing into the woods with it.
+
+## Building
+
+See [BUILD.md](BUILD.md) for the setup. You’ll need your own Vintage Story installation and the listed dependencies. The included code projects compiled during preparation; that isn’t a promise that every mod will build into a complete package or behave perfectly in-game.

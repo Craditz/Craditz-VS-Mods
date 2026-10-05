@@ -1,11 +1,10 @@
 # Tamables: FOTSA
 
-Source baseline: public version 0.8.7, commit `941adfb2`.
+Source for version **0.8.7**, from commit `941adfb2`.
 
-[Official mod listing](https://mods.vintagestory.at/fotsataming).
+[Mod page](https://mods.vintagestory.at/fotsataming).
 
-Models, copied/derived game assets and unproven images withheld; selected config subset is not a complete package.
+The compile check doesn't establish an exact rebuild of the published ZIP or
+verify how it behaves in game.
 
-
-
-See the root BUILD.md. No full package or runtime verification is claimed.
+See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.

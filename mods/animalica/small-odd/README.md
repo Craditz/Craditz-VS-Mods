@@ -1,11 +1,11 @@
 # Animalica - Small & Odd
 
-Source baseline: public version 0.5.3, commit `0e86b04a`.
+Source for version **0.5.3**, from commit `0e86b04a`.
 
-[Official mod listing](https://mods.vintagestory.at/animalicaso).
+[Mod page](https://mods.vintagestory.at/animalicaso).
 
-Content pack: model/texture source and generator donor rights unverified; only manifest and eligible authored config/lang/patch subset staged. Not a complete source release.
+This folder has the manifest and selected configs, language files and patches. Model and texture source, plus inputs used by the generators, are
+left out while their redistribution rights are checked. Those missing pieces
+mean this folder can't produce a complete content pack.
 
-
-
-See the root BUILD.md. No full package or runtime verification is claimed.
+See [BUILD.md](../../../BUILD.md) for build requirements and the limits of the compilation checks.

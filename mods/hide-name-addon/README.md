@@ -1,11 +1,10 @@
 # Hide Name Addon
 
-Source baseline: public version 0.1.2, commit `9769f83f`.
+Source for version **0.1.2**, from commit `9769f83f`.
 
-[Official mod listing](https://mods.vintagestory.at/yahnm).
+[Mod page](https://mods.vintagestory.at/yahnm).
 
-No package in latest shelf; public ZIP/source binary correspondence unproven.
+This source hasn't been compared with the published ZIP's compiled files. That
+ZIP wasn't in the release files checked for this repo.
 
-
-
-See the root BUILD.md. No full package or runtime verification is claimed.
+See [BUILD.md](../../BUILD.md) for build requirements and the limits of the compilation checks.
