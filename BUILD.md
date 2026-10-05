@@ -32,7 +32,7 @@ selected commit; project path changes only accommodate this portable layout.
 
 - `mods/animalica-body-tools/src/AnimalicaBodyTools/AnimalicaBodyTools.csproj`
 - `mods/custom-music-radio/CustomMusicRadio.csproj`
-- `mods/feral-kinship/companions/FeralKinshipCompanions.csproj`
+- `mods/feral-kinship-companions/FeralKinshipCompanions.csproj`
 
 ## Limits
 
@@ -55,7 +55,7 @@ Keep downloadable release ZIPs as separate release assets.
 Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 retain their released embedded
 developer/diagnostic code. Their separate test/checker projects are excluded.
 The approved Companions 0.5.74 local candidate is not this selected release baseline.
-Companions links the retained parent Kinship race resolver and the shared config
+Companions links the retained sibling Kinship race resolver and the shared config
 migration source. Its UI constants remain unchanged; no alternate UI build was
 selected. Body Tools uses external game/Harmony references. Radio uses external
 game/protobuf references; its former local experiment-installation fallback was
@@ -64,3 +64,8 @@ replaced only in project configuration with `VINTAGE_STORY`.
 All eleven selected code projects compiled against local external references.
 Requests was compiled again after moving under `mods/animalica/requests`.
 The three added folders have withheld content and are not complete mod packages.
+
+Companions has its own folder at `mods/feral-kinship-companions`. Its manifest still
+requires `feralkinship >= 0.4.3`; the selected Kinship source is 0.5.4. Build-time
+links point to `../feral-kinship/src/FeralRaceResolver.cs` and
+`../../shared/VintageStoryConfigMigration.cs`. Both projects compile separately.

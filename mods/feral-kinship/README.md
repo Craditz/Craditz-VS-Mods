@@ -9,3 +9,7 @@ Models, copied/derived game assets and unproven images withheld; selected config
 
 
 See the root BUILD.md. No full package or runtime verification is claimed.
+
+[Feral Kinship Companions](../feral-kinship-companions/README.md) has its own
+sibling source folder. Companions retains its runtime dependency on Feral Kinship
+and links this project's unchanged race resolver as a shared compile input.

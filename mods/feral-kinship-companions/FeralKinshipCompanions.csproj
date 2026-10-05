@@ -90,10 +90,10 @@
     <Compile Remove="tests\**" />
     <None Remove="archive\**" />
     <Content Remove="archive\**" />
-    <Compile Include="../../../shared/VintageStoryConfigMigration.cs" Link="src\Shared\VintageStoryConfigMigration.cs" />
+    <Compile Include="../../shared/VintageStoryConfigMigration.cs" Link="src\Shared\VintageStoryConfigMigration.cs" />
     <!-- Shared source keeps the client/server Companion assembly independent
          of the server-only core assembly while using the exact same resolver. -->
-    <Compile Include="..\src\FeralRaceResolver.cs" Link="src\Shared\FeralRaceResolver.cs" />
+    <Compile Include="../feral-kinship/src/FeralRaceResolver.cs" Link="src\Shared\FeralRaceResolver.cs" />
     <Content Include="assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

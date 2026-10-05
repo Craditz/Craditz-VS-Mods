@@ -14,3 +14,7 @@ have not been established. It does not reproduce a complete release ZIP.
 See the root `BUILD.md` for external game references and compile instructions.
 Compilation does not establish package equality or new in-game acceptance.
 No license has been applied; original manifest credits are preserved.
+
+This project lives beside [Feral Kinship](../feral-kinship/README.md). Its unchanged
+manifest requires `feralkinship >= 0.4.3`. Build-time shared source links point to
+the sibling Kinship race resolver and the root shared config migration input.

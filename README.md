@@ -20,3 +20,7 @@ subsets with their released embedded developer features preserved. Emotes and
 Druidry are intentionally excluded. Separate tests/checkers and private audits
 are outside this repository. Nineteen baselines are represented by reviewed source
 subsets; complete asset/package reproduction and public licensing remain pending.
+
+Companions has its own sibling folder at `mods/feral-kinship-companions`. It still
+requires Feral Kinship; this organization change preserves its released code,
+manifest and shared runtime build inputs.
