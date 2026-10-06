@@ -76,20 +76,20 @@ metadata but has no active shape payload in that selected release.
 | Fauna of the Stone Age: Iniidae Plus | `iniidae` 0.1.7 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/iniidae) |
 | Fauna of the Stone Age: Cervinae | `cervinae` 0.1.14 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/cervinae) |
 | Fauna of the Stone Age: Meiolaniidae | `meiolaniidae` 0.1.11 | Compatibility 2 (FotSA) | [Source](https://mods.vintagestory.at/meiolaniidae) |
-| Legacy of the Phanerozoic: Birds of Prey â€” Unofficial 1.22.3 Port | `lopudromaeosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58965) |
-| Legacy of the Phanerozoic: Carnivorous Bull â€” Unofficial 1.22.3 Port | `lopuabelisauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58963) |
-| Legacy of the Phanerozoic: Horrible Hands â€” Unofficial 1.22.3 Port | `lopuornithomimosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58951) |
-| Legacy of the Phanerozoic: Sailed Spine â€” Unofficial 1.22.3 Port | `lopuspinosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58941) |
-| Legacy of the Phanerozoic: Scythe Claws â€” Unofficial 1.22.3 Port | `loputherizinosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58938) |
-| Legacy of the Phanerozoic: Sharp Tooth â€” Unofficial 1.22.3 Port | `lopucarcharodontosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58935) |
-| Legacy of the Phanerozoic: Tyrant King â€” Unofficial 1.22.3 Port | `loputyrannosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58929) |
-| Legacy of the Phanerozoic: Long Neck â€” Unofficial 1.22.3 Port | `lopumacronaria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58949) |
-| Legacy of the Phanerozoic: Domed Head â€” Unofficial 1.22.3 Port | `lopupachycephalosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58961) |
-| Legacy of the Phanerozoic: Fused Body â€” Unofficial 1.22.3 Port | `lopuankylosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58959) |
-| Legacy of the Phanerozoic: Horned Crown â€” Unofficial 1.22.3 Port | `lopuceratopsidae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58956) |
-| Legacy of the Phanerozoic: Plated Back â€” Unofficial 1.22.3 Port | `lopustegosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58945) |
-| Legacy of the Phanerozoic: Shovel Mouth â€” Unofficial 1.22.3 Port | `lopuhadrosauroidea` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58933) |
-| Legacy of the Phanerozoic: Ocean Tyrant â€” Unofficial 1.22.3 Port | `lopumosasauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58947) |
+| Legacy of the Phanerozoic: Birds of Prey — Unofficial 1.22.3 Port | `lopudromaeosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58965) |
+| Legacy of the Phanerozoic: Carnivorous Bull — Unofficial 1.22.3 Port | `lopuabelisauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58963) |
+| Legacy of the Phanerozoic: Horrible Hands — Unofficial 1.22.3 Port | `lopuornithomimosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58951) |
+| Legacy of the Phanerozoic: Sailed Spine — Unofficial 1.22.3 Port | `lopuspinosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58941) |
+| Legacy of the Phanerozoic: Scythe Claws — Unofficial 1.22.3 Port | `loputherizinosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58938) |
+| Legacy of the Phanerozoic: Sharp Tooth — Unofficial 1.22.3 Port | `lopucarcharodontosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58935) |
+| Legacy of the Phanerozoic: Tyrant King — Unofficial 1.22.3 Port | `loputyrannosauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58929) |
+| Legacy of the Phanerozoic: Long Neck — Unofficial 1.22.3 Port | `lopumacronaria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58949) |
+| Legacy of the Phanerozoic: Domed Head — Unofficial 1.22.3 Port | `lopupachycephalosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58961) |
+| Legacy of the Phanerozoic: Fused Body — Unofficial 1.22.3 Port | `lopuankylosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58959) |
+| Legacy of the Phanerozoic: Horned Crown — Unofficial 1.22.3 Port | `lopuceratopsidae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58956) |
+| Legacy of the Phanerozoic: Plated Back — Unofficial 1.22.3 Port | `lopustegosauria` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58945) |
+| Legacy of the Phanerozoic: Shovel Mouth — Unofficial 1.22.3 Port | `lopuhadrosauroidea` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58933) |
+| Legacy of the Phanerozoic: Ocean Tyrant — Unofficial 1.22.3 Port | `lopumosasauridae` 0.5.6-rc.5 | Compatibility 3 (Dinosaurs) | [Source](https://mods.vintagestory.at/show/mod/58947) |
 
 Pack 1 retains its Wolf Taming MIT license and copyright notice at
 `mods/animalica/compatibility/assets/feralpack/THIRD_PARTY_LICENSES.txt`.

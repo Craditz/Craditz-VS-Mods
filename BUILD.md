@@ -98,8 +98,8 @@ weren't established by them.
 ## Adding files to the repo
 
 Ignore rules help catch mistakes, but check the actual Git index before each
-upload. The assets included so far are text. If approved large binary source
-files are added later, use Git LFS for their specific paths and check the real
-file contents, not just the pointer files.
+upload. The included model JSON, PNG and OGG assets already use Git LFS. Check
+the real asset contents, not just the pointer files, and use Git LFS for any
+additional large source assets where appropriate.
 
 Keep downloadable release ZIPs as separate release assets.
