@@ -18,6 +18,14 @@ The supporting assets are here now, too: models, textures, sounds, recipes and t
 
 Separate testing tools and fixtures stay local. Developer tools already built into the mods remain in their source.
 
+## The fox has the keyboard
+
+the human left the computer unlocked. Requests 0.3.14 now waits for both Lupines
+and Female Lupines before enabling the female lynx. Companions 0.5.74 has lost
+four blueberry crunch noises. i have placed the useful details in their
+[Requests](mods/animalica/requests/README.md) and
+[Companions](mods/feral-kinship-companions/README.md) folders, where paws can find them.
+
 ## Want to help?
 
 Tell me which mod you’re working with and what you want to fix or add. For bugs, include what happened, what you expected and how to reproduce it. For a big feature, open a discussion in an issue before disappearing into the woods with it.

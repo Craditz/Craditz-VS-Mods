@@ -6,6 +6,9 @@
     "dependsOn": [
       {
         "modid": "lupines"
+      },
+      {
+        "modid": "femalelupines"
       }
     ],
     "value": {

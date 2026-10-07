@@ -1,9 +1,24 @@
 # Animalica Requests
 
-Selected source for version **0.3.13**, from commit `9769f83f`.
+the fox has found the keyboard. the lynx has been asked to wait until both halves
+of its outfit are installed. it has taken this remarkably well.
 
-The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
+Released source for **0.3.14**, integrated at `0de7ed73`.
 
-Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
+- Canadian Lynx (Female) is enabled only with both Lupines and Female Lupines installed.
+- Other model and cosmetic conditions are unchanged. Animalica Hooved Animals remains optional.
+- Required dependencies remain the game and PlayerModelLib; Female Lupines is a condition for this model only.
 
-See [BUILD.md](../../../BUILD.md), the [project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.
+Supporting assets match the accepted release payload. The selected compatibility
+sources are Lupines 0.2.18 and Female Lupines 1.0.1. They retain their original
+credits, rights and conditions. Install Git LFS to download the model and texture files.
+
+The accepted candidate passed a Vintage Story 1.22.7 Linux world start/save/shutdown
+smoke test, including Female Lupines absent and Hooved absent. Fresh source builds,
+four source-presence cases and native PlayerModelLib loading checks passed. These
+checks do not establish exhaustive visual, animation or multiplayer behaviour,
+or binary identity of a separately rebuilt DLL.
+
+See [the changelog](CHANGELOG_v0.3.14.txt), [BUILD.md](../../../BUILD.md),
+[the project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md).
+Game libraries and separately installed dependencies remain external.

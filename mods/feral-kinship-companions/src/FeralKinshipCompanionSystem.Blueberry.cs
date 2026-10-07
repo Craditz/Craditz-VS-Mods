@@ -13,13 +13,6 @@ namespace FeralKinshipCompanions;
 
 public sealed partial class FeralKinshipCompanionSystem
 {
-    private static readonly string[] BlueberryModeSounds =
-    {
-        "feralkinshipcompanions:sounds/eastereggs/blueberry-crunch-1",
-        "feralkinshipcompanions:sounds/eastereggs/blueberry-crunch-2",
-        "feralkinshipcompanions:sounds/eastereggs/blueberry-crunch-3",
-        "feralkinshipcompanions:sounds/eastereggs/blueberry-crunch-4"
-    };
     private static readonly string[] BlueberryModeThoughts =
     {
         "I want blueberry fries.",
@@ -171,15 +164,6 @@ public sealed partial class FeralKinshipCompanionSystem
 
         if (TryGetOwnerPlayer(fox, out IServerPlayer? owner))
         {
-            string sound = BlueberryModeSounds[
-                serverApi.World.Rand.Next(BlueberryModeSounds.Length)];
-            SendOwnerSpatialSound(
-                owner!,
-                new AssetLocation(sound),
-                target,
-                pitch: 0.94f,
-                range: 24f,
-                volume: 1f);
             string thought = BlueberryModeThoughts[
                 serverApi.World.Rand.Next(BlueberryModeThoughts.Length)];
             SendCompanionThought(fox, owner!, thought, durationMs: 5000);

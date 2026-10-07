@@ -62,10 +62,10 @@ for comparison. Existing selected versions and dependency requirements are kept.
 
 ## Companions, Body Tools and Radio
 
-Companions 0.5.73, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
+Companions 0.5.74, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
 diagnostic features that shipped with those versions. Their separate test and
-checker projects stay out of this repo. The Companions 0.5.74 local candidate
-isn't included.
+checker projects stay out of this repo. Companions 0.5.74 includes the accepted
+crunch-sound removal; no alternate UI build was selected.
 
 - Companions keeps its released UI constants; no alternate UI build was selected
 - Body Tools uses external game/Harmony references
@@ -94,6 +94,15 @@ All eleven code projects listed above compiled with local external references.
 Requests was compiled again after its move to `mods/animalica/requests`.
 Those checks cover compilation; complete package builds and in-game behaviour
 weren't established by them.
+
+### October 7 release update
+
+Requests 0.3.14 and Companions 0.5.74 are included with their released manifests,
+matching source changes and supporting assets. Both source projects compiled again.
+Their accepted candidates passed a Vintage Story 1.22.7 Linux world start/save/shutdown
+smoke test; Requests also passed Female Lupines absent and Hooved absent. Focused
+and native PlayerModelLib checks covered the corrected gate and existing model loading.
+This evidence does not establish exhaustive gameplay or binary identity of a rebuild.
 
 ## Adding files to the repo
 

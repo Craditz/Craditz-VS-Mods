@@ -109,10 +109,11 @@ That condition continues to apply; no general donor relicensing grant is made.
 - Radio retains `assets/custommusicradio/that-flying-rag-source.txt`, including
   its Arthur Pryor's Band recording credit, original URLs and U.S. public-domain
   statement. That statement is not represented as worldwide clearance
-- Companions retains its packaged sound-credit notice. Seven standard cues have
-  documented original sample-free synthesis. The notice predates the four
-  blueberry-crunch variants in the selected release; their separate origin is
-  not established by that notice. No third-party grant is invented for them
+- Companions 0.5.74 retains its packaged sound-credit notice and the seven
+  standard cues with documented original sample-free synthesis. The four
+  blueberry-crunch variants present in 0.5.73 are removed, along with their
+  playback and obsolete generation entry. No replacement audio or third-party
+  grant is added
 
 Some release-asset provenance remains incompletely documented. The owner
 directed inclusion of the selected supporting assets; that direction does not

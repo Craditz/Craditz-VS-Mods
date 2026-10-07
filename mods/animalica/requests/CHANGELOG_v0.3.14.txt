@@ -1,0 +1,11 @@
+Animalica Requests 0.3.14
+
+the fox has found the keyboard. the lynx now waits for both halves of its outfit.
+
+- Canadian Lynx (Female) is enabled only when both Lupines and Female Lupines are installed.
+- Other model and cosmetic conditions are unchanged. Animalica Hooved Animals remains optional.
+
+Validated with focused source-presence checks and native PlayerModelLib loading.
+The accepted candidate passed a Vintage Story 1.22.7 Linux world start/save/shutdown
+smoke test, including Female Lupines absent and Hooved absent. This does not claim
+exhaustive visual, animation, or multiplayer testing.

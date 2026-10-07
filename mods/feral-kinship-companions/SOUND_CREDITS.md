@@ -1,8 +1,7 @@
 Selected-release notice retained below. It describes the seven original
-procedural cues from the earlier 0.1.137 sound pass. The selected 0.5.73 release
-also includes four blueberry-crunch variants whose separate origin is not
-established by this earlier notice. No additional ownership or license grant
-is claimed for those variants here.
+procedural cues from the earlier 0.1.137 sound pass. Companions 0.5.74 removes
+the four blueberry-crunch variants present in 0.5.73. The original notice and
+seven retained clips are unchanged; no new audio or license grant is added.
 
 # Feral Kinship Companions sound credits
 
