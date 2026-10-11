@@ -10,7 +10,8 @@
       "defaultParts": {
         "blackbear-carrymode": "paw",
         "voicetype": "bearhurt",
-        "voicepitch": "medium"
+        "voicepitch": "medium",
+        "blackbear-texturemode": "custom"
       },
       "presets": {
         "americanblack": {
@@ -29,7 +30,8 @@
           "blackbear-internal-eyesmask": "clear-mask",
           "blackbear-internal-earsmask": "ears-soft-mask",
           "blackbear-internal-tailmask": "clear-mask",
-          "blackbear-internal-fixeddetails": "fixed-details-mask"
+          "blackbear-internal-fixeddetails": "fixed-details-mask",
+          "blackbear-texturemode": "custom"
         },
         "cinnamon": {
           "blackbear-furcolor": "#FF815033",
@@ -47,7 +49,8 @@
           "blackbear-internal-eyesmask": "clear-mask",
           "blackbear-internal-earsmask": "ears-soft-mask",
           "blackbear-internal-tailmask": "clear-mask",
-          "blackbear-internal-fixeddetails": "fixed-details-mask"
+          "blackbear-internal-fixeddetails": "fixed-details-mask",
+          "blackbear-texturemode": "custom"
         },
         "blonde": {
           "blackbear-furcolor": "#FFC5A06B",
@@ -65,7 +68,8 @@
           "blackbear-internal-eyesmask": "clear-mask",
           "blackbear-internal-earsmask": "ears-soft-mask",
           "blackbear-internal-tailmask": "clear-mask",
-          "blackbear-internal-fixeddetails": "fixed-details-mask"
+          "blackbear-internal-fixeddetails": "fixed-details-mask",
+          "blackbear-texturemode": "custom"
         },
         "glacier": {
           "blackbear-furcolor": "#FF777D80",
@@ -83,7 +87,8 @@
           "blackbear-internal-eyesmask": "clear-mask",
           "blackbear-internal-earsmask": "ears-soft-mask",
           "blackbear-internal-tailmask": "clear-mask",
-          "blackbear-internal-fixeddetails": "fixed-details-mask"
+          "blackbear-internal-fixeddetails": "fixed-details-mask",
+          "blackbear-texturemode": "custom"
         },
         "spirit": {
           "blackbear-furcolor": "#FFE5E0D3",
@@ -101,7 +106,8 @@
           "blackbear-internal-eyesmask": "clear-mask",
           "blackbear-internal-earsmask": "ears-soft-mask",
           "blackbear-internal-tailmask": "clear-mask",
-          "blackbear-internal-fixeddetails": "fixed-details-mask"
+          "blackbear-internal-fixeddetails": "fixed-details-mask",
+          "blackbear-texturemode": "custom"
         }
       }
     },
@@ -115,7 +121,8 @@
       "defaultParts": {
         "brownbear-carrymode": "paw",
         "voicetype": "bearhurt",
-        "voicepitch": "medium"
+        "voicepitch": "medium",
+        "brownbear-texturemode": "custom"
       },
       "presets": {
         "grizzly": {
@@ -134,7 +141,8 @@
           "brownbear-internal-eyesmask": "clear-mask",
           "brownbear-internal-earsmask": "ears-soft-mask",
           "brownbear-internal-tailmask": "clear-mask",
-          "brownbear-internal-fixeddetails": "fixed-details-mask"
+          "brownbear-internal-fixeddetails": "fixed-details-mask",
+          "brownbear-texturemode": "custom"
         },
         "kodiak": {
           "brownbear-furcolor": "#FF493026",
@@ -152,7 +160,8 @@
           "brownbear-internal-eyesmask": "clear-mask",
           "brownbear-internal-earsmask": "ears-soft-mask",
           "brownbear-internal-tailmask": "clear-mask",
-          "brownbear-internal-fixeddetails": "fixed-details-mask"
+          "brownbear-internal-fixeddetails": "fixed-details-mask",
+          "brownbear-texturemode": "custom"
         },
         "blonde": {
           "brownbear-furcolor": "#FFB78F61",
@@ -170,7 +179,8 @@
           "brownbear-internal-eyesmask": "clear-mask",
           "brownbear-internal-earsmask": "ears-soft-mask",
           "brownbear-internal-tailmask": "clear-mask",
-          "brownbear-internal-fixeddetails": "fixed-details-mask"
+          "brownbear-internal-fixeddetails": "fixed-details-mask",
+          "brownbear-texturemode": "custom"
         },
         "silvertip": {
           "brownbear-furcolor": "#FF77716B",
@@ -188,7 +198,8 @@
           "brownbear-internal-eyesmask": "clear-mask",
           "brownbear-internal-earsmask": "ears-soft-mask",
           "brownbear-internal-tailmask": "clear-mask",
-          "brownbear-internal-fixeddetails": "fixed-details-mask"
+          "brownbear-internal-fixeddetails": "fixed-details-mask",
+          "brownbear-texturemode": "custom"
         },
         "chocolate": {
           "brownbear-furcolor": "#FF65412F",
@@ -206,7 +217,8 @@
           "brownbear-internal-eyesmask": "clear-mask",
           "brownbear-internal-earsmask": "ears-soft-mask",
           "brownbear-internal-tailmask": "clear-mask",
-          "brownbear-internal-fixeddetails": "fixed-details-mask"
+          "brownbear-internal-fixeddetails": "fixed-details-mask",
+          "brownbear-texturemode": "custom"
         }
       }
     },
@@ -220,7 +232,8 @@
       "defaultParts": {
         "polarbear-carrymode": "paw",
         "voicetype": "bearhurt",
-        "voicepitch": "medium"
+        "voicepitch": "medium",
+        "polarbear-texturemode": "custom"
       },
       "presets": {
         "arcticwhite": {
@@ -239,7 +252,8 @@
           "polarbear-internal-eyesmask": "clear-mask",
           "polarbear-internal-earsmask": "ears-soft-mask",
           "polarbear-internal-tailmask": "clear-mask",
-          "polarbear-internal-fixeddetails": "fixed-details-mask"
+          "polarbear-internal-fixeddetails": "fixed-details-mask",
+          "polarbear-texturemode": "custom"
         },
         "cream": {
           "polarbear-furcolor": "#FFDCC9A4",
@@ -257,7 +271,8 @@
           "polarbear-internal-eyesmask": "clear-mask",
           "polarbear-internal-earsmask": "ears-soft-mask",
           "polarbear-internal-tailmask": "clear-mask",
-          "polarbear-internal-fixeddetails": "fixed-details-mask"
+          "polarbear-internal-fixeddetails": "fixed-details-mask",
+          "polarbear-texturemode": "custom"
         },
         "golden": {
           "polarbear-furcolor": "#FFC5A876",
@@ -275,7 +290,8 @@
           "polarbear-internal-eyesmask": "clear-mask",
           "polarbear-internal-earsmask": "ears-soft-mask",
           "polarbear-internal-tailmask": "clear-mask",
-          "polarbear-internal-fixeddetails": "fixed-details-mask"
+          "polarbear-internal-fixeddetails": "fixed-details-mask",
+          "polarbear-texturemode": "custom"
         },
         "snowgray": {
           "polarbear-furcolor": "#FFC5C9C8",
@@ -293,7 +309,8 @@
           "polarbear-internal-eyesmask": "clear-mask",
           "polarbear-internal-earsmask": "ears-soft-mask",
           "polarbear-internal-tailmask": "clear-mask",
-          "polarbear-internal-fixeddetails": "fixed-details-mask"
+          "polarbear-internal-fixeddetails": "fixed-details-mask",
+          "polarbear-texturemode": "custom"
         },
         "sooty": {
           "polarbear-furcolor": "#FF8D8173",
@@ -311,7 +328,8 @@
           "polarbear-internal-eyesmask": "clear-mask",
           "polarbear-internal-earsmask": "ears-soft-mask",
           "polarbear-internal-tailmask": "clear-mask",
-          "polarbear-internal-fixeddetails": "fixed-details-mask"
+          "polarbear-internal-fixeddetails": "fixed-details-mask",
+          "polarbear-texturemode": "custom"
         }
       }
     },
@@ -325,7 +343,8 @@
       "defaultParts": {
         "giantpanda-carrymode": "paw",
         "voicetype": "bearhurt",
-        "voicepitch": "medium"
+        "voicepitch": "medium",
+        "giantpanda-texturemode": "custom"
       },
       "presets": {
         "classic": {
@@ -344,7 +363,8 @@
           "giantpanda-internal-eyesmask": "clear-mask",
           "giantpanda-internal-earsmask": "ears-soft-mask",
           "giantpanda-internal-tailmask": "clear-mask",
-          "giantpanda-internal-fixeddetails": "fixed-details-mask"
+          "giantpanda-internal-fixeddetails": "fixed-details-mask",
+          "giantpanda-texturemode": "custom"
         },
         "qinling": {
           "giantpanda-furcolor": "#FFD8C29D",
@@ -362,7 +382,8 @@
           "giantpanda-internal-eyesmask": "clear-mask",
           "giantpanda-internal-earsmask": "ears-soft-mask",
           "giantpanda-internal-tailmask": "clear-mask",
-          "giantpanda-internal-fixeddetails": "fixed-details-mask"
+          "giantpanda-internal-fixeddetails": "fixed-details-mask",
+          "giantpanda-texturemode": "custom"
         },
         "sepia": {
           "giantpanda-furcolor": "#FFE2D0B3",
@@ -380,7 +401,8 @@
           "giantpanda-internal-eyesmask": "clear-mask",
           "giantpanda-internal-earsmask": "ears-soft-mask",
           "giantpanda-internal-tailmask": "clear-mask",
-          "giantpanda-internal-fixeddetails": "fixed-details-mask"
+          "giantpanda-internal-fixeddetails": "fixed-details-mask",
+          "giantpanda-texturemode": "custom"
         },
         "albino": {
           "giantpanda-furcolor": "#FFF0E6DD",
@@ -398,7 +420,8 @@
           "giantpanda-internal-eyesmask": "clear-mask",
           "giantpanda-internal-earsmask": "ears-soft-mask",
           "giantpanda-internal-tailmask": "clear-mask",
-          "giantpanda-internal-fixeddetails": "fixed-details-mask"
+          "giantpanda-internal-fixeddetails": "fixed-details-mask",
+          "giantpanda-texturemode": "custom"
         }
       }
     },
@@ -412,7 +435,8 @@
       "defaultParts": {
         "sunbear-carrymode": "paw",
         "voicetype": "bearhurt",
-        "voicepitch": "medium"
+        "voicepitch": "medium",
+        "sunbear-texturemode": "custom"
       },
       "presets": {
         "malayan": {
@@ -431,7 +455,8 @@
           "sunbear-internal-eyesmask": "clear-mask",
           "sunbear-internal-earsmask": "ears-soft-mask",
           "sunbear-internal-tailmask": "clear-mask",
-          "sunbear-internal-fixeddetails": "fixed-details-mask"
+          "sunbear-internal-fixeddetails": "fixed-details-mask",
+          "sunbear-texturemode": "custom"
         },
         "bornean": {
           "sunbear-furcolor": "#FF4A382E",
@@ -449,7 +474,8 @@
           "sunbear-internal-eyesmask": "clear-mask",
           "sunbear-internal-earsmask": "ears-soft-mask",
           "sunbear-internal-tailmask": "clear-mask",
-          "sunbear-internal-fixeddetails": "fixed-details-mask"
+          "sunbear-internal-fixeddetails": "fixed-details-mask",
+          "sunbear-texturemode": "custom"
         },
         "goldenchest": {
           "sunbear-furcolor": "#FF211F1D",
@@ -467,7 +493,8 @@
           "sunbear-internal-eyesmask": "clear-mask",
           "sunbear-internal-earsmask": "ears-soft-mask",
           "sunbear-internal-tailmask": "clear-mask",
-          "sunbear-internal-fixeddetails": "fixed-details-mask"
+          "sunbear-internal-fixeddetails": "fixed-details-mask",
+          "sunbear-texturemode": "custom"
         },
         "palebrown": {
           "sunbear-furcolor": "#FF735443",
@@ -485,7 +512,8 @@
           "sunbear-internal-eyesmask": "clear-mask",
           "sunbear-internal-earsmask": "ears-soft-mask",
           "sunbear-internal-tailmask": "clear-mask",
-          "sunbear-internal-fixeddetails": "fixed-details-mask"
+          "sunbear-internal-fixeddetails": "fixed-details-mask",
+          "sunbear-texturemode": "custom"
         },
         "honey": {
           "sunbear-furcolor": "#FF9A6B4A",
@@ -503,7 +531,8 @@
           "sunbear-internal-eyesmask": "clear-mask",
           "sunbear-internal-earsmask": "ears-soft-mask",
           "sunbear-internal-tailmask": "clear-mask",
-          "sunbear-internal-fixeddetails": "fixed-details-mask"
+          "sunbear-internal-fixeddetails": "fixed-details-mask",
+          "sunbear-texturemode": "custom"
         }
       }
     }

@@ -2052,6 +2052,8 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface : GuiElementF
             || string.Equals(status, "Available", StringComparison.OrdinalIgnoreCase)
             || string.Equals(status, "Returned healthy", StringComparison.OrdinalIgnoreCase)
             || string.Equals(status, "Returned injured", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(status, "Mortally wounded", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(status, "Recovering", StringComparison.OrdinalIgnoreCase)
             || string.Equals(status, "Unowned", StringComparison.OrdinalIgnoreCase))
         {
             return false;

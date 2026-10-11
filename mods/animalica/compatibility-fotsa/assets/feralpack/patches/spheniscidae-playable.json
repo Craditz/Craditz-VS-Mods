@@ -66,11 +66,11 @@
           "variants": [
             {
               "code": "emperor-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/aptenodytesforsteri-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/aptenodytesforsteri-adult"
             },
             {
               "code": "king-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/aptenodytespatagonicus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/aptenodytespatagonicus-adult"
             }
           ]
         },
@@ -207,35 +207,35 @@
           "variants": [
             {
               "code": "southern-rockhopper-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudypteschrysocome-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudypteschrysocome-adult"
             },
             {
               "code": "macaroni-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudypteschrysolophus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudypteschrysolophus-adult"
             },
             {
               "code": "northern-rockhopper-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptesmoseleyi-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptesmoseleyi-adult"
             },
             {
               "code": "fiordland-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptespachyrhynchus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptespachyrhynchus-adult"
             },
             {
               "code": "snares-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptesrobustus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptesrobustus-adult"
             },
             {
               "code": "erect-crested-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptessclateri-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptessclateri-adult"
             },
             {
               "code": "royal-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptesschlegeli-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptesschlegeli-adult"
             },
             {
               "code": "chatham-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudypteswarhami-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudypteswarhami-adult"
             }
           ]
         },
@@ -372,43 +372,43 @@
           "variants": [
             {
               "code": "little-blue-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptulaminor-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptulaminor-adult"
             },
             {
               "code": "australian-little-blue-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/eudyptulanovaehollandiae-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/eudyptulanovaehollandiae-adult"
             },
             {
               "code": "yellow-eyed-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/megadyptesantipodes-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/megadyptesantipodes-adult"
             },
             {
               "code": "adelie-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/pygoscelisadeliae-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/pygoscelisadeliae-adult"
             },
             {
               "code": "chinstrap-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/pygoscelisantarcticus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/pygoscelisantarcticus-adult"
             },
             {
               "code": "gentoo-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/pygoscelispapua-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/pygoscelispapua-adult"
             },
             {
               "code": "african-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/spheniscusdemersus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/spheniscusdemersus-adult"
             },
             {
               "code": "humboldt-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/spheniscushumboldti-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/spheniscushumboldti-adult"
             },
             {
               "code": "magellanic-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/spheniscusmagellanicus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/spheniscusmagellanicus-adult"
             },
             {
               "code": "galapagos-penguin",
-              "texture": "spheniscidae:entity/spheniscidae/spheniscusmendiculus-adult"
+              "texture": "spheniscidae:entity/animal/bird/spheniscidae/spheniscusmendiculus-adult"
             }
           ]
         },

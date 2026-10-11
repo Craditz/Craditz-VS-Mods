@@ -546,11 +546,11 @@
           "variants": [
             {
               "code": "javan-rhinoceros",
-              "texture": "rhinocerotidae:entity/rhinocerotidae/rhinocerossondaicus-adult"
+              "texture": "rhinocerotidae:entity/animal/mammal/hooved/rhinocerotidae/rhinocerossondaicus-adult"
             },
             {
               "code": "indian-rhinoceros",
-              "texture": "rhinocerotidae:entity/rhinocerotidae/rhinocerosunicornis-adult"
+              "texture": "rhinocerotidae:entity/animal/mammal/hooved/rhinocerotidae/rhinocerosunicornis-adult"
             }
           ]
         },

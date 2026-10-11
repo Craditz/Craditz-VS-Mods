@@ -1,0 +1,32 @@
+[
+  {
+    "file": "feralpack:config/customplayermodels/animalica-hooved.json",
+    "op": "add",
+    "path": "/sheep-bighorn/SkinnableParts/-",
+    "dependsOn": [
+      {
+        "modid": "animalicahooved"
+      }
+    ],
+    "value": {
+      "code": "animalicarequests-bighorn-horns",
+      "type": "shape",
+      "useDropDown": true,
+      "tabCode": "features",
+      "shapeTemplate": {
+        "base": "animalicarequests:entity/requests/bighorn-horns-{code}"
+      },
+      "variants": [
+        {
+          "code": "none"
+        },
+        {
+          "code": "normal"
+        },
+        {
+          "code": "large"
+        }
+      ]
+    }
+  }
+]

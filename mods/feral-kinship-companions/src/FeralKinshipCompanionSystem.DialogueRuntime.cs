@@ -560,6 +560,12 @@ public sealed partial class FeralKinshipCompanionSystem
             if (path == "eidolon-immobilized") candidates.Add("milestone.hidden_boss_01");
             if (path == "erel-pristine" || path == "erel-corrupted") candidates.Add("milestone.hidden_boss_02");
         }
+        ApplyFirstSeenMilestones(companion, status, owner, candidates);
+    }
+
+    private void ApplyFirstSeenMilestones(Entity companion, ITreeAttribute status,
+        IServerPlayer? owner, IEnumerable<string> candidates)
+    {
         string completedBefore = status.GetString(DialogueMilestonesKey, string.Empty);
         string pendingBefore = status.GetString(DialoguePendingMilestonesKey, string.Empty);
         string rewardedBefore = status.GetString(DialogueRewardedMilestonesKey, string.Empty);
@@ -691,6 +697,10 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private static string GetMilestonePlaceholder(string eventId) => eventId switch
     {
+        "milestone.pit_kiln" => "[PLACEHOLDER: first completed pit kiln firing]",
+        "milestone.bloomery" => "[PLACEHOLDER: first completed bloomery smelt]",
+        "milestone.beehive_kiln" => "[PLACEHOLDER: first completed beehive kiln firing]",
+        "milestone.refractory" => "[PLACEHOLDER: first fired refractory bricks]",
         "milestone.anvil" => "[PLACEHOLDER: first anvil discovery]",
         "milestone.copper_ore" => "[PLACEHOLDER: first copper ore block discovery]",
         "milestone.tin_ore" => "[PLACEHOLDER: first tin ore block discovery]",

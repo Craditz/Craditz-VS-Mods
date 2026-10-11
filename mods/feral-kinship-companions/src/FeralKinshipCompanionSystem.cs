@@ -8515,6 +8515,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             : string.Empty;
         playerCampAreaStates[owner.PlayerUID] = insideCamp;
         playerAreaKinds[owner.PlayerUID] = areaKind;
+        // Continue tracking crossings while notices are off. Re-enabling must
+        // never replay a suppressed crossing or change camp/work behavior.
+        if (packRepository?.AreCartRadiusNotificationsEnabled(owner.PlayerUID) == false)
+        {
+            return;
+        }
         owner.SendMessage(
             GlobalConstants.GeneralChatGroup,
             insideCamp
@@ -10749,7 +10755,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             || action == FoxSocialRequestAction.ArchivePackFox
             || action == FoxSocialRequestAction.UnarchivePackFox
             || action == FoxSocialRequestAction.DeleteExpeditionReport
-            || action == FoxSocialRequestAction.AbandonScavengeSite;
+            || action == FoxSocialRequestAction.AbandonScavengeSite
+            || action == FoxSocialRequestAction.SetCartRadiusNotifications;
     }
 
     private static bool IsCartOnlyPackAction(int action)
@@ -10767,6 +10774,17 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     {
         switch (packet.Action)
         {
+            case FoxSocialRequestAction.SetCartRadiusNotifications:
+                if (packRepository?.Loaded != true || !bool.TryParse(packet.RequestedJob, out bool enabled))
+                {
+                    return;
+                }
+                // The authenticated sender owns this preference. Never accept
+                // a client-supplied owner or use a selected companion's owner.
+                packRepository.SetCartRadiusNotificationsEnabled(owner.PlayerUID, enabled);
+                packRepository.Save();
+                SendPackState(owner);
+                break;
             case FoxSocialRequestAction.LocatePackFox:
                 LocatePackFox(owner, packet.RequestedJob);
                 break;
@@ -18646,6 +18664,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             }
         }
 
+        // Already-loaded columns may invoke OnLoaded before the load call
+        // returns. Send pending first so it cannot overwrite completion.
+        SendPackState(
+            owner,
+            $"Checking one saved chunk for {GetFoxRecordLabel(record)}. Last known: "
+                + $"{CompanionLocationText.Format(serverApi, record.LastKnownX, record.LastKnownY, record.LastKnownZ)}."
+        );
+
         if (record.LastKnownDimension == 0)
         {
             serverApi.WorldManager.LoadChunkColumnPriority(
@@ -18664,11 +18690,6 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             serverApi.World.RegisterCallback(_ => OnLocated(), 1000);
         }
 
-        SendPackState(
-            owner,
-            $"Checking one saved chunk for {GetFoxRecordLabel(record)}. Last known: "
-                + $"{CompanionLocationText.Format(serverApi, record.LastKnownX, record.LastKnownY, record.LastKnownZ)}."
-        );
     }
 
     private void SendState(Entity entity, IServerPlayer owner, string message)
@@ -20595,6 +20616,7 @@ internal static class FoxSocialRequestAction
     public const int AbandonScavengeSite = 56;
     public const int ClaimSelectedPackLoot = 57;
     public const int CallPackFoxToCart = 58;
+    public const int SetCartRadiusNotifications = 59;
 }
 
 internal static class FoxExpeditionType
@@ -21636,6 +21658,10 @@ public sealed class FoxPackProgressRecord
     public int PermanentRangeRank;
     [ProtoMember(7)]
     public int PermanentExpeditionCapacityRank;
+    // Missing field in older saves means notices remain enabled. Declare the
+    // protobuf default so an explicit false survives save/load and wire sync.
+    [ProtoMember(8), System.ComponentModel.DefaultValue(true)]
+    public bool CartRadiusNotificationsEnabled = true;
 }
 
 [ProtoContract]
@@ -22002,6 +22028,8 @@ public sealed class FoxPackStatePacket
     public int ExpeditionCapacity = 2;
     [ProtoMember(35)]
     public List<FoxScavengeSitePacket> ScavengeSites = new();
+    [ProtoMember(36), System.ComponentModel.DefaultValue(true)]
+    public bool CartRadiusNotificationsEnabled = true;
 }
 
 [ProtoContract]

@@ -72,6 +72,29 @@
       ],
       "SkinnableParts": [
         {
+          "code": "pantherinae-american-lion-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-atrox",
+              "category": null
+            }
+          ]
+        },
+        {
           "code": "pantherinae-american-lion-coatpreset",
           "type": "shape",
           "useDropDown": true,
@@ -736,6 +759,52 @@
         }
       ],
       "SkinnableParts": [
+        {
+          "code": "pantherinae-lion-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-leo",
+              "category": null
+            }
+          ]
+        },
+        {
+          "code": "pantherinae-lion-mane-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "mane",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-leo-mane",
+              "category": null
+            }
+          ]
+        },
         {
           "code": "pantherinae-lion-coatpreset",
           "type": "shape",
@@ -1494,6 +1563,29 @@
       ],
       "SkinnableParts": [
         {
+          "code": "pantherinae-jaguar-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-onca",
+              "category": null
+            }
+          ]
+        },
+        {
           "code": "pantherinae-jaguar-coatpreset",
           "type": "shape",
           "useDropDown": true,
@@ -2161,6 +2253,29 @@
         }
       ],
       "SkinnableParts": [
+        {
+          "code": "pantherinae-leopard-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-pardus",
+              "category": null
+            }
+          ]
+        },
         {
           "code": "pantherinae-leopard-coatpreset",
           "type": "shape",
@@ -2830,6 +2945,29 @@
       ],
       "SkinnableParts": [
         {
+          "code": "pantherinae-steppe-lion-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-spelaea",
+              "category": null
+            }
+          ]
+        },
+        {
           "code": "pantherinae-steppe-lion-coatpreset",
           "type": "shape",
           "useDropDown": true,
@@ -3494,6 +3632,29 @@
         }
       ],
       "SkinnableParts": [
+        {
+          "code": "pantherinae-tiger-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-tigris",
+              "category": null
+            }
+          ]
+        },
         {
           "code": "pantherinae-tiger-coatpreset",
           "type": "shape",
@@ -4193,6 +4354,29 @@
       ],
       "SkinnableParts": [
         {
+          "code": "pantherinae-snow-leopard-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/panthera-uncia",
+              "category": null
+            }
+          ]
+        },
+        {
           "code": "pantherinae-snow-leopard-coatpreset",
           "type": "shape",
           "useDropDown": true,
@@ -4863,6 +5047,29 @@
         }
       ],
       "SkinnableParts": [
+        {
+          "code": "pantherinae-clouded-leopard-texturemode",
+          "type": "texture",
+          "tabCode": "default",
+          "useDropDown": true,
+          "textureTarget": "skin",
+          "targetSkinParts": [
+            "base"
+          ],
+          "overlayMode": "Normal",
+          "priority": 150.0,
+          "variants": [
+            {
+              "code": "custom",
+              "texture": "game:block/transparent"
+            },
+            {
+              "code": "original",
+              "texture": "pantherinae:entity/animal/mammal/pantherinae/neofelis-nebulosa",
+              "category": null
+            }
+          ]
+        },
         {
           "code": "pantherinae-clouded-leopard-coatpreset",
           "type": "shape",

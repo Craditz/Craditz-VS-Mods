@@ -66,15 +66,15 @@
           "variants": [
             {
               "code": "indian-pangolin",
-              "texture": "manidae:entity/manidae/crassicaudata-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/crassicaudata-adult"
             },
             {
               "code": "giant-pangolin",
-              "texture": "manidae:entity/manidae/gigantea-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/gigantea-adult"
             },
             {
               "code": "ground-pangolin",
-              "texture": "manidae:entity/manidae/temminckii-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/temminckii-adult"
             }
           ]
         },
@@ -211,19 +211,19 @@
           "variants": [
             {
               "code": "philippine-pangolin",
-              "texture": "manidae:entity/manidae/culionensis-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/culionensis-adult"
             },
             {
               "code": "sunda-pangolin",
-              "texture": "manidae:entity/manidae/javanica-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/javanica-adult"
             },
             {
               "code": "asian-mystery-pangolin",
-              "texture": "manidae:entity/manidae/mysteria-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/mysteria-adult"
             },
             {
               "code": "chinese-pangolin",
-              "texture": "manidae:entity/manidae/pentadactyla-adult"
+              "texture": "manidae:entity/animal/mammal/manidae/pentadactyla-adult"
             }
           ]
         },

@@ -66,11 +66,11 @@
           "variants": [
             {
               "code": "asian-elephant",
-              "texture": "elephantidae:entity/elephantidae/elephasmaximus-adult"
+              "texture": "elephantidae:entity/animal/mammal/elephantidae/elephasmaximus-adult"
             },
             {
               "code": "bornean-elephant",
-              "texture": "elephantidae:entity/elephantidae/elephasmaximusborneensis-adult"
+              "texture": "elephantidae:entity/animal/mammal/elephantidae/elephasmaximusborneensis-adult"
             }
           ]
         },

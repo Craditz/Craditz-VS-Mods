@@ -825,13 +825,18 @@ internal sealed partial class FoxPackRepository
         if (!recordsById.TryGetValue(foxId, out FoxPackRecordV2? record)
             || !string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal)
             || record.Archived
+            || !string.Equals(record.Status, "Dead", StringComparison.OrdinalIgnoreCase)
+                && record.HealthState is 1 or 2 // vanilla Recovering / MortallyWounded
             || !IsArchivableStatus(record.Status))
         {
             return false;
         }
 
         record.Archived = true;
-        record.Status = "Archived";
+        // Death is durable evidence, including when the body/provider unloads.
+        // Retain it for the Archived Dead filter; do not infer it from HP.
+        if (!string.Equals(record.Status, "Dead", StringComparison.OrdinalIgnoreCase))
+            record.Status = "Archived";
         return true;
     }
 
@@ -842,6 +847,8 @@ internal sealed partial class FoxPackRepository
             || string.Equals(status, "Available", StringComparison.OrdinalIgnoreCase)
             || string.Equals(status, "Returned healthy", StringComparison.OrdinalIgnoreCase)
             || string.Equals(status, "Returned injured", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(status, "Mortally wounded", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(status, "Recovering", StringComparison.OrdinalIgnoreCase)
             || string.Equals(status, "Unowned", StringComparison.OrdinalIgnoreCase))
         {
             return false;
@@ -1515,6 +1522,17 @@ internal sealed partial class FoxPackRepository
         progress.UnlockedPackTalents ??= new List<string>();
         progress.UnlockedPackTalents.Add(id);
         return true;
+    }
+
+    public bool AreCartRadiusNotificationsEnabled(string ownerUid)
+    {
+        return !progressByOwner.TryGetValue(ownerUid, out FoxPackProgressRecord? progress)
+            || progress.CartRadiusNotificationsEnabled;
+    }
+
+    public void SetCartRadiusNotificationsEnabled(string ownerUid, bool enabled)
+    {
+        GetProgress(ownerUid).CartRadiusNotificationsEnabled = enabled;
     }
 
     public bool IsPatrolPrepared(string ownerUid)

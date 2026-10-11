@@ -62,7 +62,7 @@ for comparison. Existing selected versions and dependency requirements are kept.
 
 ## Companions, Body Tools and Radio
 
-Companions 0.5.74, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
+Companions 0.5.75, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
 diagnostic features that shipped with those versions. Their separate test and
 checker projects stay out of this repo. Companions 0.5.74 includes the accepted
 crunch-sound removal; no alternate UI build was selected.
@@ -103,6 +103,15 @@ Their accepted candidates passed a Vintage Story 1.22.7 Linux world start/save/s
 smoke test; Requests also passed Female Lupines absent and Hooved absent. Focused
 and native PlayerModelLib checks covered the corrected gate and existing model loading.
 This evidence does not establish exhaustive gameplay or binary identity of a rebuild.
+
+### October 11 release update
+
+FWH 0.6.8, Bears 0.5.4, Compatibility Pack 2 0.5.3, Requests 0.3.16 and
+Companions 0.5.75 include the approved source and exact tested supporting assets.
+Release ZIPs retain every tested runtime/asset byte. Documentation was refreshed;
+Companions also has a numeric manifest version. No packaged DLL was rebuilt.
+Scoped gameplay and independent source checks cover these candidates; see
+[the release record](RELEASE_2026-10-11.md) for their limits.
 
 ## Adding files to the repo
 

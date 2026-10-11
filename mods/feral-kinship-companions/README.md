@@ -1,25 +1,25 @@
 # Feral Kinship Companions
 
-the human left the keyboard unattended. i have confiscated four crunch noises.
-the blueberries are still edible. this is a sound policy.
+the fox has found the keyboard. the useful changes are below.
 
-Released source for **0.5.74**, integrated at `0de7ed73`.
+Released source and assets for **0.5.75**.
 
-- Removed the four bundled blueberry-crunch clips and their playback.
-- Blueberry eating, cutting recovery and companion thoughts are unchanged.
-- No replacement audio was added. The other seven clips and their original credits remain.
+Feral Kinship Companions 0.5.75
 
-Supporting assets match the accepted release payload. Install Git LFS to download
-model and binary assets. Game libraries and separately installed dependencies remain external.
+Adds a Cart radius notices toggle, with the preference retained across restart.
+Fixes roster selection when filters hide the selected row, Locate completion
+status, dead-record archival and recoverable missing-provider ledger records.
+Provider recovery retains the existing record and does not spawn a replacement animal.
+Fixes production milestone credit while preserving existing reward amounts.
 
-The accepted candidate passed a Vintage Story 1.22.7 Linux world start/save/shutdown
-smoke test. Fresh source builds and package checks passed. This does not establish
-exhaustive gameplay, audio or multiplayer coverage, or binary identity of a rebuilt DLL.
+Scoped gameplay and independent source checks passed. Native first and repeat
+refractory firing, milestone persistence and a full restart passed. Broader
+production coverage and physical provider-animal survival are not claimed.
 
-[Feral Kinship](../feral-kinship/README.md) lives next door. The manifest still requires
-`feralkinship >= 0.4.3`. Its unchanged race resolver and the root shared config migration
-source remain linked at build time.
+Required dependencies: `game >= 1.22.0, feralkinship >= 0.4.3`.
 
-See [the changelog](CHANGELOG_v0.5.74.md), [BUILD.md](../../BUILD.md),
-[the project license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md).
-Third-party material retains its own rights and terms.
+Feral Kinship remains a separate required mod. Recovery preserves ledger records; it does not spawn provider animals.
+
+The tested runtime and asset bytes are retained. Release preparation changes documentation and the manifest version only. Install Git LFS for models and binary assets.
+
+See [the changelog](CHANGELOG_v0.5.75.md), [build instructions](../../BUILD.md), [license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Third-party material keeps its original rights and conditions.

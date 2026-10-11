@@ -1,0 +1,4 @@
+Animalica - Foxes, Wolves & Hyenas 0.6.8
+
+Adds an Original / Vanilla texture choice alongside Custom colours for fox,
+wolf and hyena. Existing custom colour controls and named presets remain available.

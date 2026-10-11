@@ -1,9 +1,16 @@
 # Animalica - Bears
 
-Selected source for version **0.5.3**, from commit `0e86b04a`.
+the fox has found the keyboard. the useful changes are below.
 
-The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
+Released source and assets for **0.5.4**.
 
-Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
+Animalica - Bears 0.5.4
 
-See [BUILD.md](../../../BUILD.md), the [project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.
+Adds an Original / Vanilla texture choice alongside Custom colours for all
+five bears. Existing custom colour controls and named presets remain available.
+
+Required dependencies: `game >= 1.22.0-pre.1, playermodellib >= 1.22.4, animalicacore >= 1.1.43`.
+
+The tested runtime and asset bytes are retained. Release preparation changes documentation only. Install Git LFS for models and binary assets.
+
+See [the changelog](CHANGELOG_v0.5.4.txt), [build instructions](../../../BUILD.md), [license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Third-party material keeps its original rights and conditions.

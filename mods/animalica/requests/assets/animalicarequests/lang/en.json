@@ -38,5 +38,9 @@
   "game:skinpart-female-canadian-lynx-haircolor-lightgray": "Light Gray",
   "game:skinpart-female-canadian-lynx-haircolor-gray": "Gray",
   "game:skinpart-female-canadian-lynx-haircolor-darkgray": "Dark Gray",
-  "game:skinpart-female-canadian-lynx-haircolor-charcoal": "Charcoal"
+  "game:skinpart-female-canadian-lynx-haircolor-charcoal": "Charcoal",
+  "game:skinpart-animalicarequests-bighorn-horns": "Horns",
+  "game:skinpart-animalicarequests-bighorn-horns-none": "None",
+  "game:skinpart-animalicarequests-bighorn-horns-normal": "Normal",
+  "game:skinpart-animalicarequests-bighorn-horns-large": "Large"
 }

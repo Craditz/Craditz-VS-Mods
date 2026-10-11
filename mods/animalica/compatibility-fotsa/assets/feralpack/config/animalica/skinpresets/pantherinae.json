@@ -8,7 +8,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-american-lion-carrymode": "paw"
+        "pantherinae-american-lion-carrymode": "paw",
+        "pantherinae-american-lion-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -29,7 +30,8 @@
           "pantherinae-american-lion-internal-eyesmask": "clear-mask",
           "pantherinae-american-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-american-lion-internal-tailmask": "clear-mask",
-          "pantherinae-american-lion-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-american-lion-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-american-lion-texturemode": "custom"
         },
         "pale": {
           "pantherinae-american-lion-furcolor": "#FFC4A47C",
@@ -49,7 +51,8 @@
           "pantherinae-american-lion-internal-eyesmask": "clear-mask",
           "pantherinae-american-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-american-lion-internal-tailmask": "clear-mask",
-          "pantherinae-american-lion-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-american-lion-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-american-lion-texturemode": "custom"
         },
         "dark": {
           "pantherinae-american-lion-furcolor": "#FF594438",
@@ -69,7 +72,8 @@
           "pantherinae-american-lion-internal-eyesmask": "clear-mask",
           "pantherinae-american-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-american-lion-internal-tailmask": "clear-mask",
-          "pantherinae-american-lion-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-american-lion-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-american-lion-texturemode": "custom"
         }
       }
     },
@@ -82,7 +86,9 @@
       "preserveUnspecified": true,
       "defaultParts": {
         "pantherinae-lion-carrymode": "paw",
-        "pantherinae-lion-body": "lioness"
+        "pantherinae-lion-body": "lioness",
+        "pantherinae-lion-texturemode": "custom",
+        "pantherinae-lion-mane-texturemode": "custom"
       },
       "presets": {
         "tawny": {
@@ -104,7 +110,9 @@
           "pantherinae-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-lion-internal-tailmask": "clear-mask",
           "pantherinae-lion-internal-fixeddetails": "fixed-details-mask",
-          "pantherinae-lion-manecolor": "#FF5A3C27"
+          "pantherinae-lion-manecolor": "#FF5A3C27",
+          "pantherinae-lion-texturemode": "custom",
+          "pantherinae-lion-mane-texturemode": "custom"
         },
         "golden": {
           "pantherinae-lion-furcolor": "#FFD1A064",
@@ -125,7 +133,9 @@
           "pantherinae-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-lion-internal-tailmask": "clear-mask",
           "pantherinae-lion-internal-fixeddetails": "fixed-details-mask",
-          "pantherinae-lion-manecolor": "#FF6F4727"
+          "pantherinae-lion-manecolor": "#FF6F4727",
+          "pantherinae-lion-texturemode": "custom",
+          "pantherinae-lion-mane-texturemode": "custom"
         },
         "white": {
           "pantherinae-lion-furcolor": "#FFE1D8C6",
@@ -146,7 +156,9 @@
           "pantherinae-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-lion-internal-tailmask": "clear-mask",
           "pantherinae-lion-internal-fixeddetails": "fixed-details-mask",
-          "pantherinae-lion-manecolor": "#FFB09A7C"
+          "pantherinae-lion-manecolor": "#FFB09A7C",
+          "pantherinae-lion-texturemode": "custom",
+          "pantherinae-lion-mane-texturemode": "custom"
         },
         "dark": {
           "pantherinae-lion-furcolor": "#FF625044",
@@ -167,7 +179,9 @@
           "pantherinae-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-lion-internal-tailmask": "clear-mask",
           "pantherinae-lion-internal-fixeddetails": "fixed-details-mask",
-          "pantherinae-lion-manecolor": "#FF30231E"
+          "pantherinae-lion-manecolor": "#FF30231E",
+          "pantherinae-lion-texturemode": "custom",
+          "pantherinae-lion-mane-texturemode": "custom"
         }
       }
     },
@@ -179,7 +193,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-jaguar-carrymode": "paw"
+        "pantherinae-jaguar-carrymode": "paw",
+        "pantherinae-jaguar-texturemode": "custom"
       },
       "presets": {
         "golden": {
@@ -200,7 +215,8 @@
           "pantherinae-jaguar-internal-eyesmask": "clear-mask",
           "pantherinae-jaguar-internal-earsmask": "ears-soft-mask",
           "pantherinae-jaguar-internal-tailmask": "clear-mask",
-          "pantherinae-jaguar-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-jaguar-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-jaguar-texturemode": "custom"
         },
         "melanistic": {
           "pantherinae-jaguar-furcolor": "#FF2B2927",
@@ -220,7 +236,8 @@
           "pantherinae-jaguar-internal-eyesmask": "clear-mask",
           "pantherinae-jaguar-internal-earsmask": "ears-soft-mask",
           "pantherinae-jaguar-internal-tailmask": "clear-mask",
-          "pantherinae-jaguar-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-jaguar-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-jaguar-texturemode": "custom"
         },
         "cream": {
           "pantherinae-jaguar-furcolor": "#FFE0C790",
@@ -240,7 +257,8 @@
           "pantherinae-jaguar-internal-eyesmask": "clear-mask",
           "pantherinae-jaguar-internal-earsmask": "ears-soft-mask",
           "pantherinae-jaguar-internal-tailmask": "clear-mask",
-          "pantherinae-jaguar-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-jaguar-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-jaguar-texturemode": "custom"
         }
       }
     },
@@ -252,7 +270,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-leopard-carrymode": "paw"
+        "pantherinae-leopard-carrymode": "paw",
+        "pantherinae-leopard-texturemode": "custom"
       },
       "presets": {
         "golden": {
@@ -273,7 +292,8 @@
           "pantherinae-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-leopard-texturemode": "custom"
         },
         "melanistic": {
           "pantherinae-leopard-furcolor": "#FF302E2B",
@@ -293,7 +313,8 @@
           "pantherinae-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-leopard-texturemode": "custom"
         },
         "pale": {
           "pantherinae-leopard-furcolor": "#FFE1D2AD",
@@ -313,7 +334,8 @@
           "pantherinae-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-leopard-texturemode": "custom"
         }
       }
     },
@@ -325,7 +347,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-steppe-lion-carrymode": "paw"
+        "pantherinae-steppe-lion-carrymode": "paw",
+        "pantherinae-steppe-lion-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -346,7 +369,8 @@
           "pantherinae-steppe-lion-internal-eyesmask": "clear-mask",
           "pantherinae-steppe-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-steppe-lion-internal-tailmask": "clear-mask",
-          "pantherinae-steppe-lion-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-steppe-lion-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-steppe-lion-texturemode": "custom"
         },
         "winter": {
           "pantherinae-steppe-lion-furcolor": "#FFC8B79D",
@@ -366,7 +390,8 @@
           "pantherinae-steppe-lion-internal-eyesmask": "clear-mask",
           "pantherinae-steppe-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-steppe-lion-internal-tailmask": "clear-mask",
-          "pantherinae-steppe-lion-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-steppe-lion-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-steppe-lion-texturemode": "custom"
         },
         "sooty": {
           "pantherinae-steppe-lion-furcolor": "#FF5A5048",
@@ -386,7 +411,8 @@
           "pantherinae-steppe-lion-internal-eyesmask": "clear-mask",
           "pantherinae-steppe-lion-internal-earsmask": "ears-soft-mask",
           "pantherinae-steppe-lion-internal-tailmask": "clear-mask",
-          "pantherinae-steppe-lion-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-steppe-lion-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-steppe-lion-texturemode": "custom"
         }
       }
     },
@@ -398,7 +424,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-tiger-carrymode": "paw"
+        "pantherinae-tiger-carrymode": "paw",
+        "pantherinae-tiger-texturemode": "custom"
       },
       "presets": {
         "bengal": {
@@ -419,7 +446,8 @@
           "pantherinae-tiger-internal-eyesmask": "clear-mask",
           "pantherinae-tiger-internal-earsmask": "ears-soft-mask",
           "pantherinae-tiger-internal-tailmask": "clear-mask",
-          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-tiger-texturemode": "custom"
         },
         "white": {
           "pantherinae-tiger-furcolor": "#FFE6E3DC",
@@ -439,7 +467,8 @@
           "pantherinae-tiger-internal-eyesmask": "clear-mask",
           "pantherinae-tiger-internal-earsmask": "ears-soft-mask",
           "pantherinae-tiger-internal-tailmask": "clear-mask",
-          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-tiger-texturemode": "custom"
         },
         "golden": {
           "pantherinae-tiger-furcolor": "#FFE2AF64",
@@ -459,7 +488,8 @@
           "pantherinae-tiger-internal-eyesmask": "clear-mask",
           "pantherinae-tiger-internal-earsmask": "ears-soft-mask",
           "pantherinae-tiger-internal-tailmask": "clear-mask",
-          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-tiger-texturemode": "custom"
         },
         "sooty": {
           "pantherinae-tiger-furcolor": "#FF654B3B",
@@ -479,7 +509,8 @@
           "pantherinae-tiger-internal-eyesmask": "clear-mask",
           "pantherinae-tiger-internal-earsmask": "ears-soft-mask",
           "pantherinae-tiger-internal-tailmask": "clear-mask",
-          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-tiger-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-tiger-texturemode": "custom"
         }
       }
     },
@@ -491,7 +522,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-snow-leopard-carrymode": "paw"
+        "pantherinae-snow-leopard-carrymode": "paw",
+        "pantherinae-snow-leopard-texturemode": "custom"
       },
       "presets": {
         "classic": {
@@ -512,7 +544,8 @@
           "pantherinae-snow-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-snow-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-snow-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-snow-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-snow-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-snow-leopard-texturemode": "custom"
         },
         "pale": {
           "pantherinae-snow-leopard-furcolor": "#FFE5E2DB",
@@ -532,7 +565,8 @@
           "pantherinae-snow-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-snow-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-snow-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-snow-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-snow-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-snow-leopard-texturemode": "custom"
         },
         "slate": {
           "pantherinae-snow-leopard-furcolor": "#FF85898C",
@@ -552,7 +586,8 @@
           "pantherinae-snow-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-snow-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-snow-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-snow-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-snow-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-snow-leopard-texturemode": "custom"
         }
       }
     },
@@ -564,7 +599,8 @@
       "resetVariant": "custom",
       "preserveUnspecified": true,
       "defaultParts": {
-        "pantherinae-clouded-leopard-carrymode": "paw"
+        "pantherinae-clouded-leopard-carrymode": "paw",
+        "pantherinae-clouded-leopard-texturemode": "custom"
       },
       "presets": {
         "mainland": {
@@ -585,7 +621,8 @@
           "pantherinae-clouded-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-clouded-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-clouded-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-clouded-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-clouded-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-clouded-leopard-texturemode": "custom"
         },
         "sunda": {
           "pantherinae-clouded-leopard-furcolor": "#FF735D45",
@@ -605,7 +642,8 @@
           "pantherinae-clouded-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-clouded-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-clouded-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-clouded-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-clouded-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-clouded-leopard-texturemode": "custom"
         },
         "pale": {
           "pantherinae-clouded-leopard-furcolor": "#FFC5AE8C",
@@ -625,7 +663,8 @@
           "pantherinae-clouded-leopard-internal-eyesmask": "clear-mask",
           "pantherinae-clouded-leopard-internal-earsmask": "ears-soft-mask",
           "pantherinae-clouded-leopard-internal-tailmask": "clear-mask",
-          "pantherinae-clouded-leopard-internal-fixeddetails": "fixed-details-mask"
+          "pantherinae-clouded-leopard-internal-fixeddetails": "fixed-details-mask",
+          "pantherinae-clouded-leopard-texturemode": "custom"
         }
       }
     }

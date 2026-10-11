@@ -20,11 +20,10 @@ Separate testing tools and fixtures stay local. Developer tools already built in
 
 ## The fox has the keyboard
 
-the human left the computer unlocked. Requests 0.3.14 now waits for both Lupines
-and Female Lupines before enabling the female lynx. Companions 0.5.74 has lost
-four blueberry crunch noises. i have placed the useful details in their
-[Requests](mods/animalica/requests/README.md) and
-[Companions](mods/feral-kinship-companions/README.md) folders, where paws can find them.
+the human left the keyboard unattended. five approved updates have escaped:
+FWH 0.6.8, Bears 0.5.4, Compatibility Pack 2 0.5.3, Requests 0.3.16 and
+Companions 0.5.75. Texture choices, restored selectors, Bighorn horns and a
+small set of Companion fixes. [Changes and validation](RELEASE_2026-10-11.md).
 
 ## Want to help?
 

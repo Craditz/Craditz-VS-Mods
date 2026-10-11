@@ -24,9 +24,8 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
     private List<FoxPackMemberPacket> VisibleRoster(FoxPackStatePacket current) =>
         (current?.Members ?? new List<FoxPackMemberPacket>()).Where(member => rosterFilter switch
         {
-            "Healthy" => member.MaxHealth > 0 && member.CurrentHealth >= member.MaxHealth - 0.01f
-                && !IsArchivableStatus(member.Status),
-            "Injured" => member.MaxHealth > 0 && member.CurrentHealth < member.MaxHealth - 0.01f,
+            "Healthy" => IsRosterHealthy(member),
+            "Injured" => IsRosterInjured(member),
             "Pregnant" => member.PregnancyActive,
             "Has backpack" => member.BackpackEquipped,
             "Needs points" => member.Points > 0,
@@ -34,6 +33,37 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             "At cart" => member.AtCart,
             _ => true
         }).ToList();
+
+    private static bool HasRosterHealthStatus(FoxPackMemberPacket member) =>
+        IsOrdinaryRosterStatus(member.Status)
+        || string.Equals(member.Status, "Mortally wounded", StringComparison.OrdinalIgnoreCase)
+        || string.Equals(member.Status, "Recovering", StringComparison.OrdinalIgnoreCase)
+        || string.Equals(member.Status, "Not currently loaded", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsRosterHealthy(FoxPackMemberPacket member) => HasRosterHealthStatus(member)
+        && member.MaxHealth > 0 && member.CurrentHealth >= member.MaxHealth - 0.01f;
+
+    private static bool IsRosterInjured(FoxPackMemberPacket member) => HasRosterHealthStatus(member)
+        && member.MaxHealth > 0 && member.CurrentHealth < member.MaxHealth - 0.01f;
+
+    private static bool CanArchiveMember(FoxPackMemberPacket member) =>
+        !member.EntityLoaded && IsArchivableStatus(member.Status);
+
+    private static string RosterConditionText(FoxPackMemberPacket member)
+    {
+        string condition = !IsOrdinaryRosterStatus(member.Status) ? FriendlyStatus(member.Status)
+            : IsRosterInjured(member) ? "Injured" : FriendlyStatus(member.Status);
+        return condition + (member.IsJuvenile ? " - child" : string.Empty);
+    }
+
+    private static FoxPackMemberPacket ResolveOverviewSelection(List<FoxPackMemberPacket> visible, ref string selectedId)
+    {
+        string previousId = selectedId;
+        FoxPackMemberPacket selected = visible.FirstOrDefault(member => member.FoxId == previousId)
+            ?? visible.FirstOrDefault();
+        selectedId = selected?.FoxId ?? string.Empty;
+        return selected;
+    }
 
     private List<FoxPackMemberPacket> VisibleArchive(FoxPackStatePacket current) =>
         (current?.ArchivedMembers ?? new List<FoxPackMemberPacket>()).Where(member => archivedFilter switch
@@ -50,6 +80,10 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
     {
         List<FoxPackMemberPacket> all = current.Members ?? new List<FoxPackMemberPacket>();
         List<FoxPackMemberPacket> visible = VisibleRoster(current);
+        FoxPackMemberPacket selected = ResolveOverviewSelection(visible, ref selectedRosterFoxId);
+        DrawChoiceButton(ctx, $"Cart radius notices: {(current.CartRadiusNotificationsEnabled ? "On" : "Off")}",
+            OverviewDetailX, ContentY + 14, OverviewDetailWidth, 32, true, current.CartRadiusNotificationsEnabled);
+        DrawText(ctx, "Pack/Work Cart enter/leave; only you.", OverviewDetailX, ContentY + 59, 12, TextMuted);
         DrawText(ctx, "Active roster", 26, ContentY + 22, 29, TextWhite);
         DrawText(ctx, "Check health, mood, requests, and readiness at a glance.", 26, ContentY + 49, 15, TextMuted);
         DrawRect(ctx, 18, OverviewTop, 260, 556, TextPanel);
@@ -57,8 +91,8 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         DrawRect(ctx, OverviewDetailX, OverviewTop, OverviewDetailWidth, 556, TextPanel);
         DrawText(ctx, "Roster summary", 30, OverviewTop + 28, 20, TextGold);
         DrawText(ctx, $"Total companions: {all.Count}", 30, OverviewTop + 64, 15, TextWhite);
-        DrawText(ctx, $"Healthy: {all.Count(m => m.MaxHealth > 0 && m.CurrentHealth >= m.MaxHealth - 0.01f)}", 30, OverviewTop + 88, 15, TextWhite);
-        DrawText(ctx, $"Injured: {all.Count(m => m.MaxHealth > 0 && m.CurrentHealth < m.MaxHealth - 0.01f)}", 30, OverviewTop + 112, 15, TextWhite);
+        DrawText(ctx, $"Healthy: {all.Count(IsRosterHealthy)}", 30, OverviewTop + 88, 15, TextWhite);
+        DrawText(ctx, $"Injured: {all.Count(IsRosterInjured)}", 30, OverviewTop + 112, 15, TextWhite);
         DrawText(ctx, $"Pregnant: {all.Count(m => m.PregnancyActive)}", 30, OverviewTop + 136, 15, TextWhite);
         DrawText(ctx, $"Backpacks: {all.Count(m => m.BackpackEquipped)}", 30, OverviewTop + 160, 15, TextWhite);
         DrawText(ctx, $"Pending requests: {all.Count(m => !string.IsNullOrWhiteSpace(m.ActiveRequest))}", 30, OverviewTop + 184, 15, TextWhite);
@@ -73,8 +107,6 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         DrawOverviewRows(ctx, visible, selectedRosterFoxId, rosterScrollOffset, false);
         DrawText(ctx, "Companion details", OverviewDetailX + 14, OverviewTop + 28, 20, TextGold);
         FoxGuiTheme.DrawSectionRule(ctx, OverviewDetailX + 14, OverviewTop + 37, OverviewDetailWidth - 28);
-        FoxPackMemberPacket selected = all.FirstOrDefault(m => m.FoxId == selectedRosterFoxId)
-            ?? visible.FirstOrDefault();
         DrawMemberDetails(ctx, selected, false);
     }
 
@@ -82,6 +114,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
     {
         List<FoxPackMemberPacket> all = current.ArchivedMembers ?? new List<FoxPackMemberPacket>();
         List<FoxPackMemberPacket> visible = VisibleArchive(current);
+        FoxPackMemberPacket selected = ResolveOverviewSelection(visible, ref selectedArchivedFoxId);
         DrawText(ctx, "Archived companions", 26, ContentY + 22, 29, TextWhite);
         DrawText(ctx, "Records of companions no longer on the active roster.", 26, ContentY + 49, 15, TextMuted);
         DrawRect(ctx, 18, OverviewTop, 260, 556, TextPanel);
@@ -103,8 +136,6 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         DrawOverviewRows(ctx, visible, selectedArchivedFoxId, archivedScrollOffset, true);
         DrawText(ctx, "Companion details", OverviewDetailX + 14, OverviewTop + 28, 20, TextGold);
         FoxGuiTheme.DrawSectionRule(ctx, OverviewDetailX + 14, OverviewTop + 37, OverviewDetailWidth - 28);
-        FoxPackMemberPacket selected = all.FirstOrDefault(m => m.FoxId == selectedArchivedFoxId)
-            ?? visible.FirstOrDefault();
         DrawMemberDetails(ctx, selected, true);
     }
 
@@ -135,8 +166,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             DrawText(ctx, archived ? FriendlyStatus(member.Status)
                     : $"Health {member.CurrentHealth:0.#}/{member.MaxHealth:0.#}  ·  {Trim(member.Mood, 14)}",
                 OverviewListX + 96, y + 61, 13, archived ? TextGold : TextWhite);
-            DrawText(ctx, archived ? "Historical record"
-                    : $"Points {member.Points}  ·  Requests {member.RequestsCompleted}/{member.RequestsGenerated}",
+            DrawText(ctx, archived ? "Historical record" : RosterConditionText(member),
                 OverviewListX + 96, y + 78, 12, TextMuted);
         }
         ctx.Restore();
@@ -180,8 +210,9 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         for (int i = 0; i < lines.Length; i++)
             DrawText(ctx, Trim(lines[i], 40), x, OverviewTop + 207 + i * 22, 13, TextWhite);
         if (!archived)
-            DrawButton(ctx, member.AtCart ? "Already at cart" : "Call to cart", x,
-                OverviewTop + 401, OverviewDetailWidth - 30, 38, member.EntityLoaded && !member.AtCart);
+            DrawButton(ctx, CanArchiveMember(member) ? "Archive companion" : member.AtCart ? "Already at cart" : "Call to cart", x,
+                OverviewTop + 401, OverviewDetailWidth - 30, 38,
+                CanArchiveMember(member) || member.EntityLoaded && !member.AtCart);
         DrawButton(ctx, archived ? "Restore record" : "Open full profile", x,
             OverviewTop + 446, OverviewDetailWidth - 30, 38,
             archived ? member.EntityLoaded && !member.Status.Contains("dead", StringComparison.OrdinalIgnoreCase)
@@ -192,11 +223,20 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
 
     private void HandleRosterOverviewClick(FoxPackStatePacket current, double x, double y)
     {
+        if (x >= OverviewDetailX && x <= OverviewDetailX + OverviewDetailWidth
+            && y >= ContentY + 14 && y <= ContentY + 46)
+        {
+            FoxGuiTheme.PlayChoice(api);
+            system.SendFoxSocialAction(sourceEntityId, FoxSocialRequestAction.SetCartRadiusNotifications,
+                (!current.CartRadiusNotificationsEnabled).ToString());
+            return;
+        }
         if (x >= 30 && x <= 266 && y >= OverviewTop + 242 && y < OverviewTop + 242 + RosterFilters.Length * 35)
         {
             int index = (int)((y - OverviewTop - 242) / 35);
             rosterFilter = RosterFilters[Math.Clamp(index, 0, RosterFilters.Length - 1)];
             rosterScrollOffset = 0;
+            ResolveOverviewSelection(VisibleRoster(current), ref selectedRosterFoxId);
             FoxGuiTheme.PlayChoice(api); Redraw(); return;
         }
         List<FoxPackMemberPacket> visible = VisibleRoster(current);
@@ -211,10 +251,14 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             }
             return;
         }
-        FoxPackMemberPacket member = (current.Members ?? new()).FirstOrDefault(m => m.FoxId == selectedRosterFoxId)
-            ?? visible.FirstOrDefault();
+        FoxPackMemberPacket member = ResolveOverviewSelection(visible, ref selectedRosterFoxId);
         if (member == null || x < OverviewDetailX + 15 || x > OverviewDetailX + OverviewDetailWidth - 15) return;
-        if (y >= OverviewTop + 401 && y <= OverviewTop + 439 && member.EntityLoaded && !member.AtCart)
+        if (y >= OverviewTop + 401 && y <= OverviewTop + 439 && CanArchiveMember(member))
+        {
+            FoxGuiTheme.PlayAction(api);
+            system.SendFoxSocialAction(sourceEntityId, FoxSocialRequestAction.ArchivePackFox, member.FoxId);
+        }
+        else if (y >= OverviewTop + 401 && y <= OverviewTop + 439 && member.EntityLoaded && !member.AtCart)
         {
             FoxGuiTheme.PlayAction(api);
             system.SendFoxSocialAction(sourceEntityId, FoxSocialRequestAction.CallPackFoxToCart, member.FoxId);
@@ -237,6 +281,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             int index = (int)((y - OverviewTop - 200) / 39);
             archivedFilter = ArchiveFilters[Math.Clamp(index, 0, ArchiveFilters.Length - 1)];
             archivedScrollOffset = 0;
+            ResolveOverviewSelection(VisibleArchive(current), ref selectedArchivedFoxId);
             FoxGuiTheme.PlayChoice(api); Redraw(); return;
         }
         List<FoxPackMemberPacket> visible = VisibleArchive(current);
@@ -251,8 +296,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             }
             return;
         }
-        FoxPackMemberPacket member = (current.ArchivedMembers ?? new()).FirstOrDefault(m => m.FoxId == selectedArchivedFoxId)
-            ?? visible.FirstOrDefault();
+        FoxPackMemberPacket member = ResolveOverviewSelection(visible, ref selectedArchivedFoxId);
         if (member == null || x < OverviewDetailX + 15 || x > OverviewDetailX + OverviewDetailWidth - 15) return;
         if (y >= OverviewTop + 446 && y <= OverviewTop + 484 && member.EntityLoaded
             && !member.Status.Contains("dead", StringComparison.OrdinalIgnoreCase))

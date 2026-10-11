@@ -1,0 +1,8 @@
+Animalica Requests 0.3.16
+
+Adds Bighorn Horns choices: None (default), Normal and Large. Large is configured
+at 1.25 times the normal horn scale.
+Guards the lynx clothing maps when Lupines or Female Lupines is absent, avoiding
+missing-model startup errors. The female lynx model requirement already shipped
+in 0.3.14; this release extends the guard to its clothing maps.
+Animalica Hooved Animals remains optional; required dependencies are unchanged.

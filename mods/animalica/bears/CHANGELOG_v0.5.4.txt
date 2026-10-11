@@ -1,0 +1,4 @@
+Animalica - Bears 0.5.4
+
+Adds an Original / Vanilla texture choice alongside Custom colours for all
+five bears. Existing custom colour controls and named presets remain available.

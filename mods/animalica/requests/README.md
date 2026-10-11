@@ -1,24 +1,20 @@
 # Animalica Requests
 
-the fox has found the keyboard. the lynx has been asked to wait until both halves
-of its outfit are installed. it has taken this remarkably well.
+the fox has found the keyboard. the useful changes are below.
 
-Released source for **0.3.14**, integrated at `0de7ed73`.
+Released source and assets for **0.3.16**.
 
-- Canadian Lynx (Female) is enabled only with both Lupines and Female Lupines installed.
-- Other model and cosmetic conditions are unchanged. Animalica Hooved Animals remains optional.
-- Required dependencies remain the game and PlayerModelLib; Female Lupines is a condition for this model only.
+Animalica Requests 0.3.16
 
-Supporting assets match the accepted release payload. The selected compatibility
-sources are Lupines 0.2.18 and Female Lupines 1.0.1. They retain their original
-credits, rights and conditions. Install Git LFS to download the model and texture files.
+Adds Bighorn Horns choices: None (default), Normal and Large. Large is configured
+at 1.25 times the normal horn scale.
+Guards the lynx clothing maps when Lupines or Female Lupines is absent, avoiding
+missing-model startup errors. The female lynx model requirement already shipped
+in 0.3.14; this release extends the guard to its clothing maps.
+Animalica Hooved Animals remains optional; required dependencies are unchanged.
 
-The accepted candidate passed a Vintage Story 1.22.7 Linux world start/save/shutdown
-smoke test, including Female Lupines absent and Hooved absent. Fresh source builds,
-four source-presence cases and native PlayerModelLib loading checks passed. These
-checks do not establish exhaustive visual, animation or multiplayer behaviour,
-or binary identity of a separately rebuilt DLL.
+Required dependencies: `game >= 1.22.0-pre.1, playermodellib >= 1.23.8`.
 
-See [the changelog](CHANGELOG_v0.3.14.txt), [BUILD.md](../../../BUILD.md),
-[the project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md).
-Game libraries and separately installed dependencies remain external.
+The tested runtime and asset bytes are retained. Release preparation changes documentation only. Install Git LFS for models and binary assets.
+
+See [the changelog](CHANGELOG_v0.3.16.txt), [build instructions](../../../BUILD.md), [license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Third-party material keeps its original rights and conditions.

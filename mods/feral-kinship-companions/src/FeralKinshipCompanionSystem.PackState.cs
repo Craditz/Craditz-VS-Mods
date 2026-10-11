@@ -96,6 +96,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
         serverChannel?.SendPacket(new FoxPackStatePacket
         {
+            CartRadiusNotificationsEnabled = packRepository?.AreCartRadiusNotificationsEnabled(owner.PlayerUID) ?? true,
             PackSize = members.Count,
             PackPoints = GetPackPoints(owner.PlayerUID),
             Members = members,
@@ -278,14 +279,26 @@ public sealed partial class FeralKinshipCompanionSystem
     private void ArchivePackFox(IServerPlayer owner, string foxId)
     {
         string ownerUid = owner.PlayerUID;
-        if (packRepository == null || !packRepository.ArchiveRecord(ownerUid, foxId))
+        if (!TryArchivePackFoxRecord(ownerUid, foxId))
         {
             SendPackState(owner, "Only unavailable companions can be archived; expedition members must return first.");
             return;
         }
 
-        packRepository.Save();
+        packRepository!.Save();
         SendPackState(owner, "Companion archived. Its history remains in Archived.");
+    }
+
+    private bool TryArchivePackFoxRecord(string ownerUid, string foxId)
+    {
+        // A stale unavailable/dead packet must never archive a loaded live
+        // original. Use its stable identity, not saved HP or provider state.
+        return packRepository?.Loaded == true
+            && packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record)
+            && record != null
+            && string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal)
+            && FindLoadedCompanionForRecovery(foxId) == null
+            && packRepository.ArchiveRecord(ownerUid, foxId);
     }
 
     private void UnarchivePackFox(IServerPlayer owner, string foxId)

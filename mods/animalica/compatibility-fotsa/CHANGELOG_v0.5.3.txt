@@ -1,0 +1,14 @@
+Animalica - Compatibility Pack 2 (FotSA) 0.5.3
+
+Restores the nineteen elephant, rhino, penguin and pangolin selectors for the
+current FotSA texture folders. Adds Original / Custom body texture choices for
+the eight Pantherinae models, including the Lion's separate body and mane controls.
+Existing source-mod gates, custom colours, presets, rigs and animations are retained.
+
+Use Elephantidae 1.0.21, Rhinocerotidae 1.0.28, Spheniscidae 1.0.18,
+Manidae 1.0.23 and Pantherinae 1.2.17 for the corresponding models. These remain
+optional providers; the manifest's required dependencies are unchanged.
+Older providers with legacy texture folders need Pack 2 0.5.2.
+
+The combined package passed scoped gameplay checks, including the tested Lion
+upgrade and restart sequence. This does not claim exhaustive checks for every model.
