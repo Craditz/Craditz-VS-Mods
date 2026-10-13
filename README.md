@@ -61,3 +61,7 @@ agreement in your pull request before it is merged.
 ## Companions 0.5.76
 
 The owner-authorized Companions release includes wellbeing/care duties, FOTSA health/breeding/bonus extensions, retained expedition/recruitment fixes and ambient sound reduction. See [the changelog](mods/feral-kinship-companions/CHANGELOG_v0.5.76.md) and [release record](RELEASE_2026-10-13.md) for defaults and pending tests. Other mod versions are unchanged.
+
+## Companions 0.5.77 physics hotfix
+
+The minimal physics hotfix guards the companion safety prefix against partially initialized bodies and missing input/diagnostic references. The existing 0.5.76 features and assets remain. See [changes and qualification limits](mods/feral-kinship-companions/CHANGELOG_v0.5.77.md).

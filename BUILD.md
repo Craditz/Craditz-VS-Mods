@@ -125,3 +125,7 @@ Keep downloadable release ZIPs as separate release assets.
 ### October 13 Companions release
 
 Companions 0.5.76 derives from approved private Sound1 production source. The two unused offline suspension prototype/probe files are excluded; production retained suspension, existing developer features, assets and notices remain. The public project keeps its repository-relative shared-source links. Its final DLL is rebuilt and separately verified; prior private-DLL evidence is not relabelled as public-DLL gameplay acceptance. Set DOTNET_GENERATE_ASPNET_CERTIFICATE=false, DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1 and DOTNET_CLI_TELEMETRY_OPTOUT=1 before building in a fresh CLI home.
+
+### Companions 0.5.77 physics hotfix
+
+This release preserves the 0.5.76 project and external references and changes only the physics safety wrapper and release metadata. Use the first-run certificate suppression above. Separate private test fixtures remain excluded from source and packages.

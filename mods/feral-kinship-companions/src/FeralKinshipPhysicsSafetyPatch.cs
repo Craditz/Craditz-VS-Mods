@@ -30,12 +30,35 @@ internal static class FeralKinshipPhysicsSafetyPatch
         EntityPos pos,
         EntityControls controls)
     {
-        Entity? entity = __instance.Entity;
-        if (entity?.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>() == null)
+        // Passive projectile bodies share physics infrastructure but are not
+        // companions. Never call GetBehavior on an unrelated/initializing body:
+        // native GetBehavior dereferences a nullable SidedProperties result.
+        if (__instance?.Entity is not EntityAgent entity
+            || pos?.Motion == null || controls?.WalkVector == null || controls.FlyVector == null)
         {
             return;
         }
 
+        try
+        {
+            IWorldAccessor? world = entity.World;
+            EntityProperties? properties = entity.Properties;
+            if (world == null || properties == null) return;
+            EntitySidedProperties? sided = world.Side == EnumAppSide.Client ? properties.Client : properties.Server;
+            if (sided?.Behaviors == null
+                || !sided.Behaviors.Any(behavior => behavior is EntityBehaviorFeralKinshipFoxSocial)) return;
+            ApplyCompanionInputs(entity, pos, controls);
+        }
+        catch (Exception)
+        {
+            // This best-effort repair/diagnostic prefix must not interrupt a
+            // shared physics worker. Native ApplyTests still runs normally;
+            // no native exception or retained-Away gate is suppressed here.
+        }
+    }
+
+    private static void ApplyCompanionInputs(Entity entity, EntityPos pos, EntityControls controls)
+    {
         bool repaired = false;
         if (!IsFinite(pos.Motion))
         {
