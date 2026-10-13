@@ -207,7 +207,7 @@ internal sealed class GuiElementFeralKinshipWhistleSurface : GuiElementFeralKins
         DrawText(ctx, "Choose a command, then blow the whistle to apply it nearby.", 24, 58, 15, TextMuted);
 
         string selected = system.GetClientWhistleCommand();
-        FoxGuiTheme.DrawPanel(ctx, 18, 72, width - 36, 58, !string.IsNullOrWhiteSpace(selected));
+        FoxGuiTheme.DrawPanel(ctx, 18, 72, width - 36, 66, !string.IsNullOrWhiteSpace(selected));
         DrawText(ctx,
             CompanionWhistleCommand.IsValid(selected)
                 ? $"Selected command: {CompanionWhistleCommand.DisplayName(selected)}"
@@ -216,7 +216,7 @@ internal sealed class GuiElementFeralKinshipWhistleSurface : GuiElementFeralKins
             99,
             17,
             CompanionWhistleCommand.IsValid(selected) ? TextGold : TextWhite);
-        DrawText(ctx, "Owned PetAI pets receive the closest matching command; risk settings only affect Companions.", 32, 119, 12, TextMuted);
+        CompanionGuiParagraph.Draw(ctx, "Owned PetAI pets receive the closest matching command; risk settings only affect Companions.", 32, 107, width - 64, 29, 12, TextMuted);
 
         DrawChoiceButton(ctx, "Usual commands", 18, 140, 323, 34, activeTab == "commands");
         DrawChoiceButton(ctx, "Duties", 359, 140, 323, 34, activeTab == "duties");
@@ -251,7 +251,7 @@ internal sealed class GuiElementFeralKinshipWhistleSurface : GuiElementFeralKins
         DrawWrapped(ctx, hoverDetails, 32, 620, width - 64, 17, TextGold, 2);
         DrawText(ctx, "Select a command to close this menu, then right-click the whistle.", 32, 676, 13, TextWhite);
         DrawButton(ctx, "Clear selection", 18, 690, 202, 38, string.IsNullOrWhiteSpace(selected));
-        DrawText(ctx, "Clearing returns the whistle to PetAI's normal command behavior.", 236, 714, 13, TextMuted);
+        CompanionGuiParagraph.Draw(ctx, "Clearing returns the whistle to PetAI's normal command behavior.", 236, 690, width - 254, 38, 13, TextMuted);
     }
 
     private void DrawDuties(Context ctx, int width)
@@ -299,7 +299,7 @@ internal sealed class GuiElementFeralKinshipWhistleSurface : GuiElementFeralKins
             ctx.Rectangle(x + 5, y + 5, 12, 12);
             ctx.Fill();
         }
-        DrawText(ctx, label, x + 30, y + 17, 14, checkedValue ? TextWhite : TextMuted);
+        DrawText(ctx, label, x + 30, y + 17, 14, checkedValue ? TextWhite : TextMuted, 160);
     }
 
     private static int FindDutyOption(double x, double y)
@@ -403,51 +403,23 @@ internal sealed class GuiElementFeralKinshipWhistleSurface : GuiElementFeralKins
             ctx.Rectangle(x, y, 4, height);
             ctx.Fill();
         }
-        DrawText(ctx, label, x + 12, y + height / 2 + 6, 15, selected ? TextGold : TextWhite);
+        DrawText(ctx, label, x + 12, y + height / 2 + 6, 15, selected ? TextGold : TextWhite, width - 24);
     }
 
     private static void DrawButton(Context ctx, string label, double x, double y, double width, double height, bool disabled)
     {
         FoxGuiTheme.DrawButtonSurface(ctx, x, y, width, height, !disabled);
-        DrawText(ctx, label, x + 12, y + height / 2 + 6, 15, disabled ? TextMuted : TextWhite);
+        DrawText(ctx, label, x + 12, y + height / 2 + 6, 15, disabled ? TextMuted : TextWhite, width - 24);
     }
 
     private static void DrawWrapped(Context ctx, string text, double x, double baseline, double maxWidth, double lineHeight, double[] color, int maxLines)
     {
-        string[] words = text
-            .Replace("\r", " ")
-            .Replace("\n", " ")
-            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        string line = string.Empty;
-        int lineCount = 0;
-        foreach (string word in words)
-        {
-            string next = string.IsNullOrEmpty(line) ? word : line + " " + word;
-            if (FeralKinshipCompanionUiSettings.GetTextWidth(next, 14) > maxWidth
-                && !string.IsNullOrEmpty(line))
-            {
-                if (lineCount++ >= maxLines) return;
-                DrawText(ctx, line, x, baseline + (lineCount - 1) * lineHeight * FeralKinshipCompanionUiSettings.TextScale, 14, color);
-                line = word;
-            }
-            else
-            {
-                line = next;
-            }
-        }
-        if (!string.IsNullOrEmpty(line) && lineCount < maxLines)
-        {
-            DrawText(ctx, line, x, baseline + lineCount * lineHeight * FeralKinshipCompanionUiSettings.TextScale, 14, color);
-        }
+        CompanionGuiParagraph.Draw(ctx, text, x, baseline - 14, maxWidth, lineHeight * maxLines, 14, color);
     }
 
-    private static void DrawText(Context ctx, string text, double x, double baseline, double size, double[] color)
+    private static void DrawText(Context ctx, string text, double x, double baseline, double size, double[] color, double maxWidth = double.NaN)
     {
-        CairoFont font = CairoFont.WhiteSmallText().WithFontSize((float)FeralKinshipCompanionUiSettings.ScaleFont(size));
-        font.Color = color;
-        font.SetupContext(ctx);
-        ctx.MoveTo(x, baseline);
-        ctx.ShowText(text ?? string.Empty);
-        font.Dispose();
+        GuiElementCompanionMoodDetails.Text(ctx, text ?? string.Empty, x, baseline, size, color,
+            double.IsNaN(maxWidth) ? Math.Max(1, 682 - x) : maxWidth);
     }
 }

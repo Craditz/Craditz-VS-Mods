@@ -50,6 +50,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial
     private string pendingCompanionBackpackTitle = string.Empty;
     private bool pendingCompanionBackpackRefresh;
     private bool companionBackpackRefreshQueued;
+    private long companionBackpackRefreshGeneration;
 
     internal InventoryGeneric? CompanionBackpackEquipment => companionBackpackEquipment;
     internal InventoryGeneric? CompanionBackpackContents => companionBackpackContents;
@@ -234,10 +235,13 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial
 
     internal void OpenCompanionBackpackClient(ItemStack? stack, bool locked, string title)
     {
+        if (entity.Api is not ICoreClientAPI capi || !CompanionBackpackClientAvailable(capi))
+        {
+            CancelCompanionBackpackRefresh();
+            return;
+        }
         InitializeCompanionBackpack();
         if (companionBackpackEquipment == null) return;
-
-        ICoreClientAPI capi = (ICoreClientAPI)entity.Api;
         if (companionBackpackDialog?.IsOpened() == true
             && !capi.World.Player.InventoryManager.MouseItemSlot.Empty)
         {
@@ -259,33 +263,78 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial
         ApplyCompanionBackpackClientState(capi, stack, locked, title);
     }
 
+    // A deferred GUI projection never owns the native/server inventory. Its
+    // generation and retained trip prevent stale work crossing disposal or trips.
+    internal bool CompanionBackpackClientAvailable(ICoreClientAPI capi)
+    {
+        try
+        {
+            return ReferenceEquals(entity.Api, capi) && capi.Side == EnumAppSide.Client
+                && entity.Alive && !entity.ShouldDespawn
+                && ReferenceEquals(capi.World.GetEntityById(entity.EntityId), entity)
+                && !FeralKinshipCompanionSystem.IsFoxAwayFromWorld(entity)
+                && RetainedNativeSuspension.Marker(entity)?.GetString("phase") != "Leaving";
+        }
+        catch { return false; } // Unreadable native identity never opens cargo.
+    }
+
+    private void CancelCompanionBackpackRefresh()
+    {
+        unchecked { companionBackpackRefreshGeneration++; }
+        companionBackpackRefreshQueued = false;
+        pendingCompanionBackpackRefresh = false;
+        pendingCompanionBackpackStack = null;
+    }
+
     private void QueueCompanionBackpackRefresh(ICoreClientAPI capi)
     {
+        if (!CompanionBackpackClientAvailable(capi))
+        {
+            CancelCompanionBackpackRefresh();
+            return;
+        }
         if (companionBackpackRefreshQueued) return;
         companionBackpackRefreshQueued = true;
-        capi.Event.RegisterCallback(_ =>
+        long generation = companionBackpackRefreshGeneration;
+        string? trip = RetainedNativeSuspension.Marker(entity)?.GetString("trip");
+        try
         {
-            companionBackpackRefreshQueued = false;
-            if (!pendingCompanionBackpackRefresh
-                || companionBackpackDialog?.IsOpened() != true)
+            capi.Event.RegisterCallback(_ =>
             {
+                if (generation != companionBackpackRefreshGeneration) return;
+                companionBackpackRefreshQueued = false;
+                if (!CompanionBackpackClientAvailable(capi)
+                    || trip != RetainedNativeSuspension.Marker(entity)?.GetString("trip"))
+                {
+                    CancelCompanionBackpackRefresh();
+                    return;
+                }
+                if (!pendingCompanionBackpackRefresh
+                    || companionBackpackDialog?.IsOpened() != true)
+                {
+                    pendingCompanionBackpackRefresh = false;
+                    pendingCompanionBackpackStack = null;
+                    return;
+                }
+                if (!capi.World.Player.InventoryManager.MouseItemSlot.Empty)
+                {
+                    QueueCompanionBackpackRefresh(capi);
+                    return;
+                }
+
+                ItemStack? pendingStack = pendingCompanionBackpackStack;
+                bool pendingLocked = pendingCompanionBackpackLocked;
+                string pendingTitle = pendingCompanionBackpackTitle;
                 pendingCompanionBackpackRefresh = false;
                 pendingCompanionBackpackStack = null;
-                return;
-            }
-            if (!capi.World.Player.InventoryManager.MouseItemSlot.Empty)
-            {
-                QueueCompanionBackpackRefresh(capi);
-                return;
-            }
-
-            ItemStack? pendingStack = pendingCompanionBackpackStack;
-            bool pendingLocked = pendingCompanionBackpackLocked;
-            string pendingTitle = pendingCompanionBackpackTitle;
-            pendingCompanionBackpackRefresh = false;
-            pendingCompanionBackpackStack = null;
-            ApplyCompanionBackpackClientState(capi, pendingStack, pendingLocked, pendingTitle);
-        }, 100);
+                ApplyCompanionBackpackClientState(capi, pendingStack, pendingLocked, pendingTitle);
+            }, 100);
+        }
+        catch
+        {
+            if (generation == companionBackpackRefreshGeneration) CancelCompanionBackpackRefresh();
+            throw;
+        }
     }
 
     private void ApplyCompanionBackpackClientState(
@@ -294,7 +343,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial
         bool locked,
         string title)
     {
-        if (companionBackpackEquipment == null) return;
+        if (!CompanionBackpackClientAvailable(capi) || companionBackpackEquipment == null) return;
 
         rebuildingCompanionBackpack = true;
         companionBackpackEquipment[0].Itemstack = stack;
@@ -368,6 +417,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial
 
     private void DisposeCompanionBackpack()
     {
+        CancelCompanionBackpackRefresh();
         if (entity.Api.Side == EnumAppSide.Server)
         {
             System.Collections.Generic.IEnumerable<string> equipmentViewers =

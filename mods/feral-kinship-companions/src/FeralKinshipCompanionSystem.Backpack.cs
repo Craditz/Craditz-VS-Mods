@@ -152,6 +152,7 @@ public sealed partial class FeralKinshipCompanionSystem
     internal bool CanPlayerUseCompanionBackpack(IServerPlayer player, Entity entity)
     {
         return entity.Alive
+            && !IsFoxAwayFromWorld(entity)
             && IsTamedFox(entity)
             && !IsCompanionJuvenile(entity)
             && !IsFoxIncapacitated(entity)
@@ -181,6 +182,7 @@ public sealed partial class FeralKinshipCompanionSystem
     private void OnCompanionBackpackState(CompanionBackpackStatePacket packet)
     {
         if (clientApi?.World.GetEntityById(packet.TargetEntityId) is not Entity entity) return;
+        if (IsFoxAwayFromWorld(entity) || RetainedNativeSuspension.Marker(entity)?.GetString("phase") == "Leaving") return;
         ItemStack? stack = null;
         if (packet.BackpackItem?.Length > 0)
         {
@@ -730,6 +732,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
     internal void OnBackpackDeliveryArrived(Entity companion)
     {
+        if (!BackpackDeliveryBodyAvailable(companion)) return;
         if (!IsBackpackDeliveryActive(companion)) return;
         ITreeAttribute status = GetDomesticationStatus(companion, true)!;
         string phase = status.GetString(BackpackDeliveryPhaseKey, string.Empty);
@@ -755,7 +758,7 @@ public sealed partial class FeralKinshipCompanionSystem
         BlockPos storagePos,
         string source)
     {
-        if (serverApi == null) return -1;
+        if (serverApi == null || !BackpackDeliveryBodyAvailable(companion)) return -1;
         FoxPackAmenityRecord? routingRecord = packRepository?.GetAmenity(storagePos);
         if (routingRecord == null
             || !string.Equals(routingRecord.OwnerUid, GetCompanionOwnerUid(companion), StringComparison.Ordinal)
@@ -810,8 +813,26 @@ public sealed partial class FeralKinshipCompanionSystem
         return movedTotal;
     }
 
+    // Asynchronous delivery work may outlive its original caller. It must not
+    // touch retained cargo, cancel the job, or act on a reused native ID.
+    private bool BackpackDeliveryBodyAvailable(Entity companion)
+    {
+        if (serverApi == null
+            || !ReferenceEquals(serverApi.World.GetEntityById(companion.EntityId), companion)
+            || IsFoxAwayFromWorld(companion)) return false;
+        ITreeAttribute? marker = RetainedNativeSuspension.Marker(companion);
+        if (marker == null) return true;
+        string foxId = GetDomesticationStatus(companion)?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
+        return marker.GetString("phase") == "Complete" && marker.GetBool("outcomeApplied")
+            && RetainedNativeSuspension.SafeSnapshot(companion)
+            && packRepository?.Loaded == true
+            && packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record) && record != null
+            && record.RetainedPhase == "Complete" && RetainedNativeSuspension.Matches(companion, record);
+    }
+
     private void ProcessUnloadedBackpackUnload(Entity companion)
     {
+        if (!BackpackDeliveryBodyAvailable(companion)) return;
         if (!IsBackpackDeliveryActive(companion) || serverApi == null) return;
         ITreeAttribute status = GetDomesticationStatus(companion, true)!;
         if (!string.Equals(
@@ -890,6 +911,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
     internal bool UpdateBackpackDelivery(Entity companion)
     {
+        if (!BackpackDeliveryBodyAvailable(companion)) return false;
         if (!IsBackpackDeliveryActive(companion)) return false;
         ITreeAttribute status = GetDomesticationStatus(companion, true)!;
         if (!companion.Alive || IsFoxIncapacitated(companion))
@@ -1370,6 +1392,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void ResumeBackpackDeliveryAfterChunkWake(Entity companion, string details)
     {
+        if (!BackpackDeliveryBodyAvailable(companion)) return;
         if (!IsBackpackDeliveryActive(companion)) return;
         LogBackpackDelivery(companion, "chunk-wake-resumed", details);
         ITreeAttribute? status = GetDomesticationStatus(companion);

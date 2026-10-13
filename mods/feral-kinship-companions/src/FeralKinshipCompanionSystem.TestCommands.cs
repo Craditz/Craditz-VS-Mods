@@ -15,6 +15,12 @@ public sealed partial class FeralKinshipCompanionSystem
     private void RegisterDeveloperSpawnCommands(ICoreServerAPI api)
     {
         var parsers = api.ChatCommands.Parsers;
+        api.ChatCommands.Create("companionfoodlist")
+            .WithDescription("Read-only: list nearby owned companion's accepted foods, eligible favorites and saved favorite. Optional page and display filter.")
+            .RequiresPlayer()
+            .RequiresPrivilege(Privilege.chat)
+            .WithArgs(parsers.OptionalWord("page"), parsers.OptionalWord("display-filter"))
+            .HandleWith(OnCompanionFoodListCommand);
         api.ChatCommands.Create("companionspawnfoxtaming")
             .WithDescription("Spawn an owned, tamed Fox Taming fox for Companion testing.")
             .RequiresPlayer()

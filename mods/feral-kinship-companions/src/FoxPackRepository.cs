@@ -21,7 +21,7 @@ internal sealed partial class FoxPackRepository
     private const string LegacyPointsSaveKey = "feralkinshipcompanions:fox-pack-points";
     private const string LegacyNextNumberSaveKey = "feralkinshipcompanions:next-fox-number";
     internal const int BaseExpeditionCapacity = 2;
-    private const int CurrentVersion = 33;
+    private const int CurrentVersion = CompanionLedgerSchema.RecruitmentLedgerVersion;
     private const int MaximumExpeditionReportHistory = 50;
 
     private readonly ICoreServerAPI api;
@@ -60,6 +60,7 @@ internal sealed partial class FoxPackRepository
     {
         Loaded = false;
         recordsById.Clear();
+        wellbeingHomes.Clear();
         pointsByOwner.Clear();
         lootByOwner.Clear();
         expeditionsById.Clear();
@@ -81,15 +82,24 @@ internal sealed partial class FoxPackRepository
         MigratedExpeditionData = false;
         MigratedRetiredRoutes = false;
 
-        FoxPackSaveData? saved = api.WorldManager.SaveGame.GetData<FoxPackSaveData?>(SaveKey, null);
-        if (saved?.Version > CurrentVersion)
+        byte[]? raw = api.WorldManager.SaveGame.GetData(SaveKey);
+        if (!CompanionLedgerSchema.CanDecode(raw, out int? rawVersion))
         {
-            api.Logger.Error(
-                "[FeralKinshipCompanions] Companion pack save version {0} is newer than supported version {1}. "
-                + "The pack ledger will remain read-only so newer data is not overwritten.",
-                saved.Version,
-                CurrentVersion
-            );
+            api.Logger.Error("[FeralKinshipCompanions] Unsupported or malformed companion ledger authority ({0}); preserved read-only before payload decoding. Held journals47-49 are never migrated; retained50/51 and scoped52 use explicit base authority.", rawVersion);
+            return;
+        }
+        FoxPackSaveData? saved;
+        try { saved = api.WorldManager.SaveGame.GetData<FoxPackSaveData?>(SaveKey, null); }
+        catch (Exception error)
+        {
+            api.Logger.Error("[FeralKinshipCompanions] Companion ledger decode failed ({0}); preserved read-only.", error.GetType().Name);
+            return;
+        }
+        if ((raw == null && saved != null) || (raw != null && rawVersion != saved?.Version)
+            || (saved != null && (!CompanionLedgerSchema.SupportedHere(saved.Version)
+                || !CompanionRecruitmentPersistence.Restore(saved))))
+        {
+            api.Logger.Error("[FeralKinshipCompanions] Companion ledger or recruitment section authority is inconsistent; preserved read-only without receipt migration.");
             return;
         }
 
@@ -119,11 +129,14 @@ internal sealed partial class FoxPackRepository
             return;
         }
 
+        var pendingRewards = recruitmentRewardsByOwner.OrderBy(pair => pair.Key)
+            .SelectMany(pair => pair.Value).ToList();
         api.WorldManager.SaveGame.StoreData(
             SaveKey,
             new FoxPackSaveData
             {
                 Version = CurrentVersion,
+                WellbeingHomes = wellbeingHomes.Values.OrderBy(home => home.OwnerUid).ToList(),
                 NextFoxNumber = nextFoxNumber,
                 Records = recordsById.Values
                     .OrderBy(record => record.OwnerUid)
@@ -155,10 +168,8 @@ internal sealed partial class FoxPackRepository
                     .ThenBy(site => site.SiteId)
                     .ToList(),
                 NextScavengeSiteSequence = nextScavengeSiteSequence,
-                RecruitmentRewards = recruitmentRewardsByOwner
-                    .OrderBy(pair => pair.Key)
-                    .SelectMany(pair => pair.Value)
-                    .ToList(),
+                RecruitmentRewards = pendingRewards,
+                RecruitmentExtension = CompanionRecruitmentPersistence.Capture(pendingRewards),
                 Cairns = cairnsByPosition.Values
                     .OrderBy(record => record.OwnerUid)
                     .ThenBy(record => record.PlacedSequence)
@@ -238,15 +249,21 @@ internal sealed partial class FoxPackRepository
             Y = pos.Y,
             Z = pos.Z,
             Dimension = pos.dimension,
-            PlacedSequence = nextCairnSequence++
+            PlacedSequence = nextCairnSequence++,
+            IsPackCart = api.World.BlockAccessor.GetBlock(pos).Code?.Domain == "feralkinshipcompanions"
+                && api.World.BlockAccessor.GetBlock(pos).Code?.Path.StartsWith("packcart", StringComparison.Ordinal) == true
         };
         cairnsByPosition[key] = record;
+        if (record.IsPackCart) MarkWellbeingHomeEstablished(ownerUid);
         return record;
     }
 
     public bool RemoveCairn(BlockPos pos)
     {
-        return cairnsByPosition.Remove(PositionKey(pos.X, pos.Y, pos.Z, pos.dimension));
+        string key = PositionKey(pos.X, pos.Y, pos.Z, pos.dimension);
+        if (cairnsByPosition.TryGetValue(key, out var record) && record.IsPackCart)
+            MarkWellbeingHomeEstablished(record.OwnerUid);
+        return cairnsByPosition.Remove(key);
     }
 
     public FoxPackCairnRecord? GetCairn(BlockPos pos)
@@ -793,6 +810,42 @@ internal sealed partial class FoxPackRepository
         return recordsById.Values.ToList();
     }
 
+    // Pure bounded lookup for first admission. A missing copied FoxId must not
+    // conceal an existing retained/archived record for this exact native ID.
+    internal bool TryGetPendingAdmissionRecord(long nativeId, string foxId, out FoxPackRecordV2? linked)
+    {
+        linked = null;
+        if (recordsById.Count > 8192) return false;
+        foreach (KeyValuePair<string, FoxPackRecordV2> pair in recordsById)
+        {
+            FoxPackRecordV2 record = pair.Value;
+            if (record.EntityId != nativeId && (string.IsNullOrEmpty(foxId)
+                || pair.Key != foxId && record.FoxId != foxId)) continue;
+            if (linked != null || pair.Key != record.FoxId) return false;
+            linked = record;
+        }
+        return true;
+    }
+
+    internal bool TryHasPendingAdmissionExpedition(string ownerUid, string foxId, out bool assigned)
+    {
+        assigned = false;
+        if (expeditionsById.Count > 1024) return false;
+        int memberBudget = 8192;
+        foreach (FoxExpeditionRecord expedition in expeditionsById.Values)
+        {
+            if (expedition.SelectedFoxIds == null) return false;
+            memberBudget -= expedition.SelectedFoxIds.Count;
+            if (memberBudget < 0) return false;
+            if (expedition.OwnerUid == ownerUid && expedition.SelectedFoxIds.Contains(foxId, StringComparer.Ordinal))
+            {
+                assigned = true;
+                return true;
+            }
+        }
+        return true;
+    }
+
     public IReadOnlyList<FoxPackRecordV2> GetArchivedRecordsForOwner(string ownerUid)
     {
         return recordsById.Values
@@ -973,7 +1026,7 @@ internal sealed partial class FoxPackRepository
             : null;
     }
 
-    public void SetPendingRecruitment(string ownerUid, string speciesId, string wildEntityCode)
+    public void SetPendingRecruitment(string ownerUid, string speciesId, string wildEntityCode, string tameEntityCode = "")
     {
         if (string.IsNullOrWhiteSpace(ownerUid))
         {
@@ -991,6 +1044,8 @@ internal sealed partial class FoxPackRepository
         }
         rewards.Add(new FoxRecruitmentRewardRecord
         {
+            ClaimFoxId = Guid.NewGuid().ToString("N"),
+            TameEntityCode = tameEntityCode,
             OwnerUid = ownerUid,
             SpeciesId = string.IsNullOrWhiteSpace(speciesId) ? "fox" : speciesId,
             WildEntityCode = wildEntityCode ?? string.Empty,
@@ -1011,6 +1066,19 @@ internal sealed partial class FoxPackRepository
         {
             recruitmentRewardsByOwner.Remove(ownerUid);
         }
+    }
+
+    public void ClearRecruitmentReceipt(string ownerUid, string claimFoxId)
+    {
+        if (string.IsNullOrWhiteSpace(claimFoxId)
+            || !recruitmentRewardsByOwner.TryGetValue(ownerUid, out List<FoxRecruitmentRewardRecord>? rewards))
+        {
+            return;
+        }
+        int index = rewards.FindIndex(reward => string.Equals(reward.ClaimFoxId, claimFoxId, StringComparison.Ordinal));
+        if (index < 0) return;
+        rewards.RemoveAt(index);
+        if (rewards.Count == 0) recruitmentRewardsByOwner.Remove(ownerUid);
     }
 
     public IReadOnlyList<byte[]> GetLootBytes(string ownerUid)
@@ -1686,7 +1754,7 @@ internal sealed partial class FoxPackRepository
                 record.FinishedMushroomsEnabled = true;
                 record.DutyOptionsInitialized = true;
             }
-            if (saved.Version < 24)
+            if (CompanionRecruitmentPersistence.EffectiveBaseVersion(saved) < 24)
             {
                 record.GeneralStorageSortingEnabled = true;
             }
@@ -1728,7 +1796,7 @@ internal sealed partial class FoxPackRepository
                 continue;
             site.TotalVisits = Math.Clamp(site.TotalVisits, 1, 12);
             site.RemainingVisits = Math.Clamp(site.RemainingVisits, 0, site.TotalVisits);
-            if (saved.Version < 32) FoxScavengeSites.ExpandLegacyUnknowableVisits(site);
+            if (CompanionRecruitmentPersistence.EffectiveBaseVersion(saved) < 32) FoxScavengeSites.ExpandLegacyUnknowableVisits(site);
             site.Clues ??= new List<string>();
             site.RevealedClues = Math.Clamp(site.RevealedClues, 0, site.Clues.Count);
             scavengeSitesById[site.SiteId] = site;
@@ -1803,6 +1871,7 @@ internal sealed partial class FoxPackRepository
         {
             if (!string.IsNullOrWhiteSpace(reward.OwnerUid))
             {
+                if (string.IsNullOrWhiteSpace(reward.ClaimFoxId)) reward.ClaimFoxId = Guid.NewGuid().ToString("N");
                 if (string.IsNullOrWhiteSpace(reward.SpeciesId)) reward.SpeciesId = "fox";
                 if (string.IsNullOrWhiteSpace(reward.WildEntityCode)
                     && string.Equals(reward.SpeciesId, "fox", StringComparison.Ordinal))
@@ -1825,7 +1894,7 @@ internal sealed partial class FoxPackRepository
                 continue;
             }
 
-            if (saved.Version < 31)
+            if (CompanionRecruitmentPersistence.EffectiveBaseVersion(saved) < 31)
             {
                 int refund = (progress.UnlockedExpeditionTypes ?? new List<string>())
                     .Distinct(StringComparer.Ordinal)
@@ -1873,6 +1942,14 @@ internal sealed partial class FoxPackRepository
             }
         }
 
+        foreach (var home in saved.WellbeingHomes ?? new List<CompanionOwnerHomeRecord>())
+        {
+            if (!string.IsNullOrWhiteSpace(home.OwnerUid))
+            {
+                var target = GetWellbeingHome(home.OwnerUid);
+                target.EverEstablished |= home.EverEstablished;
+            }
+        }
         foreach (FoxPackCairnRecord cairn in saved.Cairns ?? new List<FoxPackCairnRecord>())
         {
             if (string.IsNullOrWhiteSpace(cairn.OwnerUid) || cairn.PlacedSequence <= 0)
@@ -1881,6 +1958,7 @@ internal sealed partial class FoxPackRepository
             }
 
             cairnsByPosition[PositionKey(cairn.X, cairn.Y, cairn.Z, cairn.Dimension)] = cairn;
+            if (cairn.IsPackCart) MarkWellbeingHomeEstablished(cairn.OwnerUid);
             nextCairnSequence = Math.Max(nextCairnSequence, cairn.PlacedSequence + 1);
         }
 

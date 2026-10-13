@@ -43,6 +43,14 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
     private bool hasSourceIdleSoundTasks;
     private string[] sourceSoundIdleTaskJson = Array.Empty<string>();
     private readonly CompanionSourceIdleEligibilityGate sourceIdleEligibilityGate = new();
+    private bool initializedHealthPending;
+    private float initializedCurrentHealth;
+    private float initializedMaxHealth;
+    private bool initializedHealthAccounting;
+    private float initializedExpectedNativeHealth;
+    private double initializedRealHealthDelta;
+    private int initializedNativeHealthDepth;
+    private bool initializedHealthInvalid;
 
     public EntityBehaviorFeralKinshipFoxSocial(Entity entity) : base(entity)
     {
@@ -51,6 +59,25 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
     public override void Initialize(EntityProperties properties, JsonObject attributes)
     {
         base.Initialize(properties, attributes);
+        if (entity.Api.Side == EnumAppSide.Server) FeralKinshipCompanionSystem.EnsureFotsaJuvenileMetadata(entity);
+        // All behaviors initialize before their AfterInitialized callbacks.
+        // Preserve saved/native injury before PetAI restores transient modifiers
+        // and can replace both the effective maximum and full current health.
+        ITreeAttribute? health = entity.WatchedAttributes.GetTreeAttribute("health");
+        // New conversions receive ownership after spawn. Their registration
+        // must use live post-spawn health, including any intervening injury.
+        initializedHealthPending = entity.Api.Side == EnumAppSide.Server && health != null
+            && FeralKinshipCompanionSystem.IsTamedFox(entity);
+        if (initializedHealthPending)
+        {
+            initializedCurrentHealth = health!.GetFloat("currenthealth");
+            initializedMaxHealth = health.GetFloat("maxhealth");
+            initializedHealthAccounting = RetainedNativeSuspension.HealthInitializationAccountingEnabled;
+            initializedExpectedNativeHealth = initializedCurrentHealth;
+            initializedRealHealthDelta = 0;
+            initializedNativeHealthDepth = 0;
+            initializedHealthInvalid = false;
+        }
         EnsureJuvenileSafety();
         // A full snow layer on the upper side of a one-block rise adds 1/8
         // block to the effective step. Keep the companion's physics step
@@ -75,7 +102,14 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
             entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()
                 .ClearWorkCartLoggingDisplay(entity);
 
-            if (CompanionBreedingCatalog.TryGetForJuvenile(entity, out CompanionBreedingDefinition juvenileDefinition)
+            if (CompanionFotsaBreedingCatalog.TryGetGrowth(entity.Code, out _))
+            {
+                // Tamables installs its source baby AI after Initialize. Add
+                // juvenile commands after that handoff; aquatic babies retain
+                // their water-confined source commands and growth intact.
+                companionTaskReinstallAtMs = entity.World.ElapsedMilliseconds + 500;
+            }
+            else if (CompanionBreedingCatalog.TryGetForJuvenile(entity, out CompanionBreedingDefinition juvenileDefinition)
                 && CompanionBreedingCatalog.TryGetSpeciesProfile(juvenileDefinition.SpeciesId, out CompanionSpeciesProfile juvenileProfile))
             {
                 InstallJuvenileCommandTasks(juvenileProfile);
@@ -98,6 +132,65 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
                 InstallCompanionTasks();
             }
         }
+    }
+
+    internal bool TryPeekInitializedHealth(out float currentHealth)
+    {
+        currentHealth = initializedHealthPending ? ReadInitializedHealth() : initializedCurrentHealth;
+        return initializedHealthPending;
+    }
+
+    internal bool TryTakeInitializedHealth(out float currentHealth, out float maxHealth)
+    {
+        currentHealth = initializedHealthPending ? ReadInitializedHealth() : initializedCurrentHealth;
+        maxHealth = initializedMaxHealth;
+        bool pending = initializedHealthPending;
+        initializedHealthPending = false;
+        return pending;
+    }
+
+    internal bool TracksInitializedHealthChanges => initializedHealthAccounting;
+    internal bool NeedsInitializedHealthAccounting => initializedHealthPending && initializedHealthAccounting;
+
+    // The pinned native maximum recalculation can refill a full bar without a
+    // heal. Count HP changes between those calls, never their artificial refill.
+    // Both Peek and Take use this projection, so Away admission cannot impose
+    // a second, stale cap after consuming the first-load snapshot.
+    internal void BeginInitializedNativeHealthUpdate(float currentHealth)
+    {
+        if (initializedNativeHealthDepth == 0)
+        {
+            if (!float.IsFinite(currentHealth)) initializedHealthInvalid = true;
+            else initializedRealHealthDelta += (double)currentHealth - initializedExpectedNativeHealth;
+        }
+        initializedNativeHealthDepth++;
+    }
+
+    internal void EndInitializedNativeHealthUpdate(float currentHealth)
+    {
+        if (initializedNativeHealthDepth <= 0) { initializedHealthInvalid = true; return; }
+        initializedNativeHealthDepth--;
+        if (initializedNativeHealthDepth == 0)
+        {
+            if (!float.IsFinite(currentHealth)) initializedHealthInvalid = true;
+            else initializedExpectedNativeHealth = currentHealth;
+        }
+    }
+
+    internal void InvalidateInitializedHealth() => initializedHealthInvalid = true;
+
+    private float ReadInitializedHealth()
+    {
+        if (!initializedHealthAccounting) return initializedCurrentHealth;
+        if (initializedHealthInvalid || initializedNativeHealthDepth != 0)
+            throw new InvalidOperationException("First-load health recalculation is incomplete or failed");
+        float live = entity.GetBehavior<EntityBehaviorHealth>()?.Health
+            ?? throw new InvalidOperationException("First-load native health is unavailable");
+        double adjusted = initializedCurrentHealth + initializedRealHealthDelta
+            + ((double)live - initializedExpectedNativeHealth);
+        if (!float.IsFinite(live) || !double.IsFinite(adjusted) || adjusted > float.MaxValue)
+            throw new InvalidOperationException("First-load native health is invalid");
+        return (float)Math.Max(0, adjusted);
     }
 
     private void EnsureJuvenileSafety()
@@ -181,6 +274,8 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
             {"code":"feralkinshipmoodidle","priority":1.36,"priorityForCancel":1.36,"minduration":6000,"maxduration":12000,"mincooldown":8000,"maxcooldown":18000},
             {"code":"feralkinshipfetchdroppeditem","routeStorage":true,"priority":1.40,"priorityForCancel":1.40,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshippackidle","priority":1.361,"priorityForCancel":1.361,"animation":"{{walk}}","animationSpeed":2.0},
+            {"code":"feralkinshipfertilizer","priority":1.3635,"priorityForCancel":1.3635,"animation":"{{walk}}","animationSpeed":2.2},
+            {"code":"feralkinshiptroughrefill","priority":1.3634,"priorityForCancel":1.3634,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshipmowgrass","priority":1.362,"priorityForCancel":1.362,"animation":"{{walk}}","animationSpeed":2.0},
             {"code":"feralkinshipreturntoden","stormMode":false,"priority":1.75,"priorityForCancel":1.75,"movespeed":0.018,"territoryDistance":36,"animation":"{{walk}}","animationSpeed":2.0},
             {"code":"feralkinshipseekfood","emergencyOnly":false,"priority":1.74,"priorityForCancel":1.74,"movespeed":0.018,"animation":"{{walk}}","animationSpeed":2.0},
@@ -484,6 +579,8 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
             {"code":"feralkinshipreturntoden","dayTerritoryMode":true,"priority":1.37,"priorityForCancel":1.37,"movespeed":0.02,"territoryDistance":36,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshipfetchdroppeditem","dutyCoordinator":true,"priority":1.3655,"priorityForCancel":1.3655,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshiplogging","priority":1.3645,"priorityForCancel":1.3645,"animation":"{{walk}}","animationSpeed":2.2},
+            {"code":"feralkinshipfertilizer","priority":1.3635,"priorityForCancel":1.3635,"animation":"{{walk}}","animationSpeed":2.2},
+            {"code":"feralkinshiptroughrefill","priority":1.3634,"priorityForCancel":1.3634,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshipmowgrass","priority":1.362,"priorityForCancel":1.362,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshippackidle","priority":1.361,"priorityForCancel":1.361,"animation":"{{walk}}","animationSpeed":2.0},
             {"code":"feralkinshipmoodidle","priority":1.36,"priorityForCancel":1.36,"minduration":6000,"maxduration":12000,"mincooldown":8000,"maxcooldown":18000},
@@ -704,7 +801,12 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
             && entity.World.ElapsedMilliseconds >= companionTaskReinstallAtMs)
         {
             companionTaskReinstallAtMs = 0;
-            if (FeralKinshipCompanionSystem.TryGetCompanionSpecies(entity, out CompanionSpeciesProfile profile)
+            if (CompanionFotsaBreedingCatalog.TryGetGrowth(entity.Code, out _))
+            {
+                if (!FeralKinshipCompanionSystem.IsFotsaAquatic(entity.Properties))
+                    InstallJuvenileCommandTasks(CompanionSpeciesCatalog.TamablesFotsa);
+            }
+            else if (FeralKinshipCompanionSystem.TryGetCompanionSpecies(entity, out CompanionSpeciesProfile profile)
                 && profile.UsesExternalPetAiTaskSet)
             {
                 InstallCompanionTasks();
@@ -779,7 +881,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
 
         long nowMs = entity.World.ElapsedMilliseconds;
         return sourceIdleEligibilityGate.CanStart(
-            taskAllowed,
+            taskAllowed && GetSystem().CanStartSourceAmbientSound(agent),
             IsSourceIdleSoundAmbientBlocked(agent),
             nowMs,
             () => entity.World.Rand.Next(0, 12001));
@@ -819,6 +921,17 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
         entity.LightHsv = lightBeforeFoxfire;
         lightBeforeFoxfire = null;
         foxfireApplied = false;
+    }
+
+    internal bool CopyRetainedOriginalBoxes(ITreeAttribute marker)
+    {
+        if(!expeditionSuspended)return false;
+        Cuboidf?[] boxes={savedCollisionBox,savedOriginCollisionBox,savedSelectionBox,savedOriginSelectionBox};
+        if(boxes.Any(b=>b==null||b.X2<=b.X1||b.Y2<=b.Y1||b.Z2<=b.Z1))return false;
+        for(int i=0;i<boxes.Length;i++) {
+            Cuboidf b=boxes[i]!;marker["box"+i]=new FloatArrayAttribute(new[]{b.X1,b.Y1,b.Z1,b.X2,b.Y2,b.Z2});
+        }
+        marker.SetInt("state",(int)savedServerState);return true;
     }
 
     internal void RefreshExpeditionSuspension()
@@ -869,7 +982,13 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
         }
 
         expeditionSuspended = shouldSuspend;
+        if (!shouldSuspend && RetainedNativeSuspension.NativeAuthority(entity))
+            RetainedNativeSuspension.RestoreBoxes(entity);
     }
+
+    // The retained adapter restores the persisted native boxes under its gate.
+    // This local latch must be reset before scheduler/physics admission opens.
+    internal void EndRetainedSuspension() => expeditionSuspended = false;
 
     public override void OnEntityDespawn(EntityDespawnData despawn)
     {

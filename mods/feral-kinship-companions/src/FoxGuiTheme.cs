@@ -202,12 +202,7 @@ internal static class FoxGuiTheme
     public static void DrawWindowControls(Context ctx, ICoreClientAPI api, double width)
     {
         FeralKinshipCompanionUiSettings.EnsureLoaded(api);
-        DrawButtonSurface(ctx, ThemeButtonX(width), 5, 54, 29, true);
-        DrawButtonSurface(ctx, FontMinusButtonX(width), 5, 54, 29, true);
-        DrawButtonSurface(ctx, FontPlusButtonX(width), 5, 54, 29, true);
-        DrawFixedControlText(ctx, "Style", ThemeButtonX(width) + 8, 24, 12, palette.Text);
-        DrawFixedControlText(ctx, "Font-", FontMinusButtonX(width) + 8, 24, 12, Palette.Text);
-        DrawFixedControlText(ctx, "Font+", FontPlusButtonX(width) + 8, 24, 12, Palette.Text);
+        DrawAppearanceControls(ctx, width);
 
         double crossSize = 15;
         double menuSize = 17;
@@ -224,6 +219,17 @@ internal static class FoxGuiTheme
         api.Gui.Icons.DrawCross(ctx, crossX, iconY, 2, crossSize);
         api.Gui.Icons.Drawmenuicon_svg(ctx, (int)menuX, (int)iconY + 1, (int)menuSize, (int)menuSize, Palette.Text);
         ctx.Operator = Operator.Over;
+    }
+
+    internal static void DrawAppearanceControls(Context ctx, double width)
+    {
+        DrawButtonSurface(ctx, ThemeButtonX(width), 5, 54, 29, true);
+        DrawButtonSurface(ctx, FontMinusButtonX(width), 5, 54, 29, true);
+        DrawButtonSurface(ctx, FontPlusButtonX(width), 5, 54, 29, true);
+        DrawFixedControlText(ctx, "Style", ThemeButtonX(width) + 8, 24, 12, palette.Text);
+        DrawFixedControlText(ctx, "Font-", FontMinusButtonX(width) + 8, 24, 12, Palette.Text);
+        DrawFixedControlText(ctx, "Font+", FontPlusButtonX(width) + 8, 24, 12, Palette.Text);
+
     }
 
     private static void DrawFixedControlText(Context ctx, string text, double x, double baseline, double size, double[] color)

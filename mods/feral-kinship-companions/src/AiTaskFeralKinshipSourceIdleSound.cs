@@ -17,7 +17,7 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
     private readonly AssetLocation? sourceSound;
     private readonly int configuredDelayMs;
     private long runGeneration;
-    private bool initialSoundPending;
+    private bool playedThisRun;
 
     public AiTaskFeralKinshipSourceIdleSound(EntityAgent entity, JsonObject taskConfig, JsonObject aiConfig)
         : base(entity, taskConfig, aiConfig)
@@ -29,11 +29,13 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
                 .WithPathPrefixOnce("sounds/");
         }
         configuredDelayMs = (int)Math.Clamp(soundStartMs, 0, int.MaxValue);
+        entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>().PrepareSourceAmbientSound(entity);
     }
 
     public override void StartExecute()
     {
         long generation = ++runGeneration;
+        playedThisRun = false;
         bool shouldStartSound = sourceSound != null
             && entity.World.Rand.NextDouble() <= soundChance;
         base.StartExecute();
@@ -43,7 +45,6 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
             return;
         }
 
-        initialSoundPending = true;
         // A zero-delay callback lets explicit AiTaskManager.ExecuteTask calls
         // finish assigning their slot before the active-slot check runs.
         entity.World.RegisterCallback(_ => PlayIfCurrent(generation), configuredDelayMs);
@@ -51,14 +52,7 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
 
     public override bool ContinueExecute(float dt)
     {
-        if (sourceSound != null
-            && !initialSoundPending
-            && soundRepeatMs > 0
-            && entity.World.ElapsedMilliseconds - lastSoundTotalMs > soundRepeatMs)
-        {
-            PlayIfCurrent(runGeneration);
-        }
-
+        // Source durations and conditions remain; each run emits at most once.
         return base.ContinueExecute(dt);
     }
 
@@ -66,7 +60,6 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
     {
         // TaskManager still exposes the active slot while this runs.
         runGeneration++;
-        initialSoundPending = false;
         base.FinishExecute(cancelled);
     }
 
@@ -75,12 +68,12 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
         // The engine notifies tasks of despawn without necessarily calling
         // FinishExecute or clearing the active slot.
         runGeneration++;
-        initialSoundPending = false;
         base.OnEntityDespawn(despawn);
     }
 
     private void PlayIfCurrent(long callbackGeneration)
     {
+        if (FeralKinshipCompanionSystem.IsFoxAwayFromWorld(entity)) return;
         EntityBehaviorTaskAI? taskBehavior = entity.GetBehavior<EntityBehaviorTaskAI>();
         AiTaskManager? taskManager = taskBehavior?.TaskManager;
         bool activeSlot = taskManager != null
@@ -102,7 +95,9 @@ public sealed class AiTaskFeralKinshipSourceIdleSound : AiTaskIdle
             return;
         }
 
-        initialSoundPending = false;
+        if (playedThisRun || !entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()
+                .TryPlaySourceAmbientSound(entity)) return;
+        playedThisRun = true;
         entity.World.PlaySoundAt(
             sourceSound,
             entity.Pos.X,

@@ -1,25 +1,31 @@
-# Feral Kinship Companions
+# Feral Kinship Companions 0.5.76
 
-the fox has found the keyboard. the useful changes are below.
+Source and matching assets for the owner-authorized 0.5.76 release.
 
-Released source and assets for **0.5.75**.
-
-Feral Kinship Companions 0.5.75
-
-Adds a Cart radius notices toggle, with the preference retained across restart.
-Fixes roster selection when filters hide the selected row, Locate completion
-status, dead-record archival and recoverable missing-provider ledger records.
-Provider recovery retains the existing record and does not spawn a replacement animal.
-Fixes production milestone credit while preserving existing reward amounts.
-
-Scoped gameplay and independent source checks passed. Native first and repeat
-refractory firing, milestone persistence and a full restart passed. Broader
-production coverage and physical provider-animal survival are not claimed.
+This update fixes fresh-tame admission/naming and retained expedition/return
+handling, adds source-derived provider recruitment, wellbeing Care Cards and
+opt-in care duties, extends FOTSA health/breeding/expedition bonuses, and reduces
+ambient barking and howling. The complete delta and configurable defaults are
+in [CHANGELOG_v0.5.76.md](CHANGELOG_v0.5.76.md).
 
 Required dependencies: `game >= 1.22.0, feralkinship >= 0.4.3`.
+Feral Kinship is a separate required mod. Optional animal providers retain
+their own requirements; compatibility does not bundle provider DLLs.
 
-Feral Kinship remains a separate required mod. Recovery preserves ledger records; it does not spawn provider animals.
+The owner authorized this release while accepting pending listening,
+multiplayer audio, natural return and broader physical-fall/provider checks.
+The public DLL is rebuilt and separately audited. Prior private Sound1 test
+results are evidence for that private DLL, not live acceptance of this rebuild.
+Offline native fixtures use mocked world boundaries.
 
-The tested runtime and asset bytes are retained. Release preparation changes documentation and the manifest version only. Install Git LFS for models and binary assets.
+Client-native and server-task ambient cooldowns are separate per-animal
+budgets. Warning, panic, hurt/death, combat, commands and whistles retain their
+own paths. Extra care duties are opt-in; IdleSounds retains its existing scope.
 
-See [the changelog](CHANGELOG_v0.5.75.md), [build instructions](../../BUILD.md), [license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Third-party material keeps its original rights and conditions.
+The 0.5.75 Cart radius toggle, filtered roster, Locate, provider/dead-record and
+production milestone fixes remain. See [its historical changelog](CHANGELOG_v0.5.75.md).
+
+Install Git LFS for model and binary source assets. Build instructions are in
+[BUILD.md](../../BUILD.md). The [license](../../LICENSE), contribution terms,
+[third-party notices](../../THIRD_PARTY_NOTICES.md) and sound credits are retained;
+third-party material keeps its original rights and conditions.

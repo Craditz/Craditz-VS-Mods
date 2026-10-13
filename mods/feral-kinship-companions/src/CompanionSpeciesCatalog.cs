@@ -36,7 +36,9 @@ internal sealed class CompanionRecruitmentVariant
         string displayName,
         string? typeId = null,
         string? genderId = null,
-        float weight = 1f)
+        float weight = 1f,
+        string? tameEntityCode = null,
+        string? familyId = null)
     {
         Id = id;
         EntityCode = entityCode;
@@ -44,6 +46,8 @@ internal sealed class CompanionRecruitmentVariant
         TypeId = typeId;
         GenderId = genderId;
         Weight = weight;
+        TameEntityCode = tameEntityCode;
+        FamilyId = familyId;
     }
 
     public string Id { get; }
@@ -52,6 +56,8 @@ internal sealed class CompanionRecruitmentVariant
     public string? TypeId { get; }
     public string? GenderId { get; }
     public float Weight { get; }
+    public string? TameEntityCode { get; }
+    public string? FamilyId { get; }
 }
 
 internal sealed class CompanionSpeciesProfile
@@ -615,6 +621,7 @@ internal static class CompanionSpeciesCatalog
         out CompanionSpeciesProfile profile,
         out CompanionRecruitmentVariant variant)
     {
+        if (CompanionNativeRecruitmentCatalog.TryGet(entityCode, out profile, out variant)) return true;
         if (TryGetByWildRecruitmentEntityCode(entityCode, out profile))
         {
             foreach (CompanionRecruitmentVariant candidate in profile.RecruitmentVariants)

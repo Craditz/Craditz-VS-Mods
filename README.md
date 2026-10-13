@@ -57,3 +57,7 @@ Contributions are welcome under [CONTRIBUTING.md](CONTRIBUTING.md). You keep
 ownership of your contribution, while giving [Craditz](https://github.com/Craditz) the
 right to grant commercial permissions upfront. Please affirm the contribution
 agreement in your pull request before it is merged.
+
+## Companions 0.5.76
+
+The owner-authorized Companions release includes wellbeing/care duties, FOTSA health/breeding/bonus extensions, retained expedition/recruitment fixes and ambient sound reduction. See [the changelog](mods/feral-kinship-companions/CHANGELOG_v0.5.76.md) and [release record](RELEASE_2026-10-13.md) for defaults and pending tests. Other mod versions are unchanged.

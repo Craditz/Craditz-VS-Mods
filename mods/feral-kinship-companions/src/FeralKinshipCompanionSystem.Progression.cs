@@ -46,13 +46,14 @@ public sealed partial class FeralKinshipCompanionSystem
         return AwardCompanionExperienceExact(companion, awarded);
     }
 
-    private int AwardCompanionExperienceExact(Entity companion, int amount, bool announceLevelUp = true)
+    private int AwardCompanionExperienceExact(Entity companion, int amount, bool announceLevelUp = true, bool wellbeingEligible = true)
     {
         if (amount <= 0 || packRepository?.Loaded != true)
         {
             return 0;
         }
 
+        if (!PrepareRetainedProgressAward(companion)) return 0;
         ITreeAttribute? status = GetDomesticationStatus(companion, true);
         if (status == null)
         {
@@ -61,15 +62,17 @@ public sealed partial class FeralKinshipCompanionSystem
 
         int oldLevel = GetCompanionLevel(status);
         long oldCurrent = GetCompanionCurrentExperience(status);
+        long oldLifetime = GetCompanionLifetimeExperience(status);
         ProgressionResult result = CompanionProgressionRules.AddExperience(oldLevel, oldCurrent, amount);
         status.SetInt(CompanionLevelKey, result.Level);
         status.SetLong(CompanionCurrentExperienceKey, result.CurrentExperience);
         status.SetLong(
             CompanionLifetimeExperienceKey,
-            CompanionProgressionRules.SaturatingAdd(GetCompanionLifetimeExperience(status), amount));
+            CompanionProgressionRules.SaturatingAdd(oldLifetime, amount));
 
         if (result.LevelsGained > 0)
         {
+            CreditWellbeingProgress(companion, result.Level, wellbeingEligible);
             AwardIndividualTalentPoints(companion, status, result.LevelsGained);
             string ownerUid = GetCompanionOwnerUid(companion);
             if (!string.IsNullOrWhiteSpace(ownerUid))
@@ -101,7 +104,9 @@ public sealed partial class FeralKinshipCompanionSystem
         }
 
         MarkSocialStateDirty(companion);
+        SyncRetainedProgressFromBody(companion);
         RegisterFoxInPack(companion);
+        if (result.LevelsGained > 0 && wellbeingEligible) packRepository.Save();
         SendStateToOwner(companion, string.Empty);
         SendPackStateToOwner(companion);
         return amount;
@@ -123,6 +128,7 @@ public sealed partial class FeralKinshipCompanionSystem
         record.LifetimeExperience = CompanionProgressionRules.SaturatingAdd(record.LifetimeExperience, amount);
         if (result.LevelsGained > 0)
         {
+            CreditWellbeingProgress(record, result.Level, true);
             if (record.IsJuvenile)
             {
                 record.BankedTalentPoints = SaturatingPointAdd(
@@ -135,6 +141,7 @@ public sealed partial class FeralKinshipCompanionSystem
             record.LifetimePoints = SaturatingPointAdd(record.LifetimePoints, result.LevelsGained);
             packRepository.AdjustPackPoints(record.OwnerUid, result.LevelsGained);
         }
+        if (result.LevelsGained > 0) packRepository.Save();
         return amount;
     }
 
@@ -170,11 +177,12 @@ public sealed partial class FeralKinshipCompanionSystem
         }
     }
 
-    internal void RecordCleanupDutyUnit(Entity companion)
+    internal void RecordCleanupDutyUnit(Entity companion, bool selfProvisioning = false, double exertion = 1)
     {
         if (IsCompanionJuvenile(companion)) return;
         ITreeAttribute? status = GetDomesticationStatus(companion, true);
         if (status == null) return;
+        RecordWellbeingDuty(companion, exertion, selfProvisioning);
         int units = Math.Clamp(status.GetInt(CleanupDutyUnitsKey, 0), 0,
             CompanionProgressionRules.CleanupActionsPerExperience - 1) + 1;
         if (units >= CompanionProgressionRules.CleanupActionsPerExperience)
@@ -187,8 +195,12 @@ public sealed partial class FeralKinshipCompanionSystem
         RegisterFoxInPack(companion);
     }
 
-    internal void AwardDutyExperience(Entity companion, int baseExperience) =>
+    internal void AwardDutyExperience(Entity companion, int baseExperience, bool selfProvisioning = false, double? exertion = null)
+    {
+        RecordWellbeingDuty(companion, exertion ?? Math.Clamp(baseExperience / 2d, 1, 5), selfProvisioning,
+            baseExperience >= 10 ? "Completed logging job" : "Completed chore");
         AwardCompanionExperience(companion, baseExperience);
+    }
 
     private void AddExperienceDeveloper(Entity companion, IServerPlayer owner, bool advanceLevel)
     {
@@ -200,7 +212,7 @@ public sealed partial class FeralKinshipCompanionSystem
                 Math.Max(1L, CompanionProgressionRules.GetRequiredExperience(GetCompanionLevel(status))
                     - GetCompanionCurrentExperience(status)))
             : 100;
-        AwardCompanionExperienceExact(companion, amount);
+        AwardCompanionExperienceExact(companion, amount, wellbeingEligible: false);
         packRepository?.Save();
         SendState(companion, owner, advanceLevel
             ? $"Developer progression: advanced to level {GetCompanionLevel(status)}."
@@ -293,7 +305,7 @@ public sealed partial class FeralKinshipCompanionSystem
         AwardCompanionExperienceExact(
             adult,
             CompanionProgressionRules.AdulthoodExperience,
-            announceLevelUp: false);
+            announceLevelUp: false, wellbeingEligible: false);
     }
 
     internal void RecordProgressionCombatDamage(Entity target, DamageSource source, float positiveDamage)

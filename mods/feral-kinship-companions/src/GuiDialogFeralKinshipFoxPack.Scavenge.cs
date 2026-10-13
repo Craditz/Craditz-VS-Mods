@@ -142,7 +142,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             if (selected) DrawText(ctx, "✓", 44, y + 25, 16, TextDark);
             animalArt.DrawFace(ctx, member.SpeciesId, member.AppearanceCode, 68, y + 3, 32, member.EntityId, member.FoxId);
             DrawText(ctx, Trim(labels[member.FoxId], 22), 108, y + 18, 14, eligible ? TextWhite : TextMuted);
-            DrawText(ctx, eligible ? CompanionSpeciesTraits.Get(member.SpeciesId)?.Name ?? "Available" : "Unavailable",
+        DrawText(ctx, eligible ? CompanionSpeciesTraits.Get(FotsaSpeciesBonusCatalog.Resolve(member.SpeciesId, member.AppearanceCode))?.Name ?? "Available" : "Unavailable",
                 108, y + 34, 11, TextMuted);
         }
         ctx.Restore();

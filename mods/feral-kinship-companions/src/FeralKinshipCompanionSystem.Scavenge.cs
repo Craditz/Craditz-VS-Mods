@@ -63,6 +63,7 @@ public sealed partial class FeralKinshipCompanionSystem
             return new ExpeditionResolution("The scouts could not complete their report.");
 
         string report;
+        bool objectiveSucceeded = false;
         if (expedition.ScavengeSiteId > 0)
         {
             if (!packRepository.TryGetScavengeSite(
@@ -73,6 +74,7 @@ public sealed partial class FeralKinshipCompanionSystem
             }
             else
             {
+                objectiveSucceeded = true;
                 FoxScavengeSites.ApplyScout(site, expedition.ScoutDuration, serverApi.World.Rand,
                     expedition.ScoutInformationBonus);
                 report = $"Scouts revisited {FoxScavengeSites.DisplayLabel(site)}. "
@@ -106,6 +108,7 @@ public sealed partial class FeralKinshipCompanionSystem
             }
             else
             {
+                objectiveSucceeded = true;
                 FoxScavengeSites.ApplyScout(site, expedition.ScoutDuration, serverApi.World.Rand,
                     expedition.ScoutInformationBonus);
                 report = $"The scouts discovered {FoxScavengeSites.DisplayLabel(site)}. "
@@ -118,7 +121,7 @@ public sealed partial class FeralKinshipCompanionSystem
         }
         QueueExpeditionReturns(expedition.OwnerUid,
             expedition.SelectedFoxIds.Select(id => (id, "Returned healthy")), "expedition.return_normal");
-        return new ExpeditionResolution(report);
+        return new ExpeditionResolution(report, objectiveSucceeded: objectiveSucceeded);
     }
 
     private ExpeditionResolution ResolveScavengeSite(FoxExpeditionRecord expedition)
@@ -276,7 +279,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (site.RemainingVisits <= 0) description += " The site appears barren.";
         return new ExpeditionResolution(description
             + (incidentReport.Length > 0 ? " " + incidentReport : "")
-            + ScavengeLateNote(expedition, site, itemCount));
+            + ScavengeLateNote(expedition, site, itemCount), objectiveSucceeded: !endedEarly);
     }
 
     private string ScavengeLateNote(FoxExpeditionRecord expedition, FoxScavengeSiteRecord site,

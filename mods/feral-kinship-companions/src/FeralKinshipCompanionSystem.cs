@@ -884,12 +884,26 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             .RegisterMessageType<CompanionBackpackRequestPacket>()
             .RegisterMessageType<CompanionBackpackStatePacket>()
             .RegisterMessageType<DeveloperCartInspectionRequestPacket>()
-            .RegisterMessageType<DeveloperCartInspectionStatePacket>();
+            .RegisterMessageType<DeveloperCartInspectionStatePacket>()
+            .RegisterMessageType<CompanionWellbeingReadRequest>()
+            .RegisterMessageType<CompanionWellbeingReadResponse>()
+            .RegisterMessageType<CompanionAmbientSoundSettingsPacket>();
     }
 
     public override void AssetsFinalize(ICoreAPI api)
     {
         api.EntityTagRegistry.TryCreateTagSetAndLogIssues(out animalTag, "animal");
+        // Client entity packets omit Server behavior definitions. In integrated
+        // single-player both sides share these static catalogs, so rebuilding
+        // from client types would erase the validated server reproduction data.
+        // The Social UI receives BreedingSupported in the existing server packet.
+        if (api.Side == EnumAppSide.Server)
+        {
+            CompanionNativeRecruitmentCatalog.Initialize(api.World.EntityTypes);
+            var unavailableBreeding = CompanionFotsaBreedingCatalog.Initialize(api.World.EntityTypes);
+            foreach (var entry in unavailableBreeding)
+                api.Logger.Warning("[FeralKinshipCompanions] FOTSA breeding unavailable for {0}: {1}.", entry.Key, entry.Value);
+        }
         ApplyCompanionOverlays(api);
     }
 
@@ -993,6 +1007,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         physicsSafetyHarmony = new Harmony("feralkinshipcompanions.physics-safety");
         physicsSafetyHarmony.PatchAll(typeof(FeralKinshipPhysicsSafetyPatch).Assembly);
         FeralKinshipMortalWoundRecoveryPatch.Install(physicsSafetyHarmony, api.Logger);
+        RetainedNativeSuspension.Start();
         AiTaskRegistry.Register<AiTaskFeralKinshipMoodIdle>("feralkinshipmoodidle");
         AiTaskRegistry.Register<AiTaskFeralKinshipSourceIdleSound>("feralkinshipsourceidle");
         AiTaskRegistry.Register<AiTaskFeralKinshipFollowIdle>("feralkinshipfollowidle");
@@ -1005,6 +1020,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         AiTaskRegistry.Register<AiTaskFeralKinshipFetchDroppedItem>("feralkinshipfetchdroppeditem");
         AiTaskRegistry.Register<AiTaskFeralKinshipLogging>("feralkinshiplogging");
         AiTaskRegistry.Register<AiTaskFeralKinshipMowGrass>("feralkinshipmowgrass");
+        AiTaskRegistry.Register<AiTaskFeralKinshipFertilizer>("feralkinshipfertilizer");
+        AiTaskRegistry.Register<AiTaskFeralKinshipTroughRefill>("feralkinshiptroughrefill");
         AiTaskRegistry.Register<AiTaskFeralKinshipBlueberryMode>("feralkinshipblueberrymode");
         AiTaskRegistry.Register<AiTaskFeralKinshipClearSnow>("feralkinshipclearsnow");
         AiTaskRegistry.Register<AiTaskFeralKinshipFollowMaster>("feralkinshipfollowmaster");
@@ -1036,7 +1053,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             .SetMessageHandler<BrambleRequestPacket>(OnBrambleRequest)
             .SetMessageHandler<CompanionRecoveryRequestPacket>(OnCompanionRecoveryRequest)
             .SetMessageHandler<CompanionBackpackRequestPacket>(OnCompanionBackpackRequest)
-            .SetMessageHandler<DeveloperCartInspectionRequestPacket>(OnDeveloperCartInspectionRequest);
+            .SetMessageHandler<DeveloperCartInspectionRequestPacket>(OnDeveloperCartInspectionRequest)
+            .SetMessageHandler<CompanionWellbeingReadRequest>(OnWellbeingReadRequest);
 
         api.Event.OnPlayerInteractEntity += OnPlayerInteractEntity;
         api.Event.DidPlaceBlock += OnPlayerDidPlaceBlock;
@@ -1178,6 +1196,18 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     public override void StartClientSide(ICoreClientAPI api)
     {
         clientApi = api;
+        nativeAmbientSoundHarmony = new Harmony("feralkinshipcompanions.native-ambient-sounds");
+        try
+        {
+            FeralKinshipNativeAmbientSoundPatch.Install(nativeAmbientSoundHarmony);
+        }
+        catch (Exception exception)
+        {
+            nativeAmbientSoundHarmony.UnpatchAll("feralkinshipcompanions.native-ambient-sounds");
+            nativeAmbientSoundHarmony = null;
+            api.Logger.Error("[FeralKinshipCompanions] Native ambient sound reduction unavailable; source-task limits remain active. {0}", exception.Message);
+        }
+        RetainedNativeSuspension.Start();
         LoadBrambleDialogue(api);
         clientLevelFinalized = false;
         FeralKinshipPetAiNamePromptPatch.TryApply(api);
@@ -1199,6 +1229,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             .SetMessageHandler<FoxSocialStatePacket>(OnFoxSocialState);
         clientChannel.SetMessageHandler<FoxPerkStatePacket>(OnFoxPerkState);
         clientChannel.SetMessageHandler<FoxPackStatePacket>(OnFoxPackState);
+        clientChannel.SetMessageHandler<CompanionWellbeingReadResponse>(OnWellbeingReadResponse);
         clientChannel.SetMessageHandler<FoxPackOpenFromCairnPacket>(OnFoxPackOpenFromCairn);
         clientChannel.SetMessageHandler<DeveloperCartInspectionStatePacket>(OnDeveloperCartInspectionState);
         clientChannel.SetMessageHandler<FoxBedAssignmentStatePacket>(OnFoxBedAssignmentState);
@@ -1206,6 +1237,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         clientChannel.SetMessageHandler<TrainingDummyStatePacket>(OnTrainingDummyState);
         clientChannel.SetMessageHandler<CompanionSoundPacket>(OnCompanionSound);
         clientChannel.SetMessageHandler<CompanionSpatialSoundPacket>(OnCompanionSpatialSound);
+        clientChannel.SetMessageHandler<CompanionAmbientSoundSettingsPacket>(OnAmbientSoundSettings);
         clientChannel.SetMessageHandler<CompanionThoughtPacket>(OnCompanionThought);
         clientChannel.SetMessageHandler<CompanionDeveloperOpenPacket>(OnCompanionDeveloperOpen);
         clientChannel.SetMessageHandler<CompanionNameSuggestionPacket>(OnCompanionNameSuggestion);
@@ -1217,12 +1249,16 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void Dispose()
     {
+        nativeAmbientSoundHarmony?.UnpatchAll("feralkinshipcompanions.native-ambient-sounds");
+        nativeAmbientSoundHarmony = null;
+        ResetRetainedOriginalLoading();
         if (serverApi != null) CompanionNavigation.ClearDoorTransits(serverApi.World);
         brambleRepository?.Save();
         dialogueService = null;
         FeralKinshipPetAiNamePromptPatch.Remove();
         physicsSafetyHarmony?.UnpatchAll("feralkinshipcompanions.physics-safety");
         physicsSafetyHarmony = null;
+        RetainedNativeSuspension.Stop();
 
         if (clientApi != null)
         {
@@ -1321,6 +1357,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         packRepository = null;
         brambleRepository = null;
         loadedFoxes.Clear();
+        retainedAdmissionBodies.Clear();
+        retainedLoadedHealthApplied.Clear();
+        ClearPendingCompanionAdmissions();
         undergroundRecoveryDetectedAtMs.Clear();
         undergroundRecoveryNextAttemptAtMs.Clear();
         nextUndergroundRecoveryScanAtMs = 0;
@@ -1687,6 +1726,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             status.SetBool(MowLawnEnabledKey, mowLawn);
             status.SetBool(FinishedProductsEnabledKey, finishedProducts);
             status.SetBool(FinishedCropsEnabledKey, CompanionDuty.IsSet(dutyMask, CompanionDuty.FinishedCropsBit));
+            // Whistle masks cannot express the separate reseeding preference.
+            // Preserve it for every bulk order, including Clear duties. The
+            // crop-gathering gates pause work until harvesting is enabled again.
             status.SetBool(FinishedBerriesEnabledKey, CompanionDuty.IsSet(dutyMask, CompanionDuty.FinishedBerriesBit));
             status.SetBool(FinishedMushroomsEnabledKey, CompanionDuty.IsSet(dutyMask, CompanionDuty.FinishedMushroomsBit));
             status.SetBool(FlowerRemovalEnabledKey, flowerRemoval);
@@ -1694,6 +1736,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             status.SetBool(CharcoalShovelingEnabledKey, charcoalShoveling);
             status.SetBool(SnowballCollectionEnabledKey, snowballCollection);
             status.SetBool(GeneralStorageSortingEnabledKey, storageSorting);
+            // Clear must pause this independent opt-in; other masks cannot enable it.
+            if (dutyMask == 0) status.SetBool(CompanionDuty.OptionKey(CompanionDuty.TroughRefill), false);
             MarkSocialStateDirty(companion);
             RegisterFoxInPack(companion);
             string dutyEvent = dutyMask == 0 ? "command.clear_duties"
@@ -2426,6 +2470,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private static void PlaySoundAtEntity(Entity entity, string sound, float volume, float range = 24f, float pitch = 1f)
     {
+        if (IsFoxAwayFromWorld(entity)) return;
         entity.World.PlaySoundAt(new AssetLocation(sound), entity, null, pitch, range, volume);
     }
 
@@ -2505,6 +2550,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnSaveGameLoaded()
     {
+        ResetRetainedOriginalLoading();
         if (serverApi == null)
         {
             return;
@@ -2557,7 +2603,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         RefreshLoadedFoxPackRecords();
+        RefreshRetainedSourceLocations();
         packRepository.Save();
+        retainedSourceCheckpointPending=false;
         brambleRepository?.Save();
     }
 
@@ -2589,6 +2637,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnPlayerDisconnect(IServerPlayer player)
     {
+        if (packRepository?.Loaded == true)
+            foreach (var record in packRepository.GetRecordsForOwner(player.PlayerUID))
+            {
+                wellbeingTripSamples.Remove(record.FoxId);
+                wellbeingSafetySamples.Remove(record.EntityId);
+            }
         RebaseOwnerCompanionFoodClocks(player.PlayerUID);
         brambleReadyPendingOwners.Remove(player.PlayerUID);
         idleTestCommandsByOwner.Remove(player.PlayerUID);
@@ -2672,6 +2726,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnPlayerReady(IServerPlayer player)
     {
+        serverChannel?.SendPacket(AmbientSoundSettingsPacket(), player);
         HandlePlayerReady(player, forceBrambleNearPlayer: false);
     }
 
@@ -3424,9 +3479,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal int GetGroundCleanupSearchRange(Entity entity)
     {
-        return (int)(IsFoxAssignedToWorkCart(entity)
-            ? GetWorkCartRadius(entity)
-            : GetCompanionCampRadius(entity));
+        int radius = (int)(IsFoxAssignedToWorkCart(entity) ? GetWorkCartRadius(entity) : GetCompanionCampRadius(entity));
+        return GetWellbeingWorkBand(entity) >= WellbeingWorkBand.LightOnly ? Math.Min(8, radius) : radius;
     }
 
     internal static bool IsMowLawnEnabled(Entity entity)
@@ -3540,7 +3594,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             && entity.State == EnumEntityState.Active
             && !IsFoxAwayFromWorld(entity)
             && !IsFoxIncapacitated(entity)
-            && system?.IsCompanionFoodRestricted(entity) != true;
+            && (system?.IsCompanionFoodRestricted(entity) != true || system.HasPendingWellbeingFoodTrip(entity));
     }
 
     internal static bool CanRunCompanionCombatTask(Entity entity)
@@ -3682,7 +3736,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         return "generic";
     }
 
-    internal void OnPackMarkerRemoved(BlockPos pos, bool isBed)
+    internal void OnPackMarkerRemoved(BlockPos pos, bool isBed, bool wasPackCart = false)
     {
         if (packRepository?.Loaded != true)
         {
@@ -3695,6 +3749,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             ClearBrambleBedAssignment(bed.BrambleOwnerUid);
         }
 
+        if (wasPackCart && packRepository.GetCairn(pos) is FoxPackCairnRecord previousCart)
+            packRepository.MarkWellbeingHomeEstablished(previousCart.OwnerUid);
         bool changed = isBed ? packRepository.RemoveBed(pos) : packRepository.RemoveCairn(pos);
         if (changed)
         {
@@ -3859,6 +3915,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return true;
         }
 
+        if (!commandedCourier && !routeStorage && !gatherFinishedProducts
+            && (removeFlowers || shovelSnow || shovelCharcoal)
+            && !AllowsWellbeingDuty(fox, demanding: shovelCharcoal)) return false;
+
         // General storage routing is a source-to-destination job, not an
         // ordinary "find somewhere to put what I am carrying" job.  Inspect
         // the General source before doing the ordinary storage lookup: that
@@ -3870,7 +3930,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             if (GetCompanionActivityMode(fox) != CompanionActivityMode.AtEase) return false;
 
             string routingMood = GetMood(fox);
-            if (routingMood is "sleepy" or "resting" or "anxious" or "alarmed") return false;
+            if (routingMood is "anxious" or "alarmed" || routingMood is "sleepy" or "resting" && !IsCompanionFoodRestricted(fox)) return false;
 
             return TryCreateFoxStorageRoutingPlan(fox, out plan) && plan != null;
         }
@@ -3928,7 +3988,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 || GetCompanionActivityMode(fox) != CompanionActivityMode.AtEase) return false;
 
             string mood = GetMood(fox);
-            if (mood is "sleepy" or "resting" or "anxious" or "alarmed") return false;
+            if (mood is "anxious" or "alarmed" || mood is "sleepy" or "resting" && !IsCompanionFoodRestricted(fox)) return false;
         }
 
         if (!TryGetGroundCleanupCenter(fox, out BlockPos? cleanupCenter) || cleanupCenter == null) return false;
@@ -4041,6 +4101,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             // Cellars and upper floors belong to the same camp cleanup area.
             if (!assignedWorkCart) item ??= serverApi.World.GetEntitiesAround(cleanupOrigin, searchRange, searchRange,
                     candidate => candidate is EntityItem dropped && dropped.Alive && dropped.Itemstack != null
+                        && AllowsWellbeingCargo(fox, dropped.Itemstack)
                         && dropped.Pos.Dimension == fox.Pos.Dimension
                         && dropped.Itemstack.StackSize > 0
                         && !CompanionPickupPolicy.IsCorpse(dropped.Itemstack.Collectible?.GetType())
@@ -4100,7 +4161,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         LogDutyDiagnostic(fox, "ground-item-selected",
             $"itemEntity={item.EntityId} itemPos={item.Pos.XYZ} cleanupOrigin={cleanupOrigin} horizontalRange={searchRange} verticalRange={searchRange}");
         ItemStack? pickupPreview = GetDroppedItemPickupPreview(fox, item);
-        if (pickupPreview == null
+        if (pickupPreview == null || !AllowsWellbeingCargo(fox, pickupPreview)
             || !TryGetFoxStorage(fox, out storagePos, pickupPreview)
             || storagePos == null)
         {
@@ -4212,6 +4273,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                         + $"category={candidateCategory} skipped already-in-category={FoxStorageRouting.GetDisplayName(sourceMask)}");
                     continue;
                 }
+                if ((GetWellbeingWorkBand(fox) >= WellbeingWorkBand.LightOnly || IsCompanionFoodRestricted(fox))
+                    && (candidateCategory & FoxStorageRouting.Category.Food) == 0) continue;
                 classifiedItemCount++;
                 misplacedItemCount++;
 
@@ -4589,6 +4652,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private static bool IsNaturalCleanupOptionEnabled(Entity fox, int priority)
     {
+        if (!fox.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>().AllowsWellbeingDuty(fox, demanding: priority is 0 or 1 or 3 or 4)) return false;
         return priority switch
         {
             0 => IsGroundCattailsEnabled(fox),
@@ -4723,6 +4787,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private static bool IsFinishedProductOptionEnabled(Entity fox, Block? block)
     {
+        if (block == null || !fox.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>().AllowsWellbeingHarvest(fox, block)) return false;
         return block switch
         {
             BlockCrop => IsFinishedCropsEnabled(fox),
@@ -4984,7 +5049,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             && routeGoal != null;
         if (serverApi == null
             || fox is not EntityAgent agent
-            || (!emergency && !IsSnowShovelingEnabled(fox))) return false;
+            || (!emergency && (!IsSnowShovelingEnabled(fox) || !AllowsWellbeingDuty(fox)))) return false;
 
         BlockPos origin = fox.Pos.AsBlockPos;
         int bestPriority = int.MaxValue;
@@ -5253,7 +5318,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
         IBlockAccessor blocks = serverApi.World.BlockAccessor;
         Block? block = blocks.GetBlock(target);
-        if (!IsFinishedProductBlock(block, target) || block == null) return false;
+        if (!IsFinishedProductBlock(block, target) || block == null
+            || !IsFinishedProductOptionEnabled(fox, block) || !AllowsWellbeingHarvest(fox, block)
+            || !CanCompanionModifyBlock(fox, target)) return false;
 
         ItemStack[]? drops;
         Action finishHarvest;
@@ -5307,6 +5374,16 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         finishHarvest();
+        if (block is BlockCrop harvestedCrop)
+        {
+            try { TryReseedHarvestedCrop(fox, target, harvestedCrop, validDrops); }
+            catch (Exception error)
+            {
+                serverApi.Logger.Warning("[FeralKinshipCompanions] Reseeding skipped at {0}: {1}", target, error.Message);
+            }
+        }
+        validDrops.RemoveAll(drop => drop.StackSize <= 0);
+        if (validDrops.Count == 0) return true;
         ItemStack collected = validDrops[0];
         Vec3d dropPosition = new(
             target.X + 0.5,
@@ -5326,7 +5403,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         fox.WatchedAttributes.MarkPathDirty(FoxStorageCarryKey);
         string ownerUid = GetDomesticationStatus(fox)?.GetString("owner", string.Empty) ?? string.Empty;
         PlayCargoSoundRateLimited(ownerUid, "pickup", target, "game:sounds/player/collect1", 0.26f);
-        AwardDutyExperience(fox, 2);
+        AwardDutyExperience(fox, 2, selfProvisioning: true);
         SendStateToOwner(fox, string.Empty);
         SendPackStateToOwner(fox);
         return true;
@@ -5408,7 +5485,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             replacement,
             remainingSnowLevel);
         SyncSnowAccumulationAfterManualRemoval(target, remainingSnowLevel);
-        RecordCleanupDutyUnit(fox);
+        RecordCleanupDutyUnit(fox, selfProvisioning: allowWhileCarrying && !collectSnowballs, exertion: 0.2);
 
         if (collectSnowballs)
         {
@@ -5780,7 +5857,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal bool HasAvailableCharcoalShovelTarget(Entity fox)
     {
-        if (serverApi == null || !IsCharcoalShovelingEnabled(fox)
+        if (serverApi == null || !AllowsWellbeingDuty(fox, demanding: true) || !IsCharcoalShovelingEnabled(fox)
             || GetCompanionActivityMode(fox) != CompanionActivityMode.AtEase
             || ShouldFoxSeekDenShelter(fox)) return false;
 
@@ -5934,7 +6011,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         ClearFoxStorageFailedTargets(fox);
         fox.WatchedAttributes.SetItemstack(FoxStorageCarryKey, carried);
         fox.WatchedAttributes.MarkPathDirty(FoxStorageCarryKey);
-        AwardDutyExperience(fox, 2);
+        AwardDutyExperience(fox, 2, exertion: 1.5);
         SendStateToOwner(fox, string.Empty);
         SendPackStateToOwner(fox);
         return true;
@@ -6288,6 +6365,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             attemptedDestinations.Add(targetPos);
             targetProcessed = true;
             if (targetPos.dimension != fox.Pos.Dimension) continue;
+            if ((fox.WatchedAttributes.GetBool(FertilizerCarryKey) || fox.WatchedAttributes.GetBool(TroughCarryKey)) && !TryFertilizerSupply(fox, targetPos, out _)) continue;
 
             FoxPackAmenityRecord? routingRecord = packRepository?.GetAmenity(targetPos);
             if (routingRecord == null
@@ -6344,6 +6422,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             if (remaining == null)
             {
                 fox.WatchedAttributes.SetItemstack(FoxStorageCarryKey, null);
+        fox.WatchedAttributes.RemoveAttribute(FertilizerCarryKey);
+        fox.WatchedAttributes.RemoveAttribute(TroughCarryKey);
                 ClearFoxStorageFailedTargets(fox);
                 fox.WatchedAttributes.SetBool(FoxStorageCommandedCarryKey, false);
                 fox.WatchedAttributes.MarkPathDirty(FoxStorageCarryKey);
@@ -6500,6 +6580,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         int z = fox.WatchedAttributes.GetInt(FoxStorageReturnSourceZKey, 0);
         int dimension = fox.WatchedAttributes.GetInt(FoxStorageReturnSourceDimensionKey, fox.Pos.Dimension);
         BlockPos sourcePos = new(x, y, z, dimension);
+        if ((fox.WatchedAttributes.GetBool(FertilizerCarryKey) || fox.WatchedAttributes.GetBool(TroughCarryKey)) && !TryFertilizerSupply(fox, sourcePos, out _)) return false;
         string ownerUid = GetDomesticationStatus(fox)?.GetString("owner", string.Empty) ?? string.Empty;
         FoxPackAmenityRecord? sourceRecord = packRepository?.GetAmenity(sourcePos);
         BlockEntity? sourceBlockEntity = serverApi.World.BlockAccessor.GetBlockEntity(sourcePos);
@@ -6545,6 +6626,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         fox.WatchedAttributes.SetItemstack(FoxStorageCarryKey, null);
+        fox.WatchedAttributes.RemoveAttribute(FertilizerCarryKey);
+        fox.WatchedAttributes.RemoveAttribute(TroughCarryKey);
         ClearFoxStorageFailedTargets(fox);
         ClearFoxStorageReturnSource(fox);
         fox.WatchedAttributes.SetBool(FoxStorageCommandedCarryKey, false);
@@ -7152,6 +7235,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         fox.WatchedAttributes.SetItemstack(FoxStorageCarryKey, null);
+        fox.WatchedAttributes.RemoveAttribute(FertilizerCarryKey);
+        fox.WatchedAttributes.RemoveAttribute(TroughCarryKey);
         ClearFoxStorageFailedTargets(fox);
         ClearFoxStorageReturnSource(fox);
         fox.WatchedAttributes.SetBool(FoxStorageCartPickupKey, false);
@@ -7206,6 +7291,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
         fox.WatchedAttributes.SetItemstack(FoxStorageCarryKey, null);
+        fox.WatchedAttributes.RemoveAttribute(FertilizerCarryKey);
+        fox.WatchedAttributes.RemoveAttribute(TroughCarryKey);
         ClearFoxStorageFailedTargets(fox);
         fox.WatchedAttributes.MarkPathDirty(FoxStorageCarryKey);
         ClearFoxStorageReturnSource(fox);
@@ -7505,7 +7592,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         bool followIdle = GetCompanionActivityMode(entity) == CompanionActivityMode.Follow
             && currentTask is AiTaskFeralKinshipFollowIdle;
         if (GetCompanionActivityMode(entity) != CompanionActivityMode.AtEase && !followIdle
-            || system?.IsCompanionFoodRestricted(entity) == true)
+            || system?.IsCompanionFoodRestricted(entity) == true && currentTask is not AiTaskFeralKinshipFetchDroppedItem)
         {
             return true;
         }
@@ -7618,6 +7705,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             or AiTaskFeralKinshipReturnToDen
             or AiTaskFeralKinshipRestAtDen
             or AiTaskFeralKinshipBlueberryMode
+            or AiTaskFeralKinshipFertilizer
+            or AiTaskFeralKinshipTroughRefill
             or AiTaskFeralKinshipMowGrass
             or AiTaskFeralKinshipLogging
             || task is AiTaskFeralKinshipFetchDroppedItem fetch && !fetch.CommandedCourier;
@@ -8097,7 +8186,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         long arrived = GetDomesticationStatus(entity)?.GetLong(ActivityArrivedUtcMsKey, 0) ?? 0;
         if (arrived <= 0 || UtcNowMs() - arrived < MinimumCommandRestMs) return false;
         GetHealth(entity, out float current, out float maximum);
-        return maximum <= 0f || current >= maximum - 0.01f;
+        if (maximum > 0f && current < maximum - 0.01f) return false;
+        string id = GetDomesticationStatus(entity)?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
+        return packRepository?.TryGetRecord(id, out var record) != true
+            || !CompanionWellbeingWork.NeedsRest(record?.Wellbeing);
     }
 
     internal static bool HasCompanionRestArrival(Entity entity)
@@ -9240,7 +9332,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal static bool IsFoxAwayFromWorld(Entity entity)
     {
-        return GetDomesticationStatus(entity)?.GetBool(ExpeditionAwayKey, false) == true;
+        return RetainedNativeSuspension.Protected(entity)
+            || GetDomesticationStatus(entity)?.GetBool(ExpeditionAwayKey, false) == true;
     }
 
     internal Entity? FindLoadedCompanionByFoxId(string foxId)
@@ -9269,7 +9362,15 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private static void SetFoxAwayFromWorld(Entity entity, bool away)
     {
+        if (!away && RetainedNativeSuspension.Protected(entity)) return;
         ITreeAttribute status = GetDomesticationStatus(entity, true)!;
+        if (away && RetainedNativeSuspension.Enabled) {
+            // An existing schema46 Away flag waits for canonical/ledger
+            // admission. A new flag without a suspension receipt is a conflict.
+            if(status.GetBool(ExpeditionAwayKey) && !RetainedNativeSuspension.NativeAuthority(entity))
+                RetainedNativeSuspension.DeferAdmission(entity);
+            else RetainedNativeSuspension.ObserveAway(entity);
+        }
         if (status.GetBool(ExpeditionAwayKey, false) != away)
         {
             status.SetBool(ExpeditionAwayKey, away);
@@ -9720,7 +9821,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         );
     }
 
-    internal static float GetDutyScanIntervalMultiplier(Entity entity, bool finishedProducts)
+    internal static float GetDutyScanIntervalMultiplier(Entity entity, bool finishedProducts, bool includeOffline = true)
     {
         float multiplier = GetFoxPackTalentRank(entity, "dutiful-pack") > 0
             ? PackTalentDutyScanMultiplier
@@ -9729,7 +9830,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             multiplier *= PackTalentHarvestCadenceMultiplier;
         }
-        return multiplier;
+        return multiplier * WellbeingDutyScanFactor(entity) * (includeOffline ? OfflineDutyScanFactor(entity) : 1f);
     }
 
     internal static float GetDutySuccessCooldownMultiplier(Entity entity, bool finishedProducts)
@@ -9741,7 +9842,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             multiplier *= PackTalentHarvestCadenceMultiplier;
         }
-        return multiplier;
+        return multiplier * WellbeingDutyScanFactor(entity);
     }
 
     internal static long GetDutyFailureRetryMs(Entity entity, long baseDelayMs)
@@ -9825,6 +9926,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnFoxSocialRequest(IServerPlayer fromPlayer, FoxSocialRequestPacket packet)
     {
+        if (serverApi?.World.GetEntityById(packet.TargetEntityId) is Entity retainedTarget
+            && RetainedNativeSuspension.Protected(retainedTarget)) return;
         // Saved/unloaded developer records can return before the live-entity
         // checks below. Authorize developer actions before either branch.
         if (serverApi == null
@@ -10160,6 +10263,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         Entity entity,
         CompanionDialogueSelection selection)
     {
+        // Conversations and delayed replies can outlive departure eligibility.
+        if (IsFoxAwayFromWorld(entity)) return;
         serverChannel?.SendPacket(new CompanionThoughtPacket
         {
             TargetEntityId = entity.EntityId,
@@ -10476,7 +10581,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         MarkSocialStateDirty(entity);
         RegisterFoxInPack(entity);
         packRepository?.Save();
-        if (enabled) EmitCommandAcknowledgement(entity, owner, GetDutyCommandEvent(parts[0]));
+        if (enabled && parts[0] != CompanionDuty.Reseeding && parts[0] != CompanionDuty.Fertilizer && parts[0] != CompanionDuty.TroughRefill) EmitCommandAcknowledgement(entity, owner, GetDutyCommandEvent(parts[0]));
         PlayControlSetSound(owner);
         SendState(entity, owner, $"{CompanionDuty.DisplaySubtaskName(parts[0])} {(enabled ? "enabled" : "disabled")}.");
     }
@@ -11462,17 +11567,20 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
+        TrackPendingCompanionAdmission(entity);
+
         if (IsGuideFox(entity))
         {
             RegisterLoadedBramble(entity);
             return;
         }
 
-        if (!IsTamedFox(entity))
+        if (!IsTamedFox(entity) || string.IsNullOrWhiteSpace(GetCompanionOwnerUid(entity)))
         {
             return;
         }
 
+        if (ReconcileRetainedBody(entity)) return;
         ITreeAttribute? existingStatus = GetDomesticationStatus(entity);
         string existingFoxId = existingStatus?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
         if (packRepository?.Loaded == true && packRepository.IsPermanentlyDeleted(existingFoxId))
@@ -11481,9 +11589,18 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
         bool hadEstablishedCompanionIdentity = existingStatus?.GetInt(NumberKey, 0) > 0
-            || !string.IsNullOrWhiteSpace(existingFoxId);
-        bool wasAlreadyRegistered = loadedFoxes.ContainsKey(entity.EntityId);
+            || (!string.IsNullOrWhiteSpace(existingFoxId)
+                && existingStatus?.GetBool(RecruitmentArrivalPendingKey, false) != true);
+        bool wasAlreadyRegistered = loadedFoxes.TryGetValue(entity.EntityId, out Entity? registeredBody)
+            && ReferenceEquals(registeredBody, entity);
+        if(RetainedNativeSuspension.Enabled) {
+            // Number allocation can reenter ledger registration. Consume the
+            // original saved-health snapshot before that path recalculates HP.
+            ApplyPackTalentSnapshot(entity);
+            if(!ApplyRetainedLoadedHealth(entity))return;
+        }
         loadedFoxes[entity.EntityId] = entity;
+        EnsureFotsaJuvenileMetadata(entity);
 
         EnsureFoxNumberIfNeeded(entity);
         EnsureFoxPersonality(entity);
@@ -11499,7 +11616,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             }, owner);
         }
         ApplyPackTalentSnapshot(entity);
-        ApplyFoxDerivedStats(entity);
+        // Growth starts with fresh native health, including any live change
+        // made by source callbacks after Initialize. Saved-health snapshots
+        // remain authoritative for ordinary adult loads, not this replacement.
+        ApplyFoxDerivedStats(entity, preserveCurrentHealth: !wasAlreadyRegistered
+            && !nativeAdultGrowthHandoffs.TryGetValue(entity, out _));
         ITreeAttribute status = GetDomesticationStatus(entity, true)!;
         MigrateLegacyDeadlines(status);
 
@@ -11523,10 +11644,16 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 recruited ? "recruitment.converted_arrival" : "pack.join",
                 string.Empty, CompanionDialoguePriority.High);
         }
+        ForgetPendingCompanionAdmission(entity);
     }
 
     internal void UnregisterLoadedFox(Entity entity, string statusLabel = "Not currently loaded")
     {
+        ForgetPendingCompanionAdmission(entity);
+        CheckpointRetainedSourceHint(entity);
+        ForgetRetainedAdmissionBody(entity);
+        if(loadedFoxes.TryGetValue(entity.EntityId,out Entity? registered)&&!ReferenceEquals(entity,registered))return;
+        wellbeingSafetySamples.Remove(entity.EntityId);
         bool suppressLedgerStatus = rebuildingEntityIds.Contains(entity.EntityId)
             || permanentlyDeletingEntityIds.Contains(entity.EntityId);
         loadedFoxes.Remove(entity.EntityId);
@@ -11624,6 +11751,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal void UpdateFox(Entity entity, float dt)
     {
+        if (RetainedNativeSuspension.Protected(entity)) return;
         if (serverApi == null)
         {
             return;
@@ -11648,6 +11776,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             RegisterLoadedFox(entity);
         }
+        TickWellbeingSafety(entity);
         TryRepairStaleAdultCompanionState(entity);
         UpdateCompanionHealthStateAudio(entity, status);
         PersistHealthStateIfChanged(entity);
@@ -11963,11 +12092,13 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             SetDeadline(status, RequestCooldownEndsUtcMsKey, GetFoxRequestCooldownSeconds(entity));
         }
 
+        CreditWellbeingRequest(entity, status.GetInt(RequestsCompletedKey, 0), activeRequest, developerRequest);
         ClearActiveRequest(status);
         ApplyPostRequestMood(entity, status, activeRequest);
         NotifyFoxRequestCompleted(entity, activeRequest, developerRequest);
         MarkSocialStateDirty(entity);
         RegisterFoxInPack(entity);
+        packRepository?.Save();
         if (!developerRequest && TryGetOwnerPlayer(entity, out IServerPlayer? requestOwner))
             EmitDialogueEvent(entity, requestOwner!, "request_lifecycle.completed", string.Empty, CompanionDialoguePriority.Medium);
 
@@ -12456,6 +12587,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
         Entity? oldEntity = FindLoadedCompanionByFoxId(record.FoxId);
 
+        if (!string.IsNullOrEmpty(record.RetainedTrip))
+        {
+            if (sendResult) SendCompanionRecoveryState(owner, "Retained native identity cannot be rebuilt or inventory replayed by this prototype.");
+            return false;
+        }
+
         FoxPackRecordV2 recordSnapshot;
         try
         {
@@ -12649,6 +12786,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void RebuildCompanionDeveloper(Entity entity, IServerPlayer owner)
     {
+        if (RetainedNativeSuspension.NativeAuthority(entity)) return;
         if (serverApi == null || packRepository?.Loaded != true)
         {
             return;
@@ -13871,6 +14009,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 continue;
             }
 
+            if (ReconcileRetainedBody(entity)) continue;
+
             string foxId = GetDomesticationStatus(entity)?.GetString(FoxIdKey, string.Empty)
                 ?? string.Empty;
             if (packRepository.IsPermanentlyDeleted(foxId))
@@ -13879,10 +14019,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 continue;
             }
 
-            loadedFoxes[entity.EntityId] = entity;
-            EnsureFoxNumberIfNeeded(entity);
-            EnsureFoxPersonality(entity);
-            RegisterFoxInPack(entity);
+            RegisterLoadedFox(entity);
         }
 
         RefreshUnloadedRecoveryStates();
@@ -13935,6 +14072,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void RegisterFoxInPack(Entity entity)
     {
+        if (ReconcileRetainedBody(entity)) return;
         if (serverApi == null || packRepository?.Loaded != true || !IsTamedFox(entity)
             || !TryGetCompanionSpecies(entity, out CompanionSpeciesProfile species))
         {
@@ -14001,9 +14139,15 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
         if (recordAlreadyExisted
             && record.DurableStateInitialized
-            && ledgerHydratedEntities.Add(entity.EntityId))
+            && ledgerHydratedEntities.Add(entity.EntityId)
+            && !RetainedNativeSuspension.NativeAuthority(entity))
         {
-            HydrateFoxFromLedger(entity, status, record);
+            // The native growth replacement inherits live juvenile identity
+            // and progress through its cloned status, but initializes fresh
+            // adult health. A child ledger must not replay HP or stale juvenile
+            // flags into that new adult during reentrant spawn registration.
+            if (!nativeAdultGrowthHandoffs.TryGetValue(entity, out _))
+                HydrateFoxFromLedger(entity, status, record);
             HydrateCompanionBackpackFromRecord(entity, status, record);
             ApplyFoxDerivedStats(entity);
         }
@@ -14049,6 +14193,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         record.MowLawnEnabled = IsMowLawnEnabled(entity);
         record.FinishedProductsEnabled = IsFinishedProductsEnabled(entity);
         record.FinishedCropsEnabled = IsFinishedCropsEnabled(entity);
+        record.ReseedingEnabled = IsReseedingEnabled(entity);
+        record.FertilizerEnabled = IsFertilizerEnabled(entity);
+        record.TroughRefillEnabled = IsTroughRefillEnabled(entity);
         record.FinishedBerriesEnabled = IsFinishedBerriesEnabled(entity);
         record.FinishedMushroomsEnabled = IsFinishedMushroomsEnabled(entity);
         record.FlowerRemovalEnabled = IsFlowerRemovalEnabled(entity);
@@ -14059,6 +14206,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         EnsureCompanionFoodState(entity);
         record.FoodStateInitialized = status.GetBool(FoodStateInitializedKey, false);
         record.FoodLevel = Math.Clamp(status.GetFloat(FoodLevelKey, 1f), 0f, 1f);
+        ObserveCompanionWellbeing(entity, record);
         record.FoodLastUpdateTotalHours = status.GetDouble(
             FoodLastUpdateTotalHoursKey,
             entity.World.Calendar.TotalHours);
@@ -14323,6 +14471,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         status.SetBool(MowLawnEnabledKey, record.MowLawnEnabled);
         status.SetBool(FinishedProductsEnabledKey, record.FinishedProductsEnabled);
         status.SetBool(FinishedCropsEnabledKey, record.FinishedCropsEnabled);
+        status.SetBool(CompanionDuty.OptionKey(CompanionDuty.Reseeding), record.ReseedingEnabled);
+        status.SetBool(CompanionDuty.OptionKey(CompanionDuty.Fertilizer), record.FertilizerEnabled);
+        status.SetBool(CompanionDuty.OptionKey(CompanionDuty.TroughRefill), record.TroughRefillEnabled);
         status.SetBool(FinishedBerriesEnabledKey, record.FinishedBerriesEnabled);
         status.SetBool(FinishedMushroomsEnabledKey, record.FinishedMushroomsEnabled);
         status.SetBool(FlowerRemovalEnabledKey, record.FlowerRemovalEnabled);
@@ -14611,7 +14762,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 out List<string> party,
                 out float expeditionStrength,
                 out float averageSpeedBonus,
-                out string refusal))
+                out string refusal, type))
         {
             SendPackState(owner, refusal);
             return;
@@ -14636,6 +14787,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         ExpeditionPerkSnapshot perkSnapshot = GetExpeditionPerkSnapshot(ownerUid, type, party);
         expeditionStrength += perkSnapshot.StrengthBonus;
         List<FoxExpeditionMemberSummaryPacket> memberSnapshots = BuildExpeditionMemberSnapshots(ownerUid, type, party);
+        if (type == FoxExpeditionType.Recruitment && GetRecruitmentPool(new FoxExpeditionRecord
+            { OwnerUid = ownerUid, MemberSnapshots = memberSnapshots }).Count == 0)
+        {
+            SendPackState(owner, "This party has no available adult recruitment rewards. Check its animal providers before departing.");
+            return;
+        }
         CompanionSpeciesExpeditionBonus speciesBonus = SnapshotSpeciesTraits(type, memberSnapshots);
         expeditionStrength += speciesBonus.Strength;
         long startedUtcMs = UtcNowMs();
@@ -14960,7 +15117,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     private static bool HasActiveWorkCartDuty(Entity fox)
     {
         AiTaskManager? manager = fox.GetBehavior<EntityBehaviorTaskAI>()?.TaskManager;
-        return manager?.ActiveTasksBySlot.Any(task => task is AiTaskFeralKinshipMowGrass
+        return manager?.ActiveTasksBySlot.Any(task => task is AiTaskFeralKinshipFertilizer
+            || task is AiTaskFeralKinshipTroughRefill
+            || task is AiTaskFeralKinshipMowGrass
             || task is AiTaskFeralKinshipLogging
             || task is AiTaskFeralKinshipFetchDroppedItem fetch && !fetch.CommandedCourier) == true;
     }
@@ -15086,7 +15245,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         out List<string> selectedFoxIds,
         out float expeditionStrength,
         out float averageSpeedBonus,
-        out string refusal)
+        out string refusal,
+        string expeditionType = "")
     {
         selectedFoxIds = new List<string>();
         expeditionStrength = 0f;
@@ -15107,6 +15267,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             refusal = "Select at least one present companion for the expedition.";
             return false;
         }
+
+        if(!TryPreflightRetainedParty(ownerUid,requested,out refusal))return false;
 
         foreach (string foxId in requested)
         {
@@ -15142,7 +15304,23 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 refusal = $"{GetFoxRecordLabel(record)} is still marked away from the world and cannot join another expedition.";
                 return false;
             }
-            if (IsCompanionFoodRestricted(entity))
+            // Source babies may predate the Companion breeding marker.
+            // They must not acquire adult expedition bonuses from this extension.
+            if (FotsaSpeciesBonusCatalog.IsJuvenile(entity.Code?.ToString()))
+            {
+                refusal = $"{GetFoxRecordLabel(record)} is still a child and cannot join expeditions.";
+                return false;
+            }
+            if (!string.IsNullOrEmpty(expeditionType))
+            {
+                ObserveWellbeingSafety(entity, record, force: true);
+                if (!AllowsWellbeingExpedition(entity, expeditionType))
+                {
+                    refusal = $"{GetFoxRecordLabel(record)} needs recovery: choose a diet-appropriate Hunt or Forage food trip, or improve their needs.";
+                    return false;
+                }
+            }
+            if (IsCompanionFoodRestricted(entity) && !IsWellbeingFoodTrip(entity, expeditionType))
             {
                 refusal = $"{GetFoxRecordLabel(record)} is starving and must eat before joining an expedition.";
                 return false;
@@ -15375,7 +15553,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 TotalStrength = conditionStrength + healthStrength + movementStrength + perkStrength,
                 Personality = record.Personality ?? string.Empty,
                 MoodAtDeparture = record.Mood ?? string.Empty,
-                SpeciesId = string.IsNullOrWhiteSpace(record.SpeciesId) ? "fox" : record.SpeciesId
+                SpeciesId = string.IsNullOrWhiteSpace(record.SpeciesId) ? "fox" : record.SpeciesId,
+                EntityCode = record.EntityCode
             });
         }
         return snapshots;
@@ -15769,6 +15948,18 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private ExpeditionResolution ResolveCompletedExpedition(FoxExpeditionRecord expedition, int lootBatchStartIndex)
     {
+        var outcomes = new Dictionary<string,string>(StringComparer.Ordinal);
+        wellbeingReturnOutcomes = outcomes;
+        try
+        {
+            var result = ResolveCompletedExpeditionCore(expedition, lootBatchStartIndex);
+            CompleteWellbeingExpedition(expedition, result.ObjectiveSucceeded, outcomes);
+            return result;
+        }
+        finally { wellbeingReturnOutcomes = null; }
+    }
+    private ExpeditionResolution ResolveCompletedExpeditionCore(FoxExpeditionRecord expedition, int lootBatchStartIndex)
+    {
         if (expedition.Type == FoxExpeditionType.Scout)
             return ResolveScavengeScout(expedition);
         if (expedition.Type == FoxExpeditionType.Scavenge && expedition.ScavengeSiteId > 0)
@@ -15831,7 +16022,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 return new ExpeditionResolution(
                     returnedInjured
                         ? $"Search for lost found {GetFoxRecordLabel(missing)}, but the companion returned injured."
-                        : $"Search for lost returned successfully. {GetFoxRecordLabel(missing)} was found and brought home."
+                        : $"Search for lost returned successfully. {GetFoxRecordLabel(missing)} was found and brought home.",
+                    objectiveSucceeded: !returnedInjured
                 );
             }
 
@@ -15883,7 +16075,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             packRepository.SetPendingRecruitment(
                 expedition.OwnerUid,
                 recruitedSpecies.Id,
-                recruitedVariant.EntityCode
+                recruitedVariant.EntityCode,
+                CompanionRecruitmentResolver.Resolve(recruitedSpecies, recruitedVariant, serverApi.World.GetEntityType)!.Code.ToString()
             );
             QueueExpeditionReturns(expedition.OwnerUid, recruitmentReturns, "recruitment.success");
 
@@ -15926,7 +16119,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 + (securedTrails
                     ? "The secured trails will reduce risk on the next non-patrol expedition."
                     : $"The party covered {completion * 100f:0}% of the patrol; the trails were not fully secured.")
-                + consequence
+                + consequence, objectiveSucceeded: securedTrails
             );
         }
 
@@ -15956,7 +16149,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
         string message = $"{GetExpeditionDisplayName(expedition.Type)} returned with {itemCount} {(itemCount == 1 ? "item" : "items")}. "
             + DescribeExpeditionConsequences(riskResults, completion);
-        return new ExpeditionResolution(message);
+        return new ExpeditionResolution(message, objectiveSucceeded: completion >= 1f && !riskResults.CargoDamaged);
     }
 
     private ExpeditionResolution ResolveStoryExpedition(FoxExpeditionRecord expedition, int lootBatchStartIndex)
@@ -16004,7 +16197,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         string message = $"{GetExpeditionDisplayName(expedition.Type)} returned with {itemCount} "
             + $"{(itemCount == 1 ? "item" : "items")}. {eventSummary} "
             + DescribeExpeditionConsequences(riskResults, story.Completion);
-        return new ExpeditionResolution(message);
+        return new ExpeditionResolution(message, objectiveSucceeded: story.Completion >= 1f && !riskResults.CargoDamaged);
     }
 
     private static string DescribeExpeditionConsequences(
@@ -16198,6 +16391,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 continue;
             }
 
+            if (wellbeingReturnOutcomes != null) wellbeingReturnOutcomes[foxId] = statusLabel;
             record.WasMiaBeforeReturn = string.Equals(record.Status, "MIA", StringComparison.OrdinalIgnoreCase);
             record.PendingDialogueEvent = record.WasMiaBeforeReturn
                 ? "expedition.mia_return"
@@ -16282,10 +16476,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             Entity? entity = record.EntityId > 0 ? serverApi.World.GetEntityById(record.EntityId) : null;
             if (entity != null && IsTamedFox(entity) && IsOwner(entity, ownerUid))
             {
-                // Expeditions take the fox out of local logistics. Any held
-                // load is safely dropped at departure instead of blocking the
-                // party or making the fox appear unavailable.
-                DropFoxStorageCargo(entity);
+                // Native cargo stays on its original body; no departure drop/replay.
+                if (RetainedNativeSuspension.Enabled && !RetainedNativeSuspension.Bind(entity, record)) continue;
                 ITreeAttribute entityStatus = GetDomesticationStatus(entity, true)!;
                 entityStatus.SetString(ExpeditionStatusKey, leavingStatus);
                 entityStatus.SetDouble(ExpeditionStatusExpiresDayKey, 0d);
@@ -16370,7 +16562,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         if (record.MissingContentArchive?.Active == true) return;
+        if (HandleRetainedExpeditionStatus(ownerUid, foxId, statusLabel, record)) return;
         bool departureMoment = record.PendingDepartureMoment;
+        if (statusLabel.StartsWith("Away —", StringComparison.OrdinalIgnoreCase)) RecordWellbeingDeparture(record);
         record.Status = statusLabel;
         record.PendingDepartureStatus = string.Empty;
         record.PendingDepartureAtUtcMs = 0;
@@ -16575,14 +16769,16 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private sealed class ExpeditionResolution
     {
-        public ExpeditionResolution(string message, bool recruitmentSucceeded = false)
+        public ExpeditionResolution(string message, bool recruitmentSucceeded = false, bool objectiveSucceeded = false)
         {
             Message = message;
             RecruitmentSucceeded = recruitmentSucceeded;
+            ObjectiveSucceeded = objectiveSucceeded || recruitmentSucceeded;
         }
 
         public string Message { get; }
         public bool RecruitmentSucceeded { get; }
+        public bool ObjectiveSucceeded { get; }
     }
 
     private sealed class ExpeditionRiskResults
@@ -17423,53 +17619,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return false;
         }
 
-        Dictionary<string, int> representedSpecies = new(StringComparer.OrdinalIgnoreCase);
-        foreach (FoxExpeditionMemberSummaryPacket member in expedition.MemberSnapshots ?? new())
-        {
-            string speciesId = string.IsNullOrWhiteSpace(member.SpeciesId) ? "fox" : member.SpeciesId;
-            representedSpecies[speciesId] = representedSpecies.GetValueOrDefault(speciesId) + 1;
-        }
-
-        if (representedSpecies.Count == 0 && packRepository != null)
-        {
-            foreach (string foxId in expedition.SelectedFoxIds)
-            {
-                if (!packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record) || record == null)
-                {
-                    continue;
-                }
-                string speciesId = string.IsNullOrWhiteSpace(record.SpeciesId) ? "fox" : record.SpeciesId;
-                representedSpecies[speciesId] = representedSpecies.GetValueOrDefault(speciesId) + 1;
-            }
-        }
-
-        List<(CompanionSpeciesProfile Profile, List<CompanionRecruitmentVariant> Variants, float Weight)> pool = new();
-        foreach ((string speciesId, int count) in representedSpecies)
-        {
-            if (!CompanionSpeciesCatalog.TryGetById(speciesId, out CompanionSpeciesProfile profile)
-                || !profile.HasCapability(CompanionCapabilities.Recruitment))
-            {
-                serverApi.Logger.Warning(
-                    "[FeralKinshipCompanions] Recruitment ignored unsupported party species '{0}'.",
-                    speciesId
-                );
-                continue;
-            }
-
-            List<CompanionRecruitmentVariant> validVariants = profile.RecruitmentVariants
-                .Where(variant => CompanionRecruitmentResolver.Resolve(profile, variant, serverApi.World.GetEntityType) != null)
-                .ToList();
-            if (validVariants.Count == 0)
-            {
-                serverApi.Logger.Warning(
-                    "[FeralKinshipCompanions] Recruitment profile '{0}' has no available tame entity variants.",
-                    profile.Id
-                );
-                continue;
-            }
-
-            pool.Add((profile, validVariants, Math.Max(0.01f, profile.RecruitmentWeight) * count));
-        }
+        var pool = GetRecruitmentPool(expedition);
 
         float totalSpeciesWeight = pool.Sum(entry => entry.Weight);
         if (totalSpeciesWeight <= 0f)
@@ -17515,11 +17665,44 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             : $"{variant.DisplayName} {species.DisplayName}";
     }
 
+    private const string RecruitmentDimensionRefusal = "Recruitment is available only in dimension 0 while retained expeditions are enabled. Return to dimension 0 and retry. The result is preserved; this attempt creates no animal.";
+    private const string RecruitmentOriginalDimensionRefusal = "The original recruited animal is outside supported dimension 0. Bring that same animal back to dimension 0 and retry. Its started receipt and queued rewards are preserved; no replacement will be created.";
+
+    private bool TryGetRecruitmentDimensionRefusal(IServerPlayer owner, FoxRecruitmentRewardRecord reward, out string refusal)
+    {
+        refusal = string.Empty;
+        if (!RetainedNativeSuspension.Enabled) return false;
+        if (owner.Entity?.Pos.Dimension != 0)
+        {
+            refusal = RecruitmentDimensionRefusal;
+            return true;
+        }
+        if (reward.ClaimStarted && packRepository != null && packRepository.TryGetRecord(reward.ClaimFoxId, out FoxPackRecordV2? record)
+            && record != null && serverApi?.World.GetEntityById(record.EntityId) is Entity original && original.Pos.Dimension != 0)
+        {
+            refusal = RecruitmentOriginalDimensionRefusal;
+            return true;
+        }
+        return false;
+    }
+
+    // SendPackState refreshes records, attempts returns and can save/migrate
+    // points. A dimension refusal must only notify, without those side effects.
+    private static void NotifyRecruitmentDimensionRefusal(IServerPlayer owner, string refusal)
+        => owner.SendMessage(GlobalConstants.GeneralChatGroup, refusal, EnumChatType.Notification);
+
     private Entity? SpawnRecruitmentCompanion(IServerPlayer owner, FoxRecruitmentRewardRecord reward, out string failure)
     {
         failure = "The recruited animal's tame entity type is unavailable. Check the server log and required animal mods.";
-        if (serverApi == null)
+        if (serverApi == null || packRepository?.Loaded != true || reward.ClaimStarted
+            || reward.OwnerUid != owner.PlayerUID || string.IsNullOrWhiteSpace(reward.ClaimFoxId))
         {
+            return null;
+        }
+
+        if (TryGetRecruitmentDimensionRefusal(owner, reward, out string dimensionRefusal))
+        {
+            failure = dimensionRefusal;
             return null;
         }
 
@@ -17538,7 +17721,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         EntityProperties? type = CompanionRecruitmentResolver.Resolve(profile, variant, serverApi.World.GetEntityType);
-        if (type == null)
+        if (type == null || (!string.IsNullOrEmpty(reward.TameEntityCode)
+            && !string.Equals(reward.TameEntityCode, type.Code.ToString(), StringComparison.OrdinalIgnoreCase)))
         {
             serverApi.Logger.Warning("[FeralKinshipCompanions] Recruitment could not resolve a matching tame companion entity type for {0}.", variant.EntityCode);
             return null;
@@ -17553,7 +17737,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         Vec3d? spawnPosition = FindSafeRecruitmentPosition(owner, type);
         if (spawnPosition == null)
         {
-            failure = "No safe open ground was found nearby.";
+            failure = CompanionRecruitmentPlacement.Aquatic(type)
+                ? "No safe full-water habitat was found nearby."
+                : "No safe dry ground was found nearby.";
             serverApi.Logger.Warning(
                 "[FeralKinshipCompanions] Recruitment claim for {0} found no safe open ground near the player.",
                 owner.PlayerUID
@@ -17562,12 +17748,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         entity.Pos.X = spawnPosition.X;
-        entity.Pos.Y = spawnPosition.Y;
+        entity.Pos.Dimension = owner.Entity.Pos.Dimension;
+        entity.Pos.Y = spawnPosition.Y - entity.Pos.Dimension * BlockPos.DimensionBoundary;
         entity.Pos.Z = spawnPosition.Z;
         entity.Pos.Yaw = owner.Entity.Pos.Yaw;
         entity.PositionBeforeFalling.Set(entity.Pos.X, entity.Pos.Y, entity.Pos.Z);
         ITreeAttribute status = GetDomesticationStatus(entity, true)!;
         status.SetString("owner", owner.PlayerUID);
+        status.SetString(FoxIdKey, reward.ClaimFoxId);
         status.SetString("domesticationLevel", "DOMESTICATED");
         status.SetFloat("obedience", 1f);
         status.SetInt("generation", 0);
@@ -17575,11 +17763,62 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         status.SetString(CombatStyleKey, CompanionCombatStyle.Passive);
         status.SetString(RiskToleranceKey, CompanionRiskTolerance.Steady);
         status.SetBool(RecruitmentArrivalPendingKey, true);
+        // Recheck after provider/placement calls, before any receipt mutation.
+        if (TryGetRecruitmentDimensionRefusal(owner, reward, out dimensionRefusal)
+            || RetainedNativeSuspension.Enabled && entity.Pos.Dimension != 0)
+        {
+            failure = RecruitmentDimensionRefusal;
+            return null;
+        }
+        // Persist before crossing the world-spawn boundary. An interrupted
+        // spawn/registration must not become a second animal on a retry.
+        reward.ClaimStarted = true;
+        reward.TameEntityCode = type.Code.ToString();
+        packRepository!.Save();
         serverApi.World.SpawnEntity(entity);
         RegisterLoadedFox(entity);
         RegisterFoxInPack(entity);
         packRepository?.Save();
+        if (!RecruitmentDeliveryAdmitted(reward, entity))
+        {
+            failure = "The original recruited body has not completed safe native/ledger admission. Its started receipt is preserved.";
+            return null;
+        }
         return entity;
+    }
+
+    // Void registration callbacks can Hold/defer in retained-r4. Completion
+    // requires the same admitted original and matching ledger, never a return
+    // from those callbacks or a stale unloaded record alone.
+    private bool RecruitmentDeliveryAdmitted(FoxRecruitmentRewardRecord reward, Entity? body = null)
+    {
+        if (serverApi == null || packRepository?.Loaded != true || !reward.ClaimStarted
+            || !packRepository.TryGetRecord(reward.ClaimFoxId, out FoxPackRecordV2? record) || record == null
+            || record.OwnerUid != reward.OwnerUid || record.SpeciesId != reward.SpeciesId || record.EntityId <= 0
+            || !string.Equals(record.EntityCode, reward.TameEntityCode, StringComparison.OrdinalIgnoreCase)) return false;
+        body ??= serverApi.World.GetEntityById(record.EntityId);
+        ITreeAttribute? status = body == null ? null : GetDomesticationStatus(body);
+        if (body == null || !body.Alive || body.EntityId != record.EntityId
+            || !ReferenceEquals(serverApi.World.GetEntityById(body.EntityId), body)
+            || !loadedFoxes.TryGetValue(body.EntityId, out Entity? loaded) || !ReferenceEquals(loaded, body)
+            || status?.GetString(FoxIdKey) != reward.ClaimFoxId || status?.GetString("owner") != reward.OwnerUid
+            || status?.GetInt(NumberKey, 0) != record.Number || record.Number <= 0 || !IsTamedFox(body)
+            || !string.Equals(body.Code?.ToString(), reward.TameEntityCode, StringComparison.OrdinalIgnoreCase)
+            || !TryGetCompanionSpecies(body, out CompanionSpeciesProfile profile) || profile.Id != reward.SpeciesId) return false;
+        if (!RetainedNativeSuspension.Enabled) return true;
+        if (Vintagestory.API.Config.RuntimeEnv.ServerMainThreadId != Environment.CurrentManagedThreadId) return false;
+        bool admitted = false;
+        RetainedNativeSuspension.SynchronizeProgress(body, () =>
+        {
+            admitted = RetainedCanonicalAdmission(body)
+                && CheckRetainedPlacementAuthority(body, body.Pos.XYZ) == RetainedPlacementAuthority.Ready
+                && (!RetainedNativeSuspension.NativeAuthority(body)
+                    || RetainedNativeSuspension.Matches(body, record)
+                        && RetainedNativeSuspension.Marker(body)?.GetString("phase") == record.RetainedPhase
+                        && (record.RetainedPhase is "Leaving" or "Complete"))
+                && !RetainedNativeSuspension.Protected(body);
+        });
+        return admitted;
     }
 
     private Vec3d? FindSafeRecruitmentPosition(IServerPlayer owner, EntityProperties type)
@@ -17589,7 +17828,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return null;
         }
 
-        return FindSafeEntityPosition(owner.Entity.Pos.AsBlockPos, type, null, 4, 2);
+        return CompanionRecruitmentPlacement.Find(owner.Entity.Pos.AsBlockPos, type,
+            (feet, candidate) => IsSafeRecruitmentPosition(feet, candidate, type));
     }
 
     private Vec3d? FindSafeEntityPosition(
@@ -17959,7 +18199,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             || !IsTamedFox(entity)
             || IsFoxAwayFromWorld(entity)
             || IsFoxIncapacitated(entity)
-            || IsCompanionFoodRestricted(entity))
+            || IsCompanionFoodRestricted(entity) && !HasPendingWellbeingFoodTrip(entity))
         {
             return false;
         }
@@ -18399,15 +18639,54 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
-        Entity? recruit = SpawnRecruitmentCompanion(owner, reward, out string failure);
+        if (!string.Equals(reward.OwnerUid, ownerUid, StringComparison.Ordinal) || !packRepository.Loaded)
+        {
+            SendPackState(owner, "This recruitment result cannot be claimed by this player.");
+            return;
+        }
+        if (TryGetRecruitmentDimensionRefusal(owner, reward, out string dimensionRefusal))
+        {
+            NotifyRecruitmentDimensionRefusal(owner, dimensionRefusal);
+            return;
+        }
+        if (reward.ClaimStarted)
+        {
+            // Registration already reached the authoritative ledger: consume
+            // only the pending receipt, never spawn another animal. If it did
+            // not, keep the receipt for investigation; unloaded state is not
+            // evidence that an interrupted spawn never happened.
+            if (RecruitmentDeliveryAdmitted(reward))
+            {
+                packRepository.ClearRecruitmentReceipt(ownerUid, reward.ClaimFoxId);
+                packRepository.Save();
+                SendPackState(owner, "This recruitment result already joined your pack.");
+            }
+            else SendPackState(owner, "This recruitment claim was interrupted. Its result is preserved; recovery must be checked before another animal can be created.");
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(reward.ClaimFoxId)) reward.ClaimFoxId = Guid.NewGuid().ToString("N");
+        Entity? recruit;
+        string failure;
+        try { recruit = SpawnRecruitmentCompanion(owner, reward, out failure); }
+        catch (Exception e)
+        {
+            serverApi.Logger.Error("[FeralKinshipCompanions] Recruitment claim interrupted for {0}: {1}", reward.ClaimFoxId, e);
+            SendPackState(owner, "The recruitment result is preserved after an interrupted claim. No automatic replacement will be created.");
+            return;
+        }
         if (recruit == null)
         {
+            if (failure == RecruitmentDimensionRefusal || failure == RecruitmentOriginalDimensionRefusal)
+            {
+                NotifyRecruitmentDimensionRefusal(owner, failure);
+                return;
+            }
             SendOwnerSound(owner, CompanionSoundCue.Rejected);
             SendPackState(owner, $"The recruitment result is still waiting: {failure}");
             return;
         }
 
-        packRepository.ClearPendingRecruitment(ownerUid);
+        packRepository.ClearRecruitmentReceipt(ownerUid, reward.ClaimFoxId);
         packRepository.Save();
         string rewardName = CompanionSpeciesCatalog.TryGetRecruitmentVariant(
             reward.WildEntityCode,
@@ -18416,7 +18695,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 ? GetRecruitmentDisplayName(species, variant).ToLowerInvariant()
                 : "companion";
         SendOwnerSound(owner, CompanionSoundCue.RecruitmentSuccess);
-        SendPackState(owner, $"Claimed recruitment. A tamed {rewardName} joined your pack on safe ground nearby.");
+        SendPackState(owner, $"Claimed recruitment. A tamed {rewardName} joined your pack in a safe habitat nearby.");
     }
 
     private void AddPackLootDeveloper(IServerPlayer owner, string type, IEnumerable<string> selectedFoxIds)
@@ -18749,6 +19028,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             MowLawnEnabled = IsMowLawnEnabled(entity),
             FinishedProductsEnabled = IsFinishedProductsEnabled(entity),
             FinishedCropsEnabled = IsFinishedCropsEnabled(entity),
+            ReseedingEnabled = IsReseedingEnabled(entity),
+            FertilizerEnabled = IsFertilizerEnabled(entity),
+            TroughRefillEnabled = IsTroughRefillEnabled(entity),
+            TroughRefillRequirement = GetTroughRefillRequirement(entity),
+            FertilizerPolicy = $"Growing crops only; nutrient target {companionConfig.FertilizerTargetNutrient:G}, dose overshoot <= {companionConfig.FertilizerMaxOvershoot:G}.",
+            ReseedingStatus = GetReseedingStatus(entity),
+            ReseedingThresholds = GetReseedingThresholds(),
+            ReseedingRequirement = GetReseedingRequirement(entity),
             FinishedBerriesEnabled = IsFinishedBerriesEnabled(entity),
             FinishedMushroomsEnabled = IsFinishedMushroomsEnabled(entity),
             FlowerRemovalEnabled = IsFlowerRemovalEnabled(entity),
@@ -18788,7 +19075,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void BuyPerk(Entity entity, IServerPlayer owner, string perkId)
     {
-        if (IsCompanionJuvenile(entity))
+        if (IsCompanionJuvenile(entity) || FotsaSpeciesBonusCatalog.IsJuvenile(entity.Code?.ToString()))
         {
             SendOwnerSound(owner, CompanionSoundCue.Rejected);
             SendState(entity, owner, Lang.Get("feralkinshipcompanions:child-talents-banked"));
@@ -18805,7 +19092,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         CompanionSpeciesProfile species = GetCompanionSpecies(entity);
-        if (!FoxPerkCatalog.AppliesToSpecies(definition, species.Id))
+        if (!FoxPerkCatalog.AppliesToSpecies(definition, species.Id, GetSpeciesBonusKey(entity)))
         {
             SendOwnerSound(owner, CompanionSoundCue.Rejected);
             SendPerkState(entity, owner, $"That talent belongs to {definition.SpeciesId}, not {species.Id}.");
@@ -18886,7 +19173,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
         CompanionSpeciesProfile species = GetCompanionSpecies(entity);
         List<FoxPerkRankEntry> ranks = FoxPerkCatalog.All
-            .Where(definition => FoxPerkCatalog.AppliesToSpecies(definition, species.Id))
+            .Where(definition => FoxPerkCatalog.AppliesToSpecies(definition, species.Id, GetSpeciesBonusKey(entity)))
             .Select(definition => new FoxPerkRankEntry
             {
                 Id = definition.Id,
@@ -18909,6 +19196,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             SpeciesId = species.Id,
             SpeciesDisplayName = species.DisplayName,
             Personality = GetPersonalityLabel(status.GetString(PersonalityKey, string.Empty)),
+            SpeciesBonusKey = GetSpeciesBonusKey(entity),
             Mood = GetMoodDisplay(entity),
             ActivityMode = GetCompanionActivityMode(entity),
             CombatStyle = GetCompanionCombatStyle(entity),
@@ -20344,8 +20632,13 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         MarkSocialStateDirty(entity);
     }
 
-    private static void ApplyFoxDerivedStats(Entity entity)
+    private static void ApplyFoxDerivedStats(Entity entity, bool preserveCurrentHealth = false)
     {
+        if (!IsTamedFox(entity))
+        {
+            return;
+        }
+
         EntityBehaviorHealth? health = entity.GetBehavior<EntityBehaviorHealth>();
         if (health == null)
         {
@@ -20355,23 +20648,40 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         bool juvenile = IsCompanionJuvenile(entity);
         float oldMaxHealth = health.MaxHealth;
         float oldHealth = health.Health;
-        float healthFraction = oldMaxHealth > 0f
+        EntityBehaviorFeralKinshipFoxSocial? social = entity.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>();
+        float initializedHealth = 0f;
+        float initializedMaximum = 0f;
+        bool hadInitializedHealth = social?.TryTakeInitializedHealth(out initializedHealth, out initializedMaximum) == true;
+        bool useInitializedHealth = preserveCurrentHealth && hadInitializedHealth;
+        if (useInitializedHealth)
+        {
+            // The qualified native observer removes only stat-induced refills
+            // and retains real healing/damage since Initialize. Without that
+            // observer, keep the prior native saved-injury fallback.
+            if (social?.TracksInitializedHealthChanges == true
+                || Math.Abs(oldMaxHealth - initializedMaximum) > 0.001f)
+                oldHealth = initializedHealth;
+            oldMaxHealth = initializedMaximum;
+        }
+        float healthFraction = oldHealth > 0f && oldMaxHealth > 0f
             ? Math.Clamp(oldHealth / oldMaxHealth, 0f, 1f)
-            : 1f;
+            : 0f;
         bool baseHealthChanged = false;
         bool isFotsa = ReferenceEquals(GetCompanionSpecies(entity), CompanionSpeciesCatalog.TamablesFotsa);
-        if (!juvenile && isFotsa && TryResolveFotsaStat(entity, true, out float fotsaMaxHealth))
+        if (!juvenile)
         {
-            if (Math.Abs(health.BaseMaxHealth - fotsaMaxHealth) > 0.001f)
+            // FOTSA's source value is species health, not an exemption from
+            // the adult companion minimum. Keep higher native/custom bases.
+            float desiredBaseHealth = Math.Max(health.BaseMaxHealth, FoxBaseMaxHealth);
+            if (isFotsa && TryResolveFotsaStat(entity, true, out float fotsaMaxHealth))
             {
-                health.BaseMaxHealth = fotsaMaxHealth;
+                desiredBaseHealth = Math.Max(desiredBaseHealth, fotsaMaxHealth);
+            }
+            if (desiredBaseHealth > health.BaseMaxHealth)
+            {
+                health.BaseMaxHealth = desiredBaseHealth;
                 baseHealthChanged = true;
             }
-        }
-        else if (!juvenile && !isFotsa && health.BaseMaxHealth < FoxBaseMaxHealth)
-        {
-            health.BaseMaxHealth = FoxBaseMaxHealth;
-            baseHealthChanged = true;
         }
 
         health.SetMaxHealthModifiers(
@@ -20380,10 +20690,28 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 ? health.BaseMaxHealth * GetFoxPackTalentRank(entity, "healthy-lineage") * PackTalentPercent
                 : GetFoxMaxHealthBonus(entity)
         );
-        if (health.MaxHealth > 0f && Math.Abs(health.MaxHealth - oldMaxHealth) > 0.001f)
+        // An unchanged (including zero) modifier can skip native recalculation.
+        // Resolve the new maximum before restoring the existing injury fraction.
+        if (baseHealthChanged)
         {
-            health.Health = Math.Clamp(health.MaxHealth * healthFraction, 0f, health.MaxHealth);
             health.MarkDirty();
+        }
+        if (useInitializedHealth || oldHealth <= 0f || baseHealthChanged
+            || Math.Abs(health.MaxHealth - oldMaxHealth) > 0.001f)
+        {
+            // Upgrade legacy bases using the pre-modifier injury fraction.
+            // Modifier-only attachment retains current HP; live talent changes
+            // keep the proportional policy. A nonpositive denominator cannot
+            // establish full health, and zero HP must survive native refills.
+            float desiredHealth = oldHealth <= 0f ? 0f
+                : (preserveCurrentHealth && !baseHealthChanged) || oldMaxHealth <= 0f
+                    ? oldHealth
+                    : health.MaxHealth * healthFraction;
+            health.Health = health.MaxHealth > 0f
+                ? Math.Clamp(desiredHealth, 0f, health.MaxHealth)
+                : Math.Max(0f, desiredHealth);
+            // The setter marks the tree dirty. Recalculating again here can
+            // refill a zero/nonpositive-maximum companion through wasFullHealth.
         }
 
         ITreeAttribute status = GetDomesticationStatus(entity, true)!;
@@ -20402,10 +20730,6 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             entity.WatchedAttributes.SetFloat("regenSpeed", desiredRegenSpeed);
             entity.WatchedAttributes.MarkPathDirty("regenSpeed");
-        }
-        if (baseHealthChanged)
-        {
-            health.MarkDirty();
         }
     }
 
@@ -21226,6 +21550,14 @@ public sealed class FoxSocialStatePacket
     [ProtoMember(66)]
     public string AppearanceCode = string.Empty;
     [ProtoMember(67)] public int SpeciesTraining;
+    [ProtoMember(68)] public bool ReseedingEnabled;
+    [ProtoMember(69)] public string ReseedingStatus = string.Empty;
+    [ProtoMember(70)] public string ReseedingThresholds = string.Empty;
+    [ProtoMember(71)] public string ReseedingRequirement = string.Empty;
+    [ProtoMember(72)] public bool FertilizerEnabled;
+    [ProtoMember(73)] public string FertilizerPolicy = string.Empty;
+    [ProtoMember(74)] public bool TroughRefillEnabled;
+    [ProtoMember(75)] public string TroughRefillRequirement = string.Empty;
 }
 
 [ProtoContract]
@@ -21240,6 +21572,7 @@ public sealed class FoxPerkRankEntry
 [ProtoContract]
 public sealed class FoxPerkStatePacket
 {
+    [ProtoMember(20)] public string SpeciesBonusKey = string.Empty;
     [ProtoMember(1)]
     public long TargetEntityId;
     [ProtoMember(2)]
@@ -21589,6 +21922,11 @@ public sealed partial class FoxPackRecordV2
     public float FoodLevel = 1f;
     [ProtoMember(101)]
     public double FoodLastUpdateTotalHours;
+    [ProtoMember(142)] public CompanionWellbeingState? Wellbeing;
+    [ProtoMember(143)] public bool ReseedingEnabled;
+    [ProtoMember(144)] public bool FertilizerEnabled;
+    [ProtoMember(145)] public bool TroughRefillEnabled;
+
 }
 
 [ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
@@ -21639,6 +21977,8 @@ public sealed class FoxPackSaveData
     public List<FoxScavengeSiteRecord> ScavengeSites = new();
     [ProtoMember(19)]
     public long NextScavengeSiteSequence = 1;
+    [ProtoMember(20)] public List<CompanionOwnerHomeRecord> WellbeingHomes = new();
+    [ProtoMember(100)] public FoxRecruitmentExtension? RecruitmentExtension;
 }
 
 [ProtoContract]
@@ -21679,6 +22019,7 @@ public sealed class FoxPackCairnRecord
     public int Dimension;
     [ProtoMember(6)]
     public long PlacedSequence;
+    [ProtoMember(7)] public bool IsPackCart;
 }
 
 [ProtoContract]
@@ -21845,6 +22186,12 @@ public sealed class FoxRecruitmentRewardRecord
     public string SpeciesId = string.Empty;
     [ProtoMember(5)]
     public string WildEntityCode = string.Empty;
+    [ProtoIgnore]
+    public string ClaimFoxId = string.Empty;
+    [ProtoIgnore]
+    public bool ClaimStarted;
+    [ProtoIgnore]
+    public string TameEntityCode = string.Empty;
 }
 
 [ProtoContract]
@@ -21953,6 +22300,8 @@ public sealed class FoxPackMemberPacket
     [ProtoMember(51)]
     public string AppearanceCode = string.Empty;
     [ProtoMember(52)] public int SpeciesTraining;
+    [ProtoMember(53)] public CompanionWellbeingState? Wellbeing;
+
 }
 
 [ProtoContract]
@@ -22086,6 +22435,8 @@ public sealed class FoxExpeditionMemberSummaryPacket
     public string MoodAtDeparture = string.Empty;
     [ProtoMember(14)]
     public string SpeciesId = string.Empty;
+    [ProtoMember(15)]
+    public string EntityCode = string.Empty;
 }
 
 [ProtoContract]

@@ -23,13 +23,13 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         + member.ExpeditionStrengthBonus;
 
     private float GetMemberStrength(FoxPackMemberPacket member) => GetMemberBaseStrength(member)
-        + CompanionSpeciesTraits.StrengthBonus(member.SpeciesId, selectedExpeditionType,
+        + CompanionSpeciesTraits.StrengthBonus(FotsaSpeciesBonusCatalog.Resolve(member.SpeciesId, member.AppearanceCode), selectedExpeditionType,
             GetMemberBaseStrength(member), member.SpeciesTraining);
 
     private CompanionSpeciesExpeditionBonus PreviewSpecies(FoxPackStatePacket current, string route) =>
         CompanionSpeciesTraits.Build(route, (current.Members ?? new()).Where(m =>
             selectedFoxIds.Contains(m.FoxId) && IsExpeditionEligible(m))
-            .Select(m => (m.SpeciesId, GetMemberBaseStrength(m), m.SpeciesTraining)));
+            .Select(m => (FotsaSpeciesBonusCatalog.Resolve(m.SpeciesId, m.AppearanceCode), GetMemberBaseStrength(m), m.SpeciesTraining)));
 
     private void DrawSpeciesPartyPreview(Context ctx, FoxPackStatePacket current, string route,
         double x, double top, double width, double height = 94)
@@ -195,7 +195,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             DrawText(ctx, target ? "Rescue target" : eligible ? $"Health {member.CurrentHealth:0.#}/{member.MaxHealth:0.#}"
                 : FriendlyStatus(member.Status), 350, y + 43, 12, TextMuted);
             if (eligible) DrawText(ctx, $"+{GetMemberStrength(member):0.#}", 740, y + 32, 14, TextGold);
-            var trait = CompanionSpeciesTraits.Get(member.SpeciesId);
+        var trait = CompanionSpeciesTraits.Get(FotsaSpeciesBonusCatalog.Resolve(member.SpeciesId, member.AppearanceCode));
             if (trait != null) DrawText(ctx, Trim(trait.Name, 23), 530, y + 43, 11, TextGold);
         }
         ctx.Restore();

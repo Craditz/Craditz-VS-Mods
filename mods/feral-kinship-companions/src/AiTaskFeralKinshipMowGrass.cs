@@ -73,7 +73,8 @@ public sealed class AiTaskFeralKinshipMowGrass : AiTaskBase
         long now = entity.World.ElapsedMilliseconds;
         if (now < nextCheckAtMs || IsOnCooldown()) return false;
 
-        if (!FeralKinshipCompanionSystem.IsMowLawnEnabled(entity)
+        if (!system.AllowsWellbeingDuty(entity)
+            || !FeralKinshipCompanionSystem.IsMowLawnEnabled(entity)
             || FeralKinshipCompanionSystem.GetCompanionActivityMode(entity) != CompanionActivityMode.AtEase
             || FeralKinshipCompanionSystem.IsCompanionJuvenile(entity)
             || FeralKinshipCompanionSystem.HasFoxStorageJob(entity)) return false;
@@ -182,7 +183,7 @@ public sealed class AiTaskFeralKinshipMowGrass : AiTaskBase
             );
         }
         mowed = true;
-        system.RecordCleanupDutyUnit(entity);
+        system.RecordCleanupDutyUnit(entity, exertion: 0.5);
         return false;
     }
 

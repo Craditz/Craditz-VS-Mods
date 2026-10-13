@@ -41,6 +41,8 @@ internal sealed class FeralKinshipCompanionThoughtRenderer : IRenderer
     public void QueueThought(CompanionThoughtPacket packet)
     {
         if (string.IsNullOrWhiteSpace(packet.Text)) return;
+        Entity? speaker = api.World.GetEntityById(packet.TargetEntityId);
+        if (speaker != null && FeralKinshipCompanionSystem.IsFoxAwayFromWorld(speaker)) return;
         bool followIdle = packet.SemanticGroup == "idle.follow";
         if (followIdle && (activeByEntity.ContainsKey(packet.TargetEntityId)
             || activeByEntity.Values.Any(item => item.Priority > CompanionDialoguePriority.Low)

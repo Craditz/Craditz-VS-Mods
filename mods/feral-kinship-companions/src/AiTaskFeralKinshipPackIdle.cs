@@ -15,6 +15,9 @@ namespace FeralKinshipCompanions;
 public sealed class AiTaskFeralKinshipPackIdle : AiTaskBase
 {
     private FoxIdlePlan? plan;
+    private double wellbeingActivitySeconds;
+    private bool wellbeingActivityCredited;
+    private Vec3d wellbeingLastPosition = new();
     private bool arrived;
     private bool stuck;
     private long endsAtMs;
@@ -56,6 +59,7 @@ public sealed class AiTaskFeralKinshipPackIdle : AiTaskBase
 
     public override void StartExecute()
     {
+        wellbeingActivitySeconds = 0; wellbeingActivityCredited = false; wellbeingLastPosition = entity.Pos.XYZ.Clone();
         arrived = plan?.Immediate == true;
         stuck = false;
         long now = entity.World.ElapsedMilliseconds;
@@ -88,6 +92,25 @@ public sealed class AiTaskFeralKinshipPackIdle : AiTaskBase
     public override bool CanContinueExecute() => true;
 
     public override bool ContinueExecute(float dt)
+    {
+        bool continuing = ContinuePackLife(dt);
+        if (continuing && plan != null && !wellbeingActivityCredited)
+        {
+            var system = entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>();
+            bool moved = entity.Pos.XYZ.SquareDistanceTo(wellbeingLastPosition) > 0.000001;
+            if (system.IsWellbeingActivityPerformed(entity, plan, arrived, moved && navigation.IsRunning))
+                wellbeingActivitySeconds += float.IsFinite(dt) ? Math.Clamp(dt, 0, .5f) : 0;
+            if (wellbeingActivitySeconds >= 4)
+            {
+                system.CreditWellbeingActivity(entity, plan.Kind, wellbeingActivitySeconds);
+                wellbeingActivityCredited = true;
+            }
+        }
+        wellbeingLastPosition.Set(entity.Pos.XYZ);
+        return continuing;
+    }
+
+    private bool ContinuePackLife(float dt)
     {
         if (plan == null || stuck
             || FeralKinshipCompanionSystem.IsFoxAwayFromWorld(entity)

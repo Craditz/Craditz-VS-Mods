@@ -118,7 +118,7 @@ public sealed class AiTaskFeralKinshipExpeditionDepart : AiTaskBase
         // yields immediately to the emergency feeding/rest tasks instead of
         // completing the hide-from-world transition.
         FeralKinshipCompanionSystem? system = entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>();
-        if (system?.IsCompanionFoodRestricted(entity) == true)
+        if (system?.IsCompanionFoodRestricted(entity) == true && !system.HasPendingWellbeingFoodTrip(entity))
         {
             return false;
         }

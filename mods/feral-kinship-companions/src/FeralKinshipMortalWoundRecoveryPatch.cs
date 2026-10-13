@@ -96,6 +96,7 @@ internal static class FeralKinshipMortalWoundRecoveryPatch
     private static bool BeforeMortalWoundTick(EntityBehaviorMortallyWoundable __instance)
     {
         Entity entity = __instance.entity;
+        if (RetainedNativeSuspension.Protected(entity)) return false;
         if (!IsCompanionServerEntity(entity)
             || !entity.Alive
             || entity.ShouldDespawn
@@ -145,6 +146,7 @@ internal static class FeralKinshipMortalWoundRecoveryPatch
     private static void AfterVanillaRecovery(EntityBehaviorMortallyWoundable __instance)
     {
         Entity entity = __instance.entity;
+        if (RetainedNativeSuspension.Protected(entity)) return;
         if (!IsCompanionServerEntity(entity)) return;
 
         // The threshold belongs to one wound only. Keep the generation so any

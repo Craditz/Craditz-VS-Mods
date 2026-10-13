@@ -10,10 +10,18 @@ namespace FeralKinshipCompanions;
 
 public sealed partial class FeralKinshipCompanionSystem
 {
-    private static int GetSpeciesTraining(Entity? entity, string species) => entity == null
-        || CompanionSpeciesTraits.Get(species) == null ? 0
-        : Math.Clamp(GetFoxPerkRank(entity, CompanionSpeciesTraits.TrainingId(species)), 0, 1)
-            + Math.Clamp(GetFoxPerkRank(entity, CompanionSpeciesTraits.MasteryId(species)), 0, 1);
+    private static string GetSpeciesBonusKey(Entity entity) =>
+        FotsaSpeciesBonusCatalog.Resolve(GetCompanionSpecies(entity).Id, entity.Code?.ToString());
+
+    private static int GetSpeciesTraining(Entity? entity, string species)
+    {
+        if (entity == null || IsCompanionJuvenile(entity)
+            || FotsaSpeciesBonusCatalog.IsJuvenile(entity.Code?.ToString())) return 0;
+        var trait = CompanionSpeciesTraits.Get(FotsaSpeciesBonusCatalog.Resolve(species, entity.Code?.ToString()));
+        return trait == null ? 0
+            : Math.Clamp(GetFoxPerkRank(entity, CompanionSpeciesTraits.TrainingId(trait.Species)), 0, 1)
+                + Math.Clamp(GetFoxPerkRank(entity, CompanionSpeciesTraits.MasteryId(trait.Species)), 0, 1);
+    }
 
     private CompanionSpeciesExpeditionBonus SnapshotSpeciesTraits(string route,
         List<FoxExpeditionMemberSummaryPacket> members)
@@ -25,11 +33,14 @@ public sealed partial class FeralKinshipCompanionSystem
             if (packRepository?.TryGetRecord(member.FoxId, out var record) == true && record != null)
                 entity = serverApi?.World.GetEntityById(record.EntityId);
             int training = GetSpeciesTraining(entity, member.SpeciesId);
-            inputs.Add((member.SpeciesId, member.TotalStrength, training));
-            float extra = CompanionSpeciesTraits.StrengthBonus(member.SpeciesId, route, member.TotalStrength, training);
+            string bonusKey = entity != null && (IsCompanionJuvenile(entity)
+                || FotsaSpeciesBonusCatalog.IsJuvenile(entity.Code?.ToString()))
+                ? string.Empty : FotsaSpeciesBonusCatalog.Resolve(member.SpeciesId, entity?.Code?.ToString());
+            inputs.Add((bonusKey, member.TotalStrength, training));
+            float extra = CompanionSpeciesTraits.StrengthBonus(bonusKey, route, member.TotalStrength, training);
             member.PerkStrength += extra;
             member.TotalStrength += extra;
-            var trait = CompanionSpeciesTraits.Get(member.SpeciesId);
+            var trait = CompanionSpeciesTraits.Get(bonusKey);
             if (trait != null) member.Perks.Add($"{trait.Name} ({CompanionSpeciesTraits.Affinity(training):P0} affinity)");
         }
         return CompanionSpeciesTraits.Build(route, inputs);

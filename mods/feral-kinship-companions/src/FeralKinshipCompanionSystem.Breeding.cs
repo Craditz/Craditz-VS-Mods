@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
@@ -15,6 +16,16 @@ namespace FeralKinshipCompanions;
 
 public sealed partial class FeralKinshipCompanionSystem
 {
+    // Native growth creates a fresh adult, not a load of the juvenile's health.
+    // Registration can re-enter through numbering/naming before the growth
+    // postfix. Keep this authority on the actual replacement reference only;
+    // never serialize it or infer it from saved juvenile/points markers.
+    private static readonly ConditionalWeakTable<Entity, object> nativeAdultGrowthHandoffs = new();
+    private static readonly object nativeAdultGrowthHandoffMarker = new();
+
+    internal static void CompleteCompanionAdultGrowthHandoff(Entity adult) =>
+        nativeAdultGrowthHandoffs.Remove(adult);
+
     internal const string JuvenileKey = "feralKinshipJuvenile";
     internal const string JuvenileSpeciesKey = "feralKinshipJuvenileSpecies";
     internal const string ParentMotherIdKey = "feralKinshipMotherId";
@@ -114,6 +125,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void UpdateBreedingAndChildren(Entity entity)
     {
+        if (RetainedNativeSuspension.Protected(entity)) return;
         ITreeAttribute status = GetDomesticationStatus(entity, true)!;
         if (IsCompanionJuvenile(entity))
         {
@@ -122,8 +134,12 @@ public sealed partial class FeralKinshipCompanionSystem
 
         if (!CompanionBreedingCatalog.TryGetForAdult(entity, out CompanionBreedingDefinition definition))
         {
+            if (CompanionFotsaBreedingCatalog.IsFotsa(entity.Code))
+                SetFotsaBreedingFeedback(entity, status, "source-unavailable");
             return;
         }
+
+        if (definition.IsFotsa && ReconcileFotsaPregnancy(entity, definition)) return;
 
         if (status.GetBool(PregnancyActiveKey, false))
         {
@@ -132,6 +148,7 @@ public sealed partial class FeralKinshipCompanionSystem
         }
 
         if (!status.GetBool(BreedingEnabledKey, false)
+            || (definition.IsFotsa && entity.WatchedAttributes.GetTreeAttribute("multiply")?.GetDouble("totalDaysCooldownUntil", 0) > entity.World.Calendar.TotalDays)
             || !CompanionBreedingCatalog.TryGetGender(entity, out string gender)
             || !string.Equals(gender, "female", StringComparison.Ordinal)
             || !string.Equals(GetCompanionActivityMode(entity), CompanionActivityMode.AtEase, StringComparison.Ordinal)
@@ -208,6 +225,7 @@ public sealed partial class FeralKinshipCompanionSystem
         status.SetString(PregnancyFatherNameKey, GetFoxDisplayName(partner));
         status.SetBool(PendingBirthKey, false);
         status.SetString(BreedingFeedbackKey, "pregnant");
+        if (definition.IsFotsa) StartFotsaPregnancyMirror(entity, definition);
         partnerStatus.SetString(BreedingFeedbackKey, "partner-pregnant");
         MarkSocialStateDirty(entity);
         MarkSocialStateDirty(partner);
@@ -238,12 +256,9 @@ public sealed partial class FeralKinshipCompanionSystem
                 || IsFoxIncapacitated(candidate)
                 || IsCompanionFoodRestricted(candidate)
                 || !CompanionBreedingCatalog.TryGetForAdult(candidate, out CompanionBreedingDefinition candidateDefinition)
-                || !string.Equals(candidateDefinition.SpeciesId, definition.SpeciesId, StringComparison.Ordinal)
+                || !definition.CanMate(mother, candidate, candidateDefinition)
                 || !CompanionBreedingCatalog.TryGetGender(candidate, out string candidateGender)
                 || !string.Equals(candidateGender, "male", StringComparison.Ordinal)
-                || !CompanionBreedingCatalog.TryGetType(mother, out string motherType)
-                || !CompanionBreedingCatalog.TryGetType(candidate, out string candidateType)
-                || !string.Equals(motherType, candidateType, StringComparison.OrdinalIgnoreCase)
                 || !string.Equals(GetCompanionActivityMode(candidate), CompanionActivityMode.AtEase, StringComparison.Ordinal))
             {
                 continue;
@@ -330,9 +345,10 @@ public sealed partial class FeralKinshipCompanionSystem
             return;
         }
 
-        if (!CompanionBreedingCatalog.TryGetType(mother, out string typeId)
+        string typeId = string.Empty;
+        if (!definition.IsFotsa && (!CompanionBreedingCatalog.TryGetType(mother, out typeId)
             || !CompanionBreedingCatalog.TryGetSpeciesProfile(definition.SpeciesId, out CompanionSpeciesProfile profile)
-            || !CompanionBreedingCatalog.IsKnownType(profile, typeId))
+            || !CompanionBreedingCatalog.IsKnownType(profile, typeId)))
         {
             motherStatus.SetBool(PendingBirthKey, true);
             motherStatus.SetString(BreedingFeedbackKey, "birth-invalid-type");
@@ -340,10 +356,13 @@ public sealed partial class FeralKinshipCompanionSystem
             return;
         }
 
-        foreach (string genderId in new[] { "female", "male" })
+        CompanionFotsaOffspring[] offspringOptions = definition.FotsaOffspring?.ToArray()
+            ?? new[] { "female", "male" }.Select(gender => new CompanionFotsaOffspring(
+                definition.BuildChildCode(typeId, gender), definition.BuildAdultCode(typeId, gender))).ToArray();
+        foreach (CompanionFotsaOffspring offspring in offspringOptions)
         {
-            if (serverApi.World.GetEntityType(new AssetLocation(definition.BuildChildCode(typeId, genderId))) == null
-                || serverApi.World.GetEntityType(new AssetLocation(definition.BuildAdultCode(typeId, genderId))) == null)
+            if (serverApi.World.GetEntityType(new AssetLocation(offspring.ChildCode)) == null
+                || serverApi.World.GetEntityType(new AssetLocation(offspring.AdultCode)) == null)
             {
                 motherStatus.SetBool(PendingBirthKey, true);
                 motherStatus.SetString(BreedingFeedbackKey, "birth-waiting");
@@ -352,8 +371,7 @@ public sealed partial class FeralKinshipCompanionSystem
             }
         }
 
-        int litterSize = definition.LitterSizeMin
-            + mother.World.Rand.Next(definition.LitterSizeMax - definition.LitterSizeMin + 1);
+        int litterSize = definition.RollLitterSize(mother.World.Rand);
         motherStatus.SetBool(PendingBirthKey, true);
         List<Entity> stagedChildren = new(litterSize);
         List<Vec3d> reservedPositions = new(litterSize);
@@ -362,14 +380,14 @@ public sealed partial class FeralKinshipCompanionSystem
         {
             for (int litterIndex = 0; litterIndex < litterSize; litterIndex++)
             {
-                string childGender = mother.World.Rand.NextDouble() < 0.5d ? "female" : "male";
-                string childCode = definition.BuildChildCode(typeId, childGender);
-                string adultCode = definition.BuildAdultCode(typeId, childGender);
+                CompanionFotsaOffspring offspring = offspringOptions[mother.World.Rand.Next(offspringOptions.Length)];
+                string childCode = offspring.ChildCode;
+                string adultCode = offspring.AdultCode;
                 EntityProperties? childType = serverApi.World.GetEntityType(new AssetLocation(childCode));
                 EntityProperties? adultType = serverApi.World.GetEntityType(new AssetLocation(adultCode));
                 Vec3d? safe = childType == null
                     ? null
-                    : FindSafeEntityPosition(mother.Pos.AsBlockPos, childType, mother, 4, 2, reservedPositions);
+                    : FindSafeCompanionBirthPosition(mother, childType, reservedPositions);
                 if (childType == null || adultType == null || safe == null)
                 {
                     nextBirthRetryAtMsByEntity[mother.EntityId] = nowMs + BirthSafePositionRetryIntervalMs;
@@ -387,14 +405,13 @@ public sealed partial class FeralKinshipCompanionSystem
                     return;
                 }
 
-                child.Pos.X = safe.X;
-                child.Pos.Y = safe.Y;
-                child.Pos.Z = safe.Z;
+                child.Pos.SetPosWithDimension(safe);
                 child.Pos.Yaw = mother.Pos.Yaw;
                 child.PositionBeforeFalling.Set(safe.X, safe.Y, safe.Z);
                 ITreeAttribute childStatus = GetDomesticationStatus(child, true)!;
                 childStatus.SetString("owner", motherStatus.GetString("owner", string.Empty));
                 childStatus.SetString("domesticationLevel", "DOMESTICATED");
+                childStatus.SetFloat("obedience", 1f);
                 childStatus.SetBool(JuvenileKey, true);
                 childStatus.SetString(JuvenileSpeciesKey, definition.SpeciesId);
                 childStatus.SetString(ParentMotherIdKey, motherStatus.GetString(FoxIdKey, string.Empty));
@@ -432,6 +449,7 @@ public sealed partial class FeralKinshipCompanionSystem
             }
 
             nextBirthRetryAtMsByEntity.Remove(mother.EntityId);
+            if (definition.IsFotsa) CompleteFotsaPregnancyMirror(mother, definition);
             motherStatus.SetBool(PregnancyActiveKey, false);
             motherStatus.SetBool(PendingBirthKey, false);
             motherStatus.SetDouble(PregnancyStartTotalHoursKey, 0d);
@@ -452,6 +470,7 @@ public sealed partial class FeralKinshipCompanionSystem
                 // Do not retry the whole litter after a partial spawn: doing so
                 // could duplicate already-created pups on every later update.
                 nextBirthRetryAtMsByEntity.Remove(mother.EntityId);
+                if (definition.IsFotsa) CompleteFotsaPregnancyMirror(mother, definition);
                 motherStatus.SetBool(PregnancyActiveKey, false);
                 motherStatus.SetBool(PendingBirthKey, false);
                 motherStatus.SetDouble(PregnancyStartTotalHoursKey, 0d);
@@ -547,7 +566,9 @@ public sealed partial class FeralKinshipCompanionSystem
         if (IsCompanionJuvenile(entity)
             || !CompanionBreedingCatalog.TryGetForAdult(entity, out _))
         {
-            SendState(entity, owner, Lang.Get("feralkinshipcompanions:breeding-unsupported"));
+            SendState(entity, owner, CompanionFotsaBreedingCatalog.IsFotsa(entity.Code)
+                ? Lang.Get("feralkinshipcompanions:breeding-source-unavailable", CompanionFotsaBreedingCatalog.UnavailableReason(entity.Code))
+                : Lang.Get("feralkinshipcompanions:breeding-unsupported"));
             return;
         }
 
@@ -614,6 +635,7 @@ public sealed partial class FeralKinshipCompanionSystem
         // Finish behavior and stat setup in the postfix, after SpawnEntity.
         RegisterFoxInPack(child);
         packRepository?.Save();
+        nativeAdultGrowthHandoffs.Add(replacement, nativeAdultGrowthHandoffMarker);
         adult = replacement;
     }
 
@@ -635,6 +657,13 @@ public sealed partial class FeralKinshipCompanionSystem
 
         status.SetBool(GrowthInProgressKey, false);
         status.SetBool(JuvenilePointsTransferredKey, true);
+        if (nativeAdultGrowthHandoffs.TryGetValue(adult, out _))
+        {
+            // If the repository was not loaded during spawn, a later first
+            // registration must persist this living adult, not hydrate an old
+            // child record. Normal unload/reload still resets this runtime set.
+            ledgerHydratedEntities.Add(adult.EntityId);
+        }
         adult.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.EnsureAdultCompanionTasks();
         string preservedName = adult.WatchedAttributes.GetTreeAttribute("nametag")?.GetString("name", string.Empty)
             ?? string.Empty;
@@ -663,6 +692,9 @@ public sealed partial class FeralKinshipCompanionSystem
         "birth-interrupted" => Lang.Get("feralkinshipcompanions:breeding-feedback-birth-interrupted"),
         "birth-success" => Lang.Get("feralkinshipcompanions:breeding-feedback-birth-success"),
         "grown" => Lang.Get("feralkinshipcompanions:breeding-feedback-grown"),
+        "source-unavailable" => Lang.Get("feralkinshipcompanions:breeding-feedback-source-unavailable"),
+        "native-pregnant" => Lang.Get("feralkinshipcompanions:breeding-feedback-native-pregnant"),
+        "pregnancy-conflict" => Lang.Get("feralkinshipcompanions:breeding-feedback-pregnancy-conflict"),
         _ => string.Empty
     };
 }

@@ -102,9 +102,9 @@ public sealed class AiTaskFeralKinshipFetchDroppedItem : AiTaskBase
             nextCheckAtMs = now + 750 + rand.Next(4500);
             return false;
         }
-        float scanMultiplier = FeralKinshipCompanionSystem.GetDutyScanIntervalMultiplier(
+        float scanMultiplier = assignedJob ? 1f : FeralKinshipCompanionSystem.GetDutyScanIntervalMultiplier(
             entity,
-            GatherFinishedProducts);
+            GatherFinishedProducts, includeOffline: !assignedJob);
         nextCheckAtMs = now + (long)Math.Round((5000 + rand.Next(7000)) * scanMultiplier);
         if (DutyCoordinator)
         {

@@ -9,6 +9,13 @@ namespace FeralKinshipCompanions;
 
 internal sealed partial class GuiElementFeralKinshipFoxPackSurface
 {
+    private GuiDialogFeralKinshipMoodDetails moodDetails;
+    public void CloseMoodDetails()
+    {
+        moodDetails?.TryClose();
+        moodDetails?.Dispose();
+        moodDetails = null;
+    }
     private const double OverviewTop = ContentY + 72;
     private const double OverviewListX = 288;
     private const double OverviewListWidth = 548;
@@ -190,6 +197,32 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         DrawText(ctx, Trim(member.SpeciesDisplayName, 23), x + 100, OverviewTop + 101, 13, TextMuted);
         DrawText(ctx, Trim(FriendlyStatus(member.Status), 35), x, OverviewTop + 165, 15, TextGold);
         FoxGuiTheme.DrawSectionRule(ctx, x, OverviewTop + 178, OverviewDetailWidth - 30);
+        if (!archived)
+            DrawButton(ctx, "Mood details", x, OverviewTop + 112,
+                OverviewDetailWidth - 30, 30, true);
+        if (!archived)
+        {
+            DrawText(ctx, $"Health: {member.CurrentHealth:0.#}/{member.MaxHealth:0.#}",
+                x, OverviewTop + 207, 13, TextWhite);
+            DrawText(ctx, "Mood: " + member.Mood, x, OverviewTop + 230, 13, TextWhite);
+            DrawText(ctx, "Needs attention", x, OverviewTop + 270, 16, TextGold);
+            var issues = CompanionWellbeingPresentation.Problems(member.Wellbeing);
+            if (member.Wellbeing?.HasObservation != true)
+                DrawText(ctx, "Needs have not been checked yet", x, OverviewTop + 300, 12, TextMuted);
+            else
+            {
+                for (int i = 0; i < Math.Min(3, issues.Count); i++)
+                    DrawText(ctx, Trim(issues[i], 40), x, OverviewTop + 300 + i * 23, 13, TextWhite);
+                if (issues.Count == 0)
+                    DrawText(ctx, "No problems in the current checks", x, OverviewTop + 300, 12, TextMuted);
+                if (!member.EntityLoaded)
+                    DrawText(ctx, "Saved observations; companion unloaded", x, OverviewTop + 375, 11, TextMuted);
+                else
+                    DrawText(ctx, "See Mood details for all needs", x, OverviewTop + 375, 11, TextMuted);
+            }
+        }
+        else
+        {
         string[] lines = archived
             ? new[] {
                 $"Status: {FriendlyStatus(member.Status)}",
@@ -209,6 +242,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
                 $"Level: {member.Level} ({member.CurrentLevelExperience}/{member.RequiredLevelExperience} EXP)" };
         for (int i = 0; i < lines.Length; i++)
             DrawText(ctx, Trim(lines[i], 40), x, OverviewTop + 207 + i * 22, 13, TextWhite);
+        }
         if (!archived)
             DrawButton(ctx, CanArchiveMember(member) ? "Archive companion" : member.AtCart ? "Already at cart" : "Call to cart", x,
                 OverviewTop + 401, OverviewDetailWidth - 30, 38,
@@ -253,6 +287,13 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         }
         FoxPackMemberPacket member = ResolveOverviewSelection(visible, ref selectedRosterFoxId);
         if (member == null || x < OverviewDetailX + 15 || x > OverviewDetailX + OverviewDetailWidth - 15) return;
+        if (y >= OverviewTop + 112 && y <= OverviewTop + 142)
+        {
+            CloseMoodDetails();
+            moodDetails = new GuiDialogFeralKinshipMoodDetails(api, system, member, Redraw);
+            moodDetails.TryOpen();
+            FoxGuiTheme.PlayChoice(api); return;
+        }
         if (y >= OverviewTop + 401 && y <= OverviewTop + 439 && CanArchiveMember(member))
         {
             FoxGuiTheme.PlayAction(api);

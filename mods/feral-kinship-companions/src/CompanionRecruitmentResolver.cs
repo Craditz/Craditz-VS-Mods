@@ -12,8 +12,11 @@ internal static class CompanionRecruitmentResolver
         CompanionRecruitmentVariant variant,
         System.Func<AssetLocation, EntityProperties?> getEntityType)
     {
+        if (CompanionNativeRecruitmentCatalog.IsNative(profile))
+            return CompanionNativeRecruitmentCatalog.Resolve(profile, variant, getEntityType);
+        if (!CompanionNativeRecruitmentCatalog.Concrete(variant.EntityCode)) return null;
         EntityProperties? source = getEntityType(new AssetLocation(variant.EntityCode));
-        if (source == null) return null;
+        if (source == null || CompanionNativeRecruitmentCatalog.IsJuvenile(source)) return null;
 
         // Registered behavior JSON already has the engine's variant placeholders
         // resolved. Use the same destination as PetAI's ordinary tame conversion.
@@ -27,6 +30,8 @@ internal static class CompanionRecruitmentResolver
 
         // Ownership attributes alone must never turn a wild definition into a
         // reward. Also reject a misconfigured destination belonging to another species.
-        return tame != null && profile.MatchesTameEntityCode(tame.Code) ? tame : null;
+        return tame != null && profile.MatchesTameEntityCode(tame.Code)
+            && !CompanionNativeRecruitmentCatalog.IsJuvenile(tame)
+            && CompanionNativeRecruitmentCatalog.Concrete(tame.Code.ToString()) ? tame : null;
     }
 }

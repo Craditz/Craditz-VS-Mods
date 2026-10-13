@@ -195,9 +195,22 @@ internal sealed class GuiElementFeralKinshipFoxBedSurface : GuiElementFeralKinsh
         ScaleCanvas(ctx);
         FoxGuiTheme.DrawJournal(ctx, (int)CanvasWidth, (int)CanvasHeight, FoxGuiSurfaceKind.Den);
         FoxGuiTheme.DrawWindowControls(ctx, api, CanvasWidth);
-        DrawText(ctx, "Choose one companion for this personal den.", 10, 25, 18, White);
-        DrawWrapped(ctx, "A companion can have one den. Selecting it here moves its assignment.", 10, 48,
-            CanvasWidth - 20, 13, Muted, 2);
+        DrawContent(ctx);
+        generateTexture(image, ref textureId);
+    }
+
+    internal static void DrawHeader(Context ctx, double width)
+    {
+        CompanionGuiParagraph.Draw(ctx, "Personal den", 10, 5,
+            FoxGuiTheme.ThemeButtonX(width) - 20, 29, 18, White);
+        CompanionGuiParagraph.Draw(ctx,
+            "Choose one companion for this personal den. A companion can have one den; selecting it here moves its assignment.",
+            10, 38, width - 20, 33, 13, Muted);
+    }
+
+    internal void DrawContent(Context ctx)
+    {
+        DrawHeader(ctx, CanvasWidth);
         FoxGuiTheme.DrawSectionRule(ctx, 10, 72, CanvasWidth - 30);
 
         if (state != null)
@@ -242,7 +255,6 @@ internal sealed class GuiElementFeralKinshipFoxBedSurface : GuiElementFeralKinsh
                 DrawWrapped(ctx, state.Message, 18, 491, 452, 14, Gold, 2);
             }
         }
-        generateTexture(image, ref textureId);
     }
 
     private static string DisplayName(string name) =>

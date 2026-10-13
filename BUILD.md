@@ -62,7 +62,7 @@ for comparison. Existing selected versions and dependency requirements are kept.
 
 ## Companions, Body Tools and Radio
 
-Companions 0.5.75, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
+Companions 0.5.76, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
 diagnostic features that shipped with those versions. Their separate test and
 checker projects stay out of this repo. Companions 0.5.74 includes the accepted
 crunch-sound removal; no alternate UI build was selected.
@@ -121,3 +121,7 @@ the real asset contents, not just the pointer files, and use Git LFS for any
 additional large source assets where appropriate.
 
 Keep downloadable release ZIPs as separate release assets.
+
+### October 13 Companions release
+
+Companions 0.5.76 derives from approved private Sound1 production source. The two unused offline suspension prototype/probe files are excluded; production retained suspension, existing developer features, assets and notices remain. The public project keeps its repository-relative shared-source links. Its final DLL is rebuilt and separately verified; prior private-DLL evidence is not relabelled as public-DLL gameplay acceptance. Set DOTNET_GENERATE_ASPNET_CERTIFICATE=false, DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1 and DOTNET_CLI_TELEMETRY_OPTOUT=1 before building in a fresh CLI home.

@@ -220,6 +220,7 @@ public sealed partial class FeralKinshipCompanionSystem
             MaxHealth = record.MaxHealth,
             Personality = GetPersonalityLabel(record.Personality),
             Mood = record.Mood,
+            Wellbeing = record.Wellbeing?.Copy(),
             RequestsGenerated = record.RequestsGenerated,
             RequestsCompleted = record.RequestsCompleted,
             Points = record.Points,

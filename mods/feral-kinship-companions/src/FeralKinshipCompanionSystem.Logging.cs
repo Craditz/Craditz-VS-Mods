@@ -136,6 +136,8 @@ public sealed partial class FeralKinshipCompanionSystem
             RemoveWorkCartLoggingWorker(fox.EntityId, rememberedJob.Plan);
         }
 
+        if (!AllowsWellbeingDuty(fox, demanding: true)) return false;
+
         string cartKey = WorkCartPositionKey(cartPos);
         if (!workCartLoggingQueues.TryGetValue(cartKey, out WorkCartLoggingQueueState? queue))
         {

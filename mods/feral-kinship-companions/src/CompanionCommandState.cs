@@ -39,6 +39,9 @@ internal static class CompanionDuty
     public const string MowLawn = "mowlawn";
     public const string GatherFinishedProducts = "gatherfinishedproducts";
     public const string FinishedCrops = "finished-crops";
+    public const string Reseeding = "reseed-crops";
+    public const string Fertilizer = "fertilize-crops";
+    public const string TroughRefill = "refill-troughs";
     public const string FinishedBerries = "finished-berries";
     public const string FinishedMushrooms = "finished-mushrooms";
     public const string FlowerRemoval = "flowerremoval";
@@ -50,7 +53,7 @@ internal static class CompanionDuty
     public static readonly string[] Subtasks =
     {
         GroundDroppedItems, GroundCattails, GroundFlint, GroundSticks, GroundBoulders, GroundRocks,
-        FinishedCrops, FinishedBerries, FinishedMushrooms, FlowerRemoval, SnowShoveling, SnowballCollection
+        Reseeding, Fertilizer, TroughRefill, FinishedCrops, FinishedBerries, FinishedMushrooms, FlowerRemoval, SnowShoveling, SnowballCollection
     };
 
     public static bool IsSubtask(string? value) => Subtasks.Contains(value ?? string.Empty, StringComparer.Ordinal);
@@ -64,6 +67,9 @@ internal static class CompanionDuty
         GroundBoulders => "feralKinshipGroundBouldersEnabled",
         GroundRocks => "feralKinshipGroundRocksEnabled",
         FinishedCrops => "feralKinshipFinishedCropsEnabled",
+        Reseeding => "feralKinshipReseedingEnabled",
+        Fertilizer => "feralKinshipFertilizerEnabled",
+        TroughRefill => "feralKinshipTroughRefillEnabled",
         FinishedBerries => "feralKinshipFinishedBerriesEnabled",
         FinishedMushrooms => "feralKinshipFinishedMushroomsEnabled",
         FlowerRemoval => "feralKinshipFlowerRemovalEnabled",
@@ -81,6 +87,9 @@ internal static class CompanionDuty
         GroundBoulders => "Boulders",
         GroundRocks => "Rocks",
         FinishedCrops => "Crops",
+        Reseeding => "Reseed harvested crops",
+        Fertilizer => "Tend growing crops with fertilizer",
+        TroughRefill => "Refill troughs",
         FinishedBerries => "Berries",
         FinishedMushrooms => "Mushrooms",
         FlowerRemoval => "Flower removal",
@@ -107,8 +116,9 @@ internal static class CompanionDuty
     // custom-duty commands remain compatible with saved whistle selections.
     public const int StorageSortingBit = 1 << 13;
     public const int CharcoalShovelingBit = 1 << 14;
-    public const int AllDutiesMask = (1 << 15) - 1;
-    public const int AllExceptSnowballsMask = AllDutiesMask & ~SnowballCollectionBit;
+    public const int ReseedingBit = 1 << 15;
+    public const int AllDutiesMask = (1 << 16) - 1;
+    public const int AllExceptSnowballsMask = AllDutiesMask & ~SnowballCollectionBit & ~ReseedingBit;
 
     public static int GetDutyMask(string? value)
     {
@@ -125,6 +135,7 @@ internal static class CompanionDuty
             MowLawn => MowLawnBit,
             GatherFinishedProducts => FinishedCropsBit | FinishedBerriesBit | FinishedMushroomsBit,
             FinishedCrops => FinishedCropsBit,
+            Reseeding => ReseedingBit,
             FinishedBerries => FinishedBerriesBit,
             FinishedMushrooms => FinishedMushroomsBit,
             FlowerRemoval => FlowerRemovalBit,

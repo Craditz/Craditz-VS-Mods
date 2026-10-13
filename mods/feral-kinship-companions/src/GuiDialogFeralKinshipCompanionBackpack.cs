@@ -160,6 +160,7 @@ public sealed class GuiDialogFeralKinshipCompanionBackpack : GuiDialog
     {
         base.OnFinalizeFrame(dt);
         if (!companion.Alive
+            || companion.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.CompanionBackpackClientAvailable(capi) != true
             || capi.World.Player.Entity.Pos.SquareDistanceTo(companion.Pos.XYZ) > 8 * 8)
         {
             capi.Event.EnqueueMainThreadTask(() => TryClose(), "close-companion-backpack");

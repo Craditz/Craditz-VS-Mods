@@ -9,6 +9,34 @@ namespace FeralKinshipCompanions;
 
 internal sealed class CompanionBreedingDefinition
 {
+    internal IReadOnlyList<CompanionFotsaOffspring>? FotsaOffspring { get; set; }
+    internal string FamilyId { get; set; } = string.Empty;
+    internal HashSet<string>? AllowedMateCodes { get; set; }
+    internal double SourceQuantityMin { get; set; }
+    internal double SourceQuantityMax { get; set; }
+    internal double CooldownDaysMin { get; set; }
+    internal double CooldownDaysMax { get; set; }
+    internal bool IsFotsa => FotsaOffspring != null;
+
+    internal int RollLitterSize(Random random)
+    {
+        if (!IsFotsa) return LitterSizeMin + random.Next(LitterSizeMax - LitterSizeMin + 1);
+        double quantity = SourceQuantityMin + random.NextDouble() * (SourceQuantityMax - SourceQuantityMin);
+        int count = (int)Math.Floor(quantity);
+        return count + (random.NextDouble() < quantity - count ? 1 : 0);
+    }
+
+    internal bool CanMate(Entity mother, Entity father, CompanionBreedingDefinition fatherDefinition)
+    {
+        if (IsFotsa)
+            return fatherDefinition.IsFotsa && FamilyId == fatherDefinition.FamilyId
+                && AllowedMateCodes?.Contains(father.Code.ToString()) == true;
+        return SpeciesId == fatherDefinition.SpeciesId
+            && !fatherDefinition.IsFotsa
+            && CompanionBreedingCatalog.TryGetType(mother, out string motherType)
+            && CompanionBreedingCatalog.TryGetType(father, out string fatherType)
+            && string.Equals(motherType, fatherType, StringComparison.OrdinalIgnoreCase);
+    }
     private readonly string juvenileDomain;
     private readonly string juvenilePrefix;
     private readonly string juvenileContains;
@@ -161,6 +189,7 @@ internal static class CompanionBreedingCatalog
 
     public static bool TryGetForAdult(Entity entity, out CompanionBreedingDefinition definition)
     {
+        if (CompanionFotsaBreedingCatalog.TryGetForAdult(entity.Code, out definition)) return true;
         if (entity.Code != null
             && CompanionSpeciesCatalog.TryGetByTameEntityCode(entity.Code, out CompanionSpeciesProfile profile)
             && TryGetExternalDefinition(entity.Code, profile.Id, out definition))
@@ -182,6 +211,7 @@ internal static class CompanionBreedingCatalog
 
     public static bool TryGetForJuvenile(Entity entity, out CompanionBreedingDefinition definition)
     {
+        if (CompanionFotsaBreedingCatalog.TryGetForJuvenile(entity.Code, out definition)) return true;
         definition = null!;
         if (entity.Code == null)
         {
@@ -234,6 +264,7 @@ internal static class CompanionBreedingCatalog
 
     public static bool TryGetSpeciesProfile(string speciesId, out CompanionSpeciesProfile profile)
     {
+        if (speciesId == "tamables-fotsa") { profile = CompanionSpeciesCatalog.TamablesFotsa; return true; }
         if (BySpecies.ContainsKey(speciesId)
             && CompanionSpeciesCatalog.TryGetById(speciesId, out profile))
         {

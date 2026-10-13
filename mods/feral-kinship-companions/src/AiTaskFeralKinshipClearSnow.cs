@@ -18,6 +18,7 @@ public sealed class AiTaskFeralKinshipClearSnow : AiTaskBase
     private readonly bool emergencyOnly;
     private BlockPos? targetPos;
     private bool done;
+    private long nextOfflineScan;
     private bool emergencyMode;
     private long breakAtMs;
     private string attackAnimation = string.Empty;
@@ -65,6 +66,17 @@ public sealed class AiTaskFeralKinshipClearSnow : AiTaskBase
             return true;
         }
 
+        if (system.IsCompanionOwnerOffline(entity))
+        {
+            if (entity.World.ElapsedMilliseconds < nextOfflineScan) return false;
+            nextOfflineScan = entity.World.ElapsedMilliseconds + 30000;
+        }
+        else if (FeralKinshipCompanionSystem.WellbeingDutyScanFactor(entity) > 1)
+        {
+            if (entity.World.ElapsedMilliseconds < nextOfflineScan) return false;
+            nextOfflineScan = entity.World.ElapsedMilliseconds + (long)(5000 * FeralKinshipCompanionSystem.WellbeingDutyScanFactor(entity));
+        }
+        else nextOfflineScan = 0;
         if (!system.TryFindSnowRescueTarget(entity, out targetPos, out emergencyMode)
             || targetPos == null
             || emergencyMode) return false;

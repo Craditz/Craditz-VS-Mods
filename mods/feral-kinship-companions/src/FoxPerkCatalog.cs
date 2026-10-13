@@ -50,19 +50,23 @@ internal static class FoxPerkCatalog
 
     public static IReadOnlyList<FoxPerkDefinition> All => all;
 
-    public static IReadOnlyList<FoxPerkDefinition> ForTree(string treeId, string speciesId = "")
+    public static IReadOnlyList<FoxPerkDefinition> ForTree(string treeId, string speciesId = "", string bonusKey = "")
     {
         return all
             .Where(definition => !definition.IsRetired
                 && string.Equals(definition.TreeId, treeId, StringComparison.Ordinal)
-                && AppliesToSpecies(definition, speciesId))
+                && AppliesToSpecies(definition, speciesId, bonusKey))
             .ToArray();
     }
 
-    public static bool AppliesToSpecies(FoxPerkDefinition definition, string speciesId)
+    public static bool AppliesToSpecies(FoxPerkDefinition definition, string speciesId, string bonusKey = "")
     {
         return string.IsNullOrWhiteSpace(definition.SpeciesId)
-            || string.Equals(definition.SpeciesId, speciesId, StringComparison.OrdinalIgnoreCase);
+            || string.Equals(definition.SpeciesId, speciesId, StringComparison.OrdinalIgnoreCase)
+            || (string.Equals(speciesId, "tamables-fotsa", StringComparison.OrdinalIgnoreCase)
+                && CompanionSpeciesTraits.Get(bonusKey) is { } trait
+                && (definition.Id == CompanionSpeciesTraits.TrainingId(trait.Species)
+                    || definition.Id == CompanionSpeciesTraits.MasteryId(trait.Species)));
     }
 
     public static FoxPerkDefinition? Get(string id)

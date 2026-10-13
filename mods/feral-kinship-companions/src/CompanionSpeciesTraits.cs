@@ -49,7 +49,7 @@ internal static class CompanionSpeciesTraits
     };
 
     public static CompanionSpeciesTrait? Get(string? species) => All.FirstOrDefault(
-        t => string.Equals(t.Species, species, StringComparison.OrdinalIgnoreCase));
+        t => string.Equals(t.Species, FotsaSpeciesBonusCatalog.Equivalent(species), StringComparison.OrdinalIgnoreCase));
     public static string UpgradeDescription(string species, int from, int to)
     {
         string strength = $"strength bonus rises from {from}% to {to}%";
@@ -124,8 +124,9 @@ internal static class CompanionSpeciesTraits
         // Count every member in the denominator, including compatibility animals.
         // A strict majority is unique; a solo animal does not form a party synergy.
         if (party.Length >= 2)
-            bonus.SynergySpecies = party.GroupBy(m => Get(m.Species)?.Species ?? string.Empty)
-                .FirstOrDefault(group => group.Key.Length > 0 && group.Count() > party.Length / 2)?.Key
+            bonus.SynergySpecies = Get(party.GroupBy(m => Get(m.Species) == null
+                    ? string.Empty : FotsaSpeciesBonusCatalog.MajorityGroup(m.Species))
+                .FirstOrDefault(group => group.Key.Length > 0 && group.Count() > party.Length / 2)?.Key)?.Species
                 ?? string.Empty;
         foreach (var member in party)
         {

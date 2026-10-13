@@ -1,4 +1,8 @@
 {
+  "breeding-source-unavailable": "Breeding is unavailable for this animal: {0}.",
+  "breeding-feedback-source-unavailable": "The animal provider has no usable breeding or offspring definition. See the server log.",
+  "breeding-feedback-native-pregnant": "An existing pregnancy will finish through Tamables before Companion breeding can begin.",
+  "breeding-feedback-pregnancy-conflict": "Two saved pregnancy records conflict. Breeding is paused; both records are preserved. See the server log.",
   "block-packcairn": "Pack Cairn",
   "blockdesc-packcairn": "Legacy pack marker. The newest Pack Cart is the active departure and return point.",
   "block-packcart-north": "Pack Cart",

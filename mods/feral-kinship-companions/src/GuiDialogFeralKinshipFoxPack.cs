@@ -43,6 +43,7 @@ public sealed class GuiDialogFeralKinshipFoxPack : GuiDialog
 
     public override void OnGuiClosed()
     {
+        surface?.CloseMoodDetails();
         surface?.NotifyGuideClosed();
         system.SendFoxSocialAction(sourceEntityId, FoxSocialRequestAction.ClosePack);
         base.OnGuiClosed();
@@ -311,6 +312,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface : GuiElementF
 
     public override void Dispose()
     {
+        CloseMoodDetails();
         animalArt.Dispose();
         sceneArt.Dispose();
         if (textureId > 0)
@@ -2817,6 +2819,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface : GuiElementF
 
     private static bool IsExpeditionEligible(FoxPackMemberPacket member) =>
         !member.IsJuvenile
+        && !FotsaSpeciesBonusCatalog.IsJuvenile(member.AppearanceCode)
         && IsSelectableStatus(member.Status);
 
     private static bool IsRescueTarget(FoxPackMemberPacket member) =>

@@ -40,6 +40,7 @@ public sealed class AiTaskFeralKinshipStarvingRest : AiTaskBase
         nextCheckAtMs = entity.World.ElapsedMilliseconds + 1000;
         FeralKinshipCompanionSystem system = entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>();
         return system.IsCompanionFoodRestricted(entity)
+            && !system.HasWellbeingSelfProvisionDuty(entity) && !system.HasPendingWellbeingFoodTrip(entity)
             && system.TryResolveCompanionStarvingRestTarget(entity, out target)
             && target != null;
     }
@@ -74,7 +75,8 @@ public sealed class AiTaskFeralKinshipStarvingRest : AiTaskBase
     public override bool ContinueExecute(float dt)
     {
         FeralKinshipCompanionSystem system = entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>();
-        if (stuck || !system.IsCompanionFoodRestricted(entity))
+        if (stuck || !system.IsCompanionFoodRestricted(entity)
+            || system.HasWellbeingSelfProvisionDuty(entity) || system.HasPendingWellbeingFoodTrip(entity))
         {
             return false;
         }

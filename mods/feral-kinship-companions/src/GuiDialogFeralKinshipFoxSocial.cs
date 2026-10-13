@@ -490,7 +490,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
             int lines = DrawWrapped(ctx, text, 32, y, width - 80, 21, color, int.MaxValue);
             y += lines * 21 * scale + 12;
         }
-        var trait = CompanionSpeciesTraits.Get(current.SpeciesId);
+        var trait = CompanionSpeciesTraits.Get(FotsaSpeciesBonusCatalog.Resolve(current.SpeciesId, current.AppearanceCode));
         if (trait == null)
         {
             Paragraph("Innate expedition bonuses", accent);
@@ -500,7 +500,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
         {
             int training = Math.Clamp(current.SpeciesTraining, 0, 2);
             Paragraph($"{current.SpeciesDisplayName} innate: {trait.Name}", accent);
-            Paragraph("Free from the start. Applies to expeditions. " + (current.IsJuvenile
+            Paragraph("Free from the start. Applies to expeditions. " + (current.IsJuvenile || FotsaSpeciesBonusCatalog.IsJuvenile(current.AppearanceCode)
                 ? "Available when this companion reaches adulthood."
                 : "No talent purchase is needed to use the base bonus."), TextMuted);
             Paragraph($"Base: 15% | Training: 20% | Mastery: 25%. Current: {(int)Math.Round(CompanionSpeciesTraits.Affinity(training) * 100f)}% ({(training == 2 ? "Mastery" : training == 1 ? "Training" : "untrained")}).", TextGold);
@@ -509,6 +509,8 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
             if (trait.Species != "wolf")
                 Paragraph("Shared effects: add the relevant animals' percentages, then divide by EVERY companion in the party. One untrained animal in a party of two contributes 7.5%; two contribute 15%.", TextMuted);
             Paragraph($"Party synergy: {trait.Synergy}", accent);
+            if (current.SpeciesId == "tamables-fotsa")
+                Paragraph($"Uses the {trait.Species} expedition bonus. For synergy, only this exact FOTSA species counts together; sex, pigment and domestication variants count as the same species.", TextMuted);
             Paragraph($"Requires this species to make up more than half the party. No synergy for a solo companion or a tie. {trait.SynergyDescription}", TextWhite);
             Paragraph("This is a separate party bonus. It needs no talent points and applies once per expedition on a matching route or encounter.", TextMuted);
         }
@@ -516,7 +518,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
         bonusesMaxScroll = Math.Max(0, y + bonusesScroll - 720);
         bonusesScroll = Math.Min(bonusesScroll, bonusesMaxScroll);
         if (bonusesMaxScroll > 0)
-            DrawText(ctx, "Scroll here to read all bonuses", 32, 749, 11, TextMuted);
+            GuiElementCompanionMoodDetails.Text(ctx, "Scroll here to read all bonuses", 32, 749, 11, TextMuted, width - 64);
     }
 
     private void DrawOverview(Context ctx, int width, FoxSocialStatePacket current, bool active, float requestCooldown, float cancelCooldown, double[] accent)
@@ -559,7 +561,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
         DrawText(ctx, "Current direction", 268, 416, 16, accent);
         DrawText(ctx, $"{CompanionActivityMode.DisplayName(current.ActivityMode)} · {CompanionCombatStyle.DisplayName(current.CombatStyle)}", 268, 444, TextSize, TextWhite);
         DrawText(ctx, $"Risk tolerance: {CompanionRiskTolerance.DisplayName(current.RiskTolerance)}", 268, 468, 13, TextMuted);
-        var speciesTrait = CompanionSpeciesTraits.Get(current.SpeciesId);
+        var speciesTrait = CompanionSpeciesTraits.Get(FotsaSpeciesBonusCatalog.Resolve(current.SpeciesId, current.AppearanceCode));
         DrawText(ctx, speciesTrait == null ? "Use Commands to change how this companion behaves."
             : speciesTrait.Name + " - see Bonuses for effects and party synergy.", 268, 490, 11, TextMuted);
 
@@ -687,25 +689,35 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
     private void DrawDuties(Context ctx, int width, FoxSocialStatePacket current, double[] accent)
     {
         FoxGuiTheme.DrawPanel(ctx, 18, 124, width - 36, 72, false);
-        DrawText(ctx, "Background duties", 30, 149, 16, accent);
-        DrawWrapped(ctx,
+        GuiElementCompanionMoodDetails.Text(ctx, "Background duties", 30, 149, 16, accent, width - 60);
+        GuiElementCompanionMoodDetails.Text(ctx,
             "Choose a job tab, then enable only the work you want this companion to do while At Ease.",
-            30, 173, width - 60, 13, TextMuted, 2);
+            30, 173, 13, TextMuted, width - 60);
 
-        string[] ids = { "overview", "ground", "harvest", "yard", "charcoal", "mowing", "storage" };
-        string[] labels = { "Overview", "Ground", "Harvest", "Yard", "Charcoal", "Mowing", "Storage" };
+        string[] ids = { "overview", "ground", "harvest", "yard", "charcoal", "mowing", "storage", "troughs" };
+        string[] labels = { "Overview", "Ground", "Harvest", "Yard", "Charcoal", "Mowing", "Storage", "Troughs" };
         double gap = 7;
         double tabWidth = (width - 36 - gap * (ids.Length - 1)) / ids.Length;
         for (int index = 0; index < ids.Length; index++)
         {
             double x = 18 + index * (tabWidth + gap);
-            DrawTabButton(ctx, labels[index], x, 202, tabWidth, 32,
-                string.Equals(activeDutyTab, ids[index], StringComparison.Ordinal), false, accent);
+            bool selected = string.Equals(activeDutyTab, ids[index], StringComparison.Ordinal);
+            FoxGuiTheme.DrawButtonSurface(ctx, x, 202, tabWidth, 32, true);
+            GuiElementCompanionMoodDetails.Text(ctx, labels[index], x + 12, 224, 14,
+                selected ? accent : TextMuted, tabWidth - 24);
         }
 
         FoxGuiTheme.DrawPanel(ctx, 18, 244, width - 36, 390, false);
         switch (activeDutyTab)
         {
+            case "troughs":
+                GuiElementCompanionMoodDetails.Text(ctx, "Trough tending", 32, 268, 18, accent, width - 64);
+                CompanionGuiParagraph.Draw(ctx, CompanionTroughLayout.Intro, 32, 286, width - 64, 70, 14, TextMuted);
+                DrawHarvestCheckbox(ctx, "Refill remembered troughs", 32, CompanionTroughLayout.ToggleY, current.TroughRefillEnabled, accent, width - 100);
+                CompanionGuiParagraph.Draw(ctx, string.IsNullOrWhiteSpace(current.ReseedingThresholds) ? "Thresholds unavailable - refresh" : current.ReseedingThresholds, 32, 426, width - 64, 42, 13, TextMuted);
+                CompanionGuiParagraph.Draw(ctx, string.IsNullOrWhiteSpace(current.TroughRefillRequirement) ? "Current requirement unavailable - refresh" : current.TroughRefillRequirement, 32, 476, width - 64, 40, 13, TextMuted);
+                CompanionGuiParagraph.Draw(ctx, CompanionTroughLayout.Note, 32, 534, width - 64, 90, 14, TextMuted);
+                break;
             case "ground":
                 DrawText(ctx, "Ground Cleanup", 32, 268, 18, accent);
                 string groundDescription = "Choose exactly which ground clutter this companion may collect. Priority remains cattails, flint, sticks, boulders, then rocks.";
@@ -720,14 +732,24 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
                 DrawCheckbox(ctx, "Rocks", 430, 466 + groundShift, current.GroundRocksEnabled, accent);
                 break;
             case "harvest":
-                DrawText(ctx, "Gather Finished Products", 32, 268, 18, accent);
+                GuiElementCompanionMoodDetails.Text(ctx, "Gather Finished Products", 32, 268, 18, accent, width - 64);
                 string harvestDescription = "Mature crops, ripe berries, and ready mushrooms are separate choices. Player storage remains unrestricted.";
-                DrawWrapped(ctx, harvestDescription, 32, 294, width - 64, 14, TextMuted, 8, false);
-                double harvestShift = DutyTextShift(harvestDescription, width);
-                DrawCheckbox(ctx, "Enable Finished Product Gathering", 32, 330 + harvestShift, current.FinishedProductsEnabled, accent);
-                DrawCheckbox(ctx, "Crops", 32, 386 + harvestShift, current.FinishedCropsEnabled, accent);
-                DrawCheckbox(ctx, "Berries", 32, 432 + harvestShift, current.FinishedBerriesEnabled, accent);
-                DrawCheckbox(ctx, "Mushrooms", 32, 478 + harvestShift, current.FinishedMushroomsEnabled, accent);
+                GuiElementCompanionMoodDetails.Text(ctx, harvestDescription, 32, 294, 14, TextMuted, width - 64);
+                DrawHarvestCheckbox(ctx, "Enable Finished Product Gathering", 32, CompanionHarvestLayout.GatheringY, current.FinishedProductsEnabled, accent, width - 100);
+                DrawHarvestCheckbox(ctx, "Crops", 32, CompanionHarvestLayout.CropsY, current.FinishedCropsEnabled, accent, width - 100);
+                FoxGuiTheme.DrawPanel(ctx, 60, 410, width - 92, 182, false);
+                GuiElementCompanionMoodDetails.Text(ctx, "High-wellbeing extras - Crop care", 74, 434, 15, accent, width - 120);
+                GuiElementCompanionMoodDetails.Text(ctx,
+                    string.IsNullOrWhiteSpace(current.ReseedingThresholds) ? "Thresholds unavailable - refresh current needs" : current.ReseedingThresholds,
+                    74, 458, 13, TextMuted, width - 120);
+                DrawHarvestCheckbox(ctx, "Reseed harvested crops (uses a harvested seed)", 74, CompanionHarvestLayout.ReseedingY, current.ReseedingEnabled, accent, width - 156);
+                GuiElementCompanionMoodDetails.Text(ctx,
+                    string.IsNullOrWhiteSpace(current.ReseedingRequirement) ? "Current requirement unavailable - refresh" : current.ReseedingRequirement,
+                    74, 517, 13, TextMuted, width - 120);
+                DrawHarvestCheckbox(ctx, "Fertilize growing crops (fetches one real dose)", 74, CompanionHarvestLayout.FertilizerY, current.FertilizerEnabled, accent, width - 156);
+                GuiElementCompanionMoodDetails.Text(ctx, string.IsNullOrWhiteSpace(current.FertilizerPolicy) ? "Fertilizer policy unavailable - refresh" : current.FertilizerPolicy, 74, 578, 12, TextMuted, width - 120);
+                DrawHarvestCheckbox(ctx, "Berries", 32, CompanionHarvestLayout.BerriesY, current.FinishedBerriesEnabled, accent, width / 2 - 68);
+                DrawHarvestCheckbox(ctx, "Mushrooms", width / 2 + 10, CompanionHarvestLayout.MushroomsY, current.FinishedMushroomsEnabled, accent, width / 2 - 68);
                 break;
             case "yard":
                 DrawText(ctx, "Yard Work", 32, 268, 18, accent);
@@ -776,9 +798,9 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
 
         FoxGuiTheme.DrawPanel(ctx, 18, 644, width - 36, 70, current.GroundCleanupEnabled || current.MowLawnEnabled
             || current.FinishedProductsEnabled || current.FlowerRemovalEnabled || current.SnowShovelingEnabled
-            || current.CharcoalShovelingEnabled);
-        DrawText(ctx, "Occasional idle work", 32, 670, 16, accent);
-        DrawWrapped(ctx, "The companion will choose among its checked jobs according to the existing priority system.", 32, 696, width - 64, 13, TextMuted, 2);
+            || current.CharcoalShovelingEnabled || current.TroughRefillEnabled);
+        GuiElementCompanionMoodDetails.Text(ctx, "Occasional idle work", 32, 670, 16, accent, width - 64);
+        GuiElementCompanionMoodDetails.Text(ctx, "The companion will choose among its checked jobs according to the existing priority system.", 32, 696, 13, TextMuted, width - 64);
     }
 
     private static void DrawDutySummary(Context ctx, string label, bool enabled, double y, double[] accent)
@@ -795,6 +817,14 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
             DrawRect(ctx, x + 5, y + 5, 14, 14, accent);
         }
         DrawText(ctx, label, x + 36, y + 18, 15, checkedValue ? TextWhite : TextMuted);
+    }
+
+    private static void DrawHarvestCheckbox(Context ctx, string label, double x, double y, bool enabled, double[] accent, double labelWidth)
+    {
+        FoxGuiTheme.DrawChoiceSurface(ctx, x, y, 24, 24, enabled);
+        if (enabled) DrawRect(ctx, x + 5, y + 5, 14, 14, accent);
+        GuiElementCompanionMoodDetails.Text(ctx, label, x + 36, y + 18, 15,
+            enabled ? TextWhite : TextMuted, labelWidth);
     }
 
     private void DrawRequestPanel(Context ctx, int width, FoxSocialStatePacket current, bool active, float requestCooldown, float cancelCooldown, double y, double height, double[] accent)
@@ -998,7 +1028,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
 
         if (!state.IsJuvenile && string.Equals(activeTab, "duties", StringComparison.Ordinal))
         {
-            string[] dutyTabs = { "overview", "ground", "harvest", "yard", "charcoal", "mowing", "storage" };
+            string[] dutyTabs = { "overview", "ground", "harvest", "yard", "charcoal", "mowing", "storage", "troughs" };
             double dutyGap = 7;
             double dutyTabWidth = (CanvasWidth - 36 - dutyGap * (dutyTabs.Length - 1)) / dutyTabs.Length;
             if (y >= 198 && y <= 238)
@@ -1017,6 +1047,11 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
                 }
             }
 
+            if (activeDutyTab == "troughs")
+            {
+                if (CompanionTroughLayout.ToggleAt(x, y, CanvasWidth)) ToggleSubtask(CompanionDuty.TroughRefill, state.TroughRefillEnabled);
+                return;
+            }
             if (activeDutyTab == "ground")
             {
                 double shift = DutyTextShift("Choose exactly which ground clutter this companion may collect. Priority remains cattails, flint, sticks, boulders, then rocks.", CanvasWidth);
@@ -1025,15 +1060,19 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
             }
             if (activeDutyTab == "harvest")
             {
-                double shift = DutyTextShift("Mature crops, ripe berries, and ready mushrooms are separate choices. Player storage remains unrestricted.", CanvasWidth);
-                if (TryHandleDutyRowClick(x, y, shift, 320, 376,
-                        () => ToggleDuty(FoxSocialRequestAction.SetFinishedProducts, "on", "off", state.FinishedProductsEnabled))
-                    || TryHandleDutyRowClick(x, y, shift, 376, 422,
-                        () => ToggleSubtask(CompanionDuty.FinishedCrops, state.FinishedCropsEnabled))
-                    || TryHandleDutyRowClick(x, y, shift, 422, 468,
-                        () => ToggleSubtask(CompanionDuty.FinishedBerries, state.FinishedBerriesEnabled))
-                    || TryHandleDutyRowClick(x, y, shift, 468, 514,
-                        () => ToggleSubtask(CompanionDuty.FinishedMushrooms, state.FinishedMushroomsEnabled))) return;
+                string option = CompanionHarvestLayout.OptionAt(x, y, CanvasWidth);
+                if (option == CompanionDuty.GatherFinishedProducts)
+                    ToggleDuty(FoxSocialRequestAction.SetFinishedProducts, "on", "off", state.FinishedProductsEnabled);
+                else if (CompanionDuty.IsSubtask(option))
+                    ToggleSubtask(option, option switch
+                    {
+                        CompanionDuty.FinishedCrops => state.FinishedCropsEnabled,
+                        CompanionDuty.Reseeding => state.ReseedingEnabled,
+                        CompanionDuty.Fertilizer => state.FertilizerEnabled,
+                        CompanionDuty.FinishedBerries => state.FinishedBerriesEnabled,
+                        CompanionDuty.FinishedMushrooms => state.FinishedMushroomsEnabled,
+                        _ => false
+                    });
                 return;
             }
             if (activeDutyTab == "yard")

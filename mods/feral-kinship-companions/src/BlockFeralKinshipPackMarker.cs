@@ -34,7 +34,7 @@ public sealed class BlockFeralKinshipPackCairn : Block
     {
         if (world.Side == EnumAppSide.Server)
         {
-            world.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.OnPackMarkerRemoved(pos, false);
+            world.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.OnPackMarkerRemoved(pos, false, Code?.Path.StartsWith("packcart", System.StringComparison.Ordinal) == true);
         }
         base.OnBlockRemoved(world, pos);
     }

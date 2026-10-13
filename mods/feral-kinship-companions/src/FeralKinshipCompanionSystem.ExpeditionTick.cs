@@ -20,10 +20,13 @@ public sealed partial class FeralKinshipCompanionSystem
 {
     private void OnExpeditionTick(float _)
     {
+        TryCheckpointRetainedSourceHints(UtcNowMs());
         if (!companionContentReady || serverApi == null || packRepository?.Loaded != true)
         {
             return;
         }
+
+        MaintainPendingCompanionAdmissions();
 
         PruneJuvenileThreats(UtcNowMs());
         Entity[] loadedCompanions = loadedFoxes.Values.ToArray();
@@ -36,6 +39,8 @@ public sealed partial class FeralKinshipCompanionSystem
         MaintainCampAreaNotifications();
 
         long nowUtcMs = UtcNowMs();
+        MaintainRetainedOriginalLoading(nowUtcMs);
+        RefreshRetainedSourceLocations();
         MaintainBackpackDeliveries(nowUtcMs);
         MaintainDialogueRuntime(nowUtcMs);
         double nowTotalHours = serverApi.World.Calendar.TotalHours;
@@ -60,6 +65,7 @@ public sealed partial class FeralKinshipCompanionSystem
                 : expedition.CompletesUtcMs <= nowUtcMs;
             if (!due)
             {
+                AccrueWellbeingExpedition(expedition);
                 continue;
             }
 
@@ -82,6 +88,7 @@ public sealed partial class FeralKinshipCompanionSystem
                         : 0d,
                     lateDurationHours
                 );
+                AccrueWellbeingExpedition(expedition);
                 foreach (string foxId in expedition.SelectedFoxIds)
                 {
                     SetExpeditionMemberStatus(expedition.OwnerUid, foxId, "Running late");
@@ -101,6 +108,7 @@ public sealed partial class FeralKinshipCompanionSystem
                 continue;
             }
 
+            AccrueWellbeingExpedition(expedition);
             FoxExpeditionRecord? completed = packRepository.TakeCompletedExpedition(
                 expedition.ExpeditionId,
                 nowUtcMs,

@@ -53,7 +53,7 @@ public sealed class AiTaskFeralKinshipLogging : AiTaskBase
             return false;
         }
 
-        nextScanAtMs = now + 7000 + rand.Next(8000);
+        nextScanAtMs = now + (long)((7000 + rand.Next(8000)) * FeralKinshipCompanionSystem.OfflineDutyScanFactor(entity) * FeralKinshipCompanionSystem.WellbeingDutyScanFactor(entity));
         FeralKinshipCompanionSystem system =
             entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>();
         bool found = system.TryCreateWorkCartLoggingPlan(entity, out plan, out string dialogueEvent) && plan != null;

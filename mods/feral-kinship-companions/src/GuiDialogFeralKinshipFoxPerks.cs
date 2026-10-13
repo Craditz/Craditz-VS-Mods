@@ -172,7 +172,7 @@ internal sealed class GuiElementFeralKinshipFoxPerksSurface : GuiElementFeralKin
         var cards = new List<(FoxPerkDefinition, double, double)>();
         double cursor = NodeTop;
         foreach (IGrouping<int, FoxPerkDefinition> tier in FoxPerkCatalog
-            .ForTree(currentTree, state?.SpeciesId ?? string.Empty)
+            .ForTree(currentTree, state?.SpeciesId ?? string.Empty, state?.SpeciesBonusKey ?? string.Empty)
             .OrderBy(definition => definition.Row).ThenBy(definition => definition.Column)
             .GroupBy(definition => definition.Row))
         {
@@ -342,7 +342,7 @@ internal sealed class GuiElementFeralKinshipFoxPerksSurface : GuiElementFeralKin
         int[] investments = { current.CombatInvestment, current.MobilityInvestment, current.SocialInvestment };
         for (int i = 0; i < treeIds.Length; i++)
         {
-            int maximum = FoxPerkCatalog.ForTree(treeIds[i], current.SpeciesId).Sum(definition => definition.MaxRank);
+            int maximum = FoxPerkCatalog.ForTree(treeIds[i], current.SpeciesId, current.SpeciesBonusKey).Sum(definition => definition.MaxRank);
             DrawChoiceButton(ctx, $"{treeNames[i]}  {investments[i]}/{maximum}",
                 30, 211 + i * 68, 216, 59, currentTree == treeIds[i],
                 hoveredTree == treeIds[i], GetTreeAccent(treeIds[i]));
@@ -368,7 +368,7 @@ internal sealed class GuiElementFeralKinshipFoxPerksSurface : GuiElementFeralKin
             DrawText(ctx, "Scroll for more ↓", 804, 190, 12, TextMuted);
         ITreeAttribute perks = BuildPerkTree(current);
         List<FoxPerkDefinition> definitions = FoxPerkCatalog
-            .ForTree(currentTree, current.SpeciesId)
+            .ForTree(currentTree, current.SpeciesId, current.SpeciesBonusKey)
             .ToList();
         FoxPerkDefinition selected = definitions.FirstOrDefault(definition => definition.Id == selectedPerkId)
             ?? definitions.FirstOrDefault();

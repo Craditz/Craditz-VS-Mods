@@ -59,6 +59,15 @@ public sealed partial class FeralKinshipCompanionSystem
         public bool StfuMode { get; set; } = false;
         public bool EnableDiagnosticLogging { get; set; } = false;
         public bool IdleSounds { get; set; } = true;
+        public float AmbientIdleSoundChanceMultiplier { get; set; } = 0.25f;
+        public float AmbientIdleSoundMinCooldownSeconds { get; set; } = 60f;
+        public float AmbientIdleSoundMaxCooldownSeconds { get; set; } = 120f;
+        // Asset-code patterns, filtered against the individual animal's actual diet.
+        public string[] FavoriteFoodCandidates { get; set; } = new[] { "*:*" };
+        public float ReseedingUnlockWellbeing { get; set; } = 80f;
+        public float ReseedingPauseWellbeing { get; set; } = 75f;
+        public float FertilizerTargetNutrient { get; set; } = 80f;
+        public float FertilizerMaxOvershoot { get; set; } = 10f;
     }
 
     internal bool FoodSystemEnabled => companionConfig.EnableCompanionFoodSystem;
@@ -83,6 +92,14 @@ public sealed partial class FeralKinshipCompanionSystem
             CompanionConfig? loaded = serverApi.LoadModConfig<CompanionConfig>(
                 CompanionFoodConfigFileName);
             companionConfig = loaded ?? new CompanionConfig();
+            AmbientIdleSoundSettings ambient = SourceAmbientSoundSettings;
+            companionConfig.AmbientIdleSoundChanceMultiplier = ambient.ChanceMultiplier;
+            companionConfig.AmbientIdleSoundMinCooldownSeconds = ambient.MinSeconds;
+            companionConfig.AmbientIdleSoundMaxCooldownSeconds = ambient.MaxSeconds;
+            (companionConfig.ReseedingUnlockWellbeing, companionConfig.ReseedingPauseWellbeing) =
+                CompanionReseeding.Thresholds(companionConfig.ReseedingUnlockWellbeing, companionConfig.ReseedingPauseWellbeing);
+            if (!float.IsFinite(companionConfig.FertilizerTargetNutrient) || companionConfig.FertilizerTargetNutrient < 1 || companionConfig.FertilizerTargetNutrient > 80) companionConfig.FertilizerTargetNutrient = 80;
+            if (!float.IsFinite(companionConfig.FertilizerMaxOvershoot) || companionConfig.FertilizerMaxOvershoot < 0 || companionConfig.FertilizerMaxOvershoot > 20) companionConfig.FertilizerMaxOvershoot = 10;
             IdleSoundsConfigMigration migration = IdleSoundsConfigPolicy.Migrate(
                 rawConfig?.Token?.ToString());
             companionConfig.IdleSounds = migration.Enabled;
@@ -325,7 +342,7 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         if (!enabled) return "Food system disabled";
         level = Math.Clamp(level, 0f, 1f);
-        if (level <= FoodStarvingThreshold) return "Starving — resting until fed";
+        if (level <= FoodStarvingThreshold) return "Starving — needs food";
         if (level < FoodLowThreshold) return "Very hungry";
         if (level < FoodSeekThreshold) return "Hungry";
         return "Well fed";
@@ -539,12 +556,15 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void RestoreCompanionFoodFromStack(Entity entity, ItemStack food)
     {
+        float foodBefore = GetCompanionFoodLevel(entity);
         FoodNutritionProperties? nutrition = food.Collectible.GetNutritionProperties(entity.World, food, entity);
         float restored = Math.Clamp(
             MinimumFoodPerItem + Math.Max(0f, nutrition?.Satiety ?? 0f) / SatietyForFullFoodBonus,
             MinimumFoodPerItem,
             MaximumFoodPerItem);
         RestoreCompanionFoodAmount(entity, restored * (1f + GetFoxPackTalentRank(entity, "better-portions") * 0.20f));
+        if (foodBefore < FoodFeedCutoff && GetCompanionFoodLevel(entity) > foodBefore)
+            CreditWellbeingFavoriteFood(entity, food);
     }
 
     private void RestoreCompanionFoodAmount(Entity entity, float amount)

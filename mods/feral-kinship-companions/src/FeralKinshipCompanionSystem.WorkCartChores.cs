@@ -163,7 +163,7 @@ public sealed partial class FeralKinshipCompanionSystem
                 IsFinishedProductOptionEnabled(fox, serverApi!.World.BlockAccessor.GetBlock(pos))),
             WorkCartChoreKind.Flowers => IsFlowerRemovalEnabled(fox) && queue.Flowers.Count > 0,
             WorkCartChoreKind.Snow => IsSnowShovelingEnabled(fox) && queue.Snow.Count > 0,
-            WorkCartChoreKind.Charcoal => IsCharcoalShovelingEnabled(fox) && queue.Charcoal.Count > 0,
+            WorkCartChoreKind.Charcoal => AllowsWellbeingDuty(fox, demanding: true) && IsCharcoalShovelingEnabled(fox) && queue.Charcoal.Count > 0,
             WorkCartChoreKind.Mowing => queue.Mowing.Count > 0,
             _ => false
         };
@@ -208,6 +208,9 @@ public sealed partial class FeralKinshipCompanionSystem
                 queue.DroppedItems.RemoveAt(index);
                 continue;
             }
+            if (!AllowsWellbeingCargo(fox, item.Itemstack)
+                || GetWellbeingWorkBand(fox) >= WellbeingWorkBand.LightOnly && item.Pos.SquareDistanceTo(fox.Pos) > 64)
+            { index++; continue; }
             queue.DroppedItems.RemoveAt(index);
             droppedItemReservations[id] = fox.EntityId;
             return item;
@@ -237,6 +240,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
         foreach (BlockPos candidate in ordered.ToArray())
         {
+            if (GetWellbeingWorkBand(fox) >= WellbeingWorkBand.LightOnly && fox.Pos.SquareDistanceTo(candidate.ToVec3d()) > 64) continue;
             BlockPos effectiveCandidate = candidate;
             if (kind == WorkCartChoreKind.Charcoal
                 && !TryResolveCharcoalTopTarget(candidate, out effectiveCandidate))
