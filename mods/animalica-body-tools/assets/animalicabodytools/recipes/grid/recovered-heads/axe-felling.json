@@ -1,0 +1,156 @@
+[
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-copper",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-copper",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-tinbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-tinbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-bismuthbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-bismuthbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-blackbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-blackbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-iron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-meteoriciron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-meteoriciron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:axe-felling-steel",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:axehead-steel",
+      "quantity": 1
+    }
+  }
+]

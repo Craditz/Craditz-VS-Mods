@@ -1,0 +1,156 @@
+[
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-copper",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-copper",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-tinbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-tinbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-bismuthbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-bismuthbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-blackbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-blackbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-iron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-meteoriciron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-meteoriciron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:pickaxe-steel",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:pickaxehead-steel",
+      "quantity": 1
+    }
+  }
+]

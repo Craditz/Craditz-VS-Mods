@@ -1,0 +1,156 @@
+[
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-copper",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-copper",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-tinbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-tinbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-bismuthbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-bismuthbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-blackbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-blackbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-iron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-meteoriciron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-meteoriciron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:blade-falx-steel",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:bladehead-falx-steel",
+      "quantity": 1
+    }
+  }
+]

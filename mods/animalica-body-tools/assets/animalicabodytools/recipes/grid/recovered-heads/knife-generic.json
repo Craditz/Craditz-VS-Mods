@@ -1,0 +1,156 @@
+[
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-copper",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-copper",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-tinbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-tinbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-bismuthbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-bismuthbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-blackbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-blackbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-iron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-meteoriciron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-meteoriciron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:knife-generic-steel",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:knifeblade-steel",
+      "quantity": 1
+    }
+  }
+]

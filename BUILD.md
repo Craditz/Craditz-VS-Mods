@@ -62,7 +62,7 @@ for comparison. Existing selected versions and dependency requirements are kept.
 
 ## Companions, Body Tools and Radio
 
-Companions 0.5.76, Body Tools 1.6.17 and Radio 1.2.2 keep the developer and
+Companions 0.5.76, Body Tools 1.6.19 and Radio 1.2.2 keep the developer and
 diagnostic features that shipped with those versions. Their separate test and
 checker projects stay out of this repo. Companions 0.5.74 includes the accepted
 crunch-sound removal; no alternate UI build was selected.
@@ -129,3 +129,7 @@ Companions 0.5.76 derives from approved private Sound1 production source. The tw
 ### Companions 0.5.77 physics hotfix
 
 This release preserves the 0.5.76 project and external references and changes only the physics safety wrapper and release metadata. Use the first-run certificate suppression above. Separate private test fixtures remain excluded from source and packages.
+
+### October 16 Body Tools source publication
+
+Body Tools 1.6.19 uses the accepted r3 production implementation and assets. Its project retains `Version=1.6.19` and `InformationalVersion=1.6.19-private.r3-startup`, with repository-relative shared-source links and `VintageStoryPath` external references. Build against Vintage Story 1.22.7 and keep dependency DLLs external. The accepted installer is preserved without rebuilding; a source build is a separate artifact. See [the release record](RELEASE_2026-10-16_BODY_TOOLS.md) for hashes, checks and the remaining remote multiplayer limitation. Private fixtures and evidence remain excluded.

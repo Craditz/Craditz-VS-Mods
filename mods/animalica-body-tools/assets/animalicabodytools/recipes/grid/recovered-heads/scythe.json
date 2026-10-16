@@ -1,0 +1,156 @@
+[
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-copper",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-copper",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-tinbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-tinbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-bismuthbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-bismuthbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-blackbronze",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-blackbronze",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-iron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-iron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-meteoriciron",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-meteoriciron",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "T",
+    "width": 1,
+    "height": 1,
+    "shapeless": true,
+    "averageDurability": false,
+    "attributes": {
+      "animalicaRecoverHead": true
+    },
+    "ingredients": {
+      "T": {
+        "type": "item",
+        "code": "game:scythe-steel",
+        "quantity": 1
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "game:scythehead-steel",
+      "quantity": 1
+    }
+  }
+]

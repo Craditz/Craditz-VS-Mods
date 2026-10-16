@@ -148,9 +148,10 @@ internal static class WearableTargetedActionPatches
 
         ItemStack? beforeStack = WearableToolResolver.GetRealItemstack(sourceSlot);
         CollectibleObject? collectible = beforeStack?.Collectible;
-        if (beforeStack == null || collectible == null)
+        if (beforeStack == null || collectible == null
+            || !string.Equals(collectible.Code?.ToShortString(), sourceCode, StringComparison.Ordinal))
         {
-            entity.World.Logger.Warning("[animalicabodytools] Wearable durability skipped: action={0}, source={1}, reason=source-slot-empty.", action, sourceCode);
+            entity.World.Logger.Warning("[animalicabodytools] Wearable durability skipped: action={0}, source={1}, reason=source-slot-changed-or-empty.", action, sourceCode);
             return false;
         }
 
@@ -161,20 +162,24 @@ internal static class WearableTargetedActionPatches
             return false;
         }
 
-        int before = GetRemainingDurability(beforeStack, maxBefore);
+        int before = collectible.GetRemainingDurability(beforeStack);
+        if (before <= 0)
+        {
+            BodyToolDurability.RemoveIfBroken(entity.World, sourceSlot, beforeStack);
+            return false;
+        }
         string beforeSlotState = DescribeSourceSlot(sourceSlot);
         collectible.DamageItem(entity.World, entity, sourceSlot, amount, true);
         sourceSlot.MarkDirty();
 
         ItemStack? afterStack = WearableToolResolver.GetRealItemstack(sourceSlot);
         int maxAfter = afterStack?.Collectible?.GetMaxDurability(afterStack) ?? maxBefore;
-        int after = afterStack == null ? 0 : GetRemainingDurability(afterStack, maxAfter);
+        int after = afterStack?.Collectible?.GetRemainingDurability(afterStack) ?? 0;
         bool broken = afterStack == null;
 
-        if (afterStack != null && after <= 0)
+        if (ReferenceEquals(afterStack, beforeStack) && after <= 0)
         {
-            bool removed = WearableToolResolver.RemoveBrokenSourceTool(sourceSlot);
-            PlayWearableToolBreakSound(entity, sourceCode);
+            bool removed = BodyToolDurability.RemoveAfterDamage(entity.World, entity, sourceSlot, beforeStack, before);
             afterStack = null;
             after = 0;
             broken = true;
@@ -215,18 +220,6 @@ internal static class WearableTargetedActionPatches
             ? "empty"
             : $"{stack.Collectible?.Code?.ToShortString() ?? "unknown"}x{stack.StackSize};durability={stack.Attributes?.GetInt("durability", -1) ?? -1}";
         return $"slotHash={sourceSlot.GetHashCode()};public={Describe(publicStack)};real={Describe(realStack)}";
-    }
-
-    private static void PlayWearableToolBreakSound(EntityAgent entity, string sourceCode)
-    {
-        try
-        {
-            entity.World.PlaySoundAt(new AssetLocation("sounds/player/destruct"), entity, null, false, 16f, 1f);
-        }
-        catch (Exception ex)
-        {
-            entity.World.Logger.Warning("[animalicabodytools] Wearable break sound failed: source={0}, error={1}: {2}", sourceCode, ex.GetType().Name, ex.Message);
-        }
     }
 
     public static bool IsCuttableTallGrass(string blockCode)
@@ -323,11 +316,6 @@ internal static class WearableTargetedActionPatches
         }
 
         return keys.Add(key);
-    }
-
-    private static int GetRemainingDurability(ItemStack stack, int maxDurability)
-    {
-        return stack.Attributes?.GetInt("durability", maxDurability) ?? maxDurability;
     }
 
     public static float ScoreKnifeTool(ItemStack stack)
@@ -950,7 +938,14 @@ internal static class WearableBlockGettingBrokenPatch
             WearableTargetedActionPatches.RecordTimedValue(LastSoundMs, key, now, 5000);
 
             BlockSounds sounds = block.GetSounds(world.BlockAccessor, blockSel, virtualTool);
-            SoundAttributes sound = isBreak ? sounds.GetBreakSound(player) : sounds.GetHitSound(player);
+            // The player overload queries the actual (empty) hotbar and loses
+            // the already-resolved virtual axe. Use the normal ByTool selector
+            // for rending feedback, preserving all other virtual tool behavior.
+            bool rendingAxe = BodyToolDurability.IsRendingClaws(virtualTool.Collectible)
+                && virtualTool.Collectible.GetTool(new DummySlot(virtualTool)) == EnumTool.Axe;
+            SoundAttributes sound = rendingAxe
+                ? (isBreak ? sounds.GetBreakSound(EnumTool.Axe) : sounds.GetHitSound(EnumTool.Axe))
+                : (isBreak ? sounds.GetBreakSound(player) : sounds.GetHitSound(player));
             if (sound == null)
             {
                 return;

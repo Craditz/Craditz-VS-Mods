@@ -37,6 +37,7 @@ public sealed class AnimalicaBodyToolsModSystem : ModSystem
 
     public override void Start(ICoreAPI api)
     {
+        if (harmonyPatchBootstrap?.IsStarted == true) return;
         config = LoadConfig(api);
         string normalizedMode = AnimalicaBodyToolsPolicy.Apply(config.RestrictionMode, config.DiagnosticLogging);
         if (!string.Equals(config.RestrictionMode, normalizedMode, StringComparison.Ordinal))
@@ -142,6 +143,7 @@ public sealed class AnimalicaBodyToolsModSystem : ModSystem
         wearableAxeBreakBridgeSystem?.Stop();
         wearableMiningBreakBridgeSystem?.Stop();
         harmonyPatchBootstrap?.Dispose();
+        harmonyPatchBootstrap = null;
         MaterialDisplayNameResolver.Reset();
         base.Dispose();
     }

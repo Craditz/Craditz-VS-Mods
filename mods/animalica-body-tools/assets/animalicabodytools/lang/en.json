@@ -1605,5 +1605,6 @@
   "item-bladehead-falx-aluminum": "Aluminum Falx Head",
   "item-bladehead-falx-metalsofmythsmithril": "Mithril Falx Head",
   "item-bladehead-falx-highpalladium": "High Palladium Falx Head",
-  "item-bladehead-falx-electrum": "Electrum Falx Head"
+  "item-bladehead-falx-electrum": "Electrum Falx Head",
+  "recovered-head-wear": "Recovered head: {0}% durability remaining. Reassembly preserves wear."
 }

@@ -271,26 +271,21 @@ internal static class WearableToolResolver
         return ItemstackRef == null ? slot.Itemstack : ItemstackRef(slot);
     }
 
-    public static bool RemoveBrokenSourceTool(ItemSlot sourceSlot)
+    public static bool RemoveBrokenSourceTool(ItemSlot sourceSlot, ItemStack expected)
     {
-        if (GetRealItemstack(sourceSlot) == null)
-        {
-            return true;
-        }
+        if (!ReferenceEquals(GetRealItemstack(sourceSlot), expected)) return false;
 
-        sourceSlot.TakeOutWhole();
-        if (GetRealItemstack(sourceSlot) != null)
-        {
-            sourceSlot.Itemstack = null;
-        }
+        sourceSlot.Itemstack = null;
 
-        if (GetRealItemstack(sourceSlot) != null && ItemstackRef != null)
+        // Some clothing slots expose a virtual public stack. Never clear a new
+        // stack installed by a setter or inventory callback while removing ours.
+        if (ReferenceEquals(GetRealItemstack(sourceSlot), expected) && ItemstackRef != null)
         {
             ItemstackRef(sourceSlot) = null;
         }
 
         sourceSlot.MarkDirty();
-        return GetRealItemstack(sourceSlot) == null;
+        return !ReferenceEquals(GetRealItemstack(sourceSlot), expected);
     }
 
     public static bool SyncVirtualToolStateToSource(ItemStack virtualStack, ItemSlot sourceSlot, bool preserveDurability)
@@ -301,13 +296,12 @@ internal static class WearableToolResolver
             return false;
         }
 
-        bool hadDurability = sourceStack.Attributes.TryGetInt("durability").HasValue;
-        int durability = sourceStack.Attributes.GetInt("durability", sourceStack.Collectible?.GetMaxDurability(sourceStack) ?? 0);
+        var durability = sourceStack.Attributes["durability"]?.Clone();
         sourceStack.Attributes = virtualStack.Attributes.Clone();
 
         if (preserveDurability)
         {
-            if (hadDurability) sourceStack.Attributes.SetInt("durability", durability);
+            if (durability != null) sourceStack.Attributes["durability"] = durability;
             else sourceStack.Attributes.RemoveAttribute("durability");
         }
 
@@ -327,10 +321,7 @@ internal static class WearableToolResolver
 
     private static bool IsBroken(ItemStack stack)
     {
-        CollectibleObject? collectible = stack.Collectible;
-        if (collectible == null) return false;
-        int maxDurability = collectible.GetMaxDurability(stack);
-        return maxDurability > 0 && (stack.Attributes?.GetInt("durability", maxDurability) ?? maxDurability) <= 0;
+        return BodyToolDurability.IsBroken(stack);
     }
 
     private static bool IsRiskyInventory(IInventory inventory)

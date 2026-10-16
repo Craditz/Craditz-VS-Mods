@@ -65,3 +65,7 @@ The owner-authorized Companions release includes wellbeing/care duties, FOTSA he
 ## Companions 0.5.77 physics hotfix
 
 The minimal physics hotfix guards the companion safety prefix against partially initialized bodies and missing input/diagnostic references. The existing 0.5.76 features and assets remain. See [changes and qualification limits](mods/feral-kinship-companions/CHANGELOG_v0.5.77.md).
+
+## Body Tools 1.6.19
+
+Body Tools now removes exhausted held claws, preserves equipped rending chopping and axe feedback, and handles repeated singleplayer initialization and reload. Starter claws follow the same break rules. The accepted r3 binary is retained with its original revision metadata. Thanks to Cheese for reporting and retesting. See [the changelog](mods/animalica-body-tools/CHANGELOG_v1.6.19.md) and [release identity and verification limits](RELEASE_2026-10-16_BODY_TOOLS.md).
