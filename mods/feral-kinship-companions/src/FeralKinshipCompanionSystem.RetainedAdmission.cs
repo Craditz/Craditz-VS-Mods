@@ -19,8 +19,19 @@ public partial class FeralKinshipCompanionSystem
         Entity[] competing=retainedAdmissionBodies.Values.Concat(loadedFoxes.Values).Where(other=>!ReferenceEquals(e,other)
             && (other.EntityId==e.EntityId || !string.IsNullOrEmpty(id)&&GetDomesticationStatus(other)?.GetString(FoxIdKey)==id)).Distinct().ToArray();
         if(competing.Length>0) {
-            if(nativeAdultGrowthHandoffs.TryGetValue(e,out _) && !RetainedNativeSuspension.NativeAuthority(e)
-                && competing.All(other=>IsCompanionJuvenile(other)&&!RetainedNativeSuspension.NativeAuthority(other))) {
+            if(nativeAdultGrowthHandoffs.TryGetValue(e,out object? source) && source is Entity child
+                && !RetainedNativeSuspension.NativeAuthority(e)
+                && !string.IsNullOrEmpty(id)
+                && competing.All(other=>ReferenceEquals(other,child)
+                    && other.EntityId!=e.EntityId
+                    && GetDomesticationStatus(other)?.GetString(FoxIdKey)==id
+                    && GetCompanionOwnerUid(other)==GetCompanionOwnerUid(e)
+                    && !string.IsNullOrWhiteSpace(GetCompanionOwnerUid(e))
+                    && GetDomesticationStatus(other)?.GetBool(GrowthInProgressKey)==true
+                    && string.Equals(GetDomesticationStatus(other)?.GetString(ChildAdultEntityCodeKey),e.Code?.ToString(),StringComparison.OrdinalIgnoreCase)
+                    && !RetainedNativeSuspension.NativeAuthority(other)
+                    && GetDomesticationStatus(other)?.GetBool(ExpeditionAwayKey)!=true
+                    && GetDomesticationStatus(e)?.GetBool(ExpeditionAwayKey)!=true)) {
                 RetainedNativeSuspension.DeferAdmission(e);return false; // Wait for native grow-source unload, never replace it here.
             }
             foreach(Entity other in competing)RetainedNativeSuspension.Hold(other,"Competing native object/companion identity; retain both inventories");

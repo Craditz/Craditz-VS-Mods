@@ -134,6 +134,13 @@ public sealed class AiTaskFeralKinshipSeekFood : AiTaskBase
     private void OnFailed()
     {
         stuck = true;
+        // A failed route should not keep selecting the closest blocked board
+        // while another board in this companion's existing care scope is reachable.
+        if (diningPos != null)
+        {
+            entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()
+                .RecordCompanionFoodRouteFailure(entity, diningPos);
+        }
         nextCheckAtMs = entity.World.ElapsedMilliseconds + 3000;
     }
 }

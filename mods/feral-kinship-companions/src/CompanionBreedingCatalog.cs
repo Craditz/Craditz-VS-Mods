@@ -265,10 +265,13 @@ internal static class CompanionBreedingCatalog
     public static bool TryGetSpeciesProfile(string speciesId, out CompanionSpeciesProfile profile)
     {
         if (speciesId == "tamables-fotsa") { profile = CompanionSpeciesCatalog.TamablesFotsa; return true; }
-        if (BySpecies.ContainsKey(speciesId)
-            && CompanionSpeciesCatalog.TryGetById(speciesId, out profile))
+        // Native dog pups and Cats kittens have explicit breeding definitions
+        // in ExternalDefinitions too. Restricting this to the core dictionary
+        // prevents their existing juvenile overlay from resolving its profile.
+        foreach (CompanionBreedingDefinition definition in AllDefinitions())
         {
-            return true;
+            if (definition.SpeciesId == speciesId
+                && CompanionSpeciesCatalog.TryGetById(speciesId, out profile)) return true;
         }
 
         profile = null!;

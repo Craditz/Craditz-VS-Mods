@@ -31,6 +31,12 @@ The manifests keep their selected release versions and credits. The runtime C#
 is unchanged from the selected commits. Project paths were adjusted to fit this
 repository's layout.
 
+October 17 approved pair: Companions `0.5.79-food-compat-preview.1` and Tamables
+FOTSA `0.9.1` are the selected sources. Both public-layout projects compile
+against 1.22.7; accepted installers retain their original exact tested bytes.
+Tamables now includes the external VSSurvivalMod reference required by its
+native riding behavior. See [release identities and limits](RELEASE_2026-10-17_COMPANIONS_FOTSA.md).
+
 - `mods/animalica-abilities/ScentTrails.csproj`
 - `mods/animalica/core/src/AnimalicaCore/AnimalicaCore.csproj`
 - `mods/animalica/requests/src/AnimalicaRequests.csproj`

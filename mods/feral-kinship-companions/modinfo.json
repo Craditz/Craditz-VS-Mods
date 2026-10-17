@@ -2,7 +2,7 @@
   "type": "code",
   "name": "Feral Kinship Companions",
   "modid": "feralkinshipcompanions",
-  "version": "0.5.77",
+  "version": "0.5.79-food-compat-preview.1",
   "description": "Animal bonding, companion commands, social life, pack work, expeditions, and the per-player Bramble helper.",
   "authors": [
     "Craditz"

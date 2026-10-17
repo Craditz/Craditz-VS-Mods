@@ -21,7 +21,6 @@ public sealed partial class FeralKinshipCompanionSystem
     // postfix. Keep this authority on the actual replacement reference only;
     // never serialize it or infer it from saved juvenile/points markers.
     private static readonly ConditionalWeakTable<Entity, object> nativeAdultGrowthHandoffs = new();
-    private static readonly object nativeAdultGrowthHandoffMarker = new();
 
     internal static void CompleteCompanionAdultGrowthHandoff(Entity adult) =>
         nativeAdultGrowthHandoffs.Remove(adult);
@@ -635,7 +634,9 @@ public sealed partial class FeralKinshipCompanionSystem
         // Finish behavior and stat setup in the postfix, after SpawnEntity.
         RegisterFoxInPack(child);
         packRepository?.Save();
-        nativeAdultGrowthHandoffs.Add(replacement, nativeAdultGrowthHandoffMarker);
+        // Retain the actual source reference: its Juvenile flag was cleared
+        // above, before native death/despawn and reentrant adult registration.
+        nativeAdultGrowthHandoffs.Add(replacement, child);
         adult = replacement;
     }
 

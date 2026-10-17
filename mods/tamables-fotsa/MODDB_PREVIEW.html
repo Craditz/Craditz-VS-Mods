@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>ModDB description preview</title>
+<style>body{max-width:900px;margin:32px auto;padding:0 20px;font:17px/1.5 system-ui;color:#20251f}button{padding:10px;margin:8px 8px 16px 0}aside{padding:12px;background:#edf1e7}</style>
+<aside>Local release-description preview. Copy only the description below; this toolbar is outside the copied body.</aside>
+<button id="copy">Copy formatted description</button><button id="select">Select description</button><span id="status"></span>
+<article id="description"><h1>Tamables: FOTSA</h1>
+<p>Adds PetAI taming and basic pet behavior to the supported optional Fauna of the Stone Age packs. Install PetAI and the source animal packs separately. Existing supported families and species scope are unchanged.</p>
+<h2>Native forms and growth</h2>
+<p>Completed pets prefer an installed fully tamed adult form of the exact same species and sex, then a semi-tamed form, otherwise the original form. Existing dedicated pet codes and ownership remain stable. Babies grow into their corresponding preferred adults.</p>
+<h2>Riding and appearance</h2>
+<p>Supported pets retain native equipment, seats and gaits and are already saddle-broken. Native training cannot replace an owned pet. Mounting stops pet navigation; pet AI yields to the rider. Client model and texture bindings follow the selected native form while preserving Companions' renderer.</p>
+<h2>Commands and feeding</h2>
+<p>Follow, stay, sit and lie commands, basic combat, breeding and source-defined food seeking remain available where supported. Aquatic pets retain their existing water-safety limits. Companions adds its own journal, care and Dining Board system when installed.</p>
+<h2>Approved release and limits</h2>
+<p>Version 0.9.1 is approved with the matching Companions growth correction. Paired elephant growth/riding and representative cow feeding passed on Vintage Story 1.22.7. This does not establish every species, lifecycle or multiplayer path. Optional modded-food compatibility in Companions: <strong>probably works now, not tested</strong>. The invisible Critters bearded dragon remains unresolved and outside these fixes.</p>
+<p>Requires game 1.22.0 or later and PetAI 5.1.1 or later; gameplay qualification used game 1.22.7 and PetAI 5.1.2. Source animal mods retain their own requirements.</p>
+<p><em>mod was made with AI assistance. Pls no hate.</em></p>
+</article><script>
+const body=document.querySelector('#description');
+document.querySelector('#select').onclick=()=>{const range=document.createRange();range.selectNodeContents(body);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);};
+document.querySelector('#copy').onclick=async()=>{try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([body.innerHTML],{type:'text/html'}),'text/plain':new Blob([body.innerText],{type:'text/plain'})})]);document.querySelector('#status').textContent='Copied';}catch{document.querySelector('#select').click();document.querySelector('#status').textContent='Selected; use Ctrl+C';}};
+</script></html>

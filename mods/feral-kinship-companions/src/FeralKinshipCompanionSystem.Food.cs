@@ -35,6 +35,15 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         FoodCategories = new[] { EnumFoodCategory.Protein }
     };
+    // WolfTaming 5.0.1 consumes Protein in its useinventory task but supplies
+    // no creatureDiet, for adults or pups. Keep that provider contract local;
+    // do not copy the broader Kinship wolf diet onto dogs.
+    private static readonly CreatureDiet DogsCompanionDiet = new()
+    {
+        FoodCategories = new[] { EnumFoodCategory.Protein },
+        WeightedFoodTags = new[] { new WeightedFoodTag { Code = "meat", Weight = 1f } }
+    };
+    private static readonly CreatureDiet ExactProviderDiet = new();
     private static readonly string[] CatsCompanionFoodPaths =
     {
         "bushmeat-raw",
@@ -49,7 +58,7 @@ public sealed partial class FeralKinshipCompanionSystem
     private CompanionConfig companionConfig = new();
     private bool blueberryModeEnabled;
     private readonly Dictionary<long, float> lastFoodUiLevelByEntity = new();
-    private readonly Dictionary<long, double> lastObservedPetAiFeedCooldownByEntity = new();
+    private readonly CompanionFoodRouteRetry foodRouteRetry = new();
 
     private sealed class CompanionConfig
     {
@@ -158,9 +167,6 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         EnsureCompanionFoodState(entity);
         ITreeAttribute status = GetDomesticationStatus(entity, true)!;
-        lastObservedPetAiFeedCooldownByEntity.TryAdd(
-            entity.EntityId,
-            status.GetDouble("cooldown", 0d));
         double nowHours = entity.World.Calendar.TotalHours;
         double previousHours = status.GetDouble(FoodLastUpdateTotalHoursKey, nowHours);
         bool ownerOffline = IsCompanionOwnerOffline(entity);
@@ -357,11 +363,21 @@ public sealed partial class FeralKinshipCompanionSystem
         foreach ((FoxPackAmenityRecord amenity, BlockEntityFeralKinshipDiningBoard dining) in
                  GetLoadedDiningBoards(entity, requireSuitableFood: true))
         {
+            CompanionFoodBoardRouteKey routeKey = new(entity.EntityId,
+                amenity.Dimension, amenity.X, amenity.Y, amenity.Z);
+            if (foodRouteRetry.IsCoolingDown(routeKey, entity.World.ElapsedMilliseconds)) continue;
             diningPos = new BlockPos(amenity.X, amenity.Y, amenity.Z, amenity.Dimension);
             target = ResolveStandingPositionBeside(entity, diningPos);
             return target != null;
         }
         return false;
+    }
+
+    internal void RecordCompanionFoodRouteFailure(Entity entity, BlockPos diningPos)
+    {
+        foodRouteRetry.RecordFailure(new(entity.EntityId,
+            diningPos.dimension, diningPos.X, diningPos.Y, diningPos.Z),
+            entity.World.ElapsedMilliseconds);
     }
 
     internal bool TryResolveCompanionStarvingRestTarget(Entity entity, out Vec3d? target)
@@ -452,6 +468,8 @@ public sealed partial class FeralKinshipCompanionSystem
             slot.MarkDirty();
             dining.MarkDirty(true);
             RestoreCompanionFoodFromStack(entity, consumed);
+            foodRouteRetry.Clear(new(entity.EntityId,
+                diningPos.dimension, diningPos.X, diningPos.Y, diningPos.Z));
             if (TryGetOwnerPlayer(entity, out IServerPlayer? owner))
                 EmitDialogueEvent(entity, owner!, "food.eat.dining_board", string.Empty, CompanionDialoguePriority.Low);
             return true;
@@ -504,37 +522,25 @@ public sealed partial class FeralKinshipCompanionSystem
             return false;
         }
 
-        // PetAI can win the event race for the final item in a held stack and
-        // leave the server slot empty before this handler runs. A new PetAI
-        // cooldown is the only safe proof that this particular interaction
-        // accepted that missing item; reconcile that one case without opening
-        // the Companion window a second time.
-        if (slot?.Itemstack == null)
-        {
-            ITreeAttribute status = GetDomesticationStatus(entity, true)!;
-            double cooldown = status.GetDouble("cooldown", 0d);
-            double previouslyObserved = lastObservedPetAiFeedCooldownByEntity.TryGetValue(
-                entity.EntityId,
-                out double observed
-            ) ? observed : cooldown;
-            if (cooldown <= previouslyObserved + 0.000001d) return false;
-
-            lastObservedPetAiFeedCooldownByEntity[entity.EntityId] = cooldown;
-            RestoreCompanionFoodAmount(entity, MinimumFoodPerItem);
-            EmitDialogueEvent(entity, owner,
-                levelBeforeFeeding < FoodSeekThreshold ? "food.owner_fed_hungry" : "food.owner_fed_not_hungry",
-                string.Empty, CompanionDialoguePriority.Medium);
-            return true;
-        }
+        // Provider acceptance can transfer the last item into the mouth and
+        // raise obedience/cooldown without eating it. Neither an empty hand
+        // nor that cooldown proves consumption; the inventory task credits
+        // hunger only when its actual consumption finishes.
+        if (slot?.Itemstack == null) return false;
 
         ItemStack offered = slot.Itemstack.Clone();
         offered.StackSize = 1;
         CreatureDiet? diet = GetCreatureDiet(entity);
         if (diet == null
-            || (!diet.Matches(offered) && !MatchesOptionalButcheringFood(entity, offered, diet)))
+            || !IsSuitableDiningBoardFood(entity, offered, diet))
         {
             return false;
         }
+
+        // Leave the provider's own raw-food/cookie route intact, including its
+        // obedience and mouth-inventory transaction. Kibble and optional foods
+        // outside that route use the one-item Companion transaction below.
+        if (UsesProviderMouthFeed(entity, offered)) return false;
 
         // PetAI may put food in its mouth slot instead of removing it. Make
         // Companion feeding authoritative: remove exactly one validated item,
@@ -551,6 +557,8 @@ public sealed partial class FeralKinshipCompanionSystem
     internal void CreditCompanionFoodFromHeldItem(Entity entity, ItemStack food)
     {
         if (!FoodSystemEnabled || IsCompanionOwnerOffline(entity) || IsFoxIncapacitated(entity)) return;
+        CreatureDiet? diet = GetCreatureDiet(entity);
+        if (diet == null || !IsSuitableDiningBoardFood(entity, food, diet)) return;
         RestoreCompanionFoodFromStack(entity, food);
     }
 
@@ -688,29 +696,78 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private static bool IsSuitableDiningBoardFood(Entity entity, ItemStack stack, CreatureDiet diet)
     {
+        if (CompanionOptionalFoodCatalog.UnsafeCodes.Contains(stack.Collectible.Code.ToString())) return false;
+        string[]? tags = (stack.Collectible.GetCollectibleInterface<ICreatureDietFoodTags>()?.GetFoodTags(stack)
+            ?? stack.Collectible.Attributes?["foodTags"].AsArray<string>())?.OfType<string>().ToArray();
+        if (diet.SkipFoodTags != null && tags?.Any(tag => diet.SkipFoodTags.Contains(tag)) == true) return false;
+        if (ReferenceEquals(diet, ExactProviderDiet))
+            return CompanionProviderFoodPolicy.ExactFoodCodes.TryGetValue(entity.Code.ToString(), out string[]? foods)
+                && (foods.Contains(stack.Collectible.Code.ToString(), StringComparer.OrdinalIgnoreCase)
+                    || (foods.Contains("feralkinshipcompanions:kibble-meat-dry", StringComparer.OrdinalIgnoreCase)
+                        && IsAuditedOptionalMeat(entity, stack)));
+        // PetAI cookies intentionally have no generic nutrition/tags. Only
+        // fully baked treats map to their existing diet category/tag; dough
+        // and part-baked variants never inherit this mapping.
+        AssetLocation foodCode = stack.Collectible.Code;
+        if (foodCode.Domain == "petai")
+        {
+            if (foodCode.Path == "petcookie-meat-perfect")
+                return diet.Matches(EnumFoodCategory.Protein, new[] { "meat" });
+            if (foodCode.Path == "petcookie-veggie-perfect")
+                return diet.Matches(EnumFoodCategory.Vegetable, new[] { "vegetable" });
+        }
         if (string.Equals(entity.Code.Domain, "cats", StringComparison.OrdinalIgnoreCase)
             && entity.Code.Path.StartsWith("cat-", StringComparison.OrdinalIgnoreCase))
         {
             AssetLocation code = stack.Collectible.Code;
             if (CatsCompanionFoodPaths.Contains(code.Path, StringComparer.OrdinalIgnoreCase)
-                && (!string.Equals(code.Path, "petcookie-meat-perfect", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(code.Domain, "petai", StringComparison.OrdinalIgnoreCase)))
+                && ((code.Domain == "game" && code.Path is "bushmeat-raw" or "redmeat-raw" or "poultry-raw" or "fish-raw")
+                    || (code.Domain == "feralkinshipcompanions" && code.Path is "kibble-meat-raw" or "kibble-meat-dry")
+                    || (code.Domain == "petai" && code.Path == "petcookie-meat-perfect")))
             {
                 return true;
             }
 
             // Cats retain their existing explicit whitelist for ordinary
-            // domains. Only the scoped optional Butchering exception may pass
+            // domains. Only audited optional food contracts may pass
             // after that whitelist; never fall through to generic diet tags.
-            return MatchesOptionalButcheringFood(entity, stack, diet);
+            return MatchesOptionalButcheringFood(entity, stack, diet) || IsAuditedOptionalMeat(entity, stack);
         }
 
-        if (diet.Matches(stack)) return true;
-        return MatchesOptionalButcheringFood(entity, stack, diet);
+        // Use the live stack/eater API so optional runtime nutrition classes
+        // keep their own ingredient and preparation logic. Do not turn the
+        // broad Protein category into a new global meat tag.
+        FoodNutritionProperties? actualNutrition = stack.Collectible.GetNutritionProperties(entity.World, stack, entity);
+        if (diet.Matches(actualNutrition?.FoodCategory ?? (EnumFoodCategory)(-1), tags)) return true;
+        // Vanilla carrots and other authored vegetables use tastyvegetable;
+        // core Companion diets use vegetable. Keep the source species diet
+        // intact and translate only that explicit food tag.
+        if (tags?.Contains("tastyvegetable", StringComparer.OrdinalIgnoreCase) == true
+            && diet.Matches(EnumFoodCategory.NoNutrition, new[] { "vegetable" })) return true;
+        if (CompanionFishFoodCatalog.Codes.Contains(foodCode.ToString())
+            && diet.Matches(EnumFoodCategory.NoNutrition, new[] { "fish" })) return true;
+        return MatchesOptionalButcheringFood(entity, stack, diet)
+            || (IsAuditedOptionalMeat(entity, stack) && diet.Matches(EnumFoodCategory.NoNutrition, new[] { "meat" }));
+    }
+
+    private static bool IsAuditedOptionalMeat(Entity entity, ItemStack food)
+    {
+        if (!CompanionOptionalFoodCatalog.MeatCodes.Contains(food.Collectible.Code.ToString())) return false;
+        // Optional mappings never turn a harmful preparation into a meal.
+        // Actual perish transitions and storage freshness stay engine-owned.
+        FoodNutritionProperties? nutrition = food.Collectible.GetNutritionProperties(entity.World, food, entity);
+        return nutrition == null || nutrition.Health >= 0f;
+    }
+
+    internal static bool IsCompanionFoodAccepted(Entity entity, ItemStack stack)
+    {
+        CreatureDiet? diet = GetCreatureDiet(entity);
+        return diet != null && IsSuitableDiningBoardFood(entity, stack, diet);
     }
 
     private static bool MatchesOptionalButcheringFood(Entity entity, ItemStack stack, CreatureDiet diet)
     {
+        if (diet.SkipFoodTags?.Contains("meat", StringComparer.OrdinalIgnoreCase) == true) return false;
         bool acceptsMeat = (diet.WeightedFoodTags?.Any(tag =>
                 string.Equals(tag.Code, "meat", StringComparison.OrdinalIgnoreCase)) == true)
             || (diet.FoodCategories?.Contains(EnumFoodCategory.Protein) == true);
@@ -734,7 +791,29 @@ public sealed partial class FeralKinshipCompanionSystem
             return CatsCompanionDiet;
         }
 
-        return entity.Properties.Attributes?["creatureDiet"].AsObject<CreatureDiet>();
+        string code = entity.Code.ToString();
+        if (CompanionProviderFoodPolicy.CorrectedMonitorCodes.Contains(code)) return ExactProviderDiet;
+        CreatureDiet? native = entity.Properties.Attributes?["creatureDiet"].AsObject<CreatureDiet>();
+        if (native != null) return native;
+        if (TryGetCompanionSpecies(entity, out CompanionSpeciesProfile profile) && profile.Id == "dog")
+            return DogsCompanionDiet;
+        if (CompanionProviderFoodPolicy.InheritedDietJson.TryGetValue(code, out string? inherited))
+            return JsonObject.FromJson(inherited).AsObject<CreatureDiet>();
+        if (CompanionProviderFoodPolicy.ExactFoodCodes.ContainsKey(code)) return ExactProviderDiet;
+
+        return null;
+    }
+
+    private static bool UsesProviderMouthFeed(Entity entity, ItemStack food)
+    {
+        if (entity is not EntityAgent agent || agent.LeftHandItemSlot is not ItemSlotMouth
+            || entity.GetBehavior("tameable") == null
+            || !TryGetCompanionSpecies(entity, out CompanionSpeciesProfile profile)
+            || profile.Id is not ("dog" or "cat")) return false;
+        AssetLocation code = food.Collectible.Code;
+        return (code.Domain == "game" && code.Path is "bushmeat-raw" or "redmeat-raw" or "poultry-raw")
+            || (profile.Id == "cat" && code.Domain == "game" && code.Path == "fish-raw")
+            || (code.Domain == "petai" && code.Path == "petcookie-meat-perfect");
     }
 
     private Vec3d? ResolveStandingPositionBeside(Entity entity, BlockPos pos)

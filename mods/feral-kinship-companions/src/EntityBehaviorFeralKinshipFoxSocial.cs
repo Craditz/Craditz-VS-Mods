@@ -256,6 +256,15 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
         // command tasks are added alongside it with higher priorities when a
         // command is active.
         taskBehavior.TaskManager.StopTasks();
+        string providerFoodTask = BuildProviderHeldFoodTask(profile);
+        if (providerFoodTask.Length > 0)
+        {
+            foreach (IAiTask sourceFood in taskBehavior.TaskManager.AllTasks
+                         .Where(task => task is AiTaskUseInventory).ToArray())
+                taskBehavior.TaskManager.AllTasks.Remove(sourceFood);
+            JsonObject foodConfig = JsonObject.FromJson(providerFoodTask.TrimEnd(','));
+            taskBehavior.TaskManager.AddTask(new AiTaskFeralKinshipCatUseInventory(agent, foodConfig, foodConfig));
+        }
 
         JsonObject aiConfig = JsonObject.FromJson($$"""
         {
@@ -535,6 +544,21 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
         }
     }
 
+    private static string BuildProviderHeldFoodTask(CompanionSpeciesProfile profile)
+    {
+        if (profile.Id is not ("cat" or "dog")) return string.Empty;
+        // Retain each provider's own consumption timing and category contract.
+        // Completion, rather than mouth pickup/obedience, credits Companion food.
+        string codes = profile.Id == "dog"
+            ? "\"bone\",\"bushmeat-raw\",\"redmeat-raw\",\"poultry-raw\",\"petai:petcookie-meat-perfect\""
+            : "\"bushmeat-raw\",\"redmeat-raw\",\"poultry-raw\",\"fish-raw\",\"feralkinshipcompanions:kibble-meat-raw\",\"feralkinshipcompanions:kibble-meat-dry\",\"petai:petcookie-meat-perfect\"";
+        double minHours = profile.Id == "dog" ? 0.1 : 1;
+        double maxHours = profile.Id == "dog" ? 0.2 : 1.5;
+        return "{\"code\":\"feralkinshipcatuseinventory\",\"priority\":4.16,\"priorityForCancel\":4.16,\"animation\":\"eat\",\"animationSpeed\":0.75,\"eatItemCategories\":[\"Protein\"],\"eatItemCodes\":["
+            + codes + "],\"useTime\":1.5,\"mincooldownHours\":" + minHours.ToString(CultureInfo.InvariantCulture)
+            + ",\"maxcooldownHours\":" + maxHours.ToString(CultureInfo.InvariantCulture) + "},";
+    }
+
     private static JsonObject BuildCompanionAiConfig(Entity entity, CompanionSpeciesProfile profile)
     {
         string walk = FeralKinshipCompanionSystem.ResolveCompanionAnimation(entity, "walk");
@@ -544,9 +568,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
         string idle = FeralKinshipCompanionSystem.ResolveCompanionAnimation(entity, "idle");
         string damage = FeralKinshipCompanionSystem.GetCompanionBaseMeleeDamage(entity)
             .ToString(CultureInfo.InvariantCulture);
-        string catHeldFoodTask = profile.Id == "cat"
-            ? "            {\"code\":\"feralkinshipcatuseinventory\",\"priority\":4.16,\"priorityForCancel\":4.16,\"animation\":\"eat\",\"animationSpeed\":0.75,\"eatItemCategories\":[\"Protein\"],\"eatItemCodes\":[\"bushmeat-raw\",\"redmeat-raw\",\"poultry-raw\",\"fish-raw\",\"feralkinshipcompanions:kibble-meat-raw\",\"feralkinshipcompanions:kibble-meat-dry\",\"petai:petcookie-meat-perfect\"],\"useTime\":1.5,\"mincooldownHours\":1,\"maxcooldownHours\":1.5},\r\n"
-            : string.Empty;
+        string catHeldFoodTask = BuildProviderHeldFoodTask(profile);
 
         // AiTaskManager evaluates tasks in insertion order. Keep each slot's
         // entries in descending priority so a lower task cannot start an

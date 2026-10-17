@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 namespace FeralKinshipCompanions;
 public sealed partial class FeralKinshipCompanionSystem
 {
@@ -31,11 +32,29 @@ public sealed partial class FeralKinshipCompanionSystem
         string rows = string.Join("\n",matching.Skip((page-1)*pageSize).Take(pageSize).Select(o =>
             $"{FavoriteCode(o.Stack)} | accepted | {(o.Favorite ? "favorite-eligible" : "not favorite-eligible")}"));
         string result = $"Food inspection: {record?.Name ?? GetFoxDisplayName(entity)}\n"
+            + $"Entity:{entity.Code}; food:{GetCompanionFoodLevel(entity):0.000}; owner online:{!IsCompanionOwnerOffline(entity)}\n"
+            + DescribeCompanionFoodRoute(entity)
             + $"Accepted:{options.Count}; favorite-eligible:{options.Count(o=>o.Favorite)}; page:{page}/{pages}; display matches:{matching.Count}\n"
             + $"Candidate patterns:{string.Join(",",companionConfig.FavoriteFoodCandidates ?? Array.Empty<string>())}\n"
             + $"Saved favorite:{(string.IsNullOrEmpty(favorite) ? "none" : favorite)}\n"
             + (string.IsNullOrEmpty(filter) ? "" : $"Display filter:{filter} (selection rules unchanged)\n") + rows;
         serverApi.Logger.Notification("[Companion food inspection] {0}",result);
         return TextCommandResult.Success(result);
+    }
+
+    private string DescribeCompanionFoodRoute(Vintagestory.API.Common.Entities.Entity entity)
+    {
+        CreatureDiet? diet = GetCreatureDiet(entity);
+        GetCompanionCareScope(entity, out var center, out double radius, out string scope);
+        var boards = GetLoadedDiningBoards(entity, false).ToArray();
+        int stocked = GetLoadedDiningBoards(entity, true).Count();
+        int nearby = boards.Count(pair => IsWithinDiningBoardInteractionRadius(entity,
+            new Vintagestory.API.MathTools.BlockPos(pair.amenity.X, pair.amenity.Y, pair.amenity.Z, pair.amenity.Dimension)));
+        int seekTasks = entity.GetBehavior<EntityBehaviorTaskAI>()?.TaskManager.AllTasks
+            .Count(task => task is AiTaskFeralKinshipSeekFood) ?? 0;
+        return $"Diet:{(diet == null ? "MISSING" : ReferenceEquals(diet, ExactProviderDiet) ? "exact provider contract" : "native/provider diet")}; "
+            + $"categories:{string.Join(",", diet?.FoodCategories ?? Array.Empty<EnumFoodCategory>())}; "
+            + $"tags:{string.Join(",", diet?.WeightedFoodTags?.Select(tag => tag.Code) ?? Array.Empty<string>())}\n"
+            + $"Care scope:{scope}; center:{center}; radius:{radius:0.0}; loaded eligible boards:{boards.Length}; stocked for diet:{stocked}; nearby:{nearby}; food tasks:{seekTasks}\n";
     }
 }

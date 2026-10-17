@@ -12969,7 +12969,6 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             companionIdleInvitations.Remove(entityId);
             forcedIdlePlans.Remove(entityId);
             lastFoodUiLevelByEntity.Remove(entityId);
-            lastObservedPetAiFeedCooldownByEntity.Remove(entityId);
             triggeredConversationContexts.Remove(entityId);
             conversationPriorityBlocks.Remove(entityId);
             nextDialogueStateScan.Remove(entityId);

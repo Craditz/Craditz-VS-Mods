@@ -1,9 +1,5 @@
-# Tamables: FOTSA
+# Tamables: FOTSA 0.9.1
 
-Selected source for version **0.8.7**, from commit `941adfb2`.
+Owner-approved native-form, rendering and riding changes. See [changelog](CHANGELOG_v0.9.1.md) and [paired release qualification](../../RELEASE_2026-10-17_COMPANIONS_FOTSA.md).
 
-The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
-
-Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
-
-See [BUILD.md](../../BUILD.md), the [project license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.
+The accepted installer retains its original preview filename and exact bytes. Required dependencies remain `game >= 1.22.0` and `petai >= 5.1.1`; qualified gameplay used VS 1.22.7 and PetAI 5.1.2. Providers and game DLLs are external. Tests, fixtures and user diagnostics stay private/local.

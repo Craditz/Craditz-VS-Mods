@@ -1,31 +1,7 @@
-# Feral Kinship Companions 0.5.76
+# Feral Kinship Companions
 
-Source and matching assets for the owner-authorized 0.5.76 release.
+Owner-approved version `0.5.79-food-compat-preview.1`, retaining the exact tested package metadata and bytes. See [changes since public 0.5.74](CHANGELOG_since_0.5.74.md) and [release qualification](../../RELEASE_2026-10-17_COMPANIONS_FOTSA.md).
 
-This update fixes fresh-tame admission/naming and retained expedition/return
-handling, adds source-derived provider recruitment, wellbeing Care Cards and
-opt-in care duties, extends FOTSA health/breeding/expedition bonuses, and reduces
-ambient barking and howling. The complete delta and configurable defaults are
-in [CHANGELOG_v0.5.76.md](CHANGELOG_v0.5.76.md).
+Required dependencies remain `game >= 1.22.0` and `feralkinship >= 0.4.3`; the qualified game is 1.22.7. Optional providers retain their own requirements. No provider or game DLLs are bundled. Separate tests, fixtures and diagnostics stay private/local.
 
-Required dependencies: `game >= 1.22.0, feralkinship >= 0.4.3`.
-Feral Kinship is a separate required mod. Optional animal providers retain
-their own requirements; compatibility does not bundle provider DLLs.
-
-The owner authorized this release while accepting pending listening,
-multiplayer audio, natural return and broader physical-fall/provider checks.
-The public DLL is rebuilt and separately audited. Prior private Sound1 test
-results are evidence for that private DLL, not live acceptance of this rebuild.
-Offline native fixtures use mocked world boundaries.
-
-Client-native and server-task ambient cooldowns are separate per-animal
-budgets. Warning, panic, hurt/death, combat, commands and whistles retain their
-own paths. Extra care duties are opt-in; IdleSounds retains its existing scope.
-
-The 0.5.75 Cart radius toggle, filtered roster, Locate, provider/dead-record and
-production milestone fixes remain. See [its historical changelog](CHANGELOG_v0.5.75.md).
-
-Install Git LFS for model and binary source assets. Build instructions are in
-[BUILD.md](../../BUILD.md). The [license](../../LICENSE), contribution terms,
-[third-party notices](../../THIRD_PARTY_NOTICES.md) and sound credits are retained;
-third-party material keeps its original rights and conditions.
+Representative dog, cow and chipmunk Dining Board/manual feeding passed. Modded-food compatibility: **probably works now, not tested**. The invisible bearded dragon remains on the [TODO list](TODO.md).

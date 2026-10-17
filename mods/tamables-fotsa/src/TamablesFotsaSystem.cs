@@ -133,6 +133,14 @@ public sealed class TamablesFotsaSystem : ModSystem
 
         AiTaskRegistry.Register<AiTaskTamablesFotsaBasicPetSeek>("tamablesfotsabasicpetseek");
         AiTaskRegistry.Register<AiTaskTamablesFotsaBasicPetMelee>("tamablesfotsabasicpetmelee");
+        api.RegisterEntityBehaviorClass(
+            EntityBehaviorTamablesFotsaRideable.BehaviorCode,
+            typeof(EntityBehaviorTamablesFotsaRideable)
+        );
+        api.RegisterEntityBehaviorClass(
+            EntityBehaviorTamablesFotsaRenderSource.BehaviorCode,
+            typeof(EntityBehaviorTamablesFotsaRenderSource)
+        );
     }
 
     public override void AssetsFinalize(ICoreAPI api)
@@ -152,6 +160,12 @@ public sealed class TamablesFotsaSystem : ModSystem
             tameCodes[SourceKey(properties)] = BuildTamedCode(properties);
         }
 
+        // Resolve only registered, exact same-species/sex adult forms. Keep the
+        // old dedicated codes so saved pets and Companion records keep their
+        // identity while receiving the preferred native definition on reload.
+        Dictionary<string, EntityProperties> sourceTypes = targets.ToDictionary(
+            SourceKey, StringComparer.OrdinalIgnoreCase);
+
         int patched = 0;
         int registered = 0;
         int resolvable = 0;
@@ -167,14 +181,19 @@ public sealed class TamablesFotsaSystem : ModSystem
 
             PatchEntity(properties, tameCode);
 
-            EntityProperties tamed = properties.Clone();
+            EntityProperties template = FindPreferredTameTemplate(properties, sourceTypes);
+            EntityProperties tamed = template.Clone();
+            if (tamed.Client != null && template.Client != null)
+            {
+                EntityBehaviorTamablesFotsaRenderSource.BindRenderSource(tamed.Client, template.Client);
+            }
             // RegisterEntityClass uses the properties' Code when the runtime
             // looks up the destination named by PetAI's tameEntityCode. Keep
             // the cloned variant's identity separate from the source animal;
             // otherwise registration appears to succeed but PetAI cannot
             // resolve the tamed destination when taming completes.
             tamed.Code = new AssetLocation(tameCode);
-            SetTamedCreatureHandbookGroups(tamed, properties);
+            SetTamedCreatureHandbookGroups(tamed, template);
             // The handbook's plain "Obtained by killing" list reads Drops
             // directly and does not honor handbook.groupcode. Tamed variants
             // use the same drops as their source, so hide that duplicate only
@@ -192,7 +211,8 @@ public sealed class TamablesFotsaSystem : ModSystem
             {
                 tamed.Server.SpawnConditions = null;
             }
-            ConfigureTamedEntity(tamed, properties, tameCodes);
+            ConfigureTamedEntity(tamed, template, tameCodes);
+            ConfigureOwnedRiding(tamed);
             api.RegisterEntityClass(tamed.Class, tamed);
             EntityProperties? registeredType = api.World.GetEntityType(new AssetLocation(tameCode));
             if (registeredType != null)
@@ -779,6 +799,11 @@ public sealed class TamablesFotsaSystem : ModSystem
         AssetLocation sourceEntityCode)
     {
         List<JsonObject> result = FilterTamedBehaviors(existing, includeTaskAi: false);
+        result.Insert(0, new JsonObject(new JObject
+        {
+            ["code"] = EntityBehaviorTamablesFotsaRenderSource.BehaviorCode,
+            ["sourceEntityCode"] = sourceEntityCode.ToShortString()
+        }));
         result.Add(CreateTameGuardBehavior());
         result.Add(CreateTameableBehavior(treats, size, includeServerSettings: false, tameEntityCode: null));
         result.Add(CreateReceiveCommandBehavior());
@@ -1118,6 +1143,48 @@ public sealed class TamablesFotsaSystem : ModSystem
     private static string BuildTamedCode(EntityProperties properties)
     {
         return "tamablesfotsa:tame-" + properties.Code.Domain + "-" + properties.Code.Path;
+    }
+
+    private static EntityProperties FindPreferredTameTemplate(
+        EntityProperties source,
+        IReadOnlyDictionary<string, EntityProperties> sourceTypes)
+    {
+        if (!IsAdult(source)) return source;
+
+        string familyPath = RemoveOwnershipFormSuffix(source.Code.Path);
+        foreach (string suffix in new[] { "-tamed", "-semitamed" })
+        {
+            if (sourceTypes.TryGetValue(source.Code.Domain + ":" + familyPath + suffix,
+                    out EntityProperties? preferred))
+            {
+                return preferred;
+            }
+        }
+        return source;
+    }
+
+    private static void ConfigureOwnedRiding(EntityProperties tamed)
+    {
+        foreach (JsonObject[]? behaviors in new[]
+                 { tamed.Client?.BehaviorsAsJsonObj, tamed.Server?.BehaviorsAsJsonObj })
+        {
+            if (behaviors == null) continue;
+            for (int i = 0; i < behaviors.Length; i++)
+            {
+                if (!string.Equals(behaviors[i]["code"].AsString(), "rideable",
+                        StringComparison.OrdinalIgnoreCase)
+                    || behaviors[i].Token is not JObject config) continue;
+                JObject owned = (JObject)config.DeepClone();
+                owned["code"] = EntityBehaviorTamablesFotsaRideable.BehaviorCode;
+                // Completing PetAI taming also completes saddle training.
+                // Never leave a private pet with a native entity-swap path.
+                owned.Remove("saddleBreaksRequired");
+                owned.Remove("saddleBreakDayInterval");
+                owned.Remove("saddleBreakGait");
+                owned.Remove("tamedEntityCode");
+                behaviors[i] = new JsonObject(owned);
+            }
+        }
     }
 
     private static void SetTamedCreatureHandbookGroups(EntityProperties tamed, EntityProperties source)

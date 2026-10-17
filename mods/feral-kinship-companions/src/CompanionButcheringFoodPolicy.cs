@@ -36,7 +36,6 @@ internal static class CompanionButcheringFoodPolicy
         if (path.Equals("primemeat-raw", StringComparison.OrdinalIgnoreCase)
             || path.Equals("primemeat-cooked", StringComparison.OrdinalIgnoreCase)
             || path.Equals("primemeat-curedhealing", StringComparison.OrdinalIgnoreCase)
-            || path.Equals("primemeat-healing", StringComparison.OrdinalIgnoreCase)
             || path.Equals("smoked-none-primemeat", StringComparison.OrdinalIgnoreCase)
             || path.Equals("smoked-healing-primemeat", StringComparison.OrdinalIgnoreCase))
         {
