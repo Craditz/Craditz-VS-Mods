@@ -13,7 +13,7 @@
 - Improves raw-food, kibble, fully baked pet-cookie and specialist-food matching without widening intended species diets. A blocked Dining Board no longer monopolizes retries when another eligible board is available; food diagnostics now show diet and board/task eligibility.
 - Adds compatibility mappings for audited optional food preparations: **probably works now, not tested**.
 
-Representative gameplay on Vintage Story 1.22.7 passed Dining Board and manual feeding for old/new WolfTaming dogs, a FOTSA cow and an isolated Critters chipmunk. Elephant growth/riding regression also passed in the approved paired builds. This does not claim gameplay coverage for every species, food mod or multiplayer case. The chipmunk's earlier journal failure was a wrong-target interaction with the nearby invisible dragon; both chipmunk feeding routes passed after isolation.
+Representative gameplay on Vintage Story 1.22.7 passed Dining Board and manual feeding for the representative WolfTaming dog, FOTSA cow and isolated Critters chipmunk. Both old and newly tamed dogs passed the board check. Elephant growth/riding regression also passed in the approved paired builds. This does not claim gameplay coverage for every species, food mod or multiplayer case. The chipmunk's earlier journal failure was a wrong-target interaction with the nearby invisible dragon; both chipmunk feeding routes passed after isolation.
 
 TODO: the invisible bearded dragon remains unresolved and is outside these fixes. Recovery/pathing oddities and the cow texture warning remain separate observations.
 
