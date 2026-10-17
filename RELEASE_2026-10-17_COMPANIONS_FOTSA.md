@@ -6,10 +6,10 @@ Mode: Release. Owner explicitly approved these tested builds. The local grab-and
 
 | Mod | Embedded version | Archive SHA256 |
 |---|---|---|
-| Companions | `0.5.79-food-compat-preview.1` | `A1BBFC659BDBD3DA7430D597F7C55AFC31934DC9BF29D35B1A3E83FF8B15C065` |
+| Companions | `0.5.79` | `5D04A32CC2787F918000EA14A842DC3213E676C243586F8D6A0D516F105EAEED` |
 | Tamables FOTSA | `0.9.1` | `D90B2F91964E7A734CF32EAD2E2D2717E12AA8123A839AB0BAA1EE425D5CE0AF` |
 
-Installer names remain `FeralKinshipCompanions_v0.5.79-food-compat-preview.1.zip` and `TamablesFOTSA_v0.9.1-native-forms-render-preview.zip`. Original preview markers and package notes are retained to preserve the exact tested bytes. No packaging/code change extends the gameplay qualification. Both embedded versions are higher than the existing local promoted versions, 0.5.76 and 0.8.7.
+The stable installer is `FeralKinshipCompanions_v0.5.79.zip` (5,361,590 bytes). It finalizes tested candidate `0.5.79-food-compat-preview.1`, SHA256 `A1BBFC659BDBD3DA7430D597F7C55AFC31934DC9BF29D35B1A3E83FF8B15C065`. DLL, PDB and all 256 runtime assets are byte-identical. Only `modinfo.json` (version), `README.md`, replacement release notes and the cumulative changelog differ. Obsolete `FOOD_COMPAT_PREVIEW.md` and `FOTSA_GROWTH_PREVIEW.md` are removed. No gameplay/source change or DLL rebuild occurs. Stable packaging has not been separately replayed in gameplay; qualification follows verified runtime equivalence. Tamables retains exact `TamablesFOTSA_v0.9.1-native-forms-render-preview.zip` unchanged. The original promotion to preview metadata was a packaging oversight, corrected within the owner's release approval; stable 0.5.79 was not already occupied by different work.
 
 The cumulative [Companions changelog](mods/feral-kinship-companions/CHANGELOG_since_0.5.74.md) uses the actual downloaded public 0.5.74 archive (SHA256 `1C819A8641373BDFB3F3FA1332712E51AB388E754C66D91FB9C2FC82FA46F6D5`), byte-identical to the retained local archive. The supplied authenticated edit URL was not accessible; the official public API returned release 60244/file 128279, its 0.5.74 manifest and changelog. The 0.5.75–0.5.77 source/changelogs and the accepted growth/food deltas were reconciled. The [Tamables changelog](mods/tamables-fotsa/CHANGELOG_v0.9.1.md) covers its matching native-form/riding work.
 

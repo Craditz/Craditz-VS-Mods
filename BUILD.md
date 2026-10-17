@@ -31,9 +31,9 @@ The manifests keep their selected release versions and credits. The runtime C#
 is unchanged from the selected commits. Project paths were adjusted to fit this
 repository's layout.
 
-October 17 approved pair: Companions `0.5.79-food-compat-preview.1` and Tamables
+October 17 approved pair: Companions stable `0.5.79` and Tamables
 FOTSA `0.9.1` are the selected sources. Both public-layout projects compile
-against 1.22.7; accepted installers retain their original exact tested bytes.
+against 1.22.7; the stable Companions installer changes only manifest/documentation and retains tested runtime bytes. Tamables retains its exact tested installer.
 Tamables now includes the external VSSurvivalMod reference required by its
 native riding behavior. See [release identities and limits](RELEASE_2026-10-17_COMPANIONS_FOTSA.md).
 
