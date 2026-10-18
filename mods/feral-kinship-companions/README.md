@@ -1,7 +1,9 @@
-# Feral Kinship Companions
+# Feral Kinship Companions 0.5.80
 
-Owner-approved stable version `0.5.79`. The DLL, PDB and all runtime assets are byte-identical to the tested `0.5.79-food-compat-preview.1` candidate; finalization changes only package metadata and documentation. See [changes since public 0.5.74](CHANGELOG_since_0.5.74.md) and [release qualification](../../RELEASE_2026-10-17_COMPANIONS_FOTSA.md).
+Owner-approved stable expedition compatibility fix. The owner reports both affected users confirmed the fix. See [changes since 0.5.79](CHANGELOG_v0.5.80.md), [technical qualification and limitations](TECHNICAL_NOTES_v0.5.80.md) and [release notes](RELEASE_NOTES.md).
 
-Required dependencies remain `game >= 1.22.0` and `feralkinship >= 0.4.3`; the qualified game is 1.22.7. Optional providers retain their own requirements. No provider or game DLLs are bundled. Separate tests, fixtures and diagnostics stay private/local.
+Stable finalization changes manifest/documentation only. DLL, PDB and all 256 runtime assets are byte-identical to tested 0.5.80-compat-first-preview.2; no rebuild occurred. Unknown add-on callbacks/effects may continue or expire while Away.
 
-Representative dog, cow and chipmunk Dining Board/manual feeding passed. Modded-food compatibility: **probably works now, not tested**. The invisible bearded dragon remains on the [TODO list](TODO.md).
+Required dependencies remain game >=1.22.0 and feralkinship >=0.4.3; qualified game is 1.22.7. Install optional providers and their requirements separately. No game/provider DLLs or private fixtures are bundled. Optional modded-food compatibility remains probably works now, not tested; the invisible bearded dragon remains TODO.
+
+Source and release records: https://github.com/Craditz/Craditz-VS-Mods

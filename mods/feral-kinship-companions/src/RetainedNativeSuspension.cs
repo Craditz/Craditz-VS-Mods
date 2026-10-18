@@ -292,8 +292,8 @@ internal static partial class RetainedNativeSuspension
             reason="Body is not an established supported companion family";return false;
         }
         if(e.CollisionBox==null || e.SelectionBox==null) { reason="Native boxes are unavailable";return false; }
-        // Pin engine and every assembly in the actual inheritance chain. An
-        // irrelevant installed (or absent) provider is never a requirement.
+        // Pin the engine contracts used by native suspension/save ordering.
+        // Add-on admission is compatibility-first; patch auditing is separate.
         foreach(string engine in new[]{"VintagestoryAPI","VintagestoryLib"}) {
             Assembly? a=AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a=>a.GetName().Name==engine);
             if(a==null || !Verified(a,hashes[engine])) { reason="Unqualified engine binary: "+engine;return false; }
@@ -301,18 +301,21 @@ internal static partial class RetainedNativeSuspension
         if(!CoveredType(e.GetType(),entityEntries,out reason))return false;
         foreach(EntityBehavior b in e.SidedProperties.Behaviors) {
             if(!CoveredType(b.GetType(),behaviorEntries,out reason))return false;
-            foreach(string field in new[]{"replacementCallbackId","callbackId"}) {
-                if(b.GetType().Name.Contains("Tameable") && AccessTools.Field(b.GetType(),field)?.GetValue(b) is long id && id!=0) {
-                    reason="A provider replacement callback is pending";return false;
+            for(Type? provider=b.GetType();provider!=null;provider=provider.BaseType) {
+                if(!AuditedImplementation(provider)||!provider.Name.Contains("Tameable"))continue;
+                foreach(string field in new[]{"replacementCallbackId","callbackId"}) {
+                    if(AccessTools.Field(provider,field)?.GetValue(b) is long id && id!=0) {
+                        reason="A provider replacement callback is pending";return false;
+                    }
                 }
             }
-            // These independently registered timer families have explicit work
-            // gates and native ownership/rearm rules; other timers are refused.
+            // Keep audited clock/rearm contracts. Unknown add-on timers are not
+            // admission blockers and are not guessed, cancelled or rebased.
             if(!TimerCapabilitiesCovered(b.GetType(),out reason))return false;
             if(b is EntityBehaviorTaskAI ai) {
                 if(ai.TaskManager==null){reason="Native AI task manager is unavailable";return false;}
                 foreach(IAiTask task in ai.TaskManager.AllTasks) {
-                    for(Type? t=task.GetType();t!=null;t=t.BaseType)if(t.IsGenericType) {
+                    for(Type? t=task.GetType();NativeAdmissionContract(task.GetType())&&t!=null;t=t.BaseType)if(t.IsGenericType) {
                         reason="Unqualified generic native AI sound/callback path: "+task.GetType().FullName;return false;
                     }
                     if(!CoveredType(task.GetType(),aiEntries,out reason)||!TimerCapabilitiesCovered(task.GetType(),out reason))return false;
@@ -325,14 +328,17 @@ internal static partial class RetainedNativeSuspension
     {
         for(Type? current=t;current!=null && current!=typeof(object);current=current.BaseType) {
             Assembly a=current.Assembly;string name=a.GetName().Name ?? "";
-            if(name=="FeralKinshipCompanions")continue;
-            if(!hashes.TryGetValue(name,out string? hash)||!Verified(a,hash)) {
-                reason="Unqualified actual body/behavior binary: "+name+"/"+t.FullName;return false;
+            if(NativeEngineAssembly(name)&&(!hashes.TryGetValue(name,out string? hash)||!Verified(a,hash))) {
+                reason="Unqualified engine binary: "+name;return false;
             }
         }
+        // An add-on may override or inherit unfamiliar native entry shapes.
+        // Admission must not turn those metadata shapes into another allowlist.
+        if(!NativeAdmissionContract(t)) {reason="";return true;}
         foreach(string entry in entries) {
             MethodInfo? method=AccessTools.Method(t,entry);
-            if(method!=null && method.DeclaringType!=typeof(object) && !installed.Any(gate=>gate.Module==method.Module && gate.MetadataToken==method.MetadataToken)) {
+            if(method?.DeclaringType is Type declaring && declaring!=typeof(object) && NativeAdmissionContract(declaring)
+                && !installed.Any(gate=>gate.Module==method.Module && gate.MetadataToken==method.MetadataToken)) {
                 reason="Missing suspension gate: "+method.DeclaringType?.FullName+"."+entry;return false;
             }
         }
@@ -340,11 +346,11 @@ internal static partial class RetainedNativeSuspension
     }
     private static bool TimerCapabilitiesCovered(Type type,out string reason)
     {
-        // Audited pinned implementations only. Core guard, Cats and WolfTaming
-        // have no entity-behavior timer registrations. Their AI runs under the
-        // native TaskAI gate. Critters inherits grow/multiply/PetAI clocks and
-        // its only extra entity timer is the audited ownerless purge chain.
+        if(!NativeAdmissionContract(type)) {reason="";return true;}
+        // Native and owned clock/rearm contracts only. Add-on IL is not an
+        // admission allowlist, even when an optional patch-audited DLL is loaded.
         for(Type? t=type;t!=null && t!=typeof(object);t=t.BaseType) {
+            if(!NativeAdmissionContract(t))continue;
             foreach(MethodBase method in t.GetMethods(BindingFlags.Instance|BindingFlags.Static|BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.DeclaredOnly).Cast<MethodBase>()
                 .Concat(t.GetConstructors(BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic))
                 .Concat(t.TypeInitializer==null?Array.Empty<MethodBase>():new MethodBase[]{t.TypeInitializer})) {
@@ -353,28 +359,16 @@ internal static partial class RetainedNativeSuspension
                 catch(Exception ex) {reason="Unreadable independent timer method: "+t.FullName+"."+method.Name+"/"+ex.GetType().Name;return false;}
                 if(!registers)continue;
                 string name=t.FullName ?? "";
-                // FOTSA's completed wild-source conversion retry is not an
-                // expedition clock. Admit only this exact pinned scheduler,
-                // with its scheduler/callback entry gates checked by CoveredType
-                // and BOTH replacement callback IDs required idle above. Never
-                // cancel, resume, or replay conversion on expedition return.
-                if(name=="TamablesFotsa.EntityBehaviorTamablesFotsaTameable"
-                    && method is MethodInfo scheduler && !scheduler.IsStatic
-                    && scheduler.Name=="ScheduleTamedVariantReplacement"
-                    && scheduler.ReturnType==typeof(void) && scheduler.GetParameters().Length==0)continue;
                 if(t==typeof(EntityBehaviorFeralKinshipFoxSocial)
                     && method is MethodInfo refresh && !refresh.IsStatic
                     && refresh.Name=="QueueCompanionBackpackRefresh"
                     && refresh.ReturnType==typeof(void)
                     && refresh.GetParameters().Select(p=>p.ParameterType).SequenceEqual(new[]{typeof(Vintagestory.API.Client.ICoreClientAPI)}))continue;
                 if(t==typeof(EntityBehaviorGrow) || t==typeof(EntityBehaviorMultiply)
-                    || name=="PetAI.EntityBehaviorTameable"
                     || name=="Vintagestory.GameContent.EntityBehaviorHunger"
                     || name=="Vintagestory.GameContent.EntityBehaviorHealth"
                     || t==typeof(AiTaskBase)
-                    || t==typeof(AiTaskFeralKinshipSourceIdleSound)
-                    || name=="TamablesFotsa.EntityBehaviorTamablesFotsaOwnerlessPurge"
-                    || name=="TamablesCritters.EntityBehaviorTamablesCrittersOwnerlessPurge")continue;
+                    || t==typeof(AiTaskFeralKinshipSourceIdleSound))continue;
                 reason="Unaudited independent timer registration: "+name+"."+method.Name;return false;
             }
         }
@@ -382,6 +376,7 @@ internal static partial class RetainedNativeSuspension
         // No additional registration in those classes is part of the audited
         // pinned entity families. Refuse rather than hide deferred registration.
         for(Type? t=type;t!=null && t!=typeof(object);t=t.BaseType) {
+            if(!NativeAdmissionContract(t))continue;
             var nested=new Stack<Type>(t.GetNestedTypes(BindingFlags.Public|BindingFlags.NonPublic));
             while(nested.Count>0) {
                 Type closure=nested.Pop();
@@ -424,6 +419,15 @@ internal static partial class RetainedNativeSuspension
     private static readonly string[] entityEntries={"ReceiveDamage","Die","Revive","OnGameTick","OnInteract","PlayEntitySound","OnReceivedClientPacket","IntersectsRay","ToBytes"};
     private static readonly string[] behaviorEntries={"OnGameTick","OnPhysicsTick","AfterPhysicsTick","HandleRemotePhysics","OnInteract","OnReceivedClientPacket","OnEntityReceiveDamage","OnEntityDeath","OnRenderFrame","SlowTick","CheckMultiply","CheckGrowth","Disobey","PurgeIfOwnerless","SpawnTameVariant","TryRestoreTamedVariant","ScheduleTamedVariantReplacement","QueueCompanionBackpackRefresh"};
     private static readonly string[] aiEntries={"StartExecute","ShouldExecute","ContinueExecute","FinishExecute","Notify","OnEntityHurt","OnStateChanged"};
+    private static bool NativeEngineAssembly(string name) => name is "VintagestoryAPI" or "VintagestoryLib" or "VSEssentials" or "VSSurvivalMod";
+    private static bool NativeAdmissionContract(Type type) => NativeEngineAssembly(type.Assembly.GetName().Name ?? "")
+        || type.Assembly.GetName().Name=="FeralKinshipCompanions";
+    private static bool AuditedImplementation(Type type) {
+        Assembly assembly=type.Assembly;string name=assembly.GetName().Name ?? "";
+        return name=="FeralKinshipCompanions" || hashes.TryGetValue(name,out string? hash)&&Verified(assembly,hash);
+    }
+    // Patch-coverage pins, not an add-on admission allowlist. A changed/unlisted
+    // mod is admitted without extending this table or patching arbitrary code.
     private static readonly Dictionary<string,string> hashes=new() {
         ["VintagestoryAPI"]="034283e7e9d98eae45ee63005576fd89badc3c995b531cc4c3fe46f3eb2d3296",
         ["VintagestoryLib"]="e08f22b493b92feaf0aaeb79d22437ea0f7efc38aa7f72a04a47f98bc0e40df0",

@@ -73,3 +73,7 @@ Body Tools now removes exhausted held claws, preserves equipped rending chopping
 ## Approved Companions feeding and FOTSA growth/riding update
 
 Companions stable `0.5.79` retains the tested candidate runtime bytes with finalized manifest/release notes. Tamables FOTSA `0.9.1` remains byte-for-byte unchanged. See [release identities and qualification](RELEASE_2026-10-17_COMPANIONS_FOTSA.md) and [Companions changes since 0.5.74](mods/feral-kinship-companions/CHANGELOG_since_0.5.74.md). Modded-food compatibility: **probably works now, not tested**. The invisible bearded dragon remains TODO.
+
+## Companions 0.5.80 expedition compatibility fix
+
+The owner reports both affected users confirmed the expedition-start fix. Stable 0.5.80 preserves the tested preview DLL/assets and admits unknown attached add-on implementations by default. See [release identity and limitations](RELEASE_2026-10-18_COMPANIONS.md) and [changes since 0.5.79](mods/feral-kinship-companions/CHANGELOG_v0.5.80.md).

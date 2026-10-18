@@ -139,3 +139,7 @@ This release preserves the 0.5.76 project and external references and changes on
 ### October 16 Body Tools source publication
 
 Body Tools 1.6.19 uses the accepted r3 production implementation and assets. Its project retains `Version=1.6.19` and `InformationalVersion=1.6.19-private.r3-startup`, with repository-relative shared-source links and `VintageStoryPath` external references. Build against Vintage Story 1.22.7 and keep dependency DLLs external. The accepted installer is preserved without rebuilding; a source build is a separate artifact. See [the release record](RELEASE_2026-10-16_BODY_TOOLS.md) for hashes, checks and the remaining remote multiplayer limitation. Private fixtures and evidence remain excluded.
+
+### October 18 Companions 0.5.80
+
+Source matches accepted compatibility-first preview.2, with stable manifest/documentation only. The packaged DLL/PDB and runtime assets are retained without rebuilding. Prior exact-source compilation and candidate tests remain bounded evidence; a new source build is a separate artifact and must not substitute for the retained tested installer. External game/shared-source references and private-fixture exclusions remain. See [release qualification](RELEASE_2026-10-18_COMPANIONS.md).
