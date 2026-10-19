@@ -22,8 +22,6 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
     private readonly FeralKinshipCompanionSystem system;
     private CompanionRecoveryStatePacket state;
     private int page;
-    private bool confirmAll;
-    private string confirmNuclearFoxId = string.Empty;
     private string localMessage = string.Empty;
 
     public GuiDialogFeralKinshipCompanionRecovery(
@@ -51,8 +49,6 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
     public void ApplyState(CompanionRecoveryStatePacket packet)
     {
         state = packet;
-        confirmAll = false;
-        confirmNuclearFoxId = string.Empty;
         localMessage = packet.Message ?? string.Empty;
         int pageCount = GetPageCount();
         page = pageCount == 0 ? 0 : Math.Min(page, pageCount - 1);
@@ -77,7 +73,7 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
             .BeginChildElements(contentBounds);
 
         composer.AddStaticText(
-            "Creative/admin recovery only — rebuilds a missing world animal from its persistent pack record.",
+            "Preview native recovery. Missing or unverified originals remain protected; completed-Hold repair needs an admin.",
             CairoFont.WhiteSmallText(),
             ElementBounds.Fixed(0, 12, 720, 22));
         composer.AddDynamicText(
@@ -214,7 +210,6 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
         }
 
         localMessage = $"Requesting recovery for {entry.Name}...";
-        confirmNuclearFoxId = string.Empty;
         UpdateDisplay();
         system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.Recover, entry.FoxId);
         return true;
@@ -223,21 +218,8 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
     private bool NuclearAt(int slot)
     {
         CompanionRecoveryEntryPacket entry = GetVisibleEntry(slot);
-        if (entry == null || !entry.CanNuclearRebuild)
-        {
-            return true;
-        }
-
-        if (!string.Equals(confirmNuclearFoxId, entry.FoxId, StringComparison.Ordinal))
-        {
-            confirmNuclearFoxId = entry.FoxId;
-            localMessage = $"NUCLEAR rebuild will delete the current world entity, if present, and drop any carried cargo. Click NUCLEAR again to rebuild {entry.Name} from the stored ledger.";
-            UpdateDisplay();
-            return true;
-        }
-
-        confirmNuclearFoxId = string.Empty;
-        localMessage = $"Storing and deleting {entry.Name}, then rebuilding from the ledger...";
+        if (entry == null || !entry.CanNuclearRebuild) return true;
+        localMessage = "Requesting a server recovery preview; no animal changes until confirmation.";
         UpdateDisplay();
         system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.NuclearRebuild, entry.FoxId);
         return true;
@@ -265,7 +247,6 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
 
     private bool OnRefresh()
     {
-        confirmAll = false;
         localMessage = "Refreshing the pack ledger...";
         UpdateDisplay();
         system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.Open);
@@ -274,17 +255,6 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
 
     private bool OnRecoverAll()
     {
-        if (!confirmAll)
-        {
-            confirmAll = true;
-            localMessage = "Click Recover all again to rebuild every eligible missing companion.";
-            UpdateDisplay();
-            return true;
-        }
-
-        confirmAll = false;
-        localMessage = "Requesting recovery for all eligible companions...";
-        UpdateDisplay();
         system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.RecoverAll);
         return true;
     }

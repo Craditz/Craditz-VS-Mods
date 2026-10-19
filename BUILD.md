@@ -143,3 +143,7 @@ Body Tools 1.6.19 uses the accepted r3 production implementation and assets. Its
 ### October 18 Companions 0.5.80
 
 Source matches accepted compatibility-first preview.2, with stable manifest/documentation only. The packaged DLL/PDB and runtime assets are retained without rebuilding. Prior exact-source compilation and candidate tests remain bounded evidence; a new source build is a separate artifact and must not substitute for the retained tested installer. External game/shared-source references and private-fixture exclusions remain. See [release qualification](RELEASE_2026-10-18_COMPANIONS.md).
+
+## Companions 0.5.84
+
+Prior actual local stable: 0.5.83; previous public source: 0.5.80. Owner explicitly requested stable despite the disclosed remaining tests. See [release changes, backup/rollback and exact verification scope](RELEASE_2026-10-19_COMPANIONS.md). Stable installer DLL/PDB and all 323 assets remain identical to recovery-flaps-preview.2. Public source compilation is a separate artifact.

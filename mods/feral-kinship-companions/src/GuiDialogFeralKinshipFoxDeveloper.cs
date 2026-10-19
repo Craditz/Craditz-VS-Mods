@@ -28,7 +28,6 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
     private long stateReceivedAtMs;
     private long lastLocalRefreshAtMs;
     private bool confirmDeleteAll;
-    private bool confirmRebuild;
     private bool? confirmScavengeReroll;
     private string localMessage = string.Empty;
     private string selectionMessage = string.Empty;
@@ -173,7 +172,6 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
 
         state = packet;
         confirmDeleteAll = false;
-        confirmRebuild = false;
         localMessage = string.Empty;
         stateReceivedAtMs = capi.World.ElapsedMilliseconds;
         if (SingleComposer != null)
@@ -369,6 +367,14 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
                 () => OnRerollScavengeSites(true),
                 ElementBounds.Fixed(320, 687, 320, ButtonHeight), EnumButtonStyle.Normal,
                 "reroll-sites-surveyed");
+        composer.AddSmallButton("Recover all companions (this player)", OnRecoverAllCompanions,
+            ElementBounds.Fixed(0, 734, 640, ButtonHeight), EnumButtonStyle.Normal, "recover-all-player");
+    }
+
+    private bool OnRecoverAllCompanions()
+    {
+        system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.RecoverAll);
+        return true;
     }
 
     private bool OnSelectRecord(string foxId, long entityId)
@@ -502,22 +508,8 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
     private bool OnRebuildCompanion()
     {
         string foxId = GetSelectedFoxId();
-        if (string.IsNullOrWhiteSpace(foxId))
-        {
-            SetLocalMessage("The selected Companion has no stable ledger ID.");
-            return true;
-        }
-
-        if (!confirmRebuild)
-        {
-            confirmRebuild = true;
-            confirmDeleteAll = false;
-            SetLocalMessage("Rebuild replaces this world entity from its saved ledger record. Click Rebuild again to confirm.");
-            return true;
-        }
-
-        confirmRebuild = false;
-        SetLocalMessage("Rebuilding the selected Companion from its ledger record...");
+        if (string.IsNullOrWhiteSpace(foxId)) { SetLocalMessage("The selected Companion has no stable ledger ID."); return true; }
+        SetLocalMessage("Requesting a server recovery preview; no animal changes until confirmation.");
         system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.NuclearRebuild, foxId);
         return true;
     }
@@ -531,7 +523,6 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
             return true;
         }
 
-        confirmRebuild = false;
         confirmDeleteAll = false;
         SetLocalMessage("Loading the original entity and requesting a safe teleport...");
         system.SendCompanionRecoveryAction(CompanionRecoveryRequestPacket.Teleport, foxId);
@@ -563,7 +554,6 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
         if (!confirmDeleteAll)
         {
             confirmDeleteAll = true;
-            confirmRebuild = false;
             localMessage = $"Delete all {count} companions permanently, with no recovery. Click again to confirm.";
             UpdateDisplay();
             return true;
@@ -596,7 +586,6 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
             return;
         }
 
-        confirmRebuild = false;
         confirmDeleteAll = false;
         system.SendFoxSocialAction(
             targetEntityId,

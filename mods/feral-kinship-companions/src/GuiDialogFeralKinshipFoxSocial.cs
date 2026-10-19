@@ -121,6 +121,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
     private string[] portraitFiles = Array.Empty<string>();
     private int portraitPage;
     private string portraitMessage = string.Empty;
+    private GuiDialogFeralKinshipMoodDetails moodDetails;
     private int textureId;
 
     public GuiElementFeralKinshipFoxSocialSurface(
@@ -147,10 +148,18 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
 
     public void NotifyDialogClosed()
     {
+        CloseMoodDetails();
         if (tutorialOpen)
         {
             DismissTutorial();
         }
+    }
+
+    private void CloseMoodDetails()
+    {
+        moodDetails?.TryClose();
+        moodDetails?.Dispose();
+        moodDetails = null;
     }
 
     public override void ComposeElements(Context ctxStatic, ImageSurface surfaceStatic)
@@ -206,6 +215,7 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
 
     public override void Dispose()
     {
+        CloseMoodDetails();
         animalArt.Dispose();
         if (textureId > 0)
         {
@@ -644,8 +654,11 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
     {
         FoxGuiTheme.DrawPanel(ctx, 18, 124, width - 36, 168, false);
         DrawText(ctx, "Personality & mood", 30, 150, 16, accent);
+        DrawButton(ctx, "Wellbeing", width - 170, 132, 140, 28, !string.IsNullOrWhiteSpace(current.FoxId));
         DrawText(ctx, $"Personality: {Trim(current.Personality, 30)}", 30, 180, TextSize, TextWhite);
         DrawText(ctx, $"Mood: {Trim(current.Mood, 30)}", 30, 204, TextSize, TextMuted);
+        string gender=current.GenderId is "male" or "female" ? Lang.Get("feralkinshipcompanions:gender-"+current.GenderId) : Lang.Get("feralkinshipcompanions:child-parent-unknown");
+        DrawText(ctx,Lang.Get("feralkinshipcompanions:gender-label",gender),width-250,180,TextSize,TextWhite);
         DrawWrapped(ctx, current.PersonalitySummary, 30, 234, width - 60, 18, TextWhite, 2);
         DrawWrapped(ctx, current.CurrentThought, 30, 270, width - 60, 18, TextMuted, 2);
 
@@ -944,6 +957,22 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
 
         if (state == null)
         {
+            return;
+        }
+
+        if (activeTab == "social" && x >= CanvasWidth - 170 && x <= CanvasWidth - 30
+            && y >= 132 && y <= 160)
+        {
+            if (string.IsNullOrWhiteSpace(state.FoxId))
+            {
+                FoxGuiTheme.PlayUnavailable(api);
+                return;
+            }
+            CloseMoodDetails();
+            moodDetails = new GuiDialogFeralKinshipMoodDetails(api, system,
+                new FoxPackMemberPacket { FoxId = state.FoxId, Name = state.Name }, Redraw);
+            moodDetails.TryOpen();
+            FoxGuiTheme.PlayNavigation(api);
             return;
         }
 

@@ -21,7 +21,7 @@ namespace FeralKinshipCompanions;
 internal static partial class RetainedNativeSuspension
 {
     internal const string Key = "feralKinshipRetainedNativeExpeditionV1";
-    private sealed class Gate { internal readonly object Sync = new(); internal int Blocked; internal volatile bool Admitted; internal bool TeleportPending; internal bool ProgressHydrated; internal NativeStorageLocation? StorageLocation; }
+    private sealed class Gate { internal readonly object Sync = new(); internal int Blocked; internal volatile bool Admitted; internal bool TeleportPending; internal bool ProgressHydrated; internal bool Completing,Migrating; internal NativeStorageLocation? StorageLocation; }
     private static readonly ConditionalWeakTable<Entity, Gate> gates = new();
     private static readonly HashSet<MethodBase> installed = new();
     internal static bool Enabled { get; private set; }
@@ -56,6 +56,14 @@ internal static partial class RetainedNativeSuspension
         // authoritative; no server ledger is guessed from packet order.
         return Enabled && e.Api?.Side != EnumAppSide.Client && !g.Admitted
             && !string.IsNullOrWhiteSpace(s?.GetString("owner")) && FeralKinshipCompanionSystem.IsTamedFox(e);
+    }
+    internal static string DescribePresentation(Entity e)
+    {
+        gates.TryGetValue(e,out Gate? g);var m=Marker(e);var status=FeralKinshipCompanionSystem.GetDomesticationStatus(e);
+        return $"code={e.Code} alive={e.Alive} state={e.State} pos={e.Pos.X:0.##},{e.Pos.Y:0.##},{e.Pos.Z:0.##}/{e.Pos.Dimension} "
+            +$"marker={m?.GetString("phase")??"none"} hold={m?.GetString("reason")??"none"} captured={m?.GetBool("captured")} outcome-applied={m?.GetBool("outcomeApplied")} "
+            +$"away-flag={status?.GetBool("feralKinshipExpeditionAway")} blocked={g?.Blocked??0} admitted={g?.Admitted??false} protected={Protected(e)} our-hidden={FeralKinshipCompanionSystem.IsFoxAwayFromWorld(e)} "
+            +$"boxes={e.CollisionBox?.XSize:0.###}/{e.SelectionBox?.XSize:0.###} social-latch={e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.HasExpeditionPresentationSuppression}";
     }
     internal static void AdmitPresent(Entity e) {
         Gate g=gates.GetValue(e,_=>new()); lock(g.Sync) {
@@ -101,7 +109,7 @@ internal static partial class RetainedNativeSuspension
             m.SetString("companionId",r.FoxId); m.SetString("trip",trip);
             m.SetString("code",e.Code.ToString()); m.SetString("phase","Leaving");
             e.WatchedAttributes.SetAttribute(Key,m); r.RetainedTrip=trip; r.RetainedPhase="Leaving";
-            r.RetainedOutcome=string.Empty;r.RetainedLegacyAuthority=string.Empty;r.RetainedLegacyAdmissionHours=0;
+            r.RetainedOutcome=string.Empty;r.RetainedLegacyAuthority=string.Empty;r.RetainedLegacyAdmissionHours=0;r.CompletionProof=null;
             g.StorageLocation=null;g.Admitted=true; Dirty(e); return true;
         }
     }
@@ -177,12 +185,13 @@ internal static partial class RetainedNativeSuspension
     {
         Gate g=gates.GetValue(e,_=>new()); lock(g.Sync) {
             ITreeAttribute? m=Marker(e);
-            if(Matches(e,r) && m?.GetString("phase")=="Complete" && r.RetainedPhase=="Complete"
-                && m.GetBool("outcomeApplied")) return false; // Duplicate completion is a no-op.
+            if(Matches(e,r)&&m?.GetString("phase")=="Complete"&&r.RetainedPhase=="Complete"
+                &&(m.GetBool("outcomeApplied")||CompletionSettled(e,r))) return false; // Duplicate/settled completion is a no-op.
             if (!Matches(e,r) || !e.Alive || !Qualified(e,out _) || e.Teleporting || !g.TeleportPending || m?.GetString("phase")!="Returning"
                 || r.RetainedOutcome!=m.GetString("outcome") || !m.GetBool("captured")) {
                 Hold(e,"Placement receipt disagrees with native/ledger authority"); return false;
             }
+            g.Completing=true;
             try {
                 // The production verifier runs inside this same body monitor.
                 // Recheck at callback boundaries; no engine-wide chunk lock is invented.
@@ -194,13 +203,48 @@ internal static partial class RetainedNativeSuspension
                 applyOutcome(); m.SetBool("outcomeApplied",true); Dirty(e);
                 if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
                 RestoreBoxes(e); e.Pos.Motion.Set(0,0,0);
+                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                m.SetString("phase","Complete"); r.RetainedPhase="Complete";
+                r.CompletionProof=new RetainedCompletionProof {Trip=r.RetainedTrip,Owner=r.OwnerUid,Companion=r.FoxId,NativeId=e.EntityId,Code=e.Code.ToString(),
+                    CapturedHours=m.GetDouble("capturedHours"),ResumeHours=m.GetDouble("resumeHours"),Outcome=r.RetainedOutcome};
+                persist(); Dirty(e);
+                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                g.Admitted=true; g.TeleportPending=false; Volatile.Write(ref g.Blocked,0);
                 e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.EndRetainedSuspension();
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
-                m.SetString("phase","Complete"); r.RetainedPhase="Complete"; persist(); Dirty(e);
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
-                g.Admitted=true; g.TeleportPending=false; Volatile.Write(ref g.Blocked,0); return true;
+                PublishCompletedPresentation(e); return true;
             } catch(Exception ex) { Hold(e,"Resume callback failed: "+ex.GetType().Name); return false; }
+            finally {g.Completing=false;}
         }
+    }
+    // Only a caller with initialized, canonical completed ledger authority may
+    // use this. Never manufactures a completion, replays an outcome or clocks,
+    // removes a marker, or opens Hold/Suspended/Returning bodies.
+    internal static bool ReconcileCompletedPresentation(Entity e,FoxPackRecordV2 r)
+    {
+        Gate g=gates.GetValue(e,_=>new());lock(g.Sync) {
+            ITreeAttribute? m=Marker(e);
+            if(!Enabled || e.Api?.Side!=EnumAppSide.Server || !e.Alive || e.Teleporting
+                || !Matches(e,r) || r.RetainedPhase!="Complete" || m?.GetString("phase")!="Complete"
+                || !SafeSnapshot(e) || !CompletionSettled(e,r))return false;
+            var status=FeralKinshipCompanionSystem.GetDomesticationStatus(e)!;
+            var social=e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>();
+            bool suppressed=Volatile.Read(ref g.Blocked)!=0 || !g.Admitted
+                || status.GetBool("feralKinshipExpeditionAway") || social?.HasExpeditionPresentationSuppression==true;
+            if(suppressed) {
+                RestoreBoxes(e);
+                status.SetBool("feralKinshipExpeditionAway",false);
+                social?.EndRetainedSuspension();
+                g.Admitted=true;g.TeleportPending=false;Volatile.Write(ref g.Blocked,0);
+            }
+            // Re-send the current full owned surfaces even when the server is
+            // already correct: a client may have missed the original return.
+            PublishCompletedPresentation(e);return true;
+        }
+    }
+    private static void PublishCompletedPresentation(Entity e)
+    {
+        Dirty(e);
+        e.WatchedAttributes.MarkPathDirty("domesticationstatus");
     }
     private static void Dirty(Entity e) => e.WatchedAttributes.MarkPathDirty(Key);
     private static void CaptureBoxes(Entity e,ITreeAttribute m)
@@ -300,7 +344,7 @@ internal static partial class RetainedNativeSuspension
         }
         if(!CoveredType(e.GetType(),entityEntries,out reason))return false;
         foreach(EntityBehavior b in e.SidedProperties.Behaviors) {
-            if(!CoveredType(b.GetType(),behaviorEntries,out reason))return false;
+            if(!CoveredType(b.GetType(),e.Api.Side==EnumAppSide.Client?behaviorEntries:serverBehaviorEntries,out reason))return false;
             for(Type? provider=b.GetType();provider!=null;provider=provider.BaseType) {
                 if(!AuditedImplementation(provider)||!provider.Name.Contains("Tameable"))continue;
                 foreach(string field in new[]{"replacementCallbackId","callbackId"}) {
@@ -418,6 +462,10 @@ internal static partial class RetainedNativeSuspension
         .ToDictionary(op=>(ushort)op.Value);
     private static readonly string[] entityEntries={"ReceiveDamage","Die","Revive","OnGameTick","OnInteract","PlayEntitySound","OnReceivedClientPacket","IntersectsRay","ToBytes"};
     private static readonly string[] behaviorEntries={"OnGameTick","OnPhysicsTick","AfterPhysicsTick","HandleRemotePhysics","OnInteract","OnReceivedClientPacket","OnEntityReceiveDamage","OnEntityDeath","OnRenderFrame","SlowTick","CheckMultiply","CheckGrowth","Disobey","PurgeIfOwnerless","SpawnTameVariant","TryRestoreTamedVariant","ScheduleTamedVariantReplacement","QueueCompanionBackpackRefresh"};
+    // Render callbacks cannot execute on a server, and even reading their IL
+    // can resolve client-only OpenGL dependencies. Keep their client coverage
+    // separate from the shared entity/physics/save/AI gates.
+    private static readonly string[] serverBehaviorEntries=behaviorEntries.Where(n=>n!="OnRenderFrame").ToArray();
     private static readonly string[] aiEntries={"StartExecute","ShouldExecute","ContinueExecute","FinishExecute","Notify","OnEntityHurt","OnStateChanged"};
     private static bool NativeEngineAssembly(string name) => name is "VintagestoryAPI" or "VintagestoryLib" or "VSEssentials" or "VSSurvivalMod";
     private static bool NativeAdmissionContract(Type type) => NativeEngineAssembly(type.Assembly.GetName().Name ?? "")
@@ -447,6 +495,17 @@ internal static partial class RetainedNativeSuspension
             catch { result=false; } verified[a]=result;return result;
         }
     }
+    // A dedicated server may load the engine assembly without its client-only
+    // audio/render dependencies. Keep all successfully loaded types; the caller
+    // still restricts patch coverage to hash-qualified behaviors and AI tasks.
+    internal static Type[] GetLoadableTypes(Assembly assembly)
+    {
+        try { return assembly.GetTypes(); }
+        catch (ReflectionTypeLoadException exception)
+        {
+            return exception.Types.OfType<Type>().ToArray();
+        }
+    }
     internal static IReadOnlyList<MethodBase> Install(Harmony owner)
     {
         var targets=new HashSet<MethodBase>();
@@ -454,12 +513,13 @@ internal static partial class RetainedNativeSuspension
         void Add(Type t,string name) { MethodInfo? m=AccessTools.DeclaredMethod(t,name); if(m!=null&&!m.IsAbstract&&!m.ContainsGenericParameters)targets.Add(m); }
         foreach(Type t in new[]{typeof(Entity),typeof(EntityAgent)}) foreach(string n in entityEntries) Add(t,n);
         Add(typeof(Entity),"get_IsInteractable");
-        string[] entries=behaviorEntries;
+        string[] entries=serverBehaviorEntries;
         foreach(Assembly a in AppDomain.CurrentDomain.GetAssemblies()) {
             string name=a.GetName().Name ?? "";
             if(name!="FeralKinshipCompanions" && (!hashes.TryGetValue(name,out string? expected)||!Verified(a,expected)))continue;
-            foreach(Type t in a.GetTypes().Where(t=>typeof(EntityBehavior).IsAssignableFrom(t))) foreach(string n in entries) Add(t,n);
-            foreach(Type t in a.GetTypes().Where(t=>typeof(IAiTask).IsAssignableFrom(t)&&!t.ContainsGenericParameters)) {
+            Type[] types = GetLoadableTypes(a);
+            foreach(Type t in types.Where(t=>typeof(EntityBehavior).IsAssignableFrom(t)&&!t.ContainsGenericParameters)) foreach(string n in entries) Add(t,n);
+            foreach(Type t in types.Where(t=>typeof(IAiTask).IsAssignableFrom(t)&&!t.ContainsGenericParameters)) {
                 foreach(string n in aiEntries)Add(t,n);
                 // Inspected native and provider target predicates accept an
                 // Entity first. Check the target, not the attacker's admission.
@@ -526,6 +586,30 @@ internal static partial class RetainedNativeSuspension
         foreach(MethodBase recovery in RetainedNativeSaveWork.Install(owner,nativeChunks))installed.Add(recovery);
         foreach(MethodBase storageBoundary in InstallStorageLocation(owner,nativeChunks))installed.Add(storageBoundary);
         Enabled=true; return installed.ToArray();
+    }
+    internal static IReadOnlyList<MethodBase> InstallClientRendering(Harmony owner)
+    {
+        var added=new List<MethodBase>();
+        foreach(Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()) {
+            string name=assembly.GetName().Name ?? "";
+            if(name!="FeralKinshipCompanions" && (!hashes.TryGetValue(name,out string? expected)||!Verified(assembly,expected)))continue;
+            foreach(Type type in GetLoadableTypes(assembly).Where(t=>typeof(EntityBehavior).IsAssignableFrom(t)&&!t.ContainsGenericParameters)) {
+                MethodInfo? method=AccessTools.DeclaredMethod(type,"OnRenderFrame");
+                if(method==null||method.IsAbstract||method.ContainsGenericParameters||method.ReturnType!=typeof(void)||installed.Contains(method))continue;
+                owner.Patch(method,new HarmonyMethod(typeof(RetainedNativeSuspension),nameof(Entry)){priority=Priority.First},
+                    finalizer:new HarmonyMethod(typeof(RetainedNativeSuspension),nameof(Exit)));
+                installed.Add(method);added.Add(method);
+            }
+        }
+        return added;
+    }
+    internal static void StartClientRendering()
+    {
+        // A local client can share these statics with its integrated server.
+        // Extend existing common gates once instead of reinstalling them.
+        Start();
+        try { InstallClientRendering(harmony!); }
+        catch { Stop();throw; }
     }
     internal static void Start() { if(harmony!=null)return; harmony=new Harmony("feralkinshipcompanions.retained-native-r3"); try { Install(harmony); } catch { harmony.UnpatchAll(harmony.Id); harmony=null; Enabled=false;HealthInitializationAccountingEnabled=false;ChunkSerializationOrderingEnabled=false;RetainedNativeSaveWork.Stop();installed.Clear(); throw; } }
     internal static void Stop() { harmony?.UnpatchAll(harmony.Id); harmony=null;Enabled=false;HealthInitializationAccountingEnabled=false;ChunkSerializationOrderingEnabled=false;RetainedNativeSaveWork.Stop();installed.Clear(); }

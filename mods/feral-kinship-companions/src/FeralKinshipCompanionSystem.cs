@@ -843,6 +843,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         api.RegisterBlockClass("FeralKinshipWorkCart", typeof(BlockFeralKinshipWorkCart));
         api.RegisterBlockClass("FeralKinshipFoxBed", typeof(BlockFeralKinshipFoxBed));
         api.RegisterBlockClass("FeralKinshipFoxFlap", typeof(BlockFeralKinshipFoxFlap));
+        api.RegisterBlockClass("FeralKinshipLargeFlap", typeof(BlockFeralKinshipLargeFlap));
+        api.RegisterBlockEntityClass("FeralKinshipLargeFlap", typeof(BlockEntityFeralKinshipLargeFlap));
         api.RegisterBlockClass("FeralKinshipAmenity", typeof(BlockFeralKinshipAmenity));
         api.RegisterBlockClass("FeralKinshipDiningBoard", typeof(BlockFeralKinshipDiningBoard));
         api.RegisterBlockEntityClass("FeralKinshipDiningBoard", typeof(BlockEntityFeralKinshipDiningBoard));
@@ -887,7 +889,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             .RegisterMessageType<DeveloperCartInspectionStatePacket>()
             .RegisterMessageType<CompanionWellbeingReadRequest>()
             .RegisterMessageType<CompanionWellbeingReadResponse>()
-            .RegisterMessageType<CompanionAmbientSoundSettingsPacket>();
+            .RegisterMessageType<CompanionAmbientSoundSettingsPacket>()
+            .RegisterMessageType<CompanionPresentationProbeRequest>()
+            .RegisterMessageType<CompanionPresentationProbeReply>();
     }
 
     public override void AssetsFinalize(ICoreAPI api)
@@ -1004,10 +1008,22 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             api.Logger.Error("[FeralKinshipCompanions] Expedition event registry error: {0}", error);
         }
-        physicsSafetyHarmony = new Harmony("feralkinshipcompanions.physics-safety");
-        physicsSafetyHarmony.PatchAll(typeof(FeralKinshipPhysicsSafetyPatch).Assembly);
-        FeralKinshipMortalWoundRecoveryPatch.Install(physicsSafetyHarmony, api.Logger);
-        RetainedNativeSuspension.Start();
+        // Establish retained-body safety before exposing ordinary entity hooks.
+        // If patch installation fails, leave neither set of hooks behind.
+        try
+        {
+            RetainedNativeSuspension.Start();
+            physicsSafetyHarmony = new Harmony("feralkinshipcompanions.physics-safety");
+            physicsSafetyHarmony.PatchAll(typeof(FeralKinshipPhysicsSafetyPatch).Assembly);
+            FeralKinshipMortalWoundRecoveryPatch.Install(physicsSafetyHarmony, api.Logger);
+        }
+        catch
+        {
+            physicsSafetyHarmony?.UnpatchAll("feralkinshipcompanions.physics-safety");
+            physicsSafetyHarmony = null;
+            RetainedNativeSuspension.Stop();
+            throw;
+        }
         AiTaskRegistry.Register<AiTaskFeralKinshipMoodIdle>("feralkinshipmoodidle");
         AiTaskRegistry.Register<AiTaskFeralKinshipSourceIdleSound>("feralkinshipsourceidle");
         AiTaskRegistry.Register<AiTaskFeralKinshipFollowIdle>("feralkinshipfollowidle");
@@ -1040,9 +1056,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         temporalStabilitySystem = api.ModLoader.GetModSystem<SystemTemporalStability>();
         packRepository = new FoxPackRepository(api);
         brambleRepository = new BrambleRepository(api);
+        RegisterPresentationDiagnostics(api);
         RegisterStorageRoutingCommands(api);
         RegisterDialogueCommands(api);
         serverChannel = api.Network.GetChannel(NetworkChannelName)
+            .SetMessageHandler<CompanionPresentationProbeReply>(OnPresentationProbeServer)
             .SetMessageHandler<FoxSocialRequestPacket>(OnFoxSocialRequest)
             .SetMessageHandler<FoxBedAssignmentRequestPacket>(OnFoxBedAssignmentRequest)
             .SetMessageHandler<FoxWorkCartAssignmentRequestPacket>(OnFoxWorkCartAssignmentRequest)
@@ -1207,7 +1225,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             nativeAmbientSoundHarmony = null;
             api.Logger.Error("[FeralKinshipCompanions] Native ambient sound reduction unavailable; source-task limits remain active. {0}", exception.Message);
         }
-        RetainedNativeSuspension.Start();
+        RetainedNativeSuspension.StartClientRendering();
         LoadBrambleDialogue(api);
         clientLevelFinalized = false;
         FeralKinshipPetAiNamePromptPatch.TryApply(api);
@@ -1230,6 +1248,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         clientChannel.SetMessageHandler<FoxPerkStatePacket>(OnFoxPerkState);
         clientChannel.SetMessageHandler<FoxPackStatePacket>(OnFoxPackState);
         clientChannel.SetMessageHandler<CompanionWellbeingReadResponse>(OnWellbeingReadResponse);
+        clientChannel.SetMessageHandler<CompanionPresentationProbeRequest>(OnPresentationProbeClient);
         clientChannel.SetMessageHandler<FoxPackOpenFromCairnPacket>(OnFoxPackOpenFromCairn);
         clientChannel.SetMessageHandler<DeveloperCartInspectionStatePacket>(OnDeveloperCartInspectionState);
         clientChannel.SetMessageHandler<FoxBedAssignmentStatePacket>(OnFoxBedAssignmentState);
@@ -1314,6 +1333,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
         progressionCombatEncounters.Clear();
         brambleReadyPendingOwners.Clear();
+        pendingFullRebuilds.Clear();
+        pendingRecoveryBatches.Clear();
+        developerCartTargets.Clear();
+        developerClientTargetOwner = string.Empty;
         pendingRecoveryChecks.Clear();
         pendingAdminCompanionTeleports.Clear();
 
@@ -1360,6 +1383,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         retainedAdmissionBodies.Clear();
         retainedLoadedHealthApplied.Clear();
         ClearPendingCompanionAdmissions();
+        archiveAnimalConfirmations.Clear();
+        archiveOriginalLookups.Clear();
+        presentationLastAttempts.Clear();
+        presentationProbes.Clear();
+        presentationProbeNext.Clear();
+        presentationSweepCount = 0;
+        nextExpeditionPresentationCheckMs = 0;
+        lastExpeditionPresentationCheckMs = 0;
         undergroundRecoveryDetectedAtMs.Clear();
         undergroundRecoveryNextAttemptAtMs.Clear();
         nextUndergroundRecoveryScanAtMs = 0;
@@ -2550,6 +2581,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnSaveGameLoaded()
     {
+        recoveryUiConfirmations.Clear();
+        ResetSaveMigrationRuntime();
         ResetRetainedOriginalLoading();
         if (serverApi == null)
         {
@@ -2829,7 +2862,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         string ownerId = GetDomesticationStatus(entity)?.GetString("owner") ?? string.Empty;
-        if (!string.Equals(ownerId, clientApi.World.Player.PlayerUID, StringComparison.Ordinal))
+        if (!string.Equals(ownerId, string.IsNullOrEmpty(developerClientTargetOwner) ? clientApi.World.Player.PlayerUID : developerClientTargetOwner, StringComparison.Ordinal))
         {
             return false;
         }
@@ -3007,6 +3040,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         clientChannel?.SendPacket(new FoxSocialRequestPacket
         {
             Action = FoxSocialRequestAction.Open,
+            DeveloperFoxId = targetFoxId,
+            DeveloperTargetOwnerUid = developerClientTargetOwner,
             TargetEntityId = targetEntityId
         });
         return true;
@@ -3015,6 +3050,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     /// <summary>Opens the developer panel without requiring a target entity.</summary>
     internal bool TryOpenFoxDeveloperGui()
     {
+        developerClientTargetOwner = string.Empty;
         if (clientApi?.World.Player.Entity == null || !CanUseDeveloperToolsClient())
         {
             return false;
@@ -3046,7 +3082,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         Entity? entity = clientApi?.World.GetEntityById(entityId);
         if (entity != null
             && clientApi != null
-            && IsOwnedCompanion(entity, clientApi.World.Player.PlayerUID))
+            && IsOwnedCompanion(entity, string.IsNullOrEmpty(developerClientTargetOwner) ? clientApi.World.Player.PlayerUID : developerClientTargetOwner))
         {
             return TryOpenFoxDeveloperGui(entity);
         }
@@ -3088,6 +3124,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         clientChannel?.SendPacket(new FoxSocialRequestPacket
         {
             Action = action,
+            DeveloperTargetOwnerUid = !string.IsNullOrEmpty(developerFoxId) ? developerClientTargetOwner : string.Empty,
             TargetEntityId = entityId,
             RequestedJob = requestedJob,
             SelectedMissingFoxId = selectedMissingFoxId,
@@ -3376,6 +3413,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal bool TryOpenCompanionRecoveryGui()
     {
+        developerClientTargetOwner = string.Empty;
         if (clientApi == null || !CanUseDeveloperToolsClient())
         {
             return false;
@@ -3396,12 +3434,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         return true;
     }
 
-    internal void SendCompanionRecoveryAction(int action, string foxId = "")
+    internal void SendCompanionRecoveryAction(int action, string foxId = "", string confirmationToken = "", string? targetOwnerUid = null)
     {
         clientChannel?.SendPacket(new CompanionRecoveryRequestPacket
         {
             Action = action,
-            FoxId = foxId ?? string.Empty
+            TargetOwnerUid = targetOwnerUid ?? developerClientTargetOwner,
+            FoxId = foxId ?? string.Empty,
+            ConfirmationToken = confirmationToken
         });
     }
 
@@ -9926,8 +9966,13 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnFoxSocialRequest(IServerPlayer fromPlayer, FoxSocialRequestPacket packet)
     {
+        bool developerRequest = (IsDeveloperAction(packet.Action) || packet.Action == FoxSocialRequestAction.Open)
+            && !string.IsNullOrWhiteSpace(packet.DeveloperFoxId);
+        string actionOwner = fromPlayer.PlayerUID;
+        if (developerRequest && !AuthorizeRequestedDeveloperTarget(fromPlayer, packet.DeveloperTargetOwnerUid, out actionOwner)) return;
         if (serverApi?.World.GetEntityById(packet.TargetEntityId) is Entity retainedTarget
-            && RetainedNativeSuspension.Protected(retainedTarget)) return;
+            && RetainedNativeSuspension.Protected(retainedTarget)
+            && packet.Action != FoxSocialRequestAction.RebuildFoxDeveloper) return;
         // Saved/unloaded developer records can return before the live-entity
         // checks below. Authorize developer actions before either branch.
         if (serverApi == null
@@ -9976,8 +10021,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
-        bool developerRecordRequest = IsDeveloperAction(packet.Action)
-            && !string.IsNullOrWhiteSpace(packet.DeveloperFoxId);
+        bool developerRecordRequest = developerRequest;
         FoxPackRecordV2? developerRecord = null;
         Entity? entity;
         if (developerRecordRequest)
@@ -9985,7 +10029,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             if (packRepository?.TryGetRecord(packet.DeveloperFoxId, out developerRecord) != true
                 || developerRecord == null
                 || developerRecord.Archived
-                || !string.Equals(developerRecord.OwnerUid, fromPlayer.PlayerUID, StringComparison.Ordinal))
+                || !string.Equals(developerRecord.OwnerUid, actionOwner, StringComparison.Ordinal))
             {
                 return;
             }
@@ -10010,7 +10054,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             entity = serverApi.World.GetEntityById(packet.TargetEntityId);
             if (entity == null
                 || !IsTamedFox(entity)
-                || !IsOwner(entity, fromPlayer.PlayerUID)
+                || !IsOwner(entity, actionOwner)
                 || !IsSocialActionInRange(entity, fromPlayer))
             {
                 return;
@@ -10018,7 +10062,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
 
         if (!IsTamedFox(entity)
-            || !IsOwner(entity, fromPlayer.PlayerUID)
+            || !IsOwner(entity, actionOwner)
             || (!developerRecordRequest && !IsSocialActionInRange(entity, fromPlayer)))
         {
             return;
@@ -10858,6 +10902,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             || action == FoxSocialRequestAction.UnlockExpeditionRoute
             || action == FoxSocialRequestAction.UnlockPackTalent
             || action == FoxSocialRequestAction.ArchivePackFox
+            || action == FoxSocialRequestAction.RestoreArchivedAnimal
             || action == FoxSocialRequestAction.UnarchivePackFox
             || action == FoxSocialRequestAction.DeleteExpeditionReport
             || action == FoxSocialRequestAction.AbandonScavengeSite
@@ -10937,6 +10982,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 break;
             case FoxSocialRequestAction.ArchivePackFox:
                 ArchivePackFox(owner, packet.RequestedJob);
+                break;
+            case FoxSocialRequestAction.RestoreArchivedAnimal:
+                RestoreArchivedAnimal(owner,packet.RequestedJob);
                 break;
             case FoxSocialRequestAction.UnarchivePackFox:
                 UnarchivePackFox(owner, packet.RequestedJob);
@@ -11019,6 +11067,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         IServerPlayer fromPlayer,
         CompanionRecoveryRequestPacket packet)
     {
+        if (packet.Action is CompanionRecoveryRequestPacket.ConfirmPreview or CompanionRecoveryRequestPacket.CancelPreview) { HandleRecoveryUiResponse(fromPlayer, packet); return; }
         if (serverApi == null
             || packRepository?.Loaded != true
             || !CanUseDeveloperTools(fromPlayer))
@@ -11026,21 +11075,16 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
-        // Inspection never grants recovery authority over someone else's
-        // records. Check ownership before recovery can refresh shared state.
-        if (packet.Action is CompanionRecoveryRequestPacket.Recover
-                or CompanionRecoveryRequestPacket.NuclearRebuild
-                or CompanionRecoveryRequestPacket.Teleport
-                or CompanionRecoveryRequestPacket.OpenDeveloper
-            && !string.IsNullOrWhiteSpace(packet.FoxId)
-            && (!packRepository.TryGetRecord(packet.FoxId, out FoxPackRecordV2? requestedRecord)
-                || requestedRecord == null
-                || !string.Equals(requestedRecord.OwnerUid, fromPlayer.PlayerUID, StringComparison.Ordinal)))
+        if (!AuthorizeRequestedDeveloperTarget(fromPlayer, packet.TargetOwnerUid, out string targetOwner))
         {
-            serverChannel?.SendPacket(new CompanionRecoveryStatePacket
-            {
-                Message = "That companion is not in your pack ledger."
-            }, fromPlayer);
+            serverChannel?.SendPacket(new CompanionRecoveryStatePacket { Message = "Target authorization refused. Select that player's nearby Pack Cart again with the Developer Ledger." }, fromPlayer);
+            return;
+        }
+        if (!string.IsNullOrEmpty(packet.FoxId)
+            && (!packRepository.TryGetRecord(packet.FoxId, out FoxPackRecordV2? requestedRecord)
+                || requestedRecord == null || requestedRecord.OwnerUid != targetOwner))
+        {
+            SendCompanionRecoveryState(fromPlayer, "That companion does not belong to the explicitly selected player.");
             return;
         }
 
@@ -11056,7 +11100,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             bool surveyed = packet.Action == CompanionRecoveryRequestPacket.RerollScavengeSitesSurveyed;
             if (!packRepository.TryRerollScavengeSites(
-                    fromPlayer.PlayerUID, serverApi.World.Rand, surveyed))
+                    targetOwner, serverApi.World.Rand, surveyed))
             {
                 SendCompanionRecoveryState(fromPlayer,
                     "Finish active Scout and Scavenge parties before rerolling sites.");
@@ -11070,27 +11114,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
-        if (packet.Action == CompanionRecoveryRequestPacket.Recover
+        if (packet.Action is CompanionRecoveryRequestPacket.Recover or CompanionRecoveryRequestPacket.NuclearRebuild
             && !string.IsNullOrWhiteSpace(packet.FoxId))
         {
-            RecoverCompanionDeveloper(fromPlayer, packet.FoxId);
-            SendCompanionRecoveryState(fromPlayer);
-            return;
-        }
-
-        if (packet.Action == CompanionRecoveryRequestPacket.NuclearRebuild
-            && !string.IsNullOrWhiteSpace(packet.FoxId))
-        {
-            bool rebuilt = NuclearRebuildCompanionDeveloper(fromPlayer, packet.FoxId);
-            SendCompanionRecoveryState(fromPlayer);
-            if (rebuilt)
-            {
-                Entity? rebuiltEntity = FindLoadedCompanionForRecovery(packet.FoxId);
-                if (rebuiltEntity != null)
-                {
-                    SendState(rebuiltEntity, fromPlayer, "Rebuild complete.");
-                }
-            }
+            PreviewRecoveryUi(fromPlayer, targetOwner, packet.FoxId, false);
             return;
         }
 
@@ -11098,26 +11125,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             && !string.IsNullOrWhiteSpace(packet.FoxId))
         {
             TeleportCompanionDeveloper(fromPlayer, packet.FoxId);
-            SendCompanionRecoveryState(fromPlayer);
             return;
         }
 
         if (packet.Action == CompanionRecoveryRequestPacket.RecoverAll)
         {
-            int recovered = 0;
-            foreach (FoxPackRecordV2 record in packRepository.GetRecordsForOwner(fromPlayer.PlayerUID))
-            {
-                if (RecoverCompanionDeveloper(fromPlayer, record.FoxId, sendResult: false))
-                {
-                    recovered++;
-                }
-            }
-
-            SendCompanionRecoveryState(
-                fromPlayer,
-                recovered > 0
-                    ? $"Recovered {recovered} companion{(recovered == 1 ? string.Empty : "s")}."
-                    : "No companion could be recovered.");
+            PreviewRecoveryUi(fromPlayer, targetOwner, string.Empty, true);
             return;
         }
 
@@ -11126,80 +11139,39 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void SendCompanionRecoveryState(IServerPlayer owner, string message = "")
     {
-        if (serverApi == null || packRepository?.Loaded != true)
+        if (serverApi == null || packRepository?.Loaded != true) return;
+        string targetOwner = DeveloperTargetOwnerUid(owner);
+        var authority = CaptureExpeditionPresentationAuthority();
+        var owned = packRepository.GetAllRecords().Where(r => r.OwnerUid == targetOwner).Take(8193).ToArray();
+        if (owned.Length > 8192) { serverChannel?.SendPacket(new CompanionRecoveryStatePacket { TargetOwnerUid = targetOwner, Message = "Roster exceeds the bounded recovery limit; inspect individual records" }, owner); return; }
+        var entries = new List<CompanionRecoveryEntryPacket>();
+        foreach (FoxPackRecordV2 record in owned)
         {
-            return;
-        }
-
-        RefreshLoadedFoxPackRecords();
-        List<CompanionRecoveryEntryPacket> entries = new();
-        foreach (FoxPackRecordV2 record in packRepository.GetRecordsForOwner(owner.PlayerUID))
-        {
-            Entity? loaded = FindLoadedCompanionForRecovery(record.FoxId);
-            bool awaitingSafeReturn = !string.IsNullOrWhiteSpace(record.PendingReturnStatus)
-                || string.Equals(record.Status, "Awaiting safe return", StringComparison.OrdinalIgnoreCase);
-            bool activeExpeditionMember = !awaitingSafeReturn
-                && packRepository.GetExpeditionForMember(owner.PlayerUID, record.FoxId) != null;
-            bool ledgerRecoveryAvailable = CanRestoreFromLedger(record, out string typeReason);
-            string blockedReason = string.Empty;
-            if (loaded != null)
-            {
-                blockedReason = "Already present in the world";
+            // One shared read-only identity snapshot. Opening a foreign roster
+            // never refreshes/repairs that player or any unrelated player's pack.
+            Entity? original = record.EntityId > 0 ? serverApi.World.GetEntityById(record.EntityId) : null;
+            if (original == null && authority?.NativeBodies.TryGetValue(record.FoxId, out Entity? indexed) == true) original = indexed;
+            string reason = FullRecoveryBlockerUsingAuthority(record, original, authority);
+            bool lookup = original == null && CanLookUpFullRecoveryOriginalUsingAuthority(record, authority);
+            bool canRecover = string.IsNullOrEmpty(reason) || lookup;
+            if (original != null && record.RetainedPhase == "Complete" && RetainedNativeSuspension.Marker(original)?.GetString("phase") == "Hold") {
+                canRecover = MayRepairCompletedHold(owner);
+                reason = canRecover ? "Request a server preview for guarded completed-Hold repair; explicit confirmation required" : "Completed-Hold repair requires server admin privilege";
             }
-            else if (pendingRecoveryChecks.Contains(record.FoxId)
-                || pendingAdminCompanionTeleports.Contains(owner.PlayerUID + ":" + record.FoxId))
-            {
-                blockedReason = "A saved-location lookup is still in progress";
-            }
-            else if (activeExpeditionMember)
-            {
-                blockedReason = "Still assigned to an active expedition";
-            }
-            else if (owner.Entity == null)
-            {
-                blockedReason = "Player entity is not available";
-            }
-            else if (!ledgerRecoveryAvailable)
-            {
-                blockedReason = typeReason;
-            }
-            else if (string.Equals(record.Status, "Dead", StringComparison.OrdinalIgnoreCase)
-                || string.Equals(record.Status, "Unowned", StringComparison.OrdinalIgnoreCase))
-            {
-                blockedReason = $"Ledger status is {record.Status}";
-            }
-
-            // NUCLEAR is the escape hatch for exactly the states that make
-            // ordinary recovery unavailable: active expeditions, terminal
-            // ledger statuses, missing world entities, and stale runtime
-            // state. Keep the button available for every real ledger record;
-            // the server-side action still validates ownership and reports
-            // genuinely impossible materialization failures.
-            bool canNuclearRebuild = !string.IsNullOrWhiteSpace(record.FoxId)
-                && (record.DurableStateInitialized || loaded != null);
-
-            entries.Add(new CompanionRecoveryEntryPacket
-            {
-                FoxId = record.FoxId,
-                Number = record.Number,
+            if (lookup) reason = "Check saved location, then rebuild only a verified native original";
+            if (pendingFullRebuilds.Contains(record.FoxId)) { canRecover = false; reason = "Full native rebuild is pending"; }
+            if (pendingRecoveryChecks.Contains(record.FoxId)) { canRecover = false; reason = "Saved-location lookup is pending"; }
+            entries.Add(new CompanionRecoveryEntryPacket {
+                FoxId = record.FoxId, Number = record.Number,
                 Name = string.IsNullOrWhiteSpace(record.Name) ? "Unnamed companion" : record.Name,
-                SpeciesDisplayName = GetCompanionSpeciesDisplayName(record),
-                Status = record.Status,
-                RecoveryStatus = record.RecoveryStatus,
-                EntityLoaded = loaded != null,
-                CanRecover = string.IsNullOrWhiteSpace(blockedReason),
-                CanNuclearRebuild = canNuclearRebuild,
-                BlockedReason = blockedReason,
-                EntityCode = record.EntityCode,
-                EntityId = record.EntityId
+                SpeciesDisplayName = GetCompanionSpeciesDisplayName(record), Status = record.Status,
+                RecoveryStatus = record.RecoveryStatus, EntityLoaded = original?.Alive == true,
+                CanRecover = canRecover, CanNuclearRebuild = canRecover, BlockedReason = reason,
+                EntityCode = record.EntityCode, EntityId = record.EntityId
             });
         }
-
-        serverChannel?.SendPacket(new CompanionRecoveryStatePacket
-        {
-            Records = entries,
-            Message = message
-        }, owner);
+        serverChannel?.SendPacket(new CompanionRecoveryStatePacket { Records = entries,
+            TargetOwnerUid = targetOwner, Message = "Target player: " + targetOwner + ". " + message }, owner);
     }
 
     private static bool CanUseDeveloperTools(IServerPlayer player)
@@ -11580,6 +11552,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
+        ReconcileCompletedExpeditionPresentationOnLoad(entity);
         if (ReconcileRetainedBody(entity)) return;
         ITreeAttribute? existingStatus = GetDomesticationStatus(entity);
         string existingFoxId = existingStatus?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
@@ -12560,168 +12533,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         }
     }
 
-    private bool NuclearRebuildCompanionDeveloper(
-        IServerPlayer owner,
-        string foxId,
-        bool sendResult = true)
+    private bool NuclearRebuildCompanionDeveloper(IServerPlayer owner, string foxId, bool sendResult = true)
     {
-        if (serverApi == null || packRepository?.Loaded != true)
-        {
-            return false;
-        }
-
-        // Refresh first so the persistent record contains the live entity's
-        // latest talents, health, name, duties, and other durable state before
-        // the old world instance is destroyed.
-        RefreshLoadedFoxPackRecords();
-        if (!packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record)
-            || record == null
-            || !string.Equals(record.OwnerUid, owner.PlayerUID, StringComparison.Ordinal))
-        {
-            if (sendResult)
-            {
-                SendCompanionRecoveryState(owner, "Nuclear rebuild refused: that companion is not in your pack ledger.");
-            }
-            return false;
-        }
-
-        Entity? oldEntity = FindLoadedCompanionByFoxId(record.FoxId);
-
-        if (!string.IsNullOrEmpty(record.RetainedTrip))
-        {
-            if (sendResult) SendCompanionRecoveryState(owner, "Retained native identity cannot be rebuilt or inventory replayed by this prototype.");
-            return false;
-        }
-
-        FoxPackRecordV2 recordSnapshot;
-        try
-        {
-            recordSnapshot = ClonePackRecordForRebuild(record);
-        }
-        catch (Exception exception)
-        {
-            serverApi.Logger.Error(
-                "[FeralKinshipCompanions] Could not snapshot ledger record {0} for nuclear rebuild: {1}",
-                foxId,
-                exception
-            );
-            if (sendResult)
-            {
-                SendCompanionRecoveryState(owner, "Nuclear rebuild refused: the pack record could not be safely stored.");
-            }
-            return false;
-        }
-
-        long oldEntityId = oldEntity?.EntityId ?? 0;
-        Entity? rebuilt = null;
-        try
-        {
-            if (oldEntity != null)
-            {
-                rebuildingEntityIds.Add(oldEntityId);
-                UnregisterLoadedFox(oldEntity, "Nuclear recovery-ledger rebuild");
-                // Do not let the developer escape hatch destroy a carried
-                // item just because the companion is in a broken state.
-                DropFoxStorageCargo(oldEntity);
-                oldEntity.Die(EnumDespawnReason.Removed);
-                companionAggressiveTargets.Remove(oldEntityId);
-                companionAttackers.Remove(oldEntityId);
-                if (socialViewByOwner.TryGetValue(owner.PlayerUID, out long viewedEntityId)
-                    && viewedEntityId == oldEntityId)
-                {
-                    socialViewByOwner.Remove(owner.PlayerUID);
-                    EndMenuAttention(oldEntityId);
-                }
-                if (perkViewByOwner.TryGetValue(owner.PlayerUID, out long perkEntityId)
-                    && perkEntityId == oldEntityId)
-                {
-                    perkViewByOwner.Remove(owner.PlayerUID);
-                    EndMenuAttention(oldEntityId);
-                }
-            }
-
-            // The record remains in place as the durable source of truth. A
-            // zero entity ID tells the normal ledger recovery builder that it
-            // must materialize a fresh world entity.
-            record.EntityId = 0;
-            packRepository.Save();
-            if (!RecoverCompanionDeveloper(
-                    owner,
-                    foxId,
-                    sendResult: false,
-                    allowTerminalStatus: true,
-                    allowActiveExpedition: true))
-            {
-                throw new InvalidOperationException("The recovery-ledger builder could not spawn the replacement.");
-            }
-
-            rebuilt = FindLoadedCompanionByFoxId(foxId);
-            if (rebuilt == null || !rebuilt.Alive)
-            {
-                throw new InvalidOperationException("The recovery-ledger builder returned no living replacement.");
-            }
-
-            if (sendResult)
-            {
-                SendCompanionRecoveryState(owner, $"Nuclear rebuild complete. {GetFoxRecordLabel(recordSnapshot)} was replaced from the ledger.");
-            }
-            if (oldEntityId > 0)
-            {
-                serverApi.Event.RegisterCallback(_ => rebuildingEntityIds.Remove(oldEntityId), 2000);
-            }
-            return true;
-        }
-        catch (Exception exception)
-        {
-            if (rebuilt != null)
-            {
-                try
-                {
-                    if (rebuilt.Alive)
-                    {
-                        rebuilt.Die(EnumDespawnReason.Removed);
-                    }
-                }
-                catch (Exception cleanupException)
-                {
-                    serverApi.Logger.Error(
-                        "[FeralKinshipCompanions] Nuclear rebuild cleanup failed for companion {0}: {1}",
-                        foxId,
-                        cleanupException
-                    );
-                }
-
-                try
-                {
-                    UnregisterLoadedFox(rebuilt, "Nuclear recovery-ledger rebuild failed");
-                }
-                catch (Exception cleanupException)
-                {
-                    serverApi.Logger.Error(
-                        "[FeralKinshipCompanions] Nuclear rebuild unregister cleanup failed for companion {0}: {1}",
-                        foxId,
-                        cleanupException
-                    );
-                }
-            }
-
-            packRepository.RestoreRecord(recordSnapshot);
-            packRepository.Save();
-            serverApi.Logger.Error(
-                "[FeralKinshipCompanions] Nuclear recovery-ledger rebuild failed for companion {0}: {1}",
-                foxId,
-                exception
-            );
-            if (sendResult)
-            {
-                SendCompanionRecoveryState(owner, "Nuclear rebuild failed. The stored pack record was restored; the old entity was already removed.");
-            }
-            if (oldEntityId > 0)
-            {
-                serverApi.Event.RegisterCallback(_ => rebuildingEntityIds.Remove(oldEntityId), 2000);
-            }
-            return false;
-        }
+        StartFullCompanionRecovery(owner, foxId, DeveloperTargetOwnerUid(owner));
+        return false; // Accepted/pending is never reported as a completed rebuild.
     }
 
     private EntityProperties? ResolveRecoveryEntityType(FoxPackRecordV2 record, out string reason)
@@ -12786,111 +12601,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void RebuildCompanionDeveloper(Entity entity, IServerPlayer owner)
     {
-        if (RetainedNativeSuspension.NativeAuthority(entity)) return;
-        if (serverApi == null || packRepository?.Loaded != true)
-        {
-            return;
-        }
-
-        string ownerUid = owner.PlayerUID;
-        ITreeAttribute? status = GetDomesticationStatus(entity);
-        string foxId = status?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
-        if (string.IsNullOrWhiteSpace(foxId)
-            || !packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record)
-            || record == null
-            || !string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal))
-        {
-            SendState(entity, owner, "Rebuild refused: the companion has no valid pack record.");
-            return;
-        }
-
-        if (packRepository.GetExpeditionForMember(ownerUid, record.FoxId) != null
-            || HasFoxStorageCargo(entity)
-            || HasFoxPendingCartPickup(entity))
-        {
-            SendState(entity, owner, "Rebuild refused while this companion is busy with an expedition or cargo.");
-            return;
-        }
-
-        FoxPackRecordV2 recordSnapshot;
-        try
-        {
-            recordSnapshot = ClonePackRecordForRebuild(record);
-        }
-        catch (Exception exception)
-        {
-            serverApi.Logger.Error(
-                "[FeralKinshipCompanions] Could not snapshot ledger record {0} for developer rebuild: {1}",
-                foxId,
-                exception
-            );
-            SendState(entity, owner, "Rebuild refused: the pack record could not be safely snapshotted.");
-            return;
-        }
-
-        long oldEntityId = entity.EntityId;
-        Entity? rebuilt = null;
-        try
-        {
-            rebuildingEntityIds.Add(oldEntityId);
-            UnregisterLoadedFox(entity, "Nuclear ledger rebuild");
-            entity.Die(EnumDespawnReason.Removed);
-            companionAggressiveTargets.Remove(oldEntityId);
-            companionAttackers.Remove(oldEntityId);
-            if (socialViewByOwner.TryGetValue(ownerUid, out long viewedEntityId)
-                && viewedEntityId == oldEntityId)
-            {
-                socialViewByOwner.Remove(ownerUid);
-                EndMenuAttention(oldEntityId);
-            }
-            if (perkViewByOwner.TryGetValue(ownerUid, out long perkEntityId)
-                && perkEntityId == oldEntityId)
-            {
-                perkViewByOwner.Remove(ownerUid);
-                EndMenuAttention(oldEntityId);
-            }
-
-            // Discard the old world identity. The recovery builder resolves a
-            // currently registered tame type and hydrates a brand-new entity
-            // from the persistent ledger, including talent ranks and health.
-            record.EntityId = 0;
-            packRepository.Save();
-            if (!RecoverCompanionDeveloper(owner, foxId, sendResult: false))
-            {
-                throw new InvalidOperationException("The ledger recovery builder could not spawn the replacement.");
-            }
-
-            rebuilt = FindLoadedCompanionByFoxId(foxId);
-            if (rebuilt == null || !rebuilt.Alive)
-            {
-                throw new InvalidOperationException("The ledger recovery builder returned no living replacement.");
-            }
-
-            serverChannel?.SendPacket(
-                new CompanionDeveloperOpenPacket { TargetEntityId = rebuilt.EntityId },
-                owner
-            );
-            SendPackState(owner, $"Nuclear ledger rebuild complete. {GetFoxRecordLabel(recordSnapshot)} now has entity ID {rebuilt.EntityId}.");
-            serverApi.Event.RegisterCallback(_ => rebuildingEntityIds.Remove(oldEntityId), 2000);
-        }
-        catch (Exception exception)
-        {
-            if (rebuilt != null && rebuilt.Alive)
-            {
-                rebuilt.Die(EnumDespawnReason.Removed);
-                UnregisterLoadedFox(rebuilt, "Nuclear rebuild failed");
-            }
-
-            packRepository.RestoreRecord(recordSnapshot);
-            packRepository.Save();
-            serverApi.Logger.Error(
-                "[FeralKinshipCompanions] Nuclear ledger rebuild failed for companion {0}: {1}",
-                foxId,
-                exception
-            );
-            SendPackState(owner, "Nuclear ledger rebuild failed. The persistent pack record was restored; the old entity was already removed.");
-            serverApi.Event.RegisterCallback(_ => rebuildingEntityIds.Remove(oldEntityId), 2000);
-        }
+        string id = GetDomesticationStatus(entity)?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
+        StartFullCompanionRecovery(owner, id, DeveloperTargetOwnerUid(owner));
     }
 
     private void PermanentlyDeleteAllCompanionsDeveloper(IServerPlayer owner)
@@ -12902,22 +12614,22 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
         RefreshLoadedFoxPackRecords();
         Entity[] loadedOwnedCompanions = serverApi.World.LoadedEntities.Values
-            .Where(entity => IsTamedFox(entity) && IsOwner(entity, owner.PlayerUID))
+            .Where(entity => IsTamedFox(entity) && IsOwner(entity, DeveloperTargetOwnerUid(owner)))
             .ToArray();
 
-        int recordCount = packRepository.PermanentlyDeleteCompanionsForOwner(owner.PlayerUID);
+        int recordCount = packRepository.PermanentlyDeleteCompanionsForOwner(DeveloperTargetOwnerUid(owner));
         packRepository.Save();
 
-        socialViewByOwner.Remove(owner.PlayerUID);
-        perkViewByOwner.Remove(owner.PlayerUID);
-        packViewers.Remove(owner.PlayerUID);
-        activeConversationByOwner.Remove(owner.PlayerUID);
-        lastConversationContextByOwner.Remove(owner.PlayerUID);
-        nextConversationByOwner.Remove(owner.PlayerUID);
-        perimeterWalkerByOwner.Remove(owner.PlayerUID);
-        seeOffByOwner.Remove(owner.PlayerUID);
-        seeOffCooldownByOwner.Remove(owner.PlayerUID);
-        lookoutByOwner.Remove(owner.PlayerUID);
+        socialViewByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        perkViewByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        packViewers.Remove(DeveloperTargetOwnerUid(owner));
+        activeConversationByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        lastConversationContextByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        nextConversationByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        perimeterWalkerByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        seeOffByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        seeOffCooldownByOwner.Remove(DeveloperTargetOwnerUid(owner));
+        lookoutByOwner.Remove(DeveloperTargetOwnerUid(owner));
 
         foreach (Entity companion in loadedOwnedCompanions)
         {
@@ -12929,7 +12641,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             owner.PlayerName,
             recordCount,
             loadedOwnedCompanions.Length,
-            owner.PlayerUID
+            DeveloperTargetOwnerUid(owner)
         );
         owner.SendMessage(
             GlobalConstants.GeneralChatGroup,
@@ -18699,7 +18411,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void AddPackLootDeveloper(IServerPlayer owner, string type, IEnumerable<string> selectedFoxIds)
     {
-        string ownerUid = owner.PlayerUID;
+        string ownerUid = DeveloperTargetOwnerUid(owner);
         if (serverApi == null || packRepository == null || string.IsNullOrWhiteSpace(ownerUid))
         {
             return;
@@ -18837,7 +18549,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void ForceFoxMiaDeveloper(IServerPlayer owner, IEnumerable<string> selectedFoxIds)
     {
-        string ownerUid = owner.PlayerUID;
+        string ownerUid = DeveloperTargetOwnerUid(owner);
         if (serverApi == null || packRepository == null || string.IsNullOrWhiteSpace(ownerUid))
         {
             return;
@@ -18977,6 +18689,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         GetHealth(entity, out float currentHealth, out float maxHealth);
         serverChannel?.SendPacket(new FoxSocialStatePacket
         {
+            GenderId=CompanionGenderPresentation.FromEntity(entity),
             TargetEntityId = entity.EntityId,
             FoxId = status?.GetString(FoxIdKey, string.Empty) ?? string.Empty,
             Number = status?.GetInt(NumberKey, 0) ?? 0,
@@ -19063,7 +18776,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             ,FoodLevel = GetCompanionFoodLevel(entity)
             ,FoodState = GetFoodStateLabel(GetCompanionFoodLevel(entity), FoodSystemEnabled)
             ,OwnedCompanionCount = packRepository?.GetAllRecords().Count(record =>
-                string.Equals(record.OwnerUid, owner.PlayerUID, StringComparison.Ordinal)) ?? 0
+                string.Equals(record.OwnerUid, GetCompanionOwnerUid(entity), StringComparison.Ordinal)) ?? 0
             ,Level = GetCompanionLevel(status)
             ,CurrentLevelExperience = GetCompanionCurrentExperience(status)
             ,RequiredLevelExperience = CompanionProgressionRules.GetRequiredExperience(GetCompanionLevel(status))
@@ -19292,6 +19005,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         clientApi?.Event.EnqueueMainThreadTask(
             () =>
             {
+                if (packet.PreviewEntries.Count > 0) {
+                    recoveryConfirmationDialog?.TryClose();
+                    recoveryConfirmationDialog = new GuiDialogFeralKinshipRecoveryConfirmation(clientApi!, this, packet);
+                    recoveryConfirmationDialog.TryOpen();
+                    return;
+                }
                 if (recoveryDialog?.IsOpened() == true)
                 {
                     recoveryDialog.ApplyState(packet);
@@ -20920,6 +20639,7 @@ internal static class FoxSocialRequestAction
     public const int SetRiskTolerance = 35;
     public const int ToggleBreeding = 36;
     public const int UnarchivePackFox = 37;
+    public const int RestoreArchivedAnimal = 1101;
     public const int Rename = 38;
     public const int RequestNameSuggestion = 47;
     public const int SetGroundCleanup = 39;
@@ -21200,6 +20920,7 @@ internal static class CompanionIdleTestCommand
 [ProtoContract]
 public sealed class FoxSocialRequestPacket
 {
+    [ProtoMember(13)] public string DeveloperTargetOwnerUid = string.Empty;
     [ProtoMember(1)]
     public int Action;
     [ProtoMember(2)]
@@ -21557,6 +21278,7 @@ public sealed class FoxSocialStatePacket
     [ProtoMember(73)] public string FertilizerPolicy = string.Empty;
     [ProtoMember(74)] public bool TroughRefillEnabled;
     [ProtoMember(75)] public string TroughRefillRequirement = string.Empty;
+    [ProtoMember(76)] public string GenderId = string.Empty;
 }
 
 [ProtoContract]
@@ -22300,6 +22022,10 @@ public sealed class FoxPackMemberPacket
     public string AppearanceCode = string.Empty;
     [ProtoMember(52)] public int SpeciesTraining;
     [ProtoMember(53)] public CompanionWellbeingState? Wellbeing;
+    [ProtoMember(54)] public string AnimalRestoreMessage=string.Empty;
+    [ProtoMember(55)] public bool AnimalRestorePossible;
+    [ProtoMember(56)] public bool AnimalRestoreConfirmationPending;
+    [ProtoMember(57)] public bool ManualRecordRestored;
 
 }
 
@@ -22591,6 +22317,7 @@ public sealed class CompanionDeveloperOpenPacket
 [ProtoContract]
 public sealed class CompanionRecoveryRequestPacket
 {
+    [ProtoMember(3)] public string TargetOwnerUid = string.Empty;
     public const int Open = 1;
     public const int Recover = 2;
     public const int RecoverAll = 3;
@@ -22599,6 +22326,9 @@ public sealed class CompanionRecoveryRequestPacket
     public const int OpenDeveloper = 6;
     public const int RerollScavengeSites = 7;
     public const int RerollScavengeSitesSurveyed = 8;
+    public const int ConfirmPreview = 9;
+    public const int CancelPreview = 10;
+    [ProtoMember(4)] public string ConfirmationToken = string.Empty;
 
     [ProtoMember(1)]
     public int Action;
@@ -22610,6 +22340,9 @@ public sealed class CompanionRecoveryRequestPacket
 [ProtoContract]
 public sealed class CompanionRecoveryStatePacket
 {
+    [ProtoMember(4)] public string PreviewToken = string.Empty;
+    [ProtoMember(5)] public List<CompanionRecoveryPreviewEntry> PreviewEntries = new();
+    [ProtoMember(3)] public string TargetOwnerUid = string.Empty;
     [ProtoMember(1)]
     public List<CompanionRecoveryEntryPacket> Records = new();
 

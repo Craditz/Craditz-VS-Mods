@@ -1,0 +1,44 @@
+[
+  {
+    "ingredientPattern": "PPP\nPFP\nPPP",
+    "width": 3,
+    "height": 3,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "game:plank-*",
+        "name": "wood"
+      },
+      "F": {
+        "type": "block",
+        "code": "feralkinshipcompanions:foxflap-north"
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "feralkinshipcompanions:largefoxflap-2-0-0-north",
+      "quantity": 1
+    }
+  },
+  {
+    "ingredientPattern": "PPP\nPFP\nPPP",
+    "width": 3,
+    "height": 3,
+    "ingredients": {
+      "P": {
+        "type": "item",
+        "code": "game:plank-*",
+        "name": "wood"
+      },
+      "F": {
+        "type": "block",
+        "code": "feralkinshipcompanions:largefoxflap-2-0-0-north"
+      }
+    },
+    "output": {
+      "type": "block",
+      "code": "feralkinshipcompanions:largefoxflap-3-0-0-north",
+      "quantity": 1
+    }
+  }
+]

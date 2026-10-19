@@ -1,0 +1,22 @@
+{
+  "version": "0.5.84",
+  "modid": "feralkinshipcompanions",
+  "filename": "FeralKinshipCompanions_v0.5.84.zip",
+  "sha256": "92eca4822f51368fbbb0fc54ae07e851862dfc5cd8a4fb49b840437756713b86",
+  "dll_sha256": "f68bd4d1261e9735731e0d0e4502e34c3b1f9f3775ecc2e33aec581882945f1c",
+  "pdb_sha256": "0cf1d6f93139969709327106915feac7b6c64daf0da226ebd32c557b13c0f60e",
+  "runtime_equivalent_preview": "0.5.84-recovery-flaps-preview.2",
+  "preview_sha256": "4b9627f0d0c4bdd66b4812c2763674fc801bbed8ab270dd641d230c62a866a99",
+  "asset_files_unchanged": 323,
+  "controlled_assertions": 1623,
+  "previous_stable": "0.5.83",
+  "previous_public_source": "0.5.80",
+  "approval": "Owner explicitly requested stable after preview recommendation and limitations; gameplay acceptance not inferred",
+  "in_game_confirmation_ui_verified": false,
+  "affected_real_save_migration_verified": false,
+  "moddb_uploaded": false,
+  "testing_or_live_saves_changed": false,
+  "source_validation": "Public-layout project compiled with zero warnings/errors; rebuilt validation DLL is not shipped",
+  "public_asset_bytes": "Git LFS SHA256/size matches; non-LFS JSON follows established LF normalization; installer assets exact",
+  "rollback": "Complete pre-update world backup with matching mods; not a DLL-only swap"
+}

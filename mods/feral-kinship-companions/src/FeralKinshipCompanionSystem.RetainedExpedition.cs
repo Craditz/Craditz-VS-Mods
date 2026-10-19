@@ -33,6 +33,7 @@ public partial class FeralKinshipCompanionSystem
         string foxId=GetDomesticationStatus(e)?.GetString(FoxIdKey,string.Empty) ?? string.Empty;
         packRepository.TryGetRecord(foxId,out FoxPackRecordV2? r);
         ITreeAttribute? m=RetainedNativeSuspension.Marker(e);
+        if(r!=null&&RetainedNativeSuspension.InProtectedTransition(e,r))return true;
         if(m?.GetString("phase")=="Hold") {
             e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.RefreshExpeditionSuspension();return true;
         }
@@ -71,7 +72,7 @@ public partial class FeralKinshipCompanionSystem
             RetainedNativeSuspension.Hold(e,"Suspended native receipt lacks its original valid snapshot");return true;
         }
         if(r.RetainedPhase is "Complete" or "Leaving") {
-            if(r.RetainedPhase=="Complete" && (!RetainedNativeSuspension.SafeSnapshot(e)||!m.GetBool("outcomeApplied"))) {
+            if(r.RetainedPhase=="Complete" && (!RetainedNativeSuspension.SafeSnapshot(e)||!m.GetBool("outcomeApplied")&&!RetainedNativeSuspension.CompletionSettled(e,r))) {
                 RetainedNativeSuspension.Hold(e,"Completed native receipt lacks a valid original snapshot/outcome");return true;
             }
             if(GetDomesticationStatus(e)?.GetBool(ExpeditionAwayKey)==true) {
@@ -94,6 +95,8 @@ public partial class FeralKinshipCompanionSystem
 
     private bool PrepareRetainedProgressAward(Entity e)
     {
+        string transitionId=GetDomesticationStatus(e)?.GetString(FoxIdKey,string.Empty)??string.Empty;
+        if(packRepository?.TryGetRecord(transitionId,out var transitionRecord)==true&&transitionRecord!=null&&RetainedNativeSuspension.InProtectedTransition(e,transitionRecord))return false;
         if(!RetainedNativeSuspension.Enabled || !RetainedNativeSuspension.NativeAuthority(e)
             && GetDomesticationStatus(e)?.GetBool(ExpeditionAwayKey)!=true)return true;
         ReconcileRetainedBody(e);
@@ -103,7 +106,7 @@ public partial class FeralKinshipCompanionSystem
 
     // Ledger authority is limited to these Companions progression fields. Absolute
     // projection cannot replay awards, pack points, health, inventory or timers.
-    private bool HydrateRetainedProgress(Entity e,FoxPackRecordV2 r)
+    private bool CanHydrateRetainedProgress(Entity e,FoxPackRecordV2 r)
     {
         ITreeAttribute? s=GetDomesticationStatus(e);
         if(s==null || r.CurrentLevelExperience<0 || r.LifetimeExperience<r.CurrentLevelExperience
@@ -115,8 +118,16 @@ public partial class FeralKinshipCompanionSystem
             || r.RetainedPhase is "Suspended" or "Returning"
                 && (r.Points<Math.Max(0,s.GetInt(FoxPointsKey,0))
                     || r.BankedTalentPoints<Math.Max(0,s.GetInt(BankedTalentPointsKey,0)))) {
+            return false;
+        }
+        return true;
+    }
+    private bool HydrateRetainedProgress(Entity e,FoxPackRecordV2 r)
+    {
+        if(!CanHydrateRetainedProgress(e,r)) {
             RetainedNativeSuspension.Hold(e,"Progression ledger is behind or conflicts with native progress; preserve both authorities");return false;
         }
+        ITreeAttribute s=GetDomesticationStatus(e)!;
         s.SetInt(CompanionLevelKey,Math.Max(CompanionProgressionRules.StartingLevel,r.Level));
         s.SetLong(CompanionCurrentExperienceKey,Math.Max(0,r.CurrentLevelExperience));
         s.SetLong(CompanionLifetimeExperienceKey,Math.Max(r.CurrentLevelExperience,r.LifetimeExperience));

@@ -37,7 +37,7 @@ public partial class FeralKinshipCompanionSystem
             foreach(Entity other in competing)RetainedNativeSuspension.Hold(other,"Competing native object/companion identity; retain both inventories");
             RetainedNativeSuspension.Hold(e,"Competing native object/companion identity; retain both inventories");return false;
         }
-        retainedAdmissionBodies[e.EntityId]=e;return true;
+        retainedAdmissionBodies[e.EntityId]=e;WakeSaveMigration(e);return true;
     }
     private bool RetainedCanonicalAdmission(Entity e)
     {
@@ -120,7 +120,7 @@ public partial class FeralKinshipCompanionSystem
             if(GetDomesticationStatus(e)?.GetBool(ExpeditionAwayKey)==true
                 || marker!=null && (marker.GetString("phase")!="Complete" || r.RetainedPhase!="Complete"
                     || !RetainedNativeSuspension.Matches(e,r) || !RetainedNativeSuspension.SafeSnapshot(e)
-                    || !marker.GetBool("outcomeApplied"))
+                    || !marker.GetBool("outcomeApplied")&&!RetainedNativeSuspension.CompletionSettled(e,r))
                 || marker==null&&!string.IsNullOrEmpty(r.RetainedTrip)) {
                 refusal="A selected companion has unfinished or inconsistent retained authority";return false;
             }

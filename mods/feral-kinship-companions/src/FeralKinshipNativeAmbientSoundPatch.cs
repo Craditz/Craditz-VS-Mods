@@ -47,7 +47,8 @@ internal static class FeralKinshipNativeAmbientSoundPatch
             entity.PlayEntitySound(type, dualCallByPlayer);
             return;
         }
-        if (entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>().TryPlayNativeAmbientSound(entity))
+        // Failed/absent Companions must preserve the native idle sound.
+        if (entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.TryPlayNativeAmbientSound(entity) != false)
             entity.PlayEntitySound(type, dualCallByPlayer);
     }
 }

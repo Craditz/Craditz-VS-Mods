@@ -49,7 +49,7 @@ public sealed class GuiDialogFeralKinshipCartInspection : GuiDialog
         GuiComposer composer = capi.Gui.CreateCompo("feralkinship-cart-inspection",
                 ElementStdBounds.AutosizedMainDialog.WithAlignment(EnumDialogArea.CenterMiddle))
             .AddShadedDialogBG(content)
-            .AddDialogTitleBar("Pack Cart - Read-only animal list", () => TryClose())
+            .AddDialogTitleBar("Pack Cart - Player administration", () => TryClose())
             .BeginChildElements(content);
 
         composer.AddStaticText(state?.Available == true
@@ -82,9 +82,10 @@ public sealed class GuiDialogFeralKinshipCartInspection : GuiDialog
             .AddSmallButton("Next", () => ChangePage(1), ElementBounds.Fixed(154, 578, 144, 32),
                 EnumButtonStyle.Normal, "next")
             .AddSmallButton("Refresh", Refresh, ElementBounds.Fixed(308, 578, 154, 32), EnumButtonStyle.Normal, "refresh")
-            .AddSmallButton("Close", TryClose, ElementBounds.Fixed(472, 578, 168, 32), EnumButtonStyle.Normal, "close")
+            .AddSmallButton("Administer player", () => { if (state != null) system.OpenDeveloperCartAdministration(state); return true; }, ElementBounds.Fixed(472, 578, 168, 32), EnumButtonStyle.Normal, "administer")
             .EndChildElements();
         SingleComposer = composer.Compose();
+        SingleComposer.GetButton("administer").Enabled = state?.Available == true;
         SingleComposer.GetButton("previous").Enabled = page > 0;
         SingleComposer.GetButton("next").Enabled = page + 1 < PageCount;
     }

@@ -27,6 +27,8 @@ public sealed partial class FeralKinshipCompanionSystem
         }
 
         MaintainPendingCompanionAdmissions();
+        MaintainRetainedSaveMigration();
+        MaintainExpeditionPresentation();
 
         PruneJuvenileThreats(UtcNowMs());
         Entity[] loadedCompanions = loadedFoxes.Values.ToArray();

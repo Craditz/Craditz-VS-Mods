@@ -77,3 +77,7 @@ Companions stable `0.5.79` retains the tested candidate runtime bytes with final
 ## Companions 0.5.80 expedition compatibility fix
 
 The owner reports both affected users confirmed the expedition-start fix. Stable 0.5.80 preserves the tested preview DLL/assets and admits unknown attached add-on implementations by default. See [release identity and limitations](RELEASE_2026-10-18_COMPANIONS.md) and [changes since 0.5.79](mods/feral-kinship-companions/CHANGELOG_v0.5.80.md).
+
+## Companions 0.5.84
+
+Prior actual local stable: 0.5.83; previous public source: 0.5.80. Owner explicitly requested stable despite the disclosed remaining tests. See [release changes, backup/rollback and exact verification scope](RELEASE_2026-10-19_COMPANIONS.md). Stable installer DLL/PDB and all 323 assets remain identical to recovery-flaps-preview.2. Public source compilation is a separate artifact.

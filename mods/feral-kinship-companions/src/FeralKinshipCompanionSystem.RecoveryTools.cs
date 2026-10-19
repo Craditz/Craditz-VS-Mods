@@ -24,8 +24,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (serverApi == null || packRepository?.Loaded != true
             || !packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record)
             || record == null
-            || record.Archived
-            || !string.Equals(record.OwnerUid, owner.PlayerUID, StringComparison.Ordinal))
+            || !string.Equals(record.OwnerUid, DeveloperTargetOwnerUid(owner), StringComparison.Ordinal))
         {
             return;
         }
@@ -47,7 +46,7 @@ public sealed partial class FeralKinshipCompanionSystem
             return;
         }
 
-        string pendingKey = owner.PlayerUID + ":" + record.FoxId;
+        string pendingKey = DeveloperTargetOwnerUid(owner) + ":" + record.FoxId;
         if (!pendingDeveloperLedgerOpens.Add(pendingKey))
         {
             SendDeveloperRecordState(owner, record, "Loading the saved location. Teleport and rebuild remain available.");
@@ -164,7 +163,7 @@ public sealed partial class FeralKinshipCompanionSystem
             CurrentLevelExperience = Math.Max(0L, record.CurrentLevelExperience),
             RequiredLevelExperience = CompanionProgressionRules.GetRequiredExperience(record.Level),
             LifetimeExperience = Math.Max(record.CurrentLevelExperience, record.LifetimeExperience),
-            OwnedCompanionCount = packRepository?.GetRecordsForOwner(owner.PlayerUID).Count ?? 0,
+            OwnedCompanionCount = packRepository?.GetRecordsForOwner(DeveloperTargetOwnerUid(owner)).Count ?? 0,
             DeveloperEntityLoaded = false
         }, owner);
     }
@@ -174,7 +173,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (serverApi == null || packRepository?.Loaded != true
             || !packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record)
             || record == null
-            || !string.Equals(record.OwnerUid, admin.PlayerUID, StringComparison.Ordinal))
+            || !string.Equals(record.OwnerUid, DeveloperTargetOwnerUid(admin), StringComparison.Ordinal))
         {
             SendAdminCompanionMessage(admin, "Teleport refused: that companion is not in your pack ledger.");
             return;
@@ -193,7 +192,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (!record.HasLastKnownPosition) { SendAdminCompanionMessage(admin, "Teleport refused: no last-known location is saved. No replacement was spawned."); return; }
         if (record.LastKnownDimension != admin.Entity?.Pos.Dimension) { SendAdminCompanionMessage(admin, "Teleport refused: the saved companion is in another dimension."); return; }
 
-        string pendingKey = admin.PlayerUID + ":" + record.FoxId;
+        string pendingKey = DeveloperTargetOwnerUid(admin) + ":" + record.FoxId;
         if (pendingRecoveryChecks.Contains(record.FoxId) || !pendingAdminCompanionTeleports.Add(pendingKey))
         { SendAdminCompanionMessage(admin, "Teleport refused: a saved-location lookup is already in progress."); return; }
 
@@ -211,7 +210,7 @@ public sealed partial class FeralKinshipCompanionSystem
             {
                 pendingAdminCompanionTeleports.Remove(pendingKey);
                 if (TryTeleportExistingCompanionToPlayer(existing, record, admin, out string error))
-                    SendAdminCompanionMessage(admin, $"Teleported the existing companion {GetFoxRecordLabel(record)} to you.");
+                    SendAdminCompanionMessage(admin, $"Moving the verified original {GetFoxRecordLabel(record)}; waiting for the native teleport callback.");
                 else SendAdminCompanionMessage(admin, "Teleport failed: " + error);
                 return;
             }
@@ -251,6 +250,11 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private string ValidateAdminTeleportRecord(FoxPackRecordV2 record)
     {
+        var authority = CaptureExpeditionPresentationAuthority();
+        if (authority == null) return "Teleport refused: native authority is not ready; inspect /companiondiag.";
+        if (authority.Assigned.Contains(record.FoxId) || authority.Conflicts.Contains(record.FoxId) || authority.NativeConflicts.Contains(record.EntityId)) return "Teleport refused: active or conflicting native/expedition authority.";
+        if (!string.IsNullOrEmpty(record.PendingDepartureStatus) || record.PendingDepartureAtUtcMs > 0 || record.PendingDepartureDeadlineUtcMs > 0 || record.PendingReturnAtUtcMs > 0) return "Teleport refused: departure/return is pending.";
+        if (pendingRecoveryBatches.Contains(record.OwnerUid) || pendingFullRebuilds.Contains(record.FoxId)) return "Teleport refused: a recovery/rebuild is pending for this player or companion.";
         if (record.Archived) return "Teleport refused: that companion is archived.";
         if (string.Equals(record.Status, "Dead", StringComparison.OrdinalIgnoreCase) || string.Equals(record.Status, "Unowned", StringComparison.OrdinalIgnoreCase)) return $"Teleport refused: that companion's ledger status is {record.Status}.";
         if (!string.IsNullOrWhiteSpace(record.PendingReturnStatus) || string.Equals(record.Status, "Awaiting safe return", StringComparison.OrdinalIgnoreCase) || packRepository?.GetExpeditionForMember(record.OwnerUid, record.FoxId) != null) return "Teleport refused: that companion is assigned to an expedition or pending return.";
@@ -260,12 +264,19 @@ public sealed partial class FeralKinshipCompanionSystem
     private bool TryTeleportExistingCompanionToPlayer(Entity companion, FoxPackRecordV2 record, IServerPlayer admin, out string error)
     {
         error = string.Empty;
+        if (pendingFullRebuilds.Contains(record.FoxId)) { error = "A full rebuild is pending; wait for its result."; return false; }
+        if (!DeveloperMayControlOwner(admin, record.OwnerUid)) { error = "Selected-player authority is no longer valid."; return false; }
         if (serverApi == null || admin.Entity == null) { error = "The administrator's player entity is unavailable."; return false; }
         ITreeAttribute? status = GetDomesticationStatus(companion);
         if (!companion.Alive || !IsTamedFox(companion) || status == null || !string.Equals(status.GetString(FoxIdKey, string.Empty), record.FoxId, StringComparison.Ordinal) || !string.Equals(status.GetString("owner", string.Empty), record.OwnerUid, StringComparison.Ordinal)) { error = "The loaded entity does not match that owned companion record."; return false; }
         if (companion.Pos.Dimension != admin.Entity.Pos.Dimension) { error = "The existing companion is in another dimension."; return false; }
         Vec3d? safePosition = FindSafeEntityPosition(admin.Entity.Pos.AsBlockPos, companion.Properties, companion, 8, 3);
         if (safePosition == null) { error = "No safe open space was found near the administrator."; return false; }
+        if (record.EntityId != companion.EntityId || !NativeRecoveryPublished(companion)) { error = "Original native world/chunk identity is not canonical."; return false; }
+        if (RetainedNativeSuspension.Protected(companion))
+        {
+            if (!ReconcileCompletedExpeditionPresentation(companion, CaptureExpeditionPresentationAuthority())) { error = "Original is suppressed or on Hold; inspect /companiondiag or use full rebuild after resolving authority."; return false; }
+        }
         ClearAutomaticRetreat(companion);
         CancelTargetedAttack(companion);
         if (companion is EntityAgent agent) { agent.GetBehavior<EntityBehaviorTaskAI>()?.TaskManager.StopTasks(); agent.Controls.StopAllMovement(); agent.Pos.Motion.Set(0, 0, 0); }
@@ -273,10 +284,13 @@ public sealed partial class FeralKinshipCompanionSystem
         SetCompanionActivityState(companion, CompanionActivityMode.AtEase);
         companion.TeleportToDouble(safePosition.X, safePosition.Y, safePosition.Z, () =>
         {
-            if (serverApi == null || !companion.Alive) return;
+            if (serverApi == null || !companion.Alive || !DeveloperMayControlOwner(admin, record.OwnerUid)) return;
             RegisterLoadedFox(companion); RegisterFoxInPack(companion); packRepository?.Save();
-            SendAdminCompanionMessage(admin, $"Teleported the existing companion {GetFoxRecordLabel(record)} to you.");
-            SendState(companion, admin, "Teleport complete.");
+            string result = RetainedNativeSuspension.Protected(companion) || !NativeRecoveryPublished(companion)
+                ? "Teleport callback received; native presentation remains unresolved. Inspect /companiondiag."
+                : "Server teleport committed; client arrival/rendering needs /companiondiag verification.";
+            SendAdminCompanionMessage(admin, GetFoxRecordLabel(record) + ": " + result);
+            SendState(companion, admin, result);
         });
         return true;
     }

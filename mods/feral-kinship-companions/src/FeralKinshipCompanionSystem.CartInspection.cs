@@ -93,11 +93,12 @@ public partial class FeralKinshipCompanionSystem
                     }
                     else
                     {
+                        developerCartTargets[fromPlayer.PlayerUID] = new DeveloperCartTarget(ownership.OwnerUid, pos.Copy());
                         state.Available = true;
                         state.OwnerUid = ownership.OwnerUid;
-                        state.Records = packRepository.GetRecordsForOwner(ownership.OwnerUid)
+                        state.Records = packRepository.GetAllRecords().Where(r => r.OwnerUid == ownership.OwnerUid)
                             .Select(record => BuildCartInspectionEntry(record, ownership.OwnerUid)).ToList();
-                        state.Message = "Read-only saved pack records. Inspection does not repair or load animals.";
+                        state.Message = "Select Administer player to use this owner's Developer Ledger. All actions remain confined to that player.";
                     }
                 }
             }

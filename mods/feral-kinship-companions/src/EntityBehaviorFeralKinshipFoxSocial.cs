@@ -682,6 +682,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
     {
         base.AfterInitialized(onFirstSpawn);
         InitializeCompanionBackpack();
+        ObserveExpeditionPresentationUpdates();
         RefreshExpeditionSuspension();
         if (entity.Api.Side == EnumAppSide.Server)
         {
@@ -761,6 +762,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
     {
         base.OnEntitySpawn();
         InitializeCompanionBackpack();
+        ObserveExpeditionPresentationUpdates();
         RefreshExpeditionSuspension();
         if (entity.Api.Side == EnumAppSide.Server)
         {
@@ -772,6 +774,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
     {
         base.OnEntityLoaded();
         InitializeCompanionBackpack();
+        ObserveExpeditionPresentationUpdates();
         RefreshExpeditionSuspension();
         if (entity.Api.Side == EnumAppSide.Server)
         {
@@ -1014,6 +1017,7 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
 
     public override void OnEntityDespawn(EntityDespawnData despawn)
     {
+        ForgetExpeditionPresentationUpdates();
         DisposeCompanionBackpack();
         base.OnEntityDespawn(despawn);
         if (entity.Api.Side == EnumAppSide.Server)

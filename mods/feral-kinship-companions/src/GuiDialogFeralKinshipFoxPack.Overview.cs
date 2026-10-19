@@ -79,7 +79,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             "Missing" => member.Status.Contains("missing", StringComparison.OrdinalIgnoreCase)
                 || member.Status.Contains("MIA", StringComparison.OrdinalIgnoreCase),
             "Invalid" => !member.EntityLoaded && !member.Status.Contains("dead", StringComparison.OrdinalIgnoreCase),
-            "Restorable" => member.EntityLoaded && !member.Status.Contains("dead", StringComparison.OrdinalIgnoreCase),
+            "Restorable" => true,
             _ => true
         }).ToList();
 
@@ -131,7 +131,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         DrawText(ctx, $"Archived records: {all.Count}", 30, OverviewTop + 64, 15, TextWhite);
         DrawText(ctx, $"Dead: {all.Count(m => m.Status.Contains("dead", StringComparison.OrdinalIgnoreCase))}", 30, OverviewTop + 88, 15, TextWhite);
         DrawText(ctx, $"Missing: {all.Count(m => m.Status.Contains("missing", StringComparison.OrdinalIgnoreCase) || m.Status.Contains("MIA", StringComparison.OrdinalIgnoreCase))}", 30, OverviewTop + 112, 15, TextWhite);
-        DrawText(ctx, $"Restorable: {all.Count(m => m.EntityLoaded && !m.Status.Contains("dead", StringComparison.OrdinalIgnoreCase))}", 30, OverviewTop + 136, 15, TextWhite);
+        DrawText(ctx, $"Records restorable: {all.Count}", 30, OverviewTop + 136, 15, TextWhite);
         FoxGuiTheme.DrawSectionRule(ctx, 30, OverviewTop + 160, 236);
         DrawText(ctx, "Filter records", 30, OverviewTop + 188, 18, TextGold);
         for (int i = 0; i < ArchiveFilters.Length; i++)
@@ -207,7 +207,9 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             DrawText(ctx, "Mood: " + member.Mood, x, OverviewTop + 230, 13, TextWhite);
             DrawText(ctx, "Needs attention", x, OverviewTop + 270, 16, TextGold);
             var issues = CompanionWellbeingPresentation.Problems(member.Wellbeing);
-            if (member.Wellbeing?.HasObservation != true)
+            if(member.Status.Contains("dead",StringComparison.OrdinalIgnoreCase)||member.ManualRecordRestored&&!member.EntityLoaded)
+                DrawWrapped(ctx,member.AnimalRestoreMessage,x,OverviewTop+300,OverviewDetailWidth-30,17,TextMuted,5,11);
+            else if (member.Wellbeing?.HasObservation != true)
                 DrawText(ctx, "Needs have not been checked yet", x, OverviewTop + 300, 12, TextMuted);
             else
             {
@@ -227,7 +229,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             ? new[] {
                 $"Status: {FriendlyStatus(member.Status)}",
                 $"Last known: {(member.HasLastKnownPosition ? CompanionLocationText.Format(api, member.LastKnownX, member.LastKnownY, member.LastKnownZ) : "Unknown")}",
-                $"Restorable: {(member.EntityLoaded ? "Possibly" : "Not currently")}",
+                "Record: Restore available (including Dead)",
                 $"Lifetime points: {member.LifetimePoints}",
                 $"Level: {member.Level}" }
             : new[] {
@@ -243,14 +245,17 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         for (int i = 0; i < lines.Length; i++)
             DrawText(ctx, Trim(lines[i], 40), x, OverviewTop + 207 + i * 22, 13, TextWhite);
         }
+        if(archived){
+            DrawWrapped(ctx,member.AnimalRestoreMessage,x,OverviewTop+322,OverviewDetailWidth-30,17,TextMuted,4,11);
+            DrawButton(ctx,member.AnimalRestoreConfirmationPending?"Confirm animal restore":"Restore animal",x,OverviewTop+401,OverviewDetailWidth-30,38,member.AnimalRestorePossible);
+        }
         if (!archived)
             DrawButton(ctx, CanArchiveMember(member) ? "Archive companion" : member.AtCart ? "Already at cart" : "Call to cart", x,
                 OverviewTop + 401, OverviewDetailWidth - 30, 38,
                 CanArchiveMember(member) || member.EntityLoaded && !member.AtCart);
-        DrawButton(ctx, archived ? "Restore record" : "Open full profile", x,
+        DrawButton(ctx, archived ? "Restore record" : member.Status.Contains("dead",StringComparison.OrdinalIgnoreCase)||member.ManualRecordRestored&&!member.EntityLoaded ? member.AnimalRestoreConfirmationPending?"Confirm animal restore":"Restore animal" : "Open full profile", x,
             OverviewTop + 446, OverviewDetailWidth - 30, 38,
-            archived ? member.EntityLoaded && !member.Status.Contains("dead", StringComparison.OrdinalIgnoreCase)
-                : member.EntityLoaded && member.EntityId > 0);
+            archived || (member.Status.Contains("dead",StringComparison.OrdinalIgnoreCase)||member.ManualRecordRestored&&!member.EntityLoaded ? member.AnimalRestorePossible : member.EntityLoaded && member.EntityId > 0));
         DrawButton(ctx, archived ? "Locate record" : "Locate companion", x,
             OverviewTop + 491, OverviewDetailWidth - 30, 34, member.HasLastKnownPosition);
     }
@@ -286,6 +291,11 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
             return;
         }
         FoxPackMemberPacket member = ResolveOverviewSelection(visible, ref selectedRosterFoxId);
+        if(member!=null && x>=OverviewDetailX+15 && x<=OverviewDetailX+OverviewDetailWidth-15 && y>=OverviewTop+446 && y<=OverviewTop+484
+            && (member.Status.Contains("dead",StringComparison.OrdinalIgnoreCase)||member.ManualRecordRestored&&!member.EntityLoaded)){
+            if(member.AnimalRestorePossible){FoxGuiTheme.PlayAction(api);system.SendFoxSocialAction(sourceEntityId,FoxSocialRequestAction.RestoreArchivedAnimal,member.FoxId);}return;
+        }
+
         if (member == null || x < OverviewDetailX + 15 || x > OverviewDetailX + OverviewDetailWidth - 15) return;
         if (y >= OverviewTop + 112 && y <= OverviewTop + 142)
         {
@@ -339,8 +349,10 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface
         }
         FoxPackMemberPacket member = ResolveOverviewSelection(visible, ref selectedArchivedFoxId);
         if (member == null || x < OverviewDetailX + 15 || x > OverviewDetailX + OverviewDetailWidth - 15) return;
-        if (y >= OverviewTop + 446 && y <= OverviewTop + 484 && member.EntityLoaded
-            && !member.Status.Contains("dead", StringComparison.OrdinalIgnoreCase))
+        if(y>=OverviewTop+401 && y<=OverviewTop+439 && member.AnimalRestorePossible){
+            FoxGuiTheme.PlayAction(api);system.SendFoxSocialAction(sourceEntityId,FoxSocialRequestAction.RestoreArchivedAnimal,member.FoxId);
+        }
+        else if (y >= OverviewTop + 446 && y <= OverviewTop + 484)
         {
             FoxGuiTheme.PlayAction(api);
             system.SendFoxSocialAction(sourceEntityId, FoxSocialRequestAction.UnarchivePackFox, member.FoxId);

@@ -117,6 +117,8 @@ internal sealed partial class FoxPackRepository
         Loaded = true;
     }
 
+    internal bool CanCheckpointRecovery => Loaded && saveBatchDepth == 0;
+
     public void Save()
     {
         if (!Loaded)
@@ -915,16 +917,17 @@ internal sealed partial class FoxPackRepository
 
     public bool UnarchiveRecord(string ownerUid, string foxId)
     {
-        if (!recordsById.TryGetValue(foxId, out FoxPackRecordV2? record)
-            || !string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal)
-            || !record.Archived
-            || record.MissingContentArchive?.Active == true)
-        {
-            return false;
+        if(!Loaded || !recordsById.TryGetValue(foxId,out FoxPackRecordV2? record)
+            || record.OwnerUid!=ownerUid || !record.Archived)return false;
+        record.Archived=false;
+        if(record.MissingContentArchive?.Active==true){
+            record.Status=record.MissingContentArchive.PreviousStatus;
+            record.RecoveryStatus=record.MissingContentArchive.PreviousRecoveryStatus;
+            record.MissingContentArchive.Active=false;
         }
-
-        record.Archived = false;
-        record.Status = "Present";
+        record.ManualArchiveRecordRestored=true;
+        // Preserve Dead/unloaded status, identity, all progress and inventory
+        // evidence. Removing a ledger filter is not a resurrection/spawn.
         return true;
     }
 

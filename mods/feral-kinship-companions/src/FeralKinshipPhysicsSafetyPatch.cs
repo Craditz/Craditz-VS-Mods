@@ -87,9 +87,9 @@ internal static class FeralKinshipPhysicsSafetyPatch
             );
         }
 
-        FeralKinshipCompanionSystem system = entity.Api.ModLoader
+        FeralKinshipCompanionSystem? system = entity.Api.ModLoader
             .GetModSystem<FeralKinshipCompanionSystem>();
-        if (!system.DiagnosticLoggingEnabled)
+        if (system?.DiagnosticLoggingEnabled != true)
         {
             return;
         }

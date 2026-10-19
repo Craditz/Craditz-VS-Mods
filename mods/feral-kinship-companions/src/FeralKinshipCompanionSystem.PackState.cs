@@ -207,8 +207,13 @@ public sealed partial class FeralKinshipCompanionSystem
                 out movementStrength
             );
         }
+        string animalRestoreInfo=ArchiveAnimalRestorationInfo(record,out bool animalRestorePossible);
         return new FoxPackMemberPacket
         {
+            AnimalRestoreMessage=animalRestoreInfo,
+            AnimalRestorePossible=animalRestorePossible,
+            AnimalRestoreConfirmationPending=HasArchiveAnimalConfirmation(record),
+            ManualRecordRestored=record.ManualArchiveRecordRestored,
             FoxId = record.FoxId,
             EntityId = entity?.EntityId ?? 0,
             AtCart = entity != null && TryGetPackCartIdleTarget(entity, out Vec3d? cartTarget)
@@ -314,13 +319,6 @@ public sealed partial class FeralKinshipCompanionSystem
             return;
         }
 
-        Entity? entity = record.EntityId > 0 ? serverApi.World.GetEntityById(record.EntityId) : null;
-        if (entity == null || !entity.Alive || !IsTamedFox(entity) || !IsOwner(entity, owner.PlayerUID))
-        {
-            SendPackState(owner, "A companion can only be restored after it is found in the world.");
-            return;
-        }
-
         if (!packRepository.UnarchiveRecord(owner.PlayerUID, foxId))
         {
             SendPackState(owner, "That companion could not be restored.");
@@ -328,7 +326,7 @@ public sealed partial class FeralKinshipCompanionSystem
         }
 
         packRepository.Save();
-        SendPackState(owner, $"Restored {GetFoxRecordLabel(record)} to the active pack.");
+        SendPackState(owner, $"Restored {GetFoxRecordLabel(record)} to the active ledger; animal status is unchanged. " + ArchiveAnimalRestorationInfo(record,out _));
     }
 
     private void DeleteExpeditionReport(IServerPlayer owner, long expeditionId)

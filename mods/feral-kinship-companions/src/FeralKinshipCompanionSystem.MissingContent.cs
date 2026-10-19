@@ -157,7 +157,7 @@ public sealed partial class FeralKinshipCompanionSystem
             }
             return;
         }
-        if (record.Archived || exactAvailable || string.IsNullOrWhiteSpace(record.OwnerUid)
+        if (record.Archived || record.ManualArchiveRecordRestored || exactAvailable || string.IsNullOrWhiteSpace(record.OwnerUid)
             || string.Equals(record.Status, "Dead", StringComparison.OrdinalIgnoreCase)
             || string.Equals(record.Status, "Unowned", StringComparison.OrdinalIgnoreCase)
             || FindLoadedCompanionForRecovery(record.FoxId) != null) return;

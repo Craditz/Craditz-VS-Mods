@@ -16,13 +16,13 @@ internal static class FeralKinshipAmbientStartlePatch
 {
     private static void Postfix(EntityAgent __instance, DamageSource source, EntityAgent targetEntity)
     {
-        if (__instance?.Api.Side != EnumAppSide.Server)
+        if (__instance?.Api?.Side != EnumAppSide.Server)
         {
             return;
         }
 
-        FeralKinshipCompanionSystem system = __instance.Api.ModLoader
+        FeralKinshipCompanionSystem? system = __instance.Api.ModLoader
             .GetModSystem<FeralKinshipCompanionSystem>();
-        system.NotifyAmbientStartleFromAttack(__instance, targetEntity, source);
+        system?.NotifyAmbientStartleFromAttack(__instance, targetEntity, source);
     }
 }

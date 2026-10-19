@@ -593,7 +593,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface : GuiElementF
         double y = ContentY + 14 - archivedScrollOffset;
         foreach (FoxPackMemberPacket member in members)
         {
-            DrawMemberRow(ctx, member, labels[member.FoxId], 12, y, width - 32, canArchive: false, canUnarchive: member.EntityLoaded);
+            DrawMemberRow(ctx, member, labels[member.FoxId], 12, y, width - 32, canArchive: false, canUnarchive: true);
             y += RosterRowHeight;
         }
         if (members.Count * RosterRowHeight > RosterViewportHeight)
@@ -2081,7 +2081,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface : GuiElementF
         }
 
         FoxPackMemberPacket member = current.ArchivedMembers[index];
-        if (member.EntityLoaded && x >= CanvasWidth - 160)
+        if (x >= CanvasWidth - 160)
         {
             FoxGuiTheme.PlayAction(api);
             system.SendFoxSocialAction(sourceEntityId, FoxSocialRequestAction.UnarchivePackFox, member.FoxId);

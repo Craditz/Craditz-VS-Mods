@@ -823,11 +823,12 @@ public sealed partial class FeralKinshipCompanionSystem
         ITreeAttribute? marker = RetainedNativeSuspension.Marker(companion);
         if (marker == null) return true;
         string foxId = GetDomesticationStatus(companion)?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
-        return marker.GetString("phase") == "Complete" && marker.GetBool("outcomeApplied")
+        return marker.GetString("phase") == "Complete"
             && RetainedNativeSuspension.SafeSnapshot(companion)
             && packRepository?.Loaded == true
             && packRepository.TryGetRecord(foxId, out FoxPackRecordV2? record) && record != null
-            && record.RetainedPhase == "Complete" && RetainedNativeSuspension.Matches(companion, record);
+            && record.RetainedPhase == "Complete" && RetainedNativeSuspension.Matches(companion,record)
+            && (marker.GetBool("outcomeApplied")||RetainedNativeSuspension.CompletionSettled(companion, record));
     }
 
     private void ProcessUnloadedBackpackUnload(Entity companion)
