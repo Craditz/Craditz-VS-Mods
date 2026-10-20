@@ -138,6 +138,9 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         serverChannel?.SendPacket(new FoxSocialStatePacket
         {
+            CanEmergencyRebuild = CanViewEmergency(owner, record.FoxId),
+            CanEmergencyUndo = CanUndoEmergency(owner, record.FoxId),
+            EmergencyReport = EmergencyUiReport(owner, record.FoxId),
             TargetEntityId = record.EntityId,
             FoxId = record.FoxId,
             Number = record.Number,
@@ -154,8 +157,11 @@ public sealed partial class FeralKinshipCompanionSystem
             RequestCooldownSeconds = Math.Max(0f, (record.RequestCooldownEndsUtcMs - UtcNowMs()) / 1000f),
             CancelCooldownSeconds = Math.Max(0f, (record.CancelCooldownEndsUtcMs - UtcNowMs()) / 1000f),
             Message = message,
-            SpeciesId = string.IsNullOrWhiteSpace(record.SpeciesId) ? "fox" : record.SpeciesId,
+            SpeciesId = record.SpeciesId,
             SpeciesDisplayName = GetCompanionSpeciesDisplayName(record),
+            AppearanceCode = record.EntityCode,
+            SpeciesSourceCode = CompanionSpeciesPresentation.SourceCode(InspectSavedRecoveryCode(record,out _),record.EntityCode),
+            SpeciesFromSavedRecord = true,
             IsJuvenile = record.IsJuvenile,
             CurrentHealth = record.CurrentHealth,
             MaxHealth = record.MaxHealth,
@@ -250,6 +256,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private string ValidateAdminTeleportRecord(FoxPackRecordV2 record)
     {
+        if (NativeLinkPending(record)) return "Teleport refused: native-ID relink/Undo is pending.";
         var authority = CaptureExpeditionPresentationAuthority();
         if (authority == null) return "Teleport refused: native authority is not ready; inspect /companiondiag.";
         if (authority.Assigned.Contains(record.FoxId) || authority.Conflicts.Contains(record.FoxId) || authority.NativeConflicts.Contains(record.EntityId)) return "Teleport refused: active or conflicting native/expedition authority.";
@@ -258,6 +265,15 @@ public sealed partial class FeralKinshipCompanionSystem
         if (record.Archived) return "Teleport refused: that companion is archived.";
         if (string.Equals(record.Status, "Dead", StringComparison.OrdinalIgnoreCase) || string.Equals(record.Status, "Unowned", StringComparison.OrdinalIgnoreCase)) return $"Teleport refused: that companion's ledger status is {record.Status}.";
         if (!string.IsNullOrWhiteSpace(record.PendingReturnStatus) || string.Equals(record.Status, "Awaiting safe return", StringComparison.OrdinalIgnoreCase) || packRepository?.GetExpeditionForMember(record.OwnerUid, record.FoxId) != null) return "Teleport refused: that companion is assigned to an expedition or pending return.";
+        return string.Empty;
+    }
+
+    private string NativeTeleportPublicationBlocker(FoxPackRecordV2 record, Entity companion)
+    {
+        if (NativeLinkPending(record)) return "Native-ID relink/Undo is pending; wait for its checkpoint.";
+        if (record.EntityId != companion.EntityId) return $"Ledger native-ID link differs: saved={record.EntityId}, actual={companion.EntityId}. Inspect /companionlink id:{record.FoxId}; no teleport or replacement was attempted.";
+        if (!ExactRecoveryCodeEquals(record.EntityCode, companion.Code)) return "Native entity code differs from the saved record; teleport refused.";
+        if (!NativeRecoveryPublished(companion)) return "Original native publication is incomplete: " + RecoveryPublicationReason(companion);
         return string.Empty;
     }
 
@@ -270,9 +286,10 @@ public sealed partial class FeralKinshipCompanionSystem
         ITreeAttribute? status = GetDomesticationStatus(companion);
         if (!companion.Alive || !IsTamedFox(companion) || status == null || !string.Equals(status.GetString(FoxIdKey, string.Empty), record.FoxId, StringComparison.Ordinal) || !string.Equals(status.GetString("owner", string.Empty), record.OwnerUid, StringComparison.Ordinal)) { error = "The loaded entity does not match that owned companion record."; return false; }
         if (companion.Pos.Dimension != admin.Entity.Pos.Dimension) { error = "The existing companion is in another dimension."; return false; }
+        error = NativeTeleportPublicationBlocker(record, companion);
+        if (error.Length > 0) { LogRecoveryAttempt(record.FoxId, "teleport-refused", error); return false; }
         Vec3d? safePosition = FindSafeEntityPosition(admin.Entity.Pos.AsBlockPos, companion.Properties, companion, 8, 3);
         if (safePosition == null) { error = "No safe open space was found near the administrator."; return false; }
-        if (record.EntityId != companion.EntityId || !NativeRecoveryPublished(companion)) { error = "Original native world/chunk identity is not canonical."; return false; }
         if (RetainedNativeSuspension.Protected(companion))
         {
             if (!ReconcileCompletedExpeditionPresentation(companion, CaptureExpeditionPresentationAuthority())) { error = "Original is suppressed or on Hold; inspect /companiondiag or use full rebuild after resolving authority."; return false; }

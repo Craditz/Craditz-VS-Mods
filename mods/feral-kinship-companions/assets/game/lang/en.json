@@ -1,6 +1,6 @@
 {
-  "placefailure-largeflap-clear-footprint": "Clear the complete frame and passage first (including fluids and containers).",
-  "placefailure-largeflap-support": "Both frame posts need solid support below.",
+  "placefailure-largeflap-clear-footprint": "Clear the entire flap footprint first (including fluids and containers).",
+  "placefailure-largeflap-support": "Both bottom corners need solid support below.",
   "placefailure-largeflap-unloaded": "The complete flap and both supports must be loaded and inside the world.",
   "placefailure-largeflap-missing-variant": "A required flap part is unavailable.",
   "placefailure-largeflap-root-only": "Place the complete flap item.",

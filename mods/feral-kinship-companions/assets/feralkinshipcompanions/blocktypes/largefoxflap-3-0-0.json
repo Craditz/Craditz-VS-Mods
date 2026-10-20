@@ -72,19 +72,8 @@
   },
   "attributes": {
     "handbook": {
-      "exclude": false
+      "exclude": true
     }
-  },
-  "creativeinventory": {
-    "general": [
-      "*-north"
-    ],
-    "construction": [
-      "*-north"
-    ],
-    "decorative": [
-      "*-north"
-    ]
   },
   "shapeInventory": {
     "base": "block/largefoxflap-inventory"

@@ -27,11 +27,14 @@ public partial class FeralKinshipCompanionSystem
     // hydration. A completed marker permanently keeps inventory on that body.
     private bool ReconcileRetainedBody(Entity e)
     {
+        if (EmergencyBodyAdmission(e, out bool blocked)) return blocked;
+        if(QuarantineRetiredRecoveryOriginal(e))return true;
         if(!RetainedNativeSuspension.Enabled)return false;
         if(!ObserveRetainedAdmission(e) || !RetainedCanonicalAdmission(e))return true;
         if(packRepository?.Loaded!=true)return true;
         string foxId=GetDomesticationStatus(e)?.GetString(FoxIdKey,string.Empty) ?? string.Empty;
         packRepository.TryGetRecord(foxId,out FoxPackRecordV2? r);
+        if(GuardNativeLinkAdmission(e))return true;
         ITreeAttribute? m=RetainedNativeSuspension.Marker(e);
         if(r!=null&&RetainedNativeSuspension.InProtectedTransition(e,r))return true;
         if(m?.GetString("phase")=="Hold") {

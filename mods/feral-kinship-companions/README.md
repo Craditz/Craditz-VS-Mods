@@ -1,9 +1,12 @@
-# Feral Kinship Companions 0.5.80
+# Feral Kinship Companions 0.5.91
 
-Owner-approved stable expedition compatibility fix. The owner reports both affected users confirmed the fix. See [changes since 0.5.79](CHANGELOG_v0.5.80.md), [technical qualification and limitations](TECHNICAL_NOTES_v0.5.80.md) and [release notes](RELEASE_NOTES.md).
+Owner-authorized stable user Restore update. See [release notes](RELEASE_NOTES.md)
+for changes, source catch-up from public 0.5.84, qualification and rollback limits.
+103 controlled groups passed; affected-server gameplay remains unverified.
+The tested installer DLL/assets are retained; source builds are separate artifacts.
+The DLL informational version remains 0.5.91-userrestore-preview.1 for traceability.
 
-Stable finalization changes manifest/documentation only. DLL, PDB and all 256 runtime assets are byte-identical to tested 0.5.80-compat-first-preview.2; no rebuild occurred. Unknown add-on callbacks/effects may continue or expire while Away.
-
-Required dependencies remain game >=1.22.0 and feralkinship >=0.4.3; qualified game is 1.22.7. Install optional providers and their requirements separately. No game/provider DLLs or private fixtures are bundled. Optional modded-food compatibility remains probably works now, not tested; the invisible bearded dragon remains TODO.
-
-Source and release records: https://github.com/Craditz/Craditz-VS-Mods
+Build with .NET SDK 10 and your own Vintage Story 1.22.7 installation:
+`dotnet build -c Release -p:VintageStoryPath="A:/Vintagestory"`
+Both repository-relative linked shared C# inputs are included. Game/provider DLLs
+and private test fixtures are not included. Ledger schema 57 is unchanged.

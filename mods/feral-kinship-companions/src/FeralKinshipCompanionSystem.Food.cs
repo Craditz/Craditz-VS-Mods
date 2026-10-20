@@ -67,6 +67,7 @@ public sealed partial class FeralKinshipCompanionSystem
         public bool EnableBramble { get; set; } = true;
         public bool StfuMode { get; set; } = false;
         public bool EnableDiagnosticLogging { get; set; } = false;
+        public bool EnableAutomaticNativeIdRelink { get; set; } = false;
         public bool IdleSounds { get; set; } = true;
         public float AmbientIdleSoundChanceMultiplier { get; set; } = 0.25f;
         public float AmbientIdleSoundMinCooldownSeconds { get; set; } = 60f;

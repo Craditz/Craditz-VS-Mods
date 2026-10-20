@@ -16,6 +16,9 @@ namespace FeralKinshipCompanions;
 {
     [ProtoMember(1)] public string Nonce=string.Empty;
     [ProtoMember(2)] public long NativeId;
+    [ProtoMember(3)] public string SavedOwner=string.Empty;
+    [ProtoMember(4)] public string SavedCompanion=string.Empty;
+    [ProtoMember(5)] public string SavedCode=string.Empty;
 }
 [ProtoContract] public sealed class CompanionPresentationProbeReply
 {
@@ -42,6 +45,7 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         RegisterCompletedHoldRecovery(api);
         RegisterSaveMigrationDiagnostics(api);
+        RegisterNativeLinkCommands(api);
         api.ChatCommands.Create("companiondiag").WithDescription("Read-only: list [page], native ID, id:ledger-id, #roster-number, name:exact name. Prefix cart for a validated admin cart target.")
             .RequiresPlayer().RequiresPrivilege(Privilege.chat).WithArgs(api.ChatCommands.Parsers.OptionalAll("list-or-selector"))
             .HandleWith(OnCompanionPresentationDiagnostic);
@@ -84,9 +88,10 @@ public sealed partial class FeralKinshipCompanionSystem
         serverApi.Logger.Notification("[CompanionDiag] SERVER {0}",DiagnosticText(summary,7000));
         serverApi.Logger.Notification("[CompanionDiag] AUTHORITY {0}",DiagnosticText(DescribeRetainedAuthority(r,e),7000));
         serverApi.Logger.Notification("[CompanionDiag] PROGRESS {0}",DiagnosticText(DescribeRetainedProgress(r,e),3000));
+        LogRecoveryIdentityDiagnostic(r,owner);
         if(r.EntityId<=0)return TextCommandResult.Success("Server diagnostic logged for "+DiagnosticText(r.Name,60)+"; no saved native ID is available for a client probe. Collect server-main.");
         if(serverChannel==null)return TextCommandResult.Success("Server diagnostic logged; client channel unavailable.");
-        var request=new CompanionPresentationProbeRequest{Nonce=Guid.NewGuid().ToString("N"),NativeId=r.EntityId};
+        var request=new CompanionPresentationProbeRequest{Nonce=Guid.NewGuid().ToString("N"),NativeId=r.EntityId,SavedOwner=r.OwnerUid,SavedCompanion=r.FoxId,SavedCode=r.EntityCode};
         presentationProbes[owner.PlayerUID]=new(request.Nonce,r.EntityId,now+30000);
         serverChannel.SendPacket(request,owner);
         serverApi.World.RegisterCallback(_=>{
@@ -94,7 +99,8 @@ public sealed partial class FeralKinshipCompanionSystem
                 presentationProbes.Remove(owner.PlayerUID);serverApi?.Logger.Notification("[CompanionDiag] CLIENT no reply for native={0}; client registration/sync remains UNKNOWN.",r.EntityId);
             }
         },30000);
-        return TextCommandResult.Success("Read-only diagnostic logged for "+DiagnosticText(r.Name,60)+" (native "+r.EntityId+"). Wait 30 seconds; collect fresh server-main and client-main logs containing [CompanionDiag] SERVER, AUTHORITY, PROGRESS and CLIENT. No Hold, return state, animal or record was changed.");
+        InspectSavedRecoveryCode(r,out string codeStatus);
+        return TextCommandResult.Success("Read-only diagnostic logged for "+DiagnosticText(r.Name,60)+" (native "+r.EntityId+"). Saved entity code: "+IdentityValue(r.EntityCode)+"; exact registration: "+codeStatus+". Wait 30 seconds; collect fresh server-main and client-main logs containing [CompanionDiag] SAVED-CODE, RECOVERY, IDENTITY, SERVER, AUTHORITY, PROGRESS and CLIENT. No Hold, return state, animal or record was changed.");
     }
     private static string DiagnosticText(string? value,int limit) => new string((value??string.Empty).Where(c=>!char.IsControl(c)).Take(limit).ToArray());
     private FoxPackRecordV2[] SelectPresentationRecords(string ownerUid,string selector)
@@ -127,17 +133,20 @@ public sealed partial class FeralKinshipCompanionSystem
         var assigned=packRepository?.GetActiveExpeditions().Where(x=>x.SelectedFoxIds.Contains(r.FoxId,StringComparer.Ordinal)).Take(20).ToArray();
         bool identity=e!=null&&RetainedNativeSuspension.Matches(e,r);
         bool snapshot=e!=null&&RetainedNativeSuspension.SafeSnapshot(e);
+        string Match(bool value)=>e==null||m==null?"unavailable":value?"match":"mismatch";
+        string Available(bool value)=>e==null||m==null?"unavailable":value.ToString();
         return $"native={r.EntityId} name={DiagnosticText(r.Name,60)} companion={r.FoxId} ledger-phase={r.RetainedPhase} marker-phase={m?.GetString("phase")??"none"} hold-reason={DiagnosticText(m?.GetString("reason"),300)} migration-prior-phase={m?.GetString("migrationPriorPhase")} migration-prior-reason={DiagnosticText(m?.GetString("migrationPriorReason"),300)} migration-interrupted-reason={DiagnosticText(m?.GetString("migrationInterruptedReason"),300)} "
-            +$"ledger-trip={r.RetainedTrip} marker-trip={m?.GetString("trip")} identity-match={identity} phase-match={m?.GetString("phase")==r.RetainedPhase} snapshot-valid={snapshot} "
-            +$"snapshot-captured={m?.GetBool("captured")} snapshot-state={m?.GetInt("state")} clock-tree-present={m?.GetTreeAttribute("clocks")!=null} boxes={DiagnosticBoxSummary(e)} "
-            +$"ledger-outcome={r.RetainedOutcome} marker-outcome={m?.GetString("outcome")} outcome-applied={m?.GetBool("outcomeApplied")} captured-hours={m?.GetDouble("capturedHours",double.NaN)} resume-hours={m?.GetDouble("resumeHours",double.NaN)} now-hours={serverApi?.World.Calendar.TotalHours} completion-proof={r.CompletionProof?.Version}/{r.CompletionProof?.Trip} completion-proof-match={e!=null&&RetainedNativeSuspension.CompletionProofMatches(e,r)} "
-            +$"native-id-match={e!=null&&r.EntityId==e.EntityId&&m?.GetLong("nativeId")==e.EntityId} owner-match={m?.GetString("owner")==r.OwnerUid&&s?.GetString("owner")==r.OwnerUid} companion-match={m?.GetString("companionId")==r.FoxId&&s?.GetString(FoxIdKey)==r.FoxId} code-match={m?.GetString("code")==e?.Code?.ToString()} "
-            +$"legacy-authority-match={m?.GetString("legacyAuthority",string.Empty)==r.RetainedLegacyAuthority} legacy-ledger-hours={r.RetainedLegacyAdmissionHours} legacy-marker-hours={m?.GetDouble("legacyAdmissionHours",double.NaN)} "
+            +$"ledger-trip={r.RetainedTrip} marker-trip={m?.GetString("trip")} identity-match={Match(identity)} phase-match={Match(m?.GetString("phase")==r.RetainedPhase)} snapshot-valid={Available(snapshot)} "
+            +$"snapshot-captured={m?.GetBool("captured")} snapshot-state={m?.GetInt("state")} clock-tree-present={Available(m?.GetTreeAttribute("clocks")!=null)} boxes={DiagnosticBoxSummary(e)} "
+            +$"ledger-outcome={r.RetainedOutcome} marker-outcome={m?.GetString("outcome")} outcome-applied={m?.GetBool("outcomeApplied")} captured-hours={m?.GetDouble("capturedHours",double.NaN)} resume-hours={m?.GetDouble("resumeHours",double.NaN)} now-hours={serverApi?.World.Calendar.TotalHours} completion-proof={r.CompletionProof?.Version}/{r.CompletionProof?.Trip} completion-proof-match={Match(e!=null&&RetainedNativeSuspension.CompletionProofMatches(e,r))} "
+            +$"native-id-match={Match(e!=null&&r.EntityId==e.EntityId&&m?.GetLong("nativeId")==e.EntityId)} owner-match={Match(m?.GetString("owner")==r.OwnerUid&&s?.GetString("owner")==r.OwnerUid)} companion-match={Match(m?.GetString("companionId")==r.FoxId&&s?.GetString(FoxIdKey)==r.FoxId)} code-match={Match(m?.GetString("code")==e?.Code?.ToString())} "
+            +$"legacy-authority-match={Match(m?.GetString("legacyAuthority",string.Empty)==r.RetainedLegacyAuthority)} legacy-ledger-hours={r.RetainedLegacyAdmissionHours} legacy-marker-hours={m?.GetDouble("legacyAdmissionHours",double.NaN)} "
             +$"party-ids={string.Join(",",assigned?.Select(x=>x.ExpeditionId)??Array.Empty<long>())} pending-departure={r.PendingDepartureStatus}/{r.PendingDepartureAtUtcMs}/{r.PendingDepartureDeadlineUtcMs} pending-return={r.PendingReturnStatus}/{r.PendingReturnAtUtcMs} "
-            +$"rebuild-blocker={FullRecoveryBlocker(r,e)} manual-recovery-audit={DiagnosticText(r.CompletedHoldRecoveryAudit,500)} manual-native-escrow-bytes={r.CompletedHoldRecoveryNativeEscrow.Length} manual-ledger-escrow-bytes={r.CompletedHoldRecoveryLedgerEscrow.Length} migration={r.SaveMigration?.Version}/{r.SaveMigration?.State} migration-reason={DiagnosticText(r.SaveMigration?.Reason,300)} migration-escrow={r.SaveMigration?.NativeEscrow.Length} completion-settled={e!=null&&RetainedNativeSuspension.CompletionSettled(e,r)}";
+            +$"rebuild-blocker={FullRecoveryBlocker(r,e)} manual-recovery-audit={DiagnosticText(r.CompletedHoldRecoveryAudit,500)} manual-native-escrow-bytes={r.CompletedHoldRecoveryNativeEscrow.Length} manual-ledger-escrow-bytes={r.CompletedHoldRecoveryLedgerEscrow.Length} migration={r.SaveMigration?.Version}/{r.SaveMigration?.State} migration-reason={DiagnosticText(r.SaveMigration?.Reason,300)} migration-escrow={r.SaveMigration?.NativeEscrow.Length} completion-settled={Available(e!=null&&RetainedNativeSuspension.CompletionSettled(e,r))}";
     }
     private static string DiagnosticBoxSummary(Entity? e)
     {
+        if(e==null)return "unavailable";
         var marker=e==null?null:RetainedNativeSuspension.Marker(e);
         return string.Join("/",Enumerable.Range(0,4).Select(i=>{
             var b=(marker?["box"+i] as Vintagestory.API.Datastructures.FloatArrayAttribute)?.value;
@@ -146,6 +155,7 @@ public sealed partial class FeralKinshipCompanionSystem
     }
     private string DescribeRetainedProgress(FoxPackRecordV2 r,Entity? e)
     {
+        if(e==null)return $"native={r.EntityId} ledger-level-xp={r.Level}/{r.CurrentLevelExperience}/{r.LifetimeExperience} ledger-health={r.CurrentHealth}/{r.MaxHealth}/state:{r.HealthState} native-progress=unavailable native-health=unavailable";
         var s=e==null?null:GetDomesticationStatus(e);var health=e?.GetBehavior<Vintagestory.GameContent.EntityBehaviorHealth>();
         return $"native={r.EntityId} ledger-level-xp={r.Level}/{r.CurrentLevelExperience}/{r.LifetimeExperience} native-level-xp={s?.GetInt(CompanionLevelKey)}/{s?.GetLong(CompanionCurrentExperienceKey)}/{s?.GetLong(CompanionLifetimeExperienceKey)} "
             +$"ledger-points={r.Points}/{r.LifetimePoints}/{r.BankedTalentPoints} native-points={s?.GetInt(FoxPointsKey)}/{s?.GetInt(FoxLifetimePointsKey)}/{s?.GetInt(BankedTalentPointsKey)} "
@@ -159,10 +169,11 @@ public sealed partial class FeralKinshipCompanionSystem
         if(e!=null && serverApi!=null){var c=serverApi.WorldManager.GetChunk(e.InChunkIndex3d);chunk=c==null?"missing":c.Disposed?"disposed":$"native-matches={c.Entities.Take(c.EntitiesCount).Count(x=>ReferenceEquals(x,e))}";}
         int active=packRepository?.GetActiveExpeditions().Count(x=>x.SelectedFoxIds.Contains(r.FoxId,StringComparer.Ordinal))??-1;
         return $"native={r.EntityId} companion={r.FoxId} world-index={e!=null} observed={retainedAdmissionBodies.ContainsKey(r.EntityId)} registered={loadedFoxes.ContainsKey(r.EntityId)} chunk={chunk} "
+            +$"missing-rebuild={r.MissingRecoveryState} retired-native-count={r.RecoveryRetiredNativeIds.Length} missing-native-checkpoint-bytes={r.MissingRecoveryNativeCheckpoint.Length} missing-ledger-checkpoint-bytes={r.MissingRecoveryLedgerCheckpoint.Length} "
             +$"ready={companionContentReady}/{packRepository?.Loaded} main-thread={Environment.CurrentManagedThreadId==RuntimeEnv.ServerMainThreadId} "
             +$"full-rebuild-pending={pendingFullRebuilds.Contains(r.FoxId)} native-escrow-bytes={r.DeveloperRecoveryNativeEscrow?.Length??0} ledger-phase={r.RetainedPhase} status={r.Status} active={active} pending-departure={r.PendingDepartureStatus}/{r.PendingDepartureAtUtcMs} pending-return={r.PendingReturnStatus}/{r.PendingReturnAtUtcMs} archived={r.Archived} "
             +$"eligibility={blockers} sweeps={presentationSweepCount} candidates={presentationLastSweepCandidates} last-authority={presentationLastSweepAuthority} last-check={(presentationLastAttempts.TryGetValue(r.EntityId,out string? check)?check:"never-candidate-this-session")} "
-            +(e==null?"entity=absent":RetainedNativeSuspension.DescribePresentation(e))+$" dll={PresentationDllHash()}";
+            +(e==null?"world-index-entity=absent (see RECOVERY/IDENTITY for all lookup sources)":RetainedNativeSuspension.DescribePresentation(e))+$" dll={PresentationDllHash()}";
     }
     private void OnPresentationProbeClient(CompanionPresentationProbeRequest request)
     {
@@ -171,6 +182,7 @@ public sealed partial class FeralKinshipCompanionSystem
             if(clientApi==null)return;
             Entity? e=clientApi.World.GetEntityById(request.NativeId);
             string detail=$"native={request.NativeId} level-finalized={clientLevelFinalized} world-index={e!=null} ";
+            detail+=DescribeRecoveryIdentity(new FoxPackRecordV2{OwnerUid=request.SavedOwner,FoxId=request.SavedCompanion,EntityId=request.NativeId,EntityCode=request.SavedCode},e,"client-world-index:GetEntityById")+" ";
             if(e!=null)detail+=RetainedNativeSuspension.DescribePresentation(e)+$" renderer={e.Properties?.Client?.Renderer?.GetType().FullName??"none"} renderer-code={e.Properties?.Client?.RendererName??"none"} "+(e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.DescribePresentationUpdates()??"social-behavior=missing");
             detail+=$" dll={PresentationDllHash()}";
             clientApi.Logger.Notification("[CompanionDiag] CLIENT {0}",detail);

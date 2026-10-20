@@ -12,29 +12,32 @@ using Vintagestory.API.MathTools;
 namespace FeralKinshipCompanions;
 
 // Owned modular blocks instead of vanilla's unqualified monolithic fillers:
-// each cell has local geometry and persisted instance identity. Names describe
-// clear passage, with the posts/header outside it. No new access/door state.
+// each cell has local geometry and persisted instance identity. Compact flaps
+// occupy Size x Size total. Old largefoxflap codes retain their exact lifecycle
+// until broken; their single returned item places a compact replacement.
 public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
 {
-    internal readonly record struct Cell(int Size, string Side, int U, int V)
+    internal readonly record struct Cell(int Size, string Side, int U, int V, bool Legacy = false)
     {
-        internal int Width => Size + 2;
-        internal int Height => Size + 1;
+        internal int Width => Legacy ? Size + 2 : Size;
+        internal int Height => Legacy ? Size + 1 : Size;
         internal bool Root => U == 0 && V == 0;
         internal (int X, int Z) Axis => Side switch { "north" => (1, 0), "east" => (0, 1), "south" => (-1, 0), _ => (0, -1) };
         internal BlockPos At(BlockPos root, int u, int v) { var a = Axis; return root.AddCopy(a.X * u, v, a.Z * u); }
         internal BlockPos RootAt(BlockPos pos) => At(pos, -U, -V);
-        internal AssetLocation Code(int u, int v, string? side = null) => new("feralkinshipcompanions", $"largefoxflap-{Size}-{u}-{v}-{side ?? Side}");
+        internal AssetLocation Code(int u, int v, string? side = null) => new("feralkinshipcompanions", $"{(Legacy ? "largefoxflap" : "compactfoxflap")}-{Size}-{u}-{v}-{side ?? Side}");
+        internal AssetLocation ItemCode => new("feralkinshipcompanions", $"compactfoxflap-{Size}-0-0-north");
     }
     internal static bool Describe(Block block, out Cell cell)
     {
         cell = default;
         if (block is not BlockFeralKinshipLargeFlap || block.Code?.Domain != "feralkinshipcompanions") return false;
         var p = block.Code.Path.Split('-');
-        if (p.Length != 5 || p[0] != "largefoxflap" || !int.TryParse(p[1], out int n) || n is not (2 or 3)
-            || !int.TryParse(p[2], out int u) || u < 0 || u > n + 1 || !int.TryParse(p[3], out int v) || v < 0 || v > n
+        if (p.Length != 5 || p[0] is not ("largefoxflap" or "compactfoxflap") || !int.TryParse(p[1], out int n) || n is not (2 or 3)
+            || !int.TryParse(p[2], out int u) || u < 0 || u >= (p[0] == "largefoxflap" ? n + 2 : n)
+            || !int.TryParse(p[3], out int v) || v < 0 || v >= (p[0] == "largefoxflap" ? n + 1 : n)
             || p[4] is not ("north" or "east" or "south" or "west")) return false;
-        cell = new(n, p[4], u, v); return true;
+        cell = new(n, p[4], u, v, p[0] == "largefoxflap"); return true;
     }
     private sealed class Operations { internal readonly HashSet<(int, int, int, int)> Active = new(); }
     private static readonly ConditionalWeakTable<IWorldAccessor, Operations> operations = new();
@@ -43,6 +46,7 @@ public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
     private Cuboidf[]? cachedBoxes;
     internal static Cuboidf[] Geometry(Cell cell)
     {
+        if (!cell.Legacy) return Array.Empty<Cuboidf>(); // Flexible leather, no rigid posts/header.
         // Posts occupy complete side cells; header starts above the passage.
         if (cell.U != 0 && cell.U != cell.Size + 1 && cell.V != cell.Size) return Array.Empty<Cuboidf>();
         var b = new Cuboidf(0, 0, .4375f, 1, cell.V == cell.Size ? .125f : 1, .5625f);
@@ -67,6 +71,7 @@ public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
     public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack stack, BlockSelection selection, ref string failureCode)
     {
         if (!Describe(this, out Cell c) || !c.Root) { failureCode = "largeflap-root-only"; return false; }
+        c = c with { Legacy = false }; // Includes old inventory stacks without converting placed blocks.
         string side = byPlayer == null ? c.Side : SuggestedHVOrientation(byPlayer, selection)[0].Code;
         if (world.GetBlock(c.Code(0, 0, side)) is not BlockFeralKinshipLargeFlap root) { failureCode = "largeflap-missing-variant"; return false; }
         if (!root.CanPlaceBlock(world, byPlayer!, selection, ref failureCode)) return false;
@@ -159,7 +164,7 @@ public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
             foreach (var x in members.OrderBy(x => x.U == 0 && x.V == 0 ? 1 : 0))
                 if (skip == null || !x.Pos.Equals(skip)) a.SetBlock(0, x.Pos);
             if (drop && hadRoot && (player == null || player.WorldData.CurrentGameMode != EnumGameMode.Creative)
-                && world.GetBlock(c.Code(0, 0, "north")) is Block item)
+                && world.GetBlock(c.ItemCode) is Block item)
                 world.SpawnItemEntity(new ItemStack(item), root.ToVec3d().Add(.5, .2, .5));
             return true;
         }
@@ -231,10 +236,10 @@ public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
     {
         if (!Describe(this, out Cell c) || !c.Root || multiplier <= 0
             || world.BlockAccessor.GetBlockEntity(pos) is not BlockEntityFeralKinshipLargeFlap be || !be.Committed) return Array.Empty<ItemStack>();
-        return new[] { new ItemStack(world.GetBlock(c.Code(0, 0, "north"))) };
+        return new[] { new ItemStack(world.GetBlock(c.ItemCode)) };
     }
     public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
-        => Describe(this, out Cell c) ? new ItemStack(world.GetBlock(c.Code(0, 0, "north"))) : base.OnPickBlock(world, pos);
+        => Describe(this, out Cell c) ? new ItemStack(world.GetBlock(c.ItemCode)) : base.OnPickBlock(world, pos);
     public override AssetLocation GetRotatedBlockCode(int angle)
     {
         if (!Describe(this, out Cell c)) return Code;
@@ -242,9 +247,9 @@ public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
         string side = BlockFacing.HORIZONTALS_ANGLEORDER[GameMath.Mod(face.HorizontalAngleIndex - angle / 90, 4)].Code;
         return c.Code(c.U, c.V, side);
     }
-    public override void GetHeldItemInfo(ItemSlot slot, StringBuilder text, IWorldAccessor world, bool debug)
+    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder text, IWorldAccessor world, bool debug)
     {
-        base.GetHeldItemInfo(slot, text, world, debug);
+        base.GetHeldItemInfo(inSlot, text, world, debug);
         if (Describe(this, out Cell c)) text.AppendLine(Lang.Get("feralkinshipcompanions:largeflap-info", c.Size, c.Width, c.Height));
     }
 }

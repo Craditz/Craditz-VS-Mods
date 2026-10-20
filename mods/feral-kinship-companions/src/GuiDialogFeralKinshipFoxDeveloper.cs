@@ -13,7 +13,7 @@ namespace FeralKinshipCompanions;
 public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
 {
     private const double DialogWidth = 680;
-    private const double DialogHeight = 780;
+    private const double DialogHeight = 820;
     private const double Padding = 16;
     private const double ButtonHeight = 30;
     private const int SelectionPageSize = 9;
@@ -256,16 +256,21 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
         composer.AddSmallButton("Tell a joke", OnTellBadJoke, ElementBounds.Fixed(10, 562, 196, 22), EnumButtonStyle.Small, "bad-fox-joke");
 
         composer.AddStaticText("RECOVERY", sectionFont, ElementBounds.Fixed(0, 600, 640, 22));
-        composer.AddInset(ElementBounds.Fixed(0, 620, 640, 48), 2, 0.78f);
+        composer.AddInset(ElementBounds.Fixed(0, 620, 640, system.CanUseEmergencyAdminClient() ? 88 : 48), 2, 0.78f);
         composer.AddSmallButton("Teleport existing animal", OnTeleportCompanion, ElementBounds.Fixed(10, 628, 300, ButtonHeight), EnumButtonStyle.Normal, "teleport-companion")
-            .AddSmallButton("Rebuild from ledger record", OnRebuildCompanion, ElementBounds.Fixed(320, 628, 310, ButtonHeight), EnumButtonStyle.Normal, "rebuild-companion");
+            .AddSmallButton("Normal Rebuild", OnRebuildCompanion, ElementBounds.Fixed(320, 628, 310, ButtonHeight), EnumButtonStyle.Normal, "rebuild-companion");
 
-        composer.AddStaticText("DANGER ZONE", dangerFont, ElementBounds.Fixed(0, 678, 640, 22));
-        composer.AddInset(ElementBounds.Fixed(0, 700, 640, 50), 2, 0.58f);
+        if (system.CanUseEmergencyAdminClient()) {
+            composer.AddSmallButton("Emergency rebuild / details", () => OnEmergencyCompanion(false), ElementBounds.Fixed(10, 666, 300, ButtonHeight), EnumButtonStyle.Normal, "emergency-companion")
+                .AddSmallButton("Undo / resume Emergency", () => OnEmergencyCompanion(true), ElementBounds.Fixed(320, 666, 310, ButtonHeight), EnumButtonStyle.Normal, "undo-emergency-companion");
+        }
+
+        composer.AddStaticText("DANGER ZONE", dangerFont, ElementBounds.Fixed(0, 718, 640, 22));
+        composer.AddInset(ElementBounds.Fixed(0, 740, 640, 50), 2, 0.58f);
         composer.AddButton(
             "Permanently delete every Companion record",
             OnDeleteAllCompanions,
-            ElementBounds.Fixed(10, 709, 620, ButtonHeight),
+            ElementBounds.Fixed(10, 749, 620, ButtonHeight),
             CairoFont.SmallButtonText().WithColor(GuiStyle.ErrorTextColor),
             EnumButtonStyle.Normal,
             "delete-all-companions");
@@ -514,6 +519,15 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
         return true;
     }
 
+    private bool OnEmergencyCompanion(bool undo)
+    {
+        string id = GetSelectedFoxId();
+        if (!system.CanUseEmergencyAdminClient() || string.IsNullOrWhiteSpace(id)) return true;
+        SetLocalMessage("Requesting an admin FORCE reconstruction preview. Fresh species defaults and separate original cargo apply; review before confirming.");
+        system.SendCompanionRecoveryAction(undo ? CompanionRecoveryRequestPacket.EmergencyUndo : CompanionRecoveryRequestPacket.EmergencyRebuild, id);
+        return true;
+    }
+
     private bool OnTeleportCompanion()
     {
         string foxId = GetSelectedFoxId();
@@ -677,6 +691,10 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
         bool hasRecord = !string.IsNullOrWhiteSpace(GetSelectedFoxId());
         SingleComposer.GetButton("teleport-companion").SetActive(hasRecord);
         SingleComposer.GetButton("rebuild-companion").SetActive(hasRecord);
+        if (system.CanUseEmergencyAdminClient()) {
+            SingleComposer.GetButton("emergency-companion")?.SetActive(hasRecord && state?.CanEmergencyRebuild == true);
+            SingleComposer.GetButton("undo-emergency-companion")?.SetActive(hasRecord && state?.CanEmergencyUndo == true);
+        }
         SingleComposer.GetButton("delete-all-companions").SetActive((state?.OwnedCompanionCount ?? 0) > 0);
         SingleComposer.GetButton("back").SetActive(true);
     }

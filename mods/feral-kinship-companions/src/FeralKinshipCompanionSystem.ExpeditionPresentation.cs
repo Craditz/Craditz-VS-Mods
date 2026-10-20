@@ -55,6 +55,7 @@ public sealed partial class FeralKinshipCompanionSystem
         var natives=new Dictionary<long,Entity>();
         foreach(Entity e in world.Values.Concat(retainedAdmissionBodies.Values).Concat(loadedFoxes.Values)) {
             if(e==null)return UnknownPresentationAuthority("null-native-body");
+            if(IsRetiredRecoveryOriginal(e))continue; // Durable quarantine is not a competing active authority.
             string id=GetDomesticationStatus(e)?.GetString(FoxIdKey,string.Empty) ?? string.Empty;
             if(natives.TryGetValue(e.EntityId,out Entity? other) && !ReferenceEquals(other,e))result.NativeConflicts.Add(e.EntityId);
             else natives[e.EntityId]=e;
@@ -105,6 +106,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void ReconcileCompletedExpeditionPresentationOnLoad(Entity e)
     {
+        if(QuarantineRetiredRecoveryOriginal(e))return;
         if(RetainedNativeSuspension.Marker(e)?.GetString("phase")!="Complete")return;
         ReconcileCompletedExpeditionPresentation(e,CaptureExpeditionPresentationAuthority());
     }

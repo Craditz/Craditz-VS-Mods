@@ -1,39 +1,34 @@
-# Companions 0.5.84 — recovery, return safety and larger flaps
+# Companions 0.5.91 - user Restore availability
 
-**Before updating, back up the complete world and retain its matching mods. Update Companions on the server and clients, keeping one Companions package per mod ID. Rollback requires the whole pre-update world backup with matching mods; swapping only an older DLL is unsafe. Recovery checkpoints are not a substitute for that backup.**
+## Changes since local stable 0.5.90
 
-## Changes since the actual prior stable, 0.5.83
+- User Restore finds the verified original at its saved location and brings that same body to safe loaded space near its owner in the same dimension. Native chunk membership transfers before the temporary remote source can unload.
+- Restore completion now waits for native world/chunk registration, the normal command lookup and usable presentation near the owner. Pending arrival, timeout, no safe space and other-dimension failures are reported honestly.
+- Cart feedback distinguishes an unloaded animal, an unavailable cart, unresolved owner/expedition authority and different dimensions. Stale cached native IDs or objects cannot masquerade as loaded companions.
+- Living originals retain their native ID, health, inventory and progression; no replacement or copied cargo is created. Existing owner authorization, duplicate/stale-ID refusals and Emergency/Undo/escrow safeguards remain.
 
-- Guard the reproduced return-transition reentry that could put a returning original on Hold. Retain completion proof for new returns, improve return/presentation reconciliation and keep detailed diagnostics.
-- Add bounded, persistent recovery of independently verified eligible completed originals in old saves, including offline owners. Loaded eligible originals are recovered in place; deferred unloaded originals wait for natural loading. No outcome, loot or reward callback is replayed.
-- Keep guarded admin repair for the observed completed-ledger/native-Hold mismatch, using the original native inventory, identity, current health and compatible progression with native/ledger checkpoints. Missing historical rewards are not inferred.
-- Connect individual Developer Ledger Rebuild and selected-player Recover all to server-generated previews and explicit, expiring, one-use confirmation. Recheck each animal and the selected owner's permissions, report skipped/failed cases honestly and preserve active, unknown or conflicting authority. No global recovery is added.
-- Retain the latest detailed diagnostics, safer owner-scoped selection/recovery and archive restoration. Previously released dedicated-startup corrections and Social → Wellbeing remain.
-- Add passive flaps with 2×2 and 3×3 clear passages beside the existing 1×1 flap. Their frame footprints are 4×3 and 5×4. Bear clipping at the smaller frame is an accepted visual limitation.
-- Correct raw placement-refusal messages with six native game-domain English aliases while retaining the original translations.
+The promoted 0.5.90 DLL reproduced success followed by remote source unload and cart failure in a controlled fixture. This supports the unload mechanism; it does not independently establish the complete affected-world cause from the supplied recording.
 
-## Recovery limits and admin follow-up
+## Qualification and release decision
 
-Automatic recovery targets verified eligible old records; it does not guarantee every missing animal. It preserves the verified native original and never creates a guessed body because an original is unloaded. Ambiguous cases require admin inspection/recovery and may need restored source mods or a backup. True deletion, missing assets, conflicting ownership/trips/outcomes, incompatible snapshots/progression and unresolved checkpoints are not silently overridden.
+The owner explicitly requested release for server use after the private candidate. All **103 controlled groups passed**: 91 retained recovery regressions and 12 user-Restore groups. Coverage includes the non-admin pack request/confirmation route, delayed native teleport, source unload followed by a cart request after 60 simulated seconds, repeated Restore, disk fixture reload, changed owner, incomplete/throwing chunk registration, absent loader callback, no safe space, dimensions, genuine native-ID drift, conflicting IDs, duplicates and stale caches.
 
-Use `/companionmigration` or `/companionmigration native:<ID>` to inspect progress, and `/companiondiag` for details. `/companionmigration retry native:<ID>` only queues another guarded check. For eligible loaded originals, the Rebuild/Recover all preview provides the validated admin repair without typing `/companionrepair`; that command remains available. A native stale Away flag is handled by eligible repair. A genuinely Away/Returning ledger or an active/unknown journey remains protected. If migration fixes an original first, reconstruction is normally unnecessary; a preview made before its state changes must be requested again.
+These use production handlers and real Vintage Story 1.22.7 assemblies with controlled world/chunk services. They are not rendered GUI testing or a full affected-world/provider/multiplayer run. **Affected-server gameplay, FotSA/PetAI behavior, visible client arrival and full engine ticking remain unverified.** No affected-server acceptance is claimed. The production build had zero warnings/errors. Private fixtures and reporter data remain local.
 
-Rollback must restore the **whole backup with matching mods**, because older versions do not understand the new settlement receipts and may omit journals or hide an animal again.
+Stable finalization preserves the tested 0.5.91-userrestore-preview.1 DLL and all 350 runtime assets byte-for-byte; only the installer manifest and release documentation are finalized. The DLL retains its preview informational version for traceability. A new build from source is a separate artifact and must not replace the retained tested installer bytes.
 
-## Evidence and remaining verification
+## Updating and rollback
 
-The owner explicitly requested a stable release after receiving the preview recommendation and limitations. This is a release decision, not a claim of exhaustive gameplay acceptance.
+Use matching Companions versions on server and clients, with one installed archive per mod ID. Manifest minimums remain game 1.22.0 and Feral Kinship 0.4.3; this candidate was built against game 1.22.7. Optional providers and their requirements remain external.
 
-The exact recovery-flaps-preview.2 DLL passed **1,623 controlled assertions**: 70 button/routing/security/confirmation checks, 315 recovery and fresh-process regressions, 590 flap lifecycle/collision checks, 560 native asset/recipe checks and 88 localization checks. The production build was clean. Stable finalization preserves that DLL, PDB and all 323 assets byte-for-byte; only manifest and release documentation change.
+Ledger schema **57** is unchanged from 0.5.90. Keep a complete pre-update world backup and its matching mods. Older schema readers cannot safely downgrade the world by swapping a DLL; per-animal Undo is not a whole-world rollback.
 
-Manual repair succeeded for one reporter, corroborated by a visible wolfdog and dialogue. Complete inventory/progression/health/restart preservation in that reporter's world is not independently confirmed. Automatic migration has **no affected real-save confirmation**. The new Rebuild/Recover all dialog has controlled handler/protocol coverage but **no in-game rendered verification**.
+No server installation, live-save/modpack mutation or ModDB upload was performed. The stable ZIP is prepared for the owner to upload. Trademark changes remain deferred; there are no unrelated fixes.
 
-Forwarded singleplayer QA on the identical standalone flap implementation/assets covered Creative availability/placement, player passage, observed bear/fox passage, tested frame-part break/one-drop/replacement, obstruction refusal, native room-enclosure controls and graceful world unload/reload. This did not cover multiplayer, full client-process restart, crafting gameplay, every species/orientation or quantitative thermal/cellar performance. Bear visual clipping was accepted. The raw obstruction message is corrected and native-localization-tested; its corrected game overlay has not been newly viewed.
+## Public source synchronization
 
-No new game launch, live-save/modpack edit, Discord message or ModDB upload was performed for this release. The ZIP and HTML description are upload-ready for the owner.
+The previous public source was 0.5.84; the actual prior local stable was 0.5.90. This publication catches up the already locally released 0.5.86-0.5.90 recovery lifecycle implementation as well as the 0.5.91 user Restore change. It does not claim that those intermediate versions were previously synchronized publicly.
 
-## Version history and source publication
+That catch-up includes guarded native-ID relinking (automatic relinking remains off by default), confirmed admin Emergency force reconstruction, persistent per-animal Undo and separately retained originals/cargo, engine-assigned native-ID binding, one selected active generation across reload, legacy-history reconciliation, species formatting and exact total 2x2/3x3 flaps. It introduces no new recovery bypass beyond the approved implementation.
 
-The prior actual local stable is **0.5.83**, following 0.5.81/0.5.82 dedicated-startup changes and the 0.5.83 Wellbeing shortcut. GitHub's previous selected Companions source was **0.5.80**. This source publication catches up those already released changes as well as 0.5.84; it does not rewrite the historical records or claim the intermediate versions were previously synchronized there.
-
-Separate test fixtures, reporter data, logs, private edit notes, binaries and unreleased projects remain excluded from the public repository. Existing licenses, sound credits and upstream notices remain intact. Rebuilding public source is a separate artifact and does not replace the retained tested installer bytes.
+Only matching production source, assets, build metadata and sanitized release documentation are published. Private tests, logs, reporter IDs/recordings, local paths, binaries, archives, credentials and unreleased projects remain excluded. Existing licenses, sound credits and upstream notices are retained.

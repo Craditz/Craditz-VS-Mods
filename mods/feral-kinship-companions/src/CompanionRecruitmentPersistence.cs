@@ -12,11 +12,11 @@ namespace FeralKinshipCompanions;
 // combined reader admits retained50/51 and explicitly scoped base46/base51.
 internal static class CompanionLedgerSchema
 {
-    internal const int RecruitmentLedgerVersion = 52;
+    internal const int RecruitmentLedgerVersion = 57; // Force reconstruction/Undo journal reader barrier.
     internal const int RecruitmentSectionTag = 100;
 
     internal static bool SupportedHere(int version) => version is >= 1 and <= 46
-        || version is 50 or 51 || version == RecruitmentLedgerVersion;
+        || version is 50 or 51 or 52 or 53 or 54 or 55 or 56 || version == RecruitmentLedgerVersion;
 
     // Walk wire framing only; reject missing/duplicate/wrong-wire authority
     // before interpreting any potentially incompatible journal/record payload.
@@ -76,7 +76,7 @@ internal static class CompanionLedgerSchema
         if (!TryReadAuthority(raw, 1, RecruitmentSectionTag, out int found, out byte[]? section)) return false;
         version = found;
         if (!SupportedHere(found)) return false;
-        if (found != RecruitmentLedgerVersion) return section == null;
+        if (found < 52) return section == null;
         return section != null && TryReadAuthority(section, 2, 1, out int extensionVersion, out byte[]? format)
             && extensionVersion == CompanionRecruitmentPersistence.SectionVersion
             && format != null && format.SequenceEqual(Encoding.UTF8.GetBytes(CompanionRecruitmentPersistence.FormatId))
@@ -92,7 +92,7 @@ internal static class CompanionRecruitmentPersistence
     internal const int BaseLedgerVersion = 51; // Combined writer always preserves retained semantics.
 
     internal static int EffectiveBaseVersion(FoxPackSaveData saved) =>
-        saved.Version == CompanionLedgerSchema.RecruitmentLedgerVersion
+        saved.Version >= 52
             ? saved.RecruitmentExtension!.BaseLedgerVersion : saved.Version;
 
     internal static FoxRecruitmentExtension Capture(IReadOnlyList<FoxRecruitmentRewardRecord> rewards) => new()
@@ -110,13 +110,13 @@ internal static class CompanionRecruitmentPersistence
     {
         // A declared baseline payload cannot carry retained-native authority. Do
         // not reinterpret retained fields merely because the outer header is52.
-        int basis = saved.Version == CompanionLedgerSchema.RecruitmentLedgerVersion
+        int basis = saved.Version >= 52
             ? saved.RecruitmentExtension?.BaseLedgerVersion ?? 0 : saved.Version;
         if (basis <= 46 && saved.Records != null && saved.Records.Any(record => record != null
             && (!string.IsNullOrEmpty(record.RetainedTrip) || !string.IsNullOrEmpty(record.RetainedPhase)
                 || !string.IsNullOrEmpty(record.RetainedOutcome) || !string.IsNullOrEmpty(record.RetainedLegacyAuthority)
                 || record.RetainedLegacyAdmissionHours != 0))) return false;
-        if (saved.Version != CompanionLedgerSchema.RecruitmentLedgerVersion)
+        if (saved.Version < 52)
             return saved.RecruitmentExtension == null;
         var extension = saved.RecruitmentExtension;
         var rewards = saved.RecruitmentRewards;

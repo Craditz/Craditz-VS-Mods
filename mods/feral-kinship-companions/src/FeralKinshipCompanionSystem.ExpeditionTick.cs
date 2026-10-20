@@ -26,6 +26,8 @@ public sealed partial class FeralKinshipCompanionSystem
             return;
         }
 
+        MaintainNativeLinks();
+        MaintainEmergencyRebuilds();
         MaintainPendingCompanionAdmissions();
         MaintainRetainedSaveMigration();
         MaintainExpeditionPresentation();

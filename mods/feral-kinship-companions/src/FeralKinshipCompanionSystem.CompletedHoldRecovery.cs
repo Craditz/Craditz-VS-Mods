@@ -50,13 +50,7 @@ public sealed partial class FeralKinshipCompanionSystem
     }
     private static string HoldRecoveryFingerprint(FoxPackRecordV2 r,Entity e)
     {
-        using var stream=new MemoryStream();
-        using(var writer=new BinaryWriter(stream,System.Text.Encoding.UTF8,true)) {
-            RetainedNativeSuspension.Marker(e)!.ToBytes(writer);
-            GetDomesticationStatus(e)!.ToBytes(writer);
-        }
-        stream.Write(HoldRecoveryRecordBytes(r));
-        return Convert.ToHexString(SHA256.HashData(stream.ToArray()));
+        return RecoveryUiFingerprint(r,e);
     }
     private string CompletedHoldRepairBlocker(FoxPackRecordV2 r,Entity e,ExpeditionPresentationAuthority authority)
     {

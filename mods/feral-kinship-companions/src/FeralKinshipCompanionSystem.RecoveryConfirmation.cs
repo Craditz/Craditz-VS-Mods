@@ -23,7 +23,7 @@ public sealed class CompanionRecoveryPreviewEntry
 public sealed partial class FeralKinshipCompanionSystem
 {
     private sealed record RecoveryUiTarget(string FoxId, long NativeId, Entity? Original, string Fingerprint, string Mode);
-    private sealed record RecoveryUiConfirmation(string Token, string Owner, long Until, bool Bulk,
+    private sealed record RecoveryUiConfirmation(IServerPlayer Actor, string Token, string Owner, long Until, bool Bulk,
         RecoveryUiTarget[] Targets, int PreviewSkipped);
     private readonly Dictionary<string, RecoveryUiConfirmation> recoveryUiConfirmations = new(StringComparer.Ordinal);
     private GuiDialogFeralKinshipRecoveryConfirmation? recoveryConfirmationDialog;
@@ -32,21 +32,25 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private static string RecoveryUiFingerprint(FoxPackRecordV2 record, Entity? original)
     {
-        // Watched-tree serialization is read-only. Do not invoke provider native
-        // ToBytes hooks until the user confirms the existing escrow rebuild.
+        // Confirmation binds authority and cargo, not a frame-perfect animal.
+        // Health, movement, mood, request timers and earned XP continue ticking;
+        // the rebuild takes their current native values after confirmation.
+        // Never call provider ToBytes hooks from this read-only preview.
         using var stream = new MemoryStream();
-        if (original != null) {
-            using var writer = new BinaryWriter(stream, System.Text.Encoding.UTF8, true);
-            original.WatchedAttributes.ToBytes(writer);
-        }
-        if (stream.Length > 8 * 1024 * 1024) throw new InvalidOperationException("Preview watched state exceeds 8 MiB");
-        stream.Write(HoldRecoveryRecordBytes(record));
+        using var writer = new BinaryWriter(stream, System.Text.Encoding.UTF8, true);
+        WriteRecoveryAuthority(writer, record);
+        if (original != null) WriteRecoveryNativeAuthority(writer, original);
+        if (stream.Length > 16 * 1024 * 1024) throw new InvalidOperationException("Preview authority exceeds 16 MiB");
         return Convert.ToHexString(SHA256.HashData(stream.ToArray()));
     }
 
     private string RecoveryUiBlocker(IServerPlayer actor, FoxPackRecordV2 record, Entity? original, string mode, bool inBatch = false)
     {
-        if (!CanUseDeveloperTools(actor) || !DeveloperMayControlOwner(actor, record.OwnerUid)) return "Selected-player permission expired";
+        if (actor.ConnectionState != EnumClientState.Playing || !CanUseDeveloperTools(actor) || !DeveloperMayControlOwner(actor, record.OwnerUid)) return "Selected-player permission expired or requesting session disconnected";
+        if (NativeLinkPending(record)) return "Native-ID relink/Undo journal is pending; wait for its guarded resume";
+        if (mode is "Emergency rebuild" or "Emergency undo") return EmergencyAdminBlocker(actor, record, mode == "Emergency undo");
+        if (EmergencyPending(LastEmergency(record))) return "Emergency rebuild/Undo journal is pending; resume or Undo that operation first";
+        if (record.MissingRecoveryState == "Prepared") return "Interrupted missing-body publication; inspect /companiondiag. Paired checkpoints and retired identity are preserved";
         if (record.SaveMigration != null && record.SaveMigration.Version != 1) return "Unknown migration schema; preserve original and inspect /companiondiag";
         if (mode == "Completed Hold") {
             if (!MayRepairCompletedHold(actor)) return "Completed-Hold repair requires server admin privilege";
@@ -54,7 +58,7 @@ public sealed partial class FeralKinshipCompanionSystem
             return ConfirmedHoldRecoveryPreflightForBatch(record, original, inBatch);
         }
         if (mode == "Saved location" && original == null)
-            return CanLookUpFullRecoveryOriginal(record) ? string.Empty : "Saved-location lookup is no longer eligible";
+            return CanLookUpFullRecoveryOriginalUsingAuthority(record, CaptureExpeditionPresentationAuthority(), false) ? string.Empty : "Missing-original recovery is blocked by identity, journey or pending work; inspect /companiondiag";
         return FullRecoveryBlocker(record, original);
     }
 
@@ -70,19 +74,20 @@ public sealed partial class FeralKinshipCompanionSystem
         var entries = new List<CompanionRecoveryPreviewEntry>();
         var targets = new List<RecoveryUiTarget>();
         foreach (var r in rows) {
-            Entity? e = serverApi.World.GetEntityById(r.EntityId);
+            Entity? e = FindArchiveOriginal(r, out string lookupReason);
             string mode = e != null && r.RetainedPhase == "Complete" && RetainedNativeSuspension.Marker(e)?.GetString("phase") == "Hold"
                 ? "Completed Hold" : e == null ? "Saved location" : "Native rebuild";
             string reason;
             try {
-                reason = RecoveryUiBlocker(actor, r, e, mode);
+                reason = e == null && !IsAbsentRecoveryOriginalReason(lookupReason) ? lookupReason : RecoveryUiBlocker(actor, r, e, mode);
+                LogRecoveryAttempt(r.FoxId, "preview", reason.Length == 0 ? mode : reason);
                 if (reason.Length == 0) targets.Add(new(r.FoxId, r.EntityId, e, RecoveryUiFingerprint(r, e), mode));
             } catch (Exception ex) { reason = "Read-only preview stopped: " + ex.GetType().Name + "; collect /companiondiag"; }
             entries.Add(new() { Name = DiagnosticText(GetFoxRecordLabel(r), 60), Decision = reason.Length == 0 ? mode : "Skip", Reason = reason.Length == 0
                 ? mode == "Completed Hold" ? "Confirmed repair of the held original; same identity/native inventory, compatible progression and current health; no outcome or reward replay."
-                : mode == "Saved location" ? "Load the saved location, then rebuild only a verified original. A held/unknown original found there remains protected; request a new preview."
+                : mode == "Saved location" ? "Check saved source locations; rebuild a verified original or a matching complete native checkpoint. Missing native inventory data is reported. Late originals remain quarantined."
                 : "Fresh body from current native state. A dead original is deliberately revived; current native inventory/progression are retained."
-                : DiagnosticText(reason, 180) });
+                : DiagnosticText(reason, 2048) });
         }
         if (targets.Count == 0) {
             SendCompanionRecoveryState(actor, "No eligible recovery. " + string.Join("; ", entries.Take(3).Select(x => x.Name + ": " + x.Reason)));
@@ -92,7 +97,7 @@ public sealed partial class FeralKinshipCompanionSystem
         }
         if (recoveryUiConfirmations.Count >= 128) { SendCompanionRecoveryState(actor, "Recovery confirmation limit reached; wait for previews to expire"); return; }
         string token = Guid.NewGuid().ToString("N");
-        recoveryUiConfirmations[actor.PlayerUID] = new(token, owner, now + 60000, bulk, targets.ToArray(), rows.Length - targets.Count);
+        recoveryUiConfirmations[actor.PlayerUID] = new(actor, token, owner, now + 60000, bulk, targets.ToArray(), rows.Length - targets.Count);
         serverChannel?.SendPacket(new CompanionRecoveryStatePacket {
             TargetOwnerUid = owner, PreviewToken = token, PreviewEntries = entries,
             Message = $"Player {owner}: {targets.Count} eligible, {rows.Length - targets.Count} skipped. Confirm within 60 seconds. Native/ledger checkpoints are retained. Outcomes, loot and rewards are not replayed; missing rewards cannot be inferred. Only these previewed animals are included."
@@ -103,13 +108,17 @@ public sealed partial class FeralKinshipCompanionSystem
         out FoxPackRecordV2? record, out Entity? original)
     {
         record = null; original = null;
-        if (!CanUseDeveloperTools(actor) || !DeveloperMayControlOwner(actor, confirmation.Owner)) return "Selected-player permission expired";
-        if (!packRepository!.TryGetRecord(target.FoxId, out record) || record == null || record.OwnerUid != confirmation.Owner || record.EntityId != target.NativeId) return "Previewed ledger identity/owner changed; request a new preview";
-        original = serverApi!.World.GetEntityById(target.NativeId);
+        if (!ReferenceEquals(actor, confirmation.Actor) || actor.ConnectionState != EnumClientState.Playing
+            || !CanUseDeveloperTools(actor) || !DeveloperMayControlOwner(actor, confirmation.Owner)) return "Selected-player permission expired or requesting session changed";
+        if (!packRepository!.TryGetRecord(target.FoxId, out record) || record == null || record.OwnerUid != confirmation.Owner) return "Previewed companion/owner changed; request a new preview";
+        if (ForceMode(target.Mode)) return MayRepairCompletedHold(actor) ? string.Empty : "Force reconstruction and Undo require server admin privilege";
+        if (record.EntityId != target.NativeId) return "Previewed ledger identity changed; request a new preview";
+        original = FindArchiveOriginal(record, out string lookupReason);
+        if (original == null && !IsAbsentRecoveryOriginalReason(lookupReason)) return lookupReason;
         if (!ReferenceEquals(original, target.Original)) return "Previewed native original changed; request a new preview";
         string blocker = RecoveryUiBlocker(actor, record, original, target.Mode, inBatch);
         if (blocker.Length > 0) return blocker;
-        if (RecoveryUiFingerprint(record, original) != target.Fingerprint) return "Native or ledger receipt/progression changed; request a new preview";
+        if (RecoveryUiFingerprint(record, original) != target.Fingerprint) return "Identity, journey receipt or cargo changed; request a new preview";
         return string.Empty;
     }
 
@@ -125,6 +134,7 @@ public sealed partial class FeralKinshipCompanionSystem
         recoveryUiConfirmations.Remove(actor.PlayerUID);
         if (packet.Action == CompanionRecoveryRequestPacket.CancelPreview) { SendCompanionRecoveryState(actor, "Recovery cancelled; no animal changed"); return; }
         if (serverApi == null || packRepository?.Loaded != true || !companionContentReady || !CanUseDeveloperTools(actor)
+            || !ReferenceEquals(actor, c.Actor) || actor.ConnectionState != EnumClientState.Playing
             || packet.TargetOwnerUid != c.Owner || !DeveloperMayControlOwner(actor, c.Owner) || serverApi.World.ElapsedMilliseconds > c.Until) {
             SendCompanionRecoveryState(actor, "Recovery confirmation expired or selected-player permission changed; no animal changed"); return;
         }
@@ -134,7 +144,7 @@ public sealed partial class FeralKinshipCompanionSystem
             FoxPackRecordV2? record; Entity? original;
             try { blocker = RevalidateRecoveryUi(actor, c, target, false, out record, out original); }
             catch (Exception ex) { SendCompanionRecoveryState(actor, "Confirmation preflight stopped: " + ex.GetType().Name + "; collect /companiondiag"); return; }
-            if (blocker.Length > 0) { SendCompanionRecoveryState(actor, "Recovery refused: " + blocker); return; }
+            if (blocker.Length > 0) { LogRecoveryAttempt(target.FoxId, "confirmation-refused", blocker); SendCompanionRecoveryState(actor, "Recovery refused: " + blocker); return; }
             DispatchRecoveryUi(actor, c.Owner, target, record!, original, result => SendCompanionRecoveryState(actor, result.Kind + ": " + result.Reason));
             return;
         }
@@ -143,6 +153,11 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void DispatchRecoveryUi(IServerPlayer actor, string owner, RecoveryUiTarget target, FoxPackRecordV2 record, Entity? original, Action<RecoveryResult> completed)
     {
+        LogRecoveryAttempt(target.FoxId, "dispatch", target.Mode);
+        if (target.Mode == ForceEmergencyMode) { StartForceEmergency(actor, record); return; }
+        if (target.Mode == ForceUndoMode) { StartForceUndo(actor, record); return; }
+        if (target.Mode == "Emergency rebuild") { StartEmergencyRebuild(actor, record); return; }
+        if (target.Mode == "Emergency undo") { StartEmergencyUndo(actor, record); return; }
         if (target.Mode == "Completed Hold") DispatchConfirmedCompletedHoldRecovery(actor, record, completed);
         else StartFullCompanionRecovery(actor, target.FoxId, owner, completed);
     }
@@ -162,6 +177,7 @@ public sealed partial class FeralKinshipCompanionSystem
             void Result(RecoveryResult result) {
                 if (reported) return;
                 reported = true;
+                LogRecoveryAttempt(target.FoxId, "batch-result-" + result.Kind, result.Reason);
                 if (result.Kind == "recovered") recovered++; else if (result.Kind == "failed") failed++; else skipped++;
                 // One honest result for each attempted animal, including failures.
                 try { SendAdminCompanionMessage(actor, target.FoxId + ": " + result.Kind + ": " + result.Reason); }

@@ -709,6 +709,11 @@ internal sealed partial class FoxPackRepository
             && recordsById.Remove(foxId);
     }
 
+    internal void SetForceReconstructedIdentity(string foxId, bool deleted)
+    {
+        if (deleted) permanentlyDeletedFoxIds.Add(foxId); else permanentlyDeletedFoxIds.Remove(foxId);
+    }
+
     public bool IsPermanentlyDeleted(string foxId)
     {
         return !string.IsNullOrWhiteSpace(foxId)

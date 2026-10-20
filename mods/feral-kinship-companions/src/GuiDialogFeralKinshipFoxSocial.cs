@@ -658,7 +658,8 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
         DrawText(ctx, $"Personality: {Trim(current.Personality, 30)}", 30, 180, TextSize, TextWhite);
         DrawText(ctx, $"Mood: {Trim(current.Mood, 30)}", 30, 204, TextSize, TextMuted);
         string gender=current.GenderId is "male" or "female" ? Lang.Get("feralkinshipcompanions:gender-"+current.GenderId) : Lang.Get("feralkinshipcompanions:child-parent-unknown");
-        DrawText(ctx,Lang.Get("feralkinshipcompanions:gender-label",gender),width-250,180,TextSize,TextWhite);
+        DrawText(ctx,Lang.Get("feralkinshipcompanions:gender-label",gender),width-450,180,TextSize,TextWhite);
+        DrawWrapped(ctx,CompanionSpeciesPresentation.SocialLabel(current),width-450,204,420,17,TextWhite,1);
         DrawWrapped(ctx, current.PersonalitySummary, 30, 234, width - 60, 18, TextWhite, 2);
         DrawWrapped(ctx, current.CurrentThought, 30, 270, width - 60, 18, TextMuted, 2);
 

@@ -15,6 +15,8 @@ public partial class FeralKinshipCompanionSystem
     private readonly HashSet<Entity> retainedLoadedHealthApplied=new(ReferenceEqualityComparer.Instance);
     private bool ObserveRetainedAdmission(Entity e)
     {
+        if (EmergencyBodyAdmission(e, out bool blocked)) return !blocked;
+        if(QuarantineRetiredRecoveryOriginal(e))return false;
         string id=GetDomesticationStatus(e)?.GetString(FoxIdKey,string.Empty) ?? string.Empty;
         Entity[] competing=retainedAdmissionBodies.Values.Concat(loadedFoxes.Values).Where(other=>!ReferenceEquals(e,other)
             && (other.EntityId==e.EntityId || !string.IsNullOrEmpty(id)&&GetDomesticationStatus(other)?.GetString(FoxIdKey)==id)).Distinct().ToArray();
@@ -34,17 +36,20 @@ public partial class FeralKinshipCompanionSystem
                     && GetDomesticationStatus(e)?.GetBool(ExpeditionAwayKey)!=true)) {
                 RetainedNativeSuspension.DeferAdmission(e);return false; // Wait for native grow-source unload, never replace it here.
             }
-            foreach(Entity other in competing)RetainedNativeSuspension.Hold(other,"Competing native object/companion identity; retain both inventories");
+            foreach(Entity other in competing.Where(other => !IsEmergencySelected(other)))RetainedNativeSuspension.Hold(other,"Competing native object/companion identity; retain both inventories");
             RetainedNativeSuspension.Hold(e,"Competing native object/companion identity; retain both inventories");return false;
         }
-        retainedAdmissionBodies[e.EntityId]=e;WakeSaveMigration(e);return true;
+        retainedAdmissionBodies[e.EntityId]=e;WakeSaveMigration(e);WakeNativeLink(e);return true;
     }
     private bool RetainedCanonicalAdmission(Entity e)
     {
+        if (EmergencyBodyAdmission(e, out bool blocked)) return !blocked;
+        if(GuardEmergencyEntity(e))return false;
+        if(QuarantineRetiredRecoveryOriginal(e))return false;
         if(serverApi==null){RetainedNativeSuspension.DeferAdmission(e);return false;}
         Entity? canonical=serverApi.World.GetEntityById(e.EntityId);
         if(canonical!=null&&!ReferenceEquals(canonical,e)) {
-            RetainedNativeSuspension.Hold(canonical,"World index identifies a competing native object");
+            if (!IsEmergencySelected(canonical)) RetainedNativeSuspension.Hold(canonical,"World index identifies a competing native object");
             RetainedNativeSuspension.Hold(e,"World index identifies a competing native object");return false;
         }
         var chunk=serverApi.WorldManager?.GetChunk(e.InChunkIndex3d);

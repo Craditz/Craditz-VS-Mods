@@ -32,6 +32,10 @@ public sealed partial class FeralKinshipCompanionSystem
     private string FullRecoveryBlockerUsingAuthority(FoxPackRecordV2 r, Entity? original, ExpeditionPresentationAuthority? authority)
     {
         if (authority == null) return "Unknown server authority: " + presentationAuthorityReason;
+        if (NativeLinkPending(r)) return "Native-ID relink/Undo is pending; inspect /companionlink status id:" + r.FoxId;
+        if (EmergencyPending(LastEmergency(r))) return "Emergency rebuild/Undo journal is pending; normal Rebuild cannot overwrite it";
+        if (r.MissingRecoveryState == "Prepared") return "Interrupted missing-body publication; native and ledger checkpoints retained. Inspect /companiondiag before another rebuild";
+        if (r.DeveloperRecoveryNativeEscrow.Length > 0) return "Unresolved native reconstruction escrow; inspect /companiondiag before another rebuild";
         if (authority.Conflicts.Contains(r.FoxId) || authority.NativeConflicts.Contains(r.EntityId)) return "Duplicate identity; inspect /companiondiag before retrying";
         if (authority.Assigned.Contains(r.FoxId)) return "Active expedition; finish or cancel it first";
         if (packRepository!.IsPermanentlyDeleted(r.FoxId)) return "Permanently deleted record";
@@ -44,7 +48,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (!ReferenceEquals(original.Api, serverApi) || !ReferenceEquals(original.World, serverApi!.World)
             || original.Teleporting || original.State == EnumEntityState.Despawned || original is not EntityAgent agent || agent.MountedOn != null) return "Original native body is not ready/unmounted";
         if (r.EntityId != original.EntityId || GetCompanionOwnerUid(original) != r.OwnerUid || GetDomesticationStatus(original)?.GetString(FoxIdKey) != r.FoxId) return "Original native identity/owner differs from the saved record";
-        if (!NativeRecoveryPublished(original)) return "Original is not canonical in both native world and chunk indexes";
+        if (!NativeRecoveryPublished(original)) return "Original native publication is incomplete: " + RecoveryPublicationReason(original);
         var marker = RetainedNativeSuspension.Marker(original);
         if (marker != null || !string.IsNullOrEmpty(r.RetainedTrip))
         {
@@ -70,8 +74,16 @@ public sealed partial class FeralKinshipCompanionSystem
         if (serverApi == null || !ReferenceEquals(serverApi.World.GetEntityById(e.EntityId), e)) return false;
         var chunk = serverApi.WorldManager.GetChunk(e.InChunkIndex3d);
         if (chunk == null || chunk.Disposed) return false;
-        var matches = chunk.Entities.Take(chunk.EntitiesCount).Where(x => x.EntityId == e.EntityId).ToArray();
+        var matches = chunk.Entities.Take(chunk.EntitiesCount).Where(x => x != null && x.EntityId == e.EntityId).ToArray();
         return matches.Length == 1 && ReferenceEquals(matches[0], e);
+    }
+
+    private string RecoveryPublicationReason(Entity e)
+    {
+        var indexed = serverApi?.World.GetEntityById(e.EntityId);
+        var chunk = serverApi?.WorldManager.GetChunk(e.InChunkIndex3d);
+        var matches = chunk?.Entities.Take(chunk.EntitiesCount).Where(x => x != null && x.EntityId == e.EntityId).ToArray() ?? Array.Empty<Entity>();
+        return $"world={(indexed == null ? "absent" : ReferenceEquals(indexed, e) ? "same" : "conflicting")}, chunk={(chunk == null ? "absent" : chunk.Disposed ? "disposed" : "loaded")}, native-id-count={matches.Length}, exact-body={matches.Any(x => ReferenceEquals(x, e))}, state={e.State}, teleporting={e.Teleporting}";
     }
 
     private byte[] SnapshotRecoveryNative(Entity e)
@@ -105,9 +117,13 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void StartFullCompanionRecovery(IServerPlayer actor, string foxId, string ownerUid, Action<RecoveryResult>? completed = null)
     {
+        LogRecoveryAttempt(foxId, "request", "Explicit rebuild; automatic NotNeeded classification is not consulted");
         try
         {
             if (TryLoadFullRecoveryOriginal(actor, foxId, ownerUid, completed)) return;
+            if (packRepository?.TryGetRecord(foxId, out var missing) == true && missing != null && missing.OwnerUid == ownerUid
+                && FindArchiveOriginal(missing, out string absence) == null && IsAbsentRecoveryOriginalReason(absence))
+            { StartMissingCompanionRecovery(actor, missing, completed); return; }
             StartFullCompanionRecoveryCore(actor, foxId, ownerUid, completed);
         }
         catch (Exception error)
@@ -130,26 +146,42 @@ public sealed partial class FeralKinshipCompanionSystem
             || FindArchiveOriginal(r, out _) != null) return false;
         if (!CanLookUpFullRecoveryOriginal(r)) return false;
         pendingRecoveryChecks.Add(foxId);
-        int checks = 0; bool finished = false;
+        string lookupFingerprint = RecoveryUiFingerprint(r, null);
+        string lookupForceEpoch = ForceEpoch(r);
+        int checks = 0, loadAcknowledged = 0; bool finished = false;
         void Finish(string reason)
         {
             if (finished) return; finished = true; pendingRecoveryChecks.Remove(foxId);
+            LogRecoveryAttempt(foxId, "lookup-result", reason);
             if (completed != null) completed(new RecoveryResult("skipped", GetFoxRecordLabel(r) + ": " + reason));
             else SendCompanionRecoveryState(actor, GetFoxRecordLabel(r) + ": " + reason);
         }
         void Check()
         {
             if (finished || serverApi == null || !pendingRecoveryChecks.Contains(foxId)) return;
+            if (ForceSuperseded(r, lookupForceEpoch)) { Finish("Source lookup superseded by confirmed force reconstruction"); return; }
             try
             {
-                if (!DeveloperMayControlOwner(actor, ownerUid)) { Finish("Selected-player authority expired; select the cart again"); return; }
-                Entity? original = FindArchiveOriginal(r, out _);
+                if (actor.ConnectionState != EnumClientState.Playing || !CanUseDeveloperTools(actor) || !DeveloperMayControlOwner(actor, ownerUid)) { Finish("Selected-player authority expired or requesting session disconnected; select the cart again"); return; }
+                if (!packRepository!.TryGetRecord(foxId, out var current) || !ReferenceEquals(current, r) || r.OwnerUid != ownerUid
+                    || RecoveryUiFingerprint(r, null) != lookupFingerprint) { Finish("Identity, journey receipt or cargo changed during source lookup; request a new preview"); return; }
+                Entity? original = FindArchiveOriginal(r, out string lookupReason);
+                if (original == null && !IsAbsentRecoveryOriginalReason(lookupReason)) { Finish(lookupReason); return; }
                 if (original != null)
                 {
                     finished = true; pendingRecoveryChecks.Remove(foxId);
                     StartFullCompanionRecovery(actor, foxId, ownerUid, completed); return;
                 }
-                if (++checks >= 20) { Finish("Saved location checked, but original native body/inventory remains unavailable. No replacement or cargo was fabricated"); return; }
+                if (++checks >= 20) {
+                    finished = true; pendingRecoveryChecks.Remove(foxId);
+                    LogRecoveryAttempt(foxId, "source-lookup", "Absent after 20 single-chain polls; load-ack=" + System.Threading.Volatile.Read(ref loadAcknowledged));
+                    if (r.LastKnownDimension == 0 && System.Threading.Volatile.Read(ref loadAcknowledged) == 0) {
+                        if (completed != null) completed(new("skipped", "Source-column load has not acknowledged; absence is unknown. No reconstruction attempted"));
+                        else SendCompanionRecoveryState(actor, "Source-column load has not acknowledged; absence is unknown. No reconstruction attempted");
+                        return;
+                    }
+                    StartMissingCompanionRecovery(actor, r, completed); return;
+                }
                 serverApi.Event.RegisterCallback(_ => Check(), 500);
             }
             catch (Exception error) { Finish("Native original lookup failed; no replacement spawned. " + error.Message); }
@@ -159,7 +191,8 @@ public sealed partial class FeralKinshipCompanionSystem
         {
             if (completed == null) SendCompanionRecoveryState(actor, GetFoxRecordLabel(r) + ": recovery pending saved-location lookup");
             if (r.LastKnownDimension == 0)
-                serverApi.WorldManager.LoadChunkColumnPriority(x, z, new ChunkLoadOptions { KeepLoaded = false, OnLoaded = Check });
+                serverApi.WorldManager.LoadChunkColumnPriority(x, z, new ChunkLoadOptions { KeepLoaded = false,
+                    OnLoaded = () => System.Threading.Interlocked.Exchange(ref loadAcknowledged, 1) });
             else { serverApi.WorldManager.LoadChunkColumnForDimension(x, z, r.LastKnownDimension); serverApi.Event.RegisterCallback(_ => Check(), 500); }
             // Also bound a provider that never invokes OnLoaded. OnLoaded still
             // inspects immediately while the native column is definitely resident.
@@ -173,9 +206,9 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         return CanLookUpFullRecoveryOriginalUsingAuthority(r, CaptureExpeditionPresentationAuthority());
     }
-    private bool CanLookUpFullRecoveryOriginalUsingAuthority(FoxPackRecordV2 r, ExpeditionPresentationAuthority? authority)
+    private bool CanLookUpFullRecoveryOriginalUsingAuthority(FoxPackRecordV2 r, ExpeditionPresentationAuthority? authority, bool requireLocation = true)
     {
-        return authority != null && r.HasLastKnownPosition && double.IsFinite(r.LastKnownX) && double.IsFinite(r.LastKnownZ)
+        return authority != null && (!requireLocation || r.HasLastKnownPosition) && double.IsFinite(r.LastKnownX) && double.IsFinite(r.LastKnownZ)
             && r.LastKnownX >= int.MinValue && r.LastKnownX <= int.MaxValue && r.LastKnownZ >= int.MinValue && r.LastKnownZ <= int.MaxValue
             && !authority.Assigned.Contains(r.FoxId) && !authority.Conflicts.Contains(r.FoxId) && !authority.NativeConflicts.Contains(r.EntityId)
             && !packRepository!.IsPermanentlyDeleted(r.FoxId) && (string.IsNullOrEmpty(r.RetainedTrip) || r.RetainedPhase == "Complete")
@@ -189,6 +222,7 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         void Report(string kind, string reason)
         {
+            LogRecoveryAttempt(foxId, "result-" + kind, reason);
             try
             {
                 completed?.Invoke(new RecoveryResult(kind, reason));
@@ -216,6 +250,7 @@ public sealed partial class FeralKinshipCompanionSystem
         { pendingFullRebuilds.Remove(foxId); Report("skipped", "Original has invalid native health; no automatic healing"); return; }
         Entity? replacement = null;
         byte[] snapshot = Array.Empty<byte>();
+        string forceEpoch = ForceEpoch(r);
         bool removed = false;
         bool removalAttempted = false, spawnAttempted = false;
         bool finishing = false;
@@ -229,6 +264,7 @@ public sealed partial class FeralKinshipCompanionSystem
         }
         void Fail(Exception error)
         {
+            if (ForceSuperseded(r, forceEpoch)) { if (replacement != null) GuardForceEmergency(replacement); Finish("skipped", "Old rebuild superseded by confirmed force reconstruction; no ledger rollback or inventory replay"); return; }
             try
             {
                 if (removalAttempted && !removed)
@@ -277,6 +313,7 @@ public sealed partial class FeralKinshipCompanionSystem
         void CheckPublication()
         {
             if (finishing || serverApi == null || replacement == null) return;
+            if (ForceSuperseded(r, forceEpoch)) { GuardForceEmergency(replacement); Finish("skipped", "Old publication superseded by confirmed force reconstruction; original escrow retained"); return; }
             try
             {
                 if(completedHoldRecovery) {

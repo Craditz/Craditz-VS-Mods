@@ -81,3 +81,7 @@ The owner reports both affected users confirmed the expedition-start fix. Stable
 ## Companions 0.5.84
 
 Prior actual local stable: 0.5.83; previous public source: 0.5.80. Owner explicitly requested stable despite the disclosed remaining tests. See [release changes, backup/rollback and exact verification scope](RELEASE_2026-10-19_COMPANIONS.md). Stable installer DLL/PDB and all 323 assets remain identical to recovery-flaps-preview.2. Public source compilation is a separate artifact.
+
+## Companions 0.5.91
+
+Owner-authorized user Restore update; prior local stable 0.5.90, previous public source 0.5.84. The exact tested DLL and 350 assets are retained. 103 controlled groups passed; affected-server gameplay remains unverified. See [release details and rollback limits](RELEASE_2026-10-20_COMPANIONS.md).
