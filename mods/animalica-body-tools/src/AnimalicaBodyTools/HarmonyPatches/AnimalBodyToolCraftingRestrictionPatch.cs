@@ -22,6 +22,13 @@ internal static class AnimalBodyToolCraftingRestrictionPatch
             return;
         }
 
+        // Other class/trait owners retain their gate in every mode.
+        CollectibleObject? output = __instance.Output?.ResolvedItemStack?.Collectible;
+        if (output == null || !IsAnimalBodyTool(output))
+        {
+            return;
+        }
+
         string? requiresTrait = __instance.RequiresTrait;
         if (string.IsNullOrWhiteSpace(requiresTrait))
         {

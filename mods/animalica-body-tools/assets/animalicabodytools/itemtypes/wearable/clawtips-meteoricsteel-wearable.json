@@ -28,7 +28,7 @@
     "base": "item/tool/equipped-clawtips-meteoricsteel"
   },
   "texture": {
-    "base": "item/tool/foxclawtips-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

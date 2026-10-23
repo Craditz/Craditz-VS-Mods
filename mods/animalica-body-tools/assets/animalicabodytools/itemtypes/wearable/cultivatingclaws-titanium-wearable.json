@@ -39,7 +39,7 @@
     "base": "item/tool/equipped-cultivatingclaws-titanium"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-titanium"
+    "base": "game:block/metal/ingot/titanium"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

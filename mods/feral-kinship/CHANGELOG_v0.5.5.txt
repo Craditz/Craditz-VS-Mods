@@ -1,0 +1,7 @@
+Feral Kinship 0.5.5 - changes from public ModDB 0.5.4
+
+- Fixed 23 adult/baby client-behavior patch operations so authored tameable behavior reaches clients through the normal server entity-type data. This enables the client side of the companion hand-feeding/taming priority fix.
+- Corrected README requirements and installation wording: PetAI 5.1.1 minimum; matching server/client installation; PlayerModelLib is optional; a valid synced explicit kinship override can work without PlayerModelLib.
+
+The FeralKinship.dll executable is unchanged from 0.5.4. The companion-side hand-feeding/input-priority correction is a separate pending update and is not included in this Kinship release. No chicken egg, breeding-policy, pathfinding or model-stat changes are included.
+Validation: source compiles; normalized fields/signatures/IL match the unchanged shipping DLL; scoped feeding22 gameplay/cold-persistence acceptance and final client-lifecycle/feeding checks passed. No every-species or multiplayer gameplay claim.

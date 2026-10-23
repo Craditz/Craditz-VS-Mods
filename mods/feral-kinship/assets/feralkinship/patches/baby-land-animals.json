@@ -36,7 +36,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -168,7 +168,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -205,7 +205,7 @@
         { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -248,7 +248,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -285,7 +285,7 @@
         { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -324,7 +324,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -363,7 +363,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -402,7 +402,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -441,7 +441,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -484,7 +484,7 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   },
   {
     "op": "add",
@@ -523,6 +523,6 @@
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
     },
-    "side": "Client"
+    "side": "Server"
   }
 ]

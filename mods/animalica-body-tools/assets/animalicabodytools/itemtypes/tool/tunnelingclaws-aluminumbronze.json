@@ -11,7 +11,7 @@
     "base": "item/tool/bodytools-tunnelingclaws-aluminumbronze"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-aluminumbronze"
+    "base": "game:block/metal/ingot/aluminumbronze"
   },
   "attributes": {
     "animalicaBodyTool": true,

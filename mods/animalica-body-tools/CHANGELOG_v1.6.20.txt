@@ -1,0 +1,9 @@
+Animalica Body Tools 1.6.20 - changes from public ModDB 1.6.19
+
+- Fixed optional aluminum, aluminum-bronze, titanium and meteoric-steel tool-shape texture domains.
+- Fixed missing default item-texture references for the affected optional-metal equipment.
+- Light and Disabled modes now relax only intended body-tool recipe requirements. Unrelated class-exclusive recipes keep their original requirements.
+- Removed old private QA text files from the new package; existing contributor credits are retained.
+
+Tool stats, recipes, durability, dismantling and sound behavior are otherwise unchanged. Dismantling, durability and audio fixes already shipped in 1.6.19 and are not new here.
+Validation: scoped live provider/crafting/equipment/restart acceptance on the private composition; final production rebuild, normalized IL comparison and controlled suites passed. This is not blanket multiplayer, all-material live visual or audible-sound qualification.

@@ -28,7 +28,7 @@
     "base": "item/tool/equipped-clawtips-aluminumbronze"
   },
   "texture": {
-    "base": "item/tool/foxclawtips-aluminumbronze"
+    "base": "game:block/metal/ingot/aluminumbronze"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

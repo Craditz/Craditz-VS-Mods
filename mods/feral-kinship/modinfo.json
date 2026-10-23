@@ -2,7 +2,7 @@
   "type": "code",
   "name": "Feral Kinship",
   "modid": "feralkinship",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Makes matching animals recognize you as kin and lets you tame supported animals, with bonuses for matching kin.",
   "authors": [
     "Craditz"

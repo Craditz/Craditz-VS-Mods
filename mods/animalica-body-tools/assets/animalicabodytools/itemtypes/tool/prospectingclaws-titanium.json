@@ -36,7 +36,7 @@
     "Ore": 4.95
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-titanium"
+    "base": "game:block/metal/ingot/titanium"
   },
   "guiTransform": {
     "translation": {

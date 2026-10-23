@@ -31,7 +31,7 @@
     "base": "item/tool/bodytools-fangcaps-aluminumbronze"
   },
   "texture": {
-    "base": "item/tool/foxfangcaps-aluminumbronze"
+    "base": "game:block/metal/ingot/aluminumbronze"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

@@ -1,0 +1,34 @@
+{
+  "ingredient": {
+    "type": "item",
+    "code": "ingot-*",
+    "name": "metal",
+    "allowedVariants": [
+      "copper",
+      "tinbronze",
+      "bismuthbronze",
+      "blackbronze",
+      "iron",
+      "meteoriciron",
+      "steel"
+    ]
+  },
+  "pattern": [
+    [
+      "_______________",
+      "_______________",
+      "____#######____",
+      "__###########__",
+      "_############__",
+      "####_____#_#___",
+      "###____________",
+      "#______________"
+    ]
+  ],
+  "name": "Falx",
+  "code": "bladeheadfalx-{metal}",
+  "output": {
+    "type": "item",
+    "code": "bladehead-falx-{metal}"
+  }
+}

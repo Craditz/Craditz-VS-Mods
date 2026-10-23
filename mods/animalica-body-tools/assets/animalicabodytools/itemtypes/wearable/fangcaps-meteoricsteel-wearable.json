@@ -31,7 +31,7 @@
     "base": "item/tool/bodytools-fangcaps-meteoricsteel"
   },
   "texture": {
-    "base": "item/tool/foxfangcaps-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

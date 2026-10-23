@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxclawtips-aluminumbronze"
+    "base": "game:block/metal/ingot/aluminumbronze"
   },
   "attackPower": 3.2,
   "attackRange": 1.1,

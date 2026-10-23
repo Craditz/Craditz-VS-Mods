@@ -39,7 +39,7 @@
     "base": "item/tool/equipped-cultivatingclaws-meteoricsteel"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

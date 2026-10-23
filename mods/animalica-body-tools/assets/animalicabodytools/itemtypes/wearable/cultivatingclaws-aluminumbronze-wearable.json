@@ -39,7 +39,7 @@
     "base": "item/tool/equipped-cultivatingclaws-aluminumbronze"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-aluminumbronze"
+    "base": "game:block/metal/ingot/aluminumbronze"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

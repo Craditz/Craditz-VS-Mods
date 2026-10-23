@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attackPower": 3.5,
   "attackRange": 1.1,

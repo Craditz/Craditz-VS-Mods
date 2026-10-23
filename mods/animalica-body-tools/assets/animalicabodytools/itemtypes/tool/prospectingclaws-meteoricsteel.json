@@ -36,7 +36,7 @@
     "Ore": 4.95
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "guiTransform": {
     "translation": {

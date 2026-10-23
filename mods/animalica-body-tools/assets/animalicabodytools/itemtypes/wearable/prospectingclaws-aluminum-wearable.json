@@ -61,7 +61,7 @@
     "Ore": 4.95
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-aluminum"
+    "base": "game:block/metal/ingot/aluminum"
   },
   "guiTransform": {
     "translation": {

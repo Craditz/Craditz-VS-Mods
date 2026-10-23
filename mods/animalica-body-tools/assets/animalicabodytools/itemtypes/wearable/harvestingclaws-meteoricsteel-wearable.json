@@ -78,7 +78,7 @@
   "heldRightReadyAnimation": "scytheReady",
   "heldTpUseAnimation": "interactStaticLong",
   "texture": {
-    "base": "item/tool/foxrendingclaws-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "guiTransform": {
     "translation": {

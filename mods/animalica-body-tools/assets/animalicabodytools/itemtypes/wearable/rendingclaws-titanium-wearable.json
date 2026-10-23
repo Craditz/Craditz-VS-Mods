@@ -28,7 +28,7 @@
     "base": "item/tool/equipped-rendingclaws-titanium"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-titanium"
+    "base": "game:block/metal/ingot/titanium"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

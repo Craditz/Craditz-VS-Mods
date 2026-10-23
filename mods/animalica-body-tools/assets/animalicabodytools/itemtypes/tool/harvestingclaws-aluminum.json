@@ -53,7 +53,7 @@
   "heldRightReadyAnimation": "scytheReady",
   "heldTpUseAnimation": "interactStaticLong",
   "texture": {
-    "base": "item/tool/foxrendingclaws-aluminum"
+    "base": "game:block/metal/ingot/aluminum"
   },
   "guiTransform": {
     "translation": {

@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-aluminum"
+    "base": "game:block/metal/ingot/aluminum"
   },
   "attackPower": 1.8,
   "attackRange": 1.1,

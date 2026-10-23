@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxclawtips-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attackPower": 2.25,
   "attackRange": 1.1,

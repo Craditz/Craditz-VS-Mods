@@ -28,7 +28,7 @@
     "base": "item/tool/equipped-clawtips-titanium"
   },
   "texture": {
-    "base": "item/tool/foxclawtips-titanium"
+    "base": "game:block/metal/ingot/titanium"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

@@ -1,0 +1,6 @@
+Animalica Compatibility Pack 1 0.6.9 - changes from public ModDB 0.6.8
+
+- Corrected the README and prepared ModDB description: playable Equus models are not included in this version.
+- Historical Equus credits, legacy remaps, localization and all gameplay assets remain unchanged.
+
+This is a documentation update. It adds no new models, Griffon changes, integration code or dependencies. Static exact-diff/factual review passed; no new gameplay or clipboard/browser-rendering claim is made.

@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxclawtips-titanium"
+    "base": "game:block/metal/ingot/titanium"
   },
   "attackPower": 5.5,
   "attackRange": 1.1,

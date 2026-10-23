@@ -11,7 +11,7 @@
     "base": "item/tool/bodytools-tunnelingclaws-meteoricsteel"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attributes": {
     "animalicaBodyTool": true,

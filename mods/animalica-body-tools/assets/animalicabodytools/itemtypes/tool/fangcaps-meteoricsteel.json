@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxfangcaps-meteoricsteel"
+    "base": "game:block/metal/ingot/meteoricsteel"
   },
   "attackPower": 5.5,
   "attackRange": 1.15,

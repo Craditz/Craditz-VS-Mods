@@ -28,7 +28,7 @@
     "base": "item/tool/equipped-rendingclaws-aluminum"
   },
   "texture": {
-    "base": "item/tool/foxrendingclaws-aluminum"
+    "base": "game:block/metal/ingot/aluminum"
   },
   "attributes": {
     "animalicaWearableBodyTool": true,

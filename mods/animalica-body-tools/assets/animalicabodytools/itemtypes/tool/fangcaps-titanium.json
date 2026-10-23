@@ -16,7 +16,7 @@
     "animalicaRequiredStatMin": 10.0
   },
   "texture": {
-    "base": "item/tool/foxfangcaps-titanium"
+    "base": "game:block/metal/ingot/titanium"
   },
   "attackPower": 5.25,
   "attackRange": 1.15,
