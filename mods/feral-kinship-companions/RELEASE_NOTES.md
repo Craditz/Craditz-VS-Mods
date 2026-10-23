@@ -1,34 +1,25 @@
-# Companions 0.5.91 - user Restore availability
+# Companions 0.5.92
 
-## Changes since local stable 0.5.90
+## Changes from public ModDB 0.5.91
 
-- User Restore finds the verified original at its saved location and brings that same body to safe loaded space near its owner in the same dimension. Native chunk membership transfers before the temporary remote source can unload.
-- Restore completion now waits for native world/chunk registration, the normal command lookup and usable presentation near the owner. Pending arrival, timeout, no safe space and other-dimension failures are reported honestly.
-- Cart feedback distinguishes an unloaded animal, an unavailable cart, unresolved owner/expedition authority and different dimensions. Stale cached native IDs or objects cannot masquerade as loaded companions.
-- Living originals retain their native ID, health, inventory and progression; no replacement or copied cargo is created. Existing owner authorization, duplicate/stale-ID refusals and Emergency/Undo/escrow safeguards remain.
+See CHANGELOG_v0.5.92.txt for the complete scoped changes: kibble trademark text, safe diagnostic formatting/help, Pack Ledger handbook discovery and interaction wording, legacy-storage retirement/compatibility, flap tooltip patch binding, hand-feeding priority and native startup compatibility qualification.
 
-The promoted 0.5.90 DLL reproduced success followed by remote source unload and cart failure in a controlled fixture. This supports the unload mechanism; it does not independently establish the complete affected-world cause from the supplied recording.
+The ledger writer, serialization and recovery model remain public schema 57. The private schema 58/59 recovery/rebuild work is excluded and is not credited as a released fix. Provisional health, camera, further lighting, egg-design, pathfinding/follow, model-stat and helper changes are also excluded.
 
-## Qualification and release decision
+## Qualification
 
-The owner explicitly requested release for server use after the private candidate. All **103 controlled groups passed**: 91 retained recovery regressions and 12 user-Restore groups. Coverage includes the non-admin pack request/confirmation route, delayed native teleport, source unload followed by a cart request after 60 simulated seconds, repeated Restore, disk fixture reload, changed owner, incomplete/throwing chunk registration, absent loader callback, no safe space, dimensions, genuine native-ID drift, conflicting IDs, duplicates and stale caches.
+Controlled verification passed the schema-57 regression and independent-fix suites, schema-boundary refusals, native contract checks, real native hook installation and dependency patch binding. Single-player qualification covered an actual public-0.5.91 world upgrade, companion identity/health/progression/native cargo, indexed storage contents and tool durability, expanded-slot edits across cold restart, modern Ledger rules, flap tooltips, diagnostics and Seraph/grazer feeding/refusal/air-eating controls. Separate Survival and Creative normal-break forks preserved cargo without warning-box drops or duplication. The exact sanitized runtime passed launch, feeding/refusal, diagnostic identity and save/quit checks, followed by an independent saved-state conservation audit.
 
-These use production handlers and real Vintage Story 1.22.7 assemblies with controlled world/chunk services. They are not rendered GUI testing or a full affected-world/provider/multiplayer run. **Affected-server gameplay, FotSA/PetAI behavior, visible client arrival and full engine ticking remain unverified.** No affected-server acceptance is claimed. The production build had zero warnings/errors. Private fixtures and reporter data remain local.
+Neutral source-path packaging was checked with an explicit list of eighteen caller-file literals; no unexpected method, field, constant, assembly-attribute or resource change was permitted. Source C# and all 352 assets were unchanged, and the DLL and portable PDB were byte-identical when built in two source directories. The only expected runtime-string difference is the optional diagnostic label described in README.md.
 
-Stable finalization preserves the tested 0.5.91-userrestore-preview.1 DLL and all 350 runtime assets byte-for-byte; only the installer manifest and release documentation are finalized. The DLL retains its preview informational version for traceability. A new build from source is a separate artifact and must not replace the retained tested installer bytes.
+These checks do not qualify broad multiplayer, every optional provider, every destruction path or audible sound behavior. Inherited audio/network warnings and initially stale green illumination are not claimed fixed.
 
-## Updating and rollback
+## Requirements and rollback
 
-Use matching Companions versions on server and clients, with one installed archive per mod ID. Manifest minimums remain game 1.22.0 and Feral Kinship 0.4.3; this candidate was built against game 1.22.7. Optional providers and their requirements remain external.
+Requires Vintage Story 1.22.7 and Feral Kinship 0.5.5 with its PetAI requirement. Keep matching server/client versions and one installed archive per mod ID. Optional providers remain external.
 
-Ledger schema **57** is unchanged from 0.5.90. Keep a complete pre-update world backup and its matching mods. Older schema readers cannot safely downgrade the world by swapping a DLL; per-animal Undo is not a whole-world rollback.
+Keep a complete closed pre-update world backup with matching mods. Legacy-container definitions/inventories change even though the global ledger remains 57; rollback requires the matching complete backup, not a DLL swap. Do not load private schema 58/59 saves or edit their headers to force a downgrade. No legacy removal date is introduced by this source update.
 
-No server installation, live-save/modpack mutation or ModDB upload was performed. The stable ZIP is prepared for the owner to upload. Trademark changes remain deferred; there are no unrelated fixes.
+## Publication status
 
-## Public source synchronization
-
-The previous public source was 0.5.84; the actual prior local stable was 0.5.90. This publication catches up the already locally released 0.5.86-0.5.90 recovery lifecycle implementation as well as the 0.5.91 user Restore change. It does not claim that those intermediate versions were previously synchronized publicly.
-
-That catch-up includes guarded native-ID relinking (automatic relinking remains off by default), confirmed admin Emergency force reconstruction, persistent per-animal Undo and separately retained originals/cargo, engine-assigned native-ID binding, one selected active generation across reload, legacy-history reconciliation, species formatting and exact total 2x2/3x3 flaps. It introduces no new recovery bypass beyond the approved implementation.
-
-Only matching production source, assets, build metadata and sanitized release documentation are published. Private tests, logs, reporter IDs/recordings, local paths, binaries, archives, credentials and unreleased projects remain excluded. Existing licenses, sound credits and upstream notices are retained.
+This is the accepted source/assets/documentation synchronization to GitHub. ModDB upload and verification remain separate and are not claimed here. Private transfer maps, test fixtures, logs, evidence, saves, settings, personal build paths and third-party support material are excluded from this publication.

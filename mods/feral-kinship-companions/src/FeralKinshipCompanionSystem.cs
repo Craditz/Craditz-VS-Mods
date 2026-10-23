@@ -796,9 +796,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         "game:stackrandomizer-lore-jonas"
     };
 
+    private bool startupCompatibilityRejected;
+    private bool startupCompatibilityChecked;
     public override bool ShouldLoad(EnumAppSide forSide)
     {
-        return true;
+        return !startupCompatibilityRejected;
     }
 
     // Tamables:FOTSA creates its tamed entity definitions during
@@ -809,6 +811,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void StartPre(ICoreAPI api)
     {
+        startupCompatibilityRejected = true;
+        if (!NativeStartupCompatibility.Check(api)) return;
+        startupCompatibilityRejected = false;
+        startupCompatibilityChecked = true;
         // Item JSON is resolved before Start(). Register this before asset
         // loading so the optional PetAI whistle patch can instantiate it.
         api.RegisterItemClass(
@@ -830,6 +836,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void Start(ICoreAPI api)
     {
+        if (!startupCompatibilityChecked || startupCompatibilityRejected)
+        {
+            api.Logger.Error("[Companions Startup] Skipped Start: native preflight did not succeed.");
+            return;
+        }
         api.RegisterEntityBehaviorClass(SocialBehaviorCode, typeof(EntityBehaviorFeralKinshipFoxSocial));
         api.RegisterEntityBehaviorClass(DamageGuardBehaviorCode, typeof(EntityBehaviorFeralKinshipDamageGuard));
         api.RegisterEntity("FeralKinshipTrainingDummy", typeof(EntityFeralKinshipTrainingDummy));
@@ -896,6 +907,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void AssetsFinalize(ICoreAPI api)
     {
+        if (!startupCompatibilityChecked || startupCompatibilityRejected)
+        {
+            api.Logger.Error("[Companions Startup] Skipped AssetsFinalize: native preflight did not succeed.");
+            return;
+        }
         api.EntityTagRegistry.TryCreateTagSetAndLogIssues(out animalTag, "animal");
         // Client entity packets omit Server behavior definitions. In integrated
         // single-player both sides share these static catalogs, so rebuilding
@@ -989,6 +1005,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void StartServerSide(ICoreServerAPI api)
     {
+        if (!startupCompatibilityChecked || startupCompatibilityRejected)
+        {
+            api.Logger.Error("[Companions Startup] Skipped StartServerSide: native preflight did not succeed.");
+            return;
+        }
         serverApi = api;
         LoadBrambleDialogue(api);
         LoadCompanionFoodConfig();
@@ -1213,11 +1234,17 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void StartClientSide(ICoreClientAPI api)
     {
+        if (!startupCompatibilityChecked || startupCompatibilityRejected)
+        {
+            api.Logger.Error("[Companions Startup] Skipped StartClientSide: native preflight did not succeed.");
+            return;
+        }
         clientApi = api;
         nativeAmbientSoundHarmony = new Harmony("feralkinshipcompanions.native-ambient-sounds");
         try
         {
             FeralKinshipNativeAmbientSoundPatch.Install(nativeAmbientSoundHarmony);
+            FeralKinshipFoodInteractionPatch.Install(nativeAmbientSoundHarmony);
         }
         catch (Exception exception)
         {
@@ -1268,6 +1295,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     public override void Dispose()
     {
+        // A rejected instance registered nothing and must not tear down another side.
+        if (!startupCompatibilityChecked || startupCompatibilityRejected) return;
         nativeAmbientSoundHarmony?.UnpatchAll("feralkinshipcompanions.native-ambient-sounds");
         nativeAmbientSoundHarmony = null;
         ResetRetainedOriginalLoading();
@@ -20161,7 +20190,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 packRepository.RegisterAmenity(byPlayer.PlayerUID, placedPosition, "storage");
                 packRepository.Save();
                 byPlayer.SendMessage(GlobalConstants.GeneralChatGroup,
-                    "Pack Collection Box placed. Interested companions may carry nearby dropped items here.", EnumChatType.Notification);
+                    Lang.Get("feralkinshipcompanions:legacy-warning-placed"), EnumChatType.Notification);
             }
         }
 

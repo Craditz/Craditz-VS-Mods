@@ -489,6 +489,7 @@ internal static partial class RetainedNativeSuspension
         ["TamablesFotsa"]="1eaba584a81046e957b49036858b59ccdaf9bfe53c4069af8d887139e282e4ee" };
     private static readonly Dictionary<Assembly,bool> verified=new();
     private static bool Verified(Assembly a,string hash) {
+        if(a.GetName().Name=="VintagestoryLib")return NativeChunkCompatibility.TryQualify(a,out _);
         lock(verified) {
             if(verified.TryGetValue(a,out bool result))return result;
             try { result=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(a.Location))).Equals(hash,StringComparison.OrdinalIgnoreCase); }
@@ -508,6 +509,7 @@ internal static partial class RetainedNativeSuspension
     }
     internal static IReadOnlyList<MethodBase> Install(Harmony owner)
     {
+        NativeChunkCompatibility.Require(typeof(Vintagestory.Common.WorldChunk).Assembly);
         var targets=new HashSet<MethodBase>();
         var targetPredicates=new HashSet<MethodBase>();
         void Add(Type t,string name) { MethodInfo? m=AccessTools.DeclaredMethod(t,name); if(m!=null&&!m.IsAbstract&&!m.ContainsGenericParameters)targets.Add(m); }
@@ -562,8 +564,7 @@ internal static partial class RetainedNativeSuspension
         // Entity.ToBytes. Actor/physics/return work owns the body gate before
         // reading a chunk. Never wait for a body while retaining that chunk.
         Assembly nativeChunks = typeof(Vintagestory.Common.WorldChunk).Assembly;
-        if (!Verified(nativeChunks, hashes["VintagestoryLib"]))
-            throw new InvalidOperationException("Native chunk serialization is not qualified");
+        NativeChunkCompatibility.Require(nativeChunks);
         Type serverChunk = nativeChunks.GetType("Vintagestory.Server.ServerChunk",true)!;
         MethodInfo chunkBytes = AccessTools.DeclaredMethod(serverChunk,"ToBytes",new[]{typeof(FastMemoryStream)})
             ?? throw new MissingMethodException("Pinned native chunk serializer");

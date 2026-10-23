@@ -1,73 +1,128 @@
 {
-  code: "packstorage-wicker",
-  class: "FeralKinshipPackStorageWicker",
-  entityclass: "FeralKinshipPackStorageWicker",
-  attributes: {
-    inventoryClassName: "packstorage-wicker",
-    defaultType: "storage",
-    types: ["storage", "normal-generic"],
-    quantitySlots: { "normal-generic": 8, storage: 8 },
-    quantityColumns: { "normal-generic": 4, storage: 4 },
-    dialogTitleLangCode: {
-      "normal-generic": "feralkinshipcompanions:packstoragewickercontents",
-      storage: "feralkinshipcompanions:packstoragewickercontents"
+  "code": "packstorage-wicker",
+  "class": "FeralKinshipPackStorageWicker",
+  "entityclass": "FeralKinshipPackStorageWicker",
+  "attributes": {
+    "inventoryClassName": "packstorage-wicker",
+    "defaultType": "storage",
+    "types": [
+      "storage",
+      "normal-generic"
+    ],
+    "quantitySlots": {
+      "normal-generic": 36,
+      "storage": 36
     },
-    storageType: { "normal-generic": 189, storage: 189 },
-    retrieveOnly: { "normal-generic": false, storage: false },
-    drop: { "normal-generic": true, storage: true },
-    shape: {
-      "normal-generic": "game:block/reed/basket-reed",
-      storage: "game:block/reed/basket-reed"
+    "quantityColumns": {
+      "normal-generic": 9,
+      "storage": 9
     },
-    rotatatableInterval: {
+    "dialogTitleLangCode": {
+      "normal-generic": "feralkinshipcompanions:legacy-warning-title",
+      "storage": "feralkinshipcompanions:legacy-warning-title"
+    },
+    "storageType": {
+      "normal-generic": 189,
+      "storage": 189
+    },
+    "retrieveOnly": {
+      "normal-generic": false,
+      "storage": false
+    },
+    "drop": {
+      "normal-generic": false,
+      "storage": false
+    },
+    "shape": {
+      "normal-generic": "block/legacy-storage-warning",
+      "storage": "block/legacy-storage-warning"
+    },
+    "rotatatableInterval": {
       "normal-generic": "22.5degnot45deg",
-      storage: "22.5degnot45deg"
+      "storage": "22.5degnot45deg"
     },
-    handbook: { groupBy: ["packstorage-wicker-*"] }
+    "handbook": {
+      "exclude": true
+    }
   },
-  behaviors: [
-    { name: "Container" }
+  "behaviors": [
+    {
+      "name": "Container"
+    }
   ],
-  variantgroups: [ { code: "side", loadFromProperties: "abstract/horizontalorientation" } ],
-  creativeinventory: { general: ["*-north"], decorative: ["*-north"] },
-  shapeInventory: { base: "game:block/reed/basket-reed", rotateY: 270 },
-  shapeByType: {
-    "*-north": { base: "game:block/reed/basket-reed", rotateY: 270 },
-    "*-east": { base: "game:block/reed/basket-reed", rotateY: 180 },
-    "*-south": { base: "game:block/reed/basket-reed", rotateY: 90 },
-    "*-west": { base: "game:block/reed/basket-reed", rotateY: 0 }
+  "variantgroups": [
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ],
+  "creativeinventory": {},
+  "shapeInventory": {
+    "base": "block/legacy-storage-warning",
+    "rotateY": 270
   },
-  textures: {
-    "normal-generic-sidesWE": { base: "game:block/reed/basket/normal-westeast" },
-    "normal-generic-sidesSN": { base: "game:block/reed/basket/normal-northsouth" },
-    "normal-generic-lid": { base: "game:block/reed/basket/normal-lid" },
-    "storage-sidesWE": { base: "game:block/reed/basket/normal-westeast" },
-    "storage-sidesSN": { base: "game:block/reed/basket/normal-northsouth" },
-    "storage-lid": { base: "game:block/reed/basket/normal-lid" }
-  },
-  blockmaterial: "Wood",
-  resistance: 1.5,
-  lightAbsorption: 0,
-  sidesolid: { all: false },
-  sideopaque: { all: false },
-  selectionbox: {
-    x1: 0.125, y1: 0, z1: 0.125, x2: 0.8125, y2: 0.5, z2: 0.875,
-    rotateYByType: {
-      "*-north": 270,
-      "*-east": 180,
-      "*-south": 90,
-      "*-west": 0
+  "shapeByType": {
+    "*-north": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 270
+    },
+    "*-east": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 180
+    },
+    "*-south": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 90
+    },
+    "*-west": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 0
     }
   },
-  collisionbox: {
-    x1: 0.125, y1: 0, z1: 0.125, x2: 0.8125, y2: 0.5, z2: 0.875,
-    rotateYByType: {
-      "*-north": 270,
-      "*-east": 180,
-      "*-south": 90,
-      "*-west": 0
+  "textures": {
+    "storage-warning": {
+      "base": "feralkinshipcompanions:block/legacy-storage-warning"
+    },
+    "normal-generic-warning": {
+      "base": "feralkinshipcompanions:block/legacy-storage-warning"
     }
   },
-  combustibleProps: { burnTemperature: 600, burnDuration: 25 },
-  guiTransform: { origin: { x: 0.5, y: 0.3, z: 0.5 }, scale: 1.3 }
+  "blockmaterial": "Wood",
+  "resistance": 1.5,
+  "lightAbsorption": 0,
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "selectionbox": {
+    "x1": 0.06,
+    "y1": 0,
+    "z1": 0.06,
+    "x2": 0.94,
+    "y2": 0.75,
+    "z2": 0.94
+  },
+  "collisionbox": {
+    "x1": 0.06,
+    "y1": 0,
+    "z1": 0.06,
+    "x2": 0.94,
+    "y2": 0.75,
+    "z2": 0.94
+  },
+  "guiTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0.3,
+      "z": 0.5
+    },
+    "scale": 1.3
+  },
+  "lightHsv": [
+    21,
+    7,
+    30
+  ]
 }

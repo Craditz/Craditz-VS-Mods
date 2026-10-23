@@ -43,9 +43,17 @@ public sealed partial class FeralKinshipCompanionSystem
         int slots=0;
         foreach(var pair in chunks) {
             var c=pair.Value;
-            if(includeRetired&&(c.Disposed||c.EntitiesCount<0||c.EntitiesCount>c.Entities.Length||(slots+=c.EntitiesCount)>65536))return Stop("Unavailable","Loaded chunk evidence is disposed, inconsistent or exceeds the slot budget.");
+            if(includeRetired&&c.Disposed)return Stop("Unavailable","Loaded chunk evidence is disposed, inconsistent or exceeds the slot budget.");
             if(c.Disposed)continue;
-            for(int i=0;i<Math.Min(c.EntitiesCount,c.Entities.Length);i++)Observe(c.Entities[i],"chunk",pair.Key,i);
+            var entities=c.Entities;
+            int count=c.EntitiesCount;
+            // Fresh native chunks allocate entity storage lazily, including empty loaded chunks.
+            if(entities==null) {
+                if(count==0)continue;
+                return Stop("Unavailable","Loaded chunk entity storage is unavailable for a nonempty or inconsistent chunk.");
+            }
+            if(includeRetired&&(count<0||count>entities.Length||(slots+=count)>65536))return Stop("Unavailable","Loaded chunk evidence is disposed, inconsistent or exceeds the slot budget.");
+            for(int i=0;i<Math.Min(count,entities.Length);i++)Observe(entities[i],"chunk",pair.Key,i);
         }
         var candidates=bodies.Select(p=>new RecoveryBodyCandidate(p.Key,string.Join(";",p.Value))).ToArray();
         if(candidates.Length==0)return Stop("Absent","Original is not currently registered in the native world.");

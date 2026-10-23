@@ -1,0 +1,16 @@
+Feral Kinship Companions 0.5.92
+Changes from public ModDB 0.5.91
+
+- Corrected trademark characters in four kibble names.
+- Fixed diagnostic formatting on newly loaded chunks and removed help placeholders that the chat markup parser interpreted as tags.
+- Improved Pack Ledger handbook search and documented the Shift+right-click fallback for ordinary containers.
+- Retired legacy Pack Collection Box, Trunk Crate and Wicker Crate acquisition. Existing block/item IDs remain as conspicuous cyan 36-slot warning containers. Existing cargo and indices are preserved; normal breaking returns contents without dropping a warning-box item. Move contents to an ordinary container configured with a Pack Ledger. No timed removal or removal date is introduced.
+- Corrected large-flap tooltip compatibility with TraitRestrictions.
+- Fixed accepted hand-feeding/taming interactions being intercepted by player eating. Kept ownership, range, diet, cooldown and full refusal checks, authoritative slot reconciliation, and normal eating aimed at air. Requires matching Feral Kinship 0.5.5 client assets.
+- Replaced the whole-file native-library fingerprint lock with a focused Vintage Story 1.22.7 hook contract. Unsupported startup qualification stops before companion initialization; native save protections remain.
+
+Requirements: Vintage Story 1.22.7 and Feral Kinship 0.5.5, with that mod's PetAI requirement. Install matching versions on server and clients, one archive per mod ID.
+
+Ledger schema remains public schema 57. This release does not include the private schema 58/59 recovery/rebuild work, provisional HP patch, camera changes, egg design, pathfinding/follow redesign, model-stat cleanup or helper edits. Existing public 0.5.91 recovery behavior remains. Do not use this build to downgrade private schema58/59 worlds.
+
+Back up the complete world and matching mods before updating. Legacy container definitions and inventories change even though the global ledger stays57; rollback requires the matching complete backup rather than a DLL swap. Initially stale green illumination is a known cosmetic limitation. No blanket multiplayer, every-provider or every-destruction-path qualification is claimed.

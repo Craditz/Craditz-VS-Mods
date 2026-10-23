@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>0.5.91</Version>
-    <InformationalVersion>0.5.91-userrestore-preview.1</InformationalVersion>
+    <Version>0.5.92</Version>
+    <InformationalVersion>0.5.92</InformationalVersion>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,6 +9,10 @@
     <RootNamespace>FeralKinshipCompanions</RootNamespace>
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <!-- Neutral reproducible source/debug paths; no machine/user directories. -->
+    <Deterministic>true</Deterministic>
+    <FeralKinshipSourceRoot>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../..'))</FeralKinshipSourceRoot>
+    <PathMap>$(FeralKinshipSourceRoot)=/_/feralkinship-source</PathMap>
     <VintageStoryPath Condition="'$(VintageStoryPath)' == ''">$(VINTAGE_STORY)</VintageStoryPath>
   </PropertyGroup>
 
@@ -103,4 +107,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup><EmbeddedResource Include="NativeChunkContract1227.json" LogicalName="FeralKinshipCompanions.NativeChunkContract1227.json" /></ItemGroup>
 </Project>

@@ -1,68 +1,141 @@
 {
-  code: "packstorage-trunk",
-  class: "FeralKinshipPackStorageTrunk",
-  entityclass: "FeralKinshipPackStorageTrunk",
-  attributes: {
-    reinforcable: true,
-    partialAttachable: true,
+  "code": "packstorage-trunk",
+  "class": "FeralKinshipPackStorageTrunk",
+  "entityclass": "FeralKinshipPackStorageTrunk",
+  "attributes": {
+    "reinforcable": true,
+    "partialAttachable": true,
     "humanoidTraversalCost": 100,
-    inventoryClassName: "packstorage-trunk",
-    defaultType: "storage",
-    types: ["storage", "normal-generic"],
-    quantitySlots: { "normal-generic": 36, storage: 36 },
-    quantityColumns: { "normal-generic": 9, storage: 9 },
-    dialogTitleLangCode: {
-      "normal-generic": "feralkinshipcompanions:packstoragetrunkcontents",
-      storage: "feralkinshipcompanions:packstoragetrunkcontents"
+    "inventoryClassName": "packstorage-trunk",
+    "defaultType": "storage",
+    "types": [
+      "storage",
+      "normal-generic"
+    ],
+    "quantitySlots": {
+      "normal-generic": 36,
+      "storage": 36
     },
-    storageType: { "normal-generic": 189, storage: 189 },
-    retrieveOnly: { "normal-generic": false, storage: false },
-    drop: { "normal-generic": true, storage: true },
-    shape: {
-      "normal-generic": "block/packstorage",
-      storage: "block/packstorage"
+    "quantityColumns": {
+      "normal-generic": 9,
+      "storage": 9
     },
-    typedOpenSound: {
+    "dialogTitleLangCode": {
+      "normal-generic": "feralkinshipcompanions:legacy-warning-title",
+      "storage": "feralkinshipcompanions:legacy-warning-title"
+    },
+    "storageType": {
+      "normal-generic": 189,
+      "storage": 189
+    },
+    "retrieveOnly": {
+      "normal-generic": false,
+      "storage": false
+    },
+    "drop": {
+      "normal-generic": false,
+      "storage": false
+    },
+    "shape": {
+      "normal-generic": "block/legacy-storage-warning",
+      "storage": "block/legacy-storage-warning"
+    },
+    "typedOpenSound": {
       "normal-generic": "game:sounds/block/largechestopen",
-      storage: "game:sounds/block/largechestopen"
+      "storage": "game:sounds/block/largechestopen"
     },
-    typedCloseSound: {
+    "typedCloseSound": {
       "normal-generic": "game:sounds/block/largechestclose",
-      storage: "game:sounds/block/largechestclose"
+      "storage": "game:sounds/block/largechestclose"
     },
-    variantByGroup: "side",
-    variantByGroupInventory: null,
-    handbook: { groupBy: ["packstorage-trunk-*"] }
+    "variantByGroup": "side",
+    "variantByGroupInventory": null,
+    "handbook": {
+      "exclude": true
+    }
   },
-  behaviors: [
-    { name: "Lockable" },
-    { name: "Container" }
+  "behaviors": [
+    {
+      "name": "Lockable"
+    },
+    {
+      "name": "Container"
+    }
   ],
-  variantgroups: [ { code: "side", loadFromProperties: "abstract/horizontalorientation" } ],
-  creativeinventory: { general: ["*-north"], decorative: ["*-north"] },
-  shapeInventory: { base: "block/packstorage", rotateY: 180 },
-  shapeByType: {
-    "*-north": { base: "block/packstorage", rotateY: 0 },
-    "*-east": { base: "block/packstorage", rotateY: 270 },
-    "*-south": { base: "block/packstorage", rotateY: 180 },
-    "*-west": { base: "block/packstorage", rotateY: 90 }
+  "variantgroups": [
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ],
+  "creativeinventory": {},
+  "shapeInventory": {
+    "base": "block/legacy-storage-warning",
+    "rotateY": 180
   },
-  textures: {
-    "normal-generic-wood": { base: "game:block/wood/planks/oak1" },
-    "normal-generic-darkwood": { base: "game:block/wood/debarked/oak" },
-    "normal-generic-lining": { base: "game:block/cloth/linen/blue" },
-    "storage-wood": { base: "game:block/wood/planks/oak1" },
-    "storage-darkwood": { base: "game:block/wood/debarked/oak" },
-    "storage-lining": { base: "game:block/cloth/linen/blue" }
+  "shapeByType": {
+    "*-north": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 0
+    },
+    "*-east": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 270
+    },
+    "*-south": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 180
+    },
+    "*-west": {
+      "base": "block/legacy-storage-warning",
+      "rotateY": 90
+    }
   },
-  blockmaterial: "Wood",
-  replaceable: 900,
-  resistance: 3,
-  lightAbsorption: 0,
-  sidesolid: { all: false },
-  sideopaque: { all: false },
-  selectionbox: { x1: 0.06, y1: 0, z1: 0.06, x2: 0.94, y2: 0.75, z2: 0.94 },
-  collisionbox: { x1: 0.06, y1: 0, z1: 0.06, x2: 0.94, y2: 0.75, z2: 0.94 },
-  combustibleProps: { burnTemperature: 600, burnDuration: 35 },
-  guiTransform: { origin: { x: 0.5, y: 0.5, z: 0.97 }, scale: 0.95 }
+  "textures": {
+    "storage-warning": {
+      "base": "feralkinshipcompanions:block/legacy-storage-warning"
+    },
+    "normal-generic-warning": {
+      "base": "feralkinshipcompanions:block/legacy-storage-warning"
+    }
+  },
+  "blockmaterial": "Wood",
+  "replaceable": 900,
+  "resistance": 3,
+  "lightAbsorption": 0,
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "selectionbox": {
+    "x1": 0.06,
+    "y1": 0,
+    "z1": 0.06,
+    "x2": 0.94,
+    "y2": 0.75,
+    "z2": 0.94
+  },
+  "collisionbox": {
+    "x1": 0.06,
+    "y1": 0,
+    "z1": 0.06,
+    "x2": 0.94,
+    "y2": 0.75,
+    "z2": 0.94
+  },
+  "guiTransform": {
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.97
+    },
+    "scale": 0.95
+  },
+  "lightHsv": [
+    21,
+    7,
+    30
+  ]
 }

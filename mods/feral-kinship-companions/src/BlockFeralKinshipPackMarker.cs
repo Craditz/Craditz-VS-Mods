@@ -1,6 +1,7 @@
 #nullable enable
 
 using System.Collections.Generic;
+using System.Text;
 using Vintagestory.API.Common;
 using Vintagestory.API.Client;
 using Vintagestory.API.Datastructures;
@@ -204,6 +205,63 @@ public sealed class BlockEntityFeralKinshipDiningBoard : BlockEntityGenericConta
 /// <summary>A normal player-accessible container that also serves as the pack's communal deposit target.</summary>
 public class BlockFeralKinshipPackStorage : BlockGenericTypedContainer
 {
+    public override BlockDropItemStack[] GetDropsForHandbook(ItemStack stack, IPlayer forPlayer)
+        => System.Array.Empty<BlockDropItemStack>();
+
+    public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
+    {
+        if (world.Side == EnumAppSide.Server && !LegacyStorageRetirement.CanRemove(world, pos, byPlayer)) return;
+        base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
+    }
+
+    public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType, string ignitedByPlayerUid)
+    {
+        if (world.Side == EnumAppSide.Server && !LegacyStorageRetirement.CanRemove(world, pos, null)) return;
+        base.OnBlockExploded(world, pos, explosionCenter, blastType, ignitedByPlayerUid);
+    }
+
+    internal static string GetVariantSafePlacedName(BlockGenericTypedContainer block, IWorldAccessor world, BlockPos pos)
+    {
+        // The vanilla HUD names the picked stack. CodeWithVariant only retains
+        // declared variants, so it drops our literal wicker/trunk path segment.
+        // Resolve the display name from this block, preserving type and hooks.
+        ItemStack stack = new(block);
+        if (world.BlockAccessor.GetBlockEntity(pos) is BlockEntityGenericTypedContainer container)
+        {
+            stack.Attributes.SetString("type", container.type);
+        }
+        StringBuilder name = new(block.GetHeldItemName(stack));
+        foreach (BlockBehavior behavior in block.BlockBehaviors)
+        {
+            behavior.GetPlacedBlockName(name, world, pos);
+        }
+        return name.ToString().TrimEnd();
+    }
+
+    public override string GetPlacedBlockName(IWorldAccessor world, BlockPos pos)
+        => GetVariantSafePlacedName(this, world, pos);
+
+    internal static ItemStack GetVariantSafePick(Block block, IWorldAccessor world, ItemStack pickedStack)
+    {
+        // Keep the native east-facing pick and type attributes, but retain the
+        // literal wicker/trunk family omitted by CodeWithVariant("side", ...).
+        string path = block.Code.Path;
+        int separator = path.LastIndexOf('-');
+        if (separator <= 0) return pickedStack;
+
+        Block? pickBlock = world.GetBlock(new AssetLocation(block.Code.Domain, path[..separator] + "-east"));
+        if (pickBlock == null || pickBlock == pickedStack.Block) return pickedStack;
+
+        return new ItemStack(pickBlock, pickedStack.StackSize)
+        {
+            Attributes = pickedStack.Attributes,
+            TempAttributes = pickedStack.TempAttributes
+        };
+    }
+
+    public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
+        => null!; // Retired compatibility identities cannot be newly acquired by Creative pick.
+
     internal static ItemStack[] GetVariantSafeDrops(Block block, IWorldAccessor world)
     {
         if (block.Code == null) return System.Array.Empty<ItemStack>();
@@ -229,7 +287,7 @@ public class BlockFeralKinshipPackStorage : BlockGenericTypedContainer
         IPlayer byPlayer,
         float dropQuantityMultiplier = 1)
     {
-        return GetVariantSafeDrops(this, world);
+        return System.Array.Empty<ItemStack>();
     }
 
     public override void OnBeforeRender(
@@ -282,29 +340,8 @@ public class BlockFeralKinshipPackStorage : BlockGenericTypedContainer
 
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
     {
-        // A save opened while Companions is absent can retain this block through
-        // the world's missing-block mapping while dropping its mod-owned block
-        // entity. The block then looks correct when the mod returns, but the
-        // Container behavior has nothing to open. Recreate only a genuinely
-        // missing component; never replace another surviving block entity.
-        if (blockSel?.Position != null
-            && world.BlockAccessor.GetBlockEntity(blockSel.Position) == null
-            && !string.IsNullOrWhiteSpace(EntityClass))
-        {
-            world.BlockAccessor.SpawnBlockEntity(EntityClass, blockSel.Position);
-            BlockEntity? repaired = world.BlockAccessor.GetBlockEntity(blockSel.Position);
-            repaired?.MarkDirty(true);
-
-            if (world.Side == EnumAppSide.Server)
-            {
-                world.Logger.Warning(
-                    "[FeralKinshipCompanions] Recreated a missing Pack Collection Box block entity at {0}. "
-                    + "The save was likely opened while the mod was absent.",
-                    blockSel.Position
-                );
-            }
-        }
-
+        if (blockSel?.Position == null) return false;
+        if (!LegacyStorageRetirement.CanInteract(world, blockSel.Position, byPlayer)) return true;
         return base.OnBlockInteractStart(world, byPlayer, blockSel);
     }
 
@@ -326,13 +363,34 @@ public sealed class BlockFeralKinshipPackStorageWicker : BlockFeralKinshipPackSt
 /// <summary>A dedicated one-block trunk-sized pack storage container.</summary>
 public sealed class BlockFeralKinshipPackStorageTrunk : BlockGenericTypedContainer
 {
+    public override BlockDropItemStack[] GetDropsForHandbook(ItemStack stack, IPlayer forPlayer)
+        => System.Array.Empty<BlockDropItemStack>();
+
+    public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1)
+    {
+        if (world.Side == EnumAppSide.Server && !LegacyStorageRetirement.CanRemove(world, pos, byPlayer)) return;
+        base.OnBlockBroken(world, pos, byPlayer, dropQuantityMultiplier);
+    }
+
+    public override void OnBlockExploded(IWorldAccessor world, BlockPos pos, BlockPos explosionCenter, EnumBlastType blastType, string ignitedByPlayerUid)
+    {
+        if (world.Side == EnumAppSide.Server && !LegacyStorageRetirement.CanRemove(world, pos, null)) return;
+        base.OnBlockExploded(world, pos, explosionCenter, blastType, ignitedByPlayerUid);
+    }
+
+    public override string GetPlacedBlockName(IWorldAccessor world, BlockPos pos)
+        => BlockFeralKinshipPackStorage.GetVariantSafePlacedName(this, world, pos);
+
+    public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
+        => null!; // Native typed-container drop gate is false for both supported profiles.
+
     public override ItemStack[] GetDrops(
         IWorldAccessor world,
         BlockPos pos,
         IPlayer byPlayer,
         float dropQuantityMultiplier = 1)
     {
-        return BlockFeralKinshipPackStorage.GetVariantSafeDrops(this, world);
+        return System.Array.Empty<ItemStack>();
     }
 
     public override void OnBeforeRender(
@@ -382,14 +440,8 @@ public sealed class BlockFeralKinshipPackStorageTrunk : BlockGenericTypedContain
 
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
     {
-        if (blockSel?.Position != null
-            && world.BlockAccessor.GetBlockEntity(blockSel.Position) == null
-            && !string.IsNullOrWhiteSpace(EntityClass))
-        {
-            world.BlockAccessor.SpawnBlockEntity(EntityClass, blockSel.Position);
-            world.BlockAccessor.GetBlockEntity(blockSel.Position)?.MarkDirty(true);
-        }
-
+        if (blockSel?.Position == null) return false;
+        if (!LegacyStorageRetirement.CanInteract(world, blockSel.Position, byPlayer)) return true;
         return base.OnBlockInteractStart(world, byPlayer, blockSel);
     }
 
@@ -408,24 +460,20 @@ public sealed class BlockFeralKinshipPackStorageTrunk : BlockGenericTypedContain
 /// that work prevents the terrain tessellator from drawing a second, cardinally
 /// rotated copy of this open box underneath it.
 /// </summary>
-public class BlockEntityFeralKinshipPackStorage : BlockEntityGenericTypedContainer
+public partial class BlockEntityFeralKinshipPackStorage : BlockEntityGenericTypedContainer
 {
     private bool renderTraceWritten;
 
     protected override void InitInventory(Block? block)
     {
-        // Crates made before the typed variants were stabilized may carry the
-        // legacy "storage" marker.  Both old and new assets support it, but
-        // normalizing here makes the three crate capacities and their texture
-        // sources deterministic for newly placed and migrated crates.
-        if (block?.Code?.Path == "packstorage"
-            || block?.Code?.Path == "packstorage-wicker"
-            || block?.Code?.Path == "packstorage-trunk")
-        {
-            type = "storage";
-        }
-
+        // Initialize before native restoration reads slots. Keep the registered
+        // inventory identity even in old trees that lack forBlockCode metadata.
+        inventoryClassName = this is BlockEntityFeralKinshipPackStorageTrunk ? "packstorage-trunk"
+            : this is BlockEntityFeralKinshipPackStorageWicker ? "packstorage-wicker" : "packstorage";
+        quantitySlots = restoreCapacity;
+        quantityColumns = 9;
         base.InitInventory(block);
+        GrowInventory();
     }
 
     public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
@@ -439,10 +487,7 @@ public class BlockEntityFeralKinshipPackStorage : BlockEntityGenericTypedContain
             BlockGenericTypedContainer? typedBlock = Block as BlockGenericTypedContainer
                 ?? Api.World.BlockAccessor.GetBlock(Pos) as BlockGenericTypedContainer;
             string path = typedBlock?.Code?.Path ?? string.Empty;
-            string shape = path == "packstorage-wicker"
-                || path.StartsWith("packstorage-wicker-")
-                ? "game:block/reed/basket-reed"
-                : "block/packstorage";
+            string shape = LegacyStorageRetirement.Shape;
 
             if (!renderTraceWritten)
             {

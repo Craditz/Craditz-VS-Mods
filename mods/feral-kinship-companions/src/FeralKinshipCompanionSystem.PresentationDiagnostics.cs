@@ -78,7 +78,7 @@ public sealed partial class FeralKinshipCompanionSystem
             return TextCommandResult.Success(ListPresentationRecords(targetOwner,page,cart));
         }
         FoxPackRecordV2[] matches=SelectPresentationRecords(targetOwner,selector);
-        if(matches.Length!=1)return TextCommandResult.Error("Diagnostic refused: no unique owned record matches. Run /companiondiag "+(cart?"cart ":"")+"list; select native:<ID from list>, id:<ledger-id>, #<roster-number>, or name:<exact name>. Bare numbers are native IDs, not roster numbers.");
+        if(matches.Length!=1)return TextCommandResult.Error("Diagnostic refused: no unique owned record matches. Run /companiondiag "+(cart?"cart ":"")+"list; use native: followed by an ID from the list, id: followed by a ledger ID, # followed by a roster number, or name: followed by the exact name. Bare numbers are native IDs, not roster numbers.");
         long now=serverApi.World.ElapsedMilliseconds;
         if(presentationProbeNext.TryGetValue(owner.PlayerUID,out long next)&&now<next)
             return TextCommandResult.Error("Wait ten seconds before another presentation diagnostic.");
@@ -123,7 +123,7 @@ public sealed partial class FeralKinshipCompanionSystem
         var lines=new List<string>{"Read-only records for selected player "+ownerUid+"; page "+page+"/"+pages+". Bare numbers mean native IDs. # means roster number."};
         foreach(var r in records.Skip((page-1)*8).Take(8))lines.Add("#"+r.Number+" "+DiagnosticText(r.Name,40)+" | native:"+r.EntityId+" | id:"+DiagnosticText(r.FoxId,100)+" | "+DiagnosticText(r.Status,40)+" | ledger="+DiagnosticText(r.RetainedPhase,30)+(r.Archived?" | archived":""));
         if(records.Length==0)lines.Add("No owned records in this target.");
-        lines.Add("Probe a listed entry: "+prefix+"native:<ID> or "+prefix+"name:<exact name>. Wait ten seconds between probes.");
+        lines.Add("Probe a listed entry: "+prefix+"native:42 or "+prefix+"name:Fox Name. Replace 42 or Fox Name with the listed ID or exact name. Wait ten seconds between probes.");
         if(page<pages)lines.Add("Next page: "+prefix+"list "+(page+1));
         return string.Join("\n",lines);
     }

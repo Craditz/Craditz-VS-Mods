@@ -329,6 +329,9 @@ public sealed partial class FeralKinshipCompanionSystem
         return changed;
     }
 
+    internal static bool IsCompanionFullForHandFeed(Entity entity)
+        => GetCompanionFoodLevel(entity) >= FoodFeedCutoff;
+
     internal static float GetCompanionFoodLevel(Entity entity)
     {
         ITreeAttribute? status = GetDomesticationStatus(entity);
@@ -515,14 +518,6 @@ public sealed partial class FeralKinshipCompanionSystem
             return false;
         }
 
-        // Leave room for the smallest possible food portion. This check is
-        // intentionally before both the PetAI race fallback and our own item
-        // transaction, so an almost-full companion keeps the player's food.
-        if (GetCompanionFoodLevel(entity) >= FoodFeedCutoff)
-        {
-            return false;
-        }
-
         // Provider acceptance can transfer the last item into the mouth and
         // raise obedience/cooldown without eating it. Neither an empty hand
         // nor that cooldown proves consumption; the inventory task credits
@@ -536,6 +531,18 @@ public sealed partial class FeralKinshipCompanionSystem
             || !IsSuitableDiningBoardFood(entity, offered, diet))
         {
             return false;
+        }
+
+        // A valid feeding attempt at an almost-full companion is handled
+        // without taking food. Letting it fall through would allow PetAI's
+        // separate treat/obedience route to consume the same offered item.
+        // Validate the diet first so unrelated held-item uses stay untouched.
+        if (GetCompanionFoodLevel(entity) >= FoodFeedCutoff)
+        {
+            // PetAI may already have predicted a client-side treat removal.
+            // Re-send the unchanged authoritative slot on this refusal.
+            slot.MarkDirty();
+            return true;
         }
 
         // Leave the provider's own raw-food/cookie route intact, including its

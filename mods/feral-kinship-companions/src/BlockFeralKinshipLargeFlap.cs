@@ -247,10 +247,10 @@ public sealed class BlockFeralKinshipLargeFlap : Block, IClaimTraverseable
         string side = BlockFacing.HORIZONTALS_ANGLEORDER[GameMath.Mod(face.HorizontalAngleIndex - angle / 90, 4)].Code;
         return c.Code(c.U, c.V, side);
     }
-    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder text, IWorldAccessor world, bool debug)
+    public override void GetHeldItemInfo(ItemSlot inSlot, StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
     {
-        base.GetHeldItemInfo(inSlot, text, world, debug);
-        if (Describe(this, out Cell c)) text.AppendLine(Lang.Get("feralkinshipcompanions:largeflap-info", c.Size, c.Width, c.Height));
+        base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
+        if (Describe(this, out Cell c)) dsc.AppendLine(Lang.Get("feralkinshipcompanions:largeflap-info", c.Size, c.Width, c.Height));
     }
 }
 
