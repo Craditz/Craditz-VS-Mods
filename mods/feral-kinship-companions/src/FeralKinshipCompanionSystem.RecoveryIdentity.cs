@@ -90,7 +90,8 @@ public sealed partial class FeralKinshipCompanionSystem
     private string DescribeRecoveryLookup(FoxPackRecordV2 r,IServerPlayer actor)
     {
         var lookup=LookupRecoveryOriginal(r);
-        string blocker=lookup.State is "Found" or "Absent"?EmergencyAdminBlocker(actor,r,false):lookup.Reason;
+        string blocker = lookup.State is "Found" or "Absent"
+            ? DescribeForceRecoveryBlocker(actor, r) : lookup.Reason;
         if(blocker.Length==0&&lookup.State=="Found") {
             var e=lookup.Candidates[0].Body;
             blocker=!NativeRecoveryPublished(e)?"Native publication is not canonical: "+RecoveryPublicationReason(e):e.Pos.Dimension!=0?"Original native dimension is not supported":EmergencyBodyBlocker(e);

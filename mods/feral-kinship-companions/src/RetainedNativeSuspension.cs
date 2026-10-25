@@ -195,26 +195,38 @@ internal static partial class RetainedNativeSuspension
             try {
                 // The production verifier runs inside this same body monitor.
                 // Recheck at callback boundaries; no engine-wide chunk lock is invented.
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                if(!verifyPlacement()) {PauseReturnCompletion(e,r,"Placement authority changed during completion");return false;}
                 m.SetString("phase","Resuming"); r.RetainedPhase="Resuming"; Dirty(e);
                 // An interrupted outcome is held on load, never automatically replayed.
                 RestoreClocks(e,m);
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                if(!verifyPlacement()) {PauseReturnCompletion(e,r,"Placement authority changed during completion");return false;}
                 applyOutcome(); m.SetBool("outcomeApplied",true); Dirty(e);
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                if(!verifyPlacement()) {PauseReturnCompletion(e,r,"Placement authority changed during completion");return false;}
                 RestoreBoxes(e); e.Pos.Motion.Set(0,0,0);
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                if(!verifyPlacement()) {PauseReturnCompletion(e,r,"Placement authority changed during completion");return false;}
                 m.SetString("phase","Complete"); r.RetainedPhase="Complete";
                 r.CompletionProof=new RetainedCompletionProof {Trip=r.RetainedTrip,Owner=r.OwnerUid,Companion=r.FoxId,NativeId=e.EntityId,Code=e.Code.ToString(),
                     CapturedHours=m.GetDouble("capturedHours"),ResumeHours=m.GetDouble("resumeHours"),Outcome=r.RetainedOutcome};
                 persist(); Dirty(e);
-                if(!verifyPlacement()) {Hold(e,"Placement authority rejected during protected completion");return false;}
+                if(!verifyPlacement()) {PauseReturnCompletion(e,r,"Placement authority changed during completion");return false;}
                 g.Admitted=true; g.TeleportPending=false; Volatile.Write(ref g.Blocked,0);
                 e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.EndRetainedSuspension();
                 PublishCompletedPresentation(e); return true;
-            } catch(Exception ex) { Hold(e,"Resume callback failed: "+ex.GetType().Name); return false; }
+            } catch(Exception ex) { PauseReturnCompletion(e,r,"Resume callback failed: "+ex.GetType().Name); return false; }
             finally {g.Completing=false;}
         }
+    }
+    private static void PauseReturnCompletion(Entity e,FoxPackRecordV2 r,string reason)
+    {
+        var j=r.ReturnTransit;
+        if(j==null || j.Trip!=r.RetainedTrip || j.NativeId!=e.EntityId || string.IsNullOrEmpty(j.Outcome)
+            || !Matches(e,r) || !SafeSnapshot(e) || Marker(e)?.GetString("phase")=="Hold") {Hold(e,reason);return;}
+        Gate g=gates.GetValue(e,_=>new());
+        var m=Marker(e)!;m.SetString("phase","Resuming");m.SetString("reason",reason);
+        r.RetainedPhase="Resuming";r.PendingReturnStatus=j.Outcome;
+        FeralKinshipCompanionSystem.GetDomesticationStatus(e)!.SetBool("feralKinshipExpeditionAway",true);
+        g.TeleportPending=false;g.Admitted=false;Volatile.Write(ref g.Blocked,1);
+        e.SetCollisionBox(0,0);e.SetSelectionBox(0,0);e.State=EnumEntityState.Inactive;Dirty(e);
     }
     // Only a caller with initialized, canonical completed ledger authority may
     // use this. Never manufactures a completion, replays an outcome or clocks,
@@ -488,8 +500,10 @@ internal static partial class RetainedNativeSuspension
         ["PetAI"]="6fe98340c1db266c8f554c47dd69d1ed8c5d787040ef95650679018de816e1f2",
         ["TamablesFotsa"]="1eaba584a81046e957b49036858b59ccdaf9bfe53c4069af8d887139e282e4ee" };
     private static readonly Dictionary<Assembly,bool> verified=new();
+    internal static string[] NativePatchEntries => entityEntries.Concat(behaviorEntries).Concat(serverBehaviorEntries).Concat(aiEntries).Append("UpdateMaxHealth").Distinct().ToArray();
     private static bool Verified(Assembly a,string hash) {
         if(a.GetName().Name=="VintagestoryLib")return NativeChunkCompatibility.TryQualify(a,out _);
+        if(NativeEngineAssembly(a.GetName().Name??"")&&NativeChunkCompatibility.UsesOptimum(typeof(Vintagestory.Common.WorldChunk).Assembly))return NativeOptimumCompatibility.QualifiesModule(a);
         lock(verified) {
             if(verified.TryGetValue(a,out bool result))return result;
             try { result=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(a.Location))).Equals(hash,StringComparison.OrdinalIgnoreCase); }
@@ -585,6 +599,7 @@ internal static partial class RetainedNativeSuspension
             finalizer:new HarmonyMethod(typeof(RetainedNativeSuspension),nameof(ChunkCommitExit)));
         installed.Add(commitChunks);
         foreach(MethodBase recovery in RetainedNativeSaveWork.Install(owner,nativeChunks))installed.Add(recovery);
+        foreach(MethodBase batch in NativeOptimumSaveAdapter.Install(owner,nativeChunks))installed.Add(batch);
         foreach(MethodBase storageBoundary in InstallStorageLocation(owner,nativeChunks))installed.Add(storageBoundary);
         Enabled=true; return installed.ToArray();
     }

@@ -1,0 +1,37 @@
+Feral Kinship Companions 0.5.93
+Combined return reliability and four-button developer recovery release
+
+- Includes Rebuild, Rebuild all, Emergency rebuild and Emergency rebuild all
+  from recovery revision 4. Preserve usable identity, appearance, progression,
+  relationships, equipment and native cargo; restore hunger/health and clear
+  temporary movement/animation, away/MIA, journey and pending recovery state.
+- Emergency fills missing fields from readable native data or defaults. Stale
+  recovery history does not block a new rebuild. Backups and duplicate protection
+  remain automatic; bulk actions apply to the confirmed selected-owner roster.
+- Includes inherited presence reconciliation, growth handoff and guarded selection
+  of an already captured original adult. Original and replacement cargo stay separate.
+- Retains public 0.5.92 startup compatibility, feeding, legacy storage and other fixes.
+- Normal expedition returns retain the original animal: safe pack cart ground,
+  then a valid assigned bed, then the player within the cart's work radius in
+  the same dimension. Otherwise remain suspended, diagnose and retry about every minute.
+- A confirmed missing cart offers owner placement near them or waiting for a
+  replacement cart. Unloaded/unverifiable carts are not declared missing.
+- Preserves return watchdogs, bounded temporary loading, callback/save-order
+  guards, departure acknowledgement, paused clocks and critical injury windows.
+- A rebuild supersedes queued old return callbacks and consent. New bodies clear
+  return journals; original return receipts remain in backed-up ledger data,
+  including serialized properties previously omitted by rebuild backups.
+- No permanent chunk loading, automatic reconstruction or reward replay.
+
+Writer schema 61 accepts public 57, private recovery 58/59 and return-preview 60.
+Older preview writers reject 61. Rollback requires a complete matching world/mod
+backup. Use matching packages on clients and server.
+Requires Vintage Story 1.22.7, Feral Kinship 0.5.5, PetAI >=5.1.1.
+
+Controlled checks passed: 69 return, 11 integration, 150 recovery/presence/growth,
+153 expedition/migration, 22 startup. 87 legacy checks pass; 11 older Undo fixture
+checks fail identically on public 0.5.92 and this release. They are not fixed.
+The user tested both rebuild paths on healthy animals and expedition detachment
+without a later teleport. Broader multiplayer validation remains pending for
+post-release server testing. Released by explicit owner instruction. No public
+upload or remote push is implied.

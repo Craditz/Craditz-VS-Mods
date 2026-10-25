@@ -74,7 +74,7 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
             .BeginChildElements(contentBounds);
 
         composer.AddStaticText(
-            FitLine("Preview native recovery. Missing or unverified originals stay protected; use Status details for full reports.", 710),
+            FitLine("Rebuild beside you, fully fed and healthy. All applies to this owner's companions. Backups are automatic.", 950),
             CairoFont.WhiteSmallText(),
             ElementBounds.Fixed(0, 12, 720, 22));
         composer.AddDynamicText(
@@ -98,14 +98,13 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
                 $"row-{index}");
             int slot = index;
             composer.AddButton(
-                "Normal Rebuild",
-                () => RecoverAt(slot),
+                "Rebuild",
+                () => SimpleRebuildAt(slot, false),
                 ElementBounds.Fixed(500, y + 2, 140, ButtonHeight),
                 EnumButtonStyle.Normal,
                 $"recover-{index}");
             if (system.CanUseEmergencyAdminClient()) {
-                composer.AddButton("Emergency / details", () => EmergencyAt(slot, false), ElementBounds.Fixed(650, y + 2, 170, ButtonHeight), EnumButtonStyle.Normal, $"emergency-{index}");
-                composer.AddButton("Undo / resume", () => EmergencyAt(slot, true), ElementBounds.Fixed(830, y + 2, 130, ButtonHeight), EnumButtonStyle.Normal, $"undo-emergency-{index}");
+                composer.AddButton("Emergency rebuild", () => SimpleRebuildAt(slot, true), ElementBounds.Fixed(650, y + 2, 270, ButtonHeight), EnumButtonStyle.Normal, $"emergency-{index}");
             }
         }
 
@@ -128,8 +127,8 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
             EnumButtonStyle.Normal,
             "refresh");
         composer.AddButton(
-            "Recover all",
-            OnRecoverAll,
+            "Rebuild all",
+            () => SimpleRebuildAll(false),
             ElementBounds.Fixed(400, 510, 160, ButtonHeight),
             EnumButtonStyle.Normal,
             "recover-all");
@@ -139,7 +138,7 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
             ElementBounds.Fixed(570, 510, 150, ButtonHeight),
             EnumButtonStyle.Normal,
             "close");
-        composer.AddButton("Status details", ShowStatusDetails, ElementBounds.Fixed(740, 510, 220, ButtonHeight), EnumButtonStyle.Normal, "status-details");
+        if (system.CanUseEmergencyAdminClient()) composer.AddButton("Emergency rebuild all", () => SimpleRebuildAll(true), ElementBounds.Fixed(740, 510, 220, ButtonHeight), EnumButtonStyle.Normal, "emergency-all");
         composer.EndChildElements();
 
         SingleComposer = composer.Compose();
@@ -164,7 +163,7 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
             forceRedraw: true);
         SingleComposer.GetDynamicText("message").SetNewText(
             FitLine(string.IsNullOrWhiteSpace(localMessage)
-                ? "Select Normal Rebuild, or review the admin Emergency option and its persistent Undo checkpoint."
+                ? "Select Rebuild, or Emergency rebuild to use incomplete saved data."
                 : localMessage, 710),
             forceRedraw: true);
 
@@ -176,31 +175,23 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
             SingleComposer.GetDynamicText($"row-{index}").SetNewText(
                 entry == null ? string.Empty : FormatEntry(entry),
                 forceRedraw: true);
-            SingleComposer.GetButton($"recover-{index}").SetActive(entry?.CanRecover == true);
+            SingleComposer.GetButton($"recover-{index}").SetActive(entry != null);
             if (system.CanUseEmergencyAdminClient()) {
-                SingleComposer.GetButton($"emergency-{index}")?.SetActive(entry?.CanEmergencyRebuild == true);
-                SingleComposer.GetButton($"undo-emergency-{index}")?.SetActive(entry?.CanEmergencyUndo == true);
+                SingleComposer.GetButton($"emergency-{index}")?.SetActive(entry != null);
             }
         }
 
         SingleComposer.GetButton("previous").SetActive(page > 0);
         SingleComposer.GetButton("next").SetActive(page + 1 < pageCount);
         SingleComposer.GetButton("recover-all").SetActive(
-            records.Any(entry => entry.CanRecover));
+            records.Count > 0);
+        SingleComposer.GetButton("emergency-all")?.SetActive(records.Count > 0);
     }
 
     private string FormatEntry(CompanionRecoveryEntryPacket entry)
     {
         string label = $"#{entry.Number} {Trim(entry.Name, 28)} · {Trim(entry.SpeciesDisplayName, 18)} · {entry.Status}";
-        string detail = entry.EntityLoaded
-            ? entry.CanNuclearRebuild
-                ? "Currently present — normal Rebuild can replace it"
-                : "Already present in the world"
-            : entry.CanRecover
-                ? $"Saved type: {Trim(entry.EntityCode, 46)}"
-                : entry.CanNuclearRebuild
-                    ? $"{Trim(entry.BlockedReason, 58)} — normal Rebuild available"
-                    : Trim(entry.BlockedReason, 82);
+        string detail = $"Saved type: {Trim(entry.EntityCode, 64)}";
         return $"{FitLine(label, 460)}\n{FitLine(detail, 460)}";
     }
 
@@ -218,6 +209,18 @@ public sealed class GuiDialogFeralKinshipCompanionRecovery : GuiDialog
                 Reason = "Species: " + row.SpeciesDisplayName + "\nSaved code: " + row.EntityCode + "\n" + row.BlockedReason });
         statusDetails = new GuiDialogFeralKinshipRecoveryConfirmation(capi, system, packet);
         statusDetails.TryOpen(); return true;
+    }
+
+    private bool SimpleRebuildAt(int slot, bool emergency)
+    {
+        var entry = GetVisibleEntry(slot);
+        if (entry != null) system.SendCompanionRecoveryAction(emergency ? CompanionRecoveryRequestPacket.EmergencyRebuildOne : CompanionRecoveryRequestPacket.RebuildOne, entry.FoxId);
+        return true;
+    }
+    private bool SimpleRebuildAll(bool emergency)
+    {
+        system.SendCompanionRecoveryAction(emergency ? CompanionRecoveryRequestPacket.EmergencyRebuildOwner : CompanionRecoveryRequestPacket.RebuildOwner);
+        return true;
     }
 
     private bool EmergencyAt(int slot, bool undo)

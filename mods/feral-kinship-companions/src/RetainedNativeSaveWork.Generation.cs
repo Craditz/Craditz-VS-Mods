@@ -19,6 +19,7 @@ internal static partial class RetainedNativeSaveWork
         internal readonly object? Map=map;
         internal readonly object?[] Version=version;
         internal bool RemoveRequested;
+        internal bool DispatchClaimHeld;
         internal readonly List<(IDictionary Dictionary,long Key,bool WasPresent,object? Expected)> Dictionaries=new();
     }
     private sealed class GenerationLease(object owner,object queue,object sync) {
@@ -26,6 +27,7 @@ internal static partial class RetainedNativeSaveWork
         internal readonly Dictionary<object,GenerationReceipt> Requests=new();
         internal OperationToken? Operation;
         internal GenerationLease? Parent;
+        internal readonly List<IDisposable> Footprints=new();
     }
     private sealed class OperationState { internal OperationToken? Active; }
     private sealed class OperationToken(object sync,OperationState state) { internal readonly object Sync=sync;internal readonly OperationState State=state; }
@@ -37,6 +39,10 @@ internal static partial class RetainedNativeSaveWork
     private static FieldInfo[] requestVersion=Array.Empty<FieldInfo>();
     private static MethodInfo? removeRequest;
     private static Action<object>? acquireGeneration,releaseGeneration;
+    private static int generationRequestLocal=-1;
+    private static MethodInfo? footprintDispose;
+    private static Func<object,bool>? claimDispatch;
+    private static Action<object>? releaseDispatch;
     private static IReadOnlyList<MethodBase> InstallGeneration(Harmony harmony,Assembly native) {
         Type unload=native.GetType("Vintagestory.Server.ServerSystemUnloadChunks",true)!,thread=native.GetType("Vintagestory.Server.ChunkServerThread",true)!,request=native.GetType("Vintagestory.Server.ChunkColumnLoadRequest",true)!;
         ownerThread=AccessTools.Field(unload,"chunkthread");threadQueue=AccessTools.Field(thread,"requestedChunkColumns");Type queue=threadQueue!.FieldType;
@@ -48,6 +54,14 @@ internal static partial class RetainedNativeSaveWork
         acquireGeneration=LockAction(request,generating,"AcquireReadLock");releaseGeneration=LockAction(request,generating,"ReleaseReadLock");
         var methods=new List<MethodBase>();
         MethodInfo generation=AccessTools.DeclaredMethod(unload,"UnloadGeneratingChunkColumns");
+        if(!NativeOptimumCompatibility.TryRequestLocal(generation,out generationRequestLocal,out string reason))throw new InvalidOperationException(reason);
+        footprintDispose=NativeChunkCompatibility.UsesOptimum(native)
+            ? native.GetType("Vintagestory.Server.ChunkServerThread",true)!.GetMethod("TryAcquireOptimumWorldgenFootprint",BindingFlags.NonPublic|BindingFlags.Instance)!.GetParameters().Last().ParameterType.GetElementType()!.GetMethod(nameof(IDisposable.Dispose)) : null;
+        claimDispatch=null;releaseDispatch=null;
+        if(footprintDispose!=null) {
+            MethodInfo claim=AccessTools.DeclaredMethod(request,"TryClaimDispatch"),release=AccessTools.DeclaredMethod(request,"ReleaseDispatch");
+            claimDispatch=value=>(bool)claim.Invoke(value,null)!;releaseDispatch=value=>release.Invoke(value,null);
+        }
         harmony.Patch(generation,
             prefix:new HarmonyMethod(typeof(RetainedNativeSaveWork),nameof(GenerationEntry)){priority=Priority.First},
             transpiler:new HarmonyMethod(typeof(RetainedNativeSaveWork),nameof(GenerationTranspiler)),
@@ -106,7 +120,13 @@ internal static partial class RetainedNativeSaveWork
     private static object? Version(FieldInfo field,object request) => field.Name=="disposeOrRequeueFlags"?((int)field.GetValue(request)!&1):field.GetValue(request);
     private static T CapturedChunks<T>(object request) => (T)(object?)CaptureRequest(request).Chunks!;
     private static T CapturedMap<T>(object request) => (T)CaptureRequest(request).Map!;
-    private static bool DeferRequestRemove<T>(T queue,long key,object request) {CaptureRequest(request).RemoveRequested=true;return true;}
+    private static bool DeferRequestRemove<T>(T queue,long key,object request) {
+        GenerationReceipt receipt=CaptureRequest(request);
+        if(claimDispatch!=null&&!receipt.DispatchClaimHeld)receipt.DispatchClaimHeld=claimDispatch(request);
+        // An already dispatched worker may be paused before footprint admission.
+        // Keep its request/dictionaries alive rather than retiring underneath it.
+        receipt.RemoveRequested=claimDispatch==null||receipt.DispatchClaimHeld;return true;
+    }
     private static void DeferDictionaryRemove<T>(T dictionary,long key,object request) {
         var dict=(IDictionary)(object)dictionary!;GenerationReceipt receipt=CaptureRequest(request);
         bool present=dict.Contains(key);object? expected=present?dict[key]:null;
@@ -116,20 +136,31 @@ internal static partial class RetainedNativeSaveWork
         receipt.Dictionaries.Add((dict,key,present,expected));
     }
     private static IEnumerable<CodeInstruction> GenerationTranspiler(IEnumerable<CodeInstruction> input) {
-        int chunks=0,maps=0,removals=0;
+        int chunks=0,maps=0,removals=0,footprints=0;
         foreach(CodeInstruction instruction in input) {
             if(instruction.opcode==OpCodes.Ldfld&&Equals(instruction.operand,requestChunks)) {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(CapturedChunks)).MakeGenericMethod(requestChunks!.FieldType);chunks++;}
             else if(instruction.opcode==OpCodes.Ldfld&&Equals(instruction.operand,requestMap)) {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(CapturedMap)).MakeGenericMethod(requestMap!.FieldType);maps++;}
             else if(instruction.operand is MethodInfo method && (Equals(method,removeRequest)
                 || method.Name=="Remove"&&method.DeclaringType?.FullName=="Vintagestory.API.Util.DictExtensions")) {
-                // Pinned local11 is the exact request currently being retired.
-                var loadRequest=new CodeInstruction(OpCodes.Ldloc_S,(byte)11);loadRequest.labels.AddRange(instruction.labels);instruction.labels.Clear();loadRequest.blocks.AddRange(instruction.blocks);instruction.blocks.Clear();yield return loadRequest;
+                // The qualified removal keys select one typed, dominating request
+                // local. Never infer an Optimum slot from its version/local count.
+                if(generationRequestLocal<0)throw new InvalidOperationException("Qualified generation request local missing");
+                var loadRequest=generationRequestLocal<=byte.MaxValue?new CodeInstruction(OpCodes.Ldloc_S,(byte)generationRequestLocal):new CodeInstruction(OpCodes.Ldloc,(short)generationRequestLocal);loadRequest.labels.AddRange(instruction.labels);instruction.labels.Clear();loadRequest.blocks.AddRange(instruction.blocks);instruction.blocks.Clear();yield return loadRequest;
                 Type target=Equals(method,removeRequest)?method.DeclaringType!:method.GetParameters()[0].ParameterType;
                 instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),Equals(method,removeRequest)?nameof(DeferRequestRemove):nameof(DeferDictionaryRemove)).MakeGenericMethod(target);removals++;
             }
+            if(footprintDispose!=null&&Equals(instruction.operand,footprintDispose)) {
+                instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(DeferFootprintDispose));footprints++;
+            }
             yield return instruction;
         }
+        if(footprints!=(footprintDispose==null?0:2))throw new InvalidOperationException("Qualified footprint disposal sites differ");
         if(chunks!=7||maps!=1||removals!=3)throw new InvalidOperationException("Pinned native generation unload shape differs: "+chunks+"/"+maps+"/"+removals);
+    }
+    private static void DeferFootprintDispose(object footprint) {
+        GenerationLease lease=activeGeneration??throw new InvalidOperationException("Footprint disposal outside qualified generation operation");
+        if(footprint is not IDisposable disposable||footprintDispose?.DeclaringType!=footprint.GetType())throw new InvalidOperationException("Unexpected footprint lease type");
+        if(!lease.Footprints.Any(p=>ReferenceEquals(p,disposable)))lease.Footprints.Add(disposable);
     }
     private static void DirtyGeneration(GenerationReceipt receipt) {
         if(receipt.Chunks!=null)foreach(object? chunk in receipt.Chunks)if(chunk!=null)chunkDirty!.SetValue(chunk,true);
@@ -148,7 +179,25 @@ internal static partial class RetainedNativeSaveWork
     }
     private static Exception? GenerationExit(Exception? __exception,GenerationLease? __state) {
         if(__state==null)return __exception;activeGeneration=__state.Parent;
-        try{return FinishGeneration(__exception,__state);}finally{EndOperation(__state.Operation!);}
+        Exception? result=__exception;
+        try {result=FinishGeneration(__exception,__state);}
+        catch(Exception error) {result??=error;}
+        finally {
+            // Native finally has requested disposal, but the footprint remains
+            // held through DB acknowledgement and our deferred identity checks.
+            try {
+                foreach(GenerationReceipt receipt in __state.Requests.Values.Where(r=>r.DispatchClaimHeld))try {
+                    var index=(IDictionary)queueIndex!.GetValue(__state.Queue)!;long key=(long)AccessTools.Field(receipt.Request.GetType(),"mapIndex2d").GetValue(receipt.Request)!;
+                    // A retired/superseded request keeps its one-bit claim as a
+                    // tombstone until GC. Releasing it would let a worker whose
+                    // disposed check preceded retirement claim a stale object.
+                    if(((int)requestVersion.Last().GetValue(receipt.Request)!&1)==0&&index.Contains(key)&&ReferenceEquals(index[key],receipt.Request))releaseDispatch!(receipt.Request);
+                }catch(Exception error){result??=error;}
+                foreach(IDisposable footprint in __state.Footprints)try {footprint.Dispose();}catch(Exception error) {result??=error;}
+            }
+            finally {EndOperation(__state.Operation!);}
+        }
+        return result;
     }
     private static Exception? FinishGeneration(Exception? __exception,GenerationLease __state) {
         if(__exception!=null) {foreach(GenerationReceipt receipt in __state.Requests.Values)DirtyGeneration(receipt);return __exception;}

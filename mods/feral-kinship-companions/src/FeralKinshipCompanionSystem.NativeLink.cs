@@ -241,6 +241,7 @@ public sealed partial class FeralKinshipCompanionSystem
         ledgerHydratedEntities.Add(e.EntityId); retainedLoadedHealthApplied.Add(e);
         loadedFoxes[e.EntityId] = e; retainedAdmissionBodies[e.EntityId] = e;
         ForgetPendingCompanionAdmission(e);
+        if (!refreshingRosterPresence) RefreshVerifiedCompanionPresence(e, CaptureExpeditionPresentationAuthority());
     }
     private bool AdmitNativeLinkedLoad(Entity e)
     {
@@ -270,7 +271,7 @@ public sealed partial class FeralKinshipCompanionSystem
                 ledgerHydratedEntities.Add(e.EntityId); retainedLoadedHealthApplied.Add(e);
             } else { WakeNativeLink(e); return true; }
         }
-        if (r.EntityId > 0 && r.EntityId != e.EntityId && !nativeAdultGrowthHandoffs.TryGetValue(e, out _)) {
+        if (r.EntityId > 0 && r.EntityId != e.EntityId && !VerifiedGrowthHandoff(e, out _)) {
             // Keep the existing competing-body admission guard. Observation is
             // not ledger registration and never hydrates this candidate.
             ObserveRetainedAdmission(e);
@@ -314,6 +315,11 @@ public sealed partial class FeralKinshipCompanionSystem
     }
     private void RegisterNativeLinkCommands(ICoreServerAPI api)
     {
+        api.ChatCommands.Create("companionadult").WithDescription("Admin: [cart] id:<companion-id>; confirm <token>. Recover one verified retained adult, preserving current points and separate cargo.")
+            .RequiresPlayer().RequiresPrivilege(Privilege.controlserver).WithArgs(api.ChatCommands.Parsers.OptionalAll("selection"))
+            .HandleWith(args => args.Caller.Player is IServerPlayer actor
+                ? HandleAdultRecoveryCommand(actor, args.Parsers.Count > 0 ? ((string?)args[0] ?? "") : "")
+                : TextCommandResult.Error("Connected admin required"));
         api.ChatCommands.Create("companionbody").WithDescription("Admin: [cart] id:<companion-id> [select <actual-native-id>]. Bind one existing Emergency generation without reconstruction.")
             .RequiresPlayer().RequiresPrivilege(Privilege.controlserver).WithArgs(api.ChatCommands.Parsers.OptionalAll("selection"))
             .HandleWith(args => args.Caller.Player is IServerPlayer actor ? HandleEmergencyBodyCommand(actor, args.Parsers.Count > 0 ? ((string?)args[0] ?? "") : "") : TextCommandResult.Error("Connected admin required"));

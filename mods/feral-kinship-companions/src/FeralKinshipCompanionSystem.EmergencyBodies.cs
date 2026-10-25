@@ -57,6 +57,7 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         blocked = false;
         if (e is EntityPlayer || serverApi == null || packRepository?.Loaded != true) return false;
+        if (VerifiedGrowthHandoff(e, out var growingChild) && IsEmergencySelected(growingChild)) return false;
         if (emergencySpawns.TryGetValue(e, out var spawn)) { BindEmergencySpawn(e, spawn); blocked = true; return true; }
         string id = GetDomesticationStatus(e)?.GetString(FoxIdKey) ?? string.Empty;
         if (!packRepository.TryGetRecord(id, out var r) || r == null || !HasForceHistory(r) || !EmergencyIdentity(e, r)) return false;
@@ -163,6 +164,7 @@ public sealed partial class FeralKinshipCompanionSystem
             // Even a failed/uncertain earlier write must be retried BEFORE
             // releasing a body or holding another body's native cargo.
             ForceCheckpoint(r, j);
+            if (a.Version == 2 && a.Reason == AdultRecoveryReason) ApplyAdultRecoveryProgress(r, selected, a);
             a.NativeId = selected.EntityId; r.EntityId = selected.EntityId;
             r.RecoveryRetiredNativeIds = r.RecoveryRetiredNativeIds.Where(id => id != selected.EntityId).ToArray();
             ClearEmergencyPresentationLedger(r);

@@ -683,7 +683,7 @@ internal sealed partial class GuiElementFeralKinshipFoxPackSurface : GuiElementF
             ? $"Child · adulthood EXP pending · Lifetime EXP {member.LifetimeExperience}"
             : $"Level {member.Level} · {member.CurrentLevelExperience}/{member.RequiredLevelExperience} EXP · Lifetime {member.LifetimeExperience}";
         DrawText(ctx, $"{progression}   |   Requests {member.RequestsCompleted}/{member.RequestsGenerated}   |   Points {member.Points}/{member.LifetimePoints}", x + 28, y + 67, 14, TextMuted);
-        DrawText(ctx, Trim(FormatBackpackRosterStatus(member), 112), x + 28, y + 89, 13,
+        DrawText(ctx, Trim(string.IsNullOrEmpty(member.ReturnInfo) ? FormatBackpackRosterStatus(member) : member.ReturnInfo, 112), x + 28, y + 89, 13,
             member.BackpackDeliveryActive ? TextGold : TextMuted);
         DrawText(ctx,
             Trim(string.IsNullOrWhiteSpace(member.BackpackLastDeliverySummary)

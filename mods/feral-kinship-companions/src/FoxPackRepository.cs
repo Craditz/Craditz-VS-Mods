@@ -947,9 +947,10 @@ internal sealed partial class FoxPackRepository
                 && !string.Equals(record.Status, "Mortally wounded", StringComparison.OrdinalIgnoreCase)
                 && !string.Equals(record.Status, "Running late", StringComparison.OrdinalIgnoreCase)
                 && !string.Equals(record.Status, "Awaiting safe return", StringComparison.OrdinalIgnoreCase)
+                && !string.Equals(record.Status, "Returning", StringComparison.OrdinalIgnoreCase)
                 && !string.Equals(record.Status, "Unrecoverable", StringComparison.OrdinalIgnoreCase)
-                && !record.Status.StartsWith("Away —", StringComparison.OrdinalIgnoreCase)
-                && !record.Status.StartsWith("Leaving —", StringComparison.OrdinalIgnoreCase))
+                && !record.Status.StartsWith("Away ", StringComparison.OrdinalIgnoreCase)
+                && !record.Status.StartsWith("Leaving ", StringComparison.OrdinalIgnoreCase))
             {
                 record.Status = "Not currently loaded";
             }

@@ -1,25 +1,44 @@
-# Companions 0.5.92
+# Companions 0.5.94 release notes
 
-## Changes from public ModDB 0.5.91
-
-See CHANGELOG_v0.5.92.txt for the complete scoped changes: kibble trademark text, safe diagnostic formatting/help, Pack Ledger handbook discovery and interaction wording, legacy-storage retirement/compatibility, flap tooltip patch binding, hand-feeding priority and native startup compatibility qualification.
-
-The ledger writer, serialization and recovery model remain public schema 57. The private schema 58/59 recovery/rebuild work is excluded and is not credited as a released fix. Provisional health, camera, further lighting, egg-design, pathfinding/follow, model-stat and helper changes are also excluded.
+The sole change from public ModDB 0.5.93 is the Optimum-aware native save adapter,
+plus stable version metadata and matching release documentation. Existing
+public 0.5.93 recovery/return work is the baseline, not a new fix in this release.
+No assets or save schema change. See CHANGELOG_v0.5.94.txt for behavior details.
 
 ## Qualification
 
-Controlled verification passed the schema-57 regression and independent-fix suites, schema-boundary refusals, native contract checks, real native hook installation and dependency patch binding. Single-player qualification covered an actual public-0.5.91 world upgrade, companion identity/health/progression/native cargo, indexed storage contents and tool durability, expanded-slot edits across cold restart, modern Ledger rules, flap tooltips, diagnostics and Seraph/grazer feeding/refusal/air-eating controls. Separate Survival and Creative normal-break forks preserved cargo without warning-box drops or duplication. The exact sanitized runtime passed launch, feeding/refusal, diagnostic identity and save/quit checks, followed by an independent saved-state conservation audit.
+The exact accepted preview passed Windows VS 1.22.7 / .NET 10.0.13 vanilla and
+official Optimum 0.3.21 headless startup, generation/unload, ordinary saves,
+clean shutdown and repeated cold reload. Companion fixtures retained identity,
+health, ledger progression and a marked native attribute ItemStack tree.
+This is not natural-taming or native-backpack validation.
 
-Neutral source-path packaging was checked with an explicit list of eighteen caller-file literals; no unexpected method, field, constant, assembly-attribute or resource change was permitted. Source C# and all 352 assets were unchanged, and the DLL and portable PDB were byte-identical when built in two source directories. The only expected runtime-string difference is the optional diagnostic label described in README.md.
+Real SQLite abort/rollback and partial-commit retries through native GameDatabase
+were tested in a separate auxiliary DB with controlled production retirement
+finalizers and real native queue/lease primitives. All 415 SQL/stress checks
+passed, including 128 two-thread dispatch races. This is not an injected
+running-world chunk-worker SQL failure, disk-full test or exhaustive proof.
+Focused Optimum 67, vanilla 8, five contract-mutation outcomes, current recovery
+150, startup 22 and expedition/migration 153 checks passed. Eleven old Undo
+fixtures fail identically in public 0.5.93 and remain explicit historical limits.
 
-These checks do not qualify broad multiplayer, every optional provider, every destruction path or audible sound behavior. Inherited audio/network warnings and initially stale green illumination are not claimed fixed.
+Independent cloud qualification passed Linux vanilla/Optimum headless
+create/save/quit/cold reload and SQLite integrity. Optimum GUI low-graphics
+world entry, Bramble guide, save and full client restart passed. All 21 author
+mods passed headless smoke; a full graphical stack was resource-limited under
+both runtimes, while five smaller graphical stacks passed. Unrelated warnings
+were not folded into this change. Stable relabel verification is recorded in
+the release manifest; preview results are not claimed as direct stable GUI QA.
 
-## Requirements and rollback
+Multiplayer, optional integrations, ordinary companion feeding/backpacks, the
+reporter's different DLL and exhaustive concurrency remain unverified. Other
+Optimum builds are not blanket-approved. Native guards remain enabled.
 
-Requires Vintage Story 1.22.7 and Feral Kinship 0.5.5 with its PetAI requirement. Keep matching server/client versions and one installed archive per mod ID. Optional providers remain external.
+## Backup and publication
 
-Keep a complete closed pre-update world backup with matching mods. Legacy-container definitions/inventories change even though the global ledger remains 57; rollback requires the matching complete backup, not a DLL swap. Do not load private schema 58/59 saves or edit their headers to force a downgrade. No legacy removal date is introduced by this source update.
-
-## Publication status
-
-This is the accepted source/assets/documentation synchronization to GitHub. ModDB upload and verification remain separate and are not claimed here. Private transfer maps, test fixtures, logs, evidence, saves, settings, personal build paths and third-party support material are excluded from this publication.
+Writer schema remains 61 with its existing supported readers. Keep complete
+matching backups. Restore world/profile/mods together when rolling back.
+The owner approved local promotion and matching GitHub source export separately.
+ModDB upload remains the owner's handoff and is not claimed completed here.
+No private support messages, logs, fixtures or credentials belong in public
+source or the installable package. Upstream notices are preserved.

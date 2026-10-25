@@ -257,12 +257,12 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
 
         composer.AddStaticText("RECOVERY", sectionFont, ElementBounds.Fixed(0, 600, 640, 22));
         composer.AddInset(ElementBounds.Fixed(0, 620, 640, system.CanUseEmergencyAdminClient() ? 88 : 48), 2, 0.78f);
-        composer.AddSmallButton("Teleport existing animal", OnTeleportCompanion, ElementBounds.Fixed(10, 628, 300, ButtonHeight), EnumButtonStyle.Normal, "teleport-companion")
-            .AddSmallButton("Normal Rebuild", OnRebuildCompanion, ElementBounds.Fixed(320, 628, 310, ButtonHeight), EnumButtonStyle.Normal, "rebuild-companion");
+        composer.AddSmallButton("Rebuild", () => OnSimpleRebuild(false, false), ElementBounds.Fixed(10, 628, 300, ButtonHeight), EnumButtonStyle.Normal, "rebuild-companion")
+            .AddSmallButton("Rebuild all", () => OnSimpleRebuild(true, false), ElementBounds.Fixed(320, 628, 310, ButtonHeight), EnumButtonStyle.Normal, "rebuild-all");
 
         if (system.CanUseEmergencyAdminClient()) {
-            composer.AddSmallButton("Emergency rebuild / details", () => OnEmergencyCompanion(false), ElementBounds.Fixed(10, 666, 300, ButtonHeight), EnumButtonStyle.Normal, "emergency-companion")
-                .AddSmallButton("Undo / resume Emergency", () => OnEmergencyCompanion(true), ElementBounds.Fixed(320, 666, 310, ButtonHeight), EnumButtonStyle.Normal, "undo-emergency-companion");
+            composer.AddSmallButton("Emergency rebuild", () => OnSimpleRebuild(false, true), ElementBounds.Fixed(10, 666, 300, ButtonHeight), EnumButtonStyle.Normal, "emergency-companion")
+                .AddSmallButton("Emergency rebuild all", () => OnSimpleRebuild(true, true), ElementBounds.Fixed(320, 666, 310, ButtonHeight), EnumButtonStyle.Normal, "emergency-all");
         }
 
         composer.AddStaticText("DANGER ZONE", dangerFont, ElementBounds.Fixed(0, 718, 640, 22));
@@ -372,8 +372,16 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
                 () => OnRerollScavengeSites(true),
                 ElementBounds.Fixed(320, 687, 320, ButtonHeight), EnumButtonStyle.Normal,
                 "reroll-sites-surveyed");
-        composer.AddSmallButton("Recover all companions (this player)", OnRecoverAllCompanions,
-            ElementBounds.Fixed(0, 734, 640, ButtonHeight), EnumButtonStyle.Normal, "recover-all-player");
+    }
+
+    private bool OnSimpleRebuild(bool all, bool emergency)
+    {
+        string id = GetSelectedFoxId();
+        if (!all && string.IsNullOrWhiteSpace(id)) return true;
+        system.SendCompanionRecoveryAction(emergency
+            ? all ? CompanionRecoveryRequestPacket.EmergencyRebuildOwner : CompanionRecoveryRequestPacket.EmergencyRebuildOne
+            : all ? CompanionRecoveryRequestPacket.RebuildOwner : CompanionRecoveryRequestPacket.RebuildOne, all ? string.Empty : id);
+        return true;
     }
 
     private bool OnRecoverAllCompanions()
@@ -689,11 +697,12 @@ public sealed class GuiDialogFeralKinshipFoxDeveloper : GuiDialog
         }
 
         bool hasRecord = !string.IsNullOrWhiteSpace(GetSelectedFoxId());
-        SingleComposer.GetButton("teleport-companion").SetActive(hasRecord);
         SingleComposer.GetButton("rebuild-companion").SetActive(hasRecord);
+        bool hasRoster = hasRecord || (recoveryState?.Records?.Count ?? 0) > 0 || (state?.OwnedCompanionCount ?? 0) > 0;
+        SingleComposer.GetButton("rebuild-all").SetActive(hasRoster);
         if (system.CanUseEmergencyAdminClient()) {
-            SingleComposer.GetButton("emergency-companion")?.SetActive(hasRecord && state?.CanEmergencyRebuild == true);
-            SingleComposer.GetButton("undo-emergency-companion")?.SetActive(hasRecord && state?.CanEmergencyUndo == true);
+            SingleComposer.GetButton("emergency-companion")?.SetActive(hasRecord);
+            SingleComposer.GetButton("emergency-all")?.SetActive(hasRoster);
         }
         SingleComposer.GetButton("delete-all-companions").SetActive((state?.OwnedCompanionCount ?? 0) > 0);
         SingleComposer.GetButton("back").SetActive(true);

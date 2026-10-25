@@ -166,6 +166,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (work.Number <= 0) work.Number = packRepository!.AllocateNumber();
         work.Archived = false; if (work.MissingContentArchive != null) work.MissingContentArchive.Active = false;
         work.RetainedTrip = work.RetainedPhase = work.RetainedOutcome = work.RetainedLegacyAuthority = string.Empty;
+        work.ReturnTransit = null; // Prior return consent/outcome stays in the backed-up ledger.
         work.RetainedLegacyAdmissionHours = 0; work.SaveMigration = null; work.CompletionProof = null;
         work.DeveloperRecoveryNativeEscrow = work.CompletedHoldRecoveryNativeEscrow = work.CompletedHoldRecoveryLedgerEscrow = Array.Empty<byte>();
         work.CompletedHoldRecoveryAudit = string.Empty; work.MissingRecoveryState = string.Empty;

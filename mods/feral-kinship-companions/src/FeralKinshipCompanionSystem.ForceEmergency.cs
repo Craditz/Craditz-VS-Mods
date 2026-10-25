@@ -31,7 +31,7 @@ public sealed partial class FeralKinshipCompanionSystem
         return exact ?? (entries.Select(x => x.BodyKey).Distinct().Count() == 1 ? entries.FirstOrDefault() : null);
     }
     private static bool ForceMode(string mode) => mode is ForceEmergencyMode or ForceUndoMode;
-    private static string ForceEpoch(FoxPackRecordV2 r) => LastEmergency(r) is { Version: 2 } j ? j.Id : string.Empty;
+    private static string ForceEpoch(FoxPackRecordV2 r) => LastEmergency(r) is { Version: 2 or 3 } j ? j.Id : string.Empty;
     private bool ForceSuperseded(FoxPackRecordV2 r, string epoch) => packRepository?.TryGetRecord(r.FoxId, out var current) == true
         && current != null && ForceEpoch(current) != epoch;
     private static void ForceNote(EmergencyCompanionJournal j, string text) { if (!j.Unresolved.Contains(text)) j.Unresolved.Add(text); }
@@ -61,6 +61,13 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         var copy = new FoxPackRecordV2();
         foreach (var field in typeof(FoxPackRecordV2).GetFields(BindingFlags.Public | BindingFlags.Instance)) field.SetValue(copy, field.GetValue(r));
+        // Retained journey receipts are protobuf properties, rather than
+        // fields. Preserve them in the backup even though the new body clears
+        // its active journey. Only the live history is excluded for recursion.
+        foreach (var property in typeof(FoxPackRecordV2).GetProperties(BindingFlags.Public | BindingFlags.Instance))
+            if (property.CanRead && property.CanWrite && property.GetIndexParameters().Length == 0
+                && property.GetCustomAttribute<ProtoMemberAttribute>() != null)
+                property.SetValue(copy, property.GetValue(r));
         copy.EmergencyRebuilds = new();
         using var bytes = new MemoryStream(); Serializer.Serialize(bytes, copy); return bytes.ToArray();
     }
@@ -168,6 +175,8 @@ public sealed partial class FeralKinshipCompanionSystem
     private FoxPackRecordV2 ForceWorking(FoxPackRecordV2 r, EmergencyCompanionJournal j)
     {
         var work = EmergencyWorkingRecord(r, j, force: true);
+        if (j.SimpleRebuild) RecoverSimpleNativeFields(work, r, j);
+        if (j.SimpleRebuild) ResetSimpleRebuildRecord(work, r);
         work.EmergencyBody = new() { Operation = j.Id, NativeId = j.TargetId, BodyKey = j.ReplacementKey, Marker = j.Id + ":force", Phase = "Spawning" };
         work.NativeLinks = new(); // Original pending journals remain in BeforeLedger.
         work.PendingDepartureStatus = work.PendingReturnStatus = string.Empty;
@@ -196,7 +205,8 @@ public sealed partial class FeralKinshipCompanionSystem
         }
         ForceCapture(r, j, e, kind);
         ForceCheckpoint(r, j); // Never change native inventory or delete this body.
-        bool currentIdConflict = e.EntityId == j.TargetId && j.Stage != "UndoPrepared" && j.Stage != "Undone";
+        bool currentIdConflict = e.EntityId == j.TargetId && j.Stage != "UndoPrepared" && j.Stage != "Undone"
+            && (r.EmergencyBody == null || r.EmergencyBody.NativeId == j.TargetId);
         if (!currentIdConflict) {
             r.RecoveryRetiredNativeIds = r.RecoveryRetiredNativeIds.Append(e.EntityId).Distinct().ToArray();
             if (!j.RetiredIds.Contains(e.EntityId)) j.RetiredIds.Add(e.EntityId);
@@ -243,6 +253,14 @@ public sealed partial class FeralKinshipCompanionSystem
                         var type = serverApi.World.GetEntityType(new AssetLocation(j.EntityCode)) ?? throw new InvalidOperationException("Exact saved entity code is not registered: " + j.EntityCode);
                         if (!ExactRecoveryCodeEquals(j.EntityCode, type.Code)) throw new InvalidOperationException("Registered definition returned a different species code: " + type.Code);
                         entity = serverApi.World.ClassRegistry.CreateEntity(type) ?? throw new InvalidOperationException("Native factory returned null for " + j.EntityCode);
+                        if (j.SimpleRebuild && j.BeforeNative.Length > 0) {
+                            try { entity = ReconstructRecoveryNative(type, j.BeforeNative); }
+                            catch (Exception ex) {
+                                if (!j.SimpleEmergency) throw;
+                                ForceNote(j, "Native snapshot no longer readable; fresh defaults used: " + ex.Message);
+                            }
+                        }
+                        if (j.SimpleRebuild) ResetSimpleRebuildBody(entity);
                     } catch (Exception ex) { throw new ForceCreationException(ex); }
                     j.ReplacementKey = Guid.NewGuid().ToString("N");
                     entity.WatchedAttributes.SetString(ForceBodyIdentityKey, j.ReplacementKey);
@@ -274,7 +292,7 @@ public sealed partial class FeralKinshipCompanionSystem
             }
             if (j.Stage == "ForceHolding") {
                 foreach (var old in ForceBodies(r, j).Where(e => !IsForceBody(e, r, j))) {
-                    try { ForceHold(r, j, old, "late original"); }
+                    try { if (j.SimpleRebuild) RetireSimpleRebuildBody(r, j, old); else ForceHold(r, j, old, "late original"); }
                     catch (Exception ex) { ForceNote(j, $"Body {old.EntityId} remains unresolved: {ex.Message}; replacement retained"); }
                 }
                 ResolveEmergencyTransientNotes(j);
@@ -302,6 +320,10 @@ public sealed partial class FeralKinshipCompanionSystem
         if (!string.IsNullOrWhiteSpace(r.Name)) { var name = e.WatchedAttributes.GetTreeAttribute("nametag") ?? new TreeAttribute(); name.SetString("name", r.Name); e.WatchedAttributes.SetAttribute("nametag", name); e.WatchedAttributes.MarkPathDirty("nametag"); }
         try {
             HydrateFoxFromLedger(e, status, r);
+            if (j.SimpleRebuild) {
+                ResetSimpleRebuildBody(e);
+                if (j.BeforeNative.Length == 0) HydrateCompanionBackpackFromRecord(e, status, r);
+            }
             EnsureFoxPersonality(e);
             status.SetBool(ExpeditionAwayKey, false); e.WatchedAttributes.RemoveAttribute(RetainedNativeSuspension.Key);
             ApplyFoxDerivedStats(e, preserveCurrentHealth: true);
@@ -328,6 +350,11 @@ public sealed partial class FeralKinshipCompanionSystem
         r.EntityId = j.TargetId; r.EntityCode = j.EntityCode; r.Status = "Present"; r.RecoveryStatus = CompanionRecoveryStatus.Recoverable;
         r.RecoveryRetiredNativeIds = r.RecoveryRetiredNativeIds.Where(x => x != j.TargetId).Concat(j.RetiredIds).Distinct().ToArray();
         r.EmergencyBody!.Phase = "Ready";
+        if (j.SimpleRebuild && j.BeforeNative.Length > 0) {
+            var backpack = e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.CompanionBackpackStack
+                ?? e.WatchedAttributes.GetItemstack(CompanionBackpackItemKey);
+            r.BackpackItem = backpack?.ToBytes() ?? Array.Empty<byte>();
+        }
         ResolveEmergencyTransientNotes(j);
         ForceCheckpoint(r, j, "ForceHolding");
     }
@@ -350,7 +377,9 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void NotifyForceResult(FoxPackRecordV2 r, EmergencyCompanionJournal j)
     {
-        if (serverApi?.World.PlayerByUid(j.ApprovedBy) is IServerPlayer actor) SendCompanionRecoveryState(actor, EmergencyReport(r));
+        if (serverApi?.World.PlayerByUid(j.ApprovedBy) is IServerPlayer actor) SendCompanionRecoveryState(actor,
+            j.SimpleRebuild ? j.Stage == "Rebuilt" ? GetFoxRecordLabel(r) + ": rebuilt. Backup retained."
+                : GetFoxRecordLabel(r) + ": " + j.Stage + (j.Error.Length > 0 ? ": " + j.Error : string.Empty) : EmergencyReport(r));
         LogRecoveryAttempt(r.FoxId, "force-emergency-result", EmergencyReport(r));
     }
 }

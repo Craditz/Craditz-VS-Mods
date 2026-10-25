@@ -221,6 +221,8 @@ public sealed partial class FeralKinshipCompanionSystem
             Number = record.Number,
             Name = record.Name,
             Status = record.Status,
+            ReturnInfo = string.IsNullOrEmpty(record.PendingReturnStatus) || record.ReturnTransit == null ? string.Empty
+                : record.ReturnTransit.Stage + ": " + record.ReturnTransit.Failure,
             CurrentHealth = record.CurrentHealth,
             MaxHealth = record.MaxHealth,
             Personality = GetPersonalityLabel(record.Personality),

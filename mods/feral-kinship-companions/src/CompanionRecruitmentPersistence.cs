@@ -12,11 +12,11 @@ namespace FeralKinshipCompanions;
 // combined reader admits retained50/51 and explicitly scoped base46/base51.
 internal static class CompanionLedgerSchema
 {
-    internal const int RecruitmentLedgerVersion = 57; // Force reconstruction/Undo journal reader barrier.
+    internal const int RecruitmentLedgerVersion = 61; // Combined recovery and return reader barrier.
     internal const int RecruitmentSectionTag = 100;
 
     internal static bool SupportedHere(int version) => version is >= 1 and <= 46
-        || version is 50 or 51 or 52 or 53 or 54 or 55 or 56 || version == RecruitmentLedgerVersion;
+        || version is >= 50 and <= RecruitmentLedgerVersion;
 
     // Walk wire framing only; reject missing/duplicate/wrong-wire authority
     // before interpreting any potentially incompatible journal/record payload.

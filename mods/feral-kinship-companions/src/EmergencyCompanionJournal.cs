@@ -77,6 +77,8 @@ public sealed class EmergencyCompanionJournal
     [ProtoMember(47)] public string ReplacementKey = string.Empty;
     [ProtoMember(48)] public List<long> ProvisionalIds = new();
     [ProtoMember(49)] public List<string> ResolvedNotes = new();
+    [ProtoMember(50)] public bool SimpleRebuild;
+    [ProtoMember(51)] public bool SimpleEmergency;
 }
 
 [ProtoContract]

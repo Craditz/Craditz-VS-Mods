@@ -36,6 +36,7 @@ public partial class FeralKinshipCompanionSystem
         packRepository.TryGetRecord(foxId,out FoxPackRecordV2? r);
         if(GuardNativeLinkAdmission(e))return true;
         ITreeAttribute? m=RetainedNativeSuspension.Marker(e);
+        if (r != null) ReconcileReturnJournal(e, r);
         if(r!=null&&RetainedNativeSuspension.InProtectedTransition(e,r))return true;
         if(m?.GetString("phase")=="Hold") {
             e.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.RefreshExpeditionSuspension();return true;
@@ -160,7 +161,20 @@ public partial class FeralKinshipCompanionSystem
     private bool HandleRetainedExpeditionStatus(string ownerUid,string foxId,string label,FoxPackRecordV2 r)
     {
         if(!RetainedNativeSuspension.Enabled)return false;
+        if(ReturnSupersededByRebuild(r)) { CancelSupersededReturn(r.FoxId);return true; }
         Entity? e=r.EntityId>0?serverApi?.World.GetEntityById(r.EntityId):null;
+        if(e==null && label.StartsWith("Away \u2014",StringComparison.OrdinalIgnoreCase)) {
+            r.PendingDepartureAtUtcMs=UtcNowMs()+ReturnRetryDelayMs;r.PendingDepartureDeadlineUtcMs=r.PendingDepartureAtUtcMs;
+            if(r.HasLastKnownPosition && r.LastKnownDimension==0)
+                RequestReturnDestinationColumn(new BlockPos(r.LastKnownX,r.LastKnownY,r.LastKnownZ,0));
+            return true;
+        }
+        if(e==null && !string.IsNullOrEmpty(r.PendingReturnStatus)) {
+            RequestRetainedOriginalColumn(r,ownerUid,foxId,label,UtcNowMs());
+            WaitForReturn(r,null,"Original unavailable","Loading the recorded original; no replacement is created");
+            if (ResolveReturnCart(ownerUid,out bool unknown)==null && !unknown) OfferMissingReturnCart(r);
+            return true;
+        }
         bool retained=!string.IsNullOrEmpty(r.RetainedTrip) || e!=null && RetainedNativeSuspension.NativeAuthority(e);
         // Legacy away is held rather than sent into the old dispatch/heal path.
         if(!retained) {
@@ -171,7 +185,11 @@ public partial class FeralKinshipCompanionSystem
         if(e==null || !IsTamedFox(e) || !IsOwner(e,ownerUid)) {
             long now=UtcNowMs();
             if(e==null)RequestRetainedOriginalColumn(r,ownerUid,foxId,label,now);
-            r.PendingReturnAtUtcMs=now+ExpeditionReturnRetryMs;return true;
+            if (!string.IsNullOrEmpty(r.PendingReturnStatus)) {
+                WaitForReturn(r,null,"Original unavailable",e==null?"Loading the recorded original; no replacement is created":"Native body ownership or type is inconsistent");
+                if (ResolveReturnCart(ownerUid,out bool unknown)==null && !unknown) OfferMissingReturnCart(r);
+            }
+            return true;
         }
         if(!RetainedNativeSuspension.Matches(e,r)) { RetainedNativeSuspension.Hold(e,"Expedition status authority mismatch");return true; }
         // Baseline Start/Queue emits U+2014. An ASCII '-' check misroutes an
@@ -189,14 +207,22 @@ public partial class FeralKinshipCompanionSystem
         if(r.PendingReturnStatus!=label || string.IsNullOrEmpty(label)) {
             RetainedNativeSuspension.Hold(e,"No intended return outcome in ledger");return true;
         }
+        // The original can unload between departure preflight and its walk's
+        // suspension acknowledgement. Finish that exact native transition;
+        // never invent historical clocks or reconstruct another animal.
+        if(r.RetainedPhase=="Leaving" && RetainedNativeSuspension.Marker(e)?.GetString("phase")=="Leaving") {
+            if(!RetainedNativeSuspension.Suspend(e,r))return true;
+            SetFoxAwayFromWorld(e,true);
+        }
         // A priority-loaded original may enter the world index before ordinary
         // companion registration. Restore authoritative offline progress/health
         // through the existing reconciler before return can admit that body.
+        EnsureReturnTransit(r);
         ReconcileRetainedBody(e);
         if(!RetainedCanonicalAdmission(e) || !RetainedNativeSuspension.Matches(e,r)
             || r.RetainedPhase is not ("Suspended" or "Returning")
             || RetainedNativeSuspension.Marker(e)?.GetString("phase")!=r.RetainedPhase) {
-            r.PendingReturnAtUtcMs=UtcNowMs()+ExpeditionReturnRetryMs;return true;
+            WaitForReturn(r,e,"Original not admitted",RetainedNativeSuspension.Marker(e)?.GetString("reason") ?? "Waiting for canonical body/chunk registration");return true;
         }
         TryReturnRetainedBody(e,r,label);return true;
     }
@@ -204,23 +230,22 @@ public partial class FeralKinshipCompanionSystem
     private void TryReturnRetainedBody(Entity e,FoxPackRecordV2 r,string label)
     {
         try { TryReturnRetainedBodyCore(e,r,label); }
-        catch(Exception ex) { RetainedNativeSuspension.Hold(e,"Return preparation failed: "+ex.GetType().Name); }
+        catch(Exception ex) { WaitForReturn(r,e,"Return preparation failed",ex.GetType().Name+": "+ex.Message); }
     }
 
     private void TryReturnRetainedBodyCore(Entity e,FoxPackRecordV2 r,string label)
     {
         if(serverApi==null || packRepository==null)return;
-        r.PendingReturnAtUtcMs=UtcNowMs()+ExpeditionReturnRetryMs;
+        var journal=EnsureReturnTransit(r);
+        r.PendingReturnAtUtcMs=UtcNowMs()+ReturnRetryDelayMs;
+        if(returnAttempts.ContainsKey(r.FoxId))return;
+        if(e.Teleporting) { WaitForReturn(r,null,"Native teleport pending","Waiting for an existing native teleport without overlapping it");return; }
+        if(!TrySelectReturnDestination(e,r,out BlockPos cart,out Vec3d safe,out string kind))return;
         if(!RetainedNativeSuspension.BeginReturn(e,r,label))return;
-        packRepository.Save(); // StoreData is an engine-memory checkpoint only.
-        BlockPos? cart=GetActiveCairnPosition(r.OwnerUid);
-        if(cart==null || cart.dimension!=0 || e.Pos.Dimension!=0
-            || serverApi.World.PlayerByUid(r.OwnerUid)?.Entity is not EntityPlayer) { RetainedNativeSuspension.Wait(e);return; }
-        if(serverApi.World.BlockAccessor.GetChunkAtBlockPos(cart)==null) {
-            RequestCairnChunkLoad(cart);RetainedNativeSuspension.Wait(e);return;
-        }
-        Vec3d? safe=FindSafeEntityPosition(cart,e.Properties,e,8,4);
-        if(safe==null) { RetainedNativeSuspension.Wait(e);return; }
+        journal.LastAttemptUtcMs=UtcNowMs();journal.Attempts++;journal.Stage="Teleporting";journal.Failure=string.Empty;journal.Destination=kind;
+        var dispatch=new ReturnAttempt {Body=e,Trip=r.RetainedTrip,Outcome=label,Kind=kind,Anchor=cart.Copy(),Safe=safe.Clone(),Started=UtcNowMs()};
+        returnAttempts[r.FoxId]=dispatch;
+        packRepository.Save(); // Engine-memory checkpoint, not a durable disk flush.
         string trip=r.RetainedTrip;
         try {
             e.TeleportToDouble(safe.X,safe.Y,safe.Z,()=>{
@@ -228,10 +253,11 @@ public partial class FeralKinshipCompanionSystem
                 // Teleporting/IsTeleport cleanup from running.
                 try {
                     // Run after the native callback clears its teleport flags.
-                    serverApi.World.RegisterCallback(_=>VerifyRetainedPlacement(e,r,label,cart,safe,trip,0),0);
-                } catch(Exception ex) { RetainedNativeSuspension.Hold(e,"Teleport callback failed: "+ex.GetType().Name); }
+                    dispatch.CallbackSeen=true;
+                    serverApi.World.RegisterCallback(_=>VerifyReturnAttempt(r,dispatch,0),0);
+                } catch(Exception ex) { FailReturnAttempt(r,dispatch,"Teleport callback failed: "+ex.GetType().Name); }
             });
-        } catch(Exception ex) { RetainedNativeSuspension.Hold(e,"Teleport dispatch failed: "+ex.GetType().Name); }
+        } catch(Exception ex) { FailReturnAttempt(r,dispatch,"Teleport dispatch failed: "+ex.GetType().Name); }
     }
 
     private bool RetainedDestinationChunkReady(Entity e,Vec3d safe)
@@ -300,7 +326,7 @@ public partial class FeralKinshipCompanionSystem
     private void VerifyRetainedPlacement(Entity e,FoxPackRecordV2 r,string label,BlockPos cart,Vec3d safe,string trip,int attempt)
     {
         if(RuntimeEnv.ServerMainThreadId<=0 || Environment.CurrentManagedThreadId!=RuntimeEnv.ServerMainThreadId) {
-            RetainedNativeSuspension.Hold(e,"Return verification is not on the identified native server main thread");return;
+            return; // The main-thread watchdog retries verification safely.
         }
         RetainedNativeSuspension.SynchronizeProgress(e,()=>VerifyRetainedPlacementCore(e,r,label,cart,safe,trip,attempt));
     }
@@ -308,32 +334,39 @@ public partial class FeralKinshipCompanionSystem
     {
         try {
             if(serverApi==null || packRepository==null || r.RetainedTrip!=trip || r.RetainedPhase=="Complete")return;
+            if(!returnAttempts.TryGetValue(r.FoxId,out var dispatch) || dispatch.Expired || !ReferenceEquals(dispatch.Body,e))return;
             RetainedPlacementAuthority authority=CheckRetainedPlacementAuthority(e,safe);
-            if(authority==RetainedPlacementAuthority.Held)return;
+            if(authority==RetainedPlacementAuthority.Held) { FailReturnAttempt(r,dispatch,"Conflicting destination identity; original quarantined");return; }
             if(r.PendingReturnStatus!=label
                 || !RetainedNativeSuspension.Matches(e,r) || r.RetainedPhase!="Returning"
                 || e.Teleporting || e.Pos.Dimension!=0 || e.Pos.XYZ.SquareDistanceTo(safe)>0.01) {
-                RetainedNativeSuspension.Hold(e,"Placement completion authority or position could not be verified");return;
+                if(e.Teleporting) return;
+                FailReturnAttempt(r,dispatch,"Placement authority or position changed");return;
             }
-            BlockPos? current=GetActiveCairnPosition(r.OwnerUid);
-            if(current==null || !current.Equals(cart) || serverApi.World.BlockAccessor.GetChunkAtBlockPos(cart)==null
-                || serverApi.World.PlayerByUid(r.OwnerUid)?.Entity is not EntityPlayer) {
-                RetainedNativeSuspension.Wait(e);return;
+            if(!ReturnDestinationStillValid(r,dispatch)) {
+                FailReturnAttempt(r,dispatch,"Destination changed or owner left allowed territory");return;
             }
             // Native UpdateEvery1000ms owns chunk membership independently of
             // Entity.OnGameTick. Never move chunk lists or recreate a body here.
             if(authority!=RetainedPlacementAuthority.Ready) {
-                if(attempt>=100) { RetainedNativeSuspension.Hold(e,"Destination chunk membership did not complete within bounded wait");return; }
-                serverApi.World.RegisterCallback(_=>VerifyRetainedPlacement(e,r,label,cart,safe,trip,attempt+1),100);return;
+                if(attempt>=100) { FailReturnAttempt(r,dispatch,"Destination chunk membership remains pending");return; }
+                serverApi.World.RegisterCallback(_=>VerifyReturnAttempt(r,dispatch,attempt+1),100);return;
             }
             if(!IsSafeEntityPosition(e.Pos.AsBlockPos,safe,e.Properties,e)) {
                 // Another party member may have completed at this point while
                 // native teleport/chunk placement was still pending. No outcome
                 // has begun: preserve the original and let the normal queue
                 // choose a new safe destination after its existing retry delay.
-                RetainedNativeSuspension.Wait(e);return;
+                FailReturnAttempt(r,dispatch,"Safe placement became occupied");return;
             }
             e.PositionBeforeFalling.Set(safe.X,safe.Y,safe.Z);
+            var journal=EnsureReturnTransit(r);
+            if(!journal.OutcomePrepared) {
+                journal.WasMortallyWounded=e.GetBehavior<EntityBehaviorMortallyWoundable>()?.HealthState==EnumEntityHealthState.MortallyWounded;
+                journal.OutcomeHours=RetainedNativeSuspension.Marker(e)?.GetDouble("resumeHours",serverApi.World.Calendar.TotalHours)??serverApi.World.Calendar.TotalHours;
+                journal.OutcomePrepared=true;packRepository.Save();
+            }
+            RetainedNativeSuspension.Marker(e)!.SetDouble("resumeHours",journal.OutcomeHours);
             bool completed=RetainedNativeSuspension.CompletePlaced(e,r,()=>ApplyRetainedOutcome(e,r,label),()=>{
                 r.PendingReturnStatus=string.Empty;r.PendingReturnAtUtcMs=0;r.Status=label;
                 r.StatusExpiresDay=serverApi.World.Calendar.TotalDays+TransientExpeditionStatusDisplayDays;
@@ -341,12 +374,9 @@ public partial class FeralKinshipCompanionSystem
                 GetDomesticationStatus(e,true)!.SetString(ExpeditionStatusKey,label=="Mortally wounded"?string.Empty:label);
                 packRepository.Save();
             },()=> {
-                BlockPos? verifiedCart=GetActiveCairnPosition(r.OwnerUid);
                 if(CheckRetainedPlacementAuthority(e,safe)==RetainedPlacementAuthority.Ready
                     && RuntimeEnv.ServerMainThreadId==Environment.CurrentManagedThreadId
-                    && e.Alive&&verifiedCart!=null&&verifiedCart.Equals(cart)
-                    && serverApi.World.BlockAccessor.GetChunkAtBlockPos(cart)!=null
-                    && serverApi.World.PlayerByUid(r.OwnerUid)?.Entity is EntityPlayer
+                    && e.Alive&&ReturnDestinationStillValid(r,dispatch)
                     && RetainedNativeSuspension.Matches(e,r)&&r.RetainedTrip==trip
                     && RetainedNativeSuspension.Marker(e)?.GetString("phase")==r.RetainedPhase
                     && r.RetainedPhase is "Returning" or "Resuming" or "Complete"
@@ -354,10 +384,15 @@ public partial class FeralKinshipCompanionSystem
                     && (r.RetainedPhase=="Complete" ? r.Status==label&&r.PendingReturnStatus==string.Empty : r.PendingReturnStatus==label)
                     && !e.Teleporting&&e.Pos.Dimension==0&&e.Pos.XYZ.SquareDistanceTo(safe)<=0.01
                     && IsSafeEntityPosition(e.Pos.AsBlockPos,safe,e.Properties,e))return true;
-                RetainedNativeSuspension.Hold(e,"Return authority changed during protected completion");return false;
+                return false;
             });
-            if(completed) { MarkSocialStateDirty(e);RetainedNativeSuspension.RestoreBoxes(e);RegisterFoxInPack(e); }
-        } catch(Exception ex) { RetainedNativeSuspension.Hold(e,"Return completion failed: "+ex.GetType().Name); }
+            if(completed) { journal.Stage="Complete";journal.Failure=string.Empty;dispatch.Expired=true;returnAttempts.Remove(r.FoxId);MarkSocialStateDirty(e);RetainedNativeSuspension.RestoreBoxes(e);RegisterFoxInPack(e); }
+            else { r.PendingReturnStatus=label;FailReturnAttempt(r,dispatch,"Completion interrupted; original and outcome receipt retained"); }
+        } catch(Exception ex) {
+            r.PendingReturnStatus=label;
+            if(returnAttempts.TryGetValue(r.FoxId,out var failed))FailReturnAttempt(r,failed,"Return completion failed: "+ex.GetType().Name);
+            else WaitForReturn(r,e,"Return completion failed",ex.GetType().Name);
+        }
     }
 
     private void ApplyRetainedOutcome(Entity e,FoxPackRecordV2 r,string label)
@@ -368,9 +403,9 @@ public partial class FeralKinshipCompanionSystem
         if(label=="Mortally wounded") {
             health.Health=Math.Min(health.Health,Math.Min(1f,health.MaxHealth));
             EntityBehaviorMortallyWoundable mortal=e.GetBehavior<EntityBehaviorMortallyWoundable>() ?? throw new InvalidOperationException("Missing mortality behavior");
-            if(mortal.HealthState!=EnumEntityHealthState.MortallyWounded) {
+            if(r.ReturnTransit?.WasMortallyWounded!=true) {
                 mortal.HealthState=EnumEntityHealthState.MortallyWounded;
-                mortal.MortallyWoundedTotalHours=e.World.Calendar.TotalHours;mortal.HealthHealed=0;mortal.HealthDamaged=0;
+                mortal.MortallyWoundedTotalHours=r.ReturnTransit?.OutcomeHours??e.World.Calendar.TotalHours;mortal.HealthHealed=0;mortal.HealthDamaged=0;
             }
         }
         // MarkDirty also calls native UpdateMaxHealth, which may refill a full

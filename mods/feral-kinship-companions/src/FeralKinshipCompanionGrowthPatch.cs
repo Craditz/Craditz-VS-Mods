@@ -43,11 +43,12 @@ internal static class FeralKinshipCompanionGrowthPatch
     }
 
     [HarmonyFinalizer]
-    private static void Finalizer(Entity adult)
+    private static void Finalizer(Entity adult, System.Exception? __exception)
     {
-        // Also clear after a failed native spawn/postfix. This reference-only
-        // handoff must never suppress health hydration on a later adult load.
-        if (adult != null)
+        // Failed spawns must not authorize a later unrelated admission.
+        // Success may still be awaiting native publication/source unload;
+        // successful durable registration consumes the reference-only handoff.
+        if (adult != null && __exception != null)
             FeralKinshipCompanionSystem.CompleteCompanionAdultGrowthHandoff(adult);
     }
 }

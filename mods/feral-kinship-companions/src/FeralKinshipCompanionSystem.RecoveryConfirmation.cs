@@ -111,6 +111,7 @@ public sealed partial class FeralKinshipCompanionSystem
         if (!ReferenceEquals(actor, confirmation.Actor) || actor.ConnectionState != EnumClientState.Playing
             || !CanUseDeveloperTools(actor) || !DeveloperMayControlOwner(actor, confirmation.Owner)) return "Selected-player permission expired or requesting session changed";
         if (!packRepository!.TryGetRecord(target.FoxId, out record) || record == null || record.OwnerUid != confirmation.Owner) return "Previewed companion/owner changed; request a new preview";
+        if (SimpleRebuildAction(target.Mode)) return SimpleRebuildPermission(actor, target, record);
         if (ForceMode(target.Mode)) return MayRepairCompletedHold(actor) ? string.Empty : "Force reconstruction and Undo require server admin privilege";
         if (record.EntityId != target.NativeId) return "Previewed ledger identity changed; request a new preview";
         original = FindArchiveOriginal(record, out string lookupReason);
@@ -138,6 +139,7 @@ public sealed partial class FeralKinshipCompanionSystem
             || packet.TargetOwnerUid != c.Owner || !DeveloperMayControlOwner(actor, c.Owner) || serverApi.World.ElapsedMilliseconds > c.Until) {
             SendCompanionRecoveryState(actor, "Recovery confirmation expired or selected-player permission changed; no animal changed"); return;
         }
+        if (c.Targets.All(t => SimpleRebuildAction(t.Mode))) { RunSimpleRebuilds(actor, c); return; }
         if (!c.Bulk) {
             var target = c.Targets[0];
             string blocker;

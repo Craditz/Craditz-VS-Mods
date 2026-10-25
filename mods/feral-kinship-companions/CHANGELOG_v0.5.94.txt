@@ -1,0 +1,29 @@
+Feral Kinship Companions 0.5.94 — changes from public 0.5.93
+
+- Adds an Optimum-aware native save adapter for the tested VS 1.22.7 /
+  Optimum 0.3.21 method shapes, while retaining vanilla 1.22.7 support.
+- Finds the actual chunk-request operand semantically rather than assuming
+  vanilla's local-variable slot in Optimum's generation/unload method.
+- Serializes access to Optimum's reused save batches and refuses reentrant
+  reuse before the shared batch can be cleared.
+- Holds worldgen footprint leases through deferred retirement and native DB
+  acknowledgement; failed work remains dirty and queued for retry. Dispatch
+  claims protect requests from retirement beneath a worker or stale dispatch.
+
+Native compatibility checks remain fail-closed. This is not a blanket version
+or DLL-hash exception. Other Optimum/game builds may correctly be rejected.
+No new recovery, expedition, feeding, storage, pathfinding, chicken or other
+gameplay changes are introduced. All 352 assets and writer schema 61 remain
+unchanged from public 0.5.93.
+
+Qualification includes Windows and independent Linux headless tests under
+vanilla and Optimum, save/shutdown/cold reload, auxiliary real SQL abort/retry
+tests and bounded dispatch races. Independent Optimum GUI entry, Bramble guide,
+save and full restart passed with low graphics. This does not qualify broad
+multiplayer, every provider, ordinary companion feeding/backpacks, exhaustive
+concurrency or a reporter's different native binary. Full graphical 21-mod
+testing hit resource limits; five smaller graphical stacks passed instead.
+
+Use matching Companions versions on clients/server. Requires VS 1.22.7 and
+Feral Kinship 0.5.5 with its PetAI requirement. Keep a complete matching world,
+profile and mod backup. Never load a newer-schema save using an older writer.

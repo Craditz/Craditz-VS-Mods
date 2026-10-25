@@ -11,6 +11,8 @@ namespace FeralKinshipCompanions;
 internal static class NativeChunkCompatibility
 {
     private static readonly Dictionary<Assembly, (bool Accepted, string Reason)> Results = new();
+    private static readonly HashSet<Assembly> optimum = new();
+    internal static bool UsesOptimum(Assembly native) { lock(Results) return optimum.Contains(native); }
     private static NativeChunkContractSnapshot? expected;
     internal static NativeChunkContractSnapshot Expected
     {
@@ -27,7 +29,14 @@ internal static class NativeChunkCompatibility
         {
             if (Results.TryGetValue(native, out var prior)) { reason = prior.Reason; return prior.Accepted; }
             bool accepted;
-            try { accepted = NativeChunkContractReader.Compare(Expected, NativeChunkContractReader.Capture(native), out reason); }
+            try {
+                var actual=NativeChunkContractReader.Capture(native);
+                accepted=NativeChunkContractReader.Compare(Expected,actual,out reason);
+                if(!accepted && native.GetType("Vintagestory.Server.ServerSystemLoadAndSaveGame")?.GetField("optimumSaveBatch",BindingFlags.NonPublic|BindingFlags.Instance)!=null) {
+                    accepted=NativeOptimumCompatibility.TryQualify(native,actual,out reason);
+                    if(accepted)optimum.Add(native);
+                }
+            }
             catch (Exception error) { accepted = false; reason = "Native contract inspection failed: " + error.GetType().Name + ": " + error.Message; }
             Results[native] = (accepted, reason); return accepted;
         }

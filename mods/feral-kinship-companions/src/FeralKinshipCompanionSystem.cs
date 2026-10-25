@@ -902,7 +902,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             .RegisterMessageType<CompanionWellbeingReadResponse>()
             .RegisterMessageType<CompanionAmbientSoundSettingsPacket>()
             .RegisterMessageType<CompanionPresentationProbeRequest>()
-            .RegisterMessageType<CompanionPresentationProbeReply>();
+            .RegisterMessageType<CompanionPresentationProbeReply>()
+            .RegisterMessageType<CompanionReturnChoiceOffer>()
+            .RegisterMessageType<CompanionReturnChoiceResponse>();
     }
 
     public override void AssetsFinalize(ICoreAPI api)
@@ -1093,7 +1095,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             .SetMessageHandler<CompanionRecoveryRequestPacket>(OnCompanionRecoveryRequest)
             .SetMessageHandler<CompanionBackpackRequestPacket>(OnCompanionBackpackRequest)
             .SetMessageHandler<DeveloperCartInspectionRequestPacket>(OnDeveloperCartInspectionRequest)
-            .SetMessageHandler<CompanionWellbeingReadRequest>(OnWellbeingReadRequest);
+            .SetMessageHandler<CompanionWellbeingReadRequest>(OnWellbeingReadRequest)
+            .SetMessageHandler<CompanionReturnChoiceResponse>(OnReturnChoiceResponse);
 
         api.Event.OnPlayerInteractEntity += OnPlayerInteractEntity;
         api.Event.DidPlaceBlock += OnPlayerDidPlaceBlock;
@@ -1290,6 +1293,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         clientChannel.SetMessageHandler<FoxStorageRoutingStatePacket>(OnFoxStorageRoutingState);
         clientChannel.SetMessageHandler<BrambleStatePacket>(OnBrambleState);
         clientChannel.SetMessageHandler<CompanionRecoveryStatePacket>(OnCompanionRecoveryState);
+        clientChannel.SetMessageHandler<CompanionReturnChoiceOffer>(OnReturnChoiceOffer);
         clientChannel.SetMessageHandler<CompanionBackpackStatePacket>(OnCompanionBackpackState);
     }
 
@@ -1297,6 +1301,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     {
         // A rejected instance registered nothing and must not tear down another side.
         if (!startupCompatibilityChecked || startupCompatibilityRejected) return;
+        missingCartDialog?.Dispose(); missingCartDialog = null;
+        foreach (var attempt in returnAttempts.Values) attempt.Expired = true;
+        returnAttempts.Clear(); returnChoiceQueue.Clear(); clientReturnOffers.Clear(); offeredReturnChoices.Clear();
         nativeAmbientSoundHarmony?.UnpatchAll("feralkinshipcompanions.native-ambient-sounds");
         nativeAmbientSoundHarmony = null;
         ResetRetainedOriginalLoading();
@@ -2700,6 +2707,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnPlayerDisconnect(IServerPlayer player)
     {
+        offeredReturnChoices.RemoveWhere(key => key.StartsWith(player.PlayerUID + ":", StringComparison.Ordinal));
         if (packRepository?.Loaded == true)
             foreach (var record in packRepository.GetRecordsForOwner(player.PlayerUID))
             {
@@ -2789,6 +2797,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void OnPlayerReady(IServerPlayer player)
     {
+        offeredReturnChoices.RemoveWhere(key => key.StartsWith(player.PlayerUID + ":", StringComparison.Ordinal));
+        if (packRepository?.Loaded == true)
+            foreach (var pending in packRepository.GetPendingReturnRecords().Where(r => r.OwnerUid == player.PlayerUID)) pending.PendingReturnAtUtcMs = UtcNowMs();
         serverChannel?.SendPacket(AmbientSoundSettingsPacket(), player);
         HandlePlayerReady(player, forceBrambleNearPlayer: false);
     }
@@ -3053,8 +3064,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return false;
         }
 
-        string ownerId = GetDomesticationStatus(entity)?.GetString("owner") ?? string.Empty;
-        if (!string.Equals(ownerId, clientApi.World.Player.PlayerUID, StringComparison.Ordinal))
+        if (!DeveloperClientSelectedOwnerMatches(entity))
         {
             return false;
         }
@@ -3075,6 +3085,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             TargetEntityId = targetEntityId
         });
         return true;
+    }
+
+    private bool DeveloperClientSelectedOwnerMatches(Entity entity)
+    {
+        string ownerId = GetDomesticationStatus(entity)?.GetString("owner") ?? string.Empty;
+        string selectedOwner = string.IsNullOrEmpty(developerClientTargetOwner)
+            ? clientApi?.World.Player.PlayerUID ?? string.Empty : developerClientTargetOwner;
+        return ownerId.Length > 0 && string.Equals(ownerId, selectedOwner, StringComparison.Ordinal);
     }
 
     /// <summary>Opens the developer panel without requiring a target entity.</summary>
@@ -11134,6 +11152,15 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
+        if (packet.Action is CompanionRecoveryRequestPacket.RebuildOne or CompanionRecoveryRequestPacket.RebuildOwner
+            or CompanionRecoveryRequestPacket.EmergencyRebuildOne or CompanionRecoveryRequestPacket.EmergencyRebuildOwner)
+        {
+            bool all = packet.Action is CompanionRecoveryRequestPacket.RebuildOwner or CompanionRecoveryRequestPacket.EmergencyRebuildOwner;
+            bool emergency = packet.Action is CompanionRecoveryRequestPacket.EmergencyRebuildOne or CompanionRecoveryRequestPacket.EmergencyRebuildOwner;
+            if (all || !string.IsNullOrWhiteSpace(packet.FoxId)) PreviewSimpleRebuild(fromPlayer, targetOwner, packet.FoxId, all, emergency);
+            return;
+        }
+
         if (packet.Action == CompanionRecoveryRequestPacket.OpenDeveloper
             && !string.IsNullOrWhiteSpace(packet.FoxId))
         {
@@ -11589,6 +11616,16 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal void RegisterLoadedFox(Entity entity)
     {
+        PrepareVerifiedGrowthAdmission(entity);
+        RegisterLoadedFoxCore(entity);
+        FinishVerifiedGrowthAdmission(entity);
+        // Successful special admissions deliberately bypass normal hydration.
+        // Their presence still needs refreshing, just like ordinary admission.
+        if (!refreshingRosterPresence) RefreshVerifiedCompanionPresence(entity, CaptureExpeditionPresentationAuthority());
+    }
+
+    private void RegisterLoadedFoxCore(Entity entity)
+    {
         if (GuardForceEmergency(entity)) return;
         if (IsEmergencySelected(entity) && RetainedNativeSuspension.Marker(entity) == null && GetDomesticationStatus(entity)?.GetBool(ExpeditionAwayKey) != true) return;
         if (GuardNativeLinkAdmission(entity)) return;
@@ -11759,6 +11796,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         string foxId = status.GetString(FoxIdKey, string.Empty);
         if (packRepository?.Loaded == true && !string.IsNullOrWhiteSpace(foxId))
         {
+            if (packRepository.TryGetRecord(foxId, out var activeRecord) && activeRecord != null
+                && activeRecord.EntityId != entity.EntityId) return;
             packRepository.MarkStatus(foxId, statusLabel, entity.World.Calendar.TotalDays);
         }
     }
@@ -13767,6 +13806,14 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private void RefreshLoadedFoxPackRecords()
     {
+        bool previous = refreshingRosterPresence;
+        refreshingRosterPresence = true;
+        try { RefreshLoadedFoxPackRecordsCore(); }
+        finally { refreshingRosterPresence = previous; }
+    }
+
+    private void RefreshLoadedFoxPackRecordsCore()
+    {
         if (serverApi == null || packRepository?.Loaded != true)
         {
             return;
@@ -13802,6 +13849,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
 
         using IDisposable saveBatch = packRepository.BatchSaves();
+        // Share one bounded authority capture across the roster, instead of
+        // scanning all native identities again for every selected animal.
+        var presenceAuthority = CaptureExpeditionPresentationAuthority();
         foreach (FoxPackRecordV2 record in packRepository.GetAllRecords())
         {
             ReconcileMissingCompanionContent(record);
@@ -13815,6 +13865,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             Entity? loaded = FindLoadedCompanionForRecovery(record.FoxId);
             if (loaded != null)
             {
+                RefreshVerifiedCompanionPresence(loaded, presenceAuthority);
                 record.RecoveryStatus = CompanionRecoveryStatus.Recoverable;
                 continue;
             }
@@ -16153,7 +16204,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         long returnAtUtcMs = Math.Max(
             UtcNowMs(),
             packRepository.GetPendingReturnRecords()
-                .Where(record => string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal))
+                .Where(record => string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal)
+                    && (record.ReturnTransit == null || record.ReturnTransit.Stage is "" or "Queued"))
                 .Select(record => record.PendingReturnAtUtcMs + ExpeditionReturnStaggerMs)
                 .Concat(packRepository.GetPendingDepartureRecords()
                     .Where(record => string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal))
@@ -16181,6 +16233,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                     _ => healthyDialogueEvent
                 };
             record.PendingReturnStatus = statusLabel;
+            record.ReturnTransit = new CompanionReturnTransit { Trip = record.RetainedTrip, NativeId = record.EntityId, Outcome = statusLabel, Stage = "Queued" };
             record.PendingReturnAtUtcMs = returnAtUtcMs;
             record.PendingDepartureStatus = string.Empty;
             record.PendingDepartureAtUtcMs = 0;
@@ -16223,7 +16276,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 .Where(record => string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal))
                 .Select(record => record.PendingDepartureAtUtcMs + ExpeditionReturnStaggerMs)
                 .Concat(packRepository.GetPendingReturnRecords()
-                    .Where(record => string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal))
+                    .Where(record => string.Equals(record.OwnerUid, ownerUid, StringComparison.Ordinal)
+                        && (record.ReturnTransit == null || record.ReturnTransit.Stage is "" or "Queued"))
                     .Select(record => record.PendingReturnAtUtcMs + ExpeditionReturnStaggerMs))
                 .DefaultIfEmpty(0)
                 .Max());
@@ -16304,9 +16358,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                      .ToArray())
         {
             string pendingStatus = record.PendingDepartureStatus;
-            record.PendingDepartureStatus = string.Empty;
-            record.PendingDepartureAtUtcMs = 0;
-            record.PendingDepartureDeadlineUtcMs = 0;
+            // The native departure owns acknowledgement. An unloaded original
+            // must not lose its only persisted departure intent before suspension.
             SetExpeditionMemberStatus(record.OwnerUid, record.FoxId, pendingStatus);
             changed = true;
         }
@@ -16326,7 +16379,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                      .ToArray())
         {
             string pendingStatus = record.PendingReturnStatus;
-            SetExpeditionMemberStatus(record.OwnerUid, record.FoxId, pendingStatus);
+            try { SetExpeditionMemberStatus(record.OwnerUid, record.FoxId, pendingStatus); }
+            catch (Exception ex) { WaitForReturn(record, null, "Return interrupted", ex.GetType().Name + ": " + ex.Message); }
             changed = true;
         }
         return changed;
@@ -22102,6 +22156,7 @@ public sealed class FoxPackMemberPacket
     [ProtoMember(55)] public bool AnimalRestorePossible;
     [ProtoMember(56)] public bool AnimalRestoreConfirmationPending;
     [ProtoMember(57)] public bool ManualRecordRestored;
+    [ProtoMember(58)] public string ReturnInfo = string.Empty;
 
 }
 
@@ -22406,6 +22461,10 @@ public sealed class CompanionRecoveryRequestPacket
     public const int CancelPreview = 10;
     public const int EmergencyRebuild = 11;
     public const int EmergencyUndo = 12;
+    public const int RebuildOne = 13;
+    public const int RebuildOwner = 14;
+    public const int EmergencyRebuildOne = 15;
+    public const int EmergencyRebuildOwner = 16;
     [ProtoMember(4)] public string ConfirmationToken = string.Empty;
 
     [ProtoMember(1)]

@@ -85,3 +85,7 @@ Prior actual local stable: 0.5.83; previous public source: 0.5.80. Owner explici
 ## Companions 0.5.91
 
 Owner-authorized user Restore update; prior local stable 0.5.90, previous public source 0.5.84. The exact tested DLL and 350 assets are retained. 103 controlled groups passed; affected-server gameplay remains unverified. See [release details and rollback limits](RELEASE_2026-10-20_COMPANIONS.md).
+
+## Companions 0.5.94 Optimum compatibility
+
+Matching source/assets for the accepted Optimum-aware update on public 0.5.93. This also synchronizes the already-public 0.5.93 baseline from the repository's older 0.5.92 source. See [release scope, hashes and limits](RELEASE_2026-10-25_COMPANIONS.md). Other mod source is unchanged; ModDB upload remains separate.

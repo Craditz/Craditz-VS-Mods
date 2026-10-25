@@ -1,12 +1,19 @@
-# Feral Kinship Companions 0.5.92
+# Feral Kinship Companions 0.5.94
 
-Matching production source and assets for the accepted 0.5.92 update. See CHANGELOG_v0.5.92.txt and RELEASE_NOTES.md for changes from public ModDB 0.5.91, qualification and rollback limits. GitHub source synchronization does not establish a ModDB release.
+Optimum-aware save compatibility update, based on public 0.5.93. See
+CHANGELOG_v0.5.94.txt and RELEASE_NOTES.md for the exact scope and test limits.
+The already-released 0.5.93 recovery/return behavior is retained without new
+changes. Writer schema remains 61, admitting the same known 57–60 payloads.
 
-Build with .NET SDK 10 and your own Vintage Story 1.22.7 installation:
-`dotnet build -c Release -p:VintageStoryPath="A:/Vintagestory" -p:IncludeSourceRevisionInInformationalVersion=false`
+Requires Vintage Story 1.22.7, Feral Kinship 0.5.5 and its PetAI requirement.
+Use matching Companions packages on clients and server. The tested Optimum
+set is 0.3.21. Native structural/behavioral contracts remain fail-closed.
 
-The repository-relative shared inputs are included. Engine/provider binaries and standalone private tests are excluded. Builds use the neutral reproducible source path /_/feralkinship-source. On Linux, the optional navigation diagnostic task label is the source basename rather than a Windows-style build path. This changes diagnostic text, not routing algorithms or saved data.
+Build using .NET 10 and your own game references:
+`dotnet build mods/feral-kinship-companions/FeralKinshipCompanions.csproj -c Release -p:VintageStoryPath="<your game installation>"`
+Paths and version metadata are reproducible; engine/provider binaries, tests,
+saves, logs and private support material are not distributed in source exports.
+Existing licenses, sound credits and third-party notices are preserved.
 
-Use a Pack Ledger on ordinary containers for current pack storage. Legacy crate identities remain hidden compatibility warning containers so existing contents can be transferred safely. No timed deletion is introduced. Ledger schema remains 57; this update does not downgrade private schema 58/59 testing saves.
-
-Existing licenses, sound credits and third-party notices are retained.
+Keep complete matching world/profile/mod backups; restoring a DLL alone is not
+a safe rollback. Do not force an unsupported startup or downgrade save schema.

@@ -13,7 +13,7 @@ namespace FeralKinshipCompanions;
 public partial class FeralKinshipCompanionSystem
 {
     private sealed record OriginalLoadKey(string Owner,string CompanionId,long NativeId,string Trip,int X,int Z);
-    private sealed class OriginalLoadAttempt { internal int Requests;internal long RetryAfter;internal bool Reported; }
+    private sealed class OriginalLoadAttempt { internal int Requests;internal long RetryAfter; }
     private sealed class OriginalColumnLoad(long started) { internal readonly long Started=started;internal int Completed;internal bool Reported; }
     private readonly Dictionary<OriginalLoadKey,OriginalLoadAttempt> retainedOriginalLoads=new();
     private readonly Dictionary<(int X,int Z),OriginalColumnLoad> retainedOriginalColumns=new();
@@ -23,16 +23,17 @@ public partial class FeralKinshipCompanionSystem
     private bool retainedSourceCheckpointPending;
     private int retainedSourceCheckpointAttempts;
     private long retainedSourceCheckpointRetryAt;
-    private const int MaximumOriginalLoadAttempts=3,MaximumOriginalColumnsInFlight=4;
+    private const int MaximumOriginalColumnsInFlight=4;
     private const long OriginalLoadWaitMs=15000,OriginalLoadCooldownMs=60000;
 
     private void ResetRetainedOriginalLoading() {
         retainedOriginalLoads.Clear();retainedOriginalColumns.Clear();retainedOriginalLocationWarnings.Clear();retainedOriginalLoadWindow=0;retainedOriginalLoadsInWindow=0;
+        returnDestinationRequests.Clear();
         retainedSourceCheckpointPending=false;retainedSourceCheckpointAttempts=0;retainedSourceCheckpointRetryAt=0;
     }
     private OriginalLoadKey? OriginalLoadIdentity(FoxPackRecordV2 r) {
-        if(r.EntityId<=0 || string.IsNullOrEmpty(r.OwnerUid) || string.IsNullOrEmpty(r.FoxId) || string.IsNullOrEmpty(r.RetainedTrip)
-            || r.RetainedPhase is not ("Suspended" or "Returning") || r.Archived || r.MissingContentArchive?.Active==true
+        if(r.EntityId<=0 || string.IsNullOrEmpty(r.OwnerUid) || string.IsNullOrEmpty(r.FoxId)
+            || !string.IsNullOrEmpty(r.RetainedTrip) && r.RetainedPhase is not ("Leaving" or "Suspended" or "Returning" or "Resuming") || r.Archived || r.MissingContentArchive?.Active==true
             || r.PendingReturnStatus is not ("Returned healthy" or "Returned injured" or "Mortally wounded")
             || !string.IsNullOrEmpty(r.PendingDepartureStatus) || !r.HasLastKnownPosition || r.LastKnownDimension!=0)return null;
         return new(r.OwnerUid,r.FoxId,r.EntityId,r.RetainedTrip,
@@ -45,8 +46,13 @@ public partial class FeralKinshipCompanionSystem
         retainedOriginalLocationWarnings.RemoveWhere(key=>!warningKeys.Contains(key));
         foreach(var key in retainedOriginalLoads.Keys.ToArray())
             if(valid?.Contains(key)!=true || serverApi?.World.GetEntityById(key.NativeId)!=null)retainedOriginalLoads.Remove(key);
-        foreach(var column in retainedOriginalColumns.Keys.ToArray())
-            if(Volatile.Read(ref retainedOriginalColumns[column].Completed)!=0 && now>=retainedOriginalColumns[column].Started+OriginalLoadCooldownMs)retainedOriginalColumns.Remove(column);
+        foreach(var column in retainedOriginalColumns.Keys.ToArray()) {
+            var load=retainedOriginalColumns[column];
+            // Observe native publication even if OnLoaded was lost. Never queue
+            // a second native load while the first is still unacknowledged.
+            if(serverApi?.WorldManager.GetChunk(column.X,0,column.Z)!=null)Volatile.Write(ref load.Completed,1);
+            if(Volatile.Read(ref load.Completed)!=0 && now>=load.Started+OriginalLoadCooldownMs)retainedOriginalColumns.Remove(column);
+        }
         long window=now/1000;if(window!=retainedOriginalLoadWindow){retainedOriginalLoadWindow=window;retainedOriginalLoadsInWindow=0;}
     }
     private void RequestRetainedOriginalColumn(FoxPackRecordV2 r,string owner,string id,string label,long now) {
@@ -57,14 +63,7 @@ public partial class FeralKinshipCompanionSystem
         if(key==null) {
             if(retainedOriginalLocationWarnings.Add(r.OwnerUid+":"+r.FoxId+":"+r.RetainedTrip))ReportOriginalLoadWait(r,"missing or unsupported native source location/return authority");return;
         }
-        // Loading is useful only when the existing return dispatcher can place
-        // the original. Offline owners/cart absence never exhaust the budget.
-        if(serverApi.World.PlayerByUid(owner)?.Entity is not EntityPlayer || GetActiveCairnPosition(owner)?.dimension!=0)return;
         if(!retainedOriginalLoads.TryGetValue(key,out var attempt))retainedOriginalLoads[key]=attempt=new();
-        if(attempt.Requests>=MaximumOriginalLoadAttempts) {
-            if(now>=attempt.RetryAfter && !attempt.Reported) {attempt.Reported=true;ReportOriginalLoadWait(r,"original did not publish after three source-column requests; ordinary source revisit is required");}
-            return;
-        }
         if(now<attempt.RetryAfter)return;
         var column=(key.X,key.Z);
         if(retainedOriginalColumns.TryGetValue(column,out var existing)) {
@@ -83,7 +82,27 @@ public partial class FeralKinshipCompanionSystem
         // a flag on this session's request object. Timeout/cancellation cannot
         // free an unacknowledged native request slot and flood the engine queue.
         try {serverApi.WorldManager.LoadChunkColumnPriority(key.X,key.Z,new ChunkLoadOptions{KeepLoaded=false,OnLoaded=()=>Volatile.Write(ref load.Completed,1)});}
-        catch(Exception ex) {ReportOriginalLoadWait(r,"source-column request failed: "+ex.GetType().Name);}
+        catch(Exception ex) {
+            // The call failed rather than accepting a live request. Do not let
+            // the failed submission permanently consume one of the four slots.
+            retainedOriginalColumns.Remove(column);
+            ReportOriginalLoadWait(r,"source-column request failed: "+ex.GetType().Name);
+        }
+    }
+    private readonly Dictionary<(int X,int Z),long> returnDestinationRequests=new();
+    private void RequestReturnDestinationColumn(Vintagestory.API.MathTools.BlockPos pos)
+    {
+        if(serverApi==null || pos.dimension!=0)return;
+        long now=UtcNowMs();MaintainRetainedOriginalLoading(now);
+        var column=((int)Math.Floor(pos.X/(double)GlobalConstants.ChunkSize),(int)Math.Floor(pos.Z/(double)GlobalConstants.ChunkSize));
+        if(retainedOriginalColumns.ContainsKey(column) || returnDestinationRequests.TryGetValue(column,out long next)&&now<next
+            || retainedOriginalColumns.Values.Count(c=>Volatile.Read(ref c.Completed)==0)>=MaximumOriginalColumnsInFlight
+            || retainedOriginalLoadsInWindow>=MaximumOriginalColumnsInFlight)return;
+        returnDestinationRequests[column]=now+OriginalLoadCooldownMs;
+        foreach(var key in returnDestinationRequests.Where(x=>x.Value<now-OriginalLoadCooldownMs).Select(x=>x.Key).ToArray())returnDestinationRequests.Remove(key);
+        var load=new OriginalColumnLoad(now);retainedOriginalColumns[column]=load;retainedOriginalLoadsInWindow++;
+        try {serverApi.WorldManager.LoadChunkColumnPriority(column.Item1,column.Item2,new ChunkLoadOptions{KeepLoaded=false,OnLoaded=()=>Volatile.Write(ref load.Completed,1)});}
+        catch(Exception ex) {retainedOriginalColumns.Remove(column);serverApi.Logger.Warning("[FeralKinshipCompanions] Return destination load failed: {0}; retry after cooldown.",ex.GetType().Name);}
     }
     private void ReportOriginalLoadWait(FoxPackRecordV2 r,string reason) {
         serverApi?.Logger.Warning("[FeralKinshipCompanions] Retained return for {0} (native {1}) remains pending: {2}. Original/cargo preserved; no replacement.",r.FoxId,r.EntityId,reason);
