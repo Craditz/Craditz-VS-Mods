@@ -1,4 +1,16 @@
 {
-  inheritFrom: "blocktypes/workcart",
-  code: "workcart-quarrying"
+  "inheritFrom": "blocktypes/workcart",
+  "code": "workcart",
+  "variantgroups": [
+    {
+      "code": "kind",
+      "states": [
+        "quarrying"
+      ]
+    },
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ]
 }

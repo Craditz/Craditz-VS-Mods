@@ -10,3 +10,9 @@
 mods/**/assets/**/shapes/**/*.json filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.ogg filter=lfs diff=lfs merge=lfs -text
+
+*.txt text eol=lf
+*.html text eol=lf
+*.in text eol=lf
+*.fsh text eol=lf
+*.vsh text eol=lf

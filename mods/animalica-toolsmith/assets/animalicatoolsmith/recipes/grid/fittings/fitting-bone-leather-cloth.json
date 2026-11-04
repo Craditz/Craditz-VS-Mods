@@ -1,0 +1,194 @@
+[
+  {
+    "ingredientPattern": "ARL,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:bone",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "L": {
+        "type": "item",
+        "code": "game:cloth-*"
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-bone-leather-cloth"
+    }
+  },
+  {
+    "ingredientPattern": "ARL,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:bone",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "L": {
+        "type": "item",
+        "code": "game:cloth-*"
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:fittedclaws-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-bone-leather-cloth"
+    }
+  },
+  {
+    "ingredientPattern": "ARL,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:bone",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "L": {
+        "type": "item",
+        "code": "game:cloth-*"
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:clawtips-*-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-bone-leather-cloth"
+    }
+  },
+  {
+    "ingredientPattern": "ARL,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:bone",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "L": {
+        "type": "block",
+        "code": "game:linen-*-down"
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-bone-leather-cloth"
+    }
+  },
+  {
+    "ingredientPattern": "ARL,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:bone",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "L": {
+        "type": "block",
+        "code": "game:linen-*-down"
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:fittedclaws-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-bone-leather-cloth"
+    }
+  },
+  {
+    "ingredientPattern": "ARL,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:bone",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "L": {
+        "type": "block",
+        "code": "game:linen-*-down"
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:clawtips-*-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-bone-leather-cloth"
+    }
+  }
+]

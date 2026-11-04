@@ -1,10 +1,1 @@
-[
-  {
-    "file": "game:entities/humanoid/player.json",
-    "op": "add",
-    "path": "/server/behaviors/4",
-    "value": {
-      "code": "animalicanaturalprotection"
-    }
-  }
-]
+[{"file":"game:entities/humanoid/player.json","op":"add","path":"/server/behaviors/4","value":{"code":"animalicanaturalprotection"}}]

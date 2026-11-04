@@ -1,0 +1,16 @@
+# Animalica Core 1.2.33 — local release, 2026-10-04
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Previous promoted version: 1.2.32
+Tested optimization label: 1.2.32
+
+- Maintain a loaded-player index through load, spawn and despawn events, seed it once and dispose event subscriptions explicitly.
+- Carry rendering, posture updates and legacy sit cleanup visit indexed players instead of repeatedly taking whole-world entity snapshots.
+- Retain the released Combat Overhaul cat held-item alignment and Footprints API compatibility; this release adds no new animal model assets.
+
+the loose ends that came with this release
+Fox posture cycling, starting Sleep and clearing it by movement were observed. Exact lay dimensions, carried-Fox behavior and broader entity/model/dimension lifecycle paths remain unverified. Prior exhaustive surface, first-person proxy and older Footprints runtime coverage limits remain.
+
+Owner explicitly said: get all of the mods pushed to release and give me a changelog (2026-10-04). Partial coverage is nonblocking; multiplayer is waived.
+the fox has no measured performance gain to report. No public upload.

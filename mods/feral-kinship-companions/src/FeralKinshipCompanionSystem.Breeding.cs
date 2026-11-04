@@ -146,32 +146,9 @@ public sealed partial class FeralKinshipCompanionSystem
             return;
         }
 
-        if (!status.GetBool(BreedingEnabledKey, false)
-            || (definition.IsFotsa && entity.WatchedAttributes.GetTreeAttribute("multiply")?.GetDouble("totalDaysCooldownUntil", 0) > entity.World.Calendar.TotalDays)
-            || !CompanionBreedingCatalog.TryGetGender(entity, out string gender)
-            || !string.Equals(gender, "female", StringComparison.Ordinal)
-            || !string.Equals(GetCompanionActivityMode(entity), CompanionActivityMode.AtEase, StringComparison.Ordinal)
-            || IsFoxAwayFromWorld(entity)
-            || IsFoxIncapacitated(entity)
-            || IsCompanionFoodRestricted(entity))
-        {
-            return;
-        }
-
-        double hour = entity.World.Calendar.HourOfDay;
-        double hoursPerDay = entity.World.Calendar.HoursPerDay;
-        bool nighttime = hour >= hoursPerDay * 0.75d || hour < hoursPerDay * 0.25d;
-        if (!nighttime)
-        {
-            return;
-        }
-
-        long night = (long)Math.Floor(entity.World.Calendar.TotalHours / hoursPerDay
-            - (hour < hoursPerDay * 0.25d ? 1d : 0d));
-        if (status.GetLong(LastBreedingAttemptNightKey, long.MinValue) == night)
-        {
-            return;
-        }
+        if (BreedingSelfBlockReason(entity, definition, status) != null) return;
+        if (!IsBreedingNight(entity, out long night)) return;
+        if (status.GetLong(LastBreedingAttemptNightKey, long.MinValue) == night) return;
 
         long nowMs = entity.World.ElapsedMilliseconds;
         if (nextBreedingPartnerScanAtMs.TryGetValue(entity.EntityId, out long nextScanAtMs)
@@ -216,6 +193,7 @@ public sealed partial class FeralKinshipCompanionSystem
         partnerStatus.SetString(BondedPartnerNameKey, GetFoxDisplayName(entity));
         status.SetBool(PregnancyActiveKey, true);
         status.SetDouble(PregnancyStartTotalHoursKey, entity.World.Calendar.TotalHours);
+        double hoursPerDay = entity.World.Calendar.HoursPerDay;
         double pregnancyDays = definition.PregnancyDays
             * (1d - GetFoxPackTalentRank(entity, "short-gestation") * 0.20d);
         status.SetDouble(PregnancyDueTotalHoursKey,
@@ -235,79 +213,43 @@ public sealed partial class FeralKinshipCompanionSystem
     }
 
     private Entity? FindEligibleBreedingPartner(Entity mother, CompanionBreedingDefinition definition)
-    {
-        ITreeAttribute motherStatus = GetDomesticationStatus(mother, true)!;
-        string ownerUid = motherStatus.GetString("owner", string.Empty);
-        string motherId = motherStatus.GetString(FoxIdKey, string.Empty);
-        string bondedId = motherStatus.GetString(BondedPartnerIdKey, string.Empty);
-        if (string.IsNullOrWhiteSpace(ownerUid) || string.IsNullOrWhiteSpace(motherId))
-        {
-            return null;
-        }
+        => FindEligibleBreedingPartner(mother, definition, out _);
 
+    private Entity? FindEligibleBreedingPartner(Entity mother, CompanionBreedingDefinition definition, out string? reason)
+    {
+        reason = "partner";
+        ITreeAttribute? status = GetDomesticationStatus(mother);
+        if (status == null || string.IsNullOrWhiteSpace(status.GetString("owner", string.Empty))
+            || string.IsNullOrWhiteSpace(status.GetString(FoxIdKey, string.Empty))) return null;
+        bool foundReason = false;
         foreach (Entity candidate in loadedFoxes.Values.OrderBy(value => value.EntityId))
         {
-            if (candidate.EntityId == mother.EntityId
-                || !candidate.Alive
-                || IsCompanionJuvenile(candidate)
-                || IsCompanionPregnant(candidate)
-                || IsFoxAwayFromWorld(candidate)
-                || IsFoxIncapacitated(candidate)
-                || IsCompanionFoodRestricted(candidate)
-                || !CompanionBreedingCatalog.TryGetForAdult(candidate, out CompanionBreedingDefinition candidateDefinition)
-                || !definition.CanMate(mother, candidate, candidateDefinition)
-                || !CompanionBreedingCatalog.TryGetGender(candidate, out string candidateGender)
-                || !string.Equals(candidateGender, "male", StringComparison.Ordinal)
-                || !string.Equals(GetCompanionActivityMode(candidate), CompanionActivityMode.AtEase, StringComparison.Ordinal))
-            {
-                continue;
-            }
-
-            ITreeAttribute? candidateStatus = GetDomesticationStatus(candidate);
-            string candidateId = candidateStatus?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
-            string candidateBondedId = candidateStatus?.GetString(BondedPartnerIdKey, string.Empty) ?? string.Empty;
-            if (candidateStatus?.GetBool(BreedingEnabledKey, false) != true
-                || !string.Equals(candidateStatus.GetString("owner", string.Empty), ownerUid, StringComparison.Ordinal)
-                || string.IsNullOrWhiteSpace(candidateId)
-                || (!string.IsNullOrWhiteSpace(bondedId) && !string.Equals(bondedId, candidateId, StringComparison.Ordinal))
-                || (!string.IsNullOrWhiteSpace(candidateBondedId) && !string.Equals(candidateBondedId, motherId, StringComparison.Ordinal))
-                || !AssignedBedsShareEnclosedRoom(mother, candidate))
-            {
-                continue;
-            }
-
-            return candidate;
+            string? blocked = BreedingPartnerBlockReason(mother, candidate, definition);
+            if (blocked == null) { reason = null; return candidate; }
+            if (blocked != "ignore" && !foundReason) { reason = blocked; foundReason = true; }
         }
-
         return null;
     }
 
     private bool AssignedBedsShareEnclosedRoom(Entity first, Entity second)
-    {
-        if (packRepository?.Loaded != true || roomRegistry == null)
-        {
-            return false;
-        }
+        => AssignedBedsBlockReason(first, second) == null;
 
+    private string? AssignedBedsBlockReason(Entity first, Entity second)
+    {
+        if (packRepository?.Loaded != true || roomRegistry == null) return "unavailable";
         string firstId = GetDomesticationStatus(first)?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
         string secondId = GetDomesticationStatus(second)?.GetString(FoxIdKey, string.Empty) ?? string.Empty;
         FoxBedRecord? firstBed = packRepository.GetBedForFox(firstId);
         FoxBedRecord? secondBed = packRepository.GetBedForFox(secondId);
-        if (firstBed == null || secondBed == null || firstBed.Dimension != secondBed.Dimension)
-        {
-            return false;
-        }
-
+        if (firstBed == null) return "bed";
+        if (secondBed == null) return "partner-bed";
+        if (firstBed.Dimension != secondBed.Dimension) return "dimension";
         BlockPos firstPos = new(firstBed.X, firstBed.Y, firstBed.Z, firstBed.Dimension);
         BlockPos secondPos = new(secondBed.X, secondBed.Y, secondBed.Z, secondBed.Dimension);
         Room? firstRoom = roomRegistry.GetRoomForPosition(firstPos);
         Room? secondRoom = roomRegistry.GetRoomForPosition(secondPos);
-        return firstRoom != null
-            && secondRoom != null
-            && firstRoom.ExitCount == 0
-            && secondRoom.ExitCount == 0
-            && firstRoom.Contains(secondPos)
-            && secondRoom.Contains(firstPos);
+        if (firstRoom == null || secondRoom == null || firstRoom.ExitCount != 0 || secondRoom.ExitCount != 0) return "enclosed";
+        return firstRoom.Contains(secondPos) && secondRoom.Contains(firstPos) ? null : "room";
     }
 
     private void TryCompleteCompanionBirth(
@@ -583,21 +525,48 @@ public sealed partial class FeralKinshipCompanionSystem
             : "feralkinshipcompanions:breeding-disabled"));
     }
 
+    // A provider can have more than one juvenile stage and no Companion birth
+    // metadata. Authorize only the destination selected by its actual live grow
+    // behavior, for an established owned dedicated Tamables companion.
+    private bool TryResolveOwnedNativeGrowth(Entity child, Entity adult, ITreeAttribute? status, out bool intermediate)
+    {
+        intermediate = false;
+        if (serverApi == null || status == null || child.Code == null || adult.Code == null
+            || child.Code.Domain is not ("tamablesfotsa" or "tamablescritters")
+            || adult.Code.Domain != child.Code.Domain
+            || status.GetString("domesticationLevel") != "DOMESTICATED"
+            || string.IsNullOrWhiteSpace(status.GetString("owner"))
+            || string.IsNullOrWhiteSpace(status.GetString(FoxIdKey))
+            || !CompanionSpeciesCatalog.TryGetByTameEntityCode(child.Code, out var sourceProfile)
+            || !CompanionSpeciesCatalog.TryGetByTameEntityCode(adult.Code, out var targetProfile)
+            || sourceProfile.Id != targetProfile.Id
+            || RetainedNativeSuspension.NativeAuthority(child) || RetainedNativeSuspension.NativeAuthority(adult)
+            || status.GetBool(ExpeditionAwayKey)) return false;
+        EntityBehaviorGrow? grow = child.GetBehavior<EntityBehaviorGrow>();
+        if (grow == null || !(grow.AdultEntityCodes ?? Array.Empty<AssetLocation>())
+            .Concat(grow.FedAdultEntityCodes ?? Array.Empty<AssetLocation>())
+            .Any(code => code.Equals(adult.Code))) return false;
+        EntityProperties? target = serverApi.World.GetEntityType(adult.Code);
+        if (target == null) return false;
+        intermediate = target.Server?.BehaviorsAsJsonObj?.Any(b =>
+            b["code"].AsString() is "grow" or "tamablescrittersgrow" && b["enabled"].AsBool(true)) == true;
+        return true;
+    }
+
     internal void TryPrepareCompanionAdult(Entity child, ref Entity adult)
     {
         ITreeAttribute? childStatus = GetDomesticationStatus(child);
-        if (serverApi == null
-            || childStatus?.GetBool(JuvenileKey, false) != true
-            || childStatus.GetBool(JuvenilePointsTransferredKey, false))
-        {
-            return;
-        }
+        bool nativeTransition = TryResolveOwnedNativeGrowth(child, adult, childStatus, out bool intermediate);
+        if (serverApi == null || childStatus == null
+            || !nativeTransition && (childStatus.GetBool(JuvenileKey, false) != true
+                || childStatus.GetBool(JuvenilePointsTransferredKey, false))) return;
 
-        string adultCode = childStatus.GetString(ChildAdultEntityCodeKey, string.Empty);
+        string adultCode = nativeTransition ? adult.Code.ToString()
+            : childStatus.GetString(ChildAdultEntityCodeKey, string.Empty);
         EntityProperties? adultType = string.IsNullOrWhiteSpace(adultCode)
-            ? null
-            : serverApi.World.GetEntityType(new AssetLocation(adultCode));
-        Entity? replacement = adultType == null ? null : serverApi.World.ClassRegistry.CreateEntity(adultType);
+            ? null : serverApi.World.GetEntityType(new AssetLocation(adultCode));
+        Entity? replacement = nativeTransition ? adult
+            : adultType == null ? null : serverApi.World.ClassRegistry.CreateEntity(adultType);
         if (replacement == null)
         {
             serverApi.Logger.Error("[FeralKinshipCompanions] Child {0} could not resolve persisted adult type {1}; vanilla growth was left unchanged.", child.EntityId, adultCode);
@@ -609,35 +578,44 @@ public sealed partial class FeralKinshipCompanionSystem
         replacement.WatchedAttributes[DomesticationStatusPath] = childStatus.Clone();
         ITreeAttribute replacementStatus = GetDomesticationStatus(replacement, true)!;
         int banked = Math.Max(0, replacementStatus.GetInt(BankedTalentPointsKey, 0));
-        replacementStatus.SetInt(FoxPointsKey, Math.Max(0, replacementStatus.GetInt(FoxPointsKey, 0)) + banked);
-        replacementStatus.SetInt(BankedTalentPointsKey, 0);
-        replacementStatus.SetBool(JuvenileKey, false);
-        replacementStatus.SetBool(JuvenilePointsTransferredKey, true);
+        if (!intermediate)
+        {
+            replacementStatus.SetInt(FoxPointsKey, Math.Max(0, replacementStatus.GetInt(FoxPointsKey, 0)) + banked);
+            replacementStatus.SetInt(BankedTalentPointsKey, 0);
+        }
+        replacementStatus.SetBool(JuvenileKey, intermediate);
+        replacementStatus.SetBool(JuvenilePointsTransferredKey, !intermediate);
         replacementStatus.SetBool(GrowthInProgressKey, false);
-        replacementStatus.SetString(BreedingFeedbackKey, "grown");
+        replacementStatus.SetString(ChildAdultEntityCodeKey, adultCode);
+        replacementStatus.SetString(BreedingFeedbackKey, intermediate ? "growing" : "grown");
         if (child.WatchedAttributes.GetTreeAttribute("nametag") is ITreeAttribute nameTag)
         {
             replacement.WatchedAttributes.SetAttribute("nametag", nameTag.Clone());
             replacement.WatchedAttributes.MarkPathDirty("nametag");
         }
-
         childStatus.SetInt(FoxPointsKey, replacementStatus.GetInt(FoxPointsKey, 0));
-        childStatus.SetInt(BankedTalentPointsKey, 0);
-        childStatus.SetBool(JuvenileKey, false);
-        childStatus.SetBool(JuvenilePointsTransferredKey, true);
+        childStatus.SetInt(BankedTalentPointsKey, replacementStatus.GetInt(BankedTalentPointsKey, 0));
+        childStatus.SetBool(JuvenileKey, intermediate);
+        childStatus.SetBool(JuvenilePointsTransferredKey, !intermediate);
+        childStatus.SetString(ChildAdultEntityCodeKey, adultCode);
         childStatus.SetBool(GrowthInProgressKey, true);
-
-        // EntityBehaviorGrow calls this Harmony prefix before the replacement
-        // has been spawned/initialized.  GetBehavior (including the health
-        // lookup inside ApplyFoxDerivedStats) is not safe at this point because
-        // the new entity does not yet have initialized sided properties.
-        // Finish behavior and stat setup in the postfix, after SpawnEntity.
         RegisterFoxInPack(child);
         packRepository?.Save();
-        // Retain the actual source reference: its Juvenile flag was cleared
-        // above, before native death/despawn and reentrant adult registration.
         nativeAdultGrowthHandoffs.Add(replacement, child);
         adult = replacement;
+    }
+
+    internal void SeparateCompanionGrowthStatus(Entity child, Entity adult)
+    {
+        // Provider postfixes may put the source tree back onto the replacement.
+        // Finalization clears the adult's transition flag; that must never clear
+        // the retiring source's flag while its admission overlap is still live.
+        if (!nativeAdultGrowthHandoffs.TryGetValue(adult, out object? source)
+            || !ReferenceEquals(source, child)) return;
+        ITreeAttribute? shared = GetDomesticationStatus(adult);
+        if (shared == null || !ReferenceEquals(shared, GetDomesticationStatus(child))) return;
+        adult.WatchedAttributes.SetAttribute(DomesticationStatusPath, shared.Clone());
+        adult.WatchedAttributes.MarkPathDirty(DomesticationStatusPath);
     }
 
     internal void FinalizeCompanionAdultGrowth(Entity adult)
@@ -650,14 +628,15 @@ public sealed partial class FeralKinshipCompanionSystem
         ITreeAttribute? status = GetDomesticationStatus(adult);
         string expectedAdultCode = status?.GetString(ChildAdultEntityCodeKey, string.Empty) ?? string.Empty;
         if (status == null
-            || status.GetBool(JuvenileKey, true)
+            || status.GetBool(JuvenileKey, true) && !nativeAdultGrowthHandoffs.TryGetValue(adult, out _)
             || !string.Equals(expectedAdultCode, adult.Code?.ToString(), StringComparison.OrdinalIgnoreCase))
         {
             return;
         }
 
+        bool intermediate = status.GetBool(JuvenileKey, true);
         status.SetBool(GrowthInProgressKey, false);
-        status.SetBool(JuvenilePointsTransferredKey, true);
+        status.SetBool(JuvenilePointsTransferredKey, !intermediate);
         if (nativeAdultGrowthHandoffs.TryGetValue(adult, out _))
         {
             // If the repository was not loaded during spawn, a later first
@@ -665,7 +644,7 @@ public sealed partial class FeralKinshipCompanionSystem
             // child record. Normal unload/reload still resets this runtime set.
             ledgerHydratedEntities.Add(adult.EntityId);
         }
-        adult.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.EnsureAdultCompanionTasks();
+        if (!intermediate) adult.GetBehavior<EntityBehaviorFeralKinshipFoxSocial>()?.EnsureAdultCompanionTasks();
         string preservedName = adult.WatchedAttributes.GetTreeAttribute("nametag")?.GetString("name", string.Empty)
             ?? string.Empty;
         RegisterLoadedFox(adult);
@@ -674,10 +653,10 @@ public sealed partial class FeralKinshipCompanionSystem
             SetCompanionName(adult, preservedName);
         }
         ApplyFoxDerivedStats(adult);
-        AwardAdulthoodExperienceIfNeeded(adult, status);
+        if (!intermediate) AwardAdulthoodExperienceIfNeeded(adult, status);
         packRepository?.Save();
         MarkSocialStateDirty(adult);
-        if (TryGetOwnerPlayer(adult, out IServerPlayer? growthOwner))
+        if (!intermediate && TryGetOwnerPlayer(adult, out IServerPlayer? growthOwner))
             EmitDialogueEvent(adult, growthOwner!, "family.child_adult", string.Empty, CompanionDialoguePriority.High);
     }
 

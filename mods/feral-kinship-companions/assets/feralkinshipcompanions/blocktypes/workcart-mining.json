@@ -1,4 +1,16 @@
 {
-  inheritFrom: "blocktypes/workcart",
-  code: "workcart-mining"
+  "inheritFrom": "blocktypes/workcart",
+  "code": "workcart",
+  "variantgroups": [
+    {
+      "code": "kind",
+      "states": [
+        "mining"
+      ]
+    },
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ]
 }

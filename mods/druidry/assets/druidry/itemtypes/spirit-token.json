@@ -1,0 +1,44 @@
+{
+  "code": "spirit-token",
+  "variantgroups": [
+    {
+      "code": "spirit",
+      "states": [
+        "wolf", "fox", "hyena", "bear", "deer", "gazelle", "goat",
+        "pig", "sheep", "hare", "raccoon", "chicken", "fish"
+      ]
+    }
+  ],
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "maxstacksize": 16,
+  "shape": {
+    "base": "druidry:item/spirit-token"
+  },
+  "textures": {
+    "copper": {
+      "base": "game:block/metal/plate/copper"
+    },
+    "stone": {
+      "base": "game:block/stone/polishedrock/chalk"
+    }
+  },
+  "attributes": {
+    "shelvable": true
+  },
+  "guiTransform": {
+    "rotation": {"x": -20, "y": 30, "z": -15},
+    "origin": {"x": 0.5, "y": 0.5, "z": 0.5},
+    "scale": 2.4
+  },
+  "groundTransform": {
+    "translation": {"x": 0, "y": 0.1, "z": 0},
+    "scale": 2.2
+  },
+  "tpHandTransform": {
+    "translation": {"x": -0.7, "y": -0.2, "z": -0.65},
+    "rotation": {"x": 10, "y": 85, "z": 0},
+    "scale": 0.8
+  }
+}

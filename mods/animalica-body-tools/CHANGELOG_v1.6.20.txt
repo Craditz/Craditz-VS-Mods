@@ -1,4 +1,6 @@
-Animalica Body Tools 1.6.20 - changes from public ModDB 1.6.19
+# Animalica Body Tools 1.6.20 - changes from public ModDB 1.6.19
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 - Fixed optional aluminum, aluminum-bronze, titanium and meteoric-steel tool-shape texture domains.
 - Fixed missing default item-texture references for the affected optional-metal equipment.

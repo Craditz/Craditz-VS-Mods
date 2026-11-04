@@ -1,0 +1,7 @@
+# Animalica Compatibility Pack 3 (Dinosaurs) v0.4.2
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+- Added reviewed raw-food access to the dinosaur carnivore and herbivore models.
+- Carnivores receive Flesh Eater and Bonecrusher for full large-bone access; herbivores receive Grazer.
+- Conservative Normal/omnivore profiles remain unchanged.

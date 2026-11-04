@@ -3,6 +3,12 @@ using System;
 namespace FeralKinshipCompanions;
 internal static class CompanionWellbeingWork
 {
+    internal static void Rescue(CompanionWellbeingState s)
+    {
+        Normalize(s); s.WorkBurden = Math.Min(100, s.WorkBurden + 20);
+        s.WorkQuietSeconds = 0; s.LastWork = "Automatic cart rescue (+20 exhaustion)";
+        Update(s, true, false);
+    }
     internal static bool NeedsRest(CompanionWellbeingState? s) => s?.Version == CompanionWellbeingRules.Version
         && s.HasEstablishedHome && double.IsFinite(s.WorkBurden) && s.WorkBurden > .000001;
     internal static float ScanFactor(bool ownerOnline) => ownerOnline ? 1f : 5f;
@@ -17,7 +23,8 @@ internal static class CompanionWellbeingWork
     {
         if (s.Version != CompanionWellbeingRules.Version || !ownerOnline || !s.HasEstablishedHome || selfProvisioning || !double.IsFinite(units) || units <= 0) return false;
         Normalize(s);
-        s.WorkBurden = Math.Min(100, s.WorkBurden + Math.Min(10, units));
+        // Completion records activity/experience; observed working time charges effort.
+        // Fast trees, small blocks and helpers must not multiply a day's fatigue.
         s.WorkQuietSeconds = 0;
         s.CompletedWorkUnits = s.CompletedWorkUnits == int.MaxValue ? int.MaxValue : s.CompletedWorkUnits + 1;
         s.LastWork = label;
@@ -73,15 +80,20 @@ internal static class CompanionWellbeingWork
         s.ExpeditionFeeling = s.ExpeditionStressSeconds > 0 ? s.ExpeditionGoodSeconds > 0 ? "Mixed expedition memories" : "Difficult return"
             : s.ExpeditionGoodSeconds > 0 ? "Satisfying expedition" : "No recent expedition";
     }
-    internal static void Observe(CompanionWellbeingState s, double seconds, bool working, bool resting)
+    internal static void Observe(CompanionWellbeingState s, double seconds, double hours, double hoursPerDay,
+        bool working, bool resting, bool indoorBed, bool nourished)
     {
+        if (s.Version != CompanionWellbeingRules.Version) return;
         Normalize(s);
         Feelings(s, seconds);
         seconds = double.IsFinite(seconds) ? Math.Clamp(seconds, 0, 5) : 0;
         double previousQuiet = s.WorkQuietSeconds;
         s.WorkQuietSeconds = working ? 0 : Math.Min(30, s.WorkQuietSeconds + seconds);
-        double recoverSeconds = working ? 0 : Math.Max(0, seconds - Math.Max(0, 30 - previousQuiet));
-        s.WorkBurden = Math.Max(0, s.WorkBurden - recoverSeconds / (resting ? 10 : 30));
+        double quietFraction = seconds > 0 ? Math.Max(0, seconds - Math.Max(0, 30 - previousQuiet)) / seconds : 0;
+        double countedHours = working || resting ? hours : hours * quietFraction;
+        if (s.HasEstablishedHome)
+            s.WorkBurden = Math.Clamp(s.WorkBurden + CompanionDailyRoutine.BurdenChange(
+                countedHours, hoursPerDay, working, resting, indoorBed, nourished), 0, 100);
         if (s.WorkBurden < .000001) { s.WorkBurden = 0; s.TripsSinceRest = 0; }
         Update(s, working, resting);
     }

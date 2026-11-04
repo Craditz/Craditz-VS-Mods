@@ -1,5 +1,7 @@
 # Expedition returns
 
+i have left the wiring notes here. the details matter; a confident fox is not a substitute for the checks below.
+
 Normal returns preserve the original animal and native cargo. No replacement is created.
 
 1. Safe ground near the owner's validated pack cart.

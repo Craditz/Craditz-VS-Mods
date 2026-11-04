@@ -1,5 +1,7 @@
 # Animalica Body Tools 1.6.19
 
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
 - Body Tools now break at zero durability while held as well as equipped. The server removes and synchronizes the exact exhausted stack, including one already broken when a use is attempted. Healthy replacement stacks are protected, and unrelated stored items are not swept.
 - Depleted held claws cannot continue their tool action. Starter and fitted claws follow the same durability rules; starter claws have no exemption. The normal final valid use still works and is charged once.
 - Equipped rending claws retain tree chopping and use axe chopping feedback. Final depletion produces one tool-break sound; cleanup of an already-broken stack is silent. Cultivating claws avoid a duplicate hoe break sound.

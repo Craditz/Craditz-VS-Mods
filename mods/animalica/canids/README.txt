@@ -1,4 +1,7 @@
-Animalica - Foxes, Wolves & Hyenas
+# Animalica - Foxes, Wolves & Hyenas
+
+notes from the stolen computer. the fox kept the useful details and left the version labels attached.
+
 ===================================
 
 Modular Animalica animal pack for playable foxes, wolves, and hyenas.

@@ -262,6 +262,7 @@ internal sealed partial class CompanionNavigation
             return false;
         }
 
+        entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.ObserveCartNavigation(entity, taskName, goal: desiredTarget);
         lease = ActiveLeases.AddOrUpdate(entity.EntityId, 1, (_, previous) => previous + 1);
         onReached = reached;
         onFailed = failed;
@@ -308,6 +309,7 @@ internal sealed partial class CompanionNavigation
     internal void Tick()
     {
         if (!running) return;
+        entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.ObserveCartNavigation(entity, taskName);
         if (!OwnsLease())
         {
             StopStaleCallback(lease);
@@ -337,6 +339,8 @@ internal sealed partial class CompanionNavigation
 
     internal void Cancel()
     {
+        if (running && IsAtValidatedDestination)
+            entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.ObserveCartNavigation(entity, taskName, arrived: true);
         CancelOwnedSearch();
         if (running && OwnsLease())
         {
@@ -581,6 +585,7 @@ internal sealed partial class CompanionNavigation
                 running = false;
                 CompanionPathDiagnostics.Unregister(traverser, searchDiagnostics);
                 UnhookFoundPath();
+                entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.ObserveCartNavigation(entity, taskName, arrived: true);
                 onReached?.Invoke();
             },
             () =>
@@ -1210,6 +1215,7 @@ internal sealed partial class CompanionNavigation
         CancelOwnedSearch();
         if (reportNavigationFailure) ReportNavigationFailure();
         LogNavigationSummary("failed");
+        entity.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>()?.ObserveCartNavigation(entity, taskName, failed: true);
         running = false;
         queuePending = false;
         CompanionPathDiagnostics.Unregister(traverser, searchDiagnostics);

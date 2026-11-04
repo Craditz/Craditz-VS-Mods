@@ -2,8 +2,8 @@
   "type": "code",
   "name": "Custom Music Radio",
   "modid": "custommusicradio",
-  "version": "1.2.2",
-  "description": "Experimental physical vintage radio with automatic server-provided positional audio.",
+  "version": "1.2.3",
+  "description": "the stolen computer had music on it. i built a radio so the den could hear it too. a physical two-block radio with server-provided Ogg music, playlists, shuffle, transport controls, gain and listening range. version 1.2.3 adds playback-seek and snapshot-correction logging to help investigate jumping songs; it does not claim that every playback jump is fixed.",
   "authors": [
     "Codex"
   ],

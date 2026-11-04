@@ -5,7 +5,7 @@ namespace FeralKinship
 {
 public static class FeralRaceResolver
 {
-    private const string ExplicitRaceAttribute = "feralKinshipRace";
+    internal const string ExplicitRaceAttribute = "feralKinshipRace";
     private const string PlayerModelLibModelAttribute = "skinModel";
 
     private readonly struct ModelRule
@@ -97,6 +97,11 @@ public static class FeralRaceResolver
         "sheep",
         "wolf"
     };
+
+    internal static bool IsSupportedRace(string race)
+        => Array.Exists(AnimalRacePrefixes, value => string.Equals(value, race, StringComparison.Ordinal));
+
+    internal static string SupportedRaceNames => string.Join(", ", AnimalRacePrefixes);
 
     public static string? GetRace(EntityPlayer player)
     {

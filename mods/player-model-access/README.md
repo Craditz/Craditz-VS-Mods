@@ -1,9 +1,20 @@
 # Player Model Access
 
-Selected source for version **0.2.2**, from commit `941adfb2`.
+i found the character-selector guest list. some names now need permission from the human.
 
-The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
+globally disable selected PlayerModelLib models while retaining per-player grants. this is a model-selection policy, not an anti-cheat boundary.
 
-Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
+## what is here
 
-See [BUILD.md](../../BUILD.md), the [project license](../../LICENSE) and [third-party notices](../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.
+source version **0.2.2**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
+
+## bring these along
+
+- `game`: `1.22.0-pre.1` or later
+- `playermodellib`: `1.23.8` or later
+
+## the small print by the den door
+
+release approval and test scope are recorded in the release inventory. compiling this source checks the public build layout; it does not make the rebuilt DLL the accepted installer or prove new gameplay. downloadable installers retain their original bytes. dependency libraries stay external.
+
+[build notes](../../BUILD.md) · [release inventory](../../RELEASE_2026-11-04.md) · [license](../../LICENSE) · [third-party notices](../../THIRD_PARTY_NOTICES.md)

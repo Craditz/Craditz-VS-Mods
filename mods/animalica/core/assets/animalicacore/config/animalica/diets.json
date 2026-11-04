@@ -32,6 +32,18 @@
       "foodCategory": "Protein"
     },
     {
+      "code": "primitivesurvival:crabmeat-raw",
+      "baseSatiety": 120,
+      "tag": "raw-bushmeat",
+      "foodCategory": "Protein"
+    },
+    {
+      "code": "primitivesurvival:snakemeat-raw",
+      "baseSatiety": 120,
+      "tag": "raw-bushmeat",
+      "foodCategory": "Protein"
+    },
+    {
       "code": "game:bone*",
       "baseSatiety": 60,
       "tag": "bone",

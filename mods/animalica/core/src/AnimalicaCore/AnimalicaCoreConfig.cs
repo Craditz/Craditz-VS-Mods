@@ -31,6 +31,18 @@ public sealed class AnimalicaCoreConfig
     [JsonProperty("useDefaultSwimmingDepthDescription")]
     public string UseDefaultSwimmingDepthDescription { get; set; } = "Server-authoritative compatibility option. When enabled, Animalica players use the vanilla two-block swimming threshold, so held torches remain lit in one-block water.";
 
+    [JsonProperty("capCollisionToSeraph")]
+    public bool CapCollisionToSeraph { get; set; } = false;
+
+    [JsonProperty("capCollisionToSeraphDescription")]
+    public string CapCollisionToSeraphDescription { get; set; } = "Server-owned: cap each scaled Animalica collision dimension to the engine default Seraph size. Appearance and eye height are unchanged. Native posture reductions still apply.";
+
+    [JsonProperty("raiseCollisionToSeraph")]
+    public bool RaiseCollisionToSeraph { get; set; } = false;
+
+    [JsonProperty("raiseCollisionToSeraphDescription")]
+    public string RaiseCollisionToSeraphDescription { get; set; } = "Server-owned: raise each scaled Animalica collision dimension to the engine default Seraph size. Both collision switches together give Seraph standing dimensions. Appearance and eye height are unchanged.";
+
     [JsonProperty("animalBalanceMode")]
     public string AnimalBalanceMode { get; set; } = "Balanced";
 

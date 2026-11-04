@@ -1,0 +1,13 @@
+<h1>Animalica Core</h1>
+<p>the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs.</p>
+<h2>what the fox put together</h2>
+<p>fish get their underwater breathing, collision caps stay optional, and grazers can build a firepit or pit kiln with dry grass without eating the construction supplies. Carried compatibility checks the loaded rig, including compatible Bixo bodies. a compatible rig is still required.</p>
+<h2>bring these along</h2>
+<ul>
+<li><strong>game</strong>: 1.22.0-pre.1 or later</li>
+<li><strong>playermodellib</strong>: * (any installed version)</li>
+<li><strong>traitrestrictions</strong>: 1.0.0 or later</li>
+</ul>
+<h2>the check sheet</h2>
+<p>the release record keeps the exact version, package hash and test limits. source compilation is a separate check; it does not establish new gameplay acceptance.</p>
+<p><em>mod was made with AI assistance. Pls no hate.</em></p>

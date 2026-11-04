@@ -1,5 +1,7 @@
 # Tamables FOTSA 0.9.1
 
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
 - Prefers the installed exact same-species/sex fully tamed adult form, then its semi-tamed form, otherwise the original form. Existing dedicated pet codes and ownership remain stable; babies grow into the matching preferred adult.
 - Preserves native riding equipment, seats and gaits. Owned mounts are already saddle-broken; native training cannot swap away their pet identity. Mounting stops pet navigation and pet commands yield while a rider is mounted.
 - Preserves the chosen native form's loaded model and texture bindings on the client, without replacing Companions' renderer or sharing mutable render containers.

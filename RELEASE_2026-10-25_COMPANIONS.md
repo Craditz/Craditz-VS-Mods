@@ -1,5 +1,7 @@
 # Companions 0.5.94 source synchronization
 
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
 Previous public ModDB runtime:0.5.93. Previous repository source:0.5.92.
 This source update explicitly synchronizes the already-public0.5.93 baseline,
 then adds only the accepted Optimum-aware compatibility adapter for0.5.94.

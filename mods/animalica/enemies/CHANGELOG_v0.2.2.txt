@@ -1,0 +1,10 @@
+# Animalica Enemies 0.2.2
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 0.2.1
+
+- Fixed model labels and the Paw/Mouth Carry selector references across the 24 enemy models.
+- Fixed Surface Drifter's hand attachments. Main-hand tools now follow the actual hand, and the offhand stays where it belongs.
+- Fixed Surface and Double-Headed Drifters briefly trying to crawl when holding tools, lanterns and other items. Tool-ready animations no longer fight the normal movement pose.
+- Actual crawling still works. It just happens when you ask for it now.

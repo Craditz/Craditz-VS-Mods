@@ -851,6 +851,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         api.RegisterItemClass("FeralKinshipWeatheredHideDummy", typeof(ItemFeralKinshipWeatheredHideDummy));
         api.RegisterBlockClass("FeralKinshipPackCairn", typeof(BlockFeralKinshipPackCairn));
         api.RegisterBlockEntityClass("FeralKinshipPackCart", typeof(BlockEntityFeralKinshipPackCart));
+        api.RegisterBlockEntityClass("FeralKinshipWorkCart", typeof(BlockEntityFeralKinshipWorkCart));
+        api.RegisterBlockBehaviorClass("FeralKinshipQuarryRecovery", typeof(BlockBehaviorQuarryRecovery));
         api.RegisterBlockClass("FeralKinshipWorkCart", typeof(BlockFeralKinshipWorkCart));
         api.RegisterBlockClass("FeralKinshipFoxBed", typeof(BlockFeralKinshipFoxBed));
         api.RegisterBlockClass("FeralKinshipFoxFlap", typeof(BlockFeralKinshipFoxFlap));
@@ -1013,6 +1015,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
         serverApi = api;
+        RegisterCartReportsServer(api);
         LoadBrambleDialogue(api);
         LoadCompanionFoodConfig();
         dialogueService = new CompanionDialogueService(SendDialoguePacket);
@@ -1058,6 +1061,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         AiTaskRegistry.Register<AiTaskFeralKinshipPackIdle>("feralkinshippackidle");
         AiTaskRegistry.Register<AiTaskFeralKinshipFetchDroppedItem>("feralkinshipfetchdroppeditem");
         AiTaskRegistry.Register<AiTaskFeralKinshipLogging>("feralkinshiplogging");
+        AiTaskRegistry.Register<AiTaskFeralKinshipQuarry>("feralkinshipquarry");
+        AiTaskRegistry.Register<AiTaskFeralKinshipCartRecovery>("feralkinshipcartrecovery");
         AiTaskRegistry.Register<AiTaskFeralKinshipMowGrass>("feralkinshipmowgrass");
         AiTaskRegistry.Register<AiTaskFeralKinshipFertilizer>("feralkinshipfertilizer");
         AiTaskRegistry.Register<AiTaskFeralKinshipTroughRefill>("feralkinshiptroughrefill");
@@ -1114,6 +1119,9 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         api.Event.SaveGameLoaded += OnSaveGameLoaded;
         api.Event.ServerRunPhase(EnumServerRunPhase.RunGame, OnCompanionContentReady);
         api.Event.GameWorldSave += OnGameWorldSave;
+        // Shutdown precedes mod disposal and the engine's final world save.
+        // Checkpoint live HP before disposal removes our save handler/guards.
+        api.Event.ServerRunPhase(EnumServerRunPhase.Shutdown, CheckpointLoadedCompanionHealth);
         api.Event.OnEntityDeath += OnProgressionEntityDeath;
         api.Event.OnEntityDeath += OnPredatorRequestTargetDeath;
         api.Event.OnEntityDespawn += OnProgressionEntityDespawn;
@@ -1243,6 +1251,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
         clientApi = api;
+        RegisterCartReportsClient(api);
         nativeAmbientSoundHarmony = new Harmony("feralkinshipcompanions.native-ambient-sounds");
         try
         {
@@ -1301,6 +1310,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     {
         // A rejected instance registered nothing and must not tear down another side.
         if (!startupCompatibilityChecked || startupCompatibilityRejected) return;
+        cartReportDialog?.Dispose(); cartReportDialog = null;
+        if (clientApi != null) clientApi.LinkProtocols.Remove("companioncart");
         missingCartDialog?.Dispose(); missingCartDialog = null;
         foreach (var attempt in returnAttempts.Values) attempt.Expired = true;
         returnAttempts.Clear(); returnChoiceQueue.Clear(); clientReturnOffers.Clear(); offeredReturnChoices.Clear();
@@ -1486,6 +1497,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         {
             CompanionSoundCue.Rejected => (new AssetLocation("game:sounds/effect/woodswitch"), 0.40f),
             CompanionSoundCue.TalentPurchased => (new AssetLocation("game:sounds/tutorialstepsuccess"), 0.52f),
+            CompanionSoundCue.LevelGained => (new AssetLocation("game:sounds/tutorialstepsuccess"), 0.40f),
             CompanionSoundCue.TalentReset => (new AssetLocation("game:sounds/held/bookclose2"), 0.45f),
             CompanionSoundCue.RecruitmentSuccess => (new AssetLocation("game:sounds/effect/receptionbell"), 0.55f),
             CompanionSoundCue.RecruitmentFailure => (new AssetLocation("game:sounds/effect/woodswitch"), 0.42f),
@@ -3846,6 +3858,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal void OnWorkCartRemoved(BlockPos pos)
     {
+        foreach (Entity fox in loadedFoxes.Values.Where(e => e.WatchedAttributes.GetString(QuarryCarryCartKey, "") == WorkCartPositionKey(pos)).ToArray())
+            DropQuarryCargo(fox);
         ClearWorkCartLoggingQueue(pos);
         if (packRepository?.Loaded == true && packRepository.RemoveWorkCart(pos))
         {
@@ -7267,7 +7281,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     internal static ItemStack? GetFoxStorageCargoForRender(Entity fox)
     {
-        ItemStack? carried = fox.WatchedAttributes.GetItemstack(FoxStorageCarryKey);
+        ItemStack? carried = fox.WatchedAttributes.GetItemstack(FoxStorageCarryKey)
+            ?? fox.WatchedAttributes.GetItemstack(QuarryCarryKey);
         if (carried == null || carried.StackSize <= 0) return null;
         if (carried.Collectible == null) carried.ResolveBlockOrItem(fox.World);
         return carried.Collectible == null ? null : carried;
@@ -7347,6 +7362,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     private void DropFoxStorageCargo(Entity fox)
     {
         if (serverApi == null) return;
+        DropQuarryCargo(fox);
         if (fox.WatchedAttributes.GetBool(FoxStorageCartPickupKey, false))
         {
             fox.WatchedAttributes.SetBool(FoxStorageCartPickupKey, false);
@@ -7795,6 +7811,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             or AiTaskFeralKinshipTroughRefill
             or AiTaskFeralKinshipMowGrass
             or AiTaskFeralKinshipLogging
+            or AiTaskFeralKinshipQuarry
             || task is AiTaskFeralKinshipFetchDroppedItem fetch && !fetch.CommandedCourier;
     }
 
@@ -8090,6 +8107,12 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     internal bool TryGetAssignedFoxDen(Entity entity, out Vec3d? den)
     {
         den = null;
+        if (TryGetAssignedBedPosition(entity, out BlockPos? assignedBed) && assignedBed != null
+            && assignedBed.dimension == entity.Pos.Dimension)
+        {
+            den = new Vec3d(assignedBed.X + .5, assignedBed.InternalY + .35, assignedBed.Z + .5);
+            return true;
+        }
         if (packRepository?.Loaded != true || !IsTamedFox(entity))
         {
             return false;
@@ -8146,6 +8169,13 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
 
     private bool TryResolveCompanionPlacedHome(Entity entity, out Vec3d? target)
     {
+        if (TryGetAssignedBedPosition(entity, out BlockPos? assignedBed) && assignedBed != null)
+        {
+            target = entity.World.BlockAccessor.GetChunkAtBlockPos(assignedBed) != null
+                ? FindSafeEntityPosition(assignedBed, entity.Properties, entity, 2, 2) : null;
+            target ??= new Vec3d(assignedBed.X + .5, assignedBed.InternalY + .35, assignedBed.Z + .5);
+            return true;
+        }
         target = null;
         if (serverApi == null || packRepository?.Loaded != true || !IsTamedFox(entity)) return false;
 
@@ -9315,11 +9345,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return true;
         }
 
-        double hour = entity.World.Calendar.HourOfDay;
-        double morningThreshold = 6.5d - GetFoxPackTalentRank(entity, "earlier-morning") * 1d;
-        double bedtimeThreshold = 19.5d + GetFoxPackTalentRank(entity, "later-bedtime") * 1d;
-        return hour < morningThreshold
-            || hour >= bedtimeThreshold
+        return IsCompanionBedtime(entity)
             || string.Equals(GetMood(entity), "sleepy", StringComparison.Ordinal);
     }
 
@@ -9387,6 +9413,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
+        if (CanPlayerUseWorkCartTools(serverPlayer, pos))
+        {
+            var toolCart = EnsureWorkCartTools(pos);
+            if (toolCart != null) serverPlayer.InventoryManager.OpenInventory(toolCart.Tools);
+        }
         SendFoxWorkCartState(serverPlayer, cart, string.Empty);
     }
 
@@ -10146,6 +10177,18 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
         // hand-crafted packet cannot interact with an incapacitated fox.
         if (IsFoxIncapacitated(entity))
         {
+            return;
+        }
+
+        // A Social-panel Refresh only re-reads the current server result. Initial
+        // Open retains its normal identity and compatibility initialization.
+        if (packet.Action == FoxSocialRequestAction.RefreshBreedingStatus)
+        {
+            if (socialViewByOwner.TryGetValue(fromPlayer.PlayerUID, out long viewedEntityId)
+                && viewedEntityId == entity.EntityId)
+            {
+                SendState(entity, fromPlayer, string.Empty);
+            }
             return;
         }
 
@@ -13617,6 +13660,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
     {
         string path = block.Code?.Path ?? string.Empty;
         bool namedHeatSource = path.Contains("firepit", StringComparison.OrdinalIgnoreCase)
+            || path.Equals("pitkiln", StringComparison.OrdinalIgnoreCase)
             || path.Contains("torch", StringComparison.OrdinalIgnoreCase)
             || path.Contains("lantern", StringComparison.OrdinalIgnoreCase)
             || path.Contains("lamp", StringComparison.OrdinalIgnoreCase)
@@ -14950,6 +14994,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             || task is AiTaskFeralKinshipTroughRefill
             || task is AiTaskFeralKinshipMowGrass
             || task is AiTaskFeralKinshipLogging
+            || task is AiTaskFeralKinshipQuarry
             || task is AiTaskFeralKinshipFetchDroppedItem fetch && !fetch.CommandedCourier) == true;
     }
 
@@ -18889,6 +18934,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             ,PregnancyActive = status?.GetBool(PregnancyActiveKey, false) == true
             ,BreedingPartnerName = status?.GetString(BondedPartnerNameKey, string.Empty) ?? string.Empty
             ,BreedingFeedback = GetBreedingFeedbackText(status?.GetString(BreedingFeedbackKey, string.Empty) ?? string.Empty)
+            ,BreedingEligibility = GetCurrentBreedingEligibility(entity)
             ,PregnancyRemainingHours = status?.GetBool(PregnancyActiveKey, false) == true
                 ? (float)Math.Max(0d, status.GetDouble(PregnancyDueTotalHoursKey, 0d) - entity.World.Calendar.TotalHours)
                 : 0f
@@ -19684,6 +19730,11 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                     return;
                 }
 
+                if (packet.ToolsSnapshot?.Length > 0)
+                {
+                    var toolCart = EnsureWorkCartTools(new BlockPos(packet.X, packet.Y, packet.Z, packet.Dimension));
+                    toolCart?.FromTreeAttributes(TreeAttribute.CreateFromBytes(packet.ToolsSnapshot), clientApi.World);
+                }
                 if (workCartDialog == null || !workCartDialog.IsOpened() || !workCartDialog.IsFor(packet))
                 {
                     workCartDialog?.TryClose();
@@ -19721,10 +19772,32 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             return;
         }
 
+        if (packet.SetMining || packet.ConfigureMining || packet.ResumeRescuedWorkers)
+        {
+            var miningCart = EnsureWorkCartTools(pos);
+            if (miningCart == null || !CanPlayerUseWorkCartTools(fromPlayer, pos) || !miningCart.Tools.HasOpened(fromPlayer)) return;
+            if (packet.ResumeRescuedWorkers) ResumeCartRescueWorkers(pos);
+            else if (cart.Kind != "mining") return;
+            else ApplyMiningRequest(miningCart, packet);
+            SendFoxWorkCartState(fromPlayer, cart, packet.ResumeRescuedWorkers ? miningCart.RescueNotice : miningCart.Mining.Status);
+            return;
+        }
+        if (packet.SetQuarry || packet.ConfigureQuarry)
+        {
+            var toolCart = EnsureWorkCartTools(pos);
+            if (cart.Kind != "quarrying" || toolCart?.Tools.QuarryMode != true
+                || !CanPlayerUseWorkCartTools(fromPlayer, pos) || !toolCart.Tools.HasOpened(fromPlayer)) return;
+            string quarryMessage = ApplyQuarryRequest(toolCart, packet);
+            SendFoxWorkCartState(fromPlayer, cart, quarryMessage);
+            return;
+        }
+
         int assigned = 0;
         string message;
         if (packet.SetLogging)
         {
+            if (cart.Kind is not ("generic" or "logging")) return;
+            if (!CanPlayerUseWorkCartTools(fromPlayer, pos)) return;
             cart.LoggingEnabled = packet.LoggingEnabled;
             if (cart.LoggingEnabled)
             {
@@ -19740,7 +19813,7 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             }
             message = cart.LoggingEnabled
                 ? "Logging enabled. Assigned adult companions will wait for tree debris to be cleaned before felling another tree."
-                : "Logging disabled. Any active logger will stop without changing the tree.";
+                : "Logging disabled. Active jobs stop and their axes are released; already felled blocks remain cut.";
         }
         else if (packet.AssignWithinRadius)
         {
@@ -19816,10 +19889,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 Name = record.Name,
                 Status = record.Status,
                 AssignedHere = cart.AssignedFoxIds.Contains(record.FoxId, StringComparer.Ordinal),
-                AssignedElsewhere = record.HasHome
-                    && (!string.Equals(record.HomeType, "workcart", StringComparison.OrdinalIgnoreCase)
-                        || record.HomeX != cart.X || record.HomeY != cart.Y || record.HomeZ != cart.Z
-                        || record.HomeDimension != cart.Dimension),
+                AssignedElsewhere = !cart.AssignedFoxIds.Contains(record.FoxId, StringComparer.Ordinal)
+                    && packRepository.GetWorkCartForFox(record.FoxId) != null,
                 SpeciesId = string.IsNullOrWhiteSpace(record.SpeciesId) ? "fox" : record.SpeciesId,
                 SpeciesDisplayName = GetCompanionSpeciesDisplayName(record)
             })
@@ -19837,7 +19908,10 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
             Candidates = candidates,
             Message = message,
             LoggingEnabled = cart.LoggingEnabled,
-            WorkCartKind = string.IsNullOrWhiteSpace(cart.Kind) ? "generic" : cart.Kind
+            WorkCartKind = string.IsNullOrWhiteSpace(cart.Kind) ? "generic" : cart.Kind,
+            ToolsSnapshot = cart.Kind is "generic" or "logging" or "quarrying" or "mining"
+                ? EnsureWorkCartTools(new BlockPos(cart.X, cart.Y, cart.Z, cart.Dimension))?.Snapshot()
+                : null
         }, owner);
     }
 
@@ -19858,11 +19932,8 @@ public sealed partial class FeralKinshipCompanionSystem : ModSystem
                 Name = record.Name,
                 Status = record.Status,
                 AssignedHere = string.Equals(bed.FoxId, record.FoxId, StringComparison.Ordinal),
-                AssignedElsewhere = record.HasHome
-                    && !(record.HomeX == bed.X
-                        && record.HomeY == bed.Y
-                        && record.HomeZ == bed.Z
-                        && record.HomeDimension == bed.Dimension),
+                AssignedElsewhere = !string.Equals(bed.FoxId, record.FoxId, StringComparison.Ordinal)
+                    && packRepository.GetBedForFox(record.FoxId) != null,
                 SpeciesId = string.IsNullOrWhiteSpace(record.SpeciesId) ? "fox" : record.SpeciesId,
                 SpeciesDisplayName = GetCompanionSpeciesDisplayName(record)
             })
@@ -20785,6 +20856,7 @@ internal static class FoxSocialRequestAction
     public const int ClaimSelectedPackLoot = 57;
     public const int CallPackFoxToCart = 58;
     public const int SetCartRadiusNotifications = 59;
+    public const int RefreshBreedingStatus = 60;
 }
 
 internal static class FoxExpeditionType
@@ -20821,6 +20893,7 @@ internal static class CompanionSoundCue
 {
     public const string Rejected = "rejected";
     public const string TalentPurchased = "talent-purchased";
+    public const string LevelGained = "level-gained";
     public const string TalentReset = "talent-reset";
     public const string RecruitmentSuccess = "recruitment-success";
     public const string RecruitmentFailure = "recruitment-failure";
@@ -21186,6 +21259,17 @@ public sealed class FoxWorkCartAssignmentRequestPacket
     [ProtoMember(7)] public bool AssignWithinRadius;
     [ProtoMember(8)] public bool SetLogging;
     [ProtoMember(9)] public bool LoggingEnabled;
+    [ProtoMember(10)] public bool SetQuarry;
+    [ProtoMember(11)] public bool QuarryEnabled;
+    [ProtoMember(12)] public bool ConfigureQuarry;
+    [ProtoMember(13)] public int QuarryWidth;
+    [ProtoMember(14)] public int QuarryDepth;
+    [ProtoMember(15)] public bool SetMining;
+    [ProtoMember(16)] public bool MiningEnabled;
+    [ProtoMember(17)] public bool ConfigureMining;
+    [ProtoMember(18)] public int MiningDepth;
+    [ProtoMember(19)] public int MiningLength;
+    [ProtoMember(20)] public bool ResumeRescuedWorkers;
 }
 
 [ProtoContract]
@@ -21253,6 +21337,7 @@ public sealed class FoxWorkCartAssignmentStatePacket
     [ProtoMember(9)] public bool LoggingEnabled;
     [ProtoMember(10)] public string WorkCartKind = "generic";
     [ProtoMember(11)] public int WorkersAtCartCount;
+    [ProtoMember(12)] public byte[]? ToolsSnapshot;
 }
 
 [ProtoContract]
@@ -21409,6 +21494,7 @@ public sealed class FoxSocialStatePacket
     [ProtoMember(79)] public string EmergencyReport = string.Empty;
     [ProtoMember(80)] public string SpeciesSourceCode = string.Empty;
     [ProtoMember(81)] public bool SpeciesFromSavedRecord;
+    [ProtoMember(82)] public string BreedingEligibility = string.Empty;
 }
 
 [ProtoContract]

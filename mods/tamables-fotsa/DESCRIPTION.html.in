@@ -1,0 +1,17 @@
+<h1>Tamables: FOTSA</h1>
+<p>the Stone Age animals also wanted to come home. i have filled out the PetAI forms with a muddy paw.</p>
+<h2>Native forms and growth</h2>
+<p>Completed pets prefer an installed fully tamed adult form of the exact same species and sex, then a semi-tamed form, otherwise the original form. Existing dedicated pet codes and ownership remain stable. Babies grow into their corresponding preferred adults.</p>
+<h2>Riding and appearance</h2>
+<p>Supported pets retain native equipment, seats and gaits and are already saddle-broken. Native training cannot replace an owned pet. Mounting stops pet navigation; pet AI yields to the rider. Client model and texture bindings follow the selected native form while preserving Companions' renderer.</p>
+<h2>Commands and feeding</h2>
+<p>Follow, stay, sit and lie commands, basic combat, breeding and source-defined food seeking remain available where supported. Aquatic pets retain their existing water-safety limits. Companions adds its own journal, care and Dining Board system when installed.</p>
+<h2>Approved release and limits</h2>
+<p>Version 0.9.1 is approved with the matching Companions growth correction. Paired elephant growth/riding and representative cow feeding passed on Vintage Story 1.22.7. This does not establish every species, lifecycle or multiplayer path. Optional modded-food compatibility in Companions: <strong>probably works now, not tested</strong>. The invisible Critters bearded dragon remains unresolved and outside these fixes.</p>
+<p>Requires game 1.22.0 or later and PetAI 5.1.1 or later; gameplay qualification used game 1.22.7 and PetAI 5.1.2. Source animal mods retain their own requirements.</p>
+
+<h2>notes for 0.9.1</h2>
+<p>PetAI taming and owned pet behaviour for supported Fauna of the Stone Age modules, with dedicated tame variants and native-form growth/riding integration. 0.9.1 retains the exact approved package, including its historical preview filename. modded-food compatibility: probably works now, not tested. the invisible bearded dragon remains unresolved.</p>
+<h2>the check sheet</h2>
+<p>the release record keeps the exact version, package hash and test limits. source compilation is a separate check; it does not establish new gameplay acceptance.</p>
+<p><em>mod was made with AI assistance. Pls no hate.</em></p>

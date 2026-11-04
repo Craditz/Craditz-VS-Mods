@@ -1,0 +1,34 @@
+# Feral Kinship Companions 0.5.99
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 0.5.94
+
+- Quarry carts can now excavate an area in layers, build access stairs, collect the drops and keep hauling after the last layer is finished.
+- Mining carts now actually mine: exposed ore, nearby veins and saved probe tunnels, with configurable depth/length and side branches.
+- Mining routes now fit the upgraded cart area, including the full passage width. Range upgrades add more work without scrambling the existing route or throwing away its progress.
+- Logging carts now use real axes. Four tool slots, durability bars, reserved-tool indicators and shared tree progress are shown in Duties. Helpers can work on the same tree using its reserved axe.
+- Broken tools are replaced with the next usable spare. Tool tier and normal durability rules apply; cutting foliage doesn't wear down the axe, and clearing soil/clay/grass doesn't wear down the pickaxe.
+- Workers can fetch axes/pickaxes from linked storage into empty tool slots. Rock supplies take priority, and changing slots while an animal is hauling won't delete its cargo.
+- Mining and quarrying can run up to four independent block jobs when tools are available, with helpers sharing each job's tool.
+- Access stairs/supports use matching stone and cost 8 rocks per placed block. Safe natural foundations are kept until needed. Added two-wide detours and paid landings around obstacles.
+- Quarries now handle cracked natural stone, flint-bearing rock and clay deposits, using their normal drops. Other ores, caves, liquids, structures and claims remain protected. Source stone has a 1 in 7 chance of being recovered as a block.
+- Quarry stairs can use the supplied rock type when the first support layers are just soil. Skipped clay/flint can be revisited once access is safe, without losing the paid stairs or excavation counters.
+- Old upper-layer leftovers no longer stop the whole quarry from going deeper. Reachable cleanup gets done; blocked leftovers get reported separately.
+- Fixed deep-quarry workers deciding they were outside their work area just because they were far below the cart. Daytime cart range now uses horizontal distance.
+- Loose dropped items no longer veto stair construction. Overlapping drops are moved onto safe nearby ground, keeping the original stacks. Animals and players still block unsafe placement.
+- Fixed cart type/direction getting lost through placement, rotation, picking or synchronization. Old generic carts can recover their saved role without losing their tools or assignments.
+- Added daily work/rest balancing, real bed recovery and meal interruptions. Workers wind down demanding work before bedtime and finish hauling instead of starting another cut.
+- Animals can have both a work cart and a sleeping bed assigned. Changing one no longer steals the other. Both assignments survive reloads.
+- Added automatic failed-travel rescue for logging, quarry and mining workers. After at least 60 seconds stuck and two failed path attempts, a worker can return to a checked safe landing at its cart. Cargo is kept; rescue costs 20 exhaustion.
+- A second rescue within 5 real minutes pauses that animal's cart work. Clear the problem and use Resume rescued workers in Duties. The pause survives reloads.
+- Added clearer work/safety reports, an owner-only findings menu, a Reports button and clickable chat notices. Access failures should tell you what is actually blocking them.
+- Improved taming and storage guidance, and the flap recipes' Handbook navigation. Hare companions can now eat dry grass.
+- Lit pit kilns now provide warmth, and owners get a cue when a companion levels up.
+- Sleeping foxes no longer play their awake native idle yips. This is the sleep-related noise fix, not a blanket fox-sound rewrite.
+- Shutdown now checkpoints the live companion's actual HP, with the canonical-record guard kept in place.
+- Breeding eligibility now checks the current conditions. Refresh updates the information without changing the breeding state.
+- Added the adult male European roe hunt reward, while keeping the party's kinship exclusions.
+- Added support for the reviewed Stratum 1.22.7-stratum.2 save/chunk layout. Dedicated-server compatibility checks no longer require the client graphics libraries.
+- Added connecting-client compatibility checks for Optimum 0.3.13. Hosting on that older version remains unsupported; use a supported vanilla, Optimum 0.3.21 or reviewed Stratum server.
+- Cart tools, supplies, assignments, mining/quarry progress, paid access, rescue pauses and existing mining history are kept across saves/reloads. Back up the world with its matching mods before trying to downgrade.

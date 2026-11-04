@@ -1,0 +1,16 @@
+# Druidry 0.1.1 — local release, 2026-10-04
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Previous promoted version: None (first promotion)
+Tested optimization label: 0.1.0
+
+- Promote the existing standalone Circle of Forms, thirteen unlockable spirit families and crafted spirit-token/Ritual Altar workflow for the first time on the local release shelf.
+- Cache reflection descriptors and use exact dictionary lookup, retaining case-insensitive full-code precedence over short aliases.
+- Read current model values on every lookup so registry replacement/reload remains visible. Preserve server validation and true-form restoration behavior.
+
+the loose ends that came with this release
+One Wolf ritual unlock survived restart and eleven exported appearance/voice fields restored byte-for-byte. Full size, gear, server traits and registry edge cases remain unverified. No performance gain is measured and multiplayer remains waived.
+
+Owner explicitly said: get all of the mods pushed to release and give me a changelog (2026-10-04). Partial coverage is nonblocking; multiplayer is waived.
+the fox has no measured performance gain to report. No public upload.

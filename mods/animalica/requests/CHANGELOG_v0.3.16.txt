@@ -1,4 +1,6 @@
-Animalica Requests 0.3.16
+# Animalica Requests 0.3.16
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 Adds Bighorn Horns choices: None (default), Normal and Large. Large is configured
 at 1.25 times the normal horn scale.

@@ -91,8 +91,8 @@ public sealed class ScentTrailsSystem : ModSystem
         api.Input.RegisterHotKey(
             ToggleScentHotkeyCode,
             Lang.Get("animalicaabilities:hotkey-scent"),
-            GlKeys.K,
-            HotkeyType.CharacterControls
+            GlKeys.Y,
+            HotkeyType.HelpAndOverlays
         );
         api.Input.SetHotKeyHandler(ToggleScentHotkeyCode, OnToggleScentHotkey);
 
@@ -197,7 +197,7 @@ public sealed class ScentTrailsSystem : ModSystem
         {
             trail = new TrailState(position, dimension, nowMs);
             trails[entity.EntityId] = trail;
-            AddNode(trail, entity.EntityId, position, dimension, nowMs);
+            AddNode(trail, entity.EntityId, position, dimension, nowMs, PredatorScentPolicy.IsPredator(entity));
             return;
         }
 
@@ -210,10 +210,10 @@ public sealed class ScentTrailsSystem : ModSystem
 
         trail.LastDepositPosition.Set(position);
         trail.Dimension = dimension;
-        AddNode(trail, entity.EntityId, position, dimension, nowMs);
+        AddNode(trail, entity.EntityId, position, dimension, nowMs, PredatorScentPolicy.IsPredator(entity));
     }
 
-    private static void AddNode(TrailState trail, long trailId, Vec3d position, int dimension, long nowMs)
+    private static void AddNode(TrailState trail, long trailId, Vec3d position, int dimension, long nowMs, bool isPredator)
     {
         trail.Nodes.Enqueue(new ScentNode(
             position.X,
@@ -221,7 +221,8 @@ public sealed class ScentTrailsSystem : ModSystem
             position.Z,
             dimension,
             nowMs,
-            trailId
+            trailId,
+            isPredator
         ));
 
         while (trail.Nodes.Count > MaxNodesPerTrail)
@@ -291,7 +292,8 @@ public sealed class ScentTrailsSystem : ModSystem
                 Y = node.Y,
                 Z = node.Z,
                 AgeMilliseconds = (int)Math.Clamp(nowMs - node.CreatedAtMs, 0, TrailLifetimeMs),
-                TrailId = node.TrailId
+                TrailId = node.TrailId,
+                IsPredator = node.IsPredator
             })
             .ToArray();
 
@@ -449,7 +451,8 @@ public sealed class ScentTrailsSystem : ModSystem
             revealedNodes.Add(new ClientScentNode(
                 new Vec3d(node.X, node.Y, node.Z),
                 node.AgeMilliseconds,
-                node.TrailId
+                node.TrailId,
+                node.IsPredator
             ));
         }
 
@@ -788,9 +791,9 @@ public sealed class ScentTrailsSystem : ModSystem
             carrierVelocity.Z * preseedSeconds
         );
 
-        StreamPalette effectivePalette = emissionLayout == EmissionLayout.SparseHistory
-            ? StreamPalette.Amber
-            : palette;
+        StreamPalette effectivePalette = node.IsPredator
+            ? StreamPalette.Predator
+            : emissionLayout == EmissionLayout.SparseHistory ? StreamPalette.Amber : palette;
         activeCarriers.Add(new ScentCarrier(
             startPosition,
             carrierVelocity,
@@ -896,6 +899,7 @@ public sealed class ScentTrailsSystem : ModSystem
         float ageFraction = GameMath.Clamp(carrier.Age / carrier.Lifetime, 0f, 1f);
         (int baseRed, int baseGreen, int baseBlue) = carrier.Palette switch
         {
+            StreamPalette.Predator => PredatorScentPolicy.Color,
             StreamPalette.Violet => (198, 145, 255),
             StreamPalette.Amber => (245, 174, 72),
             _ => (118, 215, 245)
@@ -968,7 +972,9 @@ public sealed class ScentTrailsSystem : ModSystem
             _ => 180
         };
         int lightEmission = carrier.ChildVisual is CarrierChildVisual.GlowingMote or CarrierChildVisual.GroundBead
-            ? ColorUtil.ToRgba(
+            ? carrier.Palette == StreamPalette.Predator
+                ? PredatorScentPolicy.LightEmission(scentLightMultiplier)
+                : ColorUtil.ToRgba(
                 255,
                 (int)(80 * scentLightMultiplier),
                 (int)(160 * scentLightMultiplier),
@@ -1021,9 +1027,9 @@ public sealed class ScentTrailsSystem : ModSystem
         float freshness = 1f - GameMath.Clamp(node.AgeMilliseconds / (float)TrailLifetimeMs, 0f, 1f);
         int alpha = (int)((profile.MinimumAlpha + freshness * profile.AdditionalAlpha) * scentOpacityMultiplier);
         bool historicalColor = emissionLayout == EmissionLayout.SparseHistory;
-        int color = historicalColor
-            ? ColorUtil.ToRgba(alpha, 245, 174, 72)
-            : ColorUtil.ToRgba(alpha, 118, 215, 245);
+        (int red, int green, int blue) = node.IsPredator
+            ? PredatorScentPolicy.Color : historicalColor ? (245, 174, 72) : (118, 215, 245);
+        int color = ColorUtil.ToRgba(alpha, red, green, blue);
 
         Vec3d center = node.Position.AddCopy(
             baseVelocity.X * preseedSeconds,
@@ -1061,9 +1067,9 @@ public sealed class ScentTrailsSystem : ModSystem
             IgnoreUserConfig = true,
             WithTerrainCollision = false,
             VertexFlags = profile.VertexFlags,
-            LightEmission = historicalColor
-                ? ColorUtil.ToRgba(255, 150, 95, 35)
-                : ColorUtil.ToRgba(255, 80, 145, 165),
+            LightEmission = node.IsPredator
+                ? PredatorScentPolicy.LightEmission(1f)
+                : historicalColor ? ColorUtil.ToRgba(255, 150, 95, 35) : ColorUtil.ToRgba(255, 80, 145, 165),
             OpacityEvolve = EvolvingNatFloat.create(EnumTransformFunction.QUADRATIC, -8f),
             SizeEvolve = EvolvingNatFloat.create(EnumTransformFunction.LINEAR, profile.SizeGrowth)
         };
@@ -1146,10 +1152,11 @@ public sealed class ScentTrailsSystem : ModSystem
         double Z,
         int Dimension,
         long CreatedAtMs,
-        long TrailId
+        long TrailId,
+        bool IsPredator
     );
 
-    private readonly record struct ClientScentNode(Vec3d Position, int AgeMilliseconds, long TrailId);
+    private readonly record struct ClientScentNode(Vec3d Position, int AgeMilliseconds, long TrailId, bool IsPredator);
 
     private readonly record struct PlumeProfile(
         float WindScale,
@@ -1238,7 +1245,8 @@ public sealed class ScentTrailsSystem : ModSystem
     {
         Cyan,
         Violet,
-        Amber
+        Amber,
+        Predator
     }
 
     private enum CarrierChildVisual

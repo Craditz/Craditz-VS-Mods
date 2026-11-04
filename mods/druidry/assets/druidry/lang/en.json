@@ -1,0 +1,19 @@
+{
+  "hotkey-circle": "Open the Circle of Forms",
+  "block-ritualaltar": "Druidic Ritual Altar",
+  "blockdesc-ritualaltar": "Offer a crafted spirit token here to unlock its wildshape. Right-click without a token to open the rites journal.",
+  "item-spirit-token-wolf": "Wolf Spirit Token",
+  "item-spirit-token-fox": "Fox Spirit Token",
+  "item-spirit-token-hyena": "Hyena Spirit Token",
+  "item-spirit-token-bear": "Bear Spirit Token",
+  "item-spirit-token-deer": "Crowned Deer Spirit Token",
+  "item-spirit-token-gazelle": "Gazelle Spirit Token",
+  "item-spirit-token-goat": "Mountain Goat Spirit Token",
+  "item-spirit-token-pig": "Wild Boar Spirit Token",
+  "item-spirit-token-sheep": "Bighorn Spirit Token",
+  "item-spirit-token-hare": "Hare Spirit Token",
+  "item-spirit-token-raccoon": "Raccoon Spirit Token",
+  "item-spirit-token-chicken": "Chicken Spirit Token",
+  "item-spirit-token-fish": "River Fish Spirit Token",
+  "itemdesc-spirit-token-*": "A carved focus for a Druidry rite. Offer it at a Druidic Ritual Altar to permanently learn its shape."
+}

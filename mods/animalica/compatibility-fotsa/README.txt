@@ -1,4 +1,6 @@
-Animalica - Compatibility Pack 2 (FotSA)
+# Animalica - Compatibility Pack 2 (FotSA)
+
+notes from the stolen computer. the fox kept the useful details and left the version labels attached.
 
 Animalica - Compatibility Pack 2 adds clothing-capable playable animal models
 from the Fauna of the Stone Age collection.

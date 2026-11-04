@@ -1,4 +1,6 @@
-Animalica - Bears 0.5.4
+# Animalica - Bears 0.5.4
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 Adds an Original / Vanilla texture choice alongside Custom colours for all
 five bears. Existing custom colour controls and named presets remain available.

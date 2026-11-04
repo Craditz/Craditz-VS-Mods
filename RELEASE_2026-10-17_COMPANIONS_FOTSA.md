@@ -1,5 +1,7 @@
 # Approved Companions and Tamables FOTSA release — 2026-10-17
 
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
 Mode: Release. Owner explicitly approved these tested builds. The local grab-and-upload shelf is `F:/VSmodding/releases/latest`; the owner handles ModDB upload. This source publication does not create a GitHub binary release or claim a ModDB upload. No visibility/access change, history rewrite or unrelated project update is included.
 
 ## Accepted identities
@@ -13,7 +15,7 @@ The stable installer is `FeralKinshipCompanions_v0.5.79.zip` (5,361,590 bytes). 
 
 The cumulative [Companions changelog](mods/feral-kinship-companions/CHANGELOG_since_0.5.74.md) uses the actual downloaded public 0.5.74 archive (SHA256 `1C819A8641373BDFB3F3FA1332712E51AB388E754C66D91FB9C2FC82FA46F6D5`), byte-identical to the retained local archive. The supplied authenticated edit URL was not accessible; the official public API returned release 60244/file 128279, its 0.5.74 manifest and changelog. The 0.5.75–0.5.77 source/changelogs and the accepted growth/food deltas were reconciled. The [Tamables changelog](mods/tamables-fotsa/CHANGELOG_v0.9.1.md) covers its matching native-form/riding work.
 
-## Qualification
+## what was checked
 
 Parent cloud gameplay on the exact Companions archive passed old/new WolfTaming dining-board feeding (kibble 64 to 58; old-b Well fed approximately 83%), old-b manual raw meat (Starving to approximately 25% after normal AI time, board empty), FOTSA cow carrot (approximately 25% to 55%) and board plant kibble (55% to 83%), and isolated Critters chipmunk board plant kibble (1 to 0; Food 0.262 to 0.535) and manual carrot (1 to 0; Food 0.535 to 0.829). The paired elephant growth/riding regression also passed. The chipmunk journal failure is fully retracted: interaction targeted the nearby invisible dragon.
 

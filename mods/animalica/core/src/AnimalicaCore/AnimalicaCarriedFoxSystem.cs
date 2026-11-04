@@ -66,13 +66,15 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
         MethodInfo? switchType = behavior == null ? null : AccessTools.Method(behavior, "SwitchType");
         MethodInfo? updateCarry = behavior == null ? null : AccessTools.Method(behavior, "UpdateCarry");
         MethodInfo? entries = picker == null ? null : AccessTools.Method(picker, "Entries");
+        MethodInfo? tryOpen = picker == null ? null : AccessTools.Method(picker, "TryOpen");
+        FieldInfo? menuBuilt = picker == null ? null : AccessTools.Field(picker, "built");
         MethodInfo? startCarry = modSystem == null ? null : AccessTools.Method(modSystem, "StartCarry");
         MethodInfo? execute = modSystem == null ? null : AccessTools.Method(modSystem, "ExecuteCarry");
         MethodInfo? applyPenalty = behavior == null ? null : AccessTools.Method(behavior, "ApplyMovementPenalty");
         MethodInfo? floor = behavior == null ? null : AccessTools.Method(behavior, "FloorPenalty");
         MethodInfo? skipConsent = behavior == null ? null : AccessTools.PropertyGetter(behavior, "SkipsConsent");
         MethodInfo? seatPosition = seat == null ? null : AccessTools.PropertyGetter(seat, "SeatPosition");
-        if (canBegin == null || switchType == null || updateCarry == null || entries == null ||
+        if (canBegin == null || switchType == null || updateCarry == null || entries == null || tryOpen == null || menuBuilt == null ||
             startCarry == null || execute == null || applyPenalty == null || floor == null ||
             skipConsent == null || seatPosition == null)
         {
@@ -97,6 +99,8 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
             harmony.Patch(seatPosition, postfix: new HarmonyMethod(typeof(AnimalicaCarriedFoxSystem), nameof(SeatPositionPostfix)));
             if (api.Side == EnumAppSide.Client)
             {
+                if (api.ModLoader.GetMod("carried")?.Info?.Version == "2.1.0")
+                    harmony.Patch(tryOpen, prefix: new HarmonyMethod(typeof(AnimalicaCarriedFoxSystem), nameof(TryOpenPrefix)));
                 harmony.Patch(entries, postfix: new HarmonyMethod(typeof(AnimalicaCarriedFoxSystem), nameof(EntriesPostfix)));
             }
             api.Logger.Notification("[AnimalicaCore] Carried Animalica style rules enabled for Carried 2.1.0.");
@@ -120,6 +124,7 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
         bodyCenters.Clear();
         bodyTargets.Clear();
         loggedPlacements.Clear();
+        AnimalicaCarriedHumanoidPolicy.Clear();
     }
 
     public override void AssetsLoaded(ICoreAPI api)
@@ -200,7 +205,7 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
         }
 
         if (carrier == null || __1 is not EntityPlayer passenger ||
-            !IsModel(carrier.WatchedAttributes.GetString("skinModel", "seraph"), "seraph"))
+            !AnimalicaCarriedHumanoidPolicy.Supports(carrier))
         {
             return true;
         }
@@ -290,7 +295,7 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
     {
         Entity? carrier = Carrier(__instance);
         if (carrier == null || __1 == null ||
-            !IsModel(carrier.WatchedAttributes.GetString("skinModel", "seraph"), "seraph"))
+            !AnimalicaCarriedHumanoidPolicy.Supports(carrier))
         {
             return true;
         }
@@ -469,6 +474,13 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
         return false;
     }
 
+    private static void TryOpenPrefix(object __instance)
+    {
+        // Native cache keys omit both selected models used by our Entries filter.
+        // Rebuild once per actual open; OnHotkey skips TryOpen while held.
+        AccessTools.Field(__instance.GetType(), "built")?.SetValue(__instance, false);
+    }
+
     private static void EntriesPostfix(object __instance, object __result)
     {
         if (__result is not IList entries ||
@@ -528,15 +540,15 @@ public sealed class AnimalicaCarriedFoxSystem : ModSystem
         string passengerModel = passenger.WatchedAttributes.GetString("skinModel", "seraph");
         bool carrierFox = IsModel(carrierModel, "feralfox");
         bool passengerFox = IsModel(passengerModel, "feralfox");
-        bool carrierSeraph = IsModel(carrierModel, "seraph");
-        bool passengerSeraph = IsModel(passengerModel, "seraph");
+        bool carrierHumanoid = AnimalicaCarriedHumanoidPolicy.Supports(carrier);
+        bool passengerHumanoid = AnimalicaCarriedHumanoidPolicy.Supports(passenger);
 
-        if (carrierFox && (passengerFox || passengerSeraph))
+        if (carrierFox && (passengerFox || passengerHumanoid))
         {
             return custom || code is "firefighter" or "piggyback";
         }
 
-        if (carrierSeraph && AnimalicaCoreSystem.IsKnownAnimalicaModelCode(passengerModel))
+        if (carrierHumanoid && AnimalicaCoreSystem.IsKnownAnimalicaModelCode(passengerModel))
         {
             // Stock humanoid carries distort Animalica passengers. Keep the
             // accepted styles on an explicit allowlist, including fox's

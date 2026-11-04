@@ -68,6 +68,7 @@ public sealed class AiTaskFeralKinshipRestAtDen : AiTaskBase
     private bool CanRest()
     {
         return entity.Alive
+            && !FeralKinshipCompanionSystem.ShouldCompanionSeekFood(entity)
             && entity.MountedOn == null
             && !entity.Swimming
             && !entity.FeetInLiquid

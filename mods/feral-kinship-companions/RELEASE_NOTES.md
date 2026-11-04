@@ -1,44 +1,19 @@
-# Companions 0.5.94 release notes
+# Companions 0.5.100
 
-The sole change from public ModDB 0.5.93 is the Optimum-aware native save adapter,
-plus stable version metadata and matching release documentation. Existing
-public 0.5.93 recovery/return work is the baseline, not a new fix in this release.
-No assets or save schema change. See CHANGELOG_v0.5.94.txt for behavior details.
+the young animals were getting caught between one body and the next. the fox has repaired the growth handoff; old Held identities still need separate recovery.
 
-## Qualification
+# Feral Kinship Companions 0.5.100
 
-The exact accepted preview passed Windows VS 1.22.7 / .NET 10.0.13 vanilla and
-official Optimum 0.3.21 headless startup, generation/unload, ordinary saves,
-clean shutdown and repeated cold reload. Companion fixtures retained identity,
-health, ledger progression and a marked native attribute ItemStack tree.
-This is not natural-taming or native-backpack validation.
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
-Real SQLite abort/rollback and partial-commit retries through native GameDatabase
-were tested in a separate auxiliary DB with controlled production retirement
-finalizers and real native queue/lease primitives. All 415 SQL/stress checks
-passed, including 128 two-thread dispatch races. This is not an injected
-running-world chunk-worker SQL failure, disk-full test or exhaustive proof.
-Focused Optimum 67, vanilla 8, five contract-mutation outcomes, current recovery
-150, startup 22 and expedition/migration 153 checks passed. Eleven old Undo
-fixtures fail identically in public 0.5.93 and remain explicit historical limits.
+- Repairs owned Companion growth handoffs, including FOTSA animals and Critters young-to-old-to-adult stages.
+- Separates shared baby/adult status before finalization so adult updates cannot erase the retiring baby's growth state. Thanks to Shimmercat for identifying the missing guard.
+- Keeps intermediate-stage banked points until adulthood and preserves Companion identity through registered native growth destinations.
+- Records verified growth expiry as Growing while the replacement completes registration. Existing duplicate, owner, destination and expedition safeguards remain.
+- Existing animals already held by an earlier failed growth transition still require separate recovery.
 
-Independent cloud qualification passed Linux vanilla/Optimum headless
-create/save/quit/cold reload and SQLite integrity. Optimum GUI low-graphics
-world entry, Bramble guide, save and full client restart passed. All 21 author
-mods passed headless smoke; a full graphical stack was resource-limited under
-both runtimes, while five smaller graphical stacks passed. Unrelated warnings
-were not folded into this change. Stable relabel verification is recorded in
-the release manifest; preview results are not claimed as direct stable GUI QA.
+## what these receipts establish
 
-Multiplayer, optional integrations, ordinary companion feeding/backpacks, the
-reporter's different DLL and exhaustive concurrency remain unverified. Other
-Optimum builds are not blanket-approved. Native guards remain enabled.
+the human approved the exact release with a positive lynx/black-swan report and an unresolved contrary report whose build was ambiguous. controlled and targeted engine checks are recorded in the matching source release. this is not exhaustive species, multiplayer or old-save recovery acceptance.
 
-## Backup and publication
-
-Writer schema remains 61 with its existing supported readers. Keep complete
-matching backups. Restore world/profile/mods together when rolling back.
-The owner approved local promotion and matching GitHub source export separately.
-ModDB upload remains the owner's handoff and is not claimed completed here.
-No private support messages, logs, fixtures or credentials belong in public
-source or the installable package. Upstream notices are preserved.
+Optimum-aware saves, return/recovery safeguards and the prior public features remain. keep complete matching world/profile/mod backups; do not force a save-schema downgrade. see the [current collection record](../../RELEASE_2026-11-04.md).

@@ -8,10 +8,10 @@ public sealed partial class FeralKinshipCompanionSystem
 {
     private bool refreshingRosterPresence;
 
-    // This is presentation reconciliation from admitted native authority, not
-    // registration/hydration. Never replay health, inventory, XP or journeys.
-    private bool RefreshVerifiedCompanionPresence(Entity e, ExpeditionPresentationAuthority? authority)
+    // Admission only: neither hydrate nor reconcile the entity/record here.
+    private bool TryGetVerifiedCompanionRecord(Entity e, ExpeditionPresentationAuthority? authority, out FoxPackRecordV2? record)
     {
+        record = null;
         if (serverApi == null || packRepository?.Loaded != true || authority == null || !IsTamedFox(e) || IsGuideFox(e)
             || !ReferenceEquals(e.Api, serverApi) || !ReferenceEquals(e.World, serverApi.World)
             || !e.Alive || e.ShouldDespawn || e.Teleporting || e.State == EnumEntityState.Despawned
@@ -41,15 +41,27 @@ public sealed partial class FeralKinshipCompanionSystem
         string persisted = native?.GetString(ExpeditionStatusKey) ?? string.Empty;
         if (persisted.StartsWith("Away ",StringComparison.OrdinalIgnoreCase) || persisted.StartsWith("Leaving ",StringComparison.OrdinalIgnoreCase)
             || persisted is "Returning" or "MIA" or "Running late" or "Awaiting safe return") return false;
+        record = r;
+        return true;
+    }
+
+    // This is presentation reconciliation from admitted native authority, not
+    // registration/hydration. Never replay health, inventory, XP or journeys.
+    private bool RefreshVerifiedCompanionPresence(Entity e, ExpeditionPresentationAuthority? authority)
+    {
+        var api = serverApi;
+        if (api == null || !TryGetVerifiedCompanionRecord(e, authority, out FoxPackRecordV2? r) || r == null) return false;
+        var native = GetDomesticationStatus(e);
+        string persisted = native?.GetString(ExpeditionStatusKey) ?? string.Empty;
         double expiry = native?.GetDouble(ExpeditionStatusExpiresDayKey,0) ?? 0;
         string next = IsFoxMortallyWounded(e) ? "Mortally wounded"
             : e.WatchedAttributes.GetInt(EntityHealthStateKey) == RecoveringHealthState ? "Recovering"
-            : persisted is "Returned healthy" or "Returned injured" && expiry > serverApi.World.Calendar.TotalDays ? persisted
+            : persisted is "Returned healthy" or "Returned injured" && expiry > api.World.Calendar.TotalDays ? persisted
             : "Present";
         r.Status = next;
         r.StatusExpiresDay = next is "Returned healthy" or "Returned injured" ? expiry : 0;
         r.RecoveryStatus = CompanionRecoveryStatus.Recoverable;
-        r.LastSeenDay = serverApi.World.Calendar.TotalDays;
+        r.LastSeenDay = api.World.Calendar.TotalDays;
         return true;
     }
 }

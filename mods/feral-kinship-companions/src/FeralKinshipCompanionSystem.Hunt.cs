@@ -11,7 +11,8 @@ namespace FeralKinshipCompanions;
 
 public sealed partial class FeralKinshipCompanionSystem
 {
-    private sealed record HuntCorpseSource(string Species, string CorpseCode, string AnimalCode);
+    private sealed record HuntCorpseSource(string Species, string CorpseCode, string AnimalCode,
+        string? ProviderModId = null);
     private sealed record HuntCorpseChoice(HuntCorpseSource Source, Item Corpse,
         BlockDropItemStack[] Drops, float MeatEquivalent);
 
@@ -28,7 +29,12 @@ public sealed partial class FeralKinshipCompanionSystem
     private static readonly HuntCorpseSource[] PrimeHuntSources =
     {
         new("deer", "butchering:deaddeer-male-adultlarge-1-dead", "game:deer-whitetail-adult-male"),
-        new("goat", "butchering:deadgoat-male-adult-1-dead", "game:goat-nubian-adult-male")
+        new("goat", "butchering:deadgoat-male-adult-1-dead", "game:goat-nubian-adult-male"),
+        // Explicit adult mapping supplied by Butchering 1.14.3 / Capreolinae 2.0.16.
+        // One entry uses the existing equal-entry prime selection convention.
+        new("fotsa:capreolinae:cervidae-capreolini:capreoluscapreolus",
+            "butchering:deadcapreolini-male-1-dead",
+            "capreolinae:cervidae-capreolini-adult-male-capreoluscapreolus", "capreolinae")
     };
 
     private bool TryGenerateHuntBundle(
@@ -38,11 +44,16 @@ public sealed partial class FeralKinshipCompanionSystem
         if (serverApi == null || packRepository == null) return false;
 
         string? excludedSpecies = null;
-        if (party is { Count: > 0 }
-            && party.All(member => !string.IsNullOrWhiteSpace(member.SpeciesId)
-                && string.Equals(member.SpeciesId, party[0].SpeciesId,
-                    StringComparison.OrdinalIgnoreCase)))
-            excludedSpecies = party[0].SpeciesId;
+        if (party is { Count: > 0 })
+        {
+            // Expedition snapshots retain the provider profile and entity code.
+            // Resolve FotSA members to the same species keys used by hunt sources.
+            string[] species = party.Select(member =>
+                FotsaSpeciesBonusCatalog.Resolve(member.SpeciesId, member.EntityCode)).ToArray();
+            if (species.All(key => !string.IsNullOrWhiteSpace(key)
+                && string.Equals(key, species[0], StringComparison.OrdinalIgnoreCase)))
+                excludedSpecies = species[0];
+        }
 
         List<HuntCorpseChoice> primes = PrimeHuntSources
             .Where(source => !string.Equals(source.Species, excludedSpecies,
@@ -99,12 +110,33 @@ public sealed partial class FeralKinshipCompanionSystem
         Item? corpse = ResolveExpeditionLootItem(source.CorpseCode);
         EntityProperties? animal = serverApi.World.GetEntityType(new AssetLocation(source.AnimalCode));
         if (corpse == null || animal?.Server?.BehaviorsAsJsonObj == null) return null;
+        if (source.ProviderModId != null)
+        {
+            // Removed-provider placeholders and incompatible optional packages must
+            // never turn a matching-looking code into an expedition reward.
+            if (!serverApi.ModLoader.IsModEnabled(source.ProviderModId)
+                || !string.Equals(animal.Code?.ToString(), source.AnimalCode, StringComparison.Ordinal)
+                || !CompanionPickupPolicy.IsCorpse(corpse.GetType())
+                || !animal.Server.BehaviorsAsJsonObj.Any(behavior => behavior != null
+                    && behavior["code"].AsString() == "butcherable"
+                    && behavior["item"].AsString() == source.CorpseCode))
+                return null;
+        }
         foreach (var behavior in animal.Server.BehaviorsAsJsonObj)
         {
             if (behavior == null || !string.Equals(behavior["code"].AsString(), "harvestable", StringComparison.Ordinal))
                 continue;
-            BlockDropItemStack[]? drops = behavior["drops"].AsObject<BlockDropItemStack[]>(null);
+            BlockDropItemStack[]? drops;
+            try { drops = behavior["drops"].AsObject<BlockDropItemStack[]>(null); }
+            catch (JsonException) when (source.ProviderModId != null) { return null; }
             if (drops == null || drops.Length == 0) return null;
+            if (source.ProviderModId != null && drops.Any(drop => drop == null
+                || drop.Code == null || drop.Quantity == null
+                || !float.IsFinite(drop.Quantity.avg) || drop.Quantity.avg < 0f
+                || (drop.Type == EnumItemClass.Item
+                    ? serverApi.World.GetItem(drop.Code) is not { IsMissing: false }
+                    : serverApi.World.GetBlock(drop.Code) is not { IsMissing: false })))
+                return null;
             float meat = drops.Sum(drop =>
             {
                 string path = drop.Code?.Path ?? string.Empty;

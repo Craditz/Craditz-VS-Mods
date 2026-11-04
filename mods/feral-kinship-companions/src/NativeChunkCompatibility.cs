@@ -12,6 +12,8 @@ internal static class NativeChunkCompatibility
 {
     private static readonly Dictionary<Assembly, (bool Accepted, string Reason)> Results = new();
     private static readonly HashSet<Assembly> optimum = new();
+    private static readonly HashSet<Assembly> stratum = new();
+    internal static bool UsesStratum(Assembly native) { lock(Results) return stratum.Contains(native); }
     internal static bool UsesOptimum(Assembly native) { lock(Results) return optimum.Contains(native); }
     private static NativeChunkContractSnapshot? expected;
     internal static NativeChunkContractSnapshot Expected
@@ -35,6 +37,10 @@ internal static class NativeChunkCompatibility
                 if(!accepted && native.GetType("Vintagestory.Server.ServerSystemLoadAndSaveGame")?.GetField("optimumSaveBatch",BindingFlags.NonPublic|BindingFlags.Instance)!=null) {
                     accepted=NativeOptimumCompatibility.TryQualify(native,actual,out reason);
                     if(accepted)optimum.Add(native);
+                }
+                if(!accepted && native.GetType("Vintagestory.Server.ServerSystemLoadAndSaveGame")?.GetField("stratumSaveBatch",BindingFlags.NonPublic|BindingFlags.Instance)!=null) {
+                    accepted=NativeStratumCompatibility.TryQualify(native,actual,out reason);
+                    if(accepted)stratum.Add(native);
                 }
             }
             catch (Exception error) { accepted = false; reason = "Native contract inspection failed: " + error.GetType().Name + ": " + error.Message; }

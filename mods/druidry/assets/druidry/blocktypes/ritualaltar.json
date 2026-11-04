@@ -1,0 +1,26 @@
+{
+  "code": "ritualaltar",
+  "class": "DruidRitualAltar",
+  "creativeinventory": {
+    "general": ["*"]
+  },
+  "blockmaterial": "Stone",
+  "drawtype": "Json",
+  "shape": {
+    "base": "druidry:block/ritualaltar"
+  },
+  "textures": {
+    "stone": {
+      "base": "game:block/stone/polishedrock/granite"
+    },
+    "copper": {
+      "base": "game:block/metal/plate/copper"
+    }
+  },
+  "resistance": 5.0,
+  "sounds": {
+    "place": "game:block/stone",
+    "break": "game:block/stone",
+    "walk": "game:walk/stone"
+  }
+}

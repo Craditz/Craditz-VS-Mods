@@ -1,0 +1,36 @@
+{
+  "code": "partsbundle",
+  "class": "animalicatoolsmith.bundle",
+  "maxStackSize": 1,
+  "shape": {
+    "base": "animalicatoolsmith:item/fitting"
+  },
+  "textures": {
+    "brace": {
+      "base": "game:block/leather/plain"
+    },
+    "seat": {
+      "base": "game:block/creature/bone"
+    },
+    "lining": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": 145,
+      "y": -35,
+      "z": -8
+    },
+    "scale": 1.3,
+    "rotate": false
+  },
+  "groundTransform": {
+    "rotation": {
+      "x": 0,
+      "y": 15,
+      "z": 0
+    },
+    "scale": 1.3
+  }
+}

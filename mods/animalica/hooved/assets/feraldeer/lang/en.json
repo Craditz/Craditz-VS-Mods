@@ -147,5 +147,9 @@
   "game:skinpart-voicetype-deercall1": "Deer Call 1",
   "game:skinpart-voicetype-deercall2": "Deer Call 2",
   "game:skinpart-voicetype-deersniff": "Deer Sniff",
-  "game:skinpartdesc-feraldeer-caribou-internal-fixeddetails": "Preserves non-coat anatomy after recoloring."
+  "game:skinpartdesc-feraldeer-caribou-internal-fixeddetails": "Preserves non-coat anatomy after recoloring.",
+  "game:skinpart-feraldeer-caribou-texturemode": "Texture appearance",
+  "game:skinpartdesc-feraldeer-caribou-texturemode": "Original / Vanilla restores the source texture. Custom colours restores your saved colours and markings. Presets select Custom colours.",
+  "game:skinpart-feraldeer-caribou-texturemode-custom": "Custom colours",
+  "game:skinpart-feraldeer-caribou-texturemode-original": "Original / Vanilla texture"
 }

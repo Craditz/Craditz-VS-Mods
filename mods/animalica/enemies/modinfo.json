@@ -2,8 +2,8 @@
   "type": "content",
   "name": "Animalica - Enemies",
   "modid": "animalicaenemies",
-  "version": "0.2.1",
-  "description": "Playable Drifter, Shiver, Bowtorn, and Locust enemy models for Animalica.",
+  "version": "0.2.2",
+  "description": "the human said these were enemies. i have given them a place in the character selector. this seems diplomatic. playable enemy models with Animalica integration. version 0.2.2 includes the accepted carry revisions. model support depends on the installed source content and the individual body.",
   "authors": [
     "Craditz"
   ],

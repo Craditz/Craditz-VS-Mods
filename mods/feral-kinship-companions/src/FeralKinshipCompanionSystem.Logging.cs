@@ -136,7 +136,7 @@ public sealed partial class FeralKinshipCompanionSystem
             RemoveWorkCartLoggingWorker(fox.EntityId, rememberedJob.Plan);
         }
 
-        if (!AllowsWellbeingDuty(fox, demanding: true)) return false;
+        if (!AllowsWellbeingDuty(fox, demanding: true) || IsCartWindDown(fox)) return false;
 
         string cartKey = WorkCartPositionKey(cartPos);
         if (!workCartLoggingQueues.TryGetValue(cartKey, out WorkCartLoggingQueueState? queue))
@@ -225,6 +225,7 @@ public sealed partial class FeralKinshipCompanionSystem
     internal bool CanContinueWorkCartLogging(Entity fox, BlockPos? expectedCart)
     {
         if (serverApi == null
+            || (TryGetAssignedWorkCart(fox, false, out _, out var rescueCart, false) && rescueCart != null && IsCartRescuePaused(fox, rescueCart))
             || !IsTamedFox(fox)
             || IsCompanionJuvenile(fox)
             || !fox.Alive
@@ -307,6 +308,7 @@ public sealed partial class FeralKinshipCompanionSystem
             return false;
         }
 
+        if (requireLogging && IsCartRescuePaused(fox, position)) return false;
         cart = assignedCart;
         cartPos = position;
         return true;
@@ -473,8 +475,11 @@ public sealed partial class FeralKinshipCompanionSystem
         plan = null;
         string key = WorkCartPositionKey(cartPos);
         if (!workCartLoggingQueues.TryGetValue(key, out WorkCartLoggingQueueState? queue)) return false;
+        var toolCart = EnsureWorkCartTools(cartPos);
+        if (toolCart == null || toolCart.Tools.FindAvailable(0) < 0) return false;
 
-        while (queue.Candidates.Count > 0)
+        int remainingCandidates = queue.Candidates.Count;
+        while (remainingCandidates-- > 0)
         {
             WorkCartLoggingCandidate candidate = queue.Candidates[0];
             queue.Candidates.RemoveAt(0);
@@ -495,7 +500,7 @@ public sealed partial class FeralKinshipCompanionSystem
                     })
                 || approach == null) continue;
 
-            plan = new WorkCartLoggingPlan
+            var nextPlan = new WorkCartLoggingPlan
             {
                 CartKey = key,
                 OwnerUid = cart.OwnerUid,
@@ -504,8 +509,17 @@ public sealed partial class FeralKinshipCompanionSystem
                 ApproachTarget = approach,
                 BiteParts = candidate.BreakParts,
                 BreakParts = candidate.BreakParts,
+                RemainingWoodParts = candidate.WoodPartsCount,
+                ToolUser = fox,
                 LastWorkerSeenAtMs = serverApi!.World.ElapsedMilliseconds
             };
+            nextPlan.RequiredAxeTier = RequiredWorkCartAxeTier(nextPlan);
+            if (!ReserveWorkCartAxe(nextPlan))
+            {
+                queue.Candidates.Add(candidate);
+                continue;
+            }
+            plan = nextPlan;
             queue.ActivePlans.Add(plan);
             activeWorkCartTreesByRoot[rootKey] = plan;
             return true;
@@ -546,6 +560,9 @@ public sealed partial class FeralKinshipCompanionSystem
 
     private void ResetWorkCartLoggingRuntimeState()
     {
+        foreach (WorkCartLoggingPlan plan in workCartLoggingQueues.Values
+            .SelectMany(queue => queue.ActivePlans).ToArray())
+            plan.ToolCart?.Tools.Release(plan);
         workCartLoggingJobs.Clear();
         workCartLoggingWaitingForDebris.Clear();
         workCartLoggingQueues.Clear();
@@ -721,6 +738,7 @@ public sealed partial class FeralKinshipCompanionSystem
                     break;
                 }
                 discovery.ValidatedParts.Add(new WorkCartTreePart(position.Copy(), block.Id));
+                if (block.BlockMaterial == EnumBlockMaterial.Wood) discovery.WoodPartsCount++;
             }
         }
 
@@ -742,6 +760,7 @@ public sealed partial class FeralKinshipCompanionSystem
         {
             Root = discovery.Root.Copy(),
             BreakParts = discovery.ValidatedParts,
+            WoodPartsCount = discovery.WoodPartsCount,
             DistanceFromCart = rootDx * rootDx + rootDz * rootDz
         });
         queue.Candidates.Sort((left, right) => left.DistanceFromCart.CompareTo(right.DistanceFromCart));
@@ -839,13 +858,20 @@ public sealed partial class FeralKinshipCompanionSystem
     private void AdvanceWorkCartTreeFelling(WorkCartLoggingPlan plan, ref int blockBreakBudget)
     {
         if (serverApi == null || blockBreakBudget <= 0) return;
+        if (plan.ToolUser == null || plan.ToolUser is EntityPlayer)
+        {
+            TerminateWorkCartLoggingPlan(plan, completed: false);
+            return;
+        }
         IPlayer? owner = serverApi.World.PlayerByUid(plan.OwnerUid);
         if (owner == null) return;
 
         IBlockAccessor blocks = serverApi.World.BlockAccessor;
         while (plan.FellingIndex < plan.BreakParts.Count && blockBreakBudget > 0)
         {
-            WorkCartTreePart part = plan.BreakParts[plan.FellingIndex];
+            // Vanilla pops its discovery stack. Reverse by index, without
+            // traversing/copying a tree graph when a worker starts a job.
+            WorkCartTreePart part = plan.BreakParts[plan.BreakParts.Count - 1 - plan.FellingIndex];
             if (blocks.GetChunkAtBlockPos(part.Position) == null)
             {
                 long now = serverApi.World.ElapsedMilliseconds;
@@ -870,6 +896,24 @@ public sealed partial class FeralKinshipCompanionSystem
 
             blockBreakBudget--;
             Block block = blocks.GetBlock(part.Position);
+            bool isWood = block.BlockMaterial == EnumBlockMaterial.Wood;
+            ItemSlot? axe = GetWorkCartAxe(plan);
+            if (isWood)
+            {
+                plan.RemainingWoodParts--;
+                if (!plan.AxesExhausted && axe == null)
+                {
+                    plan.AxesExhausted = !ReplaceWorkCartAxe(plan);
+                    axe = GetWorkCartAxe(plan);
+                }
+                if (plan.AxesExhausted || axe == null)
+                {
+                    // Vanilla skips unaffordable wood, but still processes
+                    // foliage. Never erase or charge for these skipped logs.
+                    plan.FellingIndex++;
+                    continue;
+                }
+            }
             bool branchy = IsBranchyTreeLeaf(block);
             bool leaves = block.BlockMaterial == EnumBlockMaterial.Leaves && !branchy;
             float dropMultiplier = branchy
@@ -889,9 +933,23 @@ public sealed partial class FeralKinshipCompanionSystem
                 SpawnVirtualAxeDrops(block, part.Position, owner, dropMultiplier);
             }
             block.OnBlockBroken(serverApi.World, part.Position, owner, dropMultiplier);
+            SyncCartWorkBlock(part.Position);
             blocks.TriggerNeighbourBlockUpdate(part.Position);
             plan.FellingIndex++;
             plan.BlocksBroken++;
+            if (isWood && axe?.Itemstack != null)
+            {
+                CollectibleObject tool = axe.Itemstack.Collectible;
+                if (tool.GetDamagedBy(axe)?.Contains(EnumItemDamageSource.BlockBreaking) == true)
+                    // A player actor triggers vanilla hotbar auto-refill and
+                    // can pull tools from that player's general inventory.
+                    // The animal is the actual user; cart-only replacement is
+                    // performed explicitly below after normal break handling.
+                    tool.DamageItem(serverApi.World, plan.ToolUser, axe);
+                plan.ToolCart?.MarkDirty(true);
+                if (axe.Empty && plan.RemainingWoodParts > 0)
+                    plan.AxesExhausted = !ReplaceWorkCartAxe(plan);
+            }
 
             if (leaves && plan.LeavesDropMultiplier > 0.03f) plan.LeavesDropMultiplier *= 0.85f;
             if (branchy && plan.BranchyLeavesDropMultiplier > 0.015f)
@@ -1215,6 +1273,8 @@ public sealed partial class FeralKinshipCompanionSystem
     private void TerminateWorkCartLoggingPlan(WorkCartLoggingPlan plan, bool completed)
     {
         if (plan.IsTerminal) return;
+        plan.ToolCart?.Tools.Release(plan);
+        plan.AxeSlotIndex = -1;
         long[] participatingWorkers = completed
             ? plan.ParticipantIds.ToArray()
             : Array.Empty<long>();
@@ -1393,6 +1453,12 @@ internal sealed class WorkCartLoggingPlan
     public long BlockedSinceMs;
     public float LeavesDropMultiplier = 1f;
     public float BranchyLeavesDropMultiplier = 0.8f;
+    public BlockEntityFeralKinshipWorkCart? ToolCart;
+    public int AxeSlotIndex = -1;
+    public int RequiredAxeTier;
+    public int RemainingWoodParts;
+    public bool AxesExhausted;
+    public Entity? ToolUser;
 
     public bool IsTerminal => Phase is WorkCartLoggingPhase.Completed or WorkCartLoggingPhase.Abandoned;
 }
@@ -1473,6 +1539,7 @@ internal sealed class WorkCartLoggingCandidate
     public BlockPos Root = null!;
     public List<WorkCartTreePart> BreakParts = new();
     public double DistanceFromCart;
+    public int WoodPartsCount;
 }
 
 internal enum WorkCartTreeDiscoveryStage
@@ -1494,6 +1561,7 @@ internal sealed class WorkCartTreeDiscovery
     public BlockPos? Root;
     public int ValidationIndex;
     public bool Invalid;
+    public int WoodPartsCount;
     public List<WorkCartTreePart> ValidatedParts { get; } = new();
 }
 

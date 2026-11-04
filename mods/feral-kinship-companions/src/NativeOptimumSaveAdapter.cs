@@ -14,7 +14,7 @@ internal static class NativeOptimumSaveAdapter
     [ThreadStatic] private static HashSet<object>? active;
     internal static IReadOnlyList<MethodBase> Install(Harmony harmony,Assembly native)
     {
-        var targets=new List<MethodBase>();if(!NativeChunkCompatibility.UsesOptimum(native))return targets;
+        var targets=new List<MethodBase>();if(!NativeChunkCompatibility.UsesOptimum(native)&&!NativeChunkCompatibility.UsesStratum(native))return targets;
         Type type=native.GetType("Vintagestory.Server.ServerSystemLoadAndSaveGame",true)!;
         savingLock=AccessTools.Field(type,"savingLock");
         if(savingLock==null||savingLock.IsStatic||savingLock.FieldType!=typeof(object))throw new InvalidOperationException("Qualified native saving lock differs");
@@ -32,7 +32,7 @@ internal static class NativeOptimumSaveAdapter
         try {
             Monitor.Enter(sync,ref taken);
             active??=new HashSet<object>(ReferenceEqualityComparer.Instance);
-            if(!active.Add(__instance))RetainedNativeSuspension.RefuseNativeSaveWork("Reentrant shared Optimum save batch is not admitted");
+            if(!active.Add(__instance))RetainedNativeSuspension.RefuseNativeSaveWork("Reentrant shared native save batch is not admitted");
             __state=new Lease(__instance,sync);
         } catch {if(taken)Monitor.Exit(sync);throw;}
     }

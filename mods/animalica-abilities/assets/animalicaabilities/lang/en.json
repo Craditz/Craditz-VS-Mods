@@ -48,7 +48,7 @@
   "animalicaabilities:species-sheep": "Sheep",
   "animalicaabilities:species-small-scavenger": "Small Scavenger",
   "animalicaabilities:species-wolf": "Wolf",
-  "animalicaabilities:scent-view-on": "Scent View enabled.",
+  "animalicaabilities:scent-view-on": "Scent View enabled. Red-orange marks predator scents.",
   "animalicaabilities:scent-view-off": "Scent View disabled.",
   "animalicaabilities:scent-unavailable": "This species cannot use Scent View.",
   "animalicaabilities:no-scent": "No scent trails detected nearby.",

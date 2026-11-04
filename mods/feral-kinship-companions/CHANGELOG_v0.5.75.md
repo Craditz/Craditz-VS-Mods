@@ -1,4 +1,6 @@
-Feral Kinship Companions 0.5.75
+# Feral Kinship Companions 0.5.75
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 Adds a Cart radius notices toggle, with the preference retained across restart.
 Fixes roster selection when filters hide the selected row, Locate completion

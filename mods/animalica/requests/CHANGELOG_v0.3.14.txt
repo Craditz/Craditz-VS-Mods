@@ -1,4 +1,6 @@
-Animalica Requests 0.3.14
+# Animalica Requests 0.3.14
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 the fox has found the keyboard. the lynx now waits for both halves of its outfit.
 
@@ -7,5 +9,5 @@ the fox has found the keyboard. the lynx now waits for both halves of its outfit
 
 Validated with focused source-presence checks and native PlayerModelLib loading.
 The accepted candidate passed a Vintage Story 1.22.7 Linux world start/save/shutdown
-smoke test, including Female Lupines absent and Hooved absent. This does not claim
+smoke test, including Female Lupines absent and Hooved absent. this does not establish
 exhaustive visual, animation, or multiplayer testing.

@@ -1,0 +1,16 @@
+# Animalica Abilities 0.3.3 — local release, 2026-10-04
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Previous promoted version: 0.3.2
+Tested optimization label: 0.3.2
+
+- Group and sort scent nodes when a response arrives, reuse the emission cache of up to 48 groups and prune stale emission timers.
+- Visit active abilities on server ticks; disconnect and despawn cleanup removes retained state and restores registered physics hooks.
+- Retain existing species eligibility, Night Sight, Scent, Pounce and Adrenaline gameplay rules.
+
+the loose ends that came with this release
+Model eligibility, empty and populated scent responses, manual off, Pounce no-target validation and named Adrenaline speed activation/expiry/reuse passed narrowly. Enabled stale-result replacement, targeted Pounce and broader runtime cleanup remain unverified.
+
+Owner explicitly said: get all of the mods pushed to release and give me a changelog (2026-10-04). Partial coverage is nonblocking; multiplayer is waived.
+the fox has no measured performance gain to report. No public upload.

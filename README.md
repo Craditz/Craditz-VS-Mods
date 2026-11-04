@@ -1,39 +1,51 @@
 # Craditz’s Vintage Story Mods
 
-Fine. The code has a home now.
+the human left the computer unattended. i have made a den in the repository.
 
-People kept asking for the source so they could help maintain these mods and add things. Fair enough. Welcome to the den. Please leave the wiring unchewed.
+these are the Vintage Story mods i wanted to exist, plus the wiring for anyone who wants to help maintain them. there are playable animals, paws with tools, companions with jobs, a radio, and several perfectly reasonable uses of a stolen keyboard.
 
-I make these mods because there are things I want in Vintage Story that weren’t there. If you want those things too, or want to help make them better, that’s why this exists.
+AI helps with the code, art, documentation and release work. bugs, fixes and useful suggestions are welcome. please leave the cables unchewed.
 
-AI is part of how I work, including uploads, updates and releases. Bug reports, fixes and useful suggestions are welcome.
+## what escaped
 
-## What’s here
+[download the November 4 collection](https://github.com/Craditz/Craditz-VS-Mods/releases/tag/release-2026-11-04). the [release inventory](RELEASE_2026-11-04.md) records the exact packages, checksums and test limits. four public versions were already newer than the local shelf; i kept the newer ones. Hide Name has source here, but no accepted installer in this collection.
 
-Animalica and its packs, Feral Kinship, Companions, Custom Music Radio, Player Model Access and the other included mods. Each has its own folder; they don’t all need to be installed together. Check the individual dependencies.
+| Mod | Source version | notes from the fox |
+| --- | --- | --- |
+| [Animalica - Bears](mods/animalica/bears) | 0.5.4 | the fox opened the door and five bears arrived. they are in the character selector now. please take this up with them. |
+| [Animalica - Foxes, Wolves & Hyenas](mods/animalica/canids) | 0.6.8 | i found the character selector. it has foxes now. also wolves and hyenas; they followed me in. |
+| [Animalica - Compatibility Pack 1](mods/animalica/compatibility) | 0.6.9 | other mods had animals. i wanted to be those animals. the keyboard was unattended. |
+| [Animalica - Compatibility Pack 3 (Dinosaurs)](mods/animalica/compatibility-dinosaurs) | 0.4.3 | the fox found the dinosaur folder. the den is going to need a larger door. |
+| [Animalica - Compatibility Pack 2 (FotSA)](mods/animalica/compatibility-fotsa) | 0.5.3 | i followed the Fauna of the Stone Age animals home and borrowed their character-selector paperwork. |
+| [Animalica Core](mods/animalica/core) | 1.2.39 | the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs. |
+| [Animalica - Enemies](mods/animalica/enemies) | 0.2.2 | the human said these were enemies. i have given them a place in the character selector. this seems diplomatic. |
+| [Animalica - Hooved Animals](mods/animalica/hooved) | 0.5.4 | i borrowed the computer for five minutes. the character selector grew hooves. |
+| [Animalica Requests](mods/animalica/requests) | 0.3.16 | someone asked for more animals. i wrote the request down, then sat on the keyboard until it became a mod. |
+| [Animalica - Small & Odd](mods/animalica/small-odd) | 0.5.5 | the large animals were taking up the doorway. i brought in the small and odd ones through the window. |
+| [Animalica Abilities](mods/animalica-abilities) | 0.3.4 | the human left a keyboard within pouncing distance. i have also acquired scent trails and Night Sight. |
+| [Animalica Body Tools](mods/animalica-body-tools) | 1.6.20 | thumbs were taking too long. i fitted the tools to the paws instead. |
+| [Animalica Emotes](mods/animalica-emotes) | 0.2.15 | i found the animation buttons. the fox can now lie down on purpose, which is a considerable improvement over debugging. |
+| [Animalica: Toolsmith](mods/animalica-toolsmith) | 1.1.0 | i took a tool head, an animal fitting and somebody else’s binding. the result is a tool a fox can actually wear. |
+| [Custom Music Radio](mods/custom-music-radio) | 1.2.3 | the stolen computer had music on it. i built a radio so the den could hear it too. |
+| [Druidry](mods/druidry) | 0.1.1 | one fox was apparently not enough. i borrowed the ritual altar and acquired options. |
+| [Feral Kinship](mods/feral-kinship) | 0.5.7 | the fox has filed a formal complaint about being treated as an ordinary stranger by other foxes. |
+| [Feral Kinship Companions](mods/feral-kinship-companions) | 0.5.100 | i gave the animals a roster, a cart and things to do. they now have better organization than the human. |
+| [Hide Name Addon](mods/hide-name-addon) | 0.1.2 | the fox borrowed the nameplate. you may have it back when the settings say so. |
+| [Player Model Access](mods/player-model-access) | 0.2.2 | i found the character-selector guest list. some names now need permission from the human. |
+| [Tamables: Critters](mods/tamables-critters) | 0.2.5 | the small creatures followed me to the keyboard. i have made room on the pet roster. |
+| [Tamables: FOTSA](mods/tamables-fotsa) | 0.9.1 | the Stone Age animals also wanted to come home. i have filled out the PetAI forms with a muddy paw. |
 
-## Still unpacking
+## bring the right supplies
 
-The supporting assets are here now, too: models, textures, sounds, recipes and the other files for the selected versions. Third-party material keeps its own terms; see [the notices](THIRD_PARTY_NOTICES.md). Clone with Git LFS so the asset files are downloaded.
+these mods are separate. you do not need to install the whole den. check each folder’s requirements, and install third-party dependencies separately. for Toolsmith, choose exactly one supported provider.
 
-Separate testing tools and fixtures stay local. Developer tools already built into the mods remain in their source.
+clone with Git LFS for the actual models, textures and sounds. the [build notes](BUILD.md) explain external game references and the source layout. accepted download ZIPs are kept as release assets; rebuilding is a separate artifact, not a promise of the same binary or more gameplay testing.
 
-## The fox has the keyboard
+## found a loose wire?
 
-the human left the keyboard unattended. five approved updates have escaped:
-FWH 0.6.8, Bears 0.5.4, Compatibility Pack 2 0.5.3, Requests 0.3.16 and
-Companions 0.5.75. Texture choices, restored selectors, Bighorn horns and a
-small set of Companion fixes. [Changes and validation](RELEASE_2026-10-11.md).
+open an issue with the mod version, what happened, what you expected and steps to reproduce it. logs help. for a large feature, discuss the idea before carrying the whole thing into the woods. contribution terms live in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Want to help?
-
-Tell me which mod you’re working with and what you want to fix or add. For bugs, include what happened, what you expected and how to reproduce it. For a big feature, open a discussion in an issue before disappearing into the woods with it.
-
-## Building
-
-See [BUILD.md](BUILD.md) for the setup. You’ll need your own Vintage Story installation and the listed dependencies. The included code projects compiled during preparation; that isn’t a promise that every mod will build into a complete package or behave perfectly in-game.
-
-## License
+## the labels stay on
 
 You can use, modify, maintain forks and share these mods for free under the
 [Craditz Community Mod License](LICENSE).
@@ -57,35 +69,3 @@ Contributions are welcome under [CONTRIBUTING.md](CONTRIBUTING.md). You keep
 ownership of your contribution, while giving [Craditz](https://github.com/Craditz) the
 right to grant commercial permissions upfront. Please affirm the contribution
 agreement in your pull request before it is merged.
-
-## Companions 0.5.76
-
-The owner-authorized Companions release includes wellbeing/care duties, FOTSA health/breeding/bonus extensions, retained expedition/recruitment fixes and ambient sound reduction. See [the changelog](mods/feral-kinship-companions/CHANGELOG_v0.5.76.md) and [release record](RELEASE_2026-10-13.md) for defaults and pending tests. Other mod versions are unchanged.
-
-## Companions 0.5.77 physics hotfix
-
-The minimal physics hotfix guards the companion safety prefix against partially initialized bodies and missing input/diagnostic references. The existing 0.5.76 features and assets remain. See [changes and qualification limits](mods/feral-kinship-companions/CHANGELOG_v0.5.77.md).
-
-## Body Tools 1.6.19
-
-Body Tools now removes exhausted held claws, preserves equipped rending chopping and axe feedback, and handles repeated singleplayer initialization and reload. Starter claws follow the same break rules. The accepted r3 binary is retained with its original revision metadata. Thanks to Cheese for reporting and retesting. See [the changelog](mods/animalica-body-tools/CHANGELOG_v1.6.19.md) and [release identity and verification limits](RELEASE_2026-10-16_BODY_TOOLS.md).
-
-## Approved Companions feeding and FOTSA growth/riding update
-
-Companions stable `0.5.79` retains the tested candidate runtime bytes with finalized manifest/release notes. Tamables FOTSA `0.9.1` remains byte-for-byte unchanged. See [release identities and qualification](RELEASE_2026-10-17_COMPANIONS_FOTSA.md) and [Companions changes since 0.5.74](mods/feral-kinship-companions/CHANGELOG_since_0.5.74.md). Modded-food compatibility: **probably works now, not tested**. The invisible bearded dragon remains TODO.
-
-## Companions 0.5.80 expedition compatibility fix
-
-The owner reports both affected users confirmed the expedition-start fix. Stable 0.5.80 preserves the tested preview DLL/assets and admits unknown attached add-on implementations by default. See [release identity and limitations](RELEASE_2026-10-18_COMPANIONS.md) and [changes since 0.5.79](mods/feral-kinship-companions/CHANGELOG_v0.5.80.md).
-
-## Companions 0.5.84
-
-Prior actual local stable: 0.5.83; previous public source: 0.5.80. Owner explicitly requested stable despite the disclosed remaining tests. See [release changes, backup/rollback and exact verification scope](RELEASE_2026-10-19_COMPANIONS.md). Stable installer DLL/PDB and all 323 assets remain identical to recovery-flaps-preview.2. Public source compilation is a separate artifact.
-
-## Companions 0.5.91
-
-Owner-authorized user Restore update; prior local stable 0.5.90, previous public source 0.5.84. The exact tested DLL and 350 assets are retained. 103 controlled groups passed; affected-server gameplay remains unverified. See [release details and rollback limits](RELEASE_2026-10-20_COMPANIONS.md).
-
-## Companions 0.5.94 Optimum compatibility
-
-Matching source/assets for the accepted Optimum-aware update on public 0.5.93. This also synchronizes the already-public 0.5.93 baseline from the repository's older 0.5.92 source. See [release scope, hashes and limits](RELEASE_2026-10-25_COMPANIONS.md). Other mod source is unchanged; ModDB upload remains separate.

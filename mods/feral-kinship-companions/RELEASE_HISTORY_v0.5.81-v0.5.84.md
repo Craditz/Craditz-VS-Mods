@@ -1,6 +1,8 @@
 # Local stable/source publication history
 
-0.5.81: initial dedicated-startup safety changes; 0.5.82: corrected client-only OpenGL callback startup failure; 0.5.83: Social → Wellbeing shortcut. These local stable releases preceded 0.5.84. The previous public selected source was 0.5.80. Existing historical notices remain unchanged.
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](../../RELEASE_2026-11-04.md) is by the door.
+
+0.5.81: initial dedicated-startup safety changes; 0.5.82: corrected client-only OpenGL callback startup failure; 0.5.83: Social â†’ Wellbeing shortcut. These local stable releases preceded 0.5.84. The previous public selected source was 0.5.80. Existing historical notices remain unchanged.
 
 ## Version history and source publication
 

@@ -23,4 +23,9 @@ public sealed class ScentNodePacket
     public double Z { get; set; }
     public int AgeMilliseconds { get; set; }
     public long TrailId { get; set; }
+
+    // Existing implicit fields occupy 1-5. Pin the extension so their wire
+    // numbers remain unchanged; older peers ignore this optional metadata.
+    [ProtoMember(6)]
+    public bool IsPredator { get; set; }
 }

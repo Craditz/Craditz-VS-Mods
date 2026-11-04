@@ -2,8 +2,8 @@
   "type": "code",
   "name": "Animalica Abilities",
   "modid": "animalicaabilities",
-  "version": "0.3.3",
-  "description": "Species-gated Scent, Night Sight, Pounce, and Adrenaline abilities for Animalica and compatible PlayerModelLib species.",
+  "version": "0.3.4",
+  "description": "the human left a keyboard within pouncing distance. i have also acquired scent trails and Night Sight. species-gated senses, Pounce and Adrenaline for supported playable models. N opens the menu; Y is the default scent shortcut in 0.3.4, while existing custom bindings are kept. predator scent has its own orange tint and glow.",
   "authors": [
     "Craditz"
   ],

@@ -1,4 +1,6 @@
-## Recovery limits and admin follow-up
+# ## Recovery limits and admin follow-up
+
+i have left the wiring notes here. the details matter; a confident fox is not a substitute for the checks below.
 
 Automatic recovery targets verified eligible old records; it does not guarantee every missing animal. It preserves the verified native original and never creates a guessed body because an original is unloaded. Ambiguous cases require admin inspection/recovery and may need restored source mods or a backup. True deletion, missing assets, conflicting ownership/trips/outcomes, incompatible snapshots/progression and unresolved checkpoints are not silently overridden.
 
@@ -8,7 +10,7 @@ Rollback must restore the **whole backup with matching mods**, because older ver
 
 ## Evidence and remaining verification
 
-The owner explicitly requested a stable release after receiving the preview recommendation and limitations. This is a release decision, not a claim of exhaustive gameplay acceptance.
+the human explicitly requested a stable release after receiving the preview recommendation and limitations. This is a release decision, not a claim of exhaustive gameplay acceptance.
 
 The exact recovery-flaps-preview.2 DLL passed **1,623 controlled assertions**: 70 button/routing/security/confirmation checks, 315 recovery and fresh-process regressions, 590 flap lifecycle/collision checks, 560 native asset/recipe checks and 88 localization checks. The production build was clean. Stable finalization preserves that DLL, PDB and all 323 assets byte-for-byte; only manifest and release documentation change.
 

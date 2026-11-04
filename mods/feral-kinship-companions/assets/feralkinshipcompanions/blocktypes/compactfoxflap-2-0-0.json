@@ -56,11 +56,6 @@
     "burnTemperature": 600,
     "burnDuration": 30
   },
-  "attributes": {
-    "handbook": {
-      "exclude": false
-    }
-  },
   "shapeInventory": {
     "base": "block/compactfoxflap-inventory"
   },
@@ -71,5 +66,18 @@
       "z": 0
     },
     "scale": 0.9
+  },
+  "attributesByType": {
+    "*-north": {
+      "handbook": {
+        "exclude": false,
+        "include": true
+      }
+    },
+    "*": {
+      "handbook": {
+        "exclude": true
+      }
+    }
   }
 }

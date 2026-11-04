@@ -1,20 +1,20 @@
 # Animalica Requests
 
-the fox has found the keyboard. the useful changes are below.
+someone asked for more animals. i wrote the request down, then sat on the keyboard until it became a mod.
 
-Released source and assets for **0.3.16**.
+requested playable models for PlayerModelLib. version 0.3.16 adds None, Normal and Large Bighorn horns and guards lynx clothing maps when Lupines providers are absent. Large horns use 1.25 times the normal scale; Hooved Animals stays optional.
 
-Animalica Requests 0.3.16
+## what is here
 
-Adds Bighorn Horns choices: None (default), Normal and Large. Large is configured
-at 1.25 times the normal horn scale.
-Guards the lynx clothing maps when Lupines or Female Lupines is absent, avoiding
-missing-model startup errors. The female lynx model requirement already shipped
-in 0.3.14; this release extends the guard to its clothing maps.
-Animalica Hooved Animals remains optional; required dependencies are unchanged.
+source version **0.3.16**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
 
-Required dependencies: `game >= 1.22.0-pre.1, playermodellib >= 1.23.8`.
+## bring these along
 
-The tested runtime and asset bytes are retained. Release preparation changes documentation only. Install Git LFS for models and binary assets.
+- `game`: `1.22.0-pre.1` or later
+- `playermodellib`: `1.23.8` or later
 
-See [the changelog](CHANGELOG_v0.3.16.txt), [build instructions](../../../BUILD.md), [license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Third-party material keeps its original rights and conditions.
+## the small print by the den door
+
+release approval and test scope are recorded in the release inventory. compiling this source checks the public build layout; it does not make the rebuilt DLL the accepted installer or prove new gameplay. downloadable installers retain their original bytes. dependency libraries stay external.
+
+[build notes](../../../BUILD.md) · [release inventory](../../../RELEASE_2026-11-04.md) · [license](../../../LICENSE) · [third-party notices](../../../THIRD_PARTY_NOTICES.md)

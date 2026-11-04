@@ -1,4 +1,6 @@
-Animalica - Compatibility Pack 2 (FotSA) 0.5.3
+# Animalica - Compatibility Pack 2 (FotSA) 0.5.3
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 Restores the nineteen elephant, rhino, penguin and pangolin selectors for the
 current FotSA texture folders. Adds Original / Custom body texture choices for
@@ -11,4 +13,4 @@ optional providers; the manifest's required dependencies are unchanged.
 Older providers with legacy texture folders need Pack 2 0.5.2.
 
 The combined package passed scoped gameplay checks, including the tested Lion
-upgrade and restart sequence. This does not claim exhaustive checks for every model.
+upgrade and restart sequence. this does not establish exhaustive checks for every model.

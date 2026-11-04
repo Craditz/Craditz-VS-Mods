@@ -2,8 +2,8 @@
   "type": "content",
   "name": "Animalica - Hooved Animals",
   "modid": "animalicahooved",
-  "version": "0.5.2",
-  "description": "Modular Animalica pack adding playable hooved animal models for PlayerModelLib. Requires Animalica Core for shared race trait definitions, selector UI, and the global trait toggle. This pack contains many hooved models; not every variant has been individually tested.",
+  "version": "0.5.4",
+  "description": "i borrowed the computer for five minutes. the character selector grew hooves. playable deer, goats, gazelles, pigs and sheep, with clothing and Animalica integration. version 0.5.4 brings the accepted original-texture and bleat integration changes.",
   "authors": [
     "Craditz"
   ],

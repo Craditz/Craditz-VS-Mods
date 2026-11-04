@@ -1,0 +1,9 @@
+# Animalica Small & Odd 0.5.5
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 0.5.3
+
+- Fish now gets the aquatic breathing trait. You can stay underwater without borrowing a Seraph's lungs.
+- Fixed Small & Odd replacing Hooved's model remaps when both packs were loaded. Both sets can exist at the same time now.
+- Requires Animalica Core 1.2.34 or newer for the breathing support.

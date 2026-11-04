@@ -1,5 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Version>1.2.39</Version>
+    <InformationalVersion>1.2.39-grazer-preview.1</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <Deterministic>true</Deterministic>
+    <DebugType>portable</DebugType>
+    <CoreSourceRoot>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../../../../..'))</CoreSourceRoot>
+    <PathMap>$(CoreSourceRoot)=/_/core-source</PathMap>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>

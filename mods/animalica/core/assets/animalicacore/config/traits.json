@@ -150,6 +150,13 @@
     }
   },
   {
+    "code": "animalica-breathing-aquatic",
+    "type": "positive",
+    "attributes": {
+      "breathType": 1
+    }
+  },
+  {
     "code": "animalica-physiology-arctic-cat",
     "type": "positive",
     "attributes": {

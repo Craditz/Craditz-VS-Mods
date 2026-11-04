@@ -328,6 +328,10 @@ public sealed class BlockEntityVintageRadio : BlockEntity
 
     public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor world)
     {
+        // Diagnostic only: restore the pre-bundle authoritative snapshot behavior.
+        double previousSeconds = initialized && world.Side == EnumAppSide.Client && !Upper
+            ? PlaybackSeconds : double.NaN;
+        string previousGeneration = PlaybackGeneration;
         base.FromTreeAttributes(tree, world);
         OwnerUid = tree.GetString("ownerUid", "");
         string savedPlaylist = tree.GetString("playlist", RadioPlaylists.Base);
@@ -355,6 +359,9 @@ public sealed class BlockEntityVintageRadio : BlockEntity
         shuffle.Restore(tree.GetString("shufflePlaylist", Playlist),
             (tree["shufflePlayed"] as StringArrayAttribute)?.value ?? Array.Empty<string>());
         startedMs = world.ElapsedMilliseconds;
+        if (double.IsFinite(previousSeconds) && Math.Abs(offset - previousSeconds) > 2)
+            Api.Logger.Notification("[custommusicradio][snapshot] from={0:0.000}s to={1:0.000}s delta={2:0.000}s revision={3} generationChanged={4}",
+                previousSeconds, offset, offset - previousSeconds, Revision, previousGeneration != PlaybackGeneration);
         if (initialized && world.Side == EnumAppSide.Client)
         {
             if (!Upper) System.UpdateRadioAudio(this);

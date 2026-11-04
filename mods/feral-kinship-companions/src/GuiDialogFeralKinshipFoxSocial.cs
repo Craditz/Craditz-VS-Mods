@@ -687,11 +687,13 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
             // Give the family status the full panel width. The old layout
             // reserved the button's column beside this text, which made
             // localized pregnancy and bond messages truncate early.
-            DrawWrapped(ctx, stateText, 30, 534, width - 60, 15, TextWhite, 3);
-            DrawWrapped(ctx, current.BreedingFeedback, 30, 588, width - 60, 14, TextMuted, 2);
+            DrawWrapped(ctx, stateText, 30, 534, width - 60, 14, TextWhite, 3);
+            DrawWrapped(ctx, Lang.Get("feralkinshipcompanions:breeding-current-label", current.BreedingEligibility), 30, 584, width - 60, 13, TextWhite, 2);
+            DrawWrapped(ctx, Lang.Get("feralkinshipcompanions:breeding-history-label", current.BreedingFeedback), 30, 618, width - 60, 12, TextMuted, 2);
+            DrawButton(ctx, Lang.Get("feralkinshipcompanions:breeding-current-refresh"), width - 350, 488, 110, 31, true);
             DrawButton(ctx, current.BreedingEnabled
                 ? Lang.Get("feralkinshipcompanions:breeding-disable-button")
-                : Lang.Get("feralkinshipcompanions:breeding-enable-button"), width - 220, 628, 190, 31, true);
+                : Lang.Get("feralkinshipcompanions:breeding-enable-button"), width - 220, 488, 190, 31, true);
         }
         else
         {
@@ -1002,11 +1004,21 @@ internal sealed class GuiElementFeralKinshipFoxSocialSurface : GuiElementFeralKi
             return;
         }
 
+        if (!state.IsJuvenile && state.BreedingSupported
+            && string.Equals(activeTab, "social", StringComparison.Ordinal)
+            && x >= CanvasWidth - 350 && x <= CanvasWidth - 240
+            && y >= 488 && y <= 519)
+        {
+            FoxGuiTheme.PlayNavigation(api);
+            system.SendFoxSocialAction(targetEntityId, FoxSocialRequestAction.RefreshBreedingStatus);
+            return;
+        }
+
         if (!state.IsJuvenile
             && state.BreedingSupported
             && string.Equals(activeTab, "social", StringComparison.Ordinal)
             && x >= CanvasWidth - 220 && x <= CanvasWidth - 30
-            && y >= 628 && y <= 659)
+            && y >= 488 && y <= 519)
         {
             FoxGuiTheme.PlayChoice(api);
             system.SendFoxSocialAction(targetEntityId, FoxSocialRequestAction.ToggleBreeding);

@@ -1,0 +1,16 @@
+# Animalica Emotes 0.2.15 — local release, 2026-10-04
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Previous promoted version: None (first promotion)
+Tested optimization label: 0.2.14-sneak-hybrid-test
+
+- Promote the existing synchronized, model-aware Shift+K pose menu for the first time on the local release shelf, including active-pose toggling, Stop Emote and interruption by normal player actions.
+- Share Core's loaded-player index and reuse the membership set for synchronized pose updates.
+- Retain the existing expanded two-column Fox animation review menu and authored Sneak comparison controls; no new animations are authored in this release.
+
+the loose ends that came with this release
+Local posture and Sleep interaction was observed with Core. Multiplayer synchronization and broader remote-player lifecycle behavior remain untested and multiplayer is waived.
+
+Owner explicitly said: get all of the mods pushed to release and give me a changelog (2026-10-04). Partial coverage is nonblocking; multiplayer is waived.
+the fox has no measured performance gain to report. No public upload.

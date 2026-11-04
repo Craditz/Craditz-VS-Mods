@@ -33,6 +33,10 @@ public sealed class AnimalicaDietSystem : ModSystem
     private readonly List<AnimalicaFoodDefinition> wildcardFoods = new();
     private readonly Dictionary<string, Dictionary<string, decimal>> traitAffinities = new(StringComparer.Ordinal);
     private readonly HashSet<string> primaryTraits = new(StringComparer.Ordinal);
+    // Keep the start decision until the next use. Stop can arrive after Shift
+    // is released or the target changes, and may be called after cancellation.
+    private readonly ConditionalWeakTable<EntityAgent, object> foodInteractions = new();
+
     private Harmony? harmony;
     private ICoreAPI? api;
 
@@ -57,6 +61,8 @@ public sealed class AnimalicaDietSystem : ModSystem
             "tryEatBegin",
             BindingFlags.Instance | BindingFlags.NonPublic
         );
+        MethodInfo? eatStepMethod = AccessTools.Method(typeof(CollectibleObject), "tryEatStep");
+        MethodInfo? eatStopMethod = AccessTools.Method(typeof(CollectibleObject), "tryEatStop");
         MethodInfo? nutritionPostfix = AccessTools.Method(typeof(AnimalicaDietSystem), nameof(AfterGetNutritionProperties));
         MethodInfo? heldUsePrefix = AccessTools.Method(
             typeof(AnimalicaDietSystem),
@@ -69,18 +75,27 @@ public sealed class AnimalicaDietSystem : ModSystem
         if (nutritionMethod == null
             || heldUseMethod == null
             || eatBeginMethod == null
+            || eatStepMethod == null
+            || eatStopMethod == null
             || nutritionPostfix == null
             || heldUsePrefix == null
             || eatBeginPrefix == null)
         {
             coreApi.Logger.Error(
                 "[AnimalicaCore] Could not install the modular diet hooks; GetNutritionProperties, " +
-                "OnHeldUseStart, or the collectible eat-start method was not found."
+                "OnHeldUseStart, or a collectible eating lifecycle method was not found."
             );
             return;
         }
 
         harmony = new Harmony(HarmonyId);
+        InstallTraitRestrictionsTargetRouting(coreApi);
+        MethodInfo canPlace = AccessTools.Method(typeof(Block), nameof(Block.CanPlaceBlock));
+        if (Harmony.GetPatchInfo(canPlace)?.Postfixes.Any(patch => patch.owner == HarmonyId) != true)
+        {
+            harmony.Patch(canPlace, postfix: new HarmonyMethod(
+                AccessTools.Method(typeof(AnimalicaDietSystem), nameof(AfterFirepitCanPlaceBlock))));
+        }
         bool nutritionHookInstalled = Harmony.GetPatchInfo(nutritionMethod)?.Postfixes.Any(
             patch => string.Equals(patch.owner, HarmonyId, StringComparison.Ordinal)
         ) == true;
@@ -115,7 +130,7 @@ public sealed class AnimalicaDietSystem : ModSystem
 
             harmony.Patch(
                 heldUseMethod,
-                prefix: heldUseHookInstalled ? null : new HarmonyMethod(heldUsePrefix),
+                prefix: heldUseHookInstalled ? null : new HarmonyMethod(heldUsePrefix) { priority = Priority.First },
                 finalizer: heldUseFinalizerInstalled ? null : new HarmonyMethod(heldUseFinalizer)
             );
         }
@@ -128,6 +143,21 @@ public sealed class AnimalicaDietSystem : ModSystem
             harmony.Patch(eatBeginMethod, prefix: new HarmonyMethod(eatBeginPrefix));
         }
 
+        // Dry grass and plantable roots inherit these eating callbacks even
+        // when their start override just performed a placement. Do not let
+        // trait-provided nutrition turn that use into a second consumption.
+        foreach ((MethodInfo target, string prefix) in new[]
+        {
+            (eatStepMethod, nameof(BeforeCollectibleTryEatStep)),
+            (eatStopMethod, nameof(BeforeCollectibleTryEatStop))
+        })
+        {
+            if (Harmony.GetPatchInfo(target)?.Prefixes.Any(patch => patch.owner == HarmonyId) != true)
+            {
+                harmony.Patch(target, prefix: new HarmonyMethod(AccessTools.Method(typeof(AnimalicaDietSystem), prefix)));
+            }
+        }
+
         bool nutritionPostfixInstalled = Harmony.GetPatchInfo(nutritionMethod)?.Postfixes.Any(
             patch => string.Equals(patch.owner, HarmonyId, StringComparison.Ordinal)
         ) == true;
@@ -137,24 +167,31 @@ public sealed class AnimalicaDietSystem : ModSystem
         bool eatBeginPrefixInstalled = Harmony.GetPatchInfo(eatBeginMethod)?.Prefixes.Any(
             patch => string.Equals(patch.owner, HarmonyId, StringComparison.Ordinal)
         ) == true;
-        if (nutritionPostfixInstalled && heldUsePrefixInstalled && eatBeginPrefixInstalled)
+        bool eatStepPrefixInstalled = Harmony.GetPatchInfo(eatStepMethod)?.Prefixes.Any(patch => patch.owner == HarmonyId) == true;
+        bool eatStopPrefixInstalled = Harmony.GetPatchInfo(eatStopMethod)?.Prefixes.Any(patch => patch.owner == HarmonyId) == true;
+        if (nutritionPostfixInstalled && heldUsePrefixInstalled && eatBeginPrefixInstalled
+            && eatStepPrefixInstalled && eatStopPrefixInstalled)
         {
             coreApi.Logger.Notification(
                 "[AnimalicaCore][DietUseTrace] Hooks verified: GetNutritionProperties={0}, OnHeldUseStart={1}, " +
-                "tryEatBegin={2}.",
+                "tryEatBegin={2}, tryEatStep={3}, tryEatStop={4}.",
                 nutritionPostfixInstalled,
                 heldUsePrefixInstalled,
-                eatBeginPrefixInstalled
+                eatBeginPrefixInstalled,
+                eatStepPrefixInstalled,
+                eatStopPrefixInstalled
             );
         }
         else
         {
             coreApi.Logger.Error(
                 "[AnimalicaCore][DietUseTrace] Hook verification failed: GetNutritionProperties={0}, " +
-                "OnHeldUseStart={1}, tryEatBegin={2}.",
+                "OnHeldUseStart={1}, tryEatBegin={2}, tryEatStep={3}, tryEatStop={4}.",
                 nutritionPostfixInstalled,
                 heldUsePrefixInstalled,
-                eatBeginPrefixInstalled
+                eatBeginPrefixInstalled,
+                eatStepPrefixInstalled,
+                eatStopPrefixInstalled
             );
         }
     }
@@ -168,6 +205,7 @@ public sealed class AnimalicaDietSystem : ModSystem
         modelProfiles.Clear();
         resolvedProfiles.Clear();
         warnedProfileKeys.Clear();
+        foodInteractions.Clear();
 
         IAsset? asset = coreApi.Assets.TryGet(new AssetLocation(DietAssetCode));
         AnimalicaDietDocument? document = asset?.ToObject<AnimalicaDietDocument>();
@@ -251,6 +289,7 @@ public sealed class AnimalicaDietSystem : ModSystem
         }
 
         harmony?.UnpatchAll(HarmonyId);
+        foodInteractions.Clear();
         harmony = null;
         api = null;
         exactFoods.Clear();
@@ -301,14 +340,15 @@ public sealed class AnimalicaDietSystem : ModSystem
         out HeldUseInteractionState __state)
     {
         __state = default;
-        if (heldUseTraceDepth <= 0
-            || byEntity is not EntityPlayer player
-            || slot.Empty
-            || !Instances.TryGetValue(player.Api, out AnimalicaDietSystem? system)
-            || !system.IsAnimalicaPlayer(player)
-            || useType != EnumHandInteract.HeldItemInteract)
+        if (byEntity is not EntityPlayer player
+            || !Instances.TryGetValue(player.Api, out AnimalicaDietSystem? system))
         {
-            __state = default;
+            return;
+        }
+
+        system.foodInteractions.Remove(player);
+        if (slot.Empty || !system.IsAnimalicaPlayer(player) || useType != EnumHandInteract.HeldItemInteract)
+        {
             return;
         }
 
@@ -320,9 +360,16 @@ public sealed class AnimalicaDietSystem : ModSystem
             : player.World.BlockAccessor.GetBlock(blockSel.Position);
         string? whitelistAttribute = targetBlock?.Attributes?["worldInteractionAttributeCheck"].AsString(null);
         bool nutritionEnabled = system.IsAnimalFoodNutritionEnabled();
+        // An explicit modified target use belongs to placement/storage/feeding,
+        // including a failed attempt. Let vanilla validate and consume it;
+        // never fall back to eating when placement fails or is cancelled.
         bool scope = dietFood
-            && nutritionEnabled
-            && !string.IsNullOrWhiteSpace(whitelistAttribute);
+            && (blockSel?.Position != null && player.Controls.ShiftKey
+                || nutritionEnabled && !string.IsNullOrWhiteSpace(whitelistAttribute));
+        if (scope)
+        {
+            system.foodInteractions.Add(player, new object());
+        }
 
         if (firstEvent)
         {
@@ -351,8 +398,24 @@ public sealed class AnimalicaDietSystem : ModSystem
 
     private static Exception? AfterCollectibleHeldUseStart(
         Exception? __exception,
-        HeldUseInteractionState __state)
+        HeldUseInteractionState __state,
+        ItemSlot slot,
+        EntityAgent byEntity,
+        BlockSelection? blockSel,
+        bool firstEvent,
+        EnumHandHandling handling)
     {
+        if (__state.TraceEntered && firstEvent && byEntity is EntityPlayer player
+            && Instances.TryGetValue(player.Api, out AnimalicaDietSystem? system))
+        {
+            system.api?.Logger.Notification(
+                "[AnimalicaCore][DietUseTrace] held-use-result side={0}; model={1}; handling={2}; " +
+                "remaining={3}; targetPos={4}; face={5}; hit={6}; playerPos={7}; eye={8}; collider={9}; error={10}.",
+                player.World.Side, player.WatchedAttributes.GetString("skinModel", "seraph"), handling,
+                slot.StackSize, blockSel?.Position, blockSel?.Face, blockSel?.HitPosition,
+                player.Pos.XYZ, player.LocalEyePos, player.CollisionBox, __exception?.GetType().Name ?? "none");
+        }
+
         if (__state.StorageEntered && storageInteractionDepth > 0)
         {
             storageInteractionDepth--;
@@ -364,6 +427,53 @@ public sealed class AnimalicaDietSystem : ModSystem
         }
 
         return __exception;
+    }
+
+    private void InstallTraitRestrictionsTargetRouting(ICoreAPI coreApi)
+    {
+        Type? patchType = AccessTools.TypeByName("TraitRestrictions.ItemPermissionsPatches");
+        MethodInfo? bypass = patchType == null ? null : AccessTools.Method(patchType, "IsSneakFoodBypass", [
+            typeof(EntityPlayer), typeof(CollectibleObject), typeof(EntityAgent),
+            typeof(BlockSelection), typeof(EntitySelection)
+        ]);
+        // 1.0.0 has no early target-food bypass. 1.1.0 skips the entire held-use
+        // start (including native dry-grass/root placement) and returns NotHandled.
+        if (bypass == null || bypass.ReturnType != typeof(bool)) return;
+        if (Harmony.GetPatchInfo(bypass)?.Postfixes.Any(patch => patch.owner == HarmonyId) == true) return;
+
+        harmony!.Patch(bypass, postfix: new HarmonyMethod(
+            AccessTools.Method(typeof(AnimalicaDietSystem), nameof(AfterTraitRestrictionsSneakFoodBypass)))
+        { priority = Priority.Last });
+        coreApi.Logger.Notification("[AnimalicaCore] Trait Restrictions target-food routing compatibility active.");
+    }
+
+    private static void AfterTraitRestrictionsSneakFoodBypass(EntityPlayer player, ref bool __result)
+    {
+        if (__result && Instances.TryGetValue(player.Api, out AnimalicaDietSystem? system)
+            && system.IsAnimalicaPlayer(player) && system.IsInteractionUse(player))
+        {
+            // Defer this use to native item/block interaction and the dependency's
+            // ordinary permission checks. Core owns only the eating fallback;
+            // no target, claim, collision, inventory or handling result is forced.
+            __result = false;
+        }
+    }
+
+    private static void AfterFirepitCanPlaceBlock(
+        Block __instance, IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel,
+        string failureCode, bool __result)
+    {
+        if (heldUseTraceDepth > 0 && __instance.Code?.Domain == "game"
+            && __instance.Code.Path == "firepit-construct1" && byPlayer?.Entity is EntityPlayer player
+            && Instances.TryGetValue(player.Api, out AnimalicaDietSystem? system)
+            && system.IsInteractionUse(player))
+        {
+            system.api?.Logger.Notification(
+                "[AnimalicaCore][DietPlacementTrace] side={0}; model={1}; pos={2}; allowed={3}; " +
+                "failure={4}; firepitCollisionBoxes={5}.", world.Side,
+                player.WatchedAttributes.GetString("skinModel", "seraph"), blockSel.Position,
+                __result, failureCode, __instance.CollisionBoxes?.Length ?? 0);
+        }
     }
 
     private static bool BeforeCollectibleTryEatBegin(
@@ -381,7 +491,7 @@ public sealed class AnimalicaDietSystem : ModSystem
         }
 
         bool dietFood = system.TryGetFood(__instance, slot.Itemstack, out _);
-        bool suppressEat = storageInteractionDepth > 0 && dietFood;
+        bool suppressEat = dietFood && (storageInteractionDepth > 0 || system.IsInteractionUse(player));
         system.api?.Logger.Notification(
             "[AnimalicaCore][DietUseTrace] tryEatBegin item={0}; class={1}; dietFood={2}; " +
             "scopeDepth={3}; decision={4}.",
@@ -399,6 +509,23 @@ public sealed class AnimalicaDietSystem : ModSystem
         handling = EnumHandHandling.NotHandled;
         return false;
     }
+
+    private bool IsInteractionUse(EntityAgent byEntity) =>
+        foodInteractions.TryGetValue(byEntity, out _);
+
+    private static bool BeforeCollectibleTryEatStep(EntityAgent byEntity, ref bool __result)
+    {
+        if (!Instances.TryGetValue(byEntity.Api, out AnimalicaDietSystem? system) || !system.IsInteractionUse(byEntity))
+        {
+            return true;
+        }
+
+        __result = false;
+        return false;
+    }
+
+    private static bool BeforeCollectibleTryEatStop(EntityAgent byEntity) =>
+        !Instances.TryGetValue(byEntity.Api, out AnimalicaDietSystem? system) || !system.IsInteractionUse(byEntity);
 
     private void ApplyAnimalFoodNutrition(
         CollectibleObject instance,

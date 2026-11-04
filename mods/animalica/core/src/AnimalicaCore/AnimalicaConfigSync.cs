@@ -8,20 +8,36 @@ using Vintagestory.API.Client;
 
 namespace AnimalicaCore;
 
-[ProtoContract(ImplicitFields = ImplicitFields.AllPublic)]
+[ProtoContract]
 public sealed class AnimalicaConfigPacket
 {
+    [ProtoMember(5)]
     public bool EnableRaceTraits { get; set; }
+    [ProtoMember(6)]
     public bool EnableSizeOverrides { get; set; }
+    [ProtoMember(10)]
     public double SizeMinimum { get; set; }
+    [ProtoMember(9)]
     public double SizeMaximum { get; set; }
+    [ProtoMember(3)]
     public double DefaultSize { get; set; }
+    [ProtoMember(11)]
     public bool UseDefaultSwimmingDepth { get; set; }
+    [ProtoMember(1)]
     public string AnimalBalanceMode { get; set; } = "Balanced";
+    [ProtoMember(2)]
     public string AnimalClassPowerMode { get; set; } = "Balanced";
+    [ProtoMember(4)]
     public bool EnableAnimalFoodNutrition { get; set; }
+    [ProtoMember(7)]
     public bool MuzzleMode { get; set; }
+    [ProtoMember(8)]
     public bool OldSit { get; set; }
+
+    [ProtoMember(12)]
+    public bool CapCollisionToSeraph { get; set; }
+    [ProtoMember(13)]
+    public bool RaiseCollisionToSeraph { get; set; }
 
     public static AnimalicaConfigPacket FromConfig(AnimalicaCoreConfig config)
     {
@@ -37,6 +53,8 @@ public sealed class AnimalicaConfigPacket
             AnimalClassPowerMode = config.AnimalClassPowerMode,
             EnableAnimalFoodNutrition = config.EnableAnimalFoodNutrition,
             MuzzleMode = config.MuzzleMode,
+            CapCollisionToSeraph = config.CapCollisionToSeraph,
+            RaiseCollisionToSeraph = config.RaiseCollisionToSeraph,
             OldSit = config.OldSit
         };
     }
@@ -55,6 +73,8 @@ public sealed class AnimalicaConfigPacket
             AnimalClassPowerMode = AnimalClassPowerMode,
             EnableAnimalFoodNutrition = EnableAnimalFoodNutrition,
             MuzzleMode = MuzzleMode,
+            CapCollisionToSeraph = CapCollisionToSeraph,
+            RaiseCollisionToSeraph = RaiseCollisionToSeraph,
             OldSit = OldSit
         };
     }

@@ -1,0 +1,18 @@
+[
+  {
+    "file": "game:blocktypes/stone/rock.json",
+    "op": "add",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "FeralKinshipQuarryRecovery"
+    }
+  },
+  {
+    "file": "game:blocktypes/stone/crackedrock.json",
+    "op": "add",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "FeralKinshipQuarryRecovery"
+    }
+  }
+]

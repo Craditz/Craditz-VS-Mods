@@ -39,6 +39,8 @@ public sealed partial class FeralKinshipCompanionSystem
         MaintainTargetedAttackOrders(loadedCompanions);
         MaintainWorkCartAssignments(loadedCompanions);
         MaintainWorkCartLoggingQueues();
+        MaintainWorkCartQuarries();
+        MaintainCartRescue(loadedCompanions);
         MaintainWorkCartChoreQueues();
         MaintainAmbientLife();
         MaintainCampAreaNotifications();

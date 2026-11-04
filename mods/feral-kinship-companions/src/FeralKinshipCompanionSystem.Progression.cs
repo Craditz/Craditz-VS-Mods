@@ -82,6 +82,7 @@ public sealed partial class FeralKinshipCompanionSystem
 
             if (announceLevelUp && TryGetOwnerPlayer(companion, out IServerPlayer? owner))
             {
+                SendOwnerSound(owner!, CompanionSoundCue.LevelGained);
                 string fallback = result.LevelsGained == 1
                     ? "Something feels different. I think I am getting better at this."
                     : "That was a lot at once. I think I improved more than I realized.";

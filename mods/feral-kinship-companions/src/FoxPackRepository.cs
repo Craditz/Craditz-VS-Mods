@@ -289,7 +289,7 @@ internal sealed partial class FoxPackRepository
         if (bedsByPosition.TryGetValue(key, out FoxBedRecord? previous)
             && !string.IsNullOrWhiteSpace(previous.FoxId))
         {
-            ClearFoxHome(previous.FoxId);
+            ClearFoxHome(previous.FoxId, excludedBed: previous);
         }
 
         FoxBedRecord record = new()
@@ -315,7 +315,7 @@ internal sealed partial class FoxPackRepository
 
         if (!string.IsNullOrWhiteSpace(bed.FoxId))
         {
-            ClearFoxHome(bed.FoxId);
+            ClearFoxHome(bed.FoxId, excludedBed: bed);
         }
         return true;
     }
@@ -365,7 +365,7 @@ internal sealed partial class FoxPackRepository
         ClearBrambleBedAssignment(ownerUid);
         if (!string.IsNullOrWhiteSpace(bed.FoxId))
         {
-            ClearFoxHome(bed.FoxId);
+            ClearFoxHome(bed.FoxId, excludedBed: bed);
             bed.FoxId = string.Empty;
         }
         bed.BrambleOwnerUid = ownerUid;
@@ -391,7 +391,7 @@ internal sealed partial class FoxPackRepository
         {
             foreach (string foxId in previous.AssignedFoxIds.ToList())
             {
-                ClearFoxHome(foxId);
+                ClearFoxHome(foxId, excludedCart: previous);
             }
         }
 
@@ -474,10 +474,7 @@ internal sealed partial class FoxPackRepository
             return false;
         }
 
-        foreach (FoxBedRecord bed in bedsByPosition.Values.Where(bed => string.Equals(bed.FoxId, foxId, StringComparison.Ordinal)))
-        {
-            bed.FoxId = string.Empty;
-        }
+        // Work assignment and sleeping bed are independent; retain its bed.
         foreach (FoxWorkCartRecord other in workCartsByPosition.Values)
         {
             other.AssignedFoxIds.RemoveAll(id => string.Equals(id, foxId, StringComparison.Ordinal));
@@ -587,7 +584,7 @@ internal sealed partial class FoxPackRepository
         {
             if (!string.IsNullOrWhiteSpace(bed.FoxId))
             {
-                ClearFoxHome(bed.FoxId);
+                ClearFoxHome(bed.FoxId, excludedBed: bed);
                 bed.FoxId = string.Empty;
             }
             bed.BrambleOwnerUid = string.Empty;
@@ -612,21 +609,14 @@ internal sealed partial class FoxPackRepository
         if (!string.IsNullOrWhiteSpace(bed.FoxId)
             && !string.Equals(bed.FoxId, foxId, StringComparison.Ordinal))
         {
-            ClearFoxHome(bed.FoxId);
+            ClearFoxHome(bed.FoxId, excludedBed: bed);
         }
 
         bed.FoxId = foxId;
         bed.BrambleOwnerUid = string.Empty;
-        foreach (FoxWorkCartRecord cart in workCartsByPosition.Values)
-        {
-            cart.AssignedFoxIds.RemoveAll(id => string.Equals(id, foxId, StringComparison.Ordinal));
-        }
-        fox.HasHome = true;
-        fox.HomeType = "bed";
-        fox.HomeX = bed.X;
-        fox.HomeY = bed.Y;
-        fox.HomeZ = bed.Z;
-        fox.HomeDimension = bed.Dimension;
+        // A worker's canonical territory stays at its cart; its separate bed
+        // is resolved for nightly shelter and explicit home/rest commands.
+        ClearFoxHome(foxId);
         return true;
     }
 
@@ -2061,13 +2051,27 @@ internal sealed partial class FoxPackRepository
         }
     }
 
-    private void ClearFoxHome(string foxId)
+    private void ClearFoxHome(string foxId, FoxWorkCartRecord? excludedCart = null, FoxBedRecord? excludedBed = null)
     {
         if (!recordsById.TryGetValue(foxId, out FoxPackRecordV2? fox))
         {
             return;
         }
 
+        var cart = workCartsByPosition.Values.FirstOrDefault(candidate => !ReferenceEquals(candidate, excludedCart)
+            && candidate.OwnerUid == fox.OwnerUid && candidate.AssignedFoxIds.Contains(foxId, StringComparer.Ordinal));
+        var bed = bedsByPosition.Values.FirstOrDefault(candidate => !ReferenceEquals(candidate, excludedBed)
+            && candidate.OwnerUid == fox.OwnerUid && candidate.FoxId == foxId);
+        if (cart != null || bed != null)
+        {
+            fox.HasHome = true;
+            fox.HomeType = cart != null ? "workcart" : "bed";
+            fox.HomeX = cart?.X ?? bed!.X;
+            fox.HomeY = cart?.Y ?? bed!.Y;
+            fox.HomeZ = cart?.Z ?? bed!.Z;
+            fox.HomeDimension = cart?.Dimension ?? bed!.Dimension;
+            return;
+        }
         fox.HasHome = false;
         fox.HomeType = string.Empty;
         fox.HomeX = 0;

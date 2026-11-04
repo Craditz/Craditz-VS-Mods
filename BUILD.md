@@ -1,153 +1,38 @@
-# Building the mods
+# building things with the stolen computer
 
-If you're here to build something, this is the bit you need.
+the fox has left the wiring accessible. bring your own game libraries.
 
-## What you'll need
+## supplies
 
-- Git LFS, installed before cloning; run `git lfs pull` if assets appear as pointer text
+- Git LFS; run `git lfs pull` if assets look like short pointer files
 - .NET SDK 10
-- Your own Vintage Story installation, at a version compatible with the chosen mod's manifest
-- Any third-party mod DLLs that project needs, downloaded from their official pages and extracted locally outside this source tree
+- your own compatible Vintage Story installation
+- the third-party libraries required by the selected project, kept outside this repository
 
-Don't add game DLLs, PlayerModelLib or PetAI DLLs to Git.
-
-Official downloads: [Vintage Story](https://www.vintagestory.at/),
-[PlayerModelLib](https://mods.vintagestory.at/playermodellib),
-[PetAI](https://mods.vintagestory.at/petai).
-
-## Build a code project
-
-Use one of the projects listed below:
+## ordinary code projects
 
 ```powershell
 dotnet build <project.csproj> -c Release -p:VintageStoryPath="<game-directory>" -p:PlayerModelLibPath="<external-PlayerModelLib.dll>" -p:PetAIPath="<external-PetAI.dll>"
 ```
 
-Only pass the dependency properties that project needs. Check its manifest for
-the required dependency versions. Those are the requirements for that release;
-they aren't a list of whichever versions are newest.
+only pass the dependency properties the project needs. manifest minima describe that release’s requirements; they are not a recommendation to combine every mod with whichever dependency is newest.
 
-The manifests keep their selected release versions and credits. The runtime C#
-is unchanged from the selected commits. Project paths were adjusted to fit this
-repository's layout.
 
-October 17 approved pair: Companions stable `0.5.79` and Tamables
-FOTSA `0.9.1` are the selected sources. Both public-layout projects compile
-against 1.22.7; the stable Companions installer changes only manifest/documentation and retains tested runtime bytes. Tamables retains its exact tested installer.
-Tamables now includes the external VSSurvivalMod reference required by its
-native riding behavior. See [release identities and limits](RELEASE_2026-10-17_COMPANIONS_FOTSA.md).
 
-- `mods/animalica-abilities/ScentTrails.csproj`
-- `mods/animalica/core/src/AnimalicaCore/AnimalicaCore.csproj`
-- `mods/animalica/requests/src/AnimalicaRequests.csproj`
-- `mods/feral-kinship/FeralKinship.csproj`
-- `mods/player-model-access/src/PlayerModelAccess/PlayerModelAccess.csproj`
-- `mods/tamables-critters/TamablesCritters.csproj`
-- `mods/tamables-fotsa/TamablesFotsa.csproj`
-- `mods/hide-name-addon/src/HideNameAddon/HideNameAddon.csproj`
-- `mods/animalica-body-tools/src/AnimalicaBodyTools/AnimalicaBodyTools.csproj`
-- `mods/custom-music-radio/CustomMusicRadio.csproj`
-- `mods/feral-kinship-companions/FeralKinshipCompanions.csproj`
+## Toolsmith has two sets of teeth
 
-## Assets and packages
+build `AnimalicaToolsmith.csproj` with `ToolsmithPath` and `PlayerModelLibPath`, then `AnimalicaToolsmith.Lto.csproj` with `LtoBlackSmithPlusPath` and `PlayerModelLibPath`. both use `VintageStoryPath`. finally build `AnimalicaToolsmith.Loader.csproj`; it embeds those two owned backend DLLs. package the loader, not the loose backends. no third-party provider DLL goes into the ZIP. choose exactly one provider when playing.
 
-The supporting assets and package icons from the matching retained releases are
-included. Eight content packs need their manifest and assets; code mods also
-need their compiled mod DLL. Use the project assembly name and keep `modinfo.json`
-at the ZIP root, alongside `assets/` and the package icon where present. Archive
-entry paths must use forward slashes.
+Emotes links Core’s `LoadedPlayerIndex.cs`. Companions links the Kinship race resolver and the shared configuration migration source. these are source links; the mods still compile into separate assemblies.
 
-Use the included selected assets for packaging. Complete regeneration from
-original model/art inputs is a separate workflow: this repository does not
-contain every historical generator or donor input. Dependency DLLs are installed
-separately and must not be bundled into these packages.
+## putting a package together
 
-An asset presence/hash check or successful compile does not establish an exact
-release binary match or in-game acceptance. Hide Name has no retained latest ZIP
-for comparison. Existing selected versions and dependency requirements are kept.
+keep `modinfo.json` at the ZIP root, beside the compiled mod DLL, `assets/` and the icon where present. content-only packs need no mod DLL. use forward slashes and unique safe archive paths. retained accepted ZIPs are downloadable release assets, not build outputs from this checkout.
 
-## Companions, Body Tools and Radio
+selected release assets are included. rebuilding the original models from every historical donor and generator is a separate task; those inputs are not all in this den. third-party art and sounds retain their own terms and credits.
 
-Companions 0.5.76, Body Tools 1.6.19 and Radio 1.2.2 keep the developer and
-diagnostic features that shipped with those versions. Their separate test and
-checker projects stay out of this repo. Companions 0.5.74 includes the accepted
-crunch-sound removal; no alternate UI build was selected.
+## the fox’s check sheet
 
-- Companions keeps its released UI constants; no alternate UI build was selected
-- Body Tools uses external game/Harmony references
-- Radio uses external game/protobuf references. Its project configuration now
-  uses `VINTAGE_STORY` instead of the old fallback to a local experimental game
-  installation. That change is limited to project configuration
+the November 4 public-layout build results are in [the collection record](RELEASE_2026-11-04.md). successful compilation checks these project paths and references. it does not establish binary identity, full packaging behaviour or new gameplay acceptance. the accepted installers are preserved without rebuilding. historical release notes describe their own dates and test scope.
 
-Their supporting assets are included from the matching selected release packages.
-
-### Companions and Feral Kinship
-
-Companions lives in `mods/feral-kinship-companions`. Its manifest still requires
-`feralkinship >= 0.4.3`; the Feral Kinship source here is 0.5.4.
-
-It links the unchanged Kinship race resolver and shared config migration source
-at build time:
-
-- `../feral-kinship/src/FeralRaceResolver.cs`
-- `../../shared/VintageStoryConfigMigration.cs`
-
-Companions and Feral Kinship compile as separate projects.
-
-## What has been checked
-
-All eleven code projects listed above compiled with local external references.
-Requests was compiled again after its move to `mods/animalica/requests`.
-Those checks cover compilation; complete package builds and in-game behaviour
-weren't established by them.
-
-### October 7 release update
-
-Requests 0.3.14 and Companions 0.5.74 are included with their released manifests,
-matching source changes and supporting assets. Both source projects compiled again.
-Their accepted candidates passed a Vintage Story 1.22.7 Linux world start/save/shutdown
-smoke test; Requests also passed Female Lupines absent and Hooved absent. Focused
-and native PlayerModelLib checks covered the corrected gate and existing model loading.
-This evidence does not establish exhaustive gameplay or binary identity of a rebuild.
-
-### October 11 release update
-
-FWH 0.6.8, Bears 0.5.4, Compatibility Pack 2 0.5.3, Requests 0.3.16 and
-Companions 0.5.75 include the approved source and exact tested supporting assets.
-Release ZIPs retain every tested runtime/asset byte. Documentation was refreshed;
-Companions also has a numeric manifest version. No packaged DLL was rebuilt.
-Scoped gameplay and independent source checks cover these candidates; see
-[the release record](RELEASE_2026-10-11.md) for their limits.
-
-## Adding files to the repo
-
-Ignore rules help catch mistakes, but check the actual Git index before each
-upload. The included model JSON, PNG and OGG assets already use Git LFS. Check
-the real asset contents, not just the pointer files, and use Git LFS for any
-additional large source assets where appropriate.
-
-Keep downloadable release ZIPs as separate release assets.
-
-### October 13 Companions release
-
-Companions 0.5.76 derives from approved private Sound1 production source. The two unused offline suspension prototype/probe files are excluded; production retained suspension, existing developer features, assets and notices remain. The public project keeps its repository-relative shared-source links. Its final DLL is rebuilt and separately verified; prior private-DLL evidence is not relabelled as public-DLL gameplay acceptance. Set DOTNET_GENERATE_ASPNET_CERTIFICATE=false, DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1 and DOTNET_CLI_TELEMETRY_OPTOUT=1 before building in a fresh CLI home.
-
-### Companions 0.5.77 physics hotfix
-
-This release preserves the 0.5.76 project and external references and changes only the physics safety wrapper and release metadata. Use the first-run certificate suppression above. Separate private test fixtures remain excluded from source and packages.
-
-### October 16 Body Tools source publication
-
-Body Tools 1.6.19 uses the accepted r3 production implementation and assets. Its project retains `Version=1.6.19` and `InformationalVersion=1.6.19-private.r3-startup`, with repository-relative shared-source links and `VintageStoryPath` external references. Build against Vintage Story 1.22.7 and keep dependency DLLs external. The accepted installer is preserved without rebuilding; a source build is a separate artifact. See [the release record](RELEASE_2026-10-16_BODY_TOOLS.md) for hashes, checks and the remaining remote multiplayer limitation. Private fixtures and evidence remain excluded.
-
-### October 18 Companions 0.5.80
-
-Source matches accepted compatibility-first preview.2, with stable manifest/documentation only. The packaged DLL/PDB and runtime assets are retained without rebuilding. Prior exact-source compilation and candidate tests remain bounded evidence; a new source build is a separate artifact and must not substitute for the retained tested installer. External game/shared-source references and private-fixture exclusions remain. See [release qualification](RELEASE_2026-10-18_COMPANIONS.md).
-
-## Companions 0.5.84
-
-Prior actual local stable: 0.5.83; previous public source: 0.5.80. Owner explicitly requested stable despite the disclosed remaining tests. See [release changes, backup/rollback and exact verification scope](RELEASE_2026-10-19_COMPANIONS.md). Stable installer DLL/PDB and all 323 assets remain identical to recovery-flaps-preview.2. Public source compilation is a separate artifact.
-
-## Companions 0.5.91
-
-Owner-authorized user Restore update; prior local stable 0.5.90, previous public source 0.5.84. The exact tested DLL and 350 assets are retained. 103 controlled groups passed; affected-server gameplay remains unverified. See [release details and rollback limits](RELEASE_2026-10-20_COMPANIONS.md).
+game libraries, external mods, private fixtures, saves, logs and credentials stay outside source control. keep download ZIPs as release assets. the repository’s model JSON, textures and sounds use Git LFS; check the real bytes as well as the pointer labels.

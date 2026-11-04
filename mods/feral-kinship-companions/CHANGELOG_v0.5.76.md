@@ -1,5 +1,7 @@
 # Feral Kinship Companions 0.5.76
 
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
 - Fixes freshly tamed companions remaining frozen or unavailable to right-click
   until the first whistle. Admission and naming now retry after provider
   ownership and native publication are ready.

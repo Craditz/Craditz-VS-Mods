@@ -1,4 +1,16 @@
 {
-  inheritFrom: "blocktypes/workcart",
-  code: "workcart-logging"
+  "inheritFrom": "blocktypes/workcart",
+  "code": "workcart",
+  "variantgroups": [
+    {
+      "code": "kind",
+      "states": [
+        "logging"
+      ]
+    },
+    {
+      "code": "side",
+      "loadFromProperties": "abstract/horizontalorientation"
+    }
+  ]
 }

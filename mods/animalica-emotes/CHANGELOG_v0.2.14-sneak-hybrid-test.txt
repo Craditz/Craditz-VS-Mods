@@ -1,0 +1,8 @@
+# Animalica Emotes v0.2.14-sneak-hybrid-test
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+- Relabeled the live fox Sneak-Walk button for the new handoff-based hybrid
+  movement track.
+- Retained the original handoff Sneak-Walk and full handoff Scythe attack as
+  dedicated tester-only buttons.

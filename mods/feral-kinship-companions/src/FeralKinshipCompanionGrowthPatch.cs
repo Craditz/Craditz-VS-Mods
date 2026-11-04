@@ -29,6 +29,7 @@ internal static class FeralKinshipCompanionGrowthPatch
     }
 
     [HarmonyPostfix]
+    [HarmonyAfter("feralkinship.petai-compat", "gerste.petai")]
     private static void Postfix(EntityBehaviorGrow __instance, Entity adult)
     {
         Entity? child = __instance?.entity;
@@ -37,9 +38,9 @@ internal static class FeralKinshipCompanionGrowthPatch
             return;
         }
 
-        child.Api.ModLoader
-            .GetModSystem<FeralKinshipCompanionSystem>()?
-            .FinalizeCompanionAdultGrowth(adult);
+        FeralKinshipCompanionSystem? system = child.Api.ModLoader.GetModSystem<FeralKinshipCompanionSystem>();
+        system?.SeparateCompanionGrowthStatus(child, adult);
+        system?.FinalizeCompanionAdultGrowth(adult);
     }
 
     [HarmonyFinalizer]

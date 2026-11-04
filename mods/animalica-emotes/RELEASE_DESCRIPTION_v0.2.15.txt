@@ -1,0 +1,7 @@
+# Animalica Emotes 0.2.15
+
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
+Promote the existing synchronized, model-aware Shift+K pose menu for the first time on the local release shelf, including active-pose toggling, Stop Emote and interruption by normal player actions.
+
+Local posture and Sleep interaction was observed with Core. Multiplayer synchronization and broader remote-player lifecycle behavior remain untested and multiplayer is waived.

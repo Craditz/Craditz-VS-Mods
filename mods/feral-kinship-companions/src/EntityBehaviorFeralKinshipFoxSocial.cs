@@ -601,6 +601,8 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
             {"code":"feralkinshipreturntoden","dayTerritoryMode":true,"priority":1.37,"priorityForCancel":1.37,"movespeed":0.02,"territoryDistance":36,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshipfetchdroppeditem","dutyCoordinator":true,"priority":1.3655,"priorityForCancel":1.3655,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshiplogging","priority":1.3645,"priorityForCancel":1.3645,"animation":"{{walk}}","animationSpeed":2.2},
+            {"code":"feralkinshipcartrecovery","priority":1.368,"priorityForCancel":1.368,"animation":"{{walk}}","animationSpeed":2.2},
+            {"code":"feralkinshipquarry","priority":1.366,"priorityForCancel":1.366,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshipfertilizer","priority":1.3635,"priorityForCancel":1.3635,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshiptroughrefill","priority":1.3634,"priorityForCancel":1.3634,"animation":"{{walk}}","animationSpeed":2.2},
             {"code":"feralkinshipmowgrass","priority":1.362,"priorityForCancel":1.362,"animation":"{{walk}}","animationSpeed":2.2},
@@ -1037,7 +1039,12 @@ public sealed partial class EntityBehaviorFeralKinshipFoxSocial : EntityBehavior
                     + $"chunk={cell.X >> 4},{cell.Z >> 4}");
                 GetSystem().UnregisterLoadedFox(
                     entity,
-                    entity.Alive ? "Not currently loaded" : "Dead"
+                    // Native growth removes its source with Expire. Marking it
+                    // Dead would veto the replacement's bounded admission retry.
+                    despawn.Reason == EnumDespawnReason.Expire
+                        && FeralKinshipCompanionSystem.GetDomesticationStatus(entity)?.GetBool(FeralKinshipCompanionSystem.GrowthInProgressKey) == true
+                        ? "Growing"
+                        : entity.Alive ? "Not currently loaded" : "Dead"
                 );
             }
         }

@@ -20,6 +20,7 @@ internal static partial class RetainedNativeSaveWork
         internal readonly object?[] Version=version;
         internal bool RemoveRequested;
         internal bool DispatchClaimHeld;
+        internal bool StratumDropClaimed;
         internal readonly List<(IDictionary Dictionary,long Key,bool WasPresent,object? Expected)> Dictionaries=new();
     }
     private sealed class GenerationLease(object owner,object queue,object sync) {
@@ -58,6 +59,7 @@ internal static partial class RetainedNativeSaveWork
         footprintDispose=NativeChunkCompatibility.UsesOptimum(native)
             ? native.GetType("Vintagestory.Server.ChunkServerThread",true)!.GetMethod("TryAcquireOptimumWorldgenFootprint",BindingFlags.NonPublic|BindingFlags.Instance)!.GetParameters().Last().ParameterType.GetElementType()!.GetMethod(nameof(IDisposable.Dispose)) : null;
         claimDispatch=null;releaseDispatch=null;
+        ConfigureStratumDrop(native);
         if(footprintDispose!=null) {
             MethodInfo claim=AccessTools.DeclaredMethod(request,"TryClaimDispatch"),release=AccessTools.DeclaredMethod(request,"ReleaseDispatch");
             claimDispatch=value=>(bool)claim.Invoke(value,null)!;releaseDispatch=value=>release.Invoke(value,null);
@@ -136,7 +138,7 @@ internal static partial class RetainedNativeSaveWork
         receipt.Dictionaries.Add((dict,key,present,expected));
     }
     private static IEnumerable<CodeInstruction> GenerationTranspiler(IEnumerable<CodeInstruction> input) {
-        int chunks=0,maps=0,removals=0,footprints=0;
+        int chunks=0,maps=0,removals=0,footprints=0,dropClaims=0,dropClears=0;
         foreach(CodeInstruction instruction in input) {
             if(instruction.opcode==OpCodes.Ldfld&&Equals(instruction.operand,requestChunks)) {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(CapturedChunks)).MakeGenericMethod(requestChunks!.FieldType);chunks++;}
             else if(instruction.opcode==OpCodes.Ldfld&&Equals(instruction.operand,requestMap)) {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(CapturedMap)).MakeGenericMethod(requestMap!.FieldType);maps++;}
@@ -149,11 +151,19 @@ internal static partial class RetainedNativeSaveWork
                 Type target=Equals(method,removeRequest)?method.DeclaringType!:method.GetParameters()[0].ParameterType;
                 instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),Equals(method,removeRequest)?nameof(DeferRequestRemove):nameof(DeferDictionaryRemove)).MakeGenericMethod(target);removals++;
             }
+            if(stratumDropping!=null&&instruction.operand is MethodInfo drop&&(NativeStratumCompatibility.DropCall(drop,true)||NativeStratumCompatibility.DropCall(drop,false))) {
+                bool claim=NativeStratumCompatibility.DropCall(drop,true);
+                var load=generationRequestLocal<=byte.MaxValue?new CodeInstruction(OpCodes.Ldloc_S,(byte)generationRequestLocal):new CodeInstruction(OpCodes.Ldloc,(short)generationRequestLocal);
+                load.labels.AddRange(instruction.labels);instruction.labels.Clear();load.blocks.AddRange(instruction.blocks);instruction.blocks.Clear();yield return load;
+                instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),claim?nameof(ClaimStratumDrop):nameof(DeferStratumDropClear));
+                if(claim)dropClaims++;else dropClears++;
+            }
             if(footprintDispose!=null&&Equals(instruction.operand,footprintDispose)) {
                 instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(DeferFootprintDispose));footprints++;
             }
             yield return instruction;
         }
+        if(dropClaims!=(stratumDropping==null?0:1)||dropClears!=(stratumDropping==null?0:3))throw new InvalidOperationException("Qualified Stratum drop ownership sites differ");
         if(footprints!=(footprintDispose==null?0:2))throw new InvalidOperationException("Qualified footprint disposal sites differ");
         if(chunks!=7||maps!=1||removals!=3)throw new InvalidOperationException("Pinned native generation unload shape differs: "+chunks+"/"+maps+"/"+removals);
     }
@@ -167,6 +177,7 @@ internal static partial class RetainedNativeSaveWork
         if(receipt.Map!=null)mapDirty!.SetValue(receipt.Map,true);
     }
     private static bool Unchanged(GenerationReceipt receipt) {
+        if(!StratumDropUnchanged(receipt))return false;
         if(!ReferenceEquals(requestChunks!.GetValue(receipt.Request),receipt.OriginalArray)||!ReferenceEquals(requestMap!.GetValue(receipt.Request),receipt.Map))return false;
         for(int i=0;i<requestVersion.Length;i++)if(!Equals(Version(requestVersion[i],receipt.Request),receipt.Version[i]))return false;
         if(receipt.OriginalArray!=null&&receipt.Chunks!=null)for(int i=0;i<receipt.Chunks.Length;i++)if(!ReferenceEquals(receipt.OriginalArray.GetValue(i),receipt.Chunks.GetValue(i)))return false;
@@ -195,7 +206,7 @@ internal static partial class RetainedNativeSaveWork
                 }catch(Exception error){result??=error;}
                 foreach(IDisposable footprint in __state.Footprints)try {footprint.Dispose();}catch(Exception error) {result??=error;}
             }
-            finally {EndOperation(__state.Operation!);}
+            finally {try{ReleaseStratumDrops(__state);}catch(Exception error){result??=error;}finally{EndOperation(__state.Operation!);}}
         }
         return result;
     }

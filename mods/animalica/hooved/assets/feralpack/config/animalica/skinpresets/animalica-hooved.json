@@ -11,7 +11,8 @@
         "voicetype": "deer-call1",
         "voicepitch": "medium",
         "deer-chital-antlers": "noantlers",
-        "deer-chital-carrymode": "paw"
+        "deer-chital-carrymode": "paw",
+        "deer-chital-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -30,7 +31,8 @@
           "deer-chital-internal-eyesmask": "eyes-mask",
           "deer-chital-internal-earsmask": "ears-soft-mask",
           "deer-chital-internal-tailmask": "tail-blend-mask",
-          "deer-chital-internal-fixeddetails": "fixed-details-mask"
+          "deer-chital-internal-fixeddetails": "fixed-details-mask",
+          "deer-chital-texturemode": "custom"
         },
         "marked": {
           "deer-chital-coatcolor": "#FFAA774E",
@@ -48,7 +50,8 @@
           "deer-chital-internal-eyesmask": "eyes-mask",
           "deer-chital-internal-earsmask": "ears-soft-mask",
           "deer-chital-internal-tailmask": "tail-blend-mask",
-          "deer-chital-internal-fixeddetails": "fixed-details-mask"
+          "deer-chital-internal-fixeddetails": "fixed-details-mask",
+          "deer-chital-texturemode": "custom"
         },
         "pale": {
           "deer-chital-coatcolor": "#FFD2B99E",
@@ -66,7 +69,8 @@
           "deer-chital-internal-eyesmask": "eyes-mask",
           "deer-chital-internal-earsmask": "ears-soft-mask",
           "deer-chital-internal-tailmask": "tail-blend-mask",
-          "deer-chital-internal-fixeddetails": "fixed-details-mask"
+          "deer-chital-internal-fixeddetails": "fixed-details-mask",
+          "deer-chital-texturemode": "custom"
         },
         "dark": {
           "deer-chital-coatcolor": "#FF4D3D30",
@@ -84,7 +88,8 @@
           "deer-chital-internal-eyesmask": "eyes-mask",
           "deer-chital-internal-earsmask": "ears-soft-mask",
           "deer-chital-internal-tailmask": "tail-blend-mask",
-          "deer-chital-internal-fixeddetails": "fixed-details-mask"
+          "deer-chital-internal-fixeddetails": "fixed-details-mask",
+          "deer-chital-texturemode": "custom"
         },
         "albino": {
           "deer-chital-coatcolor": "#FFF0EBE2",
@@ -102,7 +107,8 @@
           "deer-chital-internal-eyesmask": "eyes-mask",
           "deer-chital-internal-earsmask": "ears-soft-mask",
           "deer-chital-internal-tailmask": "tail-blend-mask",
-          "deer-chital-internal-fixeddetails": "fixed-details-mask"
+          "deer-chital-internal-fixeddetails": "fixed-details-mask",
+          "deer-chital-texturemode": "custom"
         },
         "melanistic": {
           "deer-chital-coatcolor": "#FF252524",
@@ -120,7 +126,8 @@
           "deer-chital-internal-eyesmask": "eyes-mask",
           "deer-chital-internal-earsmask": "ears-soft-mask",
           "deer-chital-internal-tailmask": "tail-blend-mask",
-          "deer-chital-internal-fixeddetails": "fixed-details-mask"
+          "deer-chital-internal-fixeddetails": "fixed-details-mask",
+          "deer-chital-texturemode": "custom"
         }
       }
     },
@@ -135,7 +142,8 @@
         "voicetype": "elk-bellow1",
         "voicepitch": "medium",
         "deer-elk-antlers": "noantlers",
-        "deer-elk-carrymode": "paw"
+        "deer-elk-carrymode": "paw",
+        "deer-elk-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -154,7 +162,8 @@
           "deer-elk-internal-eyesmask": "eyes-mask",
           "deer-elk-internal-earsmask": "ears-soft-mask",
           "deer-elk-internal-tailmask": "tail-blend-mask",
-          "deer-elk-internal-fixeddetails": "fixed-details-mask"
+          "deer-elk-internal-fixeddetails": "fixed-details-mask",
+          "deer-elk-texturemode": "custom"
         },
         "marked": {
           "deer-elk-coatcolor": "#FF46372C",
@@ -172,7 +181,8 @@
           "deer-elk-internal-eyesmask": "eyes-mask",
           "deer-elk-internal-earsmask": "ears-soft-mask",
           "deer-elk-internal-tailmask": "tail-blend-mask",
-          "deer-elk-internal-fixeddetails": "fixed-details-mask"
+          "deer-elk-internal-fixeddetails": "fixed-details-mask",
+          "deer-elk-texturemode": "custom"
         },
         "pale": {
           "deer-elk-coatcolor": "#FFACA091",
@@ -190,7 +200,8 @@
           "deer-elk-internal-eyesmask": "eyes-mask",
           "deer-elk-internal-earsmask": "ears-soft-mask",
           "deer-elk-internal-tailmask": "tail-blend-mask",
-          "deer-elk-internal-fixeddetails": "fixed-details-mask"
+          "deer-elk-internal-fixeddetails": "fixed-details-mask",
+          "deer-elk-texturemode": "custom"
         },
         "dark": {
           "deer-elk-coatcolor": "#FF312B26",
@@ -208,7 +219,8 @@
           "deer-elk-internal-eyesmask": "eyes-mask",
           "deer-elk-internal-earsmask": "ears-soft-mask",
           "deer-elk-internal-tailmask": "tail-blend-mask",
-          "deer-elk-internal-fixeddetails": "fixed-details-mask"
+          "deer-elk-internal-fixeddetails": "fixed-details-mask",
+          "deer-elk-texturemode": "custom"
         },
         "albino": {
           "deer-elk-coatcolor": "#FFF0EBE2",
@@ -226,7 +238,8 @@
           "deer-elk-internal-eyesmask": "eyes-mask",
           "deer-elk-internal-earsmask": "ears-soft-mask",
           "deer-elk-internal-tailmask": "tail-blend-mask",
-          "deer-elk-internal-fixeddetails": "fixed-details-mask"
+          "deer-elk-internal-fixeddetails": "fixed-details-mask",
+          "deer-elk-texturemode": "custom"
         },
         "melanistic": {
           "deer-elk-coatcolor": "#FF252524",
@@ -244,7 +257,8 @@
           "deer-elk-internal-eyesmask": "eyes-mask",
           "deer-elk-internal-earsmask": "ears-soft-mask",
           "deer-elk-internal-tailmask": "tail-blend-mask",
-          "deer-elk-internal-fixeddetails": "fixed-details-mask"
+          "deer-elk-internal-fixeddetails": "fixed-details-mask",
+          "deer-elk-texturemode": "custom"
         }
       }
     },
@@ -259,7 +273,8 @@
         "voicetype": "deer-call1",
         "voicepitch": "medium",
         "deer-guemal-antlers": "noantlers",
-        "deer-guemal-carrymode": "paw"
+        "deer-guemal-carrymode": "paw",
+        "deer-guemal-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -278,7 +293,8 @@
           "deer-guemal-internal-eyesmask": "eyes-mask",
           "deer-guemal-internal-earsmask": "ears-soft-mask",
           "deer-guemal-internal-tailmask": "tail-blend-mask",
-          "deer-guemal-internal-fixeddetails": "fixed-details-mask"
+          "deer-guemal-internal-fixeddetails": "fixed-details-mask",
+          "deer-guemal-texturemode": "custom"
         },
         "marked": {
           "deer-guemal-coatcolor": "#FF725844",
@@ -296,7 +312,8 @@
           "deer-guemal-internal-eyesmask": "eyes-mask",
           "deer-guemal-internal-earsmask": "ears-soft-mask",
           "deer-guemal-internal-tailmask": "tail-blend-mask",
-          "deer-guemal-internal-fixeddetails": "fixed-details-mask"
+          "deer-guemal-internal-fixeddetails": "fixed-details-mask",
+          "deer-guemal-texturemode": "custom"
         },
         "pale": {
           "deer-guemal-coatcolor": "#FFBDAD9A",
@@ -314,7 +331,8 @@
           "deer-guemal-internal-eyesmask": "eyes-mask",
           "deer-guemal-internal-earsmask": "ears-soft-mask",
           "deer-guemal-internal-tailmask": "tail-blend-mask",
-          "deer-guemal-internal-fixeddetails": "fixed-details-mask"
+          "deer-guemal-internal-fixeddetails": "fixed-details-mask",
+          "deer-guemal-texturemode": "custom"
         },
         "dark": {
           "deer-guemal-coatcolor": "#FF3D342D",
@@ -332,7 +350,8 @@
           "deer-guemal-internal-eyesmask": "eyes-mask",
           "deer-guemal-internal-earsmask": "ears-soft-mask",
           "deer-guemal-internal-tailmask": "tail-blend-mask",
-          "deer-guemal-internal-fixeddetails": "fixed-details-mask"
+          "deer-guemal-internal-fixeddetails": "fixed-details-mask",
+          "deer-guemal-texturemode": "custom"
         },
         "albino": {
           "deer-guemal-coatcolor": "#FFF0EBE2",
@@ -350,7 +369,8 @@
           "deer-guemal-internal-eyesmask": "eyes-mask",
           "deer-guemal-internal-earsmask": "ears-soft-mask",
           "deer-guemal-internal-tailmask": "tail-blend-mask",
-          "deer-guemal-internal-fixeddetails": "fixed-details-mask"
+          "deer-guemal-internal-fixeddetails": "fixed-details-mask",
+          "deer-guemal-texturemode": "custom"
         },
         "melanistic": {
           "deer-guemal-coatcolor": "#FF252524",
@@ -368,7 +388,8 @@
           "deer-guemal-internal-eyesmask": "eyes-mask",
           "deer-guemal-internal-earsmask": "ears-soft-mask",
           "deer-guemal-internal-tailmask": "tail-blend-mask",
-          "deer-guemal-internal-fixeddetails": "fixed-details-mask"
+          "deer-guemal-internal-fixeddetails": "fixed-details-mask",
+          "deer-guemal-texturemode": "custom"
         }
       }
     },
@@ -383,7 +404,8 @@
         "voicetype": "deer-call1",
         "voicepitch": "medium",
         "deer-marsh-antlers": "noantlers",
-        "deer-marsh-carrymode": "paw"
+        "deer-marsh-carrymode": "paw",
+        "deer-marsh-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -402,7 +424,8 @@
           "deer-marsh-internal-eyesmask": "eyes-mask",
           "deer-marsh-internal-earsmask": "ears-soft-mask",
           "deer-marsh-internal-tailmask": "tail-blend-mask",
-          "deer-marsh-internal-fixeddetails": "fixed-details-mask"
+          "deer-marsh-internal-fixeddetails": "fixed-details-mask",
+          "deer-marsh-texturemode": "custom"
         },
         "marked": {
           "deer-marsh-coatcolor": "#FF916B36",
@@ -420,7 +443,8 @@
           "deer-marsh-internal-eyesmask": "eyes-mask",
           "deer-marsh-internal-earsmask": "ears-soft-mask",
           "deer-marsh-internal-tailmask": "tail-blend-mask",
-          "deer-marsh-internal-fixeddetails": "fixed-details-mask"
+          "deer-marsh-internal-fixeddetails": "fixed-details-mask",
+          "deer-marsh-texturemode": "custom"
         },
         "pale": {
           "deer-marsh-coatcolor": "#FFC9B495",
@@ -438,7 +462,8 @@
           "deer-marsh-internal-eyesmask": "eyes-mask",
           "deer-marsh-internal-earsmask": "ears-soft-mask",
           "deer-marsh-internal-tailmask": "tail-blend-mask",
-          "deer-marsh-internal-fixeddetails": "fixed-details-mask"
+          "deer-marsh-internal-fixeddetails": "fixed-details-mask",
+          "deer-marsh-texturemode": "custom"
         },
         "dark": {
           "deer-marsh-coatcolor": "#FF463929",
@@ -456,7 +481,8 @@
           "deer-marsh-internal-eyesmask": "eyes-mask",
           "deer-marsh-internal-earsmask": "ears-soft-mask",
           "deer-marsh-internal-tailmask": "tail-blend-mask",
-          "deer-marsh-internal-fixeddetails": "fixed-details-mask"
+          "deer-marsh-internal-fixeddetails": "fixed-details-mask",
+          "deer-marsh-texturemode": "custom"
         },
         "albino": {
           "deer-marsh-coatcolor": "#FFF0EBE2",
@@ -474,7 +500,8 @@
           "deer-marsh-internal-eyesmask": "eyes-mask",
           "deer-marsh-internal-earsmask": "ears-soft-mask",
           "deer-marsh-internal-tailmask": "tail-blend-mask",
-          "deer-marsh-internal-fixeddetails": "fixed-details-mask"
+          "deer-marsh-internal-fixeddetails": "fixed-details-mask",
+          "deer-marsh-texturemode": "custom"
         },
         "melanistic": {
           "deer-marsh-coatcolor": "#FF252524",
@@ -492,7 +519,8 @@
           "deer-marsh-internal-eyesmask": "eyes-mask",
           "deer-marsh-internal-earsmask": "ears-soft-mask",
           "deer-marsh-internal-tailmask": "tail-blend-mask",
-          "deer-marsh-internal-fixeddetails": "fixed-details-mask"
+          "deer-marsh-internal-fixeddetails": "fixed-details-mask",
+          "deer-marsh-texturemode": "custom"
         }
       }
     },
@@ -507,7 +535,8 @@
         "voicetype": "large-deer-bellow1",
         "voicepitch": "medium",
         "deer-moose-antlers": "noantlers",
-        "deer-moose-carrymode": "paw"
+        "deer-moose-carrymode": "paw",
+        "deer-moose-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -526,7 +555,8 @@
           "deer-moose-internal-eyesmask": "eyes-mask",
           "deer-moose-internal-earsmask": "ears-soft-mask",
           "deer-moose-internal-tailmask": "tail-blend-mask",
-          "deer-moose-internal-fixeddetails": "fixed-details-mask"
+          "deer-moose-internal-fixeddetails": "fixed-details-mask",
+          "deer-moose-texturemode": "custom"
         },
         "marked": {
           "deer-moose-coatcolor": "#FF473930",
@@ -544,7 +574,8 @@
           "deer-moose-internal-eyesmask": "eyes-mask",
           "deer-moose-internal-earsmask": "ears-soft-mask",
           "deer-moose-internal-tailmask": "tail-blend-mask",
-          "deer-moose-internal-fixeddetails": "fixed-details-mask"
+          "deer-moose-internal-fixeddetails": "fixed-details-mask",
+          "deer-moose-texturemode": "custom"
         },
         "pale": {
           "deer-moose-coatcolor": "#FFADA193",
@@ -562,7 +593,8 @@
           "deer-moose-internal-eyesmask": "eyes-mask",
           "deer-moose-internal-earsmask": "ears-soft-mask",
           "deer-moose-internal-tailmask": "tail-blend-mask",
-          "deer-moose-internal-fixeddetails": "fixed-details-mask"
+          "deer-moose-internal-fixeddetails": "fixed-details-mask",
+          "deer-moose-texturemode": "custom"
         },
         "dark": {
           "deer-moose-coatcolor": "#FF312B27",
@@ -580,7 +612,8 @@
           "deer-moose-internal-eyesmask": "eyes-mask",
           "deer-moose-internal-earsmask": "ears-soft-mask",
           "deer-moose-internal-tailmask": "tail-blend-mask",
-          "deer-moose-internal-fixeddetails": "fixed-details-mask"
+          "deer-moose-internal-fixeddetails": "fixed-details-mask",
+          "deer-moose-texturemode": "custom"
         },
         "albino": {
           "deer-moose-coatcolor": "#FFF0EBE2",
@@ -598,7 +631,8 @@
           "deer-moose-internal-eyesmask": "eyes-mask",
           "deer-moose-internal-earsmask": "ears-soft-mask",
           "deer-moose-internal-tailmask": "tail-blend-mask",
-          "deer-moose-internal-fixeddetails": "fixed-details-mask"
+          "deer-moose-internal-fixeddetails": "fixed-details-mask",
+          "deer-moose-texturemode": "custom"
         },
         "melanistic": {
           "deer-moose-coatcolor": "#FF252524",
@@ -616,7 +650,8 @@
           "deer-moose-internal-eyesmask": "eyes-mask",
           "deer-moose-internal-earsmask": "ears-soft-mask",
           "deer-moose-internal-tailmask": "tail-blend-mask",
-          "deer-moose-internal-fixeddetails": "fixed-details-mask"
+          "deer-moose-internal-fixeddetails": "fixed-details-mask",
+          "deer-moose-texturemode": "custom"
         }
       }
     },
@@ -631,7 +666,8 @@
         "voicetype": "deer-call1",
         "voicepitch": "medium",
         "deer-pampas-antlers": "noantlers",
-        "deer-pampas-carrymode": "paw"
+        "deer-pampas-carrymode": "paw",
+        "deer-pampas-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -650,7 +686,8 @@
           "deer-pampas-internal-eyesmask": "eyes-mask",
           "deer-pampas-internal-earsmask": "ears-soft-mask",
           "deer-pampas-internal-tailmask": "tail-blend-mask",
-          "deer-pampas-internal-fixeddetails": "fixed-details-mask"
+          "deer-pampas-internal-fixeddetails": "fixed-details-mask",
+          "deer-pampas-texturemode": "custom"
         },
         "marked": {
           "deer-pampas-coatcolor": "#FFB2926F",
@@ -668,7 +705,8 @@
           "deer-pampas-internal-eyesmask": "eyes-mask",
           "deer-pampas-internal-earsmask": "ears-soft-mask",
           "deer-pampas-internal-tailmask": "tail-blend-mask",
-          "deer-pampas-internal-fixeddetails": "fixed-details-mask"
+          "deer-pampas-internal-fixeddetails": "fixed-details-mask",
+          "deer-pampas-texturemode": "custom"
         },
         "pale": {
           "deer-pampas-coatcolor": "#FFD5C3AB",
@@ -686,7 +724,8 @@
           "deer-pampas-internal-eyesmask": "eyes-mask",
           "deer-pampas-internal-earsmask": "ears-soft-mask",
           "deer-pampas-internal-tailmask": "tail-blend-mask",
-          "deer-pampas-internal-fixeddetails": "fixed-details-mask"
+          "deer-pampas-internal-fixeddetails": "fixed-details-mask",
+          "deer-pampas-texturemode": "custom"
         },
         "dark": {
           "deer-pampas-coatcolor": "#FF4F4439",
@@ -704,7 +743,8 @@
           "deer-pampas-internal-eyesmask": "eyes-mask",
           "deer-pampas-internal-earsmask": "ears-soft-mask",
           "deer-pampas-internal-tailmask": "tail-blend-mask",
-          "deer-pampas-internal-fixeddetails": "fixed-details-mask"
+          "deer-pampas-internal-fixeddetails": "fixed-details-mask",
+          "deer-pampas-texturemode": "custom"
         },
         "albino": {
           "deer-pampas-coatcolor": "#FFF0EBE2",
@@ -722,7 +762,8 @@
           "deer-pampas-internal-eyesmask": "eyes-mask",
           "deer-pampas-internal-earsmask": "ears-soft-mask",
           "deer-pampas-internal-tailmask": "tail-blend-mask",
-          "deer-pampas-internal-fixeddetails": "fixed-details-mask"
+          "deer-pampas-internal-fixeddetails": "fixed-details-mask",
+          "deer-pampas-texturemode": "custom"
         },
         "melanistic": {
           "deer-pampas-coatcolor": "#FF252524",
@@ -740,7 +781,8 @@
           "deer-pampas-internal-eyesmask": "eyes-mask",
           "deer-pampas-internal-earsmask": "ears-soft-mask",
           "deer-pampas-internal-tailmask": "tail-blend-mask",
-          "deer-pampas-internal-fixeddetails": "fixed-details-mask"
+          "deer-pampas-internal-fixeddetails": "fixed-details-mask",
+          "deer-pampas-texturemode": "custom"
         }
       }
     },
@@ -755,7 +797,8 @@
         "voicetype": "small-hooved-call1",
         "voicepitch": "medium",
         "deer-pudu-antlers": "noantlers",
-        "deer-pudu-carrymode": "paw"
+        "deer-pudu-carrymode": "paw",
+        "deer-pudu-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -774,7 +817,8 @@
           "deer-pudu-internal-eyesmask": "eyes-mask",
           "deer-pudu-internal-earsmask": "ears-soft-mask",
           "deer-pudu-internal-tailmask": "tail-blend-mask",
-          "deer-pudu-internal-fixeddetails": "fixed-details-mask"
+          "deer-pudu-internal-fixeddetails": "fixed-details-mask",
+          "deer-pudu-texturemode": "custom"
         },
         "marked": {
           "deer-pudu-coatcolor": "#FF5E4942",
@@ -792,7 +836,8 @@
           "deer-pudu-internal-eyesmask": "eyes-mask",
           "deer-pudu-internal-earsmask": "ears-soft-mask",
           "deer-pudu-internal-tailmask": "tail-blend-mask",
-          "deer-pudu-internal-fixeddetails": "fixed-details-mask"
+          "deer-pudu-internal-fixeddetails": "fixed-details-mask",
+          "deer-pudu-texturemode": "custom"
         },
         "pale": {
           "deer-pudu-coatcolor": "#FFB5A799",
@@ -810,7 +855,8 @@
           "deer-pudu-internal-eyesmask": "eyes-mask",
           "deer-pudu-internal-earsmask": "ears-soft-mask",
           "deer-pudu-internal-tailmask": "tail-blend-mask",
-          "deer-pudu-internal-fixeddetails": "fixed-details-mask"
+          "deer-pudu-internal-fixeddetails": "fixed-details-mask",
+          "deer-pudu-texturemode": "custom"
         },
         "dark": {
           "deer-pudu-coatcolor": "#FF38302C",
@@ -828,7 +874,8 @@
           "deer-pudu-internal-eyesmask": "eyes-mask",
           "deer-pudu-internal-earsmask": "ears-soft-mask",
           "deer-pudu-internal-tailmask": "tail-blend-mask",
-          "deer-pudu-internal-fixeddetails": "fixed-details-mask"
+          "deer-pudu-internal-fixeddetails": "fixed-details-mask",
+          "deer-pudu-texturemode": "custom"
         },
         "albino": {
           "deer-pudu-coatcolor": "#FFF0EBE2",
@@ -846,7 +893,8 @@
           "deer-pudu-internal-eyesmask": "eyes-mask",
           "deer-pudu-internal-earsmask": "ears-soft-mask",
           "deer-pudu-internal-tailmask": "tail-blend-mask",
-          "deer-pudu-internal-fixeddetails": "fixed-details-mask"
+          "deer-pudu-internal-fixeddetails": "fixed-details-mask",
+          "deer-pudu-texturemode": "custom"
         },
         "melanistic": {
           "deer-pudu-coatcolor": "#FF252524",
@@ -864,7 +912,8 @@
           "deer-pudu-internal-eyesmask": "eyes-mask",
           "deer-pudu-internal-earsmask": "ears-soft-mask",
           "deer-pudu-internal-tailmask": "tail-blend-mask",
-          "deer-pudu-internal-fixeddetails": "fixed-details-mask"
+          "deer-pudu-internal-fixeddetails": "fixed-details-mask",
+          "deer-pudu-texturemode": "custom"
         }
       }
     },
@@ -879,7 +928,8 @@
         "voicetype": "small-hooved-call1",
         "voicepitch": "medium",
         "deer-redbrocket-antlers": "noantlers",
-        "deer-redbrocket-carrymode": "paw"
+        "deer-redbrocket-carrymode": "paw",
+        "deer-redbrocket-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -898,7 +948,8 @@
           "deer-redbrocket-internal-eyesmask": "eyes-mask",
           "deer-redbrocket-internal-earsmask": "ears-soft-mask",
           "deer-redbrocket-internal-tailmask": "tail-blend-mask",
-          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask"
+          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask",
+          "deer-redbrocket-texturemode": "custom"
         },
         "marked": {
           "deer-redbrocket-coatcolor": "#FF766045",
@@ -916,7 +967,8 @@
           "deer-redbrocket-internal-eyesmask": "eyes-mask",
           "deer-redbrocket-internal-earsmask": "ears-soft-mask",
           "deer-redbrocket-internal-tailmask": "tail-blend-mask",
-          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask"
+          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask",
+          "deer-redbrocket-texturemode": "custom"
         },
         "pale": {
           "deer-redbrocket-coatcolor": "#FFBFB09B",
@@ -934,7 +986,8 @@
           "deer-redbrocket-internal-eyesmask": "eyes-mask",
           "deer-redbrocket-internal-earsmask": "ears-soft-mask",
           "deer-redbrocket-internal-tailmask": "tail-blend-mask",
-          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask"
+          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask",
+          "deer-redbrocket-texturemode": "custom"
         },
         "dark": {
           "deer-redbrocket-coatcolor": "#FF3F362D",
@@ -952,7 +1005,8 @@
           "deer-redbrocket-internal-eyesmask": "eyes-mask",
           "deer-redbrocket-internal-earsmask": "ears-soft-mask",
           "deer-redbrocket-internal-tailmask": "tail-blend-mask",
-          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask"
+          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask",
+          "deer-redbrocket-texturemode": "custom"
         },
         "albino": {
           "deer-redbrocket-coatcolor": "#FFF0EBE2",
@@ -970,7 +1024,8 @@
           "deer-redbrocket-internal-eyesmask": "eyes-mask",
           "deer-redbrocket-internal-earsmask": "ears-soft-mask",
           "deer-redbrocket-internal-tailmask": "tail-blend-mask",
-          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask"
+          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask",
+          "deer-redbrocket-texturemode": "custom"
         },
         "melanistic": {
           "deer-redbrocket-coatcolor": "#FF252524",
@@ -988,7 +1043,8 @@
           "deer-redbrocket-internal-eyesmask": "eyes-mask",
           "deer-redbrocket-internal-earsmask": "ears-soft-mask",
           "deer-redbrocket-internal-tailmask": "tail-blend-mask",
-          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask"
+          "deer-redbrocket-internal-fixeddetails": "fixed-details-mask",
+          "deer-redbrocket-texturemode": "custom"
         }
       }
     },
@@ -1003,7 +1059,8 @@
         "voicetype": "deer-call1",
         "voicepitch": "medium",
         "deer-taruca-antlers": "noantlers",
-        "deer-taruca-carrymode": "paw"
+        "deer-taruca-carrymode": "paw",
+        "deer-taruca-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1022,7 +1079,8 @@
           "deer-taruca-internal-eyesmask": "eyes-mask",
           "deer-taruca-internal-earsmask": "ears-soft-mask",
           "deer-taruca-internal-tailmask": "tail-blend-mask",
-          "deer-taruca-internal-fixeddetails": "fixed-details-mask"
+          "deer-taruca-internal-fixeddetails": "fixed-details-mask",
+          "deer-taruca-texturemode": "custom"
         },
         "marked": {
           "deer-taruca-coatcolor": "#FF7B664F",
@@ -1040,7 +1098,8 @@
           "deer-taruca-internal-eyesmask": "eyes-mask",
           "deer-taruca-internal-earsmask": "ears-soft-mask",
           "deer-taruca-internal-tailmask": "tail-blend-mask",
-          "deer-taruca-internal-fixeddetails": "fixed-details-mask"
+          "deer-taruca-internal-fixeddetails": "fixed-details-mask",
+          "deer-taruca-texturemode": "custom"
         },
         "pale": {
           "deer-taruca-coatcolor": "#FFC0B29E",
@@ -1058,7 +1117,8 @@
           "deer-taruca-internal-eyesmask": "eyes-mask",
           "deer-taruca-internal-earsmask": "ears-soft-mask",
           "deer-taruca-internal-tailmask": "tail-blend-mask",
-          "deer-taruca-internal-fixeddetails": "fixed-details-mask"
+          "deer-taruca-internal-fixeddetails": "fixed-details-mask",
+          "deer-taruca-texturemode": "custom"
         },
         "dark": {
           "deer-taruca-coatcolor": "#FF403830",
@@ -1076,7 +1136,8 @@
           "deer-taruca-internal-eyesmask": "eyes-mask",
           "deer-taruca-internal-earsmask": "ears-soft-mask",
           "deer-taruca-internal-tailmask": "tail-blend-mask",
-          "deer-taruca-internal-fixeddetails": "fixed-details-mask"
+          "deer-taruca-internal-fixeddetails": "fixed-details-mask",
+          "deer-taruca-texturemode": "custom"
         },
         "albino": {
           "deer-taruca-coatcolor": "#FFF0EBE2",
@@ -1094,7 +1155,8 @@
           "deer-taruca-internal-eyesmask": "eyes-mask",
           "deer-taruca-internal-earsmask": "ears-soft-mask",
           "deer-taruca-internal-tailmask": "tail-blend-mask",
-          "deer-taruca-internal-fixeddetails": "fixed-details-mask"
+          "deer-taruca-internal-fixeddetails": "fixed-details-mask",
+          "deer-taruca-texturemode": "custom"
         },
         "melanistic": {
           "deer-taruca-coatcolor": "#FF252524",
@@ -1112,7 +1174,8 @@
           "deer-taruca-internal-eyesmask": "eyes-mask",
           "deer-taruca-internal-earsmask": "ears-soft-mask",
           "deer-taruca-internal-tailmask": "tail-blend-mask",
-          "deer-taruca-internal-fixeddetails": "fixed-details-mask"
+          "deer-taruca-internal-fixeddetails": "fixed-details-mask",
+          "deer-taruca-texturemode": "custom"
         }
       }
     },
@@ -1127,7 +1190,8 @@
         "voicetype": "small-hooved-call1",
         "voicepitch": "medium",
         "deer-water-fangs": "noantlers",
-        "deer-water-carrymode": "paw"
+        "deer-water-carrymode": "paw",
+        "deer-water-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1146,7 +1210,8 @@
           "deer-water-internal-eyesmask": "eyes-mask",
           "deer-water-internal-earsmask": "ears-soft-mask",
           "deer-water-internal-tailmask": "tail-blend-mask",
-          "deer-water-internal-fixeddetails": "fixed-details-mask"
+          "deer-water-internal-fixeddetails": "fixed-details-mask",
+          "deer-water-texturemode": "custom"
         },
         "marked": {
           "deer-water-coatcolor": "#FF8A7763",
@@ -1164,7 +1229,8 @@
           "deer-water-internal-eyesmask": "eyes-mask",
           "deer-water-internal-earsmask": "ears-soft-mask",
           "deer-water-internal-tailmask": "tail-blend-mask",
-          "deer-water-internal-fixeddetails": "fixed-details-mask"
+          "deer-water-internal-fixeddetails": "fixed-details-mask",
+          "deer-water-texturemode": "custom"
         },
         "pale": {
           "deer-water-coatcolor": "#FFC6B9A6",
@@ -1182,7 +1248,8 @@
           "deer-water-internal-eyesmask": "eyes-mask",
           "deer-water-internal-earsmask": "ears-soft-mask",
           "deer-water-internal-tailmask": "tail-blend-mask",
-          "deer-water-internal-fixeddetails": "fixed-details-mask"
+          "deer-water-internal-fixeddetails": "fixed-details-mask",
+          "deer-water-texturemode": "custom"
         },
         "dark": {
           "deer-water-coatcolor": "#FF443D36",
@@ -1200,7 +1267,8 @@
           "deer-water-internal-eyesmask": "eyes-mask",
           "deer-water-internal-earsmask": "ears-soft-mask",
           "deer-water-internal-tailmask": "tail-blend-mask",
-          "deer-water-internal-fixeddetails": "fixed-details-mask"
+          "deer-water-internal-fixeddetails": "fixed-details-mask",
+          "deer-water-texturemode": "custom"
         },
         "albino": {
           "deer-water-coatcolor": "#FFF0EBE2",
@@ -1218,7 +1286,8 @@
           "deer-water-internal-eyesmask": "eyes-mask",
           "deer-water-internal-earsmask": "ears-soft-mask",
           "deer-water-internal-tailmask": "tail-blend-mask",
-          "deer-water-internal-fixeddetails": "fixed-details-mask"
+          "deer-water-internal-fixeddetails": "fixed-details-mask",
+          "deer-water-texturemode": "custom"
         },
         "melanistic": {
           "deer-water-coatcolor": "#FF252524",
@@ -1236,7 +1305,8 @@
           "deer-water-internal-eyesmask": "eyes-mask",
           "deer-water-internal-earsmask": "ears-soft-mask",
           "deer-water-internal-tailmask": "tail-blend-mask",
-          "deer-water-internal-fixeddetails": "fixed-details-mask"
+          "deer-water-internal-fixeddetails": "fixed-details-mask",
+          "deer-water-texturemode": "custom"
         }
       }
     },
@@ -1251,7 +1321,8 @@
         "voicetype": "deer-call1",
         "voicepitch": "medium",
         "deer-whitetail-antlers": "noantlers",
-        "deer-whitetail-carrymode": "paw"
+        "deer-whitetail-carrymode": "paw",
+        "deer-whitetail-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1270,7 +1341,8 @@
           "deer-whitetail-internal-eyesmask": "eyes-mask",
           "deer-whitetail-internal-earsmask": "ears-soft-mask",
           "deer-whitetail-internal-tailmask": "tail-blend-mask",
-          "deer-whitetail-internal-fixeddetails": "fixed-details-mask"
+          "deer-whitetail-internal-fixeddetails": "fixed-details-mask",
+          "deer-whitetail-texturemode": "custom"
         },
         "marked": {
           "deer-whitetail-coatcolor": "#FF9D8678",
@@ -1288,7 +1360,8 @@
           "deer-whitetail-internal-eyesmask": "eyes-mask",
           "deer-whitetail-internal-earsmask": "ears-soft-mask",
           "deer-whitetail-internal-tailmask": "tail-blend-mask",
-          "deer-whitetail-internal-fixeddetails": "fixed-details-mask"
+          "deer-whitetail-internal-fixeddetails": "fixed-details-mask",
+          "deer-whitetail-texturemode": "custom"
         },
         "pale": {
           "deer-whitetail-coatcolor": "#FFCDBEAE",
@@ -1306,7 +1379,8 @@
           "deer-whitetail-internal-eyesmask": "eyes-mask",
           "deer-whitetail-internal-earsmask": "ears-soft-mask",
           "deer-whitetail-internal-tailmask": "tail-blend-mask",
-          "deer-whitetail-internal-fixeddetails": "fixed-details-mask"
+          "deer-whitetail-internal-fixeddetails": "fixed-details-mask",
+          "deer-whitetail-texturemode": "custom"
         },
         "dark": {
           "deer-whitetail-coatcolor": "#FF49413C",
@@ -1324,7 +1398,8 @@
           "deer-whitetail-internal-eyesmask": "eyes-mask",
           "deer-whitetail-internal-earsmask": "ears-soft-mask",
           "deer-whitetail-internal-tailmask": "tail-blend-mask",
-          "deer-whitetail-internal-fixeddetails": "fixed-details-mask"
+          "deer-whitetail-internal-fixeddetails": "fixed-details-mask",
+          "deer-whitetail-texturemode": "custom"
         },
         "albino": {
           "deer-whitetail-coatcolor": "#FFF0EBE2",
@@ -1342,7 +1417,8 @@
           "deer-whitetail-internal-eyesmask": "eyes-mask",
           "deer-whitetail-internal-earsmask": "ears-soft-mask",
           "deer-whitetail-internal-tailmask": "tail-blend-mask",
-          "deer-whitetail-internal-fixeddetails": "fixed-details-mask"
+          "deer-whitetail-internal-fixeddetails": "fixed-details-mask",
+          "deer-whitetail-texturemode": "custom"
         },
         "melanistic": {
           "deer-whitetail-coatcolor": "#FF252524",
@@ -1360,7 +1436,8 @@
           "deer-whitetail-internal-eyesmask": "eyes-mask",
           "deer-whitetail-internal-earsmask": "ears-soft-mask",
           "deer-whitetail-internal-tailmask": "tail-blend-mask",
-          "deer-whitetail-internal-fixeddetails": "fixed-details-mask"
+          "deer-whitetail-internal-fixeddetails": "fixed-details-mask",
+          "deer-whitetail-texturemode": "custom"
         }
       }
     },
@@ -1375,7 +1452,8 @@
         "voicetype": "small-hooved-call1",
         "voicepitch": "medium",
         "gazelle-thomson-sex": "female",
-        "gazelle-thomson-carrymode": "paw"
+        "gazelle-thomson-carrymode": "paw",
+        "gazelle-thomson-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1394,7 +1472,8 @@
           "gazelle-thomson-internal-eyesmask": "eyes-mask",
           "gazelle-thomson-internal-earsmask": "ears-soft-mask",
           "gazelle-thomson-internal-tailmask": "tail-blend-mask",
-          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask"
+          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask",
+          "gazelle-thomson-texturemode": "custom"
         },
         "marked": {
           "gazelle-thomson-coatcolor": "#FFDBB581",
@@ -1412,7 +1491,8 @@
           "gazelle-thomson-internal-eyesmask": "eyes-mask",
           "gazelle-thomson-internal-earsmask": "ears-soft-mask",
           "gazelle-thomson-internal-tailmask": "tail-blend-mask",
-          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask"
+          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask",
+          "gazelle-thomson-texturemode": "custom"
         },
         "pale": {
           "gazelle-thomson-coatcolor": "#FFE5D0B1",
@@ -1430,7 +1510,8 @@
           "gazelle-thomson-internal-eyesmask": "eyes-mask",
           "gazelle-thomson-internal-earsmask": "ears-soft-mask",
           "gazelle-thomson-internal-tailmask": "tail-blend-mask",
-          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask"
+          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask",
+          "gazelle-thomson-texturemode": "custom"
         },
         "dark": {
           "gazelle-thomson-coatcolor": "#FF5B4E3E",
@@ -1448,7 +1529,8 @@
           "gazelle-thomson-internal-eyesmask": "eyes-mask",
           "gazelle-thomson-internal-earsmask": "ears-soft-mask",
           "gazelle-thomson-internal-tailmask": "tail-blend-mask",
-          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask"
+          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask",
+          "gazelle-thomson-texturemode": "custom"
         },
         "albino": {
           "gazelle-thomson-coatcolor": "#FFF0EBE2",
@@ -1466,7 +1548,8 @@
           "gazelle-thomson-internal-eyesmask": "eyes-mask",
           "gazelle-thomson-internal-earsmask": "ears-soft-mask",
           "gazelle-thomson-internal-tailmask": "tail-blend-mask",
-          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask"
+          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask",
+          "gazelle-thomson-texturemode": "custom"
         },
         "melanistic": {
           "gazelle-thomson-coatcolor": "#FF252524",
@@ -1484,7 +1567,8 @@
           "gazelle-thomson-internal-eyesmask": "eyes-mask",
           "gazelle-thomson-internal-earsmask": "ears-soft-mask",
           "gazelle-thomson-internal-tailmask": "tail-blend-mask",
-          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask"
+          "gazelle-thomson-internal-fixeddetails": "fixed-details-mask",
+          "gazelle-thomson-texturemode": "custom"
         }
       }
     },
@@ -1499,7 +1583,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-angora-horns": "nohorns",
-        "goat-angora-carrymode": "paw"
+        "goat-angora-carrymode": "paw",
+        "goat-angora-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1518,7 +1603,8 @@
           "goat-angora-internal-eyesmask": "eyes-mask",
           "goat-angora-internal-earsmask": "ears-soft-mask",
           "goat-angora-internal-tailmask": "tail-blend-mask",
-          "goat-angora-internal-fixeddetails": "fixed-details-mask"
+          "goat-angora-internal-fixeddetails": "fixed-details-mask",
+          "goat-angora-texturemode": "custom"
         },
         "marked": {
           "goat-angora-coatcolor": "#FFD5C8C6",
@@ -1536,7 +1622,8 @@
           "goat-angora-internal-eyesmask": "eyes-mask",
           "goat-angora-internal-earsmask": "ears-soft-mask",
           "goat-angora-internal-tailmask": "tail-blend-mask",
-          "goat-angora-internal-fixeddetails": "fixed-details-mask"
+          "goat-angora-internal-fixeddetails": "fixed-details-mask",
+          "goat-angora-texturemode": "custom"
         },
         "pale": {
           "goat-angora-coatcolor": "#FFE3D8CC",
@@ -1554,7 +1641,8 @@
           "goat-angora-internal-eyesmask": "eyes-mask",
           "goat-angora-internal-earsmask": "ears-soft-mask",
           "goat-angora-internal-tailmask": "tail-blend-mask",
-          "goat-angora-internal-fixeddetails": "fixed-details-mask"
+          "goat-angora-internal-fixeddetails": "fixed-details-mask",
+          "goat-angora-texturemode": "custom"
         },
         "dark": {
           "goat-angora-coatcolor": "#FF595351",
@@ -1572,7 +1660,8 @@
           "goat-angora-internal-eyesmask": "eyes-mask",
           "goat-angora-internal-earsmask": "ears-soft-mask",
           "goat-angora-internal-tailmask": "tail-blend-mask",
-          "goat-angora-internal-fixeddetails": "fixed-details-mask"
+          "goat-angora-internal-fixeddetails": "fixed-details-mask",
+          "goat-angora-texturemode": "custom"
         },
         "albino": {
           "goat-angora-coatcolor": "#FFF0EBE2",
@@ -1590,7 +1679,8 @@
           "goat-angora-internal-eyesmask": "eyes-mask",
           "goat-angora-internal-earsmask": "ears-soft-mask",
           "goat-angora-internal-tailmask": "tail-blend-mask",
-          "goat-angora-internal-fixeddetails": "fixed-details-mask"
+          "goat-angora-internal-fixeddetails": "fixed-details-mask",
+          "goat-angora-texturemode": "custom"
         },
         "melanistic": {
           "goat-angora-coatcolor": "#FF252524",
@@ -1608,7 +1698,8 @@
           "goat-angora-internal-eyesmask": "eyes-mask",
           "goat-angora-internal-earsmask": "ears-soft-mask",
           "goat-angora-internal-tailmask": "tail-blend-mask",
-          "goat-angora-internal-fixeddetails": "fixed-details-mask"
+          "goat-angora-internal-fixeddetails": "fixed-details-mask",
+          "goat-angora-texturemode": "custom"
         }
       }
     },
@@ -1623,7 +1714,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-ibexalp-horns": "nohorns",
-        "goat-ibexalp-carrymode": "paw"
+        "goat-ibexalp-carrymode": "paw",
+        "goat-ibexalp-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1642,7 +1734,8 @@
           "goat-ibexalp-internal-eyesmask": "eyes-mask",
           "goat-ibexalp-internal-earsmask": "ears-soft-mask",
           "goat-ibexalp-internal-tailmask": "tail-blend-mask",
-          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexalp-texturemode": "custom"
         },
         "marked": {
           "goat-ibexalp-coatcolor": "#FF705F4B",
@@ -1660,7 +1753,8 @@
           "goat-ibexalp-internal-eyesmask": "eyes-mask",
           "goat-ibexalp-internal-earsmask": "ears-soft-mask",
           "goat-ibexalp-internal-tailmask": "tail-blend-mask",
-          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexalp-texturemode": "custom"
         },
         "pale": {
           "goat-ibexalp-coatcolor": "#FFBCB09D",
@@ -1678,7 +1772,8 @@
           "goat-ibexalp-internal-eyesmask": "eyes-mask",
           "goat-ibexalp-internal-earsmask": "ears-soft-mask",
           "goat-ibexalp-internal-tailmask": "tail-blend-mask",
-          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexalp-texturemode": "custom"
         },
         "dark": {
           "goat-ibexalp-coatcolor": "#FF3D362F",
@@ -1696,7 +1791,8 @@
           "goat-ibexalp-internal-eyesmask": "eyes-mask",
           "goat-ibexalp-internal-earsmask": "ears-soft-mask",
           "goat-ibexalp-internal-tailmask": "tail-blend-mask",
-          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexalp-texturemode": "custom"
         },
         "albino": {
           "goat-ibexalp-coatcolor": "#FFF0EBE2",
@@ -1714,7 +1810,8 @@
           "goat-ibexalp-internal-eyesmask": "eyes-mask",
           "goat-ibexalp-internal-earsmask": "ears-soft-mask",
           "goat-ibexalp-internal-tailmask": "tail-blend-mask",
-          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexalp-texturemode": "custom"
         },
         "melanistic": {
           "goat-ibexalp-coatcolor": "#FF252524",
@@ -1732,7 +1829,8 @@
           "goat-ibexalp-internal-eyesmask": "eyes-mask",
           "goat-ibexalp-internal-earsmask": "ears-soft-mask",
           "goat-ibexalp-internal-tailmask": "tail-blend-mask",
-          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexalp-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexalp-texturemode": "custom"
         }
       }
     },
@@ -1747,7 +1845,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-ibexnub-horns": "nohorns",
-        "goat-ibexnub-carrymode": "paw"
+        "goat-ibexnub-carrymode": "paw",
+        "goat-ibexnub-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1766,7 +1865,8 @@
           "goat-ibexnub-internal-eyesmask": "eyes-mask",
           "goat-ibexnub-internal-earsmask": "ears-soft-mask",
           "goat-ibexnub-internal-tailmask": "tail-blend-mask",
-          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexnub-texturemode": "custom"
         },
         "marked": {
           "goat-ibexnub-coatcolor": "#FF705C45",
@@ -1784,7 +1884,8 @@
           "goat-ibexnub-internal-eyesmask": "eyes-mask",
           "goat-ibexnub-internal-earsmask": "ears-soft-mask",
           "goat-ibexnub-internal-tailmask": "tail-blend-mask",
-          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexnub-texturemode": "custom"
         },
         "pale": {
           "goat-ibexnub-coatcolor": "#FFBCAE9B",
@@ -1802,7 +1903,8 @@
           "goat-ibexnub-internal-eyesmask": "eyes-mask",
           "goat-ibexnub-internal-earsmask": "ears-soft-mask",
           "goat-ibexnub-internal-tailmask": "tail-blend-mask",
-          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexnub-texturemode": "custom"
         },
         "dark": {
           "goat-ibexnub-coatcolor": "#FF3D352D",
@@ -1820,7 +1922,8 @@
           "goat-ibexnub-internal-eyesmask": "eyes-mask",
           "goat-ibexnub-internal-earsmask": "ears-soft-mask",
           "goat-ibexnub-internal-tailmask": "tail-blend-mask",
-          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexnub-texturemode": "custom"
         },
         "albino": {
           "goat-ibexnub-coatcolor": "#FFF0EBE2",
@@ -1838,7 +1941,8 @@
           "goat-ibexnub-internal-eyesmask": "eyes-mask",
           "goat-ibexnub-internal-earsmask": "ears-soft-mask",
           "goat-ibexnub-internal-tailmask": "tail-blend-mask",
-          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexnub-texturemode": "custom"
         },
         "melanistic": {
           "goat-ibexnub-coatcolor": "#FF252524",
@@ -1856,7 +1960,8 @@
           "goat-ibexnub-internal-eyesmask": "eyes-mask",
           "goat-ibexnub-internal-earsmask": "ears-soft-mask",
           "goat-ibexnub-internal-tailmask": "tail-blend-mask",
-          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask"
+          "goat-ibexnub-internal-fixeddetails": "fixed-details-mask",
+          "goat-ibexnub-texturemode": "custom"
         }
       }
     },
@@ -1871,7 +1976,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-markhor-horns": "nohorns",
-        "goat-markhor-carrymode": "paw"
+        "goat-markhor-carrymode": "paw",
+        "goat-markhor-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -1890,7 +1996,8 @@
           "goat-markhor-internal-eyesmask": "eyes-mask",
           "goat-markhor-internal-earsmask": "ears-soft-mask",
           "goat-markhor-internal-tailmask": "tail-blend-mask",
-          "goat-markhor-internal-fixeddetails": "fixed-details-mask"
+          "goat-markhor-internal-fixeddetails": "fixed-details-mask",
+          "goat-markhor-texturemode": "custom"
         },
         "marked": {
           "goat-markhor-coatcolor": "#FF695E50",
@@ -1908,7 +2015,8 @@
           "goat-markhor-internal-eyesmask": "eyes-mask",
           "goat-markhor-internal-earsmask": "ears-soft-mask",
           "goat-markhor-internal-tailmask": "tail-blend-mask",
-          "goat-markhor-internal-fixeddetails": "fixed-details-mask"
+          "goat-markhor-internal-fixeddetails": "fixed-details-mask",
+          "goat-markhor-texturemode": "custom"
         },
         "pale": {
           "goat-markhor-coatcolor": "#FFBAAF9F",
@@ -1926,7 +2034,8 @@
           "goat-markhor-internal-eyesmask": "eyes-mask",
           "goat-markhor-internal-earsmask": "ears-soft-mask",
           "goat-markhor-internal-tailmask": "tail-blend-mask",
-          "goat-markhor-internal-fixeddetails": "fixed-details-mask"
+          "goat-markhor-internal-fixeddetails": "fixed-details-mask",
+          "goat-markhor-texturemode": "custom"
         },
         "dark": {
           "goat-markhor-coatcolor": "#FF3B3630",
@@ -1944,7 +2053,8 @@
           "goat-markhor-internal-eyesmask": "eyes-mask",
           "goat-markhor-internal-earsmask": "ears-soft-mask",
           "goat-markhor-internal-tailmask": "tail-blend-mask",
-          "goat-markhor-internal-fixeddetails": "fixed-details-mask"
+          "goat-markhor-internal-fixeddetails": "fixed-details-mask",
+          "goat-markhor-texturemode": "custom"
         },
         "albino": {
           "goat-markhor-coatcolor": "#FFF0EBE2",
@@ -1962,7 +2072,8 @@
           "goat-markhor-internal-eyesmask": "eyes-mask",
           "goat-markhor-internal-earsmask": "ears-soft-mask",
           "goat-markhor-internal-tailmask": "tail-blend-mask",
-          "goat-markhor-internal-fixeddetails": "fixed-details-mask"
+          "goat-markhor-internal-fixeddetails": "fixed-details-mask",
+          "goat-markhor-texturemode": "custom"
         },
         "melanistic": {
           "goat-markhor-coatcolor": "#FF252524",
@@ -1980,7 +2091,8 @@
           "goat-markhor-internal-eyesmask": "eyes-mask",
           "goat-markhor-internal-earsmask": "ears-soft-mask",
           "goat-markhor-internal-tailmask": "tail-blend-mask",
-          "goat-markhor-internal-fixeddetails": "fixed-details-mask"
+          "goat-markhor-internal-fixeddetails": "fixed-details-mask",
+          "goat-markhor-texturemode": "custom"
         }
       }
     },
@@ -1995,7 +2107,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-mountain-horns": "nohorns",
-        "goat-mountain-carrymode": "paw"
+        "goat-mountain-carrymode": "paw",
+        "goat-mountain-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2014,7 +2127,8 @@
           "goat-mountain-internal-eyesmask": "eyes-mask",
           "goat-mountain-internal-earsmask": "ears-soft-mask",
           "goat-mountain-internal-tailmask": "tail-blend-mask",
-          "goat-mountain-internal-fixeddetails": "fixed-details-mask"
+          "goat-mountain-internal-fixeddetails": "fixed-details-mask",
+          "goat-mountain-texturemode": "custom"
         },
         "marked": {
           "goat-mountain-coatcolor": "#FFAEA493",
@@ -2032,7 +2146,8 @@
           "goat-mountain-internal-eyesmask": "eyes-mask",
           "goat-mountain-internal-earsmask": "ears-soft-mask",
           "goat-mountain-internal-tailmask": "tail-blend-mask",
-          "goat-mountain-internal-fixeddetails": "fixed-details-mask"
+          "goat-mountain-internal-fixeddetails": "fixed-details-mask",
+          "goat-mountain-texturemode": "custom"
         },
         "pale": {
           "goat-mountain-coatcolor": "#FFD4CAB8",
@@ -2050,7 +2165,8 @@
           "goat-mountain-internal-eyesmask": "eyes-mask",
           "goat-mountain-internal-earsmask": "ears-soft-mask",
           "goat-mountain-internal-tailmask": "tail-blend-mask",
-          "goat-mountain-internal-fixeddetails": "fixed-details-mask"
+          "goat-mountain-internal-fixeddetails": "fixed-details-mask",
+          "goat-mountain-texturemode": "custom"
         },
         "dark": {
           "goat-mountain-coatcolor": "#FF4E4943",
@@ -2068,7 +2184,8 @@
           "goat-mountain-internal-eyesmask": "eyes-mask",
           "goat-mountain-internal-earsmask": "ears-soft-mask",
           "goat-mountain-internal-tailmask": "tail-blend-mask",
-          "goat-mountain-internal-fixeddetails": "fixed-details-mask"
+          "goat-mountain-internal-fixeddetails": "fixed-details-mask",
+          "goat-mountain-texturemode": "custom"
         },
         "albino": {
           "goat-mountain-coatcolor": "#FFF0EBE2",
@@ -2086,7 +2203,8 @@
           "goat-mountain-internal-eyesmask": "eyes-mask",
           "goat-mountain-internal-earsmask": "ears-soft-mask",
           "goat-mountain-internal-tailmask": "tail-blend-mask",
-          "goat-mountain-internal-fixeddetails": "fixed-details-mask"
+          "goat-mountain-internal-fixeddetails": "fixed-details-mask",
+          "goat-mountain-texturemode": "custom"
         },
         "melanistic": {
           "goat-mountain-coatcolor": "#FF252524",
@@ -2104,7 +2222,8 @@
           "goat-mountain-internal-eyesmask": "eyes-mask",
           "goat-mountain-internal-earsmask": "ears-soft-mask",
           "goat-mountain-internal-tailmask": "tail-blend-mask",
-          "goat-mountain-internal-fixeddetails": "fixed-details-mask"
+          "goat-mountain-internal-fixeddetails": "fixed-details-mask",
+          "goat-mountain-texturemode": "custom"
         }
       }
     },
@@ -2119,7 +2238,8 @@
         "voicetype": "large-goat-idle1",
         "voicepitch": "medium",
         "goat-muskox-horns": "nohorns",
-        "goat-muskox-carrymode": "paw"
+        "goat-muskox-carrymode": "paw",
+        "goat-muskox-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2138,7 +2258,8 @@
           "goat-muskox-internal-eyesmask": "eyes-mask",
           "goat-muskox-internal-earsmask": "ears-soft-mask",
           "goat-muskox-internal-tailmask": "tail-blend-mask",
-          "goat-muskox-internal-fixeddetails": "fixed-details-mask"
+          "goat-muskox-internal-fixeddetails": "fixed-details-mask",
+          "goat-muskox-texturemode": "custom"
         },
         "marked": {
           "goat-muskox-coatcolor": "#FF6C4D33",
@@ -2156,7 +2277,8 @@
           "goat-muskox-internal-eyesmask": "eyes-mask",
           "goat-muskox-internal-earsmask": "ears-soft-mask",
           "goat-muskox-internal-tailmask": "tail-blend-mask",
-          "goat-muskox-internal-fixeddetails": "fixed-details-mask"
+          "goat-muskox-internal-fixeddetails": "fixed-details-mask",
+          "goat-muskox-texturemode": "custom"
         },
         "pale": {
           "goat-muskox-coatcolor": "#FFBBA994",
@@ -2174,7 +2296,8 @@
           "goat-muskox-internal-eyesmask": "eyes-mask",
           "goat-muskox-internal-earsmask": "ears-soft-mask",
           "goat-muskox-internal-tailmask": "tail-blend-mask",
-          "goat-muskox-internal-fixeddetails": "fixed-details-mask"
+          "goat-muskox-internal-fixeddetails": "fixed-details-mask",
+          "goat-muskox-texturemode": "custom"
         },
         "dark": {
           "goat-muskox-coatcolor": "#FF3C3128",
@@ -2192,7 +2315,8 @@
           "goat-muskox-internal-eyesmask": "eyes-mask",
           "goat-muskox-internal-earsmask": "ears-soft-mask",
           "goat-muskox-internal-tailmask": "tail-blend-mask",
-          "goat-muskox-internal-fixeddetails": "fixed-details-mask"
+          "goat-muskox-internal-fixeddetails": "fixed-details-mask",
+          "goat-muskox-texturemode": "custom"
         },
         "albino": {
           "goat-muskox-coatcolor": "#FFF0EBE2",
@@ -2210,7 +2334,8 @@
           "goat-muskox-internal-eyesmask": "eyes-mask",
           "goat-muskox-internal-earsmask": "ears-soft-mask",
           "goat-muskox-internal-tailmask": "tail-blend-mask",
-          "goat-muskox-internal-fixeddetails": "fixed-details-mask"
+          "goat-muskox-internal-fixeddetails": "fixed-details-mask",
+          "goat-muskox-texturemode": "custom"
         },
         "melanistic": {
           "goat-muskox-coatcolor": "#FF252524",
@@ -2228,7 +2353,8 @@
           "goat-muskox-internal-eyesmask": "eyes-mask",
           "goat-muskox-internal-earsmask": "ears-soft-mask",
           "goat-muskox-internal-tailmask": "tail-blend-mask",
-          "goat-muskox-internal-fixeddetails": "fixed-details-mask"
+          "goat-muskox-internal-fixeddetails": "fixed-details-mask",
+          "goat-muskox-texturemode": "custom"
         }
       }
     },
@@ -2243,7 +2369,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-nubian-horns": "nohorns",
-        "goat-nubian-carrymode": "paw"
+        "goat-nubian-carrymode": "paw",
+        "goat-nubian-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2262,7 +2389,8 @@
           "goat-nubian-internal-eyesmask": "eyes-mask",
           "goat-nubian-internal-earsmask": "ears-soft-mask",
           "goat-nubian-internal-tailmask": "tail-blend-mask",
-          "goat-nubian-internal-fixeddetails": "fixed-details-mask"
+          "goat-nubian-internal-fixeddetails": "fixed-details-mask",
+          "goat-nubian-texturemode": "custom"
         },
         "marked": {
           "goat-nubian-coatcolor": "#FF7A654D",
@@ -2280,7 +2408,8 @@
           "goat-nubian-internal-eyesmask": "eyes-mask",
           "goat-nubian-internal-earsmask": "ears-soft-mask",
           "goat-nubian-internal-tailmask": "tail-blend-mask",
-          "goat-nubian-internal-fixeddetails": "fixed-details-mask"
+          "goat-nubian-internal-fixeddetails": "fixed-details-mask",
+          "goat-nubian-texturemode": "custom"
         },
         "pale": {
           "goat-nubian-coatcolor": "#FFC0B29E",
@@ -2298,7 +2427,8 @@
           "goat-nubian-internal-eyesmask": "eyes-mask",
           "goat-nubian-internal-earsmask": "ears-soft-mask",
           "goat-nubian-internal-tailmask": "tail-blend-mask",
-          "goat-nubian-internal-fixeddetails": "fixed-details-mask"
+          "goat-nubian-internal-fixeddetails": "fixed-details-mask",
+          "goat-nubian-texturemode": "custom"
         },
         "dark": {
           "goat-nubian-coatcolor": "#FF40382F",
@@ -2316,7 +2446,8 @@
           "goat-nubian-internal-eyesmask": "eyes-mask",
           "goat-nubian-internal-earsmask": "ears-soft-mask",
           "goat-nubian-internal-tailmask": "tail-blend-mask",
-          "goat-nubian-internal-fixeddetails": "fixed-details-mask"
+          "goat-nubian-internal-fixeddetails": "fixed-details-mask",
+          "goat-nubian-texturemode": "custom"
         },
         "albino": {
           "goat-nubian-coatcolor": "#FFF0EBE2",
@@ -2334,7 +2465,8 @@
           "goat-nubian-internal-eyesmask": "eyes-mask",
           "goat-nubian-internal-earsmask": "ears-soft-mask",
           "goat-nubian-internal-tailmask": "tail-blend-mask",
-          "goat-nubian-internal-fixeddetails": "fixed-details-mask"
+          "goat-nubian-internal-fixeddetails": "fixed-details-mask",
+          "goat-nubian-texturemode": "custom"
         },
         "melanistic": {
           "goat-nubian-coatcolor": "#FF252524",
@@ -2352,7 +2484,8 @@
           "goat-nubian-internal-eyesmask": "eyes-mask",
           "goat-nubian-internal-earsmask": "ears-soft-mask",
           "goat-nubian-internal-tailmask": "tail-blend-mask",
-          "goat-nubian-internal-fixeddetails": "fixed-details-mask"
+          "goat-nubian-internal-fixeddetails": "fixed-details-mask",
+          "goat-nubian-texturemode": "custom"
         }
       }
     },
@@ -2367,7 +2500,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-sirohi-horns": "nohorns",
-        "goat-sirohi-carrymode": "paw"
+        "goat-sirohi-carrymode": "paw",
+        "goat-sirohi-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2386,7 +2520,8 @@
           "goat-sirohi-internal-eyesmask": "eyes-mask",
           "goat-sirohi-internal-earsmask": "ears-soft-mask",
           "goat-sirohi-internal-tailmask": "tail-blend-mask",
-          "goat-sirohi-internal-fixeddetails": "fixed-details-mask"
+          "goat-sirohi-internal-fixeddetails": "fixed-details-mask",
+          "goat-sirohi-texturemode": "custom"
         },
         "marked": {
           "goat-sirohi-coatcolor": "#FF5A382E",
@@ -2404,7 +2539,8 @@
           "goat-sirohi-internal-eyesmask": "eyes-mask",
           "goat-sirohi-internal-earsmask": "ears-soft-mask",
           "goat-sirohi-internal-tailmask": "tail-blend-mask",
-          "goat-sirohi-internal-fixeddetails": "fixed-details-mask"
+          "goat-sirohi-internal-fixeddetails": "fixed-details-mask",
+          "goat-sirohi-texturemode": "custom"
         },
         "pale": {
           "goat-sirohi-coatcolor": "#FFB4A192",
@@ -2422,7 +2558,8 @@
           "goat-sirohi-internal-eyesmask": "eyes-mask",
           "goat-sirohi-internal-earsmask": "ears-soft-mask",
           "goat-sirohi-internal-tailmask": "tail-blend-mask",
-          "goat-sirohi-internal-fixeddetails": "fixed-details-mask"
+          "goat-sirohi-internal-fixeddetails": "fixed-details-mask",
+          "goat-sirohi-texturemode": "custom"
         },
         "dark": {
           "goat-sirohi-coatcolor": "#FF372B27",
@@ -2440,7 +2577,8 @@
           "goat-sirohi-internal-eyesmask": "eyes-mask",
           "goat-sirohi-internal-earsmask": "ears-soft-mask",
           "goat-sirohi-internal-tailmask": "tail-blend-mask",
-          "goat-sirohi-internal-fixeddetails": "fixed-details-mask"
+          "goat-sirohi-internal-fixeddetails": "fixed-details-mask",
+          "goat-sirohi-texturemode": "custom"
         },
         "albino": {
           "goat-sirohi-coatcolor": "#FFF0EBE2",
@@ -2458,7 +2596,8 @@
           "goat-sirohi-internal-eyesmask": "eyes-mask",
           "goat-sirohi-internal-earsmask": "ears-soft-mask",
           "goat-sirohi-internal-tailmask": "tail-blend-mask",
-          "goat-sirohi-internal-fixeddetails": "fixed-details-mask"
+          "goat-sirohi-internal-fixeddetails": "fixed-details-mask",
+          "goat-sirohi-texturemode": "custom"
         },
         "melanistic": {
           "goat-sirohi-coatcolor": "#FF252524",
@@ -2476,7 +2615,8 @@
           "goat-sirohi-internal-eyesmask": "eyes-mask",
           "goat-sirohi-internal-earsmask": "ears-soft-mask",
           "goat-sirohi-internal-tailmask": "tail-blend-mask",
-          "goat-sirohi-internal-fixeddetails": "fixed-details-mask"
+          "goat-sirohi-internal-fixeddetails": "fixed-details-mask",
+          "goat-sirohi-texturemode": "custom"
         }
       }
     },
@@ -2491,7 +2631,8 @@
         "voicetype": "large-goat-idle1",
         "voicepitch": "medium",
         "goat-takingold-horns": "nohorns",
-        "goat-takingold-carrymode": "paw"
+        "goat-takingold-carrymode": "paw",
+        "goat-takingold-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2510,7 +2651,8 @@
           "goat-takingold-internal-eyesmask": "eyes-mask",
           "goat-takingold-internal-earsmask": "ears-soft-mask",
           "goat-takingold-internal-tailmask": "tail-blend-mask",
-          "goat-takingold-internal-fixeddetails": "fixed-details-mask"
+          "goat-takingold-internal-fixeddetails": "fixed-details-mask",
+          "goat-takingold-texturemode": "custom"
         },
         "marked": {
           "goat-takingold-coatcolor": "#FFFBDAA8",
@@ -2528,7 +2670,8 @@
           "goat-takingold-internal-eyesmask": "eyes-mask",
           "goat-takingold-internal-earsmask": "ears-soft-mask",
           "goat-takingold-internal-tailmask": "tail-blend-mask",
-          "goat-takingold-internal-fixeddetails": "fixed-details-mask"
+          "goat-takingold-internal-fixeddetails": "fixed-details-mask",
+          "goat-takingold-texturemode": "custom"
         },
         "pale": {
           "goat-takingold-coatcolor": "#FFF1DEC0",
@@ -2546,7 +2689,8 @@
           "goat-takingold-internal-eyesmask": "eyes-mask",
           "goat-takingold-internal-earsmask": "ears-soft-mask",
           "goat-takingold-internal-tailmask": "tail-blend-mask",
-          "goat-takingold-internal-fixeddetails": "fixed-details-mask"
+          "goat-takingold-internal-fixeddetails": "fixed-details-mask",
+          "goat-takingold-texturemode": "custom"
         },
         "dark": {
           "goat-takingold-coatcolor": "#FF645849",
@@ -2564,7 +2708,8 @@
           "goat-takingold-internal-eyesmask": "eyes-mask",
           "goat-takingold-internal-earsmask": "ears-soft-mask",
           "goat-takingold-internal-tailmask": "tail-blend-mask",
-          "goat-takingold-internal-fixeddetails": "fixed-details-mask"
+          "goat-takingold-internal-fixeddetails": "fixed-details-mask",
+          "goat-takingold-texturemode": "custom"
         },
         "albino": {
           "goat-takingold-coatcolor": "#FFF0EBE2",
@@ -2582,7 +2727,8 @@
           "goat-takingold-internal-eyesmask": "eyes-mask",
           "goat-takingold-internal-earsmask": "ears-soft-mask",
           "goat-takingold-internal-tailmask": "tail-blend-mask",
-          "goat-takingold-internal-fixeddetails": "fixed-details-mask"
+          "goat-takingold-internal-fixeddetails": "fixed-details-mask",
+          "goat-takingold-texturemode": "custom"
         },
         "melanistic": {
           "goat-takingold-coatcolor": "#FF252524",
@@ -2600,7 +2746,8 @@
           "goat-takingold-internal-eyesmask": "eyes-mask",
           "goat-takingold-internal-earsmask": "ears-soft-mask",
           "goat-takingold-internal-tailmask": "tail-blend-mask",
-          "goat-takingold-internal-fixeddetails": "fixed-details-mask"
+          "goat-takingold-internal-fixeddetails": "fixed-details-mask",
+          "goat-takingold-texturemode": "custom"
         }
       }
     },
@@ -2615,7 +2762,8 @@
         "voicetype": "goat-bleat1",
         "voicepitch": "medium",
         "goat-valais-horns": "nohorns",
-        "goat-valais-carrymode": "paw"
+        "goat-valais-carrymode": "paw",
+        "goat-valais-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2634,7 +2782,8 @@
           "goat-valais-internal-eyesmask": "eyes-mask",
           "goat-valais-internal-earsmask": "ears-soft-mask",
           "goat-valais-internal-tailmask": "tail-blend-mask",
-          "goat-valais-internal-fixeddetails": "fixed-details-mask"
+          "goat-valais-internal-fixeddetails": "fixed-details-mask",
+          "goat-valais-texturemode": "custom"
         },
         "marked": {
           "goat-valais-coatcolor": "#FFA4A29D",
@@ -2652,7 +2801,8 @@
           "goat-valais-internal-eyesmask": "eyes-mask",
           "goat-valais-internal-earsmask": "ears-soft-mask",
           "goat-valais-internal-tailmask": "tail-blend-mask",
-          "goat-valais-internal-fixeddetails": "fixed-details-mask"
+          "goat-valais-internal-fixeddetails": "fixed-details-mask",
+          "goat-valais-texturemode": "custom"
         },
         "pale": {
           "goat-valais-coatcolor": "#FFD0C9BC",
@@ -2670,7 +2820,8 @@
           "goat-valais-internal-eyesmask": "eyes-mask",
           "goat-valais-internal-earsmask": "ears-soft-mask",
           "goat-valais-internal-tailmask": "tail-blend-mask",
-          "goat-valais-internal-fixeddetails": "fixed-details-mask"
+          "goat-valais-internal-fixeddetails": "fixed-details-mask",
+          "goat-valais-texturemode": "custom"
         },
         "dark": {
           "goat-valais-coatcolor": "#FF4B4946",
@@ -2688,7 +2839,8 @@
           "goat-valais-internal-eyesmask": "eyes-mask",
           "goat-valais-internal-earsmask": "ears-soft-mask",
           "goat-valais-internal-tailmask": "tail-blend-mask",
-          "goat-valais-internal-fixeddetails": "fixed-details-mask"
+          "goat-valais-internal-fixeddetails": "fixed-details-mask",
+          "goat-valais-texturemode": "custom"
         },
         "albino": {
           "goat-valais-coatcolor": "#FFF0EBE2",
@@ -2706,7 +2858,8 @@
           "goat-valais-internal-eyesmask": "eyes-mask",
           "goat-valais-internal-earsmask": "ears-soft-mask",
           "goat-valais-internal-tailmask": "tail-blend-mask",
-          "goat-valais-internal-fixeddetails": "fixed-details-mask"
+          "goat-valais-internal-fixeddetails": "fixed-details-mask",
+          "goat-valais-texturemode": "custom"
         },
         "melanistic": {
           "goat-valais-coatcolor": "#FF252524",
@@ -2724,7 +2877,8 @@
           "goat-valais-internal-eyesmask": "eyes-mask",
           "goat-valais-internal-earsmask": "ears-soft-mask",
           "goat-valais-internal-tailmask": "tail-blend-mask",
-          "goat-valais-internal-fixeddetails": "fixed-details-mask"
+          "goat-valais-internal-fixeddetails": "fixed-details-mask",
+          "goat-valais-texturemode": "custom"
         }
       }
     },
@@ -2739,7 +2893,8 @@
         "voicetype": "pig-idle",
         "voicepitch": "medium",
         "pig-eurasian-adult-tusks": "notusks",
-        "pig-eurasian-adult-carrymode": "paw"
+        "pig-eurasian-adult-carrymode": "paw",
+        "pig-eurasian-adult-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2758,7 +2913,8 @@
           "pig-eurasian-adult-internal-eyesmask": "eyes-mask",
           "pig-eurasian-adult-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-adult-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-adult-texturemode": "custom"
         },
         "marked": {
           "pig-eurasian-adult-coatcolor": "#FF4F4A41",
@@ -2776,7 +2932,8 @@
           "pig-eurasian-adult-internal-eyesmask": "eyes-mask",
           "pig-eurasian-adult-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-adult-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-adult-texturemode": "custom"
         },
         "pale": {
           "pig-eurasian-adult-coatcolor": "#FFB0A899",
@@ -2794,7 +2951,8 @@
           "pig-eurasian-adult-internal-eyesmask": "eyes-mask",
           "pig-eurasian-adult-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-adult-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-adult-texturemode": "custom"
         },
         "dark": {
           "pig-eurasian-adult-coatcolor": "#FF34302C",
@@ -2812,7 +2970,8 @@
           "pig-eurasian-adult-internal-eyesmask": "eyes-mask",
           "pig-eurasian-adult-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-adult-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-adult-texturemode": "custom"
         },
         "albino": {
           "pig-eurasian-adult-coatcolor": "#FFF0EBE2",
@@ -2830,7 +2989,8 @@
           "pig-eurasian-adult-internal-eyesmask": "eyes-mask",
           "pig-eurasian-adult-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-adult-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-adult-texturemode": "custom"
         },
         "melanistic": {
           "pig-eurasian-adult-coatcolor": "#FF252524",
@@ -2848,7 +3008,8 @@
           "pig-eurasian-adult-internal-eyesmask": "eyes-mask",
           "pig-eurasian-adult-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-adult-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-adult-texturemode": "custom"
         }
       }
     },
@@ -2863,7 +3024,8 @@
         "voicetype": "pig-idle",
         "voicepitch": "medium",
         "pig-eurasian-elder-tusks": "notusks",
-        "pig-eurasian-elder-carrymode": "paw"
+        "pig-eurasian-elder-carrymode": "paw",
+        "pig-eurasian-elder-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -2882,7 +3044,8 @@
           "pig-eurasian-elder-internal-eyesmask": "eyes-mask",
           "pig-eurasian-elder-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-elder-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-elder-texturemode": "custom"
         },
         "marked": {
           "pig-eurasian-elder-coatcolor": "#FF565148",
@@ -2900,7 +3063,8 @@
           "pig-eurasian-elder-internal-eyesmask": "eyes-mask",
           "pig-eurasian-elder-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-elder-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-elder-texturemode": "custom"
         },
         "pale": {
           "pig-eurasian-elder-coatcolor": "#FFB2AA9C",
@@ -2918,7 +3082,8 @@
           "pig-eurasian-elder-internal-eyesmask": "eyes-mask",
           "pig-eurasian-elder-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-elder-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-elder-texturemode": "custom"
         },
         "dark": {
           "pig-eurasian-elder-coatcolor": "#FF36322E",
@@ -2936,7 +3101,8 @@
           "pig-eurasian-elder-internal-eyesmask": "eyes-mask",
           "pig-eurasian-elder-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-elder-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-elder-texturemode": "custom"
         },
         "albino": {
           "pig-eurasian-elder-coatcolor": "#FFF0EBE2",
@@ -2954,7 +3120,8 @@
           "pig-eurasian-elder-internal-eyesmask": "eyes-mask",
           "pig-eurasian-elder-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-elder-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-elder-texturemode": "custom"
         },
         "melanistic": {
           "pig-eurasian-elder-coatcolor": "#FF252524",
@@ -2972,7 +3139,8 @@
           "pig-eurasian-elder-internal-eyesmask": "eyes-mask",
           "pig-eurasian-elder-internal-earsmask": "ears-soft-mask",
           "pig-eurasian-elder-internal-tailmask": "tail-blend-mask",
-          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask"
+          "pig-eurasian-elder-internal-fixeddetails": "fixed-details-mask",
+          "pig-eurasian-elder-texturemode": "custom"
         }
       }
     },
@@ -2986,7 +3154,8 @@
       "defaultParts": {
         "voicetype": "pig-idle",
         "voicepitch": "medium",
-        "pig-redriver-adult-carrymode": "paw"
+        "pig-redriver-adult-carrymode": "paw",
+        "pig-redriver-adult-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -3005,7 +3174,8 @@
           "pig-redriver-adult-internal-eyesmask": "eyes-mask",
           "pig-redriver-adult-internal-earsmask": "ears-soft-mask",
           "pig-redriver-adult-internal-tailmask": "tail-blend-mask",
-          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-redriver-adult-texturemode": "custom"
         },
         "marked": {
           "pig-redriver-adult-coatcolor": "#FF9B632B",
@@ -3023,7 +3193,8 @@
           "pig-redriver-adult-internal-eyesmask": "eyes-mask",
           "pig-redriver-adult-internal-earsmask": "ears-soft-mask",
           "pig-redriver-adult-internal-tailmask": "tail-blend-mask",
-          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-redriver-adult-texturemode": "custom"
         },
         "pale": {
           "pig-redriver-adult-coatcolor": "#FFCDB191",
@@ -3041,7 +3212,8 @@
           "pig-redriver-adult-internal-eyesmask": "eyes-mask",
           "pig-redriver-adult-internal-earsmask": "ears-soft-mask",
           "pig-redriver-adult-internal-tailmask": "tail-blend-mask",
-          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-redriver-adult-texturemode": "custom"
         },
         "dark": {
           "pig-redriver-adult-coatcolor": "#FF493726",
@@ -3059,7 +3231,8 @@
           "pig-redriver-adult-internal-eyesmask": "eyes-mask",
           "pig-redriver-adult-internal-earsmask": "ears-soft-mask",
           "pig-redriver-adult-internal-tailmask": "tail-blend-mask",
-          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-redriver-adult-texturemode": "custom"
         },
         "albino": {
           "pig-redriver-adult-coatcolor": "#FFF0EBE2",
@@ -3077,7 +3250,8 @@
           "pig-redriver-adult-internal-eyesmask": "eyes-mask",
           "pig-redriver-adult-internal-earsmask": "ears-soft-mask",
           "pig-redriver-adult-internal-tailmask": "tail-blend-mask",
-          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-redriver-adult-texturemode": "custom"
         },
         "melanistic": {
           "pig-redriver-adult-coatcolor": "#FF252524",
@@ -3095,7 +3269,8 @@
           "pig-redriver-adult-internal-eyesmask": "eyes-mask",
           "pig-redriver-adult-internal-earsmask": "ears-soft-mask",
           "pig-redriver-adult-internal-tailmask": "tail-blend-mask",
-          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask"
+          "pig-redriver-adult-internal-fixeddetails": "fixed-details-mask",
+          "pig-redriver-adult-texturemode": "custom"
         }
       }
     },
@@ -3110,7 +3285,8 @@
         "voicetype": "pig-idle",
         "voicepitch": "medium",
         "pig-warthog-tusks": "notusks",
-        "pig-warthog-carrymode": "paw"
+        "pig-warthog-carrymode": "paw",
+        "pig-warthog-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -3129,7 +3305,8 @@
           "pig-warthog-internal-eyesmask": "eyes-mask",
           "pig-warthog-internal-earsmask": "ears-soft-mask",
           "pig-warthog-internal-tailmask": "tail-blend-mask",
-          "pig-warthog-internal-fixeddetails": "fixed-details-mask"
+          "pig-warthog-internal-fixeddetails": "fixed-details-mask",
+          "pig-warthog-texturemode": "custom"
         },
         "marked": {
           "pig-warthog-coatcolor": "#FF8F7463",
@@ -3147,7 +3324,8 @@
           "pig-warthog-internal-eyesmask": "eyes-mask",
           "pig-warthog-internal-earsmask": "ears-soft-mask",
           "pig-warthog-internal-tailmask": "tail-blend-mask",
-          "pig-warthog-internal-fixeddetails": "fixed-details-mask"
+          "pig-warthog-internal-fixeddetails": "fixed-details-mask",
+          "pig-warthog-texturemode": "custom"
         },
         "pale": {
           "pig-warthog-coatcolor": "#FFC8B8A6",
@@ -3165,7 +3343,8 @@
           "pig-warthog-internal-eyesmask": "eyes-mask",
           "pig-warthog-internal-earsmask": "ears-soft-mask",
           "pig-warthog-internal-tailmask": "tail-blend-mask",
-          "pig-warthog-internal-fixeddetails": "fixed-details-mask"
+          "pig-warthog-internal-fixeddetails": "fixed-details-mask",
+          "pig-warthog-texturemode": "custom"
         },
         "dark": {
           "pig-warthog-coatcolor": "#FF463C36",
@@ -3183,7 +3362,8 @@
           "pig-warthog-internal-eyesmask": "eyes-mask",
           "pig-warthog-internal-earsmask": "ears-soft-mask",
           "pig-warthog-internal-tailmask": "tail-blend-mask",
-          "pig-warthog-internal-fixeddetails": "fixed-details-mask"
+          "pig-warthog-internal-fixeddetails": "fixed-details-mask",
+          "pig-warthog-texturemode": "custom"
         },
         "albino": {
           "pig-warthog-coatcolor": "#FFF0EBE2",
@@ -3201,7 +3381,8 @@
           "pig-warthog-internal-eyesmask": "eyes-mask",
           "pig-warthog-internal-earsmask": "ears-soft-mask",
           "pig-warthog-internal-tailmask": "tail-blend-mask",
-          "pig-warthog-internal-fixeddetails": "fixed-details-mask"
+          "pig-warthog-internal-fixeddetails": "fixed-details-mask",
+          "pig-warthog-texturemode": "custom"
         },
         "melanistic": {
           "pig-warthog-coatcolor": "#FF252524",
@@ -3219,7 +3400,8 @@
           "pig-warthog-internal-eyesmask": "eyes-mask",
           "pig-warthog-internal-earsmask": "ears-soft-mask",
           "pig-warthog-internal-tailmask": "tail-blend-mask",
-          "pig-warthog-internal-fixeddetails": "fixed-details-mask"
+          "pig-warthog-internal-fixeddetails": "fixed-details-mask",
+          "pig-warthog-texturemode": "custom"
         }
       }
     },
@@ -3234,7 +3416,8 @@
         "voicetype": "sheep-idle",
         "voicepitch": "medium",
         "sheep-bighorn-sex": "female",
-        "sheep-bighorn-carrymode": "paw"
+        "sheep-bighorn-carrymode": "paw",
+        "sheep-bighorn-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -3253,7 +3436,8 @@
           "sheep-bighorn-internal-eyesmask": "eyes-mask",
           "sheep-bighorn-internal-earsmask": "ears-soft-mask",
           "sheep-bighorn-internal-tailmask": "tail-blend-mask",
-          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask"
+          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask",
+          "sheep-bighorn-texturemode": "custom"
         },
         "marked": {
           "sheep-bighorn-coatcolor": "#FF8E8566",
@@ -3271,7 +3455,8 @@
           "sheep-bighorn-internal-eyesmask": "eyes-mask",
           "sheep-bighorn-internal-earsmask": "ears-soft-mask",
           "sheep-bighorn-internal-tailmask": "tail-blend-mask",
-          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask"
+          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask",
+          "sheep-bighorn-texturemode": "custom"
         },
         "pale": {
           "sheep-bighorn-coatcolor": "#FFC8BEA7",
@@ -3289,7 +3474,8 @@
           "sheep-bighorn-internal-eyesmask": "eyes-mask",
           "sheep-bighorn-internal-earsmask": "ears-soft-mask",
           "sheep-bighorn-internal-tailmask": "tail-blend-mask",
-          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask"
+          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask",
+          "sheep-bighorn-texturemode": "custom"
         },
         "dark": {
           "sheep-bighorn-coatcolor": "#FF454136",
@@ -3307,7 +3493,8 @@
           "sheep-bighorn-internal-eyesmask": "eyes-mask",
           "sheep-bighorn-internal-earsmask": "ears-soft-mask",
           "sheep-bighorn-internal-tailmask": "tail-blend-mask",
-          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask"
+          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask",
+          "sheep-bighorn-texturemode": "custom"
         },
         "albino": {
           "sheep-bighorn-coatcolor": "#FFF0EBE2",
@@ -3325,7 +3512,8 @@
           "sheep-bighorn-internal-eyesmask": "eyes-mask",
           "sheep-bighorn-internal-earsmask": "ears-soft-mask",
           "sheep-bighorn-internal-tailmask": "tail-blend-mask",
-          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask"
+          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask",
+          "sheep-bighorn-texturemode": "custom"
         },
         "melanistic": {
           "sheep-bighorn-coatcolor": "#FF252524",
@@ -3343,7 +3531,8 @@
           "sheep-bighorn-internal-eyesmask": "eyes-mask",
           "sheep-bighorn-internal-earsmask": "ears-soft-mask",
           "sheep-bighorn-internal-tailmask": "tail-blend-mask",
-          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask"
+          "sheep-bighorn-internal-fixeddetails": "fixed-details-mask",
+          "sheep-bighorn-texturemode": "custom"
         }
       }
     },
@@ -3358,7 +3547,8 @@
         "voicetype": "sheep-idle",
         "voicepitch": "medium",
         "sheep-mouflon-horns": "nohorns",
-        "sheep-mouflon-carrymode": "paw"
+        "sheep-mouflon-carrymode": "paw",
+        "sheep-mouflon-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -3377,7 +3567,8 @@
           "sheep-mouflon-internal-eyesmask": "eyes-mask",
           "sheep-mouflon-internal-earsmask": "ears-soft-mask",
           "sheep-mouflon-internal-tailmask": "tail-blend-mask",
-          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask"
+          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask",
+          "sheep-mouflon-texturemode": "custom"
         },
         "marked": {
           "sheep-mouflon-coatcolor": "#FF7A644D",
@@ -3395,7 +3586,8 @@
           "sheep-mouflon-internal-eyesmask": "eyes-mask",
           "sheep-mouflon-internal-earsmask": "ears-soft-mask",
           "sheep-mouflon-internal-tailmask": "tail-blend-mask",
-          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask"
+          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask",
+          "sheep-mouflon-texturemode": "custom"
         },
         "pale": {
           "sheep-mouflon-coatcolor": "#FFC0B29E",
@@ -3413,7 +3605,8 @@
           "sheep-mouflon-internal-eyesmask": "eyes-mask",
           "sheep-mouflon-internal-earsmask": "ears-soft-mask",
           "sheep-mouflon-internal-tailmask": "tail-blend-mask",
-          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask"
+          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask",
+          "sheep-mouflon-texturemode": "custom"
         },
         "dark": {
           "sheep-mouflon-coatcolor": "#FF40372F",
@@ -3431,7 +3624,8 @@
           "sheep-mouflon-internal-eyesmask": "eyes-mask",
           "sheep-mouflon-internal-earsmask": "ears-soft-mask",
           "sheep-mouflon-internal-tailmask": "tail-blend-mask",
-          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask"
+          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask",
+          "sheep-mouflon-texturemode": "custom"
         },
         "albino": {
           "sheep-mouflon-coatcolor": "#FFF0EBE2",
@@ -3449,7 +3643,8 @@
           "sheep-mouflon-internal-eyesmask": "eyes-mask",
           "sheep-mouflon-internal-earsmask": "ears-soft-mask",
           "sheep-mouflon-internal-tailmask": "tail-blend-mask",
-          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask"
+          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask",
+          "sheep-mouflon-texturemode": "custom"
         },
         "melanistic": {
           "sheep-mouflon-coatcolor": "#FF252524",
@@ -3467,7 +3662,8 @@
           "sheep-mouflon-internal-eyesmask": "eyes-mask",
           "sheep-mouflon-internal-earsmask": "ears-soft-mask",
           "sheep-mouflon-internal-tailmask": "tail-blend-mask",
-          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask"
+          "sheep-mouflon-internal-fixeddetails": "fixed-details-mask",
+          "sheep-mouflon-texturemode": "custom"
         }
       }
     }

@@ -1,0 +1,7 @@
+# Druidry 0.1.1
+
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
+Promote the existing standalone Circle of Forms, thirteen unlockable spirit families and crafted spirit-token/Ritual Altar workflow for the first time on the local release shelf.
+
+One Wolf ritual unlock survived restart and eleven exported appearance/voice fields restored byte-for-byte. Full size, gear, server traits and registry edge cases remain unverified. No performance gain is measured and multiplayer remains waived.

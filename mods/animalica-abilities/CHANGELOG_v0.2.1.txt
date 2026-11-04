@@ -1,0 +1,11 @@
+# Animalica Abilities v0.2.1
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Patch release
+
+- Prevented the active-ability server tick from accessing player behaviors
+  before the player entity has finished initializing.
+- Fixed a null-reference error that could repeat every tick and disconnect a
+  single-player or multiplayer server after enough errors accumulated.
+- Updated the mod description to include Pounce and Adrenaline.

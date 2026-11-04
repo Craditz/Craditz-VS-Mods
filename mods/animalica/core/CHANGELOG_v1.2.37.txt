@@ -1,0 +1,12 @@
+# Animalica Core 1.2.37
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 1.2.33
+
+- Fish can now breathe underwater. Added the aquatic breathing trait and fixed it getting lost or applied late when changing models or loading back in.
+- Added two optional collision settings: capCollisionToSeraph caps animal hitboxes at normal Seraph size, and raiseCollisionToSeraph brings smaller hitboxes up to it. Both are off by default.
+- Fixed collision settings being applied before a model was ready, and restoring the wrong dimensions after model/size changes or turning the options off. These do not change the model's appearance or eye height.
+- Improved the Caribou's initial Skin-tab camera framing. Your own zoom and preview adjustments are kept.
+- Added animal-food support for Primitive Survival's raw crab and snake meat, with the matching diet restrictions.
+- Expanded Carried support for compatible humanoid and digitigrade rigs, including Bixo. Added the server-side rig checks and fixes for model selection/loading needed by that support. A compatible rig is still required.

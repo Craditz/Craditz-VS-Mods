@@ -1,6 +1,8 @@
 # Companions 0.5.80 release - 2026-10-18
 
-Mode: Release. The owner reports both affected users confirmed the expedition-start fix and explicitly requested promotion. This is owner-reported confirmation, not our comprehensive gameplay validation. Public source/assets/documentation are updated under the owner's established release authorization. No ModDB upload, Discord announcement or GitHub binary release is claimed; repository access, visibility and history remain unchanged.
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
+Mode: Release. the human reports both affected users confirmed the expedition-start fix and explicitly requested promotion. This is owner-reported confirmation, not our comprehensive gameplay validation. Public source/assets/documentation are updated under the owner's established release authorization. No ModDB upload, Discord announcement or GitHub binary release is claimed; repository access, visibility and history remain unchanged.
 
 Stable installer: `FeralKinshipCompanions_v0.5.80.zip`. SHA256: `80b9fc11ed7e637f718299ef84e4ce7a0c2cee083a296b451e65722ebd125b2b`.
 

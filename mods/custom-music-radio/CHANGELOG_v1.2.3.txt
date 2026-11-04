@@ -1,0 +1,7 @@
+# Custom Music Radio 1.2.3
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 1.2.2
+
+- Added useful logging for unexpected playback seeks and snapshot corrections, including which way the audio moved and by how much. Makes the jumping songs a little easier to pin down if it happens again.

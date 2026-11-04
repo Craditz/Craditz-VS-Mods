@@ -1,0 +1,9 @@
+# Animalica Core 1.2.39
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since promoted release 1.2.37
+
+- Grazers can use dry grass to start firepits and pit kilns with Trait Restrictions 1.1.0.
+- Keep deliberate construction use from continuing as eating when the interaction ends or is cancelled.
+- Bixo and Carried compatibility now checks the loaded model rig instead of restricting support to a PlayerModelLib version list.

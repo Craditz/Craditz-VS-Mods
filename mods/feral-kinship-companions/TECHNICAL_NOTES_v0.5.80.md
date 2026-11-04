@@ -1,6 +1,8 @@
 # Companions 0.5.80 - technical qualification
 
-Mode: Release. The owner reports that both affected users confirmed the expedition-start fix and explicitly requested release. Reporter confirmation is owner-reported; it is not an independent comprehensive gameplay pass. Stable metadata has not been replayed in gameplay. Runtime equivalence to the tested preview is verified byte-for-byte.
+i have left the wiring notes here. the details matter; a confident fox is not a substitute for the checks below.
+
+Mode: Release. the human reports that both affected users confirmed the expedition-start fix and explicitly requested release. Reporter confirmation is owner-reported; it is not an independent comprehensive gameplay pass. Stable metadata has not been replayed in gameplay. Runtime equivalence to the tested preview is verified byte-for-byte.
 
 The old retained-body preflight rejected attached add-on implementations when their assembly/type/hash/timer audit was absent. The accepted candidate separates compatibility-first admission from bounded patch installation. The source, patch table and all runtime bytes are unchanged from that candidate during stable finalization. No XSkills/Rustbound pins, blanket unknown-method patches, behavior replacement or save migration were added. Living supported-family, original-body/owner/authority, active delivery and audited pending replacement jobs still constrain admission. Existing native engine binary contracts remain pinned.
 

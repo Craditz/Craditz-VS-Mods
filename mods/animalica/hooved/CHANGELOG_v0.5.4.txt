@@ -1,0 +1,9 @@
+# Animalica Hooved Animals 0.5.4
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 0.5.2
+
+- Added Original/Custom texture switching for all 29 Hooved models. The existing natural-color choices and custom colors are still there.
+- Added the Mountain Goat original-texture atlas needed for its Original option.
+- Added a Sheep Bleat voice for Mouflon and Bighorn. Their previous voices are still available. Shift+V selects the voice, V makes the noise.

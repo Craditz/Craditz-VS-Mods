@@ -1,6 +1,8 @@
 # Companions 0.5.91 - user Restore availability
 
-## Changes since local stable 0.5.90
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
+## what changed since local stable 0.5.90
 
 - User Restore finds the verified original at its saved location and brings that same body to safe loaded space near its owner in the same dimension. Native chunk membership transfers before the temporary remote source can unload.
 - Restore completion now waits for native world/chunk registration, the normal command lookup and usable presentation near the owner. Pending arrival, timeout, no safe space and other-dimension failures are reported honestly.
@@ -9,9 +11,9 @@
 
 The promoted 0.5.90 DLL reproduced success followed by remote source unload and cart failure in a controlled fixture. This supports the unload mechanism; it does not independently establish the complete affected-world cause from the supplied recording.
 
-## Qualification and release decision
+## what was checked, and why this escaped
 
-The owner explicitly requested release for server use after the private candidate. All **103 controlled groups passed**: 91 retained recovery regressions and 12 user-Restore groups. Coverage includes the non-admin pack request/confirmation route, delayed native teleport, source unload followed by a cart request after 60 simulated seconds, repeated Restore, disk fixture reload, changed owner, incomplete/throwing chunk registration, absent loader callback, no safe space, dimensions, genuine native-ID drift, conflicting IDs, duplicates and stale caches.
+the human explicitly requested release for server use after the private candidate. All **103 controlled groups passed**: 91 retained recovery regressions and 12 user-Restore groups. Coverage includes the non-admin pack request/confirmation route, delayed native teleport, source unload followed by a cart request after 60 simulated seconds, repeated Restore, disk fixture reload, changed owner, incomplete/throwing chunk registration, absent loader callback, no safe space, dimensions, genuine native-ID drift, conflicting IDs, duplicates and stale caches.
 
 These use production handlers and real Vintage Story 1.22.7 assemblies with controlled world/chunk services. They are not rendered GUI testing or a full affected-world/provider/multiplayer run. **Affected-server gameplay, FotSA/PetAI behavior, visible client arrival and full engine ticking remain unverified.** No affected-server acceptance is claimed. The production build had zero warnings/errors. Private fixtures and reporter data remain local.
 

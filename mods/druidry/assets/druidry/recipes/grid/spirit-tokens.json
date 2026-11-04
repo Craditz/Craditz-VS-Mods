@@ -1,0 +1,119 @@
+[
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:redmeat-raw", "quantity": 2}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-wolf"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:poultry-raw", "quantity": 2}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-fox"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:fat", "quantity": 2}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-hyena"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin", "quantity": 2},
+      "O": {"type": "item", "code": "game:honeycomb", "quantity": 2}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-bear"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:hide-raw-large"}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-deer"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:grain-flax", "quantity": 8}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-gazelle"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:vegetable-turnip", "quantity": 4}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-goat"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:vegetable-carrot", "quantity": 4}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-pig"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:flaxfibers", "quantity": 8}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-sheep"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone-tiny"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:vegetable-carrot", "quantity": 2}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-hare"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:fat"}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-raccoon"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone-tiny"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:feather", "quantity": 8}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-chicken"}
+  },
+  {
+    "ingredientPattern": "BRO", "width": 3, "height": 1, "shapeless": true,
+    "ingredients": {
+      "B": {"type": "item", "code": "game:bone-tiny"},
+      "R": {"type": "item", "code": "game:resin"},
+      "O": {"type": "item", "code": "game:fish-raw", "quantity": 2}
+    },
+    "output": {"type": "item", "code": "druidry:spirit-token-fish"}
+  }
+]

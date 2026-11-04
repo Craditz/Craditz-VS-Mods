@@ -1,4 +1,7 @@
-Feral Kinship Companions 0.5.93
+# Feral Kinship Companions 0.5.93
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
 Combined return reliability and four-button developer recovery release
 
 - Includes Rebuild, Rebuild all, Emergency rebuild and Emergency rebuild all

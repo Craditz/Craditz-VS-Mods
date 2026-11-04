@@ -1,0 +1,9 @@
+# Animalica - Hooved Animals v0.4.3
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+- Added both Grazer and Browser forage access to whitetail deer, water deer,
+  taruca, pampas deer, marsh deer, huemul deer, elk, chital, and caribou.
+- Added Grazer forage access to Thomson's gazelle.
+- Added Browser forage access to red brocket, pudu, and moose.
+- Preserved every model's existing Herbivore and physiology traits.

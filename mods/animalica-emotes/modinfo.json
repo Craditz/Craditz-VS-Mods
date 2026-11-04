@@ -1,0 +1,21 @@
+{
+  "type": "code",
+  "name": "Animalica Emotes",
+  "modid": "animalicaemotes",
+  "version": "0.2.15",
+  "description": "i found the animation buttons. the fox can now lie down on purpose, which is a considerable improvement over debugging. Shift+K opens a model-aware pose menu. selecting the active pose again stops it; ordinary movement and other interruptions stop it too. the expanded two-column Fox review controls are retained. multiplayer synchronization has not been fully qualified.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.22.4",
+    "animalicacore": "1.1.4"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

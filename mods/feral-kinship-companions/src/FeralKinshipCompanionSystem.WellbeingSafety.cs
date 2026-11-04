@@ -18,7 +18,7 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         long now = entity.World.ElapsedMilliseconds;
         if (IsCompanionOwnerOffline(entity) || !entity.Alive || IsFoxAwayFromWorld(entity))
-        { wellbeingSafetySamples.Remove(entity.EntityId); return; }
+        { wellbeingSafetySamples.Remove(entity.EntityId); wellbeingWorkHours.Remove(entity.EntityId); return; }
         var state = record.Wellbeing;
         if (state == null || state.Version != CompanionWellbeingRules.Version) return;
         long previous = wellbeingSafetySamples.GetValueOrDefault(entity.EntityId, -1);

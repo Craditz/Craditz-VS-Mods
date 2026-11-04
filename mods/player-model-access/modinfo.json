@@ -3,7 +3,7 @@
   "name": "Player Model Access",
   "modid": "playermodelaccess",
   "version": "0.2.2",
-  "description": "Globally disables selected PlayerModelLib models in normal selection while preserving per-player model grants.",
+  "description": "i found the character-selector guest list. some names now need permission from the human. globally disable selected PlayerModelLib models while retaining per-player grants. this is a model-selection policy, not an anti-cheat boundary.",
   "authors": [
     "Made with ChatGPT"
   ],

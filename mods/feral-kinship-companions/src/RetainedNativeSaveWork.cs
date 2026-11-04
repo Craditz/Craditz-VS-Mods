@@ -26,9 +26,11 @@ internal static partial class RetainedNativeSaveWork
     }
     [ThreadStatic] private static UnloadLease? activeUnload;
     private static FieldInfo? dirtyLock,ownerServer,readyToSave;
+    private static bool stratumUnloadBuffers;
     internal static bool Enabled { get; private set; }
     internal static IReadOnlyList<MethodBase> Install(Harmony harmony,Assembly native) {
         Type unload=native.GetType("Vintagestory.Server.ServerSystemUnloadChunks",true)!;
+        stratumUnloadBuffers=NativeChunkCompatibility.UsesStratum(native);
         dirtyLock=AccessTools.Field(unload,"dirtyChunksLock") ?? throw new MissingFieldException("Native unload queue monitor");
         ownerServer=AccessTools.Field(unload,"server") ?? throw new MissingFieldException("Native unload server");
         readyToSave=AccessTools.Field(ownerServer.FieldType,"readyToAutoSave") ?? throw new MissingFieldException("Native autosave admission");
@@ -56,21 +58,26 @@ internal static partial class RetainedNativeSaveWork
         if(!lease.Disposals.Contains(chunk))lease.Disposals.Add(chunk);
     }
     private static IEnumerable<CodeInstruction> UnloadTranspiler(IEnumerable<CodeInstruction> input) {
-        int clears=0,disposals=0;
+        int clears=0,disposals=0,scratchClears=0;CodeInstruction? previous=null;
         foreach(CodeInstruction instruction in input) {
             if(instruction.operand is MethodInfo called && called.Name=="Clear"
                 && called.DeclaringType?.IsGenericType==true
                 && called.DeclaringType.GetGenericTypeDefinition()==typeof(List<>)) {
                 Type item=called.DeclaringType.GetGenericArguments()[0];
                 if(item.FullName is "Vintagestory.Server.ServerChunkWithCoord" or "Vintagestory.Server.ServerMapChunkWithCoord") {
-                    instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(ConsumeQueue)).MakeGenericMethod(item);clears++;
+                    // Stratum also clears reusable local scratch copies. Only the two
+                    // persistent dirty queues belong in a retry receipt.
+                    bool persistent=!stratumUnloadBuffers||previous?.opcode==OpCodes.Ldfld&&previous.operand is FieldInfo f
+                        &&f.Name is "dirtyUnloadedChunks" or "dirtyUnloadedMapChunks";
+                    if(persistent){instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(ConsumeQueue)).MakeGenericMethod(item);clears++;}
+                    else scratchClears++;
                 }
             } else if(instruction.operand is MethodInfo dispose && dispose.DeclaringType==typeof(WorldChunk)&&dispose.Name=="Dispose") {
                 instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.DeclaredMethod(typeof(RetainedNativeSaveWork),nameof(DeferDispose));disposals++;
             }
-            yield return instruction;
+            previous=instruction;yield return instruction;
         }
-        if(clears!=2||disposals!=1)throw new InvalidOperationException("Pinned native unload save shape differs");
+        if(clears!=2||disposals!=1||scratchClears!=(stratumUnloadBuffers?2:0))throw new InvalidOperationException("Pinned native unload save shape differs");
     }
     private static Exception? UnloadExit(Exception? __exception,UnloadLease? __state) {
         if(__state==null)return __exception;

@@ -500,10 +500,13 @@ internal static partial class RetainedNativeSuspension
         ["PetAI"]="6fe98340c1db266c8f554c47dd69d1ed8c5d787040ef95650679018de816e1f2",
         ["TamablesFotsa"]="1eaba584a81046e957b49036858b59ccdaf9bfe53c4069af8d887139e282e4ee" };
     private static readonly Dictionary<Assembly,bool> verified=new();
+    private static bool clientOnlySetup;
     internal static string[] NativePatchEntries => entityEntries.Concat(behaviorEntries).Concat(serverBehaviorEntries).Concat(aiEntries).Append("UpdateMaxHealth").Distinct().ToArray();
     private static bool Verified(Assembly a,string hash) {
+        if(clientOnlySetup&&NativeEngineAssembly(a.GetName().Name??""))return NativeOptimum013ClientCompatibility.QualifiesModule(a);
         if(a.GetName().Name=="VintagestoryLib")return NativeChunkCompatibility.TryQualify(a,out _);
         if(NativeEngineAssembly(a.GetName().Name??"")&&NativeChunkCompatibility.UsesOptimum(typeof(Vintagestory.Common.WorldChunk).Assembly))return NativeOptimumCompatibility.QualifiesModule(a);
+        if(NativeEngineAssembly(a.GetName().Name??"")&&NativeChunkCompatibility.UsesStratum(typeof(Vintagestory.Common.WorldChunk).Assembly))return NativeStratumCompatibility.QualifiesModule(a);
         lock(verified) {
             if(verified.TryGetValue(a,out bool result))return result;
             try { result=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(a.Location))).Equals(hash,StringComparison.OrdinalIgnoreCase); }
@@ -521,9 +524,12 @@ internal static partial class RetainedNativeSuspension
             return exception.Types.OfType<Type>().ToArray();
         }
     }
-    internal static IReadOnlyList<MethodBase> Install(Harmony owner)
+    internal static IReadOnlyList<MethodBase> Install(Harmony owner,bool clientOnly=false)
     {
-        NativeChunkCompatibility.Require(typeof(Vintagestory.Common.WorldChunk).Assembly);
+        if(clientOnly) {
+            if(!NativeOptimum013ClientCompatibility.TryQualify(typeof(Vintagestory.Common.WorldChunk).Assembly,out string reason))throw new InvalidOperationException(reason);
+        }else NativeChunkCompatibility.Require(typeof(Vintagestory.Common.WorldChunk).Assembly);
+        clientOnlySetup=clientOnly;
         var targets=new HashSet<MethodBase>();
         var targetPredicates=new HashSet<MethodBase>();
         void Add(Type t,string name) { MethodInfo? m=AccessTools.DeclaredMethod(t,name); if(m!=null&&!m.IsAbstract&&!m.ContainsGenericParameters)targets.Add(m); }
@@ -574,6 +580,8 @@ internal static partial class RetainedNativeSuspension
             installed.Add(nativeHealth);
             HealthInitializationAccountingEnabled = true;
         }
+        // Client-only0.3.13 support cannot install or advertise server save hooks.
+        if(clientOnly) {Enabled=true;return installed.ToArray();}
         // Pinned native chunk serialization owns packUnpackLock before calling
         // Entity.ToBytes. Actor/physics/return work owns the body gate before
         // reading a chunk. Never wait for a body while retaining that chunk.
@@ -600,6 +608,7 @@ internal static partial class RetainedNativeSuspension
         installed.Add(commitChunks);
         foreach(MethodBase recovery in RetainedNativeSaveWork.Install(owner,nativeChunks))installed.Add(recovery);
         foreach(MethodBase batch in NativeOptimumSaveAdapter.Install(owner,nativeChunks))installed.Add(batch);
+        foreach(MethodBase buffer in NativeStratumSaveAdapter.Install(owner,nativeChunks))installed.Add(buffer);
         foreach(MethodBase storageBoundary in InstallStorageLocation(owner,nativeChunks))installed.Add(storageBoundary);
         Enabled=true; return installed.ToArray();
     }
@@ -609,6 +618,8 @@ internal static partial class RetainedNativeSuspension
         foreach(Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()) {
             string name=assembly.GetName().Name ?? "";
             if(name!="FeralKinshipCompanions" && (!hashes.TryGetValue(name,out string? expected)||!Verified(assembly,expected)))continue;
+            if(NativeEngineAssembly(name)&&name!="VintagestoryLib"&&NativeChunkCompatibility.UsesStratum(typeof(Vintagestory.Common.WorldChunk).Assembly)
+                &&!NativeStratumCompatibility.QualifiesClientModule(assembly))continue;
             foreach(Type type in GetLoadableTypes(assembly).Where(t=>typeof(EntityBehavior).IsAssignableFrom(t)&&!t.ContainsGenericParameters)) {
                 MethodInfo? method=AccessTools.DeclaredMethod(type,"OnRenderFrame");
                 if(method==null||method.IsAbstract||method.ContainsGenericParameters||method.ReturnType!=typeof(void)||installed.Contains(method))continue;
@@ -623,12 +634,15 @@ internal static partial class RetainedNativeSuspension
     {
         // A local client can share these statics with its integrated server.
         // Extend existing common gates once instead of reinstalling them.
-        Start();
+        Assembly native=typeof(Vintagestory.Common.WorldChunk).Assembly;
+        bool onlyClient=!NativeChunkCompatibility.TryQualify(native,out _)&&NativeOptimum013ClientCompatibility.TryQualify(native,out _);
+        StartInternal(onlyClient);
         try { InstallClientRendering(harmony!); }
         catch { Stop();throw; }
     }
-    internal static void Start() { if(harmony!=null)return; harmony=new Harmony("feralkinshipcompanions.retained-native-r3"); try { Install(harmony); } catch { harmony.UnpatchAll(harmony.Id); harmony=null; Enabled=false;HealthInitializationAccountingEnabled=false;ChunkSerializationOrderingEnabled=false;RetainedNativeSaveWork.Stop();installed.Clear(); throw; } }
-    internal static void Stop() { harmony?.UnpatchAll(harmony.Id); harmony=null;Enabled=false;HealthInitializationAccountingEnabled=false;ChunkSerializationOrderingEnabled=false;RetainedNativeSaveWork.Stop();installed.Clear(); }
+    internal static void Start() => StartInternal(false);
+    private static void StartInternal(bool onlyClient) { if(harmony!=null) {if(clientOnlySetup&&!onlyClient)throw new InvalidOperationException("Client-only native hooks cannot authorize a local server");return;} harmony=new Harmony("feralkinshipcompanions.retained-native-r3"); try { Install(harmony,onlyClient); } catch { clientOnlySetup=false;harmony.UnpatchAll(harmony.Id); harmony=null; Enabled=false;HealthInitializationAccountingEnabled=false;ChunkSerializationOrderingEnabled=false;RetainedNativeSaveWork.Stop();installed.Clear(); throw; } }
+    internal static void Stop() { clientOnlySetup=false;harmony?.UnpatchAll(harmony.Id); harmony=null;Enabled=false;HealthInitializationAccountingEnabled=false;ChunkSerializationOrderingEnabled=false;RetainedNativeSaveWork.Stop();installed.Clear(); }
     private sealed class HealthUpdateLease(object sync, EntityBehaviorFeralKinshipFoxSocial social) {
         internal readonly object Sync = sync;
         internal readonly EntityBehaviorFeralKinshipFoxSocial Social = social;

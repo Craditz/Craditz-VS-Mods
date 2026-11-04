@@ -2,8 +2,8 @@
   "type": "code",
   "name": "Animalica Core",
   "modid": "animalicacore",
-  "version": "1.2.33",
-  "description": "Shared framework and compatibility layer for Animalica playable animal packs.",
+  "version": "1.2.39",
+  "description": "the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs. fish get their underwater breathing, collision caps stay optional, and grazers can build a firepit or pit kiln with dry grass without eating the construction supplies. Carried compatibility checks the loaded rig, including compatible Bixo bodies. a compatible rig is still required.",
   "authors": [
     "Craditz"
   ],
@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "game": "1.22.0-pre.1",
-    "playermodellib": "1.20.4",
+    "playermodellib": "*",
     "traitrestrictions": "1.0.0"
   },
   "side": "universal",

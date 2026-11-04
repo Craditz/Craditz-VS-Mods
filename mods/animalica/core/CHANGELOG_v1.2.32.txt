@@ -1,0 +1,9 @@
+# Animalica Core 1.2.32 — 2026-10-02
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Keep native cat held-item transforms aligned with Combat Overhaul and support Footprints enum/string texture selectors across released APIs.
+
+Verified: Owner accepted Cats/Fox/Wolf/Seraph Footprints and functional CO behavior; cloud QA additionally observed Seraph/Feral Wolf grassy-soil prints.
+
+Known limits: Older Footprints API versions are headless-tested, not individually gameplay-tested. Exhaustive surfaces, first-person proxy and multiplayer remain unverified.

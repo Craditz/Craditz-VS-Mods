@@ -1,0 +1,86 @@
+[
+  {
+    "ingredientPattern": "ARK",
+    "width": 3,
+    "height": 1,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:firewood",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-rawhide",
+        "quantity": 2
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-roughwood-rawhide-plain"
+    }
+  },
+  {
+    "ingredientPattern": "ARK",
+    "width": 3,
+    "height": 1,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:firewood",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-rawhide",
+        "quantity": 2
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:fittedclaws-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-roughwood-rawhide-plain"
+    }
+  },
+  {
+    "ingredientPattern": "ARK",
+    "width": 3,
+    "height": 1,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "item",
+        "code": "game:firewood",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-rawhide",
+        "quantity": 2
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:clawtips-*-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-roughwood-rawhide-plain"
+    }
+  }
+]

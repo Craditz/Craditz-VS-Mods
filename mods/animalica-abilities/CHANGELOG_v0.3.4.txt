@@ -1,0 +1,9 @@
+# Animalica Abilities 0.3.4
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 0.3.3
+
+- Predator scent trails now have their own orange tint/glow, so you can tell them apart from the ordinary trails.
+- Changed the default scent-view key to Y. K was being uncooperative. N still opens the menu, and any custom binding you've set is kept.
+- The scent shortcut is now registered as an overlay control.

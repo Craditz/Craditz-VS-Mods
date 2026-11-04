@@ -1,4 +1,6 @@
-Animalica - Compatibility Pack 1
+# Animalica - Compatibility Pack 1
+
+notes from the stolen computer. the fox kept the useful details and left the version labels attached.
 
 General optional compatibility pack for Animalica playable models.
 Requires Animalica Core and PlayerModelLib. Companion mods are optional and only unlock their matching models when installed.

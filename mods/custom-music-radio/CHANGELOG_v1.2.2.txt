@@ -1,0 +1,17 @@
+# Custom Music Radio 1.2.2 — local release, 2026-10-04
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Previous promoted version: 1.2.1
+Tested optimization label: 1.2.1
+
+- Prepare physical-radio audio on one bounded worker; return engine work to the main thread and reject stale completions.
+- Bound preparation to eight pending track keys and 32 waiters per key. Pace transfers to eight 32-KiB chunks per 50-ms tick, cancel stale listeners and retain at most 16 concurrent requests with a conservative 256 MiB retained-byte budget.
+- Evict compressed cache entries individually by last use, with at most four tracks and 128 MiB retained. Keep the decoded client cache and explicit debug probe behavior.
+- Retain previously released host music-folder creation, seed-marker preservation, physical controls, loop modes and positional playback. The owner accepted audible Radio operation with one loaded track.
+
+the loose ends that came with this release
+The owner tested one track only. This does not establish multitrack, long-track or playback-backjump correctness, and no backjump fix is claimed. Cloud QA narrowly passed authoritative controls, automatic loop advancement, natural No loop completion, paused restart and A/B/C/Z cache integrity; range reentry was smoke coverage. Long-track Pause was inconclusive. Pending cancellation, loaded client voice correctness, alternate dataPath, blocked-folder fixtures, dedicated-server and remote-client isolation remain unverified. Client decoding can still hitch; decoded samples remain cached for the session. The obsolete RegisterCommand warning is retained.
+
+Owner explicitly said: get all of the mods pushed to release and give me a changelog (2026-10-04). Partial coverage is nonblocking; multiplayer is waived.
+the fox has no measured performance gain to report. No public upload.

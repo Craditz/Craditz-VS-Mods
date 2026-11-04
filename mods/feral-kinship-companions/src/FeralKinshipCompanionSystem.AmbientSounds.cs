@@ -1,4 +1,5 @@
 #nullable enable
+using System;
 using System.Runtime.CompilerServices;
 using HarmonyLib;
 using ProtoBuf;
@@ -50,12 +51,35 @@ public sealed partial class FeralKinshipCompanionSystem
 
     internal bool TryPlayNativeAmbientSound(Entity entity)
     {
-        if (IsFoxAwayFromWorld(entity)) return false;
+        if (IsFoxAwayFromWorld(entity) || IsNativeFoxSleepAnimationActive(entity)) return false;
         AmbientIdleSoundSettings settings = clientAmbientSoundSettings;
         AmbientIdleSoundBudget budget = nativeAmbientSoundBudgets.GetValue(entity, static _ => new AmbientIdleSoundBudget());
         budget.Prepare(entity.World.ElapsedMilliseconds, () => settings.ChooseDelayMs(entity.World.Rand));
         if (settings.ChanceMultiplier <= 0 || entity.World.Rand.NextDouble() >= settings.ChanceMultiplier) return false;
         return budget.TryConsume(entity.World.ElapsedMilliseconds, () => settings.ChooseDelayMs(entity.World.Rand));
+    }
+
+    private static bool IsNativeFoxSleepAnimationActive(Entity entity)
+    {
+        CompanionSpeciesProfile fox = CompanionSpeciesCatalog.Fox;
+        AssetLocation? code = entity.Code;
+        if (entity is EntityPlayer || code == null
+            || !string.Equals(code.Domain, fox.TameCodeDomain, StringComparison.OrdinalIgnoreCase)
+            || !(string.Equals(code.Path, fox.TameCodePathBase, StringComparison.OrdinalIgnoreCase)
+                || code.Path.StartsWith(fox.TameCodePathBase + "-", StringComparison.OrdinalIgnoreCase)))
+        {
+            return false;
+        }
+
+        // Native Kinship has distinct sleep, awake lie/sit and wounded codes.
+        // The animation dictionary is keyed by clip, so wounded aliases can
+        // also occupy "sleep". Require the canonical task metadata code too.
+        // External providers may use these codes differently; leave them alone.
+        string? sleep = fox.SleepAnimationCode;
+        var active = entity.AnimManager?.ActiveAnimationsByAnimCode;
+        return sleep != null && active != null
+            && active.TryGetValue(sleep, out AnimationMetaData? metadata)
+            && string.Equals(metadata?.Code, sleep, StringComparison.OrdinalIgnoreCase);
     }
 
     private void OnAmbientSoundSettings(CompanionAmbientSoundSettingsPacket packet)

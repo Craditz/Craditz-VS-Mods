@@ -36,7 +36,7 @@
         1.524,
         3.004
       ],
-      "EyeHeight": 0.567,
+      "EyeHeight": 2.253,
       "MaxCollisionBox": [
         1.905,
         3.755
@@ -45,8 +45,8 @@
         1.143,
         2.253
       ],
-      "MaxEyeHeight": 0.708,
-      "MinEyeHeight": 0.425,
+      "MaxEyeHeight": 2.816,
+      "MinEyeHeight": 1.690,
       "ScaleColliderWithSizeHorizontally": true,
       "ScaleColliderWithSizeVertically": true,
       "ModelSizeFactor": 1.0,
@@ -156,7 +156,7 @@
         1.475,
         2.873
       ],
-      "EyeHeight": 0.815,
+      "EyeHeight": 4.701,
       "MaxCollisionBox": [
         1.844,
         3.591
@@ -165,8 +165,8 @@
         1.107,
         2.154
       ],
-      "MaxEyeHeight": 1.019,
-      "MinEyeHeight": 0.612,
+      "MaxEyeHeight": 3.526,
+      "MinEyeHeight": 2.115,
       "ScaleColliderWithSizeHorizontally": true,
       "ScaleColliderWithSizeVertically": true,
       "ModelSizeFactor": 0.6,

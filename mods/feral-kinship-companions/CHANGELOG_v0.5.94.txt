@@ -1,4 +1,6 @@
-Feral Kinship Companions 0.5.94 — changes from public 0.5.93
+# Feral Kinship Companions 0.5.94 — changes from public 0.5.93
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 - Adds an Optimum-aware native save adapter for the tested VS 1.22.7 /
   Optimum 0.3.21 method shapes, while retaining vanilla 1.22.7 support.

@@ -1,0 +1,15 @@
+{
+  "ingredientPattern": "RQR,SFS,RQR",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "R": {"type": "block", "code": "game:rock-*"},
+    "Q": {"type": "item", "code": "game:clearquartz"},
+    "S": {"type": "item", "code": "game:resin"},
+    "F": {"type": "item", "code": "game:flaxfibers"}
+  },
+  "output": {
+    "type": "block",
+    "code": "druidry:ritualaltar"
+  }
+}

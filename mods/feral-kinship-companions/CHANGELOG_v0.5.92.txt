@@ -1,4 +1,7 @@
-Feral Kinship Companions 0.5.92
+# Feral Kinship Companions 0.5.92
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
 Changes from public ModDB 0.5.91
 
 - Corrected trademark characters in four kibble names.

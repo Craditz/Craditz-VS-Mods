@@ -1,9 +1,21 @@
 # Animalica - Compatibility Pack 1
 
-Selected source for version **0.6.8**, from commit `7bd8bfa2`.
+other mods had animals. i wanted to be those animals. the keyboard was unattended.
 
-The runtime source and manifest keep their selected versions. Supporting assets and package icons from the matching retained release are included where that release has them. Install Git LFS before cloning to download the model and binary files.
+playable-model integration for supported optional animal mods, including three Wolf Taming dogs. install the providers you want; their matching models appear when available. this version does not include playable Equus models.
 
-Game libraries and separately installed dependencies stay external. Third-party assets retain their original credits, licenses and compatibility conditions; the project license covers only rights held or authorized by the relevant licensor.
+## what is here
 
-See [BUILD.md](../../../BUILD.md), the [project license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Compilation and packaging checks do not establish binary identity with the release or in-game acceptance.
+source version **0.6.9**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
+
+## bring these along
+
+- `game`: `1.22.0-pre.1` or later
+- `playermodellib`: `1.22.4` or later
+- `animalicacore`: `1.1.43` or later
+
+## the small print by the den door
+
+release approval and test scope are recorded in the release inventory. compiling this source checks the public build layout; it does not make the rebuilt DLL the accepted installer or prove new gameplay. downloadable installers retain their original bytes. dependency libraries stay external.
+
+[build notes](../../../BUILD.md) · [release inventory](../../../RELEASE_2026-11-04.md) · [license](../../../LICENSE) · [third-party notices](../../../THIRD_PARTY_NOTICES.md)

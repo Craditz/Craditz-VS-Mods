@@ -1,4 +1,7 @@
-Animalica - Bears
+# Animalica - Bears
+
+notes from the stolen computer. the fox kept the useful details and left the version labels attached.
+
 =================
 
 Modular Animalica animal pack for playable bears.

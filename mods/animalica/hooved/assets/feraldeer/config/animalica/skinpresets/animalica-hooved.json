@@ -11,7 +11,8 @@
         "voicetype": "deercall1",
         "voicepitch": "medium",
         "antlers": "none",
-        "carrymode": "hoof"
+        "carrymode": "hoof",
+        "feraldeer-caribou-texturemode": "custom"
       },
       "presets": {
         "natural": {
@@ -30,7 +31,8 @@
           "feraldeer-caribou-internal-eyesmask": "eyes-mask",
           "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
           "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
-          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask",
+          "feraldeer-caribou-texturemode": "custom"
         },
         "marked": {
           "feraldeer-caribou-coatcolor": "#FF737171",
@@ -48,7 +50,8 @@
           "feraldeer-caribou-internal-eyesmask": "eyes-mask",
           "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
           "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
-          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask",
+          "feraldeer-caribou-texturemode": "custom"
         },
         "pale": {
           "feraldeer-caribou-coatcolor": "#FFBDB6AB",
@@ -66,7 +69,8 @@
           "feraldeer-caribou-internal-eyesmask": "eyes-mask",
           "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
           "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
-          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask",
+          "feraldeer-caribou-texturemode": "custom"
         },
         "dark": {
           "feraldeer-caribou-coatcolor": "#FF3E3B3A",
@@ -84,7 +88,8 @@
           "feraldeer-caribou-internal-eyesmask": "eyes-mask",
           "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
           "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
-          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask",
+          "feraldeer-caribou-texturemode": "custom"
         },
         "albino": {
           "feraldeer-caribou-coatcolor": "#FFF0EBE2",
@@ -102,7 +107,8 @@
           "feraldeer-caribou-internal-eyesmask": "eyes-mask",
           "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
           "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
-          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask",
+          "feraldeer-caribou-texturemode": "custom"
         },
         "melanistic": {
           "feraldeer-caribou-coatcolor": "#FF252524",
@@ -120,7 +126,8 @@
           "feraldeer-caribou-internal-eyesmask": "eyes-mask",
           "feraldeer-caribou-internal-earsmask": "ears-soft-mask",
           "feraldeer-caribou-internal-tailmask": "tail-blend-mask",
-          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask"
+          "feraldeer-caribou-internal-fixeddetails": "fixed-details-mask",
+          "feraldeer-caribou-texturemode": "custom"
         }
       }
     }

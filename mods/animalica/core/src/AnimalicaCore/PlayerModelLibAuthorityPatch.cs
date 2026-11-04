@@ -63,11 +63,13 @@ internal static class PlayerModelLibAuthorityPatch
         isManagedModel = null;
     }
 
-    private static bool ValidateModelChange(object __instance, IPlayer player, object packet)
+    private static bool ValidateModelChange(object __instance, IPlayer player, object packet, out string? __state)
     {
+        __state = null;
         string modelCode = GetMemberValue<string>(packet, "ModelCode") ?? string.Empty;
         if (TryGetModel(__instance, modelCode, out _))
         {
+            __state = player.Entity.WatchedAttributes.GetString("skinModel", "seraph");
             return true;
         }
 
@@ -79,9 +81,17 @@ internal static class PlayerModelLibAuthorityPatch
         return false;
     }
 
-    private static void ClampAfterModelChange(object __instance, IPlayer player)
+    private static void ClampAfterModelChange(object __instance, IPlayer player, string? __state)
     {
         ClampCurrentSize(__instance, player);
+        string modelCode = player.Entity.WatchedAttributes.GetString("skinModel", "seraph");
+        if (__state != null && (__state == "feralfish:feralfish" || modelCode == "feralfish:feralfish"))
+        {
+            // PML writes skinModel before extraTraits. Its watched listener can
+            // apply the new model with the old fish extras; refresh only after
+            // the accepted packet has written both, including same-model toggles.
+            RefreshPlayerTraitAttributes(player.Entity, modelCode);
+        }
     }
 
     private static void ValidateSizeChange(object __instance, IPlayer player, object packet)
@@ -192,6 +202,18 @@ internal static class PlayerModelLibAuthorityPatch
         PreserveWatchedEntitySize(entity, behavior, type);
         type.GetMethod("UpdateEntityProperties", BindingFlags.Public | BindingFlags.Instance)
             ?.Invoke(behavior, null);
+    }
+
+    private static void RefreshPlayerTraitAttributes(Entity entity, string modelCode)
+    {
+        Type? behaviorType = AccessTools.TypeByName("PlayerModelLib.PlayerSkinBehavior");
+        MethodInfo? getBehavior = entity.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance)
+            .FirstOrDefault(method => method.Name == "GetBehavior"
+                && method.IsGenericMethodDefinition && method.GetParameters().Length == 0);
+        object? behavior = behaviorType == null || getBehavior == null ? null
+            : getBehavior.MakeGenericMethod(behaviorType).Invoke(entity, null);
+        behavior?.GetType().GetMethod("ApplyTraitAttributesWithModelTraits", BindingFlags.Public | BindingFlags.Instance)
+            ?.Invoke(behavior, new object[] { modelCode });
     }
 
     private static void PreserveWatchedEntitySize(Entity entity, object behavior, Type behaviorType)

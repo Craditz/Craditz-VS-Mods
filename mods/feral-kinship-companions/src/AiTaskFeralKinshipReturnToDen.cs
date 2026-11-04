@@ -69,8 +69,17 @@ public sealed class AiTaskFeralKinshipReturnToDen : AiTaskBase
             }
             float dayTerritoryDistance = system?.GetCompanionTerritoryRadius(entity)
                 ?? configuredTerritoryDistance;
-            return entity.Pos.SquareDistanceTo(target)
-                > dayTerritoryDistance * dayTerritoryDistance;
+            double dayDistanceSquared = entity.Pos.SquareDistanceTo(target);
+            if (system?.TryGetWorkCartTerritoryCenter(entity, out var cartCenter) == true && cartCenter != null)
+            {
+                // Work-cart territory is a cylinder, as in cart assignment and
+                // maintenance. Quarry depth must not interrupt a valid duty.
+                // The return destination is the portal, but the radius is
+                // centered on the cart itself, just like player area notices.
+                double dx = entity.Pos.X - cartCenter.X, dz = entity.Pos.Z - cartCenter.Z;
+                dayDistanceSquared = dx * dx + dz * dz;
+            }
+            return dayDistanceSquared > dayTerritoryDistance * dayTerritoryDistance;
         }
         if (StormMode != stormActive)
         {
@@ -82,6 +91,10 @@ public sealed class AiTaskFeralKinshipReturnToDen : AiTaskBase
             return false;
         }
         returningForShelter = system?.ShouldFoxSeekDenShelter(entity) == true;
+        // Routine bedtime yields to an available meal, then resumes normally.
+        // Emergency storm shelter keeps its existing higher-priority behavior.
+        if (!StormMode && FeralKinshipCompanionSystem.ShouldCompanionSeekFood(entity)
+            && system?.TryResolveCompanionFoodTarget(entity, out _, out _) == true) return false;
         if (!returningForShelter)
         {
             routineShelterPending = false;

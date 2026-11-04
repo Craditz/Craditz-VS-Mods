@@ -3,7 +3,7 @@
   "name": "Animalica Body Tools",
   "modid": "animalicabodytools",
   "version": "1.6.20",
-  "description": "Adds wearable body tools and animal-friendly class support for Animalica players, including direct-from-vanilla quenchable metal heads for fitted claws, fangs, digging claws, rending claws, harvesting claws, prospecting claws, and cultivating claws.",
+  "description": "thumbs were taking too long. i fitted the tools to the paws instead. wearable claws, fangs and specialized Body Tools, with metal progression and recovered heads. version 1.6.20 includes optional-metal texture and recipe-restriction corrections. quenchable-head integration was adapted from xthatguyx’s addon; their credit stays attached.",
   "authors": [
     "Craditz"
   ],

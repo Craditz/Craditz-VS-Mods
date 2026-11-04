@@ -2,8 +2,8 @@
   "type": "content",
   "name": "Animalica - Compatibility Pack 3 (Dinosaurs)",
   "modid": "animalicacompatibility3",
-  "version": "0.4.2",
-  "description": "Animalica Compatibility Pack 3 contains playable models for Legacy of the Phanerozoic dinosaur-family mods. Requires Animalica Core and PlayerModelLib; supported dinosaur modules remain optional.",
+  "version": "0.4.3",
+  "description": "the fox found the dinosaur folder. the den is going to need a larger door. playable integrations for supported Legacy of the Phanerozoic providers. version 0.4.3 includes the accepted camera integration. source animal mods remain separate and unlock their matching entries.",
   "authors": [
     "Craditz"
   ],

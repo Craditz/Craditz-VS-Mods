@@ -37,7 +37,7 @@
         1.524,
         3.215
       ],
-      "EyeHeight": 1.004,
+      "EyeHeight": 5.019,
       "MaxCollisionBox": [
         1.905,
         4.018
@@ -46,8 +46,8 @@
         1.143,
         2.411
       ],
-      "MaxEyeHeight": 1.256,
-      "MinEyeHeight": 0.753,
+      "MaxEyeHeight": 6.274,
+      "MinEyeHeight": 3.764,
       "ScaleColliderWithSizeHorizontally": true,
       "ScaleColliderWithSizeVertically": true,
       "ModelSizeFactor": 1.0,

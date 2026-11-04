@@ -1,0 +1,10 @@
+# Animalica Dinosaurs 0.4.3
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+Since public release 0.4.2
+
+- Fixed camera/eye-height scaling for Carnotaurus, Deinocheirus, Gallimimus and Therizinosaurus, including their minimum and maximum sizes.
+- Corrected the Gallimimus camera limits to account for its model scale.
+- Checked the updated models with matching DinoRuntime, Carnivorous Bull, Horrible Hands and Scythe Claws 2.0.0. Use matching 2.0.0 provider versions; don't mix them with the old DinoCore 1.x/family 0.5.x setup.
+- PML's normal collision cap is unchanged. These are camera fixes, not a change to PML's defaults.

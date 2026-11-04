@@ -32,6 +32,7 @@ public sealed class AnimalicaCoreSystem : ModSystem
     private IServerNetworkChannel? serverChannel;
     private Harmony? authorityHarmony;
     private Harmony? swimmingDepthHarmony;
+    private Harmony? collisionBoundsHarmony;
     private object? clientModelsSystem;
     private EventInfo? clientModelsLoadedEvent;
     private Action? clientModelsLoadedHandler;
@@ -41,6 +42,8 @@ public sealed class AnimalicaCoreSystem : ModSystem
     internal bool AnimalFoodNutritionEnabled => serverApi != null
         ? config.EnableAnimalFoodNutrition
         : receivedServerConfig?.EnableAnimalFoodNutrition ?? config.EnableAnimalFoodNutrition;
+
+    internal AnimalicaCoreConfig? CollisionBoundsConfig => serverApi != null ? config : receivedServerConfig;
 
     internal bool IsAnimalicaModelCode(string modelCode) => modelBaselines.ContainsKey(modelCode);
 
@@ -103,6 +106,8 @@ public sealed class AnimalicaCoreSystem : ModSystem
 
         swimmingDepthHarmony = new Harmony("animalicacore.swimmingdepth");
         AnimalicaSwimmingDepthPatch.Start(swimmingDepthHarmony, ShouldUseDefaultSwimmingDepth);
+        collisionBoundsHarmony = new Harmony("animalicacore.collisionbounds");
+        AnimalicaCollisionBoundsPatch.Start(collisionBoundsHarmony, api);
     }
 
     public override void StartClientSide(ICoreClientAPI api)
@@ -159,6 +164,9 @@ public sealed class AnimalicaCoreSystem : ModSystem
         AnimalicaSwimmingDepthPatch.Stop();
         swimmingDepthHarmony = null;
         PlayerModelLibAuthorityPatch.Stop();
+        collisionBoundsHarmony?.UnpatchAll("animalicacore.collisionbounds");
+        AnimalicaCollisionBoundsPatch.Stop();
+        collisionBoundsHarmony = null;
 
         clientApi = null;
         clientChannel = null;
@@ -340,6 +348,7 @@ public sealed class AnimalicaCoreSystem : ModSystem
         int eyeHeightModels = ApplyLocalEyeHeightPolicy(clientApi);
         config = serverConfig;
         RefreshPlayerTraitStats(clientApi);
+        RefreshCollisionBounds(clientApi);
         if (eyeHeightModels > 0)
         {
             AnimalicaRuntimeConfigApplier.RefreshLocalPlayerModel(clientApi);
@@ -397,6 +406,7 @@ public sealed class AnimalicaCoreSystem : ModSystem
         int changedModels = ApplyRuntimeModelPolicy(clientApi, receivedServerConfig);
         int eyeHeightModels = ApplyLocalEyeHeightPolicy(clientApi);
         RefreshPlayerTraitStats(clientApi);
+        RefreshCollisionBounds(clientApi);
         if (eyeHeightModels > 0)
         {
             AnimalicaRuntimeConfigApplier.RefreshLocalPlayerModel(clientApi);
@@ -423,6 +433,19 @@ public sealed class AnimalicaCoreSystem : ModSystem
         return config.KeepSeraphEyeHeight
             ? AnimalicaRuntimeConfigApplier.ApplySeraphEyeHeight(api, modelBaselines)
             : 0;
+    }
+
+    private static void RefreshCollisionBounds(ICoreClientAPI api)
+    {
+        Type? behaviorType = AccessTools.TypeByName("PlayerModelLib.PlayerSkinBehavior");
+        if (behaviorType == null) return;
+        var getBehavior = typeof(Entity).GetMethods().First(method => method.Name == "GetBehavior" && method.IsGenericMethodDefinition && method.GetParameters().Length == 0).MakeGenericMethod(behaviorType);
+        foreach (Entity entity in api.World.LoadedEntities.Values)
+        {
+            if (!AnimalicaCollisionBoundsPatch.RequiresRefresh(entity)) continue;
+            object? behavior = getBehavior.Invoke(entity, null);
+            if (behavior is EntityBehavior skinBehavior) AnimalicaCollisionBoundsPatch.RefreshWhenReady(skinBehavior);
+        }
     }
 
     private bool ShouldUseDefaultSwimmingDepth(Entity entity)
@@ -584,6 +607,8 @@ public sealed class AnimalicaCoreSystem : ModSystem
             && string.Equals(left.AnimalClassPowerMode, right.AnimalClassPowerMode, StringComparison.Ordinal)
             && left.EnableAnimalFoodNutrition == right.EnableAnimalFoodNutrition
             && left.MuzzleMode == right.MuzzleMode
+            && left.CapCollisionToSeraph == right.CapCollisionToSeraph
+            && left.RaiseCollisionToSeraph == right.RaiseCollisionToSeraph
             && left.OldSit == right.OldSit
             && left.KeepSeraphEyeHeight == right.KeepSeraphEyeHeight;
     }
@@ -850,6 +875,7 @@ public sealed class AnimalicaCoreSystem : ModSystem
             "sneakSpeed" => FormatPercent(value, "sneak speed"),
             "backwardSpeed" => FormatPercent(value, "backward speed"),
             "swimSpeed" => FormatPercent(value, "swim speed"),
+            "breathType" when value > 0 => "Breathes air and water",
             "jumpHeightMul" => FormatPercent(value, "jump height"),
             "fallDamageFactor" => FormatPercent(value, "fall damage"),
             "frostDamageFactor" => FormatPercent(value, "frost damage"),

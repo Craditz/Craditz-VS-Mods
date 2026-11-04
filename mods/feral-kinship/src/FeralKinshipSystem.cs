@@ -12,7 +12,7 @@ using VintageStoryConfigMigration;
 
 namespace FeralKinship
 {
-public sealed class FeralKinshipSystem : ModSystem
+public sealed partial class FeralKinshipSystem : ModSystem
 {
     private const string ConfigFileName = "FeralKinship.json";
     internal const float KinTamingProgressMultiplier = 3f;
@@ -141,6 +141,7 @@ public sealed class FeralKinshipSystem : ModSystem
     public override void StartServerSide(ICoreServerAPI api)
     {
         serverApi = api;
+        RegisterKinshipCommands(api);
         enabledTamingAnimals = LoadTamingConfig(api);
         // PetAI installs its BecomeAdult postfix from its common Start phase.
         // Install our replacement after that phase so PetAI cannot add the

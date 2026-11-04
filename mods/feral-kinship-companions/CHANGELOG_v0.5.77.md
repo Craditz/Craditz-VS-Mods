@@ -1,5 +1,7 @@
 # Feral Kinship Companions 0.5.77
 
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
 - Fixes a null-reference failure in the companion physics safety prefix that
   could repeatedly interrupt physics worker ticks and leave entities frozen.
   Unrelated or partially initialized bodies are now safely excluded before
@@ -15,7 +17,7 @@ The exact null path was reproduced against the published 0.5.76 DLL. The same
 unsafe prefix exists in 0.5.75; new introduction in 0.5.76 is not established.
 Normal arrows use separate passive physics. Repeated failure in the controlled
 worker loop can affect later entities, but the reported user's exact live
-trigger remains unknown. This release does not claim every physics fault fixed.
+trigger remains unknown. the fox is not claiming every physics fault fixed.
 
 Qualification: the frozen minimal private candidate passed native prefix 31,
 Active-Away 16, fresh admission 69, retained core 13, lifecycle 1265 and concurrent
@@ -26,7 +28,7 @@ recovery, Present movement, Away through full restart and natural return of
 four healthy companions; 20 closed logs had no PhysicsSafetyPatch NRE/error.
 Both game runs exited 0 and SQLite checks passed. The public release has its own
 rebuilt DLL/hash and targeted verification receipts; private results are not
-relabelled as exact-public-DLL gameplay. No broad new claim is made for every
+relabelled as exact-public-DLL gameplay. the fox is making no broader claim for every
 provider, multiplayer, wellbeing, breeding, rewards, bonuses or audio.
 
 Restart the server/client after replacing the previous Companions package.

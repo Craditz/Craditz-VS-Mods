@@ -1,1 +1,23 @@
-{"type":"content","name":"Animalica - Bears","modid":"animalicabears","version":"0.5.4","description":"Modular Animalica pack adding playable bear models for PlayerModelLib. Requires Animalica Core for shared race trait definitions and selector UI.","authors":["Craditz"],"contributors":["Made with ChatGPT","Special thanks to Shintharo12, creator of Equus and Draconis","Special thanks to Xel, creator of Fox Socks"],"dependencies":{"game":"1.22.0-pre.1","playermodellib":"1.22.4","animalicacore":"1.1.43"},"side":"universal","requiredOnClient":true,"requiredOnServer":true}
+{
+  "type": "content",
+  "name": "Animalica - Bears",
+  "modid": "animalicabears",
+  "version": "0.5.4",
+  "description": "the fox opened the door and five bears arrived. they are in the character selector now. please take this up with them. playable bear models for PlayerModelLib, with clothing support and Animalica traits. version 0.5.4 offers Original / Vanilla textures alongside the existing custom colours and named presets.",
+  "authors": [
+    "Craditz"
+  ],
+  "contributors": [
+    "Made with ChatGPT",
+    "Special thanks to Shintharo12, creator of Equus and Draconis",
+    "Special thanks to Xel, creator of Fox Socks"
+  ],
+  "dependencies": {
+    "game": "1.22.0-pre.1",
+    "playermodellib": "1.22.4",
+    "animalicacore": "1.1.43"
+  },
+  "side": "universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true
+}

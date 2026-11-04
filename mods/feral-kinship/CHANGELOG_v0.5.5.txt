@@ -1,4 +1,6 @@
-Feral Kinship 0.5.5 - changes from public ModDB 0.5.4
+# Feral Kinship 0.5.5 - changes from public ModDB 0.5.4
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 - Fixed 23 adult/baby client-behavior patch operations so authored tameable behavior reaches clients through the normal server entity-type data. This enables the client side of the companion hand-feeding/taming priority fix.
 - Corrected README requirements and installation wording: PetAI 5.1.1 minimum; matching server/client installation; PlayerModelLib is optional; a valid synced explicit kinship override can work without PlayerModelLib.

@@ -29,7 +29,15 @@ public sealed partial class FeralKinshipCompanionSystem
     // each animal. A malformed/oversized authority surface means UNKNOWN.
     private ExpeditionPresentationAuthority? CaptureExpeditionPresentationAuthority()
     {
-        if(!RetainedNativeSuspension.Enabled || !companionContentReady || serverApi==null || packRepository?.Loaded!=true
+        if(!RetainedNativeSuspension.Enabled)return UnknownPresentationAuthority("not-ready-or-not-server-main-thread");
+        return CaptureCompanionPersistenceAuthority();
+    }
+
+    // The same bounded, read-only authority index also protects shutdown HP
+    // snapshots when the optional retained-native adapter is disabled.
+    private ExpeditionPresentationAuthority? CaptureCompanionPersistenceAuthority()
+    {
+        if(!companionContentReady || serverApi==null || packRepository?.Loaded!=true
             || RuntimeEnv.ServerMainThreadId<=0 || Environment.CurrentManagedThreadId!=RuntimeEnv.ServerMainThreadId)return UnknownPresentationAuthority("not-ready-or-not-server-main-thread");
         var records=packRepository.GetAllRecords();
         var trips=packRepository.GetActiveExpeditions().Take(1025).ToArray();

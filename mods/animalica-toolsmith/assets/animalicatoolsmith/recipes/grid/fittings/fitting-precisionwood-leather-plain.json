@@ -1,0 +1,101 @@
+[
+  {
+    "ingredientPattern": "ABR,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "block",
+        "code": "game:supportbeam-*",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "toolsmith:sandpaper",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "K": {
+        "type": "item",
+        "code": "game:knife-*",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-precisionwood-leather-plain"
+    }
+  },
+  {
+    "ingredientPattern": "ABR,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "block",
+        "code": "game:supportbeam-*",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "toolsmith:sandpaper",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:fittedclaws-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-precisionwood-leather-plain"
+    }
+  },
+  {
+    "ingredientPattern": "ABR,K__",
+    "width": 3,
+    "height": 2,
+    "shapeless": true,
+    "requiresTrait": "animalica-animal-bodytools",
+    "ingredients": {
+      "A": {
+        "type": "block",
+        "code": "game:supportbeam-*",
+        "quantity": 1
+      },
+      "B": {
+        "type": "item",
+        "code": "toolsmith:sandpaper",
+        "quantity": 1
+      },
+      "R": {
+        "type": "item",
+        "code": "toolsmith:fabricstrips-leather",
+        "quantity": 2
+      },
+      "K": {
+        "type": "item",
+        "code": "animalicabodytools:clawtips-*-wearable",
+        "isTool": true
+      }
+    },
+    "output": {
+      "type": "item",
+      "code": "animalicatoolsmith:fitting-precisionwood-leather-plain"
+    }
+  }
+]

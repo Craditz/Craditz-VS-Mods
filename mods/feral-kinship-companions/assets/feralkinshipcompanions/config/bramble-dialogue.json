@@ -182,28 +182,28 @@
     {
       "id": "bramble.taming.common.start.01",
       "layer": "Right-click",
-      "line": "Before you tame anything, watch it first. Identify whether it is an adult or juvenile, and whether it is male or female, before you plan around it.",
+      "line": "First check the animal's species and life stage. Kinship's supported animals use Pet AI taming; a fox kit from another mod may need that mod's own taming support.",
       "comment": "Right-click first-taming chapter. Use before species-specific details when player owns no Companion.",
       "priority": "Normal ---"
     },
     {
       "id": "bramble.taming.common.food.01",
       "layer": "Right-click",
-      "line": "Check the accepted food listed in the next page. Hold it in your active hand before you close the distance.",
+      "line": "Read the accepted-food list on Species details. Hold that food in your active hand, then use a normal right-click on the animal to offer it.",
       "comment": "Use in every first-taming chapter. Codex should resolve accepted foods from the existing species/taming data rather than hardcoding food names in this line.",
       "priority": "Normal ---"
     },
     {
       "id": "bramble.taming.common.patience.01",
       "layer": "Right-click",
-      "line": "If it runs, threatens you, or refuses the approach, stop and give it room. Chasing or forcing the issue usually makes things worse.",
+      "line": "A trap can keep an animal nearby, but does not guarantee it will accept food. If it stays panicked or refuses an offering, give it space; trapping alone does not complete taming.",
       "comment": "General first-taming advice. Show where the selected species can flee, threaten, or otherwise reject approach.",
       "priority": "Normal ---"
     },
     {
       "id": "bramble.taming.common.after.01",
       "layer": "Right-click",
-      "line": "Once it is domesticated, right-click it with an empty hand to open its Companion window. Check its life stage, sex, home, and bed before assigning work or expecting breeding.",
+      "line": "An accepted first offering only starts taming. Continue with accepted food until it is domesticated and belongs to you, then use an empty-hand right-click to check for its Companion window.",
       "comment": "After explaining successful first domestication. Once the player's first Companion is actually registered, retire the species-specific chapter.",
       "priority": "Normal ---"
     },
@@ -259,7 +259,7 @@
     {
       "id": "bramble.taming.fox.02",
       "layer": "Right-click",
-      "line": "Do not chase the fox around like you are trying to prove something. Have the right food, stay patient, and let the distance close without panic.",
+      "line": "Use the accepted foods listed below for the built-in fox. Another mod's fox or fox kit may have different food, age, or taming requirements.",
       "comment": "Fox taming practical advice. Accepted food comes from existing taming data.",
       "priority": "Normal ---"
     },

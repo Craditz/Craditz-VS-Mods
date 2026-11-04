@@ -1,0 +1,16 @@
+# Druidry 0.1.0
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
+
+- Adds thirteen baseline Animalica wildshape spirits.
+- Adds persistent ritual unlocks using crafted spirit tokens and a placed altar.
+- Adds a custom hand-drawn Circle of Forms interface on Shift+R.
+- Adds server-authoritative shifting, model validation, and cooldowns.
+- Captures and restores the player's non-Animalica true form without changing gear slots.
+- Uses Animalica's normal model appearance presets and physiology/diet traits.
+- Hides Animalica bodies from PlayerModelLib's ordinary character picker while Druidry is active.
+- Resolves PlayerModelLib's namespaced Animalica model keys and permits Druidry to use models disabled for ordinary picking.
+- Applies each Animalica form's declared default preset through PlayerModelLib's applied-parts tree.
+- Falls back to the first named preset when a pack does not declare a default preset.
+- Adds a client-side ritual completion ceremony with a lightning strike, sparks, and a resonant sound.
+- Adds privileged test commands: /druid unlock, /druid unlockall, and /druid reset.

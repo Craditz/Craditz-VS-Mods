@@ -1,0 +1,9 @@
+# Feral Kinship Companions 0.5.100
+
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
+- Repairs owned Companion growth handoffs, including FOTSA animals and Critters young-to-old-to-adult stages.
+- Separates shared baby/adult status before finalization so adult updates cannot erase the retiring baby's growth state. Thanks to Shimmercat for identifying the missing guard.
+- Keeps intermediate-stage banked points until adulthood and preserves Companion identity through registered native growth destinations.
+- Records verified growth expiry as Growing while the replacement completes registration. Existing duplicate, owner, destination and expedition safeguards remain.
+- Existing animals already held by an earlier failed growth transition still require separate recovery.

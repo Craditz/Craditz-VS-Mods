@@ -338,10 +338,16 @@ public sealed partial class CustomMusicRadioSystem
         // Apply normal 0..1 gain, including changes from the physical +/- buttons.
         voice.Sound.SetVolume(radio.Volume);
         bool starting = !voice.Sound.IsPlaying;
-        float drift = Math.Abs(voice.Sound.PlaybackPosition - target);
+        float soundPosition = voice.Sound.PlaybackPosition;
+        float drift = Math.Abs(soundPosition - target);
         if (length > 0) drift = Math.Min(drift, Math.Abs(length - drift));
         if (starting || drift > 2)
+        {
+            if (!starting)
+                clientApi.Logger.Notification("[custommusicradio][seek] track={0} from={1:0.000}s to={2:0.000}s delta={3:0.000}s drift={4:0.000}s revision={5} generation={6}",
+                    radio.Track, soundPosition, target, target - soundPosition, drift, radio.Revision, radio.PlaybackGeneration);
             voice.Sound.PlaybackPosition = target;
+        }
         if (starting) voice.Sound.Start();
     }
 

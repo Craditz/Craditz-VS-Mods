@@ -1,0 +1,61 @@
+{
+  "code": "fitting-precisionwood-rawhide-plain",
+  "class": "animalicatoolsmith.fitting",
+  "maxStackSize": 1,
+  "storageFlags": 257,
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "animalicatoolsmith:item/fitting-precisionwood-plain"
+  },
+  "textures": {
+    "brace": {
+      "base": "game:block/cloth/rawhide"
+    },
+    "seat": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "lining": {
+      "base": "game:block/cloth/rawhide"
+    }
+  },
+  "attributes": {
+    "animalicaToolsmithFitting": true,
+    "seatProfile": "professional",
+    "braceProfile": "stick",
+    "liningProfile": "plain"
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": 145,
+      "y": -35,
+      "z": -8
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 1.7,
+    "rotate": false
+  },
+  "groundTransform": {
+    "rotation": {
+      "x": 0,
+      "y": 15,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 1.3
+  }
+}

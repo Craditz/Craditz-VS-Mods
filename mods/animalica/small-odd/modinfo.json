@@ -2,8 +2,8 @@
   "type": "content",
   "name": "Animalica - Small & Odd",
   "modid": "animalicasmallodd",
-  "version": "0.5.3",
-  "description": "Modular Animalica pack adding playable small and odd animal models for PlayerModelLib. Requires Animalica Core for shared race trait definitions, selector UI, and the global trait toggle.",
+  "version": "0.5.5",
+  "description": "the large animals were taking up the doorway. i brought in the small and odd ones through the window. small animals and unusual body plans for PlayerModelLib. version 0.5.5 includes the accepted salmon and grouped-selector remap work. each body keeps its own supported Animalica profile.",
   "authors": [
     "Craditz"
   ],
@@ -15,7 +15,7 @@
   "dependencies": {
     "game": "1.22.0-pre.1",
     "playermodellib": "1.22.4",
-    "animalicacore": "1.1.43"
+    "animalicacore": "1.2.34"
   },
   "side": "universal",
   "requiredOnClient": true,

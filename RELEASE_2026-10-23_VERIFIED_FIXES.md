@@ -1,5 +1,7 @@
 # Verified source update - 23 October 2026
 
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.
+
 Matching source, assets and release documentation for four accepted updates are synchronized here. ModDB publication remains separate; this commit is not a ModDB release receipt.
 
 | Mod | Previous public ModDB version | Updated source version |

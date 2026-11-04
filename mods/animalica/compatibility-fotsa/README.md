@@ -1,26 +1,23 @@
 # Animalica - Compatibility Pack 2 (FotSA)
 
-the fox has found the keyboard. the useful changes are below.
+i followed the Fauna of the Stone Age animals home and borrowed their character-selector paperwork.
 
-Released source and assets for **0.5.3**.
+clothing-capable playable FotSA models, native animation mappings and carry integration. install the optional FotSA modules for the animals you want. version 0.5.3 restores the nineteen updated selectors and adds Original / Custom Pantherinae body choices, including separate Lion body and mane controls.
 
-Animalica - Compatibility Pack 2 (FotSA) 0.5.3
+## what is here
 
-Restores the nineteen elephant, rhino, penguin and pangolin selectors for the
-current FotSA texture folders. Adds Original / Custom body texture choices for
-the eight Pantherinae models, including the Lion's separate body and mane controls.
-Existing source-mod gates, custom colours, presets, rigs and animations are retained.
+source version **0.5.3**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
 
-Use Elephantidae 1.0.21, Rhinocerotidae 1.0.28, Spheniscidae 1.0.18,
-Manidae 1.0.23 and Pantherinae 1.2.17 for the corresponding models. These remain
-optional providers; the manifest's required dependencies are unchanged.
-Older providers with legacy texture folders need Pack 2 0.5.2.
+## bring these along
 
-The combined package passed scoped gameplay checks, including the tested Lion
-upgrade and restart sequence. This does not claim exhaustive checks for every model.
+- `game`: `1.22.0-pre.1` or later
+- `playermodellib`: `1.22.4` or later
+- `animalicacore`: `1.1.43` or later
 
-Required dependencies: `game >= 1.22.0-pre.1, playermodellib >= 1.22.4, animalicacore >= 1.1.43`.
+for the changed selectors, use Elephantidae 1.0.21, Rhinocerotidae 1.0.28, Spheniscidae 1.0.18, Manidae 1.0.23 and Pantherinae 1.2.17. older providers with legacy texture folders need Pack 2 0.5.2. optional providers are installed separately.
 
-The tested runtime and asset bytes are retained. Release preparation changes documentation only. Install Git LFS for models and binary assets.
+## the small print by the den door
 
-See [the changelog](CHANGELOG_v0.5.3.txt), [build instructions](../../../BUILD.md), [license](../../../LICENSE) and [third-party notices](../../../THIRD_PARTY_NOTICES.md). Third-party material keeps its original rights and conditions.
+release approval and test scope are recorded in the release inventory. compiling this source checks the public build layout; it does not make the rebuilt DLL the accepted installer or prove new gameplay. downloadable installers retain their original bytes. dependency libraries stay external.
+
+[build notes](../../../BUILD.md) · [release inventory](../../../RELEASE_2026-11-04.md) · [license](../../../LICENSE) · [third-party notices](../../../THIRD_PARTY_NOTICES.md)

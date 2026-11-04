@@ -1,0 +1,3 @@
+# Add native awake laying poses for Animalica Core, preserving existing sleep and other animations.
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.

@@ -1,6 +1,7 @@
 {
   code: "workcart",
   class: "FeralKinshipWorkCart",
+  entityClass: "FeralKinshipWorkCart",
   behaviors: [
     { name: "HorizontalOrientable" },
     { name: "Multiblock", propertiesByType: {

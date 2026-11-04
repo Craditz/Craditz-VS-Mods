@@ -5,11 +5,26 @@
     "file": "feralkinship:entities/tamebear.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "meat" },
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "meat"
+        },
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -19,10 +34,22 @@
     "file": "feralkinship:entities/tamechicken.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -32,9 +59,18 @@
     "file": "feralkinship:entities/tamedeer.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" }
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        }
       ]
     }
   },
@@ -44,10 +80,22 @@
     "file": "feralkinship:entities/tamefox.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "meat" },
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "meat"
+        },
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -57,9 +105,18 @@
     "file": "feralkinship:entities/tamegazelle.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" }
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        }
       ]
     }
   },
@@ -69,9 +126,18 @@
     "file": "feralkinship:entities/tamegoat.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" }
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        }
       ]
     }
   },
@@ -81,9 +147,22 @@
     "file": "feralkinship:entities/tamehare.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" }
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "grass"
+        }
       ]
     }
   },
@@ -93,10 +172,22 @@
     "file": "feralkinship:entities/tamehyena.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "meat" },
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "meat"
+        },
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -106,11 +197,26 @@
     "file": "feralkinship:entities/tamepig.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "meat" },
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "meat"
+        },
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -120,11 +226,26 @@
     "file": "feralkinship:entities/tameraccoon.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "meat" },
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "meat"
+        },
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -134,9 +255,18 @@
     "file": "feralkinship:entities/tamesheep.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "vegetable" },
-        { "weight": 1, "code": "fruit" }
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "vegetable"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        }
       ]
     }
   },
@@ -146,10 +276,22 @@
     "file": "feralkinship:entities/tamewolf.json",
     "value": {
       "weightedFoodTags": [
-        { "weight": 1, "code": "meat" },
-        { "weight": 1, "code": "grain" },
-        { "weight": 1, "code": "fruit" },
-        { "weight": 1, "code": "egg" }
+        {
+          "weight": 1,
+          "code": "meat"
+        },
+        {
+          "weight": 1,
+          "code": "grain"
+        },
+        {
+          "weight": 1,
+          "code": "fruit"
+        },
+        {
+          "weight": 1,
+          "code": "egg"
+        }
       ]
     }
   },
@@ -158,18 +300,30 @@
     "path": "/attributes/creatureDiet",
     "file": "cats:entities/land/cat-male.json",
     "value": {
-      "foodCategories": ["Protein"]
+      "foodCategories": [
+        "Protein"
+      ]
     },
-    "dependsOn": [{ "modid": "cats" }]
+    "dependsOn": [
+      {
+        "modid": "cats"
+      }
+    ]
   },
   {
     "op": "add",
     "path": "/attributes/creatureDiet",
     "file": "cats:entities/land/cat-female.json",
     "value": {
-      "foodCategories": ["Protein"]
+      "foodCategories": [
+        "Protein"
+      ]
     },
-    "dependsOn": [{ "modid": "cats" }]
+    "dependsOn": [
+      {
+        "modid": "cats"
+      }
+    ]
   },
   {
     "op": "add",
@@ -177,9 +331,15 @@
     "file": "cats:entities/land/cat-kitten.json",
     "value": {
       "creatureDiet": {
-        "foodCategories": ["Protein"]
+        "foodCategories": [
+          "Protein"
+        ]
       }
     },
-    "dependsOn": [{ "modid": "cats" }]
+    "dependsOn": [
+      {
+        "modid": "cats"
+      }
+    ]
   }
 ]

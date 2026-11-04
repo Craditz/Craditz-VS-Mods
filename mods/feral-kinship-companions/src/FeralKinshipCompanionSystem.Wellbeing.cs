@@ -10,7 +10,7 @@ public sealed partial class FeralKinshipCompanionSystem
     {
         record.Wellbeing = CompanionWellbeingRules.Normalize(record.Wellbeing);
         bool available = entity.Alive && !IsFoxAwayFromWorld(entity) ;
-        if (IsCompanionOwnerOffline(entity) || !available) { wellbeingSafetySamples.Remove(entity.EntityId); return; }
+        if (IsCompanionOwnerOffline(entity) || !available) { wellbeingSafetySamples.Remove(entity.EntityId); wellbeingWorkHours.Remove(entity.EntityId); return; }
         FoxBedRecord? bed = packRepository?.GetBedForFox(record.FoxId);
         string bedText = "No assigned bed";
         if (bed != null)

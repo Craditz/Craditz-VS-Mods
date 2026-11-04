@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>notes from the stolen computer</title><style>body{max-width:900px;margin:3rem auto;padding:0 1.5rem;background:#191b18;color:#eee8d5;font:17px/1.6 Georgia,serif}a{color:#d9a76d}button{font:inherit;padding:.6rem 1rem;cursor:pointer}article{margin-top:2rem}code{font-size:.85em}</style><p>the fox has left the copy button outside the description.</p><button onclick="copyDescription()">Copy formatted description</button><p id="status" aria-live="polite"></p><article id="description"><h1>Animalica - Compatibility Pack 1</h1>
+<p>other mods had animals. i wanted to be those animals. the keyboard was unattended.</p>
+<h2>what the fox put together</h2>
+<p>Adds PlayerModelLib character entries, playable animation mappings, clothing and carry attachment support, and first-person integration. Assigned Animalica profiles use Core’s trait and diet settings. Some matching body variants share selectors to keep the character menu manageable.</p>
+<p>Includes three playable dog models from Wolf Taming. Their animation mappings use the dog animations.</p>
+<h2>bring these along</h2>
+<p>Requires <a href="https://mods.vintagestory.at/feralplayerpack">Animalica Core</a> and <a href="https://mods.vintagestory.at/playermodellib">PlayerModelLib</a>, plus the source mods for the animals you want. This pack supplies the playable-model integration; it does not bundle the parent mods or their assets.</p>
+<h3>Supported source mods</h3>
+<ul>
+<li><a href="https://mods.vintagestory.at/cats">Cats</a></li>
+<li><a href="https://mods.vintagestory.at/show/mod/48465">The Critters Pack (coral fork)</a></li>
+<li><a href="https://mods.vintagestory.at/draconis">Draconis</a></li>
+<li><a href="https://mods.vintagestory.at/foxsocks">Fox Socks</a></li>
+<li><a href="https://mods.vintagestory.at/feverstonewilds">Feverstone Wilds</a></li>
+<li><a href="https://mods.vintagestory.at/hieronymusreptiles">Hieronymus Reptiles Collection</a></li>
+<li><a href="https://mods.vintagestory.at/show/mod/61149">Jimothy</a></li>
+<li><a href="https://mods.vintagestory.at/wolftaming">Wolf Taming</a></li>
+</ul>
+<p>Equus playable models are not included in this version.</p>
+<p>Compatible bird models can use <a href="https://mods.vintagestory.at/wingworks">Wingworks</a> for flight. This pack does not provide flight itself.</p>
+<p>The source models and textures belong to their respective mod authors. Their pages are linked above.</p>
+<p><a href="https://discord.gg/pJeMvtUWeg">Discord</a> — updates, questions, bug reports, and whatever I am working on next.</p>
+<p>This </p>
+<h2>notes for 0.6.9</h2>
+<p>playable-model integration for supported optional animal mods, including three Wolf Taming dogs. install the providers you want; their matching models appear when available. this version does not include playable Equus models.</p>
+<h2>the check sheet</h2>
+<p>the release record keeps the exact version, package hash and test limits. source compilation is a separate check; it does not establish new gameplay acceptance.</p>
+<p><em>mod was made with AI assistance. Pls no hate.</em></p>
+</article><script>async function copyDescription(){const el=document.getElementById('description');const status=document.getElementById('status');try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([el.innerHTML],{type:'text/html'}),'text/plain':new Blob([el.innerText],{type:'text/plain'})})]);status.textContent='copied. the pawprints are intentional.';}catch(e){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(el);selection.removeAllRanges();selection.addRange(range);status.textContent='the description is selected. press Ctrl+C to copy.';}}</script></html>

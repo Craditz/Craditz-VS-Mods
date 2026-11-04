@@ -1,4 +1,6 @@
-Animalica Compatibility Pack 1 0.6.9 - changes from public ModDB 0.6.8
+# Animalica Compatibility Pack 1 0.6.9 - changes from public ModDB 0.6.8
+
+another page from the stolen computer. here is what changed in this version, with the test limits left attached.
 
 - Corrected the README and prepared ModDB description: playable Equus models are not included in this version.
 - Historical Equus credits, legacy remaps, localization and all gameplay assets remain unchanged.

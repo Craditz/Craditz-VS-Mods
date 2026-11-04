@@ -1,12 +1,12 @@
-## Summary
+## what the fox brought in
 
-What does this change do?
+what changed, and what should happen now?
 
-## Checks
+## did it survive the checks?
 
-Describe testing, or explain why no testing was needed.
+leave the test receipts here, or explain why this change needed no new tests.
 
-## Rights and sources
+## keep the labels attached
 
 Contribution covered by my acceptance: [identify my commits or files]
 

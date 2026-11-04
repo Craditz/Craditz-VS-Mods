@@ -9,7 +9,7 @@ using Vintagestory.GameContent;
 namespace AnimalicaCore;
 
 /// <summary>
-/// Draws a cosmetic leash for Seraph-led Animalica passengers.
+/// Draws a cosmetic leash for compatible humanoid-led Animalica passengers.
 /// Gameplay remains Carried's.
 /// </summary>
 public sealed class AnimalicaCarriedFoxLeashSystem : ModSystem, IRenderer
@@ -78,7 +78,7 @@ public sealed class AnimalicaCarriedFoxLeashSystem : ModSystem, IRenderer
                 string style = carrier.WatchedAttributes.GetString("carryTypeCode", string.Empty);
                 if (!carrier.WatchedAttributes.GetBool("carrying", false) ||
                     (style != "animalica-foxwalk" && style != "animalica-walk") ||
-                    !IsModel(carrier, "seraph"))
+                    !AnimalicaCarriedHumanoidPolicy.Supports(carrier))
                 {
                     continue;
                 }

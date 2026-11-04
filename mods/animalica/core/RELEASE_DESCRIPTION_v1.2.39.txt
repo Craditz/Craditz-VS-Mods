@@ -1,0 +1,3 @@
+# Restores grazer dry-grass construction and updates capability-based Bixo/Carried compatibility. Retains current Core features.
+
+the fox kept the old receipts. this is a historical release record; its versions and test limits belong to that date. the [current inventory](RELEASE_2026-11-04.md) is by the door.

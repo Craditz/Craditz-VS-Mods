@@ -56,6 +56,8 @@ public sealed partial class FeralKinshipCompanionSystem
                 continue;
             }
 
+            // Active cart travel uses the paid, guarded cart rescue instead.
+            if (cartRescueWatches.ContainsKey(fox.EntityId)) continue;
             // Match Essentials' floatupwhenstuck detector: ignore touching faces,
             // shrink the entity box slightly, and only consider actual terrain overlap.
             bool intersectsTerrain = !fox.Swimming

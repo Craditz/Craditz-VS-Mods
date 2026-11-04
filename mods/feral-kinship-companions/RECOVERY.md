@@ -1,5 +1,7 @@
 # Developer companion recovery
 
+the fox has found the recovery controls. read the labels before touching them, and keep the matching world and mods backed up.
+
 The developer panel and Recovery Ledger expose Rebuild, Rebuild all, Emergency
 rebuild and Emergency rebuild all. All means the selected owner's confirmed
 roster. Rebuild preserves recorded data and readable native appearance/inventory;
