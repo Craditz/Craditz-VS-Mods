@@ -19,6 +19,9 @@ only pass the dependency properties the project needs. manifest minima describe 
 
 
 
+- `mods/bone-carving/BoneCarving.csproj`
+- `mods/quarry-view-recorder/QuarryViewRecorder.csproj`
+
 ## Toolsmith has two sets of teeth
 
 build `AnimalicaToolsmith.csproj` with `ToolsmithPath` and `PlayerModelLibPath`, then `AnimalicaToolsmith.Lto.csproj` with `LtoBlackSmithPlusPath` and `PlayerModelLibPath`. both use `VintageStoryPath`. finally build `AnimalicaToolsmith.Loader.csproj`; it embeds those two owned backend DLLs. package the loader, not the loose backends. no third-party provider DLL goes into the ZIP. choose exactly one provider when playing.
@@ -36,3 +39,7 @@ selected release assets are included. rebuilding the original models from every 
 the November 4 public-layout build results are in [the collection record](RELEASE_2026-11-04.md). successful compilation checks these project paths and references. it does not establish binary identity, full packaging behaviour or new gameplay acceptance. the accepted installers are preserved without rebuilding. historical release notes describe their own dates and test scope.
 
 game libraries, external mods, private fixtures, saves, logs and credentials stay outside source control. keep download ZIPs as release assets. the repository’s model JSON, textures and sounds use Git LFS; check the real bytes as well as the pointer labels.
+
+## November 6 compatibility release
+
+all eighteen public-layout projects compiled during release preparation. Radio retained one obsolete command-registration warning; the others had no warnings. These outputs are separate checks: every released DLL is retained from the accepted Docker-tested candidate. Bone Carving and Quarry View Recorder are now included as released owned projects.

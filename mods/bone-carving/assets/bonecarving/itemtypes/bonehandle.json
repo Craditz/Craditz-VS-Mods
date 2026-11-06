@@ -1,0 +1,21 @@
+{
+  "code": "bonehandle",
+  "maxstacksize": 64,
+  "storageFlags": 257,
+  "shape": { "base": "bonecarving:item/bonehandle" },
+  "textures": { "bone": { "base": "game:block/creature/bone" } },
+  "creativeinventory": { "general": ["*"], "items": ["*"] },
+  "materialDensity": 900,
+  "guiTransform": {
+    "rotation": { "x": -152, "y": -12, "z": -39 },
+    "origin": { "x": 0.5, "y": 0.25, "z": 0.5 },
+    "scale": 3.2
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.55, "y": -0.1, "z": -0.47 },
+    "rotation": { "x": 25, "y": -174, "z": 95 },
+    "origin": { "x": 0.5, "y": 0.12, "z": 0.5 },
+    "scale": 1
+  },
+  "groundTransform": { "scale": 3 }
+}

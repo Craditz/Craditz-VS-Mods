@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-04",
-  "note": "the fox kept the original packages. these hashes identify exact accepted installers, including four newer public versions preserved over the older local shelf.",
+  "date": "2026-11-06",
+  "note": "the fox lowered the 1.22 doorstep. five stable revisions retain their accepted runtime bytes; earlier published selections remain in the catalog.",
   "packages": [
     {
       "modid": "animalicaabilities",
@@ -30,6 +30,22 @@
       },
       "source": "existing GitHub release; newer than local shelf",
       "sourcePath": "mods/animalica/bears"
+    },
+    {
+      "modid": "animalicabodytools",
+      "name": "Animalica Body Tools",
+      "version": "1.6.20",
+      "file": "AnimalicaBodyTools_v1.6.20.zip",
+      "sha256": "3163154a72f25091edda9b71b3b3401194a649fffa5150d1b73943a853078574",
+      "bytes": 3814012,
+      "dependencies": {
+        "game": "1.22.0-pre.1",
+        "playermodellib": "1.20.4",
+        "animalicacore": "1.1.4",
+        "traitrestrictions": "1.0.0"
+      },
+      "source": "approved local shelf; retained without rebuild or repack",
+      "sourcePath": "mods/animalica-body-tools"
     },
     {
       "modid": "animalicacompatibility",
@@ -62,6 +78,24 @@
       "sourcePath": "mods/animalica/compatibility-fotsa"
     },
     {
+      "modid": "animalicacompatibility3",
+      "name": "Animalica - Compatibility Pack 3 (Dinosaurs)",
+      "version": "0.4.4",
+      "file": "Animalica_Dinosaurs_v0.4.4.zip",
+      "sha256": "f705c2fb52c0119028f60bc7607936394b4a714eeaf6c6dceef30ea95c7d0f8d",
+      "bytes": 5308065,
+      "dependencies": {
+        "game": "1.22.0",
+        "playermodellib": "1.22.4",
+        "animalicacore": "1.1.43"
+      },
+      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
+      "sourcePath": "mods/animalica/compatibility-dinosaurs",
+      "releaseTag": "release-2026-11-06-compat122",
+      "sourceArchive": "Animalica_Dinosaurs_v0.4.4_source.zip",
+      "sourceSha256": "b8949d4ca405634bfb42b1b8c9a939c565b5b431a93ae05917633dd797445ba7"
+    },
+    {
       "modid": "animalicacore",
       "name": "Animalica Core",
       "version": "1.2.39",
@@ -77,19 +111,19 @@
       "sourcePath": "mods/animalica/core"
     },
     {
-      "modid": "animalicacompatibility3",
-      "name": "Animalica - Compatibility Pack 3 (Dinosaurs)",
-      "version": "0.4.3",
-      "file": "Animalica_Dinosaurs_v0.4.3.zip",
-      "sha256": "98a3929a879baf8740ba787a054912d0d996ce302525c154d737a7d75d002cbd",
-      "bytes": 5681484,
+      "modid": "animalicaemotes",
+      "name": "Animalica Emotes",
+      "version": "0.2.15",
+      "file": "AnimalicaEmotes_v0.2.15.zip",
+      "sha256": "10ada1e54efed102bf2e769a1b6f4fac29d664b1724823f420c428adc21fb5e0",
+      "bytes": 26310,
       "dependencies": {
-        "game": "1.22.3",
+        "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
-        "animalicacore": "1.1.43"
+        "animalicacore": "1.1.4"
       },
       "source": "approved local shelf; retained without rebuild or repack",
-      "sourcePath": "mods/animalica/compatibility-dinosaurs"
+      "sourcePath": "mods/animalica-emotes"
     },
     {
       "modid": "animalicaenemies",
@@ -182,48 +216,37 @@
       "sourcePath": "mods/animalica-toolsmith"
     },
     {
-      "modid": "animalicabodytools",
-      "name": "Animalica Body Tools",
-      "version": "1.6.20",
-      "file": "AnimalicaBodyTools_v1.6.20.zip",
-      "sha256": "3163154a72f25091edda9b71b3b3401194a649fffa5150d1b73943a853078574",
-      "bytes": 3814012,
+      "modid": "bonecarving",
+      "name": "Bone Carving",
+      "version": "0.1.1",
+      "file": "BoneCarving_v0.1.1.zip",
+      "sha256": "67cb3aa3f6343fcf1bb002633cf0f4c4b2012d34a402f9fc52f2b321dc906bb9",
+      "bytes": 6642,
       "dependencies": {
-        "game": "1.22.0-pre.1",
-        "playermodellib": "1.20.4",
-        "animalicacore": "1.1.4",
-        "traitrestrictions": "1.0.0"
+        "game": "1.22.0",
+        "survival": ""
       },
-      "source": "approved local shelf; retained without rebuild or repack",
-      "sourcePath": "mods/animalica-body-tools"
-    },
-    {
-      "modid": "animalicaemotes",
-      "name": "Animalica Emotes",
-      "version": "0.2.15",
-      "file": "AnimalicaEmotes_v0.2.15.zip",
-      "sha256": "10ada1e54efed102bf2e769a1b6f4fac29d664b1724823f420c428adc21fb5e0",
-      "bytes": 26310,
-      "dependencies": {
-        "game": "1.22.0-pre.1",
-        "playermodellib": "1.22.4",
-        "animalicacore": "1.1.4"
-      },
-      "source": "approved local shelf; retained without rebuild or repack",
-      "sourcePath": "mods/animalica-emotes"
+      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
+      "sourcePath": "mods/bone-carving",
+      "releaseTag": "release-2026-11-06-compat122",
+      "sourceArchive": "BoneCarving_v0.1.1_source.zip",
+      "sourceSha256": "3e428569bb0718d78a0cb6ef98beaa0f6e511da5c538090762303bb2d47881ec"
     },
     {
       "modid": "custommusicradio",
       "name": "Custom Music Radio",
-      "version": "1.2.3",
-      "file": "CustomMusicRadio_v1.2.3.zip",
-      "sha256": "93dd344f9ac2c3b5480416fe085b138d1f832e8b50852d12e50f1b5086f6c5e6",
-      "bytes": 2552105,
+      "version": "1.2.4",
+      "file": "CustomMusicRadio_v1.2.4.zip",
+      "sha256": "f40ed8986b9f899c36cb803ed46f066bfb6ec8aace392dd0f2f47527f8efbdd4",
+      "bytes": 2550898,
       "dependencies": {
-        "game": "1.22.7"
+        "game": "1.22.0"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
-      "sourcePath": "mods/custom-music-radio"
+      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
+      "sourcePath": "mods/custom-music-radio",
+      "releaseTag": "release-2026-11-06-compat122",
+      "sourceArchive": "CustomMusicRadio_v1.2.4_source.zip",
+      "sourceSha256": "2bf4e7710611f84187ee83c525cfa202fdadd0779931179ba2efb3166f9b254b"
     },
     {
       "modid": "druidry",
@@ -261,16 +284,19 @@
     {
       "modid": "feralkinshipcompanions",
       "name": "Feral Kinship Companions",
-      "version": "0.5.100",
-      "file": "FeralKinshipCompanions_v0.5.100.zip",
-      "sha256": "42da870db2f42672cd6ca0b46c6d4fd26e91ef17370fde05366bc8b1d88d0f8f",
-      "bytes": 6497050,
+      "version": "0.5.101",
+      "file": "FeralKinshipCompanions_v0.5.101.zip",
+      "sha256": "91fa3b065a2900f7ea529ffbf34c42ddbd03d8c6b8446cbdb5998801a5abb117",
+      "bytes": 6496354,
       "dependencies": {
-        "game": "1.22.7",
+        "game": "1.22.0",
         "feralkinship": "0.5.5"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
-      "sourcePath": "mods/feral-kinship-companions"
+      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
+      "sourcePath": "mods/feral-kinship-companions",
+      "releaseTag": "release-2026-11-06-compat122",
+      "sourceArchive": "FeralKinshipCompanions_v0.5.101_source.zip",
+      "sourceSha256": "5b922be03d62c4764823a3a5f532b828247ae1a28519dfc7dc5d2fd4b750614d"
     },
     {
       "modid": "playermodelaccess",
@@ -285,6 +311,22 @@
       },
       "source": "approved local shelf; retained without rebuild or repack",
       "sourcePath": "mods/player-model-access"
+    },
+    {
+      "modid": "quarryviewrecorder",
+      "name": "Quarry View Recorder",
+      "version": "0.1.0",
+      "file": "QuarryViewRecorder_v0.1.0.zip",
+      "sha256": "bca90d5a35ac54a568614dcc2a700f09f51607ebcafc2e0dd55352cca3a315cd",
+      "bytes": 31694,
+      "dependencies": {
+        "game": "1.22.0"
+      },
+      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
+      "sourcePath": "mods/quarry-view-recorder",
+      "releaseTag": "release-2026-11-06-compat122",
+      "sourceArchive": "QuarryViewRecorder_v0.1.0_source.zip",
+      "sourceSha256": "561633609da23e141c1b4f06cb6cea66a072e8db69e3be6683c6aca0d203dfd6"
     },
     {
       "modid": "tamablescritters",

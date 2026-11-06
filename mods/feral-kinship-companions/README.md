@@ -8,7 +8,7 @@ companion work, care, training, expeditions and persistent identity for supporte
 
 ## what is here
 
-source version **0.5.100**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
+source version **0.5.101**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
 
 ## bring these along
 
@@ -22,3 +22,7 @@ keep a complete matching world/profile/mod backup before updating. rollback mean
 release approval and test scope are recorded in the release inventory. compiling this source checks the public build layout; it does not make the rebuilt DLL the accepted installer or prove new gameplay. downloadable installers retain their original bytes. dependency libraries stay external.
 
 [build notes](../../BUILD.md) · [release inventory](../../RELEASE_2026-11-04.md) · [license](../../LICENSE) · [third-party notices](../../THIRD_PARTY_NOTICES.md)
+
+## the patch-number gate
+
+the fox lowered the patch-number gate. the companions keep the same bodies, jobs, saves and native-engine checks. Stable **0.5.101** is approved for release; game minimum **1.22.0**. See [the release record](../../RELEASE_2026-11-06.md).

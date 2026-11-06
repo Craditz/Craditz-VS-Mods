@@ -462,5 +462,52 @@
         "src/WorkCartRescue.cs": "a520450867393422ccde39cff630ddafa2399bba60dc4b1e5c700a5331d60f63"
       }
     }
+  ],
+  "compatibilityRelease20261106": [
+    {
+      "modid": "custommusicradio",
+      "stableVersion": "1.2.4",
+      "acceptedCandidateSha256": "34b84f6a79ea9d353965e2605c33f425a45be64e0e74901dc03a4645453d8da2",
+      "stablePackageSha256": "f40ed8986b9f899c36cb803ed46f066bfb6ec8aace392dd0f2f47527f8efbdd4",
+      "sourceArchiveSha256": "2bf4e7710611f84187ee83c525cfa202fdadd0779931179ba2efb3166f9b254b",
+      "runtimeRebuilt": false,
+      "candidateRuntimeIdentical": true
+    },
+    {
+      "modid": "feralkinshipcompanions",
+      "stableVersion": "0.5.101",
+      "acceptedCandidateSha256": "9574e7171dc27063864f7dba5fefa98b7ed1e123f53cc20d1df5eebc9ab1efaf",
+      "stablePackageSha256": "91fa3b065a2900f7ea529ffbf34c42ddbd03d8c6b8446cbdb5998801a5abb117",
+      "sourceArchiveSha256": "5b922be03d62c4764823a3a5f532b828247ae1a28519dfc7dc5d2fd4b750614d",
+      "runtimeRebuilt": false,
+      "candidateRuntimeIdentical": true
+    },
+    {
+      "modid": "animalicacompatibility3",
+      "stableVersion": "0.4.4",
+      "acceptedCandidateSha256": "9fac2555ac32862950112e971e3fa059af00fdc33113157db85e0f6cb9a46201",
+      "stablePackageSha256": "f705c2fb52c0119028f60bc7607936394b4a714eeaf6c6dceef30ea95c7d0f8d",
+      "sourceArchiveSha256": "b8949d4ca405634bfb42b1b8c9a939c565b5b431a93ae05917633dd797445ba7",
+      "runtimeRebuilt": false,
+      "candidateRuntimeIdentical": true
+    },
+    {
+      "modid": "bonecarving",
+      "stableVersion": "0.1.1",
+      "acceptedCandidateSha256": "cec1e7416eb1e916b731f5130f52f6bdbbfeb0639f207ba532f81423e6ae3aeb",
+      "stablePackageSha256": "67cb3aa3f6343fcf1bb002633cf0f4c4b2012d34a402f9fc52f2b321dc906bb9",
+      "sourceArchiveSha256": "3e428569bb0718d78a0cb6ef98beaa0f6e511da5c538090762303bb2d47881ec",
+      "runtimeRebuilt": false,
+      "candidateRuntimeIdentical": true
+    },
+    {
+      "modid": "quarryviewrecorder",
+      "stableVersion": "0.1.0",
+      "acceptedCandidateSha256": "7dfafe99f0fb0163a4ace557aaf574288f0df503e804295a421133c192a8b602",
+      "stablePackageSha256": "bca90d5a35ac54a568614dcc2a700f09f51607ebcafc2e0dd55352cca3a315cd",
+      "sourceArchiveSha256": "561633609da23e141c1b4f06cb6cea66a072e8db69e3be6683c6aca0d203dfd6",
+      "runtimeRebuilt": false,
+      "candidateRuntimeIdentical": true
+    }
   ]
 }
