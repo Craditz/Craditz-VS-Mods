@@ -20,7 +20,7 @@ the local owned-mod audit covered 27 authoritative manifests. **Bone Carving** a
 | Bone Carving | `0.1.1-compat122-preview.1` |
 | Quarry View Recorder | `0.1.0-preview.5-compat122` |
 
-each candidate keeps every original DLL, PDB, asset and other file byte-identical. only the root manifest changes: the game floor and candidate revision. archive CRC, root manifest, safe forward-slash paths, unique normalized entry names and runtime payload equality passed. all five were installed in the Testing allowlist with matching hashes and their required dependencies. no compile, game launch or new gameplay acceptance is claimed.
+each candidate keeps every original DLL, PDB, asset and other file byte-identical. only the root manifest changes: the game floor and candidate revision. archive CRC, root manifest, safe forward-slash paths, unique normalized entry names and runtime payload equality passed. all five were installed in the Testing allowlist with matching hashes and their required dependencies. no compile or new manual acceptance is claimed. The load smoke below provides runtime coverage.
 
 the promoted shelf and November 4 GitHub installer downloads are retained unchanged. these revised candidates are packaged and installed, awaiting the existing acceptance/promotion gate. the source edits here do not silently replace those published installers.
 
@@ -31,3 +31,11 @@ Companions still checks the loaded engine's actual native contract. provider mod
 - [manifest format and minimum semantics](https://wiki.vintagestory.at/Modding:Mod_Packaging)
 - [retained published package inventory](RELEASE_INVENTORY.json)
 - [previous release record](RELEASE_2026-11-04.md)
+
+## Docker smoke — November 6
+
+all five exact candidates passed an offline Docker Client D smoke on VS **1.22.7**: client/integrated-server initialization, world entry, normal save/quit, new-process cold reload of the same world and a second normal save/quit. both native game processes exited 0; the closed SQLite save passed `quick_check`. Companions’ native engine contract qualified.
+
+the first optional dinosaur fixture omitted Ocean Tyrant, causing nine unique DinoCore missing-mosasaur patch errors (18 emitted entries). the first run still entered and exited normally. adding the matching retained Ocean Tyrant source module corrected the fixture without changing any candidate. the completed run, including Horrible Hands and Ocean Tyrant providers, had **zero Client/Server Error or Fatal entries** and ten compatible Player Model Lib race entries.
+
+Docker’s original mod set, working data directories, server files and main clientsettings were restored and hash-verified, the CPU limit was restored, and the container is stopped with exit 0/OOMKilled=false. isolation passed 15/15. Windows Testing and release packages were unchanged. This is load/save/reload coverage on 1.22.7; earlier 1.22 patches, radio playback, carving, recorder capture, companion jobs and exhaustive model gameplay remain outside this smoke. candidates remain unpromoted.
