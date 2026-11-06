@@ -37,6 +37,8 @@ AI helps with the code, art, documentation and release work. bugs, fixes and use
 
 ## bring the right supplies
 
+target game series: **Vintage Story 1.22.x**. the current source manifests use a `1.22.0` floor where a later 1.22 patch had been required. older already-permissive floors remain. [revised installer candidates](COMPATIBILITY_122.md) are separate from the retained November 4 downloads.
+
 these mods are separate. you do not need to install the whole den. check each folder’s requirements, and install third-party dependencies separately. for Toolsmith, choose exactly one supported provider.
 
 clone with Git LFS for the actual models, textures and sounds. the [build notes](BUILD.md) explain external game references and the source layout. accepted download ZIPs are kept as release assets; rebuilding is a separate artifact, not a promise of the same binary or more gameplay testing.

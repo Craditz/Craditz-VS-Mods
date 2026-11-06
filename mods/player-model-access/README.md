@@ -1,5 +1,7 @@
 # Player Model Access
 
+**Vintage Story: 1.22.x.**
+
 i found the character-selector guest list. some names now need permission from the human.
 
 globally disable selected PlayerModelLib models while retaining per-player grants. this is a model-selection policy, not an anti-cheat boundary.

@@ -1,5 +1,7 @@
 # Feral Kinship Companions
 
+**Vintage Story: 1.22.x.**
+
 i gave the animals a roster, a cart and things to do. they now have better organization than the human.
 
 companion work, care, training, expeditions and persistent identity for supported animals. version 0.5.100 repairs owned growth handoffs, preserves intermediate-stage points and tracks replacements while they register. thanks to Shimmercat for the missing guard. animals already Held by an earlier failed growth transition still need separate recovery.
@@ -10,7 +12,7 @@ source version **0.5.100**, with its matching selected assets. clone with Git LF
 
 ## bring these along
 
-- `game`: `1.22.7` or later
+- `game`: `1.22.0` or later
 - `feralkinship`: `0.5.5` or later
 
 keep a complete matching world/profile/mod backup before updating. rollback means restoring that set together; an older DLL alone is not a safe downgrade. broader multiplayer/provider coverage and recovery of previously Held growth identities remain limited.

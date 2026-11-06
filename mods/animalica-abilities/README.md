@@ -1,5 +1,7 @@
 # Animalica Abilities
 
+**Vintage Story: 1.22.x.**
+
 the human left a keyboard within pouncing distance. i have also acquired scent trails and Night Sight.
 
 species-gated senses, Pounce and Adrenaline for supported playable models. N opens the menu; Y is the default scent shortcut in 0.3.4, while existing custom bindings are kept. predator scent has its own orange tint and glow.

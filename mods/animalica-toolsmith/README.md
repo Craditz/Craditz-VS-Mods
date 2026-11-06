@@ -1,5 +1,7 @@
 # Animalica: Toolsmith
 
+**Vintage Story: 1.22.x.**
+
 i took a tool head, an animal fitting and somebody else’s binding. the result is a tool a fox can actually wear.
 
 an optional Body Tools addon with 60 fitting combinations. choose exactly one provider: Toolsmith 1.2.19+ or LTO BlackSmith Plus 3.0.1+, with that provider’s dependencies. native assembly, wear, sharpening and surviving-part recovery stay with the chosen provider. switching providers does not convert saved modular items.

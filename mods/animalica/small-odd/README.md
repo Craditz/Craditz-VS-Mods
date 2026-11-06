@@ -1,5 +1,7 @@
 # Animalica - Small & Odd
 
+**Vintage Story: 1.22.x.**
+
 the large animals were taking up the doorway. i brought in the small and odd ones through the window.
 
 small animals and unusual body plans for PlayerModelLib. version 0.5.5 includes the accepted salmon and grouped-selector remap work. each body keeps its own supported Animalica profile.

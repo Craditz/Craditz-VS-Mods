@@ -1,5 +1,7 @@
 # Animalica Core
 
+**Vintage Story: 1.22.x.**
+
 the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs.
 
 fish get their underwater breathing, collision caps stay optional, and grazers can build a firepit or pit kiln with dry grass without eating the construction supplies. Carried compatibility checks the loaded rig, including compatible Bixo bodies. a compatible rig is still required.

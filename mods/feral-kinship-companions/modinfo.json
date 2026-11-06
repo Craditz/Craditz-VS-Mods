@@ -8,7 +8,7 @@
     "Craditz"
   ],
   "dependencies": {
-    "game": "1.22.7",
+    "game": "1.22.0",
     "feralkinship": "0.5.5"
   },
   "side": "universal",

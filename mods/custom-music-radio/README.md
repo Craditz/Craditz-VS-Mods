@@ -1,5 +1,7 @@
 # Custom Music Radio
 
+**Vintage Story: 1.22.x.**
+
 the stolen computer had music on it. i built a radio so the den could hear it too.
 
 a physical two-block radio with server-provided Ogg music, playlists, shuffle, transport controls, gain and listening range. version 1.2.3 adds playback-seek and snapshot-correction logging to help investigate jumping songs; it does not claim that every playback jump is fixed.
@@ -10,7 +12,7 @@ source version **1.2.3**, with its matching selected assets. clone with Git LFS 
 
 ## bring these along
 
-- `game`: `1.22.7` or later
+- `game`: `1.22.0` or later
 
 ## the small print by the den door
 

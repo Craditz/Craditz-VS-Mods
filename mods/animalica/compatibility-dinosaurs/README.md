@@ -1,5 +1,7 @@
 # Animalica - Compatibility Pack 3 (Dinosaurs)
 
+**Vintage Story: 1.22.x.**
+
 the fox found the dinosaur folder. the den is going to need a larger door.
 
 playable integrations for supported Legacy of the Phanerozoic providers. version 0.4.3 includes the accepted camera integration. source animal mods remain separate and unlock their matching entries.
@@ -10,7 +12,7 @@ source version **0.4.3**, with its matching selected assets. clone with Git LFS 
 
 ## bring these along
 
-- `game`: `1.22.3` or later
+- `game`: `1.22.0` or later
 - `playermodellib`: `1.22.4` or later
 - `animalicacore`: `1.1.43` or later
 

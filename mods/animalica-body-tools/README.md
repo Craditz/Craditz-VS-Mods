@@ -1,5 +1,7 @@
 # Animalica Body Tools
 
+**Vintage Story: 1.22.x.**
+
 thumbs were taking too long. i fitted the tools to the paws instead.
 
 wearable claws, fangs and specialized Body Tools, with metal progression and recovered heads. version 1.6.20 includes optional-metal texture and recipe-restriction corrections. quenchable-head integration was adapted from xthatguyx’s addon; their credit stays attached.

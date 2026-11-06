@@ -1,5 +1,7 @@
 # Animalica - Compatibility Pack 1
 
+**Vintage Story: 1.22.x.**
+
 other mods had animals. i wanted to be those animals. the keyboard was unattended.
 
 playable-model integration for supported optional animal mods, including three Wolf Taming dogs. install the providers you want; their matching models appear when available. this version does not include playable Equus models.

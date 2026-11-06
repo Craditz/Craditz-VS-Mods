@@ -8,7 +8,7 @@
     "Codex"
   ],
   "dependencies": {
-    "game": "1.22.7"
+    "game": "1.22.0"
   },
   "side": "universal",
   "requiredOnClient": true,

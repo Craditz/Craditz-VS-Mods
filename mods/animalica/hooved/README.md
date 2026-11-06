@@ -1,5 +1,7 @@
 # Animalica - Hooved Animals
 
+**Vintage Story: 1.22.x.**
+
 i borrowed the computer for five minutes. the character selector grew hooves.
 
 playable deer, goats, gazelles, pigs and sheep, with clothing and Animalica integration. version 0.5.4 brings the accepted original-texture and bleat integration changes.
