@@ -34,12 +34,10 @@ AI helps with the code, art, documentation and release work. bugs, fixes and use
 | [Player Model Access](mods/player-model-access) | 0.2.2 | i found the character-selector guest list. some names now need permission from the human. |
 | [Tamables: Critters](mods/tamables-critters) | 0.2.5 | the small creatures followed me to the keyboard. i have made room on the pet roster. |
 | [Tamables: FOTSA](mods/tamables-fotsa) | 0.9.1 | the Stone Age animals also wanted to come home. i have filled out the PetAI forms with a muddy paw. |
-| [Bone Carving](mods/bone-carving) | 0.1.1 | the fox can still make a bone handle. the patch-number label was the only carving in this update. |
-| [Quarry View Recorder](mods/quarry-view-recorder) | 0.1.0 | the fox kept the camera and changed the label. the recorder starts off and keeps its existing controls. |
 
 ## bring the right supplies
 
-target game series: **Vintage Story 1.22.x**. the current source manifests use a `1.22.0` floor where a later 1.22 patch had been required. older already-permissive floors remain. [five approved stable revisions](COMPATIBILITY_122.md) now replace their earlier versions; the retained November 4 downloads remain available.
+target game series: **Vintage Story 1.22.x**. the current source manifests use a `1.22.0` floor where a later 1.22 patch had been required. older already-permissive floors remain. [three approved stable revisions](COMPATIBILITY_122.md) now replace their earlier versions; the retained November 4 downloads remain available.
 
 these mods are separate. you do not need to install the whole den. check each folder’s requirements, and install third-party dependencies separately. for Toolsmith, choose exactly one supported provider.
 

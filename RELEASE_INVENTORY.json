@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "note": "the fox lowered the 1.22 doorstep. five stable revisions retain their accepted runtime bytes; earlier published selections remain in the catalog.",
+  "note": "the fox lowered the 1.22 doorstep. three public stable revisions retain their accepted runtime bytes; local poke tests stay under the desk.",
   "packages": [
     {
       "modid": "animalicaabilities",
@@ -216,23 +216,6 @@
       "sourcePath": "mods/animalica-toolsmith"
     },
     {
-      "modid": "bonecarving",
-      "name": "Bone Carving",
-      "version": "0.1.1",
-      "file": "BoneCarving_v0.1.1.zip",
-      "sha256": "67cb3aa3f6343fcf1bb002633cf0f4c4b2012d34a402f9fc52f2b321dc906bb9",
-      "bytes": 6642,
-      "dependencies": {
-        "game": "1.22.0",
-        "survival": ""
-      },
-      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
-      "sourcePath": "mods/bone-carving",
-      "releaseTag": "release-2026-11-06-compat122",
-      "sourceArchive": "BoneCarving_v0.1.1_source.zip",
-      "sourceSha256": "3e428569bb0718d78a0cb6ef98beaa0f6e511da5c538090762303bb2d47881ec"
-    },
-    {
       "modid": "custommusicradio",
       "name": "Custom Music Radio",
       "version": "1.2.4",
@@ -311,22 +294,6 @@
       },
       "source": "approved local shelf; retained without rebuild or repack",
       "sourcePath": "mods/player-model-access"
-    },
-    {
-      "modid": "quarryviewrecorder",
-      "name": "Quarry View Recorder",
-      "version": "0.1.0",
-      "file": "QuarryViewRecorder_v0.1.0.zip",
-      "sha256": "bca90d5a35ac54a568614dcc2a700f09f51607ebcafc2e0dd55352cca3a315cd",
-      "bytes": 31694,
-      "dependencies": {
-        "game": "1.22.0"
-      },
-      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
-      "sourcePath": "mods/quarry-view-recorder",
-      "releaseTag": "release-2026-11-06-compat122",
-      "sourceArchive": "QuarryViewRecorder_v0.1.0_source.zip",
-      "sourceSha256": "561633609da23e141c1b4f06cb6cea66a072e8db69e3be6683c6aca0d203dfd6"
     },
     {
       "modid": "tamablescritters",

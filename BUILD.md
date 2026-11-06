@@ -19,8 +19,6 @@ only pass the dependency properties the project needs. manifest minima describe 
 
 
 
-- `mods/bone-carving/BoneCarving.csproj`
-- `mods/quarry-view-recorder/QuarryViewRecorder.csproj`
 
 ## Toolsmith has two sets of teeth
 
@@ -42,4 +40,4 @@ game libraries, external mods, private fixtures, saves, logs and credentials sta
 
 ## November 6 compatibility release
 
-all eighteen public-layout projects compiled during release preparation. Radio retained one obsolete command-registration warning; the others had no warnings. These outputs are separate checks: every released DLL is retained from the accepted Docker-tested candidate. Bone Carving and Quarry View Recorder are now included as released owned projects.
+all sixteen public-layout projects compiled during release preparation. Radio retained one obsolete command-registration warning; the others had no warnings. These outputs are separate checks: every released DLL is retained from the accepted Docker-tested candidate.

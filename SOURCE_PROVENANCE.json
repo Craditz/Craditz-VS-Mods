@@ -490,24 +490,6 @@
       "sourceArchiveSha256": "b8949d4ca405634bfb42b1b8c9a939c565b5b431a93ae05917633dd797445ba7",
       "runtimeRebuilt": false,
       "candidateRuntimeIdentical": true
-    },
-    {
-      "modid": "bonecarving",
-      "stableVersion": "0.1.1",
-      "acceptedCandidateSha256": "cec1e7416eb1e916b731f5130f52f6bdbbfeb0639f207ba532f81423e6ae3aeb",
-      "stablePackageSha256": "67cb3aa3f6343fcf1bb002633cf0f4c4b2012d34a402f9fc52f2b321dc906bb9",
-      "sourceArchiveSha256": "3e428569bb0718d78a0cb6ef98beaa0f6e511da5c538090762303bb2d47881ec",
-      "runtimeRebuilt": false,
-      "candidateRuntimeIdentical": true
-    },
-    {
-      "modid": "quarryviewrecorder",
-      "stableVersion": "0.1.0",
-      "acceptedCandidateSha256": "7dfafe99f0fb0163a4ace557aaf574288f0df503e804295a421133c192a8b602",
-      "stablePackageSha256": "bca90d5a35ac54a568614dcc2a700f09f51607ebcafc2e0dd55352cca3a315cd",
-      "sourceArchiveSha256": "561633609da23e141c1b4f06cb6cea66a072e8db69e3be6683c6aca0d203dfd6",
-      "runtimeRebuilt": false,
-      "candidateRuntimeIdentical": true
     }
   ]
 }
