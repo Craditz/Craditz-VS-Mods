@@ -2,13 +2,13 @@
   "type": "code",
   "name": "Feral Kinship Companions",
   "modid": "feralkinshipcompanions",
-  "version": "0.5.100",
+  "version": "0.5.101",
   "description": "i gave the animals a roster, a cart and things to do. they now have better organization than the human. companion work, care, training, expeditions and persistent identity for supported animals. version 0.5.100 repairs owned growth handoffs, preserves intermediate-stage points and tracks replacements while they register. thanks to Shimmercat for the missing guard. animals already Held by an earlier failed growth transition still need separate recovery.",
   "authors": [
     "Craditz"
   ],
   "dependencies": {
-    "game": "1.22.7",
+    "game": "1.22.0",
     "feralkinship": "0.5.5"
   },
   "side": "universal",

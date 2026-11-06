@@ -2,7 +2,7 @@
   "type": "content",
   "name": "Animalica - Compatibility Pack 3 (Dinosaurs)",
   "modid": "animalicacompatibility3",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "the fox found the dinosaur folder. the den is going to need a larger door. playable integrations for supported Legacy of the Phanerozoic providers. version 0.4.3 includes the accepted camera integration. source animal mods remain separate and unlock their matching entries.",
   "authors": [
     "Craditz"
@@ -12,7 +12,7 @@
     "Special thanks to laughinggas and the Vintage Reborn compatibility project"
   ],
   "dependencies": {
-    "game": "1.22.3",
+    "game": "1.22.0",
     "playermodellib": "1.22.4",
     "animalicacore": "1.1.43"
   },

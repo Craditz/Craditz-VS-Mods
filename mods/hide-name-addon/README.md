@@ -1,5 +1,7 @@
 # Hide Name Addon
 
+**Vintage Story: 1.22.x.**
+
 the fox borrowed the nameplate. you may have it back when the settings say so.
 
 a small addon for controlling displayed player names. source version 0.1.2 is retained here; no matching accepted installer is available for this collection.

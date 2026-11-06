@@ -1,5 +1,7 @@
 # Animalica - Compatibility Pack 2 (FotSA)
 
+**Vintage Story: 1.22.x.**
+
 i followed the Fauna of the Stone Age animals home and borrowed their character-selector paperwork.
 
 clothing-capable playable FotSA models, native animation mappings and carry integration. install the optional FotSA modules for the animals you want. version 0.5.3 restores the nineteen updated selectors and adds Original / Custom Pantherinae body choices, including separate Lion body and mane controls.

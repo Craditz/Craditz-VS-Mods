@@ -1,5 +1,7 @@
 # Animalica Requests
 
+**Vintage Story: 1.22.x.**
+
 someone asked for more animals. i wrote the request down, then sat on the keyboard until it became a mod.
 
 requested playable models for PlayerModelLib. version 0.3.16 adds None, Normal and Large Bighorn horns and guards lynx clothing maps when Lupines providers are absent. Large horns use 1.25 times the normal scale; Hooved Animals stays optional.

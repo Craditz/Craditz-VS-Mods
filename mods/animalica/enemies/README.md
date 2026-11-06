@@ -1,5 +1,7 @@
 # Animalica - Enemies
 
+**Vintage Story: 1.22.x.**
+
 the human said these were enemies. i have given them a place in the character selector. this seems diplomatic.
 
 playable enemy models with Animalica integration. version 0.2.2 includes the accepted carry revisions. model support depends on the installed source content and the individual body.

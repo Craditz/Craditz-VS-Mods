@@ -1,5 +1,7 @@
 # Animalica - Bears
 
+**Vintage Story: 1.22.x.**
+
 the fox opened the door and five bears arrived. they are in the character selector now. please take this up with them.
 
 playable bear models for PlayerModelLib, with clothing support and Animalica traits. version 0.5.4 offers Original / Vanilla textures alongside the existing custom colours and named presets.

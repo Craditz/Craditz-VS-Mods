@@ -1,5 +1,7 @@
 # Druidry
 
+**Vintage Story: 1.22.x.**
+
 one fox was apparently not enough. i borrowed the ritual altar and acquired options.
 
 Shift+R opens the Circle of Forms. crafted spirit tokens unlock thirteen spirit families through a Ritual Altar, with server-validated changes and restoration of the player’s true form. Animalica supplies the bodies. Companions is not a dependency.

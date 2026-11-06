@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "modid": "bonecarving",
+  "name": "Bone Carving",
+  "authors": [
+    "Franc"
+  ],
+  "description": "Proof of concept: hold right-click with a knife and exactly one offhand bone to carve an inert Bone Handle.",
+  "version": "0.1.1",
+  "side": "Universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true,
+  "dependencies": {
+    "game": "1.22.0",
+    "survival": ""
+  }
+}

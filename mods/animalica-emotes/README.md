@@ -1,5 +1,7 @@
 # Animalica Emotes
 
+**Vintage Story: 1.22.x.**
+
 i found the animation buttons. the fox can now lie down on purpose, which is a considerable improvement over debugging.
 
 Shift+K opens a model-aware pose menu. selecting the active pose again stops it; ordinary movement and other interruptions stop it too. the expanded two-column Fox review controls are retained. multiplayer synchronization has not been fully qualified.

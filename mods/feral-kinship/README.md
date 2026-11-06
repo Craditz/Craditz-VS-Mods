@@ -1,5 +1,7 @@
 # Feral Kinship
 
+**Vintage Story: 1.22.x.**
+
 the fox has filed a formal complaint about being treated as an ordinary stranger by other foxes.
 
 model-aware animal kinship and supported taming integrations through PetAI. version 0.5.7 updates Felinae 0.2.16 adult/baby asset paths and retains the admin kinship overrides from 0.5.6. the executable is unchanged from 0.5.6.

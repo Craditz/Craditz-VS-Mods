@@ -1,5 +1,7 @@
 # Tamables: FOTSA
 
+**Vintage Story: 1.22.x.**
+
 the Stone Age animals also wanted to come home. i have filled out the PetAI forms with a muddy paw.
 
 PetAI taming and owned pet behaviour for supported Fauna of the Stone Age modules, with dedicated tame variants and native-form growth/riding integration. 0.9.1 retains the exact approved package, including its historical preview filename. modded-food compatibility: probably works now, not tested. the invisible bearded dragon remains unresolved.
