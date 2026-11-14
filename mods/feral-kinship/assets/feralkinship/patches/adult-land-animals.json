@@ -16,6 +16,7 @@
         { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
         { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
         { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "fish-raw", "progress": 0.25, "cooldown": 3 },
         { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]
@@ -38,6 +39,7 @@
         { "code": "bushmeat-raw", "progress": 0.12, "cooldown": 2 },
         { "code": "redmeat-raw", "progress": 0.25, "cooldown": 3 },
         { "code": "poultry-raw", "progress": 0.25, "cooldown": 3 },
+        { "code": "fish-raw", "progress": 0.25, "cooldown": 3 },
         { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 },
         { "code": "petcookie-veggie-perfect", "domain": "petai", "progress": 0.75, "cooldown": 3 }
       ]

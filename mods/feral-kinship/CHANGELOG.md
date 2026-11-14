@@ -1,3 +1,10 @@
+# Feral Kinship 0.5.8
+
+Adult bears accept vanilla raw-fish fillets with their normal 25% progress and
+three-hour care cooldown. The held-food path now reaches taming, synchronizes
+inventory on acceptance, and prevents delayed ordinary eating after Pet Profile
+closes. Other diets and normal eating when no treat is accepted remain.
+
 # Feral Kinship 0.5.7
 
 the fox updated the Felinae paperwork and kept the admin keys.

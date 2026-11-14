@@ -75,9 +75,12 @@ public sealed partial class FeralKinshipSystem : ModSystem
         new("petai", "petcookie-veggie-perfect")
     };
 
+    // Bears also accept raw fish; keep other omnivore diets unchanged.
+    private static readonly TreatRule[] BearTreats = [.. OmnivoreTreats, new("game", "fish-raw")];
+
     private static readonly Dictionary<string, SpeciesRule> SpeciesRules = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["bear"] = new("bear", OmnivoreTreats),
+        ["bear"] = new("bear", BearTreats),
         ["chicken"] = new("chicken", PlantTreats),
         ["deer"] = new("deer", PlantTreats),
         ["fox"] = new("fox", MeatTreats),
@@ -263,6 +266,22 @@ public sealed partial class FeralKinshipSystem : ModSystem
                 slot?.Itemstack?.Collectible?.Code?.Path ?? string.Empty,
                 out _,
                 out _);
+    }
+
+    internal static bool IsHeldFoodTamingGuardEligible(Entity entity, ItemSlot slot)
+    {
+        if (IsButcheringTamingTreatEligible(entity, slot)) return true;
+
+        SpeciesRule? rule = GetTamingSpeciesRule(entity);
+        EntityBehaviorTameable? tameable = entity.GetBehavior<EntityBehaviorTameable>();
+        AssetLocation? food = slot?.Itemstack?.Collectible?.Code;
+        return rule?.Race == "bear"
+            && food?.Domain == "game"
+            && food?.Path == "fish-raw"
+            && tameable != null
+            && (tameable.DomesticationLevel == DomesticationLevel.WILD
+                || tameable.DomesticationLevel == DomesticationLevel.TAMING)
+            && IsTamingAllowed(entity, "bear");
     }
 
     internal static bool ShouldBlockTamingInteraction(Entity entity, ItemSlot slot)

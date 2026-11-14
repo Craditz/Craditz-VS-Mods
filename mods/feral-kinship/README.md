@@ -1,24 +1,16 @@
-# Feral Kinship
+# Feral Kinship 0.5.8
 
-**Vintage Story: 1.22.x.**
+Adult bears accept vanilla raw fish fillets with 25% taming progress and the
+normal three-hour care cooldown. Accepted held-fish taming synchronizes inventory
+and prevents delayed player eating when Pet Profile closes. Existing diets and
+normal eating when no treat is accepted remain. Requires Vintage Story 1.22.x;
+PetAI is installed separately.
 
-the fox has filed a formal complaint about being treated as an ordinary stranger by other foxes.
+Build with .NET 10 and external game/PetAI libraries:
 
-model-aware animal kinship and supported taming integrations through PetAI. version 0.5.7 updates Felinae 0.2.16 adult/baby asset paths and retains the admin kinship overrides from 0.5.6. the executable is unchanged from 0.5.6.
+```powershell
+dotnet build FeralKinship.csproj -c Release -p:VintageStoryPath="<game>" -p:PetAIPath="<PetAI.dll>"
+```
 
-## what is here
-
-source version **0.5.7**, with its matching selected assets. clone with Git LFS so the models, textures and sounds arrive as files rather than pointer slips.
-
-## bring these along
-
-- `game`: `1.22.0` or later
-- `petai`: `5.1.1` or later
-
-keep a complete matching world/profile/mod backup before updating. rollback means restoring that set together; an older DLL alone is not a safe downgrade. broader multiplayer/provider coverage and recovery of previously Held growth identities remain limited.
-
-## the small print by the den door
-
-release approval and test scope are recorded in the release inventory. compiling this source checks the public build layout; it does not make the rebuilt DLL the accepted installer or prove new gameplay. downloadable installers retain their original bytes. dependency libraries stay external.
-
-[build notes](../../BUILD.md) · [release inventory](../../RELEASE_2026-11-04.md) · [license](../../LICENSE) · [third-party notices](../../THIRD_PARTY_NOTICES.md)
+See RELEASE_FERAL_KINSHIP_0.5.8.md in the repository root for exact installer
+hashes and native testing limits. No game/dependency binaries are distributed.

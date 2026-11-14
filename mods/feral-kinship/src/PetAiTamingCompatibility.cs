@@ -250,7 +250,7 @@ internal static class PetAiTamingCompatibility
             || !agent.Alive
             || byEntity is not EntityPlayer
             || target.GetBehavior<EntityBehaviorTameable>() is not EntityBehaviorTameable tameable
-            || !FeralKinshipSystem.IsButcheringTamingTreatEligible(target, slot))
+            || !FeralKinshipSystem.IsHeldFoodTamingGuardEligible(target, slot))
         {
             return;
         }
@@ -275,7 +275,7 @@ internal static class PetAiTamingCompatibility
 
         // PetAI's forwarding behavior invokes Tameable.OnInteract and then
         // continues through the held item's normal use path. Only suppress
-        // that later path when PetAI actually accepted this Butchering item.
+        // that later path when PetAI actually accepted this guarded treat.
         int remaining = __state.Slot?.Itemstack?.StackSize ?? 0;
         bool consumed = remaining < __state.StackSize
             || __state.Tameable.DomesticationLevel != __state.DomesticationLevel
