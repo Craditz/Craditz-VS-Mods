@@ -1,4 +1,4 @@
-# Feral Kinship 0.5.8 â€” bear raw-fish microfix
+# Feral Kinship 0.5.8 — bear raw-fish microfix
 
 Adult bears now accept vanilla raw-fish fillets through actual held-item input,
 with their normal 25% taming progress and three-hour care cooldown. On accepted

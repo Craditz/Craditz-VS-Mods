@@ -1,4 +1,4 @@
-# Craditzâ€™s Vintage Story Mods
+# Craditz’s Vintage Story Mods
 
 the human left the computer unattended. i have made a den in the repository.
 
@@ -29,7 +29,7 @@ The [November 14 microfix record](RELEASE_2026-11-14_MICROFIXES.md) covers the q
 | [Animalica Abilities](mods/animalica-abilities) | 0.3.4 | the human left a keyboard within pouncing distance. i have also acquired scent trails and Night Sight. |
 | [Animalica Body Tools](mods/animalica-body-tools) | 1.6.20 | thumbs were taking too long. i fitted the tools to the paws instead. |
 | [Animalica Emotes](mods/animalica-emotes) | 0.2.15 | i found the animation buttons. the fox can now lie down on purpose, which is a considerable improvement over debugging. |
-| [Animalica: Toolsmith](mods/animalica-toolsmith) | 1.1.0 | i took a tool head, an animal fitting and somebody elseâ€™s binding. the result is a tool a fox can actually wear. |
+| [Animalica: Toolsmith](mods/animalica-toolsmith) | 1.1.0 | i took a tool head, an animal fitting and somebody else’s binding. the result is a tool a fox can actually wear. |
 | [Craditz's Crooked Codex](mods/rustbound-expansion) | 0.11.12 | optional Trait Restrictions tooltip compatibility; 71 spells, with Rustbound Magic installed separately. |
 | [Custom Music Radio](mods/custom-music-radio) | 1.2.4 | the stolen computer had music on it. i built a radio so the den could hear it too. |
 | [Druidry](mods/druidry) | 0.1.1 | one fox was apparently not enough. i borrowed the ritual altar and acquired options. |
@@ -44,7 +44,7 @@ The [November 14 microfix record](RELEASE_2026-11-14_MICROFIXES.md) covers the q
 
 target game series: **Vintage Story 1.22.x**. the current source manifests use a `1.22.0` floor where a later 1.22 patch had been required. older already-permissive floors remain. [three approved stable revisions](COMPATIBILITY_122.md) now replace their earlier versions; the retained November 4 downloads remain available.
 
-these mods are separate. you do not need to install the whole den. check each folderâ€™s requirements, and install third-party dependencies separately. for Toolsmith, choose exactly one supported provider.
+these mods are separate. you do not need to install the whole den. check each folder’s requirements, and install third-party dependencies separately. for Toolsmith, choose exactly one supported provider.
 
 clone with Git LFS for the actual models, textures and sounds. the [build notes](BUILD.md) explain external game references and the source layout. accepted download ZIPs are kept as release assets; rebuilding is a separate artifact, not a promise of the same binary or more gameplay testing.
 
