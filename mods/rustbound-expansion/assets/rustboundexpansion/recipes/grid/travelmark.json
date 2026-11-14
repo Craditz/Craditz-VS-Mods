@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "FP",
+  "width": 2,
+  "height": 1,
+  "ingredients": {
+    "F": {
+      "type": "item",
+      "code": "game:flint"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:paper-parchment"
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "rustboundexpansion:travelmark"
+  }
+}

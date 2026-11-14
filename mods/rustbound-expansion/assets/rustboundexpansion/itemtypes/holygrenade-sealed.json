@@ -1,0 +1,77 @@
+{
+  "code": "holygrenade-sealed",
+  "class": "RbxHolyGrenade",
+  "maxstacksize": 1,
+  "storageFlags": 257,
+  "materialDensity": 6500,
+  "shape": {
+    "base": "rustboundexpansion:item/holygrenade-sealed"
+  },
+  "textures": {
+    "gold": {
+      "base": "rustboundexpansion:grenade/gold"
+    },
+    "band": {
+      "base": "rustboundexpansion:grenade/band"
+    },
+    "jewel": {
+      "base": "rustboundexpansion:grenade/jewel"
+    },
+    "silver": {
+      "base": "rustboundexpansion:grenade/silver"
+    },
+    "white": {
+      "base": "rustboundexpansion:grenade/white"
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -15,
+      "y": -25,
+      "z": -12
+    },
+    "scale": 2
+  },
+  "fpHandTransform": {
+    "translation": {
+      "x": 0,
+      "y": -0.15,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": 0.75
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.9,
+      "y": -0.4,
+      "z": -0.55
+    },
+    "scale": 0.6
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.02,
+      "z": 0
+    },
+    "scale": 0.7
+  },
+  "attributes": {
+    "handbook": {
+      "exclude": true
+    }
+  }
+}

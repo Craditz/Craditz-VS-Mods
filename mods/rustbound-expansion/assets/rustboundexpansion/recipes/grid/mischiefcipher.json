@@ -1,0 +1,20 @@
+{
+  "shapeless": true,
+  "ingredientPattern": "CF",
+  "width": 2,
+  "height": 1,
+  "ingredients": {
+    "C": {
+      "type": "item",
+      "code": "rustboundmagic:spellcipherempty-tier1-neutral-none"
+    },
+    "F": {
+      "type": "item",
+      "code": "game:flint"
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "rustboundexpansion:spellcipherempty-tier1-neutral-none-mischief"
+  }
+}

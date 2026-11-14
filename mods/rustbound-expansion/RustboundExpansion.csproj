@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>RustboundExpansion</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GameDir Condition="'$(GameDir)' == ''">$(VINTAGE_STORY)</GameDir>
+    <RustboundDll Condition="'$(RustboundDll)' == ''">$(MSBuildProjectDirectory)\obj\references\rustboundmagic.dll</RustboundDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="OfflineChecks" />
+    <Compile Include="src\**\*.cs" />
+    <EmbeddedResource Include="spell-definitions.json" />
+    <EmbeddedResource Include="next-spell-definitions.json" />
+    <EmbeddedResource Include="meme-spell-definitions.json" />
+    <EmbeddedResource Include="utility-spell-definitions.json" />
+    <EmbeddedResource Include="hemomancy-spell-definitions.json" />
+    <EmbeddedResource Include="bulwark-spell-definitions.json" />
+    <EmbeddedResource Include="grenade-spell-definitions.json" />
+    <EmbeddedResource Include="field-spell-definitions.json" />
+    <Reference Include="cairo-sharp"><HintPath>$(GameDir)\Lib\cairo-sharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="VintagestoryAPI"><HintPath>$(GameDir)\VintagestoryAPI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="VSEssentials"><HintPath>$(GameDir)\Mods\VSEssentials.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="VSSurvivalMod"><HintPath>$(GameDir)\Mods\VSSurvivalMod.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GameDir)\Lib\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="protobuf-net"><HintPath>$(GameDir)\Lib\protobuf-net.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(GameDir)\Lib\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="rustboundmagic"><HintPath>$(RustboundDll)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

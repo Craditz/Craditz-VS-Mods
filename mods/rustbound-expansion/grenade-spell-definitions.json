@@ -1,0 +1,17 @@
+[
+  {
+    "id": "rbxholyhandgrenade1",
+    "name": "Holy Hand Grenade",
+    "kind": "holygrenade",
+    "school": "conjuration",
+    "essence": "light",
+    "tier": 2,
+    "mana": 400,
+    "cast": 20,
+    "duration": 0,
+    "range": 6,
+    "damage": 30,
+    "stats": 0,
+    "description": "Conjures one Holy Hand Grenade. Right-click to pull its pin, release, then hold right-click to aim and release to throw. Bounces before settling, then explodes after an unpredictable 0-3 second delay. Movement restarts the wait. Deals 30 base physical damage at the center, falling off over 6 blocks, and can hurt its thrower. Does not damage terrain. Only one grenade per caster may exist, including stored, transferred and thrown grenades. Vanishes when its creator logs out. Requires a bound Conjuration core."
+  }
+]

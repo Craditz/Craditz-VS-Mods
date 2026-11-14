@@ -1,0 +1,17 @@
+{
+  "type": "code",
+  "modid": "rustboundexpansion",
+  "name": "Rustbound Magic: Craditz's Crooked Codex",
+  "authors": [
+    "Craditz"
+  ],
+  "description": "Adds 71 spells to Rustbound Magic, including Wallop, Cinder Trail, Breadcrumbs, Hemomancy, travel magic and the Holy Hand Grenade.",
+  "version": "0.11.12",
+  "side": "Universal",
+  "requiredOnClient": true,
+  "requiredOnServer": true,
+  "dependencies": {
+    "game": "1.22.0",
+    "rustboundmagic": "4.0.7"
+  }
+}

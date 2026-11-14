@@ -1,0 +1,29 @@
+{
+  "squeak": {
+    "file": "user-squeak.wav",
+    "sha256": "3aca26fa8effb8234ecab933450ca4d899c33e60dfbf96b3734903f193563be9",
+    "source": "C:/Users/Franc/Documents/Audacity/squeak.wav",
+    "credit": "Supplied by Craditz for Squeaky Steps; copied without waveform edits."
+  },
+  "applause": {
+    "file": "applause-clapping-church-crowd-immersive.wav",
+    "sha256": "0d3bfde5a050f3c5e6685bd7f1efc7ab1d289fbad65c88c1ce9b4691228c69c9",
+    "source": "https://opengameart.org/content/applause-in-a-large-hall-or-church",
+    "download": "https://opengameart.org/sites/default/files/applause-clapping-church-crowd-immersive.wav",
+    "author": "eXpl0it3r",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "processing": "3.0-4.9 second excerpt, timestamps reset before fades, 1.5x gain, mono 32kHz Vorbis."
+  },
+  "duck": {
+    "file": "owennewo-soft-duck-quack.mp3",
+    "sha256": "5b43a90e3c4c40cc065507ea1b5f22f430af823227e047f597d9e372e81e18cf",
+    "source": "https://freesound.org/people/OwennewO/sounds/719105/",
+    "download": "https://cdn.freesound.org/previews/719/719105_11244040-hq.mp3",
+    "author": "OwennewO",
+    "title": "Soft Duck Quack",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "processing": "Public HQ preview, 4x gain for the naturally quiet recording, peak limited and converted to mono 32kHz Vorbis at its natural pitch."
+  }
+}

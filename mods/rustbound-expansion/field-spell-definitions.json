@@ -1,0 +1,48 @@
+[
+  {
+    "id": "rbxwallop1",
+    "name": "Wallop",
+    "kind": "wallop",
+    "school": "general",
+    "essence": "neutral",
+    "tier": 1,
+    "mana": 18,
+    "cast": 0.75,
+    "duration": 0,
+    "range": 12,
+    "damage": 2,
+    "stats": 0,
+    "description": "Wallops one enemy for 2 base blunt damage and launches it away. Spell power dramatically increases the launch, with a small fixed hop rather than increasing height. Hitting a wall shortly afterward deals another 4 base blunt damage. Damage modifiers apply. Requires no attunement core."
+  },
+  {
+    "id": "rbxcindertrail1",
+    "name": "Cinder Trail",
+    "kind": "cinder",
+    "school": "general",
+    "essence": "neutral",
+    "tier": 1,
+    "mana": 30,
+    "cast": 1,
+    "duration": 20,
+    "range": 0,
+    "damage": 2,
+    "stats": 0,
+    "element": "fire",
+    "description": "For 20 base seconds, walking leaves glowing embers behind you. Each patch lasts 6 seconds and deals 2 base fire damage per second to enemies standing on it. Overlapping patches do not multiply the damage. Never places fire or ignites anything. Requires no attunement core."
+  },
+  {
+    "id": "rbxbreadcrumbs1",
+    "name": "Breadcrumbs",
+    "kind": "breadcrumbs",
+    "school": "general",
+    "essence": "neutral",
+    "tier": 1,
+    "mana": 10,
+    "cast": 0.5,
+    "duration": 1800,
+    "range": 0,
+    "damage": 0,
+    "stats": 0,
+    "description": "For 30 base minutes, walking leaves a private trail of tiny, faintly glowing breads, with the occasional whole loaf. Each casting picks one bread variety for the entire trail. The whole trail remains until the spell ends. Click off the buff or cast again to clear it sooner. The bread cannot be picked up or eaten. Requires no attunement core."
+  }
+]

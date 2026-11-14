@@ -41,3 +41,7 @@ game libraries, external mods, private fixtures, saves, logs and credentials sta
 ## November 6 compatibility release
 
 all sixteen public-layout projects compiled during release preparation. Radio retained one obsolete command-registration warning; the others had no warnings. These outputs are separate checks: every released DLL is retained from the accepted Docker-tested candidate.
+
+## Crooked Codex
+
+Build `mods/rustbound-expansion/RustboundExpansion.csproj` with .NET 10, `GameDir` pointing at your own Vintage Story 1.22.x directory and `RustboundDll` pointing at your separately installed Rustbound Magic 4.0.7 DLL. No vendor binary is bundled. Released installers preserve the tested runtime bytes; portable source builds are separate artifacts.

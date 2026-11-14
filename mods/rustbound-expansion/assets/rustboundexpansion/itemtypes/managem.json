@@ -1,0 +1,33 @@
+{
+  "code": "managem",
+  "class": "RbxManaGem",
+  "maxstacksize": 1,
+  "storageFlags": 1,
+  "shape": {
+    "base": "rustboundexpansion:item/managem"
+  },
+  "textures": {
+    "skin": {
+      "base": "rustboundmagic:items/spells/rbxmanagem1"
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -20,
+      "y": 25,
+      "z": 0
+    },
+    "scale": 2.2
+  },
+  "attributes": {
+    "description": "Hold and use for one second to restore half its conjuration mana cost (50 by default). One usable gem per conjurer; consuming it allows another to be conjured."
+  }
+}

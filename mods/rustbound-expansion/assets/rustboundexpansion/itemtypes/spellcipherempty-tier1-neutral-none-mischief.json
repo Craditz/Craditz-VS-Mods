@@ -1,0 +1,51 @@
+{
+  "code": "spellcipherempty-tier1-neutral-none-mischief",
+  "class": "RbxMischiefCipher",
+  "maxstacksize": 1,
+  "storageFlags": 131073,
+  "attributes": {
+    "spellcipheremptyshelveable": true
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "rustboundmagic:items/spells/spellcipher"
+  },
+  "textures": {
+    "default": {
+      "base": "rustboundmagic:default"
+    },
+    "synthesiscipherskin": {
+      "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+    },
+    "synthesiscipherskindecal": {
+      "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune1"
+    },
+    "icon": {
+      "base": "rustboundmagic:items/spells/rbxhatastrophe1"
+    }
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -85,
+      "y": 0,
+      "z": -45
+    },
+    "scale": 1.5
+  },
+  "groundTransform": {
+    "scale": 2
+  },
+  "tpHandTransform": {
+    "scale": 0.6
+  },
+  "fpHandTransform": {
+    "scale": 0.6
+  }
+}

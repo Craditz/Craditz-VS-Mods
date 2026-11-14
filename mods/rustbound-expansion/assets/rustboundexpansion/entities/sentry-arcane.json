@@ -1,0 +1,83 @@
+{
+  "code": "sentry-arcane",
+  "class": "RbxSentry",
+  "hitboxSize": {
+    "x": 0.7,
+    "y": 1.0
+  },
+  "selectionBoxSize": {
+    "x": 0.7,
+    "y": 1.0
+  },
+  "eyeHeight": 0.8,
+  "attributes": {
+    "creature": true
+  },
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "rustboundexpansion:entity/sentry-arcane"
+    },
+    "textures": {
+      "stone": {
+        "base": "rustboundexpansion:entity/sentry/arcane-stone"
+      },
+      "rune": {
+        "base": "rustboundexpansion:entity/sentry/arcane-rune"
+      },
+      "accent": {
+        "base": "rustboundexpansion:entity/sentry/arcane-accent"
+      },
+      "metal": {
+        "base": "rustboundexpansion:entity/sentry/arcane-metal"
+      },
+      "dark": {
+        "base": "rustboundexpansion:entity/sentry/dark"
+      },
+      "ivory": {
+        "base": "rustboundexpansion:entity/sentry/ivory"
+      },
+      "wood": {
+        "base": "rustboundexpansion:entity/sentry/wood"
+      },
+      "leaf": {
+        "base": "rustboundexpansion:entity/sentry/leaf"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": [
+      {
+        "code": "idle",
+        "animation": "idle",
+        "blendMode": "Add",
+        "animationSpeed": 1,
+        "triggeredBy": {
+          "defaultAnim": true
+        }
+      },
+      {
+        "code": "shoot",
+        "animation": "shoot",
+        "blendMode": "Add",
+        "animationSpeed": 1.5,
+        "easeInSpeed": 30,
+        "easeOutSpeed": 20,
+        "weight": 1
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "health",
+        "currenthealth": 30,
+        "maxhealth": 30
+      }
+    ]
+  }
+}

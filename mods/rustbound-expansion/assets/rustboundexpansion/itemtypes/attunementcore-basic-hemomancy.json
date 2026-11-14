@@ -1,0 +1,107 @@
+{
+  "code": "attunementcore-basic-hemomancy",
+  "class": "RbxBloodCore",
+  "enabled": true,
+  "maxstacksize": 1,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    },
+    {
+      "name": "CollectibleBehaviorMagicEquipStatsDisplayRM"
+    },
+    {
+      "name": "CollectibleBehaviorWearableSoulbindRM"
+    },
+    {
+      "name": "RbxBloodCoreTooltip"
+    }
+  ],
+  "shape": {
+    "base": "rustboundmagic:entities/humanoids/emblem/attunementcore-evocation"
+  },
+  "textures": {
+    "seraph": {
+      "base": "game:block/transparent"
+    },
+    "default": {
+      "base": "rustboundmagic:default"
+    },
+    "material1": {
+      "base": "rustboundexpansion:item/attunementcore-sanguine"
+    },
+    "outerenergy": {
+      "base": "rustboundexpansion:item/attunementcore-sanguine"
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "attributes": {
+    "clothescategory": "emblem",
+    "wearableAttachment": true,
+    "warmth": 0,
+    "manacostforsoulbinding": 50,
+    "magicStatModifiers": {},
+    "description": "Enables tier 2 Hemomancy and reduces health costs by 10%.",
+    "onDisplayTransform": {
+      "translation": {
+        "x": 1.2,
+        "y": -0.44,
+        "z": 0.01
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 90
+      }
+    },
+    "groundStorageTransform": {
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 0.5
+    }
+  },
+  "renderAlphaTest": 0.25,
+  "heldTpUseAnimation": "interactstatic",
+  "guiTransform": {
+    "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 6
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": 0.85,
+      "y": -0.43,
+      "z": -0.37
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": -180
+    },
+    "origin": {
+      "x": 4.15,
+      "y": 1.22,
+      "z": 0.52
+    },
+    "scale": 1.47
+  }
+}

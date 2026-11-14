@@ -1,0 +1,19 @@
+{
+  "ingredientPattern": "FFF\tFMF\tFFF",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "F": {
+      "type": "item",
+      "code": "game:flaxfibers"
+    },
+    "M": {
+      "type": "item",
+      "code": "rustboundexpansion:travelmark"
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "rustboundexpansion:markbag"
+  }
+}

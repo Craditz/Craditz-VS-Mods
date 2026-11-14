@@ -154,3 +154,20 @@ for earlier contributions. Obtain a specific new grant only where necessary,
 or omit the affected material. An earlier MIT-licensed file, for example,
 does not lose the permissions already granted to its recipients merely because
 the surrounding project later uses a different license.
+
+## Crooked Codex
+
+The addon requires separately installed Rustbound Magic by Vies. No Rustbound
+binary, source or art is bundled. Original addon code and original geometry/art
+remain distinct from the third-party media described in the mod's retained
+`CREDITS.md`, `scripts/icon-sources.json` and `audio-sources/*.json`.
+
+World of Warcraft icons retain Blizzard Entertainment copyright; the retained
+source metadata identifies Wowhead URLs and hashes. User-supplied audio and the
+CC0 applause/duck sources retain their original attribution and source records.
+The Holy Hand Grenade's user-requested Worms Hallelujah clip retains Team17
+copyright. The source mirror provides no redistribution license and public
+redistribution rights remain unverified, as the unchanged original credits state.
+Inclusion does not grant project ownership or relicense any third-party portion.
+Raw recordings, full-resolution source art, game libraries and private test inputs
+are not exported; selected released runtime assets retain their existing notices.

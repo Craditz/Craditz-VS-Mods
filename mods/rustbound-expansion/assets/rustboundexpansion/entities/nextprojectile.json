@@ -1,0 +1,43 @@
+{
+  "code": "nextprojectile",
+  "class": "RbxNextProjectile",
+  "hitboxSize": {
+    "x": 0.15,
+    "y": 0.15
+  },
+  "selectionBoxSize": {
+    "x": 0.15,
+    "y": 0.15
+  },
+  "eyeHeight": 0,
+  "attributes": {
+    "creature": false
+  },
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "rustboundexpansion:entity/magicprojectile"
+    },
+    "textures": {
+      "skin": {
+        "base": "rustboundexpansion:entity/skin"
+      },
+      "eyes": {
+        "base": "rustboundexpansion:entity/eyes"
+      },
+      "portal": {
+        "base": "rustboundexpansion:entity/portal"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": []
+  },
+  "server": {
+    "behaviors": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "code": "holygrenade",
+  "class": "RbxHolyGrenade",
+  "tags": [
+    "inanimate",
+    "projectile"
+  ],
+  "hitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "eyeHeight": 0,
+  "drops": [],
+  "attributes": {
+    "creature": false,
+    "physics": {
+      "groundDragFactor": 0.7,
+      "airDragFactor": 0.25,
+      "waterDragFactor": 1
+    }
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "rustboundexpansion:item/holygrenade-armed"
+    },
+    "textures": {
+      "gold": {
+        "base": "rustboundexpansion:grenade/gold"
+      },
+      "band": {
+        "base": "rustboundexpansion:grenade/band"
+      },
+      "jewel": {
+        "base": "rustboundexpansion:grenade/jewel"
+      },
+      "silver": {
+        "base": "rustboundexpansion:grenade/silver"
+      },
+      "white": {
+        "base": "rustboundexpansion:grenade/white"
+      }
+    },
+    "size": 0.7,
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      }
+    ]
+  }
+}

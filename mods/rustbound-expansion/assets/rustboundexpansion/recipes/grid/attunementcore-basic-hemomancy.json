@@ -1,0 +1,27 @@
+{
+  "ingredientPattern": "CB",
+  "width": 2,
+  "height": 1,
+  "shapeless": true,
+  "ingredients": {
+    "C": {
+      "type": "item",
+      "code": "rustboundmagic:attunementcore-basic-*",
+      "name": "school",
+      "allowedVariants": [
+        "evocation",
+        "alteration",
+        "incantation",
+        "conjuration"
+      ]
+    },
+    "B": {
+      "type": "item",
+      "code": "game:bandage-clean"
+    }
+  },
+  "output": {
+    "type": "item",
+    "code": "rustboundexpansion:attunementcore-basic-hemomancy"
+  }
+}

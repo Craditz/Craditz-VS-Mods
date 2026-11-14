@@ -1,0 +1,6009 @@
+[
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "move",
+    "fromPath": "/texturesByType/*",
+    "path": "/texturesByType/__rbx_preserved_default"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "move",
+    "fromPath": "/texturesByType/*",
+    "path": "/texturesByType/__rbx_preserved_default"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "move",
+    "fromPath": "/texturesByType/*",
+    "path": "/texturesByType/__rbx_preserved_default"
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxresonance1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxresonance1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxresonance1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxresonance1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxresonance1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxresonance1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxresonance1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbrittlesigil1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbrittlesigil1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbrittlesigil1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbrittlesigil1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbrittlesigil1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbrittlesigil1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbrittlesigil1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxarclightning1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxarclightning1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxarclightning1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxarclightning1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxarclightning1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxarclightning1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxarclightning1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxburstofspeed1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxburstofspeed1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxburstofspeed1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxburstofspeed1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxburstofspeed1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxburstofspeed1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxburstofspeed1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbloodoath1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodoath1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbloodoath1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodoath1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbloodoath1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodoath1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbloodoath1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbanish1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbanish1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbanish1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbanish1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbanish1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbanish1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbanish1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxunstableplague1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxunstableplague1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxunstableplague1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxunstableplague1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxunstableplague1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxunstableplague1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxunstableplague1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxlightningbolt1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlightningbolt1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxlightningbolt1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlightningbolt1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxlightningbolt1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlightningbolt1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxlightningbolt1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxarmageddon1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxarmageddon1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxarmageddon1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxarmageddon1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxarmageddon1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxarmageddon1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxarmageddon1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxmanagem1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmanagem1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxmanagem1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmanagem1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxmanagem1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmanagem1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxmanagem1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxlivingbomb1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlivingbomb1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxlivingbomb1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlivingbomb1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxlivingbomb1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlivingbomb1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxlivingbomb1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxmark1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxmark1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxmark1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxmark1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxteleport1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxteleport1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxteleport1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxteleport1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxteleport1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxteleport1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxteleport1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxgatetravel1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxgatetravel1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxgatetravel1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxgatetravel1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxgatetravel1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxgatetravel1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxgatetravel1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxtwowaygate1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxtwowaygate1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxtwowaygate1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxtwowaygate1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxtwowaygate1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxtwowaygate1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxtwowaygate1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxconjurecannonball1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurecannonball1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxconjurecannonball1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurecannonball1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxconjurecannonball1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurecannonball1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxconjurecannonball1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxconjurebullet1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurebullet1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxconjurebullet1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurebullet1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxconjurebullet1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurebullet1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxconjurebullet1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxblizzard1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxblizzard1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxblizzard1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxblizzard1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxblizzard1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxblizzard1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxblizzard1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxstarfall1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxstarfall1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxstarfall1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-evocation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxstarfall1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxstarfall1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxstarfall1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxstarfall1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentryrust1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryrust1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentryrust1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryrust1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentryrust1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryrust1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentryrust1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentryfire1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryfire1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentryfire1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryfire1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentryfire1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryfire1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentryfire1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentrywater1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrywater1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentrywater1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrywater1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentrywater1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrywater1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentrywater1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentrywind1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrywind1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentrywind1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrywind1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentrywind1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrywind1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentrywind1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentryearth1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryearth1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentryearth1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryearth1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentryearth1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryearth1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentryearth1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentrylightning1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrylightning1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentrylightning1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrylightning1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentrylightning1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrylightning1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentrylightning1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentryfrost1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryfrost1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentryfrost1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryfrost1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentryfrost1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryfrost1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentryfrost1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentrynature1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrynature1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentrynature1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrynature1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentrynature1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentrynature1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentrynature1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentryarcane1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryarcane1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentryarcane1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryarcane1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentryarcane1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryarcane1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentryarcane1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsentryrock1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryrock1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsentryrock1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryrock1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsentryrock1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsentryrock1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsentryrock1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxseekingspark1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxseekingspark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxseekingspark1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxseekingspark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxseekingspark1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxseekingspark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxseekingspark1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxricochetpebble1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxricochetpebble1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxricochetpebble1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxricochetpebble1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxricochetpebble1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxricochetpebble1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxricochetpebble1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxdryspell1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxdryspell1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxdryspell1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxdryspell1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxdryspell1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxdryspell1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxdryspell1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxreturningorb1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxreturningorb1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxreturningorb1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxreturningorb1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxreturningorb1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxreturningorb1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxreturningorb1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxcinderwisps1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcinderwisps1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxcinderwisps1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcinderwisps1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxcinderwisps1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcinderwisps1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxcinderwisps1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxconjurebuckshot1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurebuckshot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxconjurebuckshot1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurebuckshot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxconjurebuckshot1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjurebuckshot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxconjurebuckshot1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxstarshot1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxstarshot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxstarshot1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxstarshot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxstarshot1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxstarshot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxstarshot1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxprayerofmending1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxprayerofmending1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxprayerofmending1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxprayerofmending1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxprayerofmending1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxprayerofmending1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxprayerofmending1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxlifegrip1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlifegrip1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxlifegrip1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlifegrip1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxlifegrip1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxlifegrip1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxlifegrip1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxmendingcircle1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmendingcircle1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxmendingcircle1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmendingcircle1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxmendingcircle1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxmendingcircle1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxmendingcircle1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxpartyfoul1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxpartyfoul1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxpartyfoul1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-incantation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxpartyfoul1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxpartyfoul1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxpartyfoul1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxpartyfoul1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsnapcast1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsnapcast1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsnapcast1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-incantation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsnapcast1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsnapcast1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsnapcast1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsnapcast1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxfurtivecaster1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxfurtivecaster1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxfurtivecaster1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxfurtivecaster1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxfurtivecaster1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxfurtivecaster1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxfurtivecaster1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxallin1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxallin1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxallin1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-incantation"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxallin1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxallin1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxallin1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxallin1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxspiteblast1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxspiteblast1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxspiteblast1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxspiteblast1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxspiteblast1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxspiteblast1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxspiteblast1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsqueakysteps1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsqueakysteps1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsqueakysteps1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsqueakysteps1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsqueakysteps1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsqueakysteps1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsqueakysteps1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxunsolicitedapplause1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxunsolicitedapplause1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxunsolicitedapplause1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxunsolicitedapplause1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxunsolicitedapplause1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxunsolicitedapplause1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxunsolicitedapplause1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxconjureleaf1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjureleaf1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxconjureleaf1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjureleaf1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxconjureleaf1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxconjureleaf1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxconjureleaf1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxsuspiciousduck1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsuspiciousduck1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxsuspiciousduck1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsuspiciousduck1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxsuspiciousduck1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxsuspiciousduck1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxsuspiciousduck1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxdramaticentrance1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxdramaticentrance1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxdramaticentrance1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxdramaticentrance1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxdramaticentrance1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxdramaticentrance1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxdramaticentrance1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxhatastrophe1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxhatastrophe1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxhatastrophe1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxhatastrophe1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxhatastrophe1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxhatastrophe1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxhatastrophe1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxpocketweather1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxpocketweather1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxpocketweather1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxpocketweather1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxpocketweather1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxpocketweather1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxpocketweather1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxheatitem1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxheatitem1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxheatitem1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxheatitem1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxheatitem1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxheatitem1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxheatitem1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxhothands1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxhothands1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxhothands1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxhothands1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxhothands1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxhothands1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxhothands1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbloodletting1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodletting1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbloodletting1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodletting1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbloodletting1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodletting1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbloodletting1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxtransfusion1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxtransfusion1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxtransfusion1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxtransfusion1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxtransfusion1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxtransfusion1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxtransfusion1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxclot1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxclot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxclot1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxclot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxclot1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxclot1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxclot1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbloodscent1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodscent1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbloodscent1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodscent1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbloodscent1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodscent1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbloodscent1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbloodmissiles1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodmissiles1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbloodmissiles1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodmissiles1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbloodmissiles1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbloodmissiles1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbloodmissiles1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxcrimsonaegis1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcrimsonaegis1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxcrimsonaegis1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcrimsonaegis1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxcrimsonaegis1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcrimsonaegis1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxcrimsonaegis1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxredharvest1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxredharvest1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxredharvest1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxredharvest1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxredharvest1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxredharvest1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxredharvest1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxopenwound1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxopenwound1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxopenwound1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxopenwound1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxopenwound1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxopenwound1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxopenwound1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxexsanguinate1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxexsanguinate1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxexsanguinate1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-3"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxexsanguinate1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxexsanguinate1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxexsanguinate1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxexsanguinate1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxheartburst1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxheartburst1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxheartburst1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-3"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxheartburst1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxheartburst1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxheartburst1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxheartburst1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxcrimsonhost1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcrimsonhost1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-dark"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxcrimsonhost1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-hemomancy"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-3"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcrimsonhost1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxcrimsonhost1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcrimsonhost1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-dark-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxcrimsonhost1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbulwark1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbulwark1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbulwark1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbulwark1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbulwark2"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark2",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbulwark2"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark2",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbulwark2"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark2",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbulwark2"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbulwark3"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark3",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbulwark3"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-alteration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-3"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark3",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbulwark3"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbulwark3",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbulwark3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxholyhandgrenade1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxholyhandgrenade1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-light"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxholyhandgrenade1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-conjuration"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-2"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxholyhandgrenade1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxholyhandgrenade1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxholyhandgrenade1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-light-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxholyhandgrenade1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxwallop1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxwallop1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxwallop1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxwallop1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxwallop1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxwallop1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxwallop1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxcindertrail1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcindertrail1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxcindertrail1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcindertrail1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxcindertrail1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxcindertrail1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxcindertrail1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxbreadcrumbs1"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbreadcrumbs1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "manastone": {
+        "base": "rustboundmagic:items/grimoire/cover-neutral"
+      },
+      "bolt": {
+        "base": "game:block/metal/plate/silver"
+      },
+      "gold": {
+        "base": "game:block/metal/plate/gold"
+      },
+      "cover": {
+        "base": "rustboundmagic:items/grimoire/cover-generic"
+      },
+      "pages": {
+        "base": "rustboundmagic:items/grimoire/inner-pages"
+      },
+      "coverdecal": {
+        "base": "rustboundmagic:items/spells/rbxbreadcrumbs1"
+      },
+      "coverdecalschoolsymbol": {
+        "base": "rustboundmagic:items/grimoire/schoolsymbol-general"
+      },
+      "coverdecaltiersymbol": {
+        "base": "rustboundmagic:items/grimoire/tiersymbol-1"
+      },
+      "coverdecaltiersymbolshaded": {
+        "base": "rustboundmagic:color-black"
+      },
+      "coverdecalshaded": {
+        "base": "rustboundmagic:color-black"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbreadcrumbs1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "icon": {
+        "base": "rustboundmagic:items/spells/rbxbreadcrumbs1"
+      },
+      "synthesiscipherskindecal": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-spellrune3"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/texturesByType/*-rbxbreadcrumbs1",
+    "value": {
+      "default": {
+        "base": "rustboundmagic:default"
+      },
+      "synthesiscipherskin": {
+        "base": "rustboundmagic:items/synthesis/cipher/cipher-neutral-main"
+      },
+      "spellicon": {
+        "base": "rustboundmagic:items/spells/rbxbreadcrumbs1"
+      }
+    }
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxburstfatigue"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxburstfatigue"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxburstfatigue"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxburstfatigue"
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxrecentlylifegripped"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxrecentlylifegripped"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxrecentlylifegripped"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxrecentlylifegripped"
+  },
+  {
+    "file": "rustboundmagic:worldproperties/abstract/spelltype.json",
+    "op": "add",
+    "path": "/variants/-",
+    "value": {
+      "code": "rbxpartyfoulcooldown"
+    }
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxpartyfoulcooldown"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxpartyfoulcooldown"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-rbxpartyfoulcooldown"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/grimoire.json",
+    "op": "move",
+    "fromPath": "/texturesByType/__rbx_preserved_default",
+    "path": "/texturesByType/*"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipher.json",
+    "op": "move",
+    "fromPath": "/texturesByType/__rbx_preserved_default",
+    "path": "/texturesByType/*"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/toolspellscroll.json",
+    "op": "move",
+    "fromPath": "/texturesByType/__rbx_preserved_default",
+    "path": "/texturesByType/*"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipherempty.json",
+    "op": "add",
+    "path": "/variantgroups/2/states/-",
+    "value": "hemomancy"
+  },
+  {
+    "file": "rustboundmagic:itemtypes/spells/spellcipherempty.json",
+    "op": "add",
+    "path": "/skipVariants/-",
+    "value": "*-tier1-*-hemomancy"
+  }
+]

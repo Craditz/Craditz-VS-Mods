@@ -1,0 +1,61 @@
+{
+  "code": "grenadepin",
+  "class": "RbxGrenadePin",
+  "tags": [
+    "inanimate",
+    "projectile"
+  ],
+  "hitboxSize": {
+    "x": 0.06,
+    "y": 0.08
+  },
+  "eyeHeight": 0,
+  "drops": [],
+  "attributes": {
+    "creature": false,
+    "physics": {
+      "groundDragFactor": 0.7,
+      "airDragFactor": 0.25,
+      "waterDragFactor": 1
+    }
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "rustboundexpansion:entity/grenadepin"
+    },
+    "textures": {
+      "gold": {
+        "base": "rustboundexpansion:grenade/gold"
+      },
+      "band": {
+        "base": "rustboundexpansion:grenade/band"
+      },
+      "jewel": {
+        "base": "rustboundexpansion:grenade/jewel"
+      },
+      "silver": {
+        "base": "rustboundexpansion:grenade/silver"
+      },
+      "white": {
+        "base": "rustboundexpansion:grenade/white"
+      }
+    },
+    "size": 0.6,
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      }
+    ]
+  }
+}

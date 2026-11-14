@@ -1,0 +1,73 @@
+{
+  "code": "bloodgoober",
+  "class": "RbxBloodGoober",
+  "hitboxSize": {
+    "x": 0.7,
+    "y": 0.95
+  },
+  "selectionBoxSize": {
+    "x": 0.7,
+    "y": 0.95
+  },
+  "eyeHeight": 0.5,
+  "attributes": {
+    "creature": true
+  },
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "rustboundexpansion:entity/bloodgoober"
+    },
+    "textures": {
+      "blood": {
+        "base": "rustboundexpansion:blood/blood"
+      },
+      "rim": {
+        "base": "rustboundexpansion:blood/rim"
+      },
+      "eye": {
+        "base": "rustboundexpansion:blood/eye"
+      },
+      "dark": {
+        "base": "rustboundexpansion:blood/dark"
+      },
+      "gold": {
+        "base": "rustboundexpansion:blood/gold"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "controlledphysics",
+        "stepHeight": 2.1251
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": [
+      {
+        "code": "attack",
+        "animation": "attack",
+        "blendMode": "Add",
+        "animationSpeed": 1.5,
+        "easeInSpeed": 30,
+        "easeOutSpeed": 20,
+        "weight": 1
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "controlledphysics",
+        "stepHeight": 2.1251
+      },
+      {
+        "code": "health",
+        "currenthealth": 20,
+        "maxhealth": 20
+      }
+    ]
+  }
+}

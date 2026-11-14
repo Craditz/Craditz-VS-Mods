@@ -1,0 +1,148 @@
+{
+  "code": "travelmark",
+  "class": "RbxTravelMark",
+  "maxstacksize": 1,
+  "storageFlags": 257,
+  "shape": {
+    "base": "rustboundexpansion:item/travelmark"
+  },
+  "textures": {
+    "skin": {
+      "base": "rustboundexpansion:entity/skin"
+    },
+    "rune": {
+      "base": "rustboundexpansion:entity/skin"
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -55,
+      "y": 25,
+      "z": -15
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.2,
+      "z": 0.5
+    },
+    "scale": 2.2
+  },
+  "attributes": {
+    "description": "A dark recall stone with an ankh-like rune. The symbol is gold when blank and gains its destination color when marked. Hold in your offhand for Mark, Teleport and gate spells. Does not stack. Sneak-right-click to place up to four per block. Rename with /rune name <name>; /rune clearname resets the name (offhand first).",
+    "groundStorageTransform": {
+      "translation": {
+        "x": 0,
+        "y": 0.004,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0,
+        "z": 0.5
+      },
+      "scale": 0.65
+    },
+    "travelCastTransform": {
+      "translation": {
+        "x": -1.5,
+        "y": -1.6,
+        "z": -1.4
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "scale": 1
+    }
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.95,
+      "y": -0.11,
+      "z": -0.85
+    },
+    "rotation": {
+      "x": 0,
+      "y": -89,
+      "z": 5
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.16,
+      "z": 0.5
+    },
+    "scale": 0.61
+  },
+  "tpOffHandTransform": {
+    "translation": {
+      "x": -0.95,
+      "y": -0.11,
+      "z": -0.85
+    },
+    "rotation": {
+      "x": 0,
+      "y": -89,
+      "z": 5
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.16,
+      "z": 0.5
+    },
+    "scale": 0.61
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0.012,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 25,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 2
+  },
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Quadrants",
+        "placeRemoveSound": "game:sounds/player/build",
+        "collisionBox": {
+          "x1": 0,
+          "y1": 0,
+          "z1": 0,
+          "x2": 1,
+          "y2": 0.2,
+          "z2": 1
+        }
+      }
+    }
+  ]
+}

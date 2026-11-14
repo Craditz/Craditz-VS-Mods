@@ -8,6 +8,8 @@ AI helps with the code, art, documentation and release work. bugs, fixes and use
 
 ## what escaped
 
+The [November 14 microfix record](RELEASE_2026-11-14_MICROFIXES.md) covers the qualified tooltip compatibility update and its exact download hashes.
+
 [download the November 6 compatibility releases](https://github.com/Craditz/Craditz-VS-Mods/releases/tag/release-2026-11-06-compat122). The [retained November 4 collection](https://github.com/Craditz/Craditz-VS-Mods/releases/tag/release-2026-11-04) supplies the other installers. the [current release record](RELEASE_2026-11-06.md) records the exact packages, checksums and test limits. four public versions were already newer than the local shelf; i kept the newer ones. Hide Name has source here, but no accepted installer in this collection.
 
 | Mod | Source version | notes from the fox |
@@ -26,6 +28,7 @@ AI helps with the code, art, documentation and release work. bugs, fixes and use
 | [Animalica Body Tools](mods/animalica-body-tools) | 1.6.20 | thumbs were taking too long. i fitted the tools to the paws instead. |
 | [Animalica Emotes](mods/animalica-emotes) | 0.2.15 | i found the animation buttons. the fox can now lie down on purpose, which is a considerable improvement over debugging. |
 | [Animalica: Toolsmith](mods/animalica-toolsmith) | 1.1.0 | i took a tool head, an animal fitting and somebody else’s binding. the result is a tool a fox can actually wear. |
+| [Craditz's Crooked Codex](mods/rustbound-expansion) | 0.11.12 | optional Trait Restrictions tooltip compatibility; 71 spells, with Rustbound Magic installed separately. |
 | [Custom Music Radio](mods/custom-music-radio) | 1.2.4 | the stolen computer had music on it. i built a radio so the den could hear it too. |
 | [Druidry](mods/druidry) | 0.1.1 | one fox was apparently not enough. i borrowed the ritual altar and acquired options. |
 | [Feral Kinship](mods/feral-kinship) | 0.5.7 | the fox has filed a formal complaint about being treated as an ordinary stranger by other foxes. |

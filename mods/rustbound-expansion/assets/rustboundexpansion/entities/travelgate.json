@@ -1,0 +1,43 @@
+{
+  "code": "travelgate",
+  "class": "RbxTravelGate",
+  "hitboxSize": {
+    "x": 1.2,
+    "y": 2.2
+  },
+  "selectionBoxSize": {
+    "x": 1.2,
+    "y": 2.2
+  },
+  "eyeHeight": 0,
+  "attributes": {
+    "creature": false
+  },
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "rustboundexpansion:entity/travelgate"
+    },
+    "textures": {
+      "skin": {
+        "base": "rustboundexpansion:entity/skin"
+      },
+      "eyes": {
+        "base": "rustboundexpansion:entity/eyes"
+      },
+      "portal": {
+        "base": "rustboundexpansion:entity/portal"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": []
+  },
+  "server": {
+    "behaviors": []
+  }
+}

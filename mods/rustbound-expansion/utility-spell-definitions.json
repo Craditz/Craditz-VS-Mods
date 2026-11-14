@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rbxheatitem1",
+    "name": "Heat Item",
+    "school": "general",
+    "essence": "neutral",
+    "tier": 1,
+    "mana": 10,
+    "cast": 2,
+    "duration": 0,
+    "range": 0,
+    "damage": 0,
+    "stats": 100,
+    "kind": "heatitem",
+    "description": "Select an item from your inventory to add 100 C of heat, shared across the entire stack and increased by potency. Stops below its melting point. Ordinary loose stones can be heated to 600 C. Canceling costs nothing. Throw loose stones at least 100 C hot normally: their native damage becomes fire, plus 1 damage per 100 C up to 600 C. Hotter stones make bigger harmless impact pops. Hot stones break on terrain impact."
+  },
+  {
+    "id": "rbxhothands1",
+    "name": "Hot Hands",
+    "school": "general",
+    "essence": "neutral",
+    "tier": 1,
+    "mana": 15,
+    "cast": 2,
+    "duration": 300,
+    "range": 16,
+    "damage": 0,
+    "stats": 0,
+    "kind": "hothands",
+    "description": "Safely handle heated metal and other hot items for 5 minutes, preventing their forced drop and contact burn. Casts on an ally player or yourself. Does not protect against other fire damage."
+  }
+]
