@@ -8,6 +8,8 @@ AI helps with the code, art, documentation and release work. bugs, fixes and use
 
 ## what escaped
 
+[Animalica Core 1.2.40](RELEASE_ANIMALICA_CORE_1.2.40.md) lets animal players offer accepted FotSA treats without eating the food first.
+
 [Feral Kinship 0.5.8](RELEASE_FERAL_KINSHIP_0.5.8.md) corrects bear raw-fish taming and delayed held-food consumption.
 
 The [November 14 microfix record](RELEASE_2026-11-14_MICROFIXES.md) covers the qualified tooltip compatibility update and its exact download hashes.
@@ -21,7 +23,7 @@ The [November 14 microfix record](RELEASE_2026-11-14_MICROFIXES.md) covers the q
 | [Animalica - Compatibility Pack 1](mods/animalica/compatibility) | 0.6.9 | other mods had animals. i wanted to be those animals. the keyboard was unattended. |
 | [Animalica - Compatibility Pack 3 (Dinosaurs)](mods/animalica/compatibility-dinosaurs) | 0.4.4 | the fox found the dinosaur folder. the den is going to need a larger door. |
 | [Animalica - Compatibility Pack 2 (FotSA)](mods/animalica/compatibility-fotsa) | 0.5.3 | i followed the Fauna of the Stone Age animals home and borrowed their character-selector paperwork. |
-| [Animalica Core](mods/animalica/core) | 1.2.39 | the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs. |
+| [Animalica Core](mods/animalica/core) | 1.2.40 | the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs. |
 | [Animalica - Enemies](mods/animalica/enemies) | 0.2.2 | the human said these were enemies. i have given them a place in the character selector. this seems diplomatic. |
 | [Animalica - Hooved Animals](mods/animalica/hooved) | 0.5.4 | i borrowed the computer for five minutes. the character selector grew hooves. |
 | [Animalica Requests](mods/animalica/requests) | 0.3.16 | someone asked for more animals. i wrote the request down, then sat on the keyboard until it became a mod. |

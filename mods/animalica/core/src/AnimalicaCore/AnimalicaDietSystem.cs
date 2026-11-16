@@ -335,6 +335,7 @@ public sealed class AnimalicaDietSystem : ModSystem
         ItemSlot slot,
         EntityAgent byEntity,
         BlockSelection? blockSel,
+        EntitySelection? entitySel,
         EnumHandInteract useType,
         bool firstEvent,
         out HeldUseInteractionState __state)
@@ -363,8 +364,15 @@ public sealed class AnimalicaDietSystem : ModSystem
         // An explicit modified target use belongs to placement/storage/feeding,
         // including a failed attempt. Let vanilla validate and consume it;
         // never fall back to eating when placement fails or is cancelled.
+        // Edible animal foods would otherwise claim held use before the engine
+        // dispatches the selected pet's entity interaction. Keep that attempted
+        // feeding (including cooldown/stage rejection) out of the eating fallback.
+        // Match the behavior contract instead of taking a hard PetAI dependency.
+        bool petFeeding = entitySel?.Entity?.SidedProperties?.Behaviors
+            .Any(behavior => behavior.PropertyName() == "tameable") == true;
         bool scope = dietFood
-            && (blockSel?.Position != null && player.Controls.ShiftKey
+            && (petFeeding
+                || blockSel?.Position != null && player.Controls.ShiftKey
                 || nutritionEnabled && !string.IsNullOrWhiteSpace(whitelistAttribute));
         if (scope)
         {
@@ -375,7 +383,7 @@ public sealed class AnimalicaDietSystem : ModSystem
         {
             system.api?.Logger.Notification(
                 "[AnimalicaCore][DietUseTrace] held-use item={0}; class={1}; use={2}; target={3}; " +
-                "whitelistAttribute={4}; dietFood={5}; nutritionEnabled={6}; scope={7}.",
+                "whitelistAttribute={4}; dietFood={5}; nutritionEnabled={6}; scope={7}; entityTarget={8}; petFeeding={9}.",
                 slot.Itemstack.Collectible.Code?.ToString() ?? "<unknown>",
                 __instance.GetType().FullName ?? __instance.GetType().Name,
                 useType,
@@ -383,7 +391,9 @@ public sealed class AnimalicaDietSystem : ModSystem
                 whitelistAttribute ?? "<none>",
                 dietFood,
                 nutritionEnabled,
-                scope
+                scope,
+                entitySel?.Entity?.Code?.ToString() ?? "<none>",
+                petFeeding
             );
         }
 

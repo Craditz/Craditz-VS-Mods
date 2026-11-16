@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.2.39</Version>
-    <InformationalVersion>1.2.39-grazer-preview.1</InformationalVersion>
+    <Version>1.2.40</Version>
+    <InformationalVersion>1.2.40-petfeeding-preview.1</InformationalVersion>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <Deterministic>true</Deterministic>
     <DebugType>portable</DebugType>

@@ -1,0 +1,7 @@
+Animalica Core 1.2.40
+=====================
+
+- Animalica-added diet foods now prioritize a selected tameable animal's native feeding interaction. This corrects edible raw meat being eaten by an animal player before FotSA taming receives the use.
+- Native food eligibility, adult/juvenile rules, ownership, progress and cooldown remain authoritative. Rejected attempts with these managed diet foods do not fall through into player eating.
+- Ordinary eating while looking away remains available. Ordinary vanilla foods outside Core's diet overrides retain their existing behavior.
+- Preserves Core 1.2.39's grazer construction and eating lifecycle correction. No model, diet value or runtime asset changes.
