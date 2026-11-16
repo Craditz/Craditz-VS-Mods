@@ -1,0 +1,3 @@
+Animalica Requests 0.3.17
+
+Updated the icon shown in the Vintage Story Mods menu.

@@ -2,7 +2,7 @@
   "type": "content",
   "name": "Animalica - Small & Odd",
   "modid": "animalicasmallodd",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "the large animals were taking up the doorway. i brought in the small and odd ones through the window. small animals and unusual body plans for PlayerModelLib. version 0.5.5 includes the accepted salmon and grouped-selector remap work. each body keeps its own supported Animalica profile.",
   "authors": [
     "Craditz"

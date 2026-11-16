@@ -8,6 +8,8 @@ AI helps with the code, art, documentation and release work. bugs, fixes and use
 
 ## what escaped
 
+[Animalica icon update](RELEASE_ANIMALICA_ICONS_2026-11-16.md) gives the packs a new shared icon and Toolsmith its own artwork.
+
 [Animalica Core 1.2.40](RELEASE_ANIMALICA_CORE_1.2.40.md) lets animal players offer accepted FotSA treats without eating the food first.
 
 [Feral Kinship 0.5.8](RELEASE_FERAL_KINSHIP_0.5.8.md) corrects bear raw-fish taming and delayed held-food consumption.
@@ -18,20 +20,20 @@ The [November 14 microfix record](RELEASE_2026-11-14_MICROFIXES.md) covers the q
 
 | Mod | Source version | notes from the fox |
 | --- | --- | --- |
-| [Animalica - Bears](mods/animalica/bears) | 0.5.4 | the fox opened the door and five bears arrived. they are in the character selector now. please take this up with them. |
-| [Animalica - Foxes, Wolves & Hyenas](mods/animalica/canids) | 0.6.8 | i found the character selector. it has foxes now. also wolves and hyenas; they followed me in. |
-| [Animalica - Compatibility Pack 1](mods/animalica/compatibility) | 0.6.9 | other mods had animals. i wanted to be those animals. the keyboard was unattended. |
-| [Animalica - Compatibility Pack 3 (Dinosaurs)](mods/animalica/compatibility-dinosaurs) | 0.4.4 | the fox found the dinosaur folder. the den is going to need a larger door. |
-| [Animalica - Compatibility Pack 2 (FotSA)](mods/animalica/compatibility-fotsa) | 0.5.3 | i followed the Fauna of the Stone Age animals home and borrowed their character-selector paperwork. |
-| [Animalica Core](mods/animalica/core) | 1.2.40 | the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs. |
-| [Animalica - Enemies](mods/animalica/enemies) | 0.2.2 | the human said these were enemies. i have given them a place in the character selector. this seems diplomatic. |
-| [Animalica - Hooved Animals](mods/animalica/hooved) | 0.5.4 | i borrowed the computer for five minutes. the character selector grew hooves. |
-| [Animalica Requests](mods/animalica/requests) | 0.3.16 | someone asked for more animals. i wrote the request down, then sat on the keyboard until it became a mod. |
-| [Animalica - Small & Odd](mods/animalica/small-odd) | 0.5.5 | the large animals were taking up the doorway. i brought in the small and odd ones through the window. |
-| [Animalica Abilities](mods/animalica-abilities) | 0.3.4 | the human left a keyboard within pouncing distance. i have also acquired scent trails and Night Sight. |
+| [Animalica - Bears](mods/animalica/bears) | 0.5.5 | the fox opened the door and five bears arrived. they are in the character selector now. please take this up with them. |
+| [Animalica - Foxes, Wolves & Hyenas](mods/animalica/canids) | 0.6.9 | i found the character selector. it has foxes now. also wolves and hyenas; they followed me in. |
+| [Animalica - Compatibility Pack 1](mods/animalica/compatibility) | 0.6.10 | other mods had animals. i wanted to be those animals. the keyboard was unattended. |
+| [Animalica - Compatibility Pack 3 (Dinosaurs)](mods/animalica/compatibility-dinosaurs) | 0.4.5 | the fox found the dinosaur folder. the den is going to need a larger door. |
+| [Animalica - Compatibility Pack 2 (FotSA)](mods/animalica/compatibility-fotsa) | 0.5.5 | i followed the Fauna of the Stone Age animals home and borrowed their character-selector paperwork. |
+| [Animalica Core](mods/animalica/core) | 1.2.41 | the fox has paws in the settings. Animalica Core keeps the shared traits, diets, presets and model handling together; the animal bodies live in their own packs. |
+| [Animalica - Enemies](mods/animalica/enemies) | 0.2.3 | the human said these were enemies. i have given them a place in the character selector. this seems diplomatic. |
+| [Animalica - Hooved Animals](mods/animalica/hooved) | 0.5.5 | i borrowed the computer for five minutes. the character selector grew hooves. |
+| [Animalica Requests](mods/animalica/requests) | 0.3.17 | someone asked for more animals. i wrote the request down, then sat on the keyboard until it became a mod. |
+| [Animalica - Small & Odd](mods/animalica/small-odd) | 0.5.6 | the large animals were taking up the doorway. i brought in the small and odd ones through the window. |
+| [Animalica Abilities](mods/animalica-abilities) | 0.3.6 | the human left a keyboard within pouncing distance. i have also acquired scent trails and Night Sight. |
 | [Animalica Body Tools](mods/animalica-body-tools) | 1.6.20 | thumbs were taking too long. i fitted the tools to the paws instead. |
 | [Animalica Emotes](mods/animalica-emotes) | 0.2.15 | i found the animation buttons. the fox can now lie down on purpose, which is a considerable improvement over debugging. |
-| [Animalica: Toolsmith](mods/animalica-toolsmith) | 1.1.0 | i took a tool head, an animal fitting and somebody else’s binding. the result is a tool a fox can actually wear. |
+| [Animalica: Toolsmith](mods/animalica-toolsmith) | 1.1.1 | i took a tool head, an animal fitting and somebody else’s binding. the result is a tool a fox can actually wear. |
 | [Craditz's Crooked Codex](mods/rustbound-expansion) | 0.11.12 | optional Trait Restrictions tooltip compatibility; 71 spells, with Rustbound Magic installed separately. |
 | [Custom Music Radio](mods/custom-music-radio) | 1.2.4 | the stolen computer had music on it. i built a radio so the den could hear it too. |
 | [Druidry](mods/druidry) | 0.1.1 | one fox was apparently not enough. i borrowed the ritual altar and acquired options. |

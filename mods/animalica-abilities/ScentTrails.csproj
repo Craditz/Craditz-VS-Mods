@@ -12,6 +12,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="modicon.png" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="modicon.png" CopyToOutputDirectory="PreserveNewest" />
     <Compile Remove="isolated\**\*.cs" />
     <Reference Include="VintagestoryAPI">
       <HintPath>$(VintageStoryPath)\VintagestoryAPI.dll</HintPath>

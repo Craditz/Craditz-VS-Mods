@@ -1,7 +1,1 @@
-{
-  "OldCodeToNewCode": {
-    "feralpack:draconis-cuprocaudus-mouth-test": "feralpack:draconis-cuprocaudus-test",
-    "feralpack:equus-ferus-adult-mouth-test": "feralpack:equus-ferus-adult-test",
-    "feralpack:feralfox-foxsocks-mouthcarry": "feralpack:feralfox-foxsocks"
-  }
-}
+{"OldCodeToNewCode":{"feralpack:draconis-cuprocaudus-mouth-test":"feralpack:draconis-cuprocaudus-test","feralpack:equus-ferus-adult-mouth-test":"feralpack:equus-ferus-adult-test","feralpack:feralfox-foxsocks-mouthcarry":"feralpack:feralfox-foxsocks"}}

@@ -1,0 +1,4 @@
+Animalica Abilities 0.3.5
+
+- Scent and Night Sight remember your Weak, Normal, or Strong preset and their on/off settings between sessions.
+- Scent View comes back on automatically after login if you left it enabled and your character can use it.

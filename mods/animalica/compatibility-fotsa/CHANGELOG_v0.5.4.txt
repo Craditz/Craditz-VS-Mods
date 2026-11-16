@@ -1,0 +1,3 @@
+Animalica Compatibility Pack 2 (FotSA) 0.5.4
+
+- Fixed the missing textures for 12 bird choices and the Queensland devil with Dinornithiformes Plus 1.0.24+ and Thylacinidae Plus 0.1.8+.

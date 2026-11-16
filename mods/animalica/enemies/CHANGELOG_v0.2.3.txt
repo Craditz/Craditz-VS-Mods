@@ -1,0 +1,3 @@
+Animalica - Enemies 0.2.3
+
+Updated the icon shown in the Vintage Story Mods menu.

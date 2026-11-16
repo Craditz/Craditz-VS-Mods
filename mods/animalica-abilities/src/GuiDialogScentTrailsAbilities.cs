@@ -237,13 +237,10 @@ public sealed class GuiDialogScentTrailsAbilities : GuiDialog
 
     private void ApplyProfile(NightVisionStrengthProfile profile, string labelKey)
     {
-        if (!nightVision.HasNightSightAbility)
+        if (nightVision.ApplyStrengthProfile(profile))
         {
-            return;
+            capi.ShowChatMessage(Lang.Get("animalicaabilities:abilities-strength-applied", Lang.Get(labelKey)));
         }
-
-        nightVision.Tuning.ApplyProfile(profile);
-        capi.ShowChatMessage(Lang.Get("animalicaabilities:abilities-strength-applied", Lang.Get(labelKey)));
     }
 
     private bool ToggleNightVision()

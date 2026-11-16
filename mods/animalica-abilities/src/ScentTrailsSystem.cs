@@ -44,6 +44,7 @@ public sealed class ScentTrailsSystem : ModSystem
     private ICoreServerAPI? serverApi;
     private IServerNetworkChannel? serverChannel;
     private ICoreClientAPI? clientApi;
+    private AnimalicaClientSettingsSystem? clientSettings;
     private IClientNetworkChannel? clientChannel;
     private GuiDialogScentTrailsAbilities? abilitiesDialog;
     private long serverTickListenerId;
@@ -77,7 +78,8 @@ public sealed class ScentTrailsSystem : ModSystem
     public override void StartClientSide(ICoreClientAPI api)
     {
         clientApi = api;
-        RefreshAbilityProfile();
+        clientSettings = api.ModLoader.GetModSystem<AnimalicaClientSettingsSystem>();
+        SetScentStrength(clientSettings.Settings.ScentStrength);
         abilitiesDialog = new GuiDialogScentTrailsAbilities(
             api,
             this,
@@ -130,6 +132,7 @@ public sealed class ScentTrailsSystem : ModSystem
         serverApi = null;
         serverChannel = null;
         clientApi = null;
+        clientSettings = null;
         clientChannel = null;
         serverTickListenerId = 0;
         clientEmissionListenerId = 0;
@@ -303,27 +306,20 @@ public sealed class ScentTrailsSystem : ModSystem
     public bool ToggleScentView()
     {
         RefreshAbilityProfile();
-        if (clientApi == null || !abilityProfile.HasScent || clientChannel?.Connected != true)
+        if (clientApi == null || clientSettings == null || !abilityProfile.HasScent || clientChannel?.Connected != true)
         {
             return false;
         }
 
-        scentViewEnabled = !scentViewEnabled;
+        clientSettings.Settings.ScentEnabled = !scentViewEnabled;
+        SetScentViewEnabled(clientSettings.Settings.ScentEnabled);
+        clientSettings.Save(clientApi);
+        clientApi.ShowChatMessage(Lang.Get(
+            scentViewEnabled ? "animalicaabilities:scent-view-on" : "animalicaabilities:scent-view-off"
+        ));
         if (scentViewEnabled)
         {
-            needsInitialSeed = true;
-            reportedNoScent = false;
-            nextNodeRefreshAtMs = 0;
-            clientApi.ShowChatMessage(Lang.Get("animalicaabilities:scent-view-on"));
             RequestScentNodes();
-        }
-        else
-        {
-            revealedNodes.Clear();
-            trailGroups = Array.Empty<ClientScentNode[]>();
-            nextTrailEmissionAtMs.Clear();
-            activeCarriers.Clear();
-            clientApi.ShowChatMessage(Lang.Get("animalicaabilities:scent-view-off"));
         }
 
         return true;
@@ -332,20 +328,15 @@ public sealed class ScentTrailsSystem : ModSystem
     public bool ApplyScentProfile(ScentStrengthProfile profile)
     {
         RefreshAbilityProfile();
-        if (!abilityProfile.HasScent)
+        if (!abilityProfile.HasScent || clientApi == null || clientSettings == null)
         {
             return false;
         }
 
-        (scentOpacityMultiplier, scentSizeMultiplier, scentLightMultiplier) = profile switch
-        {
-            ScentStrengthProfile.Weak => (0.6f, 0.8f, 0.65f),
-            ScentStrengthProfile.Normal => (0.8f, 0.9f, 0.8f),
-            ScentStrengthProfile.Strong => (1.0f, 1.0f, 1.0f),
-            _ => (1.0f, 1.0f, 1.0f)
-        };
-
-        clientApi?.ShowChatMessage(Lang.Get(
+        SetScentStrength(profile);
+        clientSettings.Settings.ScentStrength = profile;
+        clientSettings.Save(clientApi);
+        clientApi.ShowChatMessage(Lang.Get(
             "animalicaabilities:abilities-strength-applied",
             Lang.Get(profile switch
             {
@@ -355,6 +346,16 @@ public sealed class ScentTrailsSystem : ModSystem
             })
         ));
         return true;
+    }
+
+    private void SetScentStrength(ScentStrengthProfile profile)
+    {
+        (scentOpacityMultiplier, scentSizeMultiplier, scentLightMultiplier) = profile switch
+        {
+            ScentStrengthProfile.Weak => (0.6f, 0.8f, 0.65f),
+            ScentStrengthProfile.Normal => (0.8f, 0.9f, 0.8f),
+            _ => (1.0f, 1.0f, 1.0f)
+        };
     }
 
     private bool OnToggleScentHotkey(KeyCombination combination)
@@ -408,22 +409,37 @@ public sealed class ScentTrailsSystem : ModSystem
             return;
         }
 
-        AnimalicaAbilityProfile nextProfile = AnimalicaAbilityResolver.Resolve(clientApi.World.Player?.Entity);
-        if (nextProfile.Race.Equals(abilityProfile.Race, StringComparison.OrdinalIgnoreCase)
-            && nextProfile.Abilities == abilityProfile.Abilities)
+        abilityProfile = AnimalicaAbilityResolver.Resolve(clientApi.World.Player?.Entity);
+        if (!abilityProfile.HasScent && scentViewEnabled)
+        {
+            clientApi.ShowChatMessage(Lang.Get("animalicaabilities:scent-unavailable"));
+        }
+
+        SetScentViewEnabled(
+            abilityProfile.HasScent && clientChannel?.Connected == true && clientSettings?.Settings.ScentEnabled == true
+        );
+    }
+
+    private void SetScentViewEnabled(bool enabled)
+    {
+        if (scentViewEnabled == enabled)
         {
             return;
         }
 
-        abilityProfile = nextProfile;
-        if (!abilityProfile.HasScent && scentViewEnabled)
+        scentViewEnabled = enabled;
+        if (enabled)
         {
-            scentViewEnabled = false;
+            needsInitialSeed = true;
+            reportedNoScent = false;
+            nextNodeRefreshAtMs = 0;
+        }
+        else
+        {
             revealedNodes.Clear();
             trailGroups = Array.Empty<ClientScentNode[]>();
             nextTrailEmissionAtMs.Clear();
             activeCarriers.Clear();
-            clientApi.ShowChatMessage(Lang.Get("animalicaabilities:scent-unavailable"));
         }
     }
 

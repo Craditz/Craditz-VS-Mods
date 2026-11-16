@@ -1,0 +1,3 @@
+Animalica Core 1.2.41
+
+Updated the icon shown in the Vintage Story Mods menu.

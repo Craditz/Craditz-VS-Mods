@@ -1,0 +1,3 @@
+Animalica Abilities 0.3.6
+
+Updated the icon shown in the Vintage Story Mods menu.

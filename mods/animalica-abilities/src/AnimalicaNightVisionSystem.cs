@@ -10,6 +10,7 @@ public sealed class AnimalicaNightVisionSystem : ModSystem
     public const string TuningHotkeyCode = "animalicaabilities-nightvision-tuning";
 
     private ICoreClientAPI? clientApi;
+    private AnimalicaClientSettingsSystem? clientSettings;
     private AnimalicaNightVisionRenderer? renderer;
     private IShaderProgram? shader;
     private GuiDialogAnimalicaNightVision? dialog;
@@ -26,6 +27,10 @@ public sealed class AnimalicaNightVisionSystem : ModSystem
     public override void StartClientSide(ICoreClientAPI api)
     {
         clientApi = api;
+        clientSettings = api.ModLoader.GetModSystem<AnimalicaClientSettingsSystem>();
+        NightVisionStrengthProfile profile = clientSettings.Settings.NightSightStrength;
+        Tuning.ApplyProfile(Enum.IsDefined(profile) ? profile : NightVisionStrengthProfile.Strong);
+        Tuning.Enabled = false;
         RefreshAbilityProfile();
         renderer = new AnimalicaNightVisionRenderer(api, Tuning);
         dialog = new GuiDialogAnimalicaNightVision(api, this);
@@ -61,6 +66,8 @@ public sealed class AnimalicaNightVisionSystem : ModSystem
         renderer?.Dispose();
         shader?.Dispose();
         clientApi = null;
+        clientSettings = null;
+        Tuning.Enabled = false;
         renderer = null;
         shader = null;
         dialog = null;
@@ -71,17 +78,32 @@ public sealed class AnimalicaNightVisionSystem : ModSystem
     public void ToggleNightVision()
     {
         RefreshAbilityProfile();
-        if (!abilityProfile.HasNightSight)
+        if (!abilityProfile.HasNightSight || clientApi == null || clientSettings == null)
         {
             return;
         }
 
         Tuning.Enabled = !Tuning.Enabled;
-        clientApi?.ShowChatMessage(Lang.Get(
+        clientSettings.Settings.NightSightEnabled = Tuning.Enabled;
+        clientSettings.Save(clientApi);
+        clientApi.ShowChatMessage(Lang.Get(
             Tuning.Enabled
                 ? "animalicaabilities:nightvision-on"
                 : "animalicaabilities:nightvision-off"
         ));
+    }
+
+    public bool ApplyStrengthProfile(NightVisionStrengthProfile profile)
+    {
+        if (!HasNightSightAbility || clientApi == null || clientSettings == null)
+        {
+            return false;
+        }
+
+        Tuning.ApplyProfile(profile);
+        clientSettings.Settings.NightSightStrength = profile;
+        clientSettings.Save(clientApi);
+        return true;
     }
 
     public void OpenTuningDialog()
@@ -180,7 +202,7 @@ public sealed class AnimalicaNightVisionSystem : ModSystem
         }
         else if (gainedNightSight)
         {
-            Tuning.Enabled = true;
+            Tuning.Enabled = clientSettings?.Settings.NightSightEnabled ?? true;
         }
     }
 }

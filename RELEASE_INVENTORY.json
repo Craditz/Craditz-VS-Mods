@@ -1,34 +1,34 @@
 {
-  "date": "2026-11-06",
-  "note": "the fox lowered the 1.22 doorstep. three public stable revisions retain their accepted runtime bytes; local poke tests stay under the desk.",
+  "date": "2026-11-16",
+  "note": "The Animalica icon update records twelve exact installers. Other entries retain their existing release records.",
   "packages": [
     {
       "modid": "animalicaabilities",
       "name": "Animalica Abilities",
-      "version": "0.3.4",
-      "file": "Animalica_Abilities_v0.3.4.zip",
-      "sha256": "61e2123ef06b2444d5d1cda3974563bf1bb01a47420fcadfbbd83aedb519d1be",
-      "bytes": 41884,
+      "version": "0.3.6",
+      "file": "Animalica_Abilities_v0.3.6.zip",
+      "sha256": "fa349364be87d09d73e07f56ad26eb159187dc16145da434fa35f368a6bcc2f0",
+      "bytes": 117027,
       "dependencies": {
         "game": "1.22.0",
         "survival": "1.22.0"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica-abilities"
     },
     {
       "modid": "animalicabears",
       "name": "Animalica - Bears",
-      "version": "0.5.4",
-      "file": "Animalica_Bears_v0.5.4.zip",
-      "sha256": "6fac02f3a9f99f04e20e2dcd71f3280a099d9120794c6d3cffcb9ed69314729c",
-      "bytes": 3712918,
+      "version": "0.5.5",
+      "file": "Animalica_Bears_v0.5.5.zip",
+      "sha256": "daa75a74d03f41699c6ed3d0eb427cce428811b429dd074fbb428aee714a9a1a",
+      "bytes": 3686715,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
         "animalicacore": "1.1.43"
       },
-      "source": "existing GitHub release; newer than local shelf",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/bears"
     },
     {
@@ -50,46 +50,46 @@
     {
       "modid": "animalicacompatibility",
       "name": "Animalica - Compatibility Pack 1",
-      "version": "0.6.9",
-      "file": "Animalica_Compatibility_Pack_1_v0.6.9.zip",
-      "sha256": "fbd74a0774b89a6f92170f5dac99bb5de333e585c92cbbcacfaa8028f41b4d1a",
-      "bytes": 4551634,
+      "version": "0.6.10",
+      "file": "Animalica_Compatibility_Pack_1_v0.6.10.zip",
+      "sha256": "a93812782db6ae9fc55abd625dbb59dad21d5caf0a60b51d5b8f30d439d9b7b1",
+      "bytes": 4525443,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
         "animalicacore": "1.1.43"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/compatibility"
     },
     {
       "modid": "animalicacompatibility2",
       "name": "Animalica - Compatibility Pack 2 (FotSA)",
-      "version": "0.5.3",
-      "file": "Animalica_Compatibility_Pack_2_FotSA_v0.5.3.zip",
-      "sha256": "12758e7da66d724119eaad2def5bbe10dd0a15c869a19317367ea44e2473efc9",
-      "bytes": 15777332,
+      "version": "0.5.5",
+      "file": "Animalica_Compatibility_Pack_2_FotSA_v0.5.5.zip",
+      "sha256": "19e80889f1b15c4108035292cf8537c478fd5a84e8c56b0d0c0557e9b90e1801",
+      "bytes": 15751572,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
         "animalicacore": "1.1.43"
       },
-      "source": "existing GitHub release; newer than local shelf",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/compatibility-fotsa"
     },
     {
       "modid": "animalicacompatibility3",
       "name": "Animalica - Compatibility Pack 3 (Dinosaurs)",
-      "version": "0.4.4",
-      "file": "Animalica_Dinosaurs_v0.4.4.zip",
-      "sha256": "f705c2fb52c0119028f60bc7607936394b4a714eeaf6c6dceef30ea95c7d0f8d",
-      "bytes": 5308065,
+      "version": "0.4.5",
+      "file": "Animalica_Dinosaurs_v0.4.5.zip",
+      "sha256": "6fcca6e14de7369ae650644841b2b23d9210f243e11e434c8206d0c341cb6b97",
+      "bytes": 5758420,
       "dependencies": {
         "game": "1.22.0",
         "playermodellib": "1.22.4",
         "animalicacore": "1.1.43"
       },
-      "source": "owner-approved compatibility metadata finalization; exact smoke-tested runtime retained",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/compatibility-dinosaurs",
       "releaseTag": "release-2026-11-06-compat122",
       "sourceArchive": "Animalica_Dinosaurs_v0.4.4_source.zip",
@@ -98,16 +98,16 @@
     {
       "modid": "animalicacore",
       "name": "Animalica Core",
-      "version": "1.2.39",
-      "file": "Animalica_Core_v1.2.39.zip",
-      "sha256": "6a8f55f3eb552fe8f644b9db5e75e4b8a851ed21c7c2609974c3b05a30bb0735",
-      "bytes": 1781139,
+      "version": "1.2.41",
+      "file": "Animalica_Core_v1.2.41.zip",
+      "sha256": "5c6561ed61fe4aa5f160da339f9e788dd416ceffcbd8638a4122cdd190fdfa9f",
+      "bytes": 1753467,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "*",
         "traitrestrictions": "1.0.0"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/core"
     },
     {
@@ -128,91 +128,91 @@
     {
       "modid": "animalicaenemies",
       "name": "Animalica - Enemies",
-      "version": "0.2.2",
-      "file": "Animalica_Enemies_v0.2.2.zip",
-      "sha256": "8a3c7cfcb898d731d1e6788fb6a005de6320be4e3a50080cbb99abaf65c06b54",
-      "bytes": 3235644,
+      "version": "0.2.3",
+      "file": "Animalica_Enemies_v0.2.3.zip",
+      "sha256": "1532c04836c3cf84d0d5103f23dc411810c5159bd6bc300b0bb1591235986f0d",
+      "bytes": 3318260,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.20.4",
         "animalicacore": "1.1.28"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/enemies"
     },
     {
       "modid": "animalicafoxwolfhyena",
       "name": "Animalica - Foxes, Wolves & Hyenas",
-      "version": "0.6.8",
-      "file": "Animalica_Foxes_Wolves_Hyenas_v0.6.8.zip",
-      "sha256": "36aecaebcdb118300046cf4caf8d3030587d22ec3dcbfa1a2e5dbf58fdfb065e",
-      "bytes": 1153560,
+      "version": "0.6.9",
+      "file": "Animalica_Foxes_Wolves_Hyenas_v0.6.9.zip",
+      "sha256": "47a98618a0bf25d08f4ea6852818ab1d5ffd1593635c3933c6c86ea2c6daccee",
+      "bytes": 1127371,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
         "animalicacore": "1.1.4"
       },
-      "source": "existing GitHub release; newer than local shelf",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/canids"
     },
     {
       "modid": "animalicahooved",
       "name": "Animalica - Hooved Animals",
-      "version": "0.5.4",
-      "file": "Animalica_Hooved_Animals_v0.5.4.zip",
-      "sha256": "fa673bfb94a9c8901e02674afe8f0bd929529ee5f53a1f50ab4a2d307c60b182",
-      "bytes": 8662657,
+      "version": "0.5.5",
+      "file": "Animalica_Hooved_Animals_v0.5.5.zip",
+      "sha256": "871cc2583f154518cbfdc0482ce3e40a5d4089d711254a304c54841a221b1644",
+      "bytes": 8711915,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
         "animalicacore": "1.1.43"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/hooved"
     },
     {
       "modid": "animalicarequests",
       "name": "Animalica Requests",
-      "version": "0.3.16",
-      "file": "Animalica_Requests_v0.3.16.zip",
-      "sha256": "8821db9eaec62fa2fdec825a8b06eab7ed302bf38f5b229a345ee847dd73db26",
-      "bytes": 2405839,
+      "version": "0.3.17",
+      "file": "Animalica_Requests_v0.3.17.zip",
+      "sha256": "efda20a637731c106b1b1a2d9e927d7bdb37fc6102f7cd83df9ac911e02a4941",
+      "bytes": 2463188,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.23.8"
       },
-      "source": "existing GitHub release; newer than local shelf",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/requests"
     },
     {
       "modid": "animalicasmallodd",
       "name": "Animalica - Small & Odd",
-      "version": "0.5.5",
-      "file": "Animalica_Small_n_Odd_v0.5.5.zip",
-      "sha256": "f18bbadcf77be3040de8032c01c258043a057295b7075f33b0504401c8169db0",
-      "bytes": 3227322,
+      "version": "0.5.6",
+      "file": "Animalica_Small_n_Odd_v0.5.6.zip",
+      "sha256": "5d063bbeda6a17eac1de95e9475e9740e01b2bcabb6bf75b4e1752e431d7a164",
+      "bytes": 3208661,
       "dependencies": {
         "game": "1.22.0-pre.1",
         "playermodellib": "1.22.4",
         "animalicacore": "1.2.34"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica/small-odd"
     },
     {
       "modid": "animalicatoolsmith",
       "name": "Animalica: Toolsmith",
-      "version": "1.1.0",
-      "file": "Animalica_Toolsmith_v1.1.0.zip",
-      "sha256": "3e1d1457efeb95e2f9c9c3e84c7f274bf95aea103f3f44a8d3ec9c8011f6565e",
-      "bytes": 174728,
+      "version": "1.1.1",
+      "file": "Animalica_Toolsmith_v1.1.1.zip",
+      "sha256": "f3a3220742cc0c6cae58b3900f1ff73fb87ca6cfe8eeef0422ddec6741b52140",
+      "bytes": 242997,
       "dependencies": {
         "game": "1.22.0",
         "animalicabodytools": "1.6.20",
         "playermodellib": "1.23.8",
         "traitrestrictions": "1.0.0"
       },
-      "source": "approved local shelf; retained without rebuild or repack",
+      "source": "Exact approved icon-update installer",
       "sourcePath": "mods/animalica-toolsmith"
     },
     {

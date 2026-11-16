@@ -2,7 +2,7 @@
   "type": "content",
   "name": "Animalica - Foxes, Wolves & Hyenas",
   "modid": "animalicafoxwolfhyena",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "description": "i found the character selector. it has foxes now. also wolves and hyenas; they followed me in. playable PlayerModelLib models with Animalica traits, clothing support, custom colours and named presets. version 0.6.8 also offers Original / Vanilla textures alongside Custom colours.",
   "authors": [
     "Craditz"
