@@ -1,0 +1,28 @@
+{
+  "code": "bolas-stone",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-stone"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/stone/rock/granite1"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.6,
+    "snareMax": 0.76
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "code": "abt-crossbow-duck",
+  "name": "abt-crossbow-duck",
+  "quantityframes": 18,
+  "onActivityStopped": "Stop",
+  "onAnimationEnd": "Stop",
+  "keyframes": [
+    {
+      "frame": 0,
+      "elements": {
+        "Neck": {
+          "rotationX": 0,
+          "rotationY": 0,
+          "rotationZ": 0
+        }
+      }
+    },
+    {
+      "frame": 1,
+      "elements": {
+        "Neck": {
+          "rotationX": 0.0,
+          "rotationY": 0.0,
+          "rotationZ": 5.04
+        }
+      }
+    },
+    {
+      "frame": 3,
+      "elements": {
+        "Neck": {
+          "rotationX": 0.0,
+          "rotationY": 0.0,
+          "rotationZ": 24.08
+        }
+      }
+    },
+    {
+      "frame": 4,
+      "elements": {
+        "Neck": {
+          "rotationX": 0,
+          "rotationY": 0,
+          "rotationZ": 28
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "elements": {
+        "Neck": {
+          "rotationX": 0,
+          "rotationY": 0,
+          "rotationZ": 28
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "elements": {
+        "Neck": {
+          "rotationX": 0.0,
+          "rotationY": 0.0,
+          "rotationZ": 17.36
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "elements": {
+        "Neck": {
+          "rotationX": 0.0,
+          "rotationY": 0.0,
+          "rotationZ": 3.36
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "elements": {
+        "Neck": {
+          "rotationX": 0,
+          "rotationY": 0,
+          "rotationZ": 0
+        }
+      }
+    }
+  ]
+}

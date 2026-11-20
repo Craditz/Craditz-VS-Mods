@@ -1,0 +1,55 @@
+{
+  "code": "bolt-stone",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolt-stone"
+  },
+  "textures": {
+    "shaft": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "charge": {
+      "base": "game:block/cloth/linen/gray"
+    },
+    "binding": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [
+        "crude",
+        "flint",
+        "obsidian",
+        "bone",
+        "erel",
+        "copper",
+        "gold",
+        "silver",
+        "tinbronze",
+        "bismuthbronze",
+        "blackbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    }
+  ],
+  "maxStackSize": 64,
+  "behaviors": [
+    {
+      "name": "AnimalicaLoadCrossbow"
+    }
+  ],
+  "attributes": {
+    "boltBomb": "stone"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "code": "bolas-copper",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-copper"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/copper"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.615,
+    "snareMax": 0.78
+  },
+  "durability": 8
+}

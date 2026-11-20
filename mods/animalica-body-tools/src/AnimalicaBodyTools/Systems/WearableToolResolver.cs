@@ -124,8 +124,20 @@ internal static class WearableToolResolver
         foreach (CachedWearableCandidate candidate in cache.Candidates)
         {
             ItemStack? sourceStack = GetRealItemstack(candidate.SourceSlot);
-            if (sourceStack?.Collectible != candidate.SourceCollectible || IsBroken(sourceStack))
+            if (sourceStack?.Collectible != candidate.SourceCollectible)
             {
+                cache.MarkDirty();
+                continue;
+            }
+
+            if (IsBroken(sourceStack))
+            {
+                // Old equipped caps can be stuck at zero. Clean these up
+                // without waiting for a wear charge the resolver would reject.
+                if (BodyToolDurability.IsWearableFangCaps(sourceStack.Collectible))
+                {
+                    BodyToolDurability.RemoveIfBroken(byEntity.World, candidate.SourceSlot, sourceStack);
+                }
                 cache.MarkDirty();
                 continue;
             }

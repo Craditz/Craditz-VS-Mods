@@ -1,0 +1,38 @@
+{
+  "ingredientPattern": "AB",
+  "width": 2,
+  "height": 1,
+  "shapeless": true,
+  "ingredients": {
+    "A": {
+      "type": "item",
+      "code": "game:arrow-*",
+      "name": "shaft",
+      "allowedVariants": [
+        "crude",
+        "flint",
+        "obsidian",
+        "bone",
+        "erel",
+        "copper",
+        "gold",
+        "silver",
+        "tinbronze",
+        "bismuthbronze",
+        "blackbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    },
+    "B": {
+      "type": "block",
+      "code": "game:bomb-scrap"
+    }
+  },
+  "requiresTrait": "animalica-animal-bodytools",
+  "output": {
+    "type": "item",
+    "code": "animalicabodytools:bolt-scrap-{shaft}"
+  }
+}

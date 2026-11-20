@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "WTW",
+  "width": 3,
+  "height": 1,
+  "ingredients": {
+    "W": {
+      "type": "item",
+      "code": "game:stone-*"
+    },
+    "T": {
+      "type": "item",
+      "code": "game:flaxtwine"
+    }
+  },
+  "requiresTrait": "animalica-animal-bodytools",
+  "output": {
+    "type": "item",
+    "code": "animalicabodytools:bolas-stone",
+    "quantity": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "code": "blowpipe",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/blowpipe"
+  },
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    },
+    "bore": {
+      "base": "game:block/cloth/linen/black"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "durability": 180,
+  "maxStackSize": 1
+}

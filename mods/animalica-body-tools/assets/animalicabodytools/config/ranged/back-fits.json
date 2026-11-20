@@ -1,0 +1,484 @@
+{
+  "feralfox:feralfox": {
+    "scout": {
+      "drop": 0.2051
+    },
+    "medium": {
+      "drop": 0.1871
+    },
+    "ballista": {
+      "drop": 0.1903
+    }
+  },
+  "feralhyena:spottedhyena": {
+    "scout": {
+      "drop": 0.1366,
+      "pitch": 3
+    },
+    "medium": {
+      "drop": 0.1371,
+      "pitch": 2
+    },
+    "ballista": {
+      "drop": 0.1404,
+      "pitch": 2
+    }
+  },
+  "feralwolf:feralwolf": {
+    "scout": {
+      "drop": 0.2248,
+      "pitch": 7
+    },
+    "medium": {
+      "drop": 0.235,
+      "pitch": 6
+    },
+    "ballista": {
+      "drop": 0.0944,
+      "pitch": 2
+    }
+  },
+  "feralbear:blackbear": {
+    "scout": {
+      "drop": 0.0317
+    },
+    "medium": {
+      "drop": 0.0317
+    },
+    "ballista": {
+      "drop": 0.0047
+    }
+  },
+  "feralbear:brownbear": {
+    "scout": {
+      "drop": 0.0324
+    },
+    "medium": {
+      "drop": 0.0324
+    },
+    "ballista": {
+      "drop": 0.0324
+    }
+  },
+  "feralbear:polarbear": {
+    "scout": {
+      "drop": 0.0318
+    },
+    "medium": {
+      "drop": 0.0317
+    },
+    "ballista": {
+      "drop": 0.0051
+    }
+  },
+  "feralbear:giantpanda": {
+    "scout": {
+      "drop": 0.0318
+    },
+    "medium": {
+      "drop": 0.0318
+    },
+    "ballista": {
+      "drop": 0.023
+    }
+  },
+  "feralbear:sunbear": {
+    "scout": {
+      "drop": 0.0313
+    },
+    "medium": {
+      "drop": 0.0313
+    },
+    "ballista": {
+      "drop": 0.0091
+    }
+  },
+  "feralfish:feralfish": {
+    "scout": {
+      "drop": -0.296
+    },
+    "medium": {
+      "drop": -0.2943
+    },
+    "ballista": {
+      "drop": -0.2912
+    }
+  },
+  "feralpack:chicken-hen": {
+    "scout": {
+      "drop": 0.0553
+    },
+    "medium": {
+      "drop": 0.0553
+    },
+    "ballista": {
+      "drop": 0.0552
+    }
+  },
+  "feralpack:chicken-rooster": {
+    "scout": {
+      "drop": 0.0553
+    },
+    "medium": {
+      "drop": 0.0553
+    },
+    "ballista": {
+      "drop": 0.0553
+    }
+  },
+  "feralpack:hare-male": {
+    "scout": {
+      "drop": 0.235
+    },
+    "medium": {
+      "drop": 0.235
+    },
+    "ballista": {
+      "drop": 0.235
+    }
+  },
+  "feralpack:hare-female": {
+    "scout": {
+      "drop": 0.235
+    },
+    "medium": {
+      "drop": 0.235
+    },
+    "ballista": {
+      "drop": 0.235
+    }
+  },
+  "feralraccoon:feralraccoon": {
+    "scout": {
+      "drop": 0.235
+    },
+    "medium": {
+      "drop": 0.235
+    },
+    "ballista": {
+      "drop": 0.235
+    }
+  },
+  "feraldeer:feraldeer-caribou": {
+    "scout": {
+      "drop": 0.0856
+    },
+    "medium": {
+      "drop": 0.0915
+    },
+    "ballista": {
+      "drop": 0.074
+    }
+  },
+  "feralpack:deer-chital": {
+    "scout": {
+      "drop": 0.2099
+    },
+    "medium": {
+      "drop": 0.2089
+    },
+    "ballista": {
+      "drop": 0.2167
+    }
+  },
+  "feralpack:deer-elk": {
+    "scout": {
+      "drop": 0.1217
+    },
+    "medium": {
+      "drop": 0.1211
+    },
+    "ballista": {
+      "drop": 0.1111
+    }
+  },
+  "feralpack:deer-guemal": {
+    "scout": {
+      "drop": 0.2079
+    },
+    "medium": {
+      "drop": 0.2054
+    },
+    "ballista": {
+      "drop": 0.1955
+    }
+  },
+  "feralpack:deer-marsh": {
+    "scout": {
+      "drop": 0.1808
+    },
+    "medium": {
+      "drop": 0.1482
+    },
+    "ballista": {
+      "drop": 0.1286
+    }
+  },
+  "feralpack:deer-moose": {
+    "scout": {
+      "drop": 0.0483,
+      "pitch": 3
+    },
+    "medium": {
+      "drop": 0.0701,
+      "pitch": 2
+    },
+    "ballista": {
+      "drop": 0.0871,
+      "pitch": 2
+    }
+  },
+  "feralpack:deer-pampas": {
+    "scout": {
+      "drop": 0.2157
+    },
+    "medium": {
+      "drop": 0.2162
+    },
+    "ballista": {
+      "drop": 0.2172
+    }
+  },
+  "feralpack:deer-pudu": {
+    "scout": {
+      "drop": 0.2227
+    },
+    "medium": {
+      "drop": 0.2221
+    },
+    "ballista": {
+      "drop": 0.2012
+    }
+  },
+  "feralpack:deer-redbrocket": {
+    "scout": {
+      "drop": 0.1947
+    },
+    "medium": {
+      "drop": 0.185
+    },
+    "ballista": {
+      "drop": 0.1813
+    }
+  },
+  "feralpack:deer-taruca": {
+    "scout": {
+      "drop": 0.2068
+    },
+    "medium": {
+      "drop": 0.183
+    },
+    "ballista": {
+      "drop": 0.1843
+    }
+  },
+  "feralpack:deer-water": {
+    "scout": {
+      "drop": 0.235
+    },
+    "medium": {
+      "drop": 0.235
+    },
+    "ballista": {
+      "drop": 0.2152
+    }
+  },
+  "feralpack:deer-whitetail": {
+    "scout": {
+      "drop": 0.235
+    },
+    "medium": {
+      "drop": 0.235
+    },
+    "ballista": {
+      "drop": 0.2072
+    }
+  },
+  "feralpack:gazelle-thomson": {
+    "scout": {
+      "drop": 0.1829
+    },
+    "medium": {
+      "drop": 0.1608
+    },
+    "ballista": {
+      "drop": 0.1433
+    }
+  },
+  "feralpack:goat-angora": {
+    "scout": {
+      "drop": 0.1873
+    },
+    "medium": {
+      "drop": 0.173
+    },
+    "ballista": {
+      "drop": 0.1667
+    }
+  },
+  "feralpack:goat-ibexalp": {
+    "scout": {
+      "drop": 0.18
+    },
+    "medium": {
+      "drop": 0.1664
+    },
+    "ballista": {
+      "drop": 0.1519
+    }
+  },
+  "feralpack:goat-ibexnub": {
+    "scout": {
+      "drop": 0.1827
+    },
+    "medium": {
+      "drop": 0.1673
+    },
+    "ballista": {
+      "drop": 0.1604
+    }
+  },
+  "feralpack:goat-markhor": {
+    "scout": {
+      "drop": 0.1943
+    },
+    "medium": {
+      "drop": 0.187
+    },
+    "ballista": {
+      "drop": 0.1838
+    }
+  },
+  "feralpack:goat-mountain": {
+    "scout": {
+      "drop": 0.1835
+    },
+    "medium": {
+      "drop": 0.1695
+    },
+    "ballista": {
+      "drop": 0.1677
+    }
+  },
+  "feralpack:goat-muskox": {
+    "scout": {
+      "drop": 0.1666
+    },
+    "medium": {
+      "drop": 0.1665
+    },
+    "ballista": {
+      "drop": 0.1669
+    }
+  },
+  "feralpack:goat-nubian": {
+    "scout": {
+      "drop": 0.1901
+    },
+    "medium": {
+      "drop": 0.1851
+    },
+    "ballista": {
+      "drop": 0.1793
+    }
+  },
+  "feralpack:goat-sirohi": {
+    "scout": {
+      "drop": 0.1877
+    },
+    "medium": {
+      "drop": 0.1734
+    },
+    "ballista": {
+      "drop": 0.1649
+    }
+  },
+  "feralpack:goat-takingold": {
+    "scout": {
+      "drop": 0.1339
+    },
+    "medium": {
+      "drop": 0.134
+    },
+    "ballista": {
+      "drop": 0.1344
+    }
+  },
+  "feralpack:goat-valais": {
+    "scout": {
+      "drop": 0.1873
+    },
+    "medium": {
+      "drop": 0.173
+    },
+    "ballista": {
+      "drop": 0.1667
+    }
+  },
+  "feralpack:pig-eurasian-adult": {
+    "scout": {
+      "drop": 0.0933
+    },
+    "medium": {
+      "drop": 0.0908
+    },
+    "ballista": {
+      "drop": 0.0911
+    }
+  },
+  "feralpack:pig-eurasian-elder": {
+    "scout": {
+      "drop": 0.1185
+    },
+    "medium": {
+      "drop": 0.1183
+    },
+    "ballista": {
+      "drop": 0.1168
+    }
+  },
+  "feralpack:pig-redriver-adult": {
+    "scout": {
+      "drop": 0.184
+    },
+    "medium": {
+      "drop": 0.1773
+    },
+    "ballista": {
+      "drop": 0.1862
+    }
+  },
+  "feralpack:pig-warthog": {
+    "scout": {
+      "drop": 0.1606
+    },
+    "medium": {
+      "drop": 0.1529
+    },
+    "ballista": {
+      "drop": 0.139
+    }
+  },
+  "feralpack:sheep-bighorn": {
+    "scout": {
+      "drop": 0.2195
+    },
+    "medium": {
+      "drop": 0.2126
+    },
+    "ballista": {
+      "drop": 0.2042
+    }
+  },
+  "feralpack:sheep-mouflon": {
+    "scout": {
+      "drop": 0.235
+    },
+    "medium": {
+      "drop": 0.235
+    },
+    "ballista": {
+      "drop": 0.2291
+    }
+  }
+}

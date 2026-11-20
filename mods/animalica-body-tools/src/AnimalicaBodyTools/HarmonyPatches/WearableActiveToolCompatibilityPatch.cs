@@ -21,7 +21,12 @@ internal sealed class WearableBlockBreakContext
     public Block Block { get; }
     public BlockPos Position { get; }
     public bool CompatibilityReported { get; set; }
-    public bool DurabilityCharged { get; set; }
+    public bool DurabilityHandled { get; set; }
+    // Animalica: Toolsmith 1.1.0 reads this property through reflection.
+    public bool DurabilityCharged => DurabilityHandled;
+    public ItemSlot? NativeSourceSlot { get; set; }
+    public ItemStack? NativeSourceStack { get; set; }
+    public BlockSelection? NativeSelection { get; set; }
     public ItemSlot? SourceSlot { get; set; }
     public string SourceCode { get; set; } = string.Empty;
     public EnumTool? ReportedTool { get; set; }
@@ -46,18 +51,21 @@ internal static class WearableBlockBreakToolContext
         current = previous;
     }
 
-    public static void MarkDurabilityCharged(IPlayer player, BlockPos position)
+    public static void MarkDurabilityCharged(IPlayer player, BlockPos position) => MarkDurabilityHandled(player, position);
+
+    public static void MarkDurabilityHandled(IPlayer player, BlockPos position)
     {
         if (current != null && ReferenceEquals(current.Player, player) && SamePosition(current.Position, position))
         {
-            current.DurabilityCharged = true;
+            current.DurabilityHandled = true;
         }
     }
 
     public static void Complete(WearableBlockBreakContext? completed)
     {
         if (completed == null
-            || completed.DurabilityCharged
+            || completed.DurabilityHandled
+            || completed.NativeSelection != null
             || !completed.CompatibilityReported
             || completed.SourceSlot == null
             || WearableTargetedActionPatches.IsBlockBreakDurabilitySuppressed
@@ -66,7 +74,7 @@ internal static class WearableBlockBreakToolContext
             return;
         }
 
-        completed.DurabilityCharged = WearableTargetedActionPatches.TryDamageSourceTool(
+        completed.DurabilityHandled = WearableTargetedActionPatches.TryDamageSourceTool(
             completed.Player.Entity,
             completed.SourceSlot,
             completed.SourceCode,
@@ -125,12 +133,21 @@ internal static class WearableBlockBreakContextPatch
         };
     }
 
-    private static Exception? Finalizer(Exception? __exception, ScopeState __state)
+    private static Exception? Finalizer(Exception? __exception, bool __result, ScopeState? __state)
     {
-        if (__state.Entered)
+        if (__state?.Entered == true)
         {
-            WearableBlockBreakToolContext.Complete(WearableBlockBreakToolContext.Current);
-            WearableBlockBreakToolContext.Restore(__state.Previous);
+            try
+            {
+                if (__exception == null && __result)
+                {
+                    WearableBlockBreakToolContext.Complete(WearableBlockBreakToolContext.Current);
+                }
+            }
+            finally
+            {
+                WearableBlockBreakToolContext.Restore(__state.Previous);
+            }
         }
 
         return __exception;
@@ -151,7 +168,18 @@ internal static class WearableActiveToolCompatibilityPatch
 
     private static void Postfix(object __instance, ref EnumTool? __result)
     {
-        if (__result != null || PlayerField?.GetValue(__instance) is not IPlayer player)
+        if (PlayerField?.GetValue(__instance) is not IPlayer player)
+        {
+            return;
+        }
+
+        if (WearableActionSlot.GetScopedTool(player) is EnumTool scopedTool)
+        {
+            __result = scopedTool;
+            return;
+        }
+
+        if (__result != null)
         {
             return;
         }
@@ -335,3 +363,50 @@ internal static class WearableActiveToolCompatibilityPatch
         };
     }
 }
+
+[HarmonyPatch]
+internal static class WearableActionSlot
+{
+    private static readonly FieldInfo PlayerField = AccessTools.Field("Vintagestory.Common.PlayerInventoryManager:player");
+
+    [ThreadStatic]
+    private static Scope? current;
+
+    // Preserve the physical hotbar. An action can supply a temporary tool
+    // for an empty hand or for the exact held stack it began with.
+    internal sealed record Scope(IPlayer Player, ItemSlot Slot, ItemSlot? BeginningSlot, ItemStack? BeginningStack, Scope? Previous);
+
+    internal static Scope Enter(IPlayer player, ItemSlot slot, ItemSlot? beginningSlot = null, ItemStack? beginningStack = null)
+    {
+        var scope = new Scope(player, slot, beginningSlot, beginningStack, current);
+        current = scope;
+        return scope;
+    }
+
+    internal static void Exit(Scope scope) => current = scope.Previous;
+
+    internal static EnumTool? GetScopedTool(IPlayer player)
+    {
+        if (current is not { } scope || !ReferenceEquals(scope.Player, player)
+            || !ReferenceEquals(player.InventoryManager.ActiveHotbarSlot, scope.Slot))
+        {
+            return null;
+        }
+        return scope.Slot.Itemstack?.Collectible.GetTool(scope.Slot);
+    }
+
+    private static MethodBase TargetMethod() =>
+        AccessTools.PropertyGetter(AccessTools.TypeByName("Vintagestory.Common.PlayerInventoryManager"), "ActiveHotbarSlot");
+
+    private static void Postfix(object __instance, ref ItemSlot __result)
+    {
+        if (current is { } scope && !scope.Slot.Empty
+            && ReferenceEquals(PlayerField.GetValue(__instance), scope.Player)
+            && (__result.Empty || (ReferenceEquals(__result, scope.BeginningSlot)
+                && ReferenceEquals(__result.Itemstack, scope.BeginningStack))))
+        {
+            __result = scope.Slot;
+        }
+    }
+}
+

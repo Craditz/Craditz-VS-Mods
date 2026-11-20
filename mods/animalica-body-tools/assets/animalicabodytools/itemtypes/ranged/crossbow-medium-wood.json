@@ -1,0 +1,58 @@
+{
+  "code": "crossbow-medium-wood",
+  "maxStackSize": 1,
+  "durability": 180,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "AnimalicaCrossbowWearable"
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "animalicabodytools:item/ranged/crossbow-medium-wood"
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -28,
+      "y": 38,
+      "z": -12
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 2.763157894736842
+  },
+  "textures": {
+    "stock": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "limb": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "binding": {
+      "base": "game:block/leather/plain"
+    },
+    "string": {
+      "base": "game:block/cloth/linen/normal1"
+    }
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "clothescategory": "upperbodyover",
+    "wearableAttachment": true,
+    "crossbowPattern": "medium",
+    "reloadMs": 2200,
+    "damage": 4.5,
+    "shotSpeed": 0.95
+  }
+}

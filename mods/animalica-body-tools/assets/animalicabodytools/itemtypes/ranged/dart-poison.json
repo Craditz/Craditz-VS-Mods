@@ -1,0 +1,27 @@
+{
+  "code": "dart-poison",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/dart-poison"
+  },
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "tip": {
+      "base": "game:block/stone/flint"
+    },
+    "paint": {
+      "base": "game:block/cloth/linen/purple"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "maxStackSize": 64,
+  "class": "AnimalicaPoisonDart"
+}

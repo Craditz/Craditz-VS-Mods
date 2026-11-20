@@ -1,0 +1,26 @@
+{
+  "code": "dart-slow",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/dart-slow"
+  },
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "tip": {
+      "base": "game:block/stone/flint"
+    },
+    "paint": {
+      "base": "game:block/cloth/linen/yellow"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "maxStackSize": 64
+}

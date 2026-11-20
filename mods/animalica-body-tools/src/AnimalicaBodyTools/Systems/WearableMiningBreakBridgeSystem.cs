@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AnimalicaBodyTools.HarmonyPatches;
+using AnimalicaBodyTools.Items;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
@@ -8,7 +9,7 @@ using Vintagestory.API.Server;
 namespace AnimalicaBodyTools.Systems;
 
 /// <summary>
-/// Charges ordinary equipped pickaxe-style body tools when the server
+/// Routes ordinary equipped pickaxe and digging actions when the server
 /// confirms that a block is about to break. Specialized multi-break bridges
 /// run first and mark the event handled, so they retain their own accounting.
 /// </summary>
@@ -66,8 +67,42 @@ internal sealed class WearableMiningBreakBridgeSystem
                 out string sourceCode,
                 out ItemSlot dummySlot,
                 out ItemSlot sourceSlot,
-                out float selectedScore)
-            || virtualTool.Collectible?.GetTool(dummySlot) != EnumTool.Pickaxe)
+                out float selectedScore))
+        {
+            return;
+        }
+
+        bool pickaxe = virtualTool.Collectible?.GetTool(dummySlot) == EnumTool.Pickaxe;
+        if (!pickaxe && !ItemSpeciesLockedClaws.CanDig(virtualTool, api.World, miningBlockSel))
+        {
+            return;
+        }
+
+        if (pickaxe && sourceSlot.Itemstack?.Collectible is ItemSpeciesLockedBodyTool tunnelingClaws
+            && tunnelingClaws.TryDigWell(api.World, byPlayer.Entity, sourceSlot, miningBlockSel, dropQuantityMultiplier))
+        {
+            // HoD has handled wear for this action, even if a listener queried ActiveTool.
+            WearableBlockBreakToolContext.MarkDurabilityHandled(byPlayer, miningBlockSel.Position);
+            handling = EnumHandling.PreventDefault;
+            return;
+        }
+
+        // Let the ordinary server dispatch deliver the real tool to collectible
+        // and block hooks once all BreakBlock listeners have allowed the action.
+        if (WearableServerBreakTierPatch.HasNativeBreakRoute
+            && WearableBlockBreakToolContext.Current is { } context
+            && ReferenceEquals(context.Player, byPlayer) && context.Position.Equals(blockSel.Position)
+            && sourceSlot.Itemstack is { } sourceStack
+            && (sourceStack.Collectible.GetTool(sourceSlot) == EnumTool.Pickaxe
+                || ItemSpeciesLockedClaws.CanDig(sourceStack, api.World, miningBlockSel)))
+        {
+            context.NativeSourceSlot = sourceSlot;
+            context.NativeSourceStack = sourceStack;
+            context.NativeSelection = miningBlockSel;
+            return;
+        }
+
+        if (!pickaxe)
         {
             return;
         }
@@ -99,3 +134,5 @@ internal sealed class WearableMiningBreakBridgeSystem
         }
     }
 }
+
+

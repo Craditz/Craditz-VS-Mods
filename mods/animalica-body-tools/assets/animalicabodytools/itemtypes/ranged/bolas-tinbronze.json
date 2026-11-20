@@ -1,0 +1,29 @@
+{
+  "code": "bolas-tinbronze",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-tinbronze"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/tinbronze"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.645,
+    "snareMax": 0.82
+  },
+  "durability": 14
+}

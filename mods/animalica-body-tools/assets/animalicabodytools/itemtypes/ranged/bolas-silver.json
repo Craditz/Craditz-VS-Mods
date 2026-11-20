@@ -1,0 +1,29 @@
+{
+  "code": "bolas-silver",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-silver"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/silver"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.627,
+    "snareMax": 0.796
+  },
+  "durability": 7
+}

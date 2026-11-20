@@ -1,0 +1,55 @@
+{
+  "code": "bolt-scrap",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolt-scrap"
+  },
+  "textures": {
+    "shaft": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "charge": {
+      "base": "game:block/cloth/linen/red"
+    },
+    "binding": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [
+        "crude",
+        "flint",
+        "obsidian",
+        "bone",
+        "erel",
+        "copper",
+        "gold",
+        "silver",
+        "tinbronze",
+        "bismuthbronze",
+        "blackbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    }
+  ],
+  "maxStackSize": 64,
+  "behaviors": [
+    {
+      "name": "AnimalicaLoadCrossbow"
+    }
+  ],
+  "attributes": {
+    "boltBomb": "scrap"
+  }
+}

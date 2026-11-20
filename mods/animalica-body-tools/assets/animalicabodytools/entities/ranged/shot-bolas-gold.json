@@ -1,0 +1,55 @@
+{
+  "code": "shot-bolas-gold",
+  "class": "AnimalicaUtilityShot",
+  "tags": [
+    "inanimate",
+    "projectile"
+  ],
+  "attributes": {
+    "isProjectile": true
+  },
+  "hitboxSize": {
+    "x": 0.1,
+    "y": 0.1
+  },
+  "behaviorConfigs": {
+    "passivephysics": {
+      "gravityFactor": 0.8,
+      "airDragFactor": 0.25
+    }
+  },
+  "client": {
+    "size": 0.8,
+    "renderer": "Shape",
+    "shape": {
+      "base": "animalicabodytools:item/ranged/bolas-gold"
+    },
+    "textures": {
+      "weight": {
+        "base": "game:block/metal/ingot/gold"
+      },
+      "cord": {
+        "base": "game:block/cloth/reedrope"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "despawn",
+        "minSeconds": 90
+      }
+    ]
+  }
+}

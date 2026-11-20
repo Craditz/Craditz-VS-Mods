@@ -1,0 +1,115 @@
+{
+  "code": "ballistashot",
+  "class": "AnimalicaBallistaArrow",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [
+        "crude",
+        "flint",
+        "obsidian",
+        "bone",
+        "erel",
+        "copper",
+        "gold",
+        "silver",
+        "tinbronze",
+        "bismuthbronze",
+        "blackbronze",
+        "iron",
+        "meteoriciron",
+        "steel"
+      ]
+    }
+  ],
+  "tags": [
+    "inanimate",
+    "projectile"
+  ],
+  "attributes": {
+    "isProjectile": true
+  },
+  "hitboxSize": {
+    "x": 0.1,
+    "y": 0.1
+  },
+  "behaviorConfigs": {
+    "passivephysics": {
+      "groundDragFactor": 1,
+      "airDragFactor": 0.25,
+      "gravityFactor": 0.75
+    }
+  },
+  "client": {
+    "size": 0.75,
+    "renderer": "Shape",
+    "shapeByType": {
+      "*-crude": {
+        "base": "game:entity/nonliving/projectile/arrow/crude"
+      },
+      "*-flint": {
+        "base": "game:entity/nonliving/projectile/arrow/stone"
+      },
+      "*-obsidian": {
+        "base": "game:entity/nonliving/projectile/arrow/stone"
+      },
+      "*-gold": {
+        "base": "game:entity/nonliving/projectile/arrow/gold"
+      },
+      "*-silver": {
+        "base": "game:entity/nonliving/projectile/arrow/silver"
+      },
+      "*-bone": {
+        "base": "game:entity/nonliving/projectile/arrow/bowtorn"
+      },
+      "*-erel": {
+        "base": "game:entity/nonliving/projectile/erel-small-usable"
+      },
+      "*": {
+        "base": "game:entity/nonliving/projectile/arrow/copper"
+      }
+    },
+    "texturesByType": {
+      "*-crude": {},
+      "*-bone": {},
+      "*-erel": {},
+      "*-flint": {
+        "material": {
+          "base": "game:block/stone/flint"
+        }
+      },
+      "*-obsidian": {
+        "material": {
+          "base": "game:block/stone/rock/obsidian1"
+        }
+      },
+      "*": {
+        "material": {
+          "base": "game:block/metal/ingot/{material}"
+        }
+      }
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "despawn",
+        "minSeconds": 600
+      },
+      {
+        "code": "entitystatetags"
+      }
+    ]
+  }
+}

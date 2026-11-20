@@ -1,0 +1,58 @@
+{
+  "code": "crossbow-ballista-copper",
+  "maxStackSize": 1,
+  "durability": 250,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "AnimalicaCrossbowWearable"
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "animalicabodytools:item/ranged/crossbow-ballista-copper"
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -28,
+      "y": 38,
+      "z": -12
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 2.1
+  },
+  "textures": {
+    "stock": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "limb": {
+      "base": "game:block/metal/ingot/copper"
+    },
+    "binding": {
+      "base": "game:block/leather/plain"
+    },
+    "string": {
+      "base": "game:block/cloth/linen/normal1"
+    }
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "clothescategory": "upperbodyover",
+    "wearableAttachment": true,
+    "crossbowPattern": "ballista",
+    "reloadMs": 9000,
+    "damage": 12.25,
+    "shotSpeed": 1.22
+  }
+}

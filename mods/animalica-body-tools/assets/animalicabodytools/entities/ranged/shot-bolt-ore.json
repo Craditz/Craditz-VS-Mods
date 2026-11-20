@@ -1,0 +1,58 @@
+{
+  "code": "shot-bolt-ore",
+  "class": "AnimalicaBombBolt",
+  "tags": [
+    "inanimate",
+    "projectile"
+  ],
+  "attributes": {
+    "isProjectile": true
+  },
+  "hitboxSize": {
+    "x": 0.1,
+    "y": 0.1
+  },
+  "behaviorConfigs": {
+    "passivephysics": {
+      "gravityFactor": 0.75,
+      "airDragFactor": 0.25
+    }
+  },
+  "client": {
+    "size": 0.8,
+    "renderer": "Shape",
+    "shape": {
+      "base": "animalicabodytools:item/ranged/bolt-ore"
+    },
+    "textures": {
+      "shaft": {
+        "base": "game:block/wood/planks/oak1"
+      },
+      "charge": {
+        "base": "game:block/cloth/linen/orange"
+      },
+      "binding": {
+        "base": "game:block/cloth/reedrope"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "despawn",
+        "minSeconds": 90
+      }
+    ]
+  }
+}

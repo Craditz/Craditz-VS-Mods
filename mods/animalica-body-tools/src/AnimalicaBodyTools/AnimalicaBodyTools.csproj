@@ -2,44 +2,46 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <AssemblyName>AnimalicaBodyTools</AssemblyName>
-    <Version>1.6.20</Version>
-    <InformationalVersion>1.6.20</InformationalVersion>
+    <Version>1.7.0-ranged.23</Version>
+    <InformationalVersion>1.7.0-ranged.23</InformationalVersion>
     <RootNamespace>AnimalicaBodyTools</RootNamespace>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <VintageStoryPath Condition="'$(VintageStoryPath)' == ''">$(VINTAGE_STORY)</VintageStoryPath>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="../../../../shared/VintageStoryConfigMigration.cs" Link="Shared\VintageStoryConfigMigration.cs" />
     <Reference Include="VintagestoryAPI">
-      <HintPath>$(VintageStoryPath)\VintagestoryAPI.dll</HintPath>
+      <HintPath>$(VINTAGE_STORY)\VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>$(VintageStoryPath)\Mods\VSEssentials.dll</HintPath>
+      <HintPath>$(VINTAGE_STORY)\Mods\VSEssentials.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>$(VintageStoryPath)\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>$(VINTAGE_STORY)\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>$(VintageStoryPath)\Lib\protobuf-net.dll</HintPath>
+      <HintPath>$(VINTAGE_STORY)\Lib\protobuf-net.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>$(VintageStoryPath)\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>$(VINTAGE_STORY)\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
-    <Reference Include="0Harmony" Condition="Exists('$(VintageStoryPath)\Lib\0Harmony.dll')">
-      <HintPath>$(VintageStoryPath)\Lib\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony" Condition="Exists('$(VINTAGE_STORY)\Lib\0Harmony.dll')">
+      <HintPath>$(VINTAGE_STORY)\Lib\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="0Harmony" Condition="Exists('$(VintageStoryPath)\0Harmony.dll')">
-      <HintPath>$(VintageStoryPath)\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony" Condition="Exists('$(VINTAGE_STORY)\0Harmony.dll')">
+      <HintPath>$(VINTAGE_STORY)\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
 </Project>
+
+
+

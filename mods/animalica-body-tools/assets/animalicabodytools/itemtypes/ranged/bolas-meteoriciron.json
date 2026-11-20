@@ -1,0 +1,29 @@
+{
+  "code": "bolas-meteoriciron",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-meteoriciron"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/meteoriciron"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.69,
+    "snareMax": 0.88
+  },
+  "durability": 27
+}

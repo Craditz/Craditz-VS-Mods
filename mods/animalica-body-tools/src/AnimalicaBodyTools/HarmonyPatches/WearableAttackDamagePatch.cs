@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AnimalicaBodyTools.Items;
 using AnimalicaBodyTools.Systems;
 using HarmonyLib;
 using Vintagestory.API.Common;
@@ -13,8 +14,9 @@ internal static class WearableAttackDamagePatch
     private static readonly HashSet<string> Logged = new(StringComparer.Ordinal);
     private static readonly HashSet<string> DurabilityLogged = new(StringComparer.Ordinal);
 
-    private static void Prefix(Entity __instance, DamageSource damageSource, ref float damage)
+    private static void Prefix(Entity __instance, DamageSource damageSource, ref float damage, out WearableActionSlot.Scope? __state)
     {
+        __state = null;
         if (__instance?.World?.Side != EnumAppSide.Server || damageSource == null || damage <= 0)
         {
             return;
@@ -93,7 +95,15 @@ internal static class WearableAttackDamagePatch
             }
         }
 
+        bool isFangCap = sourceSlot.Itemstack?.Collectible is { } equipped && BodyToolDurability.IsWearableFangCaps(equipped);
         WearableTargetedActionPatches.TryDamageSourceTool(playerEntity, sourceSlot, sourceCode, "entity-attack:" + (virtualTool.Collectible.Code?.ToShortString() ?? "unknown"));
+
+        // Metal caps are made from falx heads. Report that weapon family for
+        // the bite, including a final hit that broke the actual equipment.
+        if (isFangCap && collectible is ItemSpeciesLockedBodyTool caps)
+        {
+            __state = WearableActionSlot.Enter(playerEntity.Player, new DummySlot(caps.FangCapAttackView(virtualTool)));
+        }
 
         if (WearableTargetedActionPatches.DiagnosticsEnabled)
         {
@@ -107,6 +117,15 @@ internal static class WearableAttackDamagePatch
                     virtualDamage);
             }
         }
+    }
+
+    private static Exception? Finalizer(Exception? __exception, WearableActionSlot.Scope? __state)
+    {
+        if (__state != null)
+        {
+            WearableActionSlot.Exit(__state);
+        }
+        return __exception;
     }
 
     private static float ScoreAttackTool(ItemStack stack)

@@ -17,7 +17,16 @@ internal static class BodyToolDurability
     public static bool IsBodyTool(CollectibleObject collectible) => collectible is
         ItemSpeciesLockedBodyTool or ItemSpeciesLockedClaws or ItemSpeciesLockedCultivatingClaws
         or ItemSpeciesLockedProspectingPick or ItemSpeciesLockedRendingClaws or ItemSpeciesLockedScythe
-        || Array.Exists(KnownTypes, expected => SameBuildType(collectible, expected));
+        || Array.Exists(KnownTypes, expected => SameBuildType(collectible, expected))
+        || IsWearableFangCaps(collectible);
+
+    // The equipped caps use the generic item class and Wearable behavior.
+    public static bool IsWearableFangCaps(CollectibleObject collectible) =>
+        IsFangCap(collectible) && collectible.Attributes?["animalicaWearableBodyTool"].AsBool(false) == true;
+
+    internal static bool IsFangCap(CollectibleObject collectible) =>
+        collectible.Code is { Domain: "animalicabodytools" } code
+        && code.Path.StartsWith("fangcaps-", StringComparison.Ordinal);
 
     public static bool IsCultivatingClaws(CollectibleObject collectible) => collectible is ItemSpeciesLockedCultivatingClaws
         || SameBuildType(collectible, typeof(ItemSpeciesLockedCultivatingClaws));

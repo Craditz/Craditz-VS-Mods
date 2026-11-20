@@ -1,0 +1,29 @@
+{
+  "code": "bolas-blackbronze",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-blackbronze"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/blackbronze"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.66,
+    "snareMax": 0.84
+  },
+  "durability": 17
+}

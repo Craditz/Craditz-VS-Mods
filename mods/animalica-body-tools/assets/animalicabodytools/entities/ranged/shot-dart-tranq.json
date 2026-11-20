@@ -1,0 +1,58 @@
+{
+  "code": "shot-dart-tranq",
+  "class": "AnimalicaUtilityShot",
+  "tags": [
+    "inanimate",
+    "projectile"
+  ],
+  "attributes": {
+    "isProjectile": true
+  },
+  "hitboxSize": {
+    "x": 0.1,
+    "y": 0.1
+  },
+  "behaviorConfigs": {
+    "passivephysics": {
+      "gravityFactor": 0.32,
+      "airDragFactor": 0.25
+    }
+  },
+  "client": {
+    "size": 0.8,
+    "renderer": "Shape",
+    "shape": {
+      "base": "animalicabodytools:item/ranged/dart-tranq"
+    },
+    "textures": {
+      "wood": {
+        "base": "game:block/wood/planks/oak1"
+      },
+      "tip": {
+        "base": "game:block/stone/flint"
+      },
+      "paint": {
+        "base": "game:block/cloth/linen/blue"
+      }
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics"
+      },
+      {
+        "code": "despawn",
+        "minSeconds": 90
+      }
+    ]
+  }
+}

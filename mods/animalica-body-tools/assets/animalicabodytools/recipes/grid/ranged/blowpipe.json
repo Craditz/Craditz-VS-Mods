@@ -1,0 +1,21 @@
+{
+  "ingredientPattern": "R_R,_T_",
+  "width": 3,
+  "height": 2,
+  "ingredients": {
+    "R": {
+      "type": "item",
+      "code": "game:cattailtops"
+    },
+    "T": {
+      "type": "item",
+      "code": "game:flaxtwine"
+    }
+  },
+  "requiresTrait": "animalica-animal-bodytools",
+  "output": {
+    "type": "item",
+    "code": "animalicabodytools:blowpipe",
+    "quantity": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "ingredientPattern": "_T_,PMP,_L_",
+  "width": 3,
+  "height": 3,
+  "ingredients": {
+    "T": {
+      "type": "item",
+      "code": "game:flaxtwine"
+    },
+    "P": {
+      "type": "item",
+      "code": "game:plank-*"
+    },
+    "L": {
+      "type": "item",
+      "code": "game:leather-normal-plain"
+    },
+    "M": {
+      "type": "item",
+      "code": "game:metalplate-tinbronze"
+    }
+  },
+  "requiresTrait": "animalica-animal-bodytools",
+  "output": {
+    "type": "item",
+    "code": "animalicabodytools:crossbow-scout-tinbronze"
+  }
+}

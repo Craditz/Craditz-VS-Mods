@@ -1,0 +1,29 @@
+{
+  "code": "bolas-gold",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-gold"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/gold"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.621,
+    "snareMax": 0.788
+  },
+  "durability": 5
+}

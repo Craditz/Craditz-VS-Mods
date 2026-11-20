@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using AnimalicaBodyTools.Config;
 using AnimalicaBodyTools.Systems;
+using AnimalicaBodyTools.Items;
 using HarmonyLib;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -158,6 +159,12 @@ internal static class WearableTargetedActionPatches
         int maxBefore = collectible.GetMaxDurability(beforeStack);
         if (maxBefore <= 0)
         {
+            // Natural fitted fangs provide a bite without consuming an item.
+            if (maxBefore == 0 && collectible.Code is { Domain: "animalicabodytools", Path: "fittedfangs-wearable" })
+            {
+                return false;
+            }
+
             entity.World.Logger.Warning("[animalicabodytools] Wearable durability skipped: action={0}, source={1}, item={2}, reason=max-durability-zero.", action, sourceCode, collectible.Code);
             return false;
         }
@@ -233,6 +240,20 @@ internal static class WearableTargetedActionPatches
     {
         return blockCode.StartsWith("tallplant-", StringComparison.Ordinal)
                && blockCode.Contains("-normal-", StringComparison.Ordinal);
+    }
+
+    public static IEnumerable<MethodBase> ReedBreakMethods(string methodName, Type[] parameters)
+    {
+        yield return AccessTools.DeclaredMethod(typeof(BlockReeds), methodName, parameters);
+
+        // Ecosystem Flora replaces the vanilla reed class. Its overrides do
+        // not call the base methods, so patch only the methods it declares.
+        Type? floraReeds = AccessTools.TypeByName("WildFarming.Blocks.BlockReedsSafe");
+        if (floraReeds != null && floraReeds.IsSubclassOf(typeof(BlockReeds))
+            && AccessTools.DeclaredMethod(floraReeds, methodName, parameters) is { } method)
+        {
+            yield return method;
+        }
     }
 
     public static bool IsBlockBreakDurabilitySuppressed => blockBreakDurabilitySuppressions > 0;
@@ -782,13 +803,23 @@ internal static class WearableBlockGettingBrokenPatch
     private static readonly Dictionary<string, long> ScytheBreakStartedMs = new(StringComparer.Ordinal);
     private const long WearableScytheChargeMs = 1050;
 
-    private static bool Prefix(Block __instance, IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter, ref float __result)
+    [HarmonyPriority(Priority.First)]
+    private static bool Prefix(Block __instance, IPlayer player, BlockSelection blockSel, ref ItemSlot itemslot, float remainingResistance, float dt, int counter, ref float __result, out WearableActionSlot.Scope? __state)
     {
+        __state = null;
         // SleepNeed owns the temporary ground-bed decision in its optional
         // Block.OnGettingBroken prefix. Let that prefix see the original call
         // instead of turning a fitted tool into a bypass around it.
         if (SleepNeedOwnsGroundBedBuild(player))
         {
+            return true;
+        }
+
+        if (itemslot.Itemstack is { } held && ItemSpeciesLockedClaws.CanDig(held, player.Entity.World, blockSel))
+        {
+            var diggingSlot = new DummySlot(ItemSpeciesLockedClaws.DiggingView(held.Clone()));
+            __state = WearableActionSlot.Enter(player, diggingSlot, itemslot, held);
+            itemslot = diggingSlot;
             return true;
         }
 
@@ -832,17 +863,25 @@ internal static class WearableBlockGettingBrokenPatch
             return false;
         }
 
-        if (dt > 0)
+        // Block.OnGettingBroken reads the hotbar as well as its slot argument.
+        // Supply the same transient tool to both so vanilla and other patches
+        // see it during the calculation without changing inventory contents.
+        if (ItemSpeciesLockedClaws.CanDig(virtualTool, player.Entity.World, blockSel))
         {
-            foreach (BlockBehavior behavior in __instance.BlockBehaviors)
-            {
-                dt *= behavior.GetMiningSpeedModifier(player.Entity.World, blockSel.Position, player);
-            }
+            dummySlot = new DummySlot(ItemSpeciesLockedClaws.DiggingView(virtualTool));
         }
+        __state = WearableActionSlot.Enter(player, dummySlot);
+        itemslot = dummySlot;
+        return true;
+    }
 
-        __result = virtualTool.Collectible?.OnBlockBreaking(player, blockSel, dummySlot, remainingResistance, dt, counter) ?? remainingResistance;
-        PlayVirtualBreakSound(__instance, player, blockSel, virtualTool, __result);
-        return false;
+    private static Exception? Finalizer(Exception? __exception, WearableActionSlot.Scope? __state)
+    {
+        if (__state != null)
+        {
+            WearableActionSlot.Exit(__state);
+        }
+        return __exception;
     }
 
     private static bool SleepNeedOwnsGroundBedBuild(IPlayer player)
@@ -965,11 +1004,15 @@ internal static class WearableBlockGettingBrokenPatch
     }
 }
 
-[HarmonyPatch(typeof(BlockReeds), nameof(BlockReeds.OnGettingBroken))]
+[HarmonyPatch]
 internal static class WearableReedsGettingBrokenPatch
 {
     private static readonly HashSet<string> Logged = new(StringComparer.Ordinal);
     private static readonly Dictionary<string, long> LastSoundMs = new(StringComparer.Ordinal);
+
+    private static IEnumerable<MethodBase> TargetMethods() => WearableTargetedActionPatches.ReedBreakMethods(
+        nameof(BlockReeds.OnGettingBroken),
+        new[] { typeof(IPlayer), typeof(BlockSelection), typeof(ItemSlot), typeof(float), typeof(float), typeof(int) });
 
     private static bool Prefix(BlockReeds __instance, IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter, ref float __result)
     {
@@ -1100,10 +1143,13 @@ internal static class WearableReedsGettingBrokenPatch
     }
 }
 
-[HarmonyPatch(typeof(BlockReeds), nameof(BlockReeds.OnBlockBroken))]
+[HarmonyPatch]
 internal static class WearableReedsKnifeHarvestPatch
 {
     private static readonly HashSet<string> Logged = new(StringComparer.Ordinal);
+
+    private static IEnumerable<MethodBase> TargetMethods() => WearableTargetedActionPatches.ReedBreakMethods(
+        nameof(BlockReeds.OnBlockBroken), new[] { typeof(IWorldAccessor), typeof(BlockPos), typeof(IPlayer), typeof(float) });
 
     private static bool Prefix(BlockReeds __instance, IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier)
     {
@@ -1346,6 +1392,7 @@ internal static class WearableBlockBrokenDurabilityPatch
 internal static class WearableServerBreakTierPatch
 {
     private static readonly HashSet<string> Logged = new(StringComparer.Ordinal);
+    internal static bool HasNativeBreakRoute { get; private set; }
 
     private static MethodBase? TargetMethod()
     {
@@ -1362,6 +1409,16 @@ internal static class WearableServerBreakTierPatch
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         List<CodeInstruction> codes = instructions.ToList();
+        MethodInfo breakBlockMethod = AccessTools.Method(typeof(Block), nameof(Block.OnBlockBroken),
+            new[] { typeof(IWorldAccessor), typeof(BlockPos), typeof(IPlayer), typeof(float) });
+        var breakCalls = codes.Where(code => code.Calls(breakBlockMethod)).ToArray();
+        HasNativeBreakRoute = breakCalls.Length == 1;
+        if (HasNativeBreakRoute)
+        {
+            breakCalls[0].opcode = OpCodes.Call;
+            breakCalls[0].operand = AccessTools.Method(typeof(WearableServerBreakTierPatch), nameof(BreakWithWearable));
+        }
+
         MethodInfo requiredTierMethod = AccessTools.Method(
             typeof(Block),
             nameof(Block.GetRequiredMiningTier),
@@ -1380,6 +1437,31 @@ internal static class WearableServerBreakTierPatch
         });
 
         return codes;
+    }
+
+    private static void BreakWithWearable(Block block, IWorldAccessor world, BlockPos position, IPlayer player, float multiplier)
+    {
+        var context = WearableBlockBreakToolContext.Current;
+        if (context != null && ReferenceEquals(context.Player, player)
+            && context.NativeSelection is { } selection && selection.Position.Equals(position)
+            && context.NativeSourceSlot is { } slot && context.NativeSourceStack is { } stack
+            && ReferenceEquals(WearableToolResolver.GetRealItemstack(slot), stack)
+            && player.InventoryManager.ActiveHotbarSlot.Empty)
+        {
+            var scope = WearableActionSlot.Enter(player, slot);
+            try
+            {
+                WearableBlockBreakToolContext.MarkDurabilityHandled(player, position);
+                stack.Collectible.OnBlockBrokenWith(world, player.Entity, slot, selection, multiplier);
+            }
+            finally
+            {
+                WearableActionSlot.Exit(scope);
+            }
+            return;
+        }
+
+        block.OnBlockBroken(world, position, player, multiplier);
     }
 
     public static int AdjustRequiredMiningTier(int requiredTier, object serverPlayer)
@@ -1443,3 +1525,4 @@ internal static class WearableServerBreakTierPatch
         return 0;
     }
 }
+

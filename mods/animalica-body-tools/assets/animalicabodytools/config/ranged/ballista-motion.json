@@ -1,0 +1,500 @@
+[
+  {
+    "code": "abt-crossbow-draw",
+    "name": "abt-crossbow-draw",
+    "quantityframes": 61,
+    "onActivityStopped": "Stop",
+    "onAnimationEnd": "Hold",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.3063
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 4.0313
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.3063
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -4.0313
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -1.5592
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 10.0719
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 1.5592
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -10.0719
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 13,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -4.8166
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 20.2624
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 4.8166
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -20.2624
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 21,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -10.6163
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 34.7719
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 10.6163
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -34.7719
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 30,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -17.1834
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 49.5833
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 17.1834
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -49.5833
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 38,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -21.1768
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 58.2228
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 21.1768
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -58.2228
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 43,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 59.9813
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -59.9813
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 48,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 59.9813
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -59.9813
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.5517
+          }
+        }
+      },
+      {
+        "frame": 54,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 59.9813
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -59.9813
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -0.686,
+            "offsetY": 0.662
+          }
+        }
+      },
+      {
+        "frame": 60,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 59.9813
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -59.9813
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -1.372,
+            "offsetY": 0.662
+          }
+        }
+      }
+    ]
+  },
+  {
+    "code": "abt-crossbow-release",
+    "name": "abt-crossbow-release",
+    "quantityframes": 8,
+    "onActivityStopped": "Stop",
+    "onAnimationEnd": "Stop",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 59.9813
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -59.9813
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -1.372,
+            "offsetY": 0.662
+          }
+        }
+      },
+      {
+        "frame": 2,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -2.2
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 12.3769
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 2.2
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -12.3769
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -5.0764,
+            "offsetY": 0.662
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 5,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.99
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 7.734
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.99
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -7.734
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      }
+    ]
+  }
+]

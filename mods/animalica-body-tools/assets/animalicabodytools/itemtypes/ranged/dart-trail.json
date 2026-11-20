@@ -1,0 +1,26 @@
+{
+  "code": "dart-trail",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/dart-trail"
+  },
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "tip": {
+      "base": "game:block/stone/flint"
+    },
+    "paint": {
+      "base": "game:block/cloth/linen/green"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "maxStackSize": 64
+}

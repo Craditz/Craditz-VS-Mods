@@ -1,0 +1,29 @@
+{
+  "code": "bolas-steel",
+  "shape": {
+    "base": "animalicabodytools:item/ranged/bolas-steel"
+  },
+  "textures": {
+    "weight": {
+      "base": "game:block/metal/ingot/steel"
+    },
+    "cord": {
+      "base": "game:block/cloth/reedrope"
+    }
+  },
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ]
+  },
+  "class": "AnimalicaHuntingTool",
+  "maxStackSize": 1,
+  "attributes": {
+    "snareMin": 0.705,
+    "snareMax": 0.9
+  },
+  "durability": 34
+}

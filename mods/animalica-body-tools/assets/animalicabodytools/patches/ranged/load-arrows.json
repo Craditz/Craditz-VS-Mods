@@ -1,0 +1,12 @@
+[
+  {
+    "file": "game:itemtypes/tool/arrow.json",
+    "op": "addmerge",
+    "path": "/behaviors",
+    "value": [
+      {
+        "name": "AnimalicaLoadCrossbow"
+      }
+    ]
+  }
+]

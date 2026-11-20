@@ -1,0 +1,58 @@
+{
+  "code": "crossbow-scout-silver",
+  "maxStackSize": 1,
+  "durability": 230,
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "AnimalicaCrossbowWearable"
+    }
+  ],
+  "creativeInventory": {
+    "general": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ]
+  },
+  "shape": {
+    "base": "animalicabodytools:item/ranged/crossbow-scout-silver"
+  },
+  "guiTransform": {
+    "rotation": {
+      "x": -28,
+      "y": 38,
+      "z": -12
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5
+    },
+    "scale": 3.6206896551724137
+  },
+  "textures": {
+    "stock": {
+      "base": "game:block/wood/planks/oak1"
+    },
+    "limb": {
+      "base": "game:block/metal/ingot/silver"
+    },
+    "binding": {
+      "base": "game:block/leather/plain"
+    },
+    "string": {
+      "base": "game:block/cloth/linen/normal1"
+    }
+  },
+  "attributes": {
+    "animalicaWearableBodyTool": true,
+    "clothescategory": "upperbodyover",
+    "wearableAttachment": true,
+    "crossbowPattern": "scout",
+    "reloadMs": 800,
+    "damage": 3.2,
+    "shotSpeed": 0.64
+  }
+}

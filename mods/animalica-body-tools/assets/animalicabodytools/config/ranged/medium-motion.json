@@ -1,0 +1,500 @@
+[
+  {
+    "code": "abt-crossbow-draw",
+    "name": "abt-crossbow-draw",
+    "quantityframes": 61,
+    "onActivityStopped": "Stop",
+    "onAnimationEnd": "Hold",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.3063
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 4.2009
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.3063
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -4.2009
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -1.5592
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 10.4512
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 1.5592
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -10.4512
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 13,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -4.8166
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 20.9146
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 4.8166
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -20.9146
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 21,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -10.6163
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 35.7071
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 10.6163
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -35.7071
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 30,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -17.1834
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 50.7338
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 17.1834
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -50.7338
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 38,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -21.1768
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 59.4772
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 21.1768
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -59.4772
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 43,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 61.2554
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -61.2554
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 48,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 61.2554
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -61.2554
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.4617
+          }
+        }
+      },
+      {
+        "frame": 54,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 61.2554
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -61.2554
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -0.532,
+            "offsetY": 0.554
+          }
+        }
+      },
+      {
+        "frame": 60,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 61.2554
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -61.2554
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -1.064,
+            "offsetY": 0.554
+          }
+        }
+      }
+    ]
+  },
+  {
+    "code": "abt-crossbow-release",
+    "name": "abt-crossbow-release",
+    "quantityframes": 8,
+    "onActivityStopped": "Stop",
+    "onAnimationEnd": "Stop",
+    "keyframes": [
+      {
+        "frame": 0,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -22
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 61.2554
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 22
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -61.2554
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -1.064,
+            "offsetY": 0.554
+          }
+        }
+      },
+      {
+        "frame": 2,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -2.2
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 12.8254
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 2.2
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -12.8254
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": -3.9368,
+            "offsetY": 0.554
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 5,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.99
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 8.0374
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.99
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -8.0374
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "elements": {
+          "abt-wing-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-left": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0.0
+          },
+          "abt-wing-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": 0
+          },
+          "abt-cord-hinge-right": {
+            "rotationX": 0,
+            "rotationZ": 0,
+            "rotationY": -0.0
+          },
+          "abt-arrow": {
+            "offsetZ": 0,
+            "offsetX": 0.0,
+            "offsetY": 0.0
+          }
+        }
+      }
+    ]
+  }
+]

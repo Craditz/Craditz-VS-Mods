@@ -1,0 +1,127 @@
+{
+  "feralfox:feralfox": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:chicken-hen": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:chicken-rooster": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feraldeer:feraldeer-caribou": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-chital": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-elk": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-guemal": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-marsh": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-pampas": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-pudu": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-redbrocket": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-taruca": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-water": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:deer-whitetail": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:gazelle-thomson": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-angora": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-ibexalp": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-ibexnub": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-markhor": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-mountain": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-nubian": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-sirohi": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:goat-valais": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:sheep-bighorn": [
+    "scout",
+    "medium",
+    "ballista"
+  ],
+  "feralpack:sheep-mouflon": [
+    "scout",
+    "medium",
+    "ballista"
+  ]
+}
