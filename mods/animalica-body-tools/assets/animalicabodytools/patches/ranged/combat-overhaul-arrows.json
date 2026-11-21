@@ -1,0 +1,184 @@
+[
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaulfork"
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "AnimalicaLoadCrossbow"
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaulfork"
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/attributes/damageByType",
+    "value": {
+      "*-crude": -0.75,
+      "*-flint": -0.5,
+      "*-obsidian": -0.25,
+      "*-copper": 0,
+      "*-erel": 0,
+      "*-bone": 0,
+      "*-tinbronze": 1,
+      "*-gold": 1,
+      "*-silver": 1,
+      "*-bismuthbronze": 1,
+      "*-blackbronze": 1.5,
+      "*-iron": 2,
+      "*-meteoriciron": 2.25,
+      "*-steel": 2.5
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaulfork"
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/attributes/breakChanceOnImpactByType",
+    "value": {
+      "*-crude": 0.3,
+      "*-erel": 1,
+      "*-bone": 0.3,
+      "*-flint": 0.25,
+      "*-obsidian": 0.2,
+      "*-copper": 0.15,
+      "*-tinbronze": 0.125,
+      "*-gold": 0.15,
+      "*-silver": 0.15,
+      "*-bismuthbronze": 0.125,
+      "*-blackbronze": 0.1,
+      "*-iron": 0.1,
+      "*-meteoriciron": 0.1,
+      "*-steel": 0.07
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaulfork"
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/attributes/arrowEntityCodeByType",
+    "value": {
+      "*-erel": "erelprojectile-small-usable",
+      "*": "arrow-{material}"
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaul"
+      },
+      {
+        "modid": "combatoverhaulfork",
+        "invert": true
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "AnimalicaLoadCrossbow"
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaul"
+      },
+      {
+        "modid": "combatoverhaulfork",
+        "invert": true
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/attributes/damageByType",
+    "value": {
+      "*-crude": -0.75,
+      "*-flint": -0.5,
+      "*-obsidian": -0.25,
+      "*-copper": 0,
+      "*-erel": 0,
+      "*-bone": 0,
+      "*-tinbronze": 1,
+      "*-gold": 1,
+      "*-silver": 1,
+      "*-bismuthbronze": 1,
+      "*-blackbronze": 1.5,
+      "*-iron": 2,
+      "*-meteoriciron": 2.25,
+      "*-steel": 2.5
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaul"
+      },
+      {
+        "modid": "combatoverhaulfork",
+        "invert": true
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/attributes/breakChanceOnImpactByType",
+    "value": {
+      "*-crude": 0.3,
+      "*-erel": 1,
+      "*-bone": 0.3,
+      "*-flint": 0.25,
+      "*-obsidian": 0.2,
+      "*-copper": 0.15,
+      "*-tinbronze": 0.125,
+      "*-gold": 0.15,
+      "*-silver": 0.15,
+      "*-bismuthbronze": 0.125,
+      "*-blackbronze": 0.1,
+      "*-iron": 0.1,
+      "*-meteoriciron": 0.1,
+      "*-steel": 0.07
+    }
+  },
+  {
+    "file": "game:itemtypes/combatoverhaul/arrow.json",
+    "dependsOn": [
+      {
+        "modid": "combatoverhaul"
+      },
+      {
+        "modid": "combatoverhaulfork",
+        "invert": true
+      }
+    ],
+    "side": "Server",
+    "op": "add",
+    "path": "/attributes/arrowEntityCodeByType",
+    "value": {
+      "*-erel": "erelprojectile-small-usable",
+      "*": "arrow-{material}"
+    }
+  }
+]
